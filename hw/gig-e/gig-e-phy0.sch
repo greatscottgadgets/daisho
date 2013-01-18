@@ -1,0 +1,3013 @@
+EESchema Schematic File Version 2  date Thu 17 Jan 2013 11:43:25 PM EST
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:ksz9021gq
+LIBS:fdt434p
+LIBS:fbead
+LIBS:mic5207-25YM5
+LIBS:belfuse-0826-1x1t-m1-f
+LIBS:terasic-hsmc
+LIBS:gig-e-cache
+EELAYER 27 0
+EELAYER END
+$Descr A2 23386 16535
+encoding utf-8
+Sheet 2 3
+Title "Daisho Prototype Gig-E Frontend"
+Date "18 jan 2013"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L KSZ9021GQ U202
+U 1 1 50ECBFDD
+P 9600 3850
+F 0 "U202" H 9600 4150 60  0000 C CNN
+F 1 "KSZ9021GQ" H 9600 3600 60  0000 C CNN
+F 2 "gsg-pqfp128" H 9600 3850 60  0001 C CNN
+F 4 "Micrel" H 9600 3850 60  0001 C CNN "Manufacturer"
+F 5 "KSZ9021GQ" H 9600 3850 60  0001 C CNN "Part#"
+F 6 "IC TXRX 10/100/1000 3.3V 128PQFP" H 9600 3850 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/KSZ9021GQ/576-3396-ND/2020343" H 9600 3850 60  0001 C CNN "Field7"
+	1    9600 3850
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7300 3450
+NoConn ~ 7300 3550
+NoConn ~ 7700 5600
+NoConn ~ 7800 5600
+NoConn ~ 7900 5600
+NoConn ~ 8000 5600
+NoConn ~ 8100 5600
+NoConn ~ 8200 5600
+NoConn ~ 10900 5600
+NoConn ~ 11000 5600
+NoConn ~ 11100 5600
+NoConn ~ 11200 5600
+NoConn ~ 11300 5600
+$Comp
+L GND #PWR05
+U 1 1 50ECC081
+P 7150 4050
+F 0 "#PWR05" H 7150 4050 30  0001 C CNN
+F 1 "GND" H 7150 3980 30  0001 C CNN
+	1    7150 4050
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR06
+U 1 1 50ECC09E
+P 8600 5700
+F 0 "#PWR06" H 8600 5700 30  0001 C CNN
+F 1 "GND" H 8600 5630 30  0001 C CNN
+	1    8600 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 50F20BE1
+P 8700 5700
+F 0 "#PWR07" H 8700 5700 30  0001 C CNN
+F 1 "GND" H 8700 5630 30  0001 C CNN
+	1    8700 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR08
+U 1 1 50ECC0AA
+P 9000 5700
+F 0 "#PWR08" H 9000 5700 30  0001 C CNN
+F 1 "GND" H 9000 5630 30  0001 C CNN
+	1    9000 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR09
+U 1 1 50F20BE3
+P 9100 5700
+F 0 "#PWR09" H 9100 5700 30  0001 C CNN
+F 1 "GND" H 9100 5630 30  0001 C CNN
+	1    9100 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 50F20BE4
+P 9500 5700
+F 0 "#PWR010" H 9500 5700 30  0001 C CNN
+F 1 "GND" H 9500 5630 30  0001 C CNN
+	1    9500 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR011
+U 1 1 50ECC0BC
+P 9900 5700
+F 0 "#PWR011" H 9900 5700 30  0001 C CNN
+F 1 "GND" H 9900 5630 30  0001 C CNN
+	1    9900 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR012
+U 1 1 50ECC0C2
+P 10300 5700
+F 0 "#PWR012" H 10300 5700 30  0001 C CNN
+F 1 "GND" H 10300 5630 30  0001 C CNN
+	1    10300 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR013
+U 1 1 50F20BE7
+P 10400 5700
+F 0 "#PWR013" H 10400 5700 30  0001 C CNN
+F 1 "GND" H 10400 5630 30  0001 C CNN
+	1    10400 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR014
+U 1 1 50ECC0CE
+P 11950 5050
+F 0 "#PWR014" H 11950 5050 30  0001 C CNN
+F 1 "GND" H 11950 4980 30  0001 C CNN
+	1    11950 5050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR015
+U 1 1 50ECC0E8
+P 11950 4950
+F 0 "#PWR015" H 11950 4950 30  0001 C CNN
+F 1 "GND" H 11950 4880 30  0001 C CNN
+	1    11950 4950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR016
+U 1 1 50F20BEA
+P 11950 4350
+F 0 "#PWR016" H 11950 4350 30  0001 C CNN
+F 1 "GND" H 11950 4280 30  0001 C CNN
+	1    11950 4350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR017
+U 1 1 50F20BEB
+P 11950 4050
+F 0 "#PWR017" H 11950 4050 30  0001 C CNN
+F 1 "GND" H 11950 3980 30  0001 C CNN
+	1    11950 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR018
+U 1 1 50ECC0FA
+P 12000 3550
+F 0 "#PWR018" H 12000 3550 30  0001 C CNN
+F 1 "GND" H 12000 3480 30  0001 C CNN
+	1    12000 3550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR019
+U 1 1 50ECC107
+P 12000 2850
+F 0 "#PWR019" H 12000 2850 30  0001 C CNN
+F 1 "GND" H 12000 2780 30  0001 C CNN
+	1    12000 2850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR020
+U 1 1 50F20BEE
+P 11300 1900
+F 0 "#PWR020" H 11300 1900 30  0001 C CNN
+F 1 "GND" H 11300 1830 30  0001 C CNN
+	1    11300 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR021
+U 1 1 50ECC13A
+P 10800 1900
+F 0 "#PWR021" H 10800 1900 30  0001 C CNN
+F 1 "GND" H 10800 1830 30  0001 C CNN
+	1    10800 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR022
+U 1 1 50F20BF0
+P 10700 1900
+F 0 "#PWR022" H 10700 1900 30  0001 C CNN
+F 1 "GND" H 10700 1830 30  0001 C CNN
+	1    10700 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR023
+U 1 1 50ECC14F
+P 10000 1900
+F 0 "#PWR023" H 10000 1900 30  0001 C CNN
+F 1 "GND" H 10000 1830 30  0001 C CNN
+	1    10000 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR024
+U 1 1 50ECC155
+P 9900 1900
+F 0 "#PWR024" H 9900 1900 30  0001 C CNN
+F 1 "GND" H 9900 1830 30  0001 C CNN
+	1    9900 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR025
+U 1 1 50ECC163
+P 9500 1900
+F 0 "#PWR025" H 9500 1900 30  0001 C CNN
+F 1 "GND" H 9500 1830 30  0001 C CNN
+	1    9500 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR026
+U 1 1 50ECC169
+P 9400 1900
+F 0 "#PWR026" H 9400 1900 30  0001 C CNN
+F 1 "GND" H 9400 1830 30  0001 C CNN
+	1    9400 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR027
+U 1 1 50ECC17F
+P 8800 1900
+F 0 "#PWR027" H 8800 1900 30  0001 C CNN
+F 1 "GND" H 8800 1830 30  0001 C CNN
+	1    8800 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR028
+U 1 1 50F20BF6
+P 7700 1900
+F 0 "#PWR028" H 7700 1900 30  0001 C CNN
+F 1 "GND" H 7700 1830 30  0001 C CNN
+	1    7700 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR029
+U 1 1 50F20BF7
+P 7150 2750
+F 0 "#PWR029" H 7150 2750 30  0001 C CNN
+F 1 "GND" H 7150 2680 30  0001 C CNN
+	1    7150 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR030
+U 1 1 50ECC1AB
+P 7150 3650
+F 0 "#PWR030" H 7150 3650 30  0001 C CNN
+F 1 "GND" H 7150 3580 30  0001 C CNN
+	1    7150 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR031
+U 1 1 50ECC1B1
+P 7150 3250
+F 0 "#PWR031" H 7150 3250 30  0001 C CNN
+F 1 "GND" H 7150 3180 30  0001 C CNN
+	1    7150 3250
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR032
+U 1 1 50F20BFA
+P 7150 3150
+F 0 "#PWR032" H 7150 3150 30  0001 C CNN
+F 1 "GND" H 7150 3080 30  0001 C CNN
+	1    7150 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR033
+U 1 1 50F20BFB
+P 7150 4250
+F 0 "#PWR033" H 7150 4250 30  0001 C CNN
+F 1 "GND" H 7150 4180 30  0001 C CNN
+	1    7150 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR034
+U 1 1 50F20BFC
+P 7150 5050
+F 0 "#PWR034" H 7150 5050 30  0001 C CNN
+F 1 "GND" H 7150 4980 30  0001 C CNN
+	1    7150 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR035
+U 1 1 50F20BFD
+P 10000 5700
+F 0 "#PWR035" H 10000 5700 30  0001 C CNN
+F 1 "GND" H 10000 5630 30  0001 C CNN
+	1    10000 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR036
+U 1 1 50F20BFE
+P 8400 1900
+F 0 "#PWR036" H 8400 1900 30  0001 C CNN
+F 1 "GND" H 8400 1830 30  0001 C CNN
+	1    8400 1900
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R208
+U 1 1 50F20BFF
+P 6650 4950
+F 0 "R208" V 6730 4950 50  0000 C CNN
+F 1 "4.99K 1%" V 6650 4950 50  0000 C CNN
+F 4 "Panasonic" H 6650 4950 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3EKF4991V" H 6650 4950 60  0001 C CNN "Part#"
+F 6 "RES 4.99K OHM 1/10W 1% 0603 SMD" H 6650 4950 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3EKF4991V/P4.99KHCT-ND/198373" V 6650 4950 60  0001 C CNN "Field7"
+	1    6650 4950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR037
+U 1 1 50F20C00
+P 6350 4950
+F 0 "#PWR037" H 6350 4950 30  0001 C CNN
+F 1 "GND" H 6350 4880 30  0001 C CNN
+	1    6350 4950
+	0    1    1    0   
+$EndComp
+NoConn ~ 7300 3950
+$Comp
+L CRYSTAL X201
+U 1 1 50ECD1FC
+P 6050 4550
+F 0 "X201" H 6050 4700 60  0000 C CNN
+F 1 "25MHz" H 6050 4400 60  0000 C CNN
+F 4 "Abacron" H 6050 4550 60  0001 C CNN "Manufacturer"
+F 5 "ABMM2-25.000MHZ-E2-T" H 6050 4550 60  0001 C CNN "Part#"
+F 6 "CRYSTAL 25.000 MHZ 18PF SMD" H 6050 4550 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ABMM2-25.000MHZ-E2-T/535-9640-1-ND/1237107" H 6050 4550 60  0001 C CNN "Field7"
+	1    6050 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C209
+U 1 1 50ECD20B
+P 5700 4250
+F 0 "C209" H 5750 4350 50  0000 L CNN
+F 1 "22pF" H 5750 4150 50  0000 L CNN
+F 4 "TDK" H 5700 4250 60  0001 C CNN "Manufacturer"
+F 5 "C1608C0G1H220J080AA" H 5700 4250 60  0001 C CNN "Part#"
+F 6 "CAP CER 22PF 50V 5% NP0 0603" H 5700 4250 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608C0G1H220J080AA/445-1273-1-ND/567670" H 5700 4250 60  0001 C CNN "Field7"
+	1    5700 4250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C210
+U 1 1 50ECD218
+P 5700 4850
+F 0 "C210" H 5750 4950 50  0000 L CNN
+F 1 "22pF" H 5750 4750 50  0000 L CNN
+F 4 "TDK" H 5700 4850 60  0001 C CNN "Manufacturer"
+F 5 "C1608C0G1H220J080AA" H 5700 4850 60  0001 C CNN "Part#"
+F 6 "CAP CER 22PF 50V 5% NP0 0603" H 5700 4850 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608C0G1H220J080AA/445-1273-1-ND/567670" H 5700 4850 60  0001 C CNN "Field7"
+	1    5700 4850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR038
+U 1 1 50ECD340
+P 5450 4850
+F 0 "#PWR038" H 5450 4850 30  0001 C CNN
+F 1 "GND" H 5450 4780 30  0001 C CNN
+	1    5450 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR039
+U 1 1 50ECD393
+P 5450 4250
+F 0 "#PWR039" H 5450 4250 30  0001 C CNN
+F 1 "GND" H 5450 4180 30  0001 C CNN
+	1    5450 4250
+	0    1    1    0   
+$EndComp
+Text GLabel 7800 1550 1    39   Input ~ 0
+PHY0_INT_N
+Text Label 1150 1200 1    60   ~ 0
+AVDDH
+$Comp
+L CP1 C201
+U 1 1 50EE08A8
+P 1150 1650
+F 0 "C201" H 1200 1750 50  0000 L CNN
+F 1 "47uF" H 1200 1550 50  0000 L CNN
+F 2 "2312" H 1150 1650 60  0001 C CNN
+F 4 "Kemet" H 1150 1650 60  0001 C CNN "Manufacturer"
+F 5 "T491C476K016ZT" H 1150 1650 60  0001 C CNN "Part#"
+F 6 "CAP TANT 47UF 16V 10% 2312" H 1150 1650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491C476K016ZT/495-2247-1-ND/770413" H 1150 1650 60  0001 C CNN "Field7"
+	1    1150 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR040
+U 1 1 50EE08B9
+P 1150 1950
+F 0 "#PWR040" H 1150 1950 30  0001 C CNN
+F 1 "GND" H 1150 1880 30  0001 C CNN
+	1    1150 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L FDT434P U201
+U 1 1 50EE0A1F
+P 1750 1850
+F 0 "U201" H 1750 1800 60  0000 C CNN
+F 1 "FDT434P" H 1700 1950 60  0000 C CNN
+F 2 "fdt434p-sot223" H 1750 1850 60  0001 C CNN
+F 4 "Fairchild" H 1750 1850 60  0001 C CNN "Manufacturer"
+F 5 "FDT434P" H 1750 1850 60  0001 C CNN "Part#"
+F 6 "MOSFET P-CH 20V 6A SOT-223" H 1750 1850 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/FDT434P/FDT434PCT-ND/1849925" H 1750 1850 60  0001 C CNN "Field7"
+	1    1750 1850
+	0    -1   -1   0   
+$EndComp
+Text Label 1750 1200 1    60   ~ 0
+LDO_O
+$Comp
+L C C202
+U 1 1 50EE0BCF
+P 2350 1700
+F 0 "C202" H 2400 1800 50  0000 L CNN
+F 1 "0.1uF" H 2400 1600 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    2350 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C203
+U 1 1 50EE0BDE
+P 2800 1700
+F 0 "C203" H 2850 1800 50  0000 L CNN
+F 1 "10nF" H 2850 1600 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    2800 1700
+	1    0    0    -1  
+$EndComp
+Text Label 2800 1200 2    60   ~ 0
+AVDDL_PMOS
+$Comp
+L GND #PWR041
+U 1 1 50EE0D17
+P 2350 1950
+F 0 "#PWR041" H 2350 1950 30  0001 C CNN
+F 1 "GND" H 2350 1880 30  0001 C CNN
+	1    2350 1950
+	1    0    0    -1  
+$EndComp
+Text Label 1050 3700 2    60   ~ 0
+RESET_N
+$Comp
+L R R204
+U 1 1 50EE4445
+P 1650 4050
+F 0 "R204" V 1730 4050 50  0000 C CNN
+F 1 "4.7k" V 1650 4050 50  0000 C CNN
+F 4 "Panasonic" H 7800 1050 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ472V" H 7800 1050 60  0001 C CNN "Part#"
+F 6 "RES 4.7K OHM 1/10W 5% 0603 SMD" H 7800 1050 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ472V/P4.7KGCT-ND/135199" V 7800 1050 60  0001 C CNN "Field7"
+	1    1650 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR042
+U 1 1 50EE444B
+P 1650 4350
+F 0 "#PWR042" H 1650 4350 30  0001 C CNN
+F 1 "GND" H 1650 4280 30  0001 C CNN
+	1    1650 4350
+	1    0    0    -1  
+$EndComp
+Text Label 7050 4150 2    60   ~ 0
+LDO_O
+Text Label 7150 2650 2    60   ~ 0
+DVDDL
+Text Label 7150 2850 2    60   ~ 0
+DVDDL
+Text Label 7150 2950 2    60   ~ 0
+DVDDH
+Text Label 7150 3750 2    60   ~ 0
+DVDDL
+Text Label 8500 5750 3    60   ~ 0
+AVDDH
+Text Label 9200 5750 3    60   ~ 0
+AVDDH
+Text Label 9800 5750 3    60   ~ 0
+AVDDH
+Text Label 10500 5750 3    60   ~ 0
+AVDDH
+Text Label 8800 5750 3    60   ~ 0
+AVDDL
+Text Label 8900 5750 3    60   ~ 0
+AVDDL
+Text Label 10100 5750 3    60   ~ 0
+AVDDL
+Text Label 10200 5750 3    60   ~ 0
+AVDDL
+Text Label 10800 5750 3    60   ~ 0
+AVDDH
+Text Label 12000 4450 0    60   ~ 0
+DVDDH
+Text Label 12000 4150 0    60   ~ 0
+DVDDL
+Text Label 12000 3450 0    60   ~ 0
+DVDDL
+Text Label 12000 3350 0    60   ~ 0
+DVDDH
+Text Label 12000 2750 0    60   ~ 0
+DVDDH
+Text Label 9800 1900 1    60   ~ 0
+DVDDH
+Text Label 9700 1900 1    60   ~ 0
+DVDDH
+Text Label 10500 1900 1    60   ~ 0
+DVDDL
+Text Label 10400 1900 1    60   ~ 0
+DVDDL
+Text Label 9300 1900 1    60   ~ 0
+DVDDL
+Text Label 9200 1900 1    60   ~ 0
+DVDDL
+Text Label 8700 1900 1    60   ~ 0
+DVDDH
+Text Label 7900 1900 1    60   ~ 0
+DVDDH
+Text Label 12000 5150 0    60   ~ 0
+DVDDL
+Text Label 7150 5150 2    60   ~ 0
+AVDDH
+Text Label 7150 4550 2    60   ~ 0
+AVDDH
+Text Label 7150 4850 2    60   ~ 0
+AVDDH
+Text Label 7150 4350 2    60   ~ 0
+AVDD_PLL
+Text Label 7150 4450 2    60   ~ 0
+AVDD_PLL
+Text GLabel 6950 3850 0    39   Input ~ 0
+PHY0_TX_CLK
+Text GLabel 1950 3700 2    39   Input ~ 0
+PHY0_HW_RST
+Text Label 7000 3350 2    60   ~ 0
+RESET_N
+Text GLabel 6950 3050 0    39   Input ~ 0
+PHY0_CLK125_NDO
+Text Label 11400 5750 3    60   ~ 0
+LED6
+Text Label 12000 4850 0    60   ~ 0
+LED5
+Text Label 12000 4750 0    60   ~ 0
+LED4
+Text Label 12000 4650 0    60   ~ 0
+LED3
+Text Label 12000 4550 0    60   ~ 0
+LED2
+Text Label 12000 4250 0    60   ~ 0
+LED1
+Text GLabel 12300 2650 2    39   Input ~ 0
+PHY0_TX_ER
+Text GLabel 8000 1900 1    39   Input ~ 0
+PHY0_COL
+Text GLabel 8100 1000 1    39   Input ~ 0
+PHY0_MDIO
+$Comp
+L R R210
+U 1 1 50F20C0E
+P 7800 1050
+F 0 "R210" V 7880 1050 50  0000 C CNN
+F 1 "4.7K" V 7800 1050 50  0000 C CNN
+F 4 "Panasonic" H 7800 1050 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ472V" H 7800 1050 60  0001 C CNN "Part#"
+F 6 "RES 4.7K OHM 1/10W 5% 0603 SMD" H 7800 1050 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ472V/P4.7KGCT-ND/135199" V 7800 1050 60  0001 C CNN "Field7"
+	1    7800 1050
+	0    -1   -1   0   
+$EndComp
+Text Label 7450 1050 2    60   ~ 0
+DVDDH
+Text GLabel 8200 1750 1    39   Input ~ 0
+PHY0_MDC
+Text GLabel 8300 1750 1    39   Input ~ 0
+PHY0_CRS
+Text GLabel 8500 1750 1    39   Input ~ 0
+PHY0_RX_CLK
+Text GLabel 8600 1600 1    39   Input ~ 0
+PHY0_RX_ERR
+$Comp
+L R R209
+U 1 1 50EEFDB7
+P 7450 1700
+F 0 "R209" V 7530 1700 50  0000 C CNN
+F 1 "4.7K" V 7450 1700 50  0000 C CNN
+F 4 "Panasonic" H 7800 1050 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ472V" H 7800 1050 60  0001 C CNN "Part#"
+F 6 "RES 4.7K OHM 1/10W 5% 0603 SMD" H 7800 1050 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ472V/P4.7KGCT-ND/135199" V 7800 1050 60  0001 C CNN "Field7"
+	1    7450 1700
+	0    -1   -1   0   
+$EndComp
+Text Label 7150 1700 2    60   ~ 0
+DVDDH
+Text GLabel 8900 1750 1    39   Input ~ 0
+PHY0_RXDV
+Text Label 9000 1300 1    60   ~ 0
+RXD0
+Text Label 9100 1300 1    60   ~ 0
+RXD1
+Text Label 9600 1300 1    60   ~ 0
+RXD2
+Text Label 10100 1300 1    60   ~ 0
+RXD3
+Text Label 10200 1300 1    60   ~ 0
+RXD4
+Text Label 10300 1300 1    60   ~ 0
+RXD5
+Text Label 10600 1300 1    60   ~ 0
+RXD6
+Text Label 10900 1300 1    60   ~ 0
+RXD7
+Text Label 11000 1900 1    60   ~ 0
+DVDDH
+Text Label 11100 1900 1    60   ~ 0
+DVDDH
+Text GLabel 11200 1800 1    39   Input ~ 0
+PHY0_TX_EN
+Text Label 11400 1800 1    60   ~ 0
+GTX_CLK
+Text Label 12450 2950 0    60   ~ 0
+TXD7
+Text Label 12450 3050 0    60   ~ 0
+TXD6
+Text Label 12450 3150 0    60   ~ 0
+TXD5
+Text Label 12450 3250 0    60   ~ 0
+TXD4
+Text Label 12450 3650 0    60   ~ 0
+TXD3
+Text Label 12450 3750 0    60   ~ 0
+TXD2
+Text Label 12450 3850 0    60   ~ 0
+TXD1
+Text Label 12450 3950 0    60   ~ 0
+TXD0
+$Comp
+L R_PACK8 RP202
+U 1 1 50F20C20
+P 18650 3000
+F 0 "RP202" H 18650 3450 40  0000 C CNN
+F 1 "R0-DNP" H 18650 2550 40  0000 C CNN
+F 2 "1506" H 18650 3000 60  0001 C CNN
+F 4 "Panasonic" H 18650 3000 60  0001 C CNN "Manufacturer"
+F 5 "EXB-2HVR000V" H 18650 3000 60  0001 C CNN "Part#"
+F 6 "RES ARRAY 0.0 OHM 8 RES 1506" H 18650 3000 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/EXB-2HVR000V/Y1000CT-ND/285418" H 18650 3000 60  0001 C CNN "Field7"
+	1    18650 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L R_PACK8 RP203
+U 1 1 50EF1508
+P 18650 4650
+F 0 "RP203" H 18650 5100 40  0000 C CNN
+F 1 "R0-DNP" H 18650 4200 40  0000 C CNN
+F 2 "1506" H 18650 4650 60  0001 C CNN
+F 4 "Panasonic" H 18650 4650 60  0001 C CNN "Manufacturer"
+F 5 "EXB-2HVR000V" H 18650 4650 60  0001 C CNN "Part#"
+F 6 "RES ARRAY 0.0 OHM 8 RES 1506" H 18650 4650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/EXB-2HVR000V/Y1000CT-ND/285418" H 18650 4650 60  0001 C CNN "Field7"
+	1    18650 4650
+	1    0    0    -1  
+$EndComp
+Text Label 18350 5000 2    60   ~ 0
+TXD0
+Text Label 18350 4900 2    60   ~ 0
+TXD1
+Text Label 18350 4800 2    60   ~ 0
+TXD2
+Text Label 18350 4700 2    60   ~ 0
+TXD3
+Text Label 18350 4600 2    60   ~ 0
+TXD4
+Text Label 18350 4500 2    60   ~ 0
+TXD5
+Text Label 18350 4400 2    60   ~ 0
+TXD6
+Text Label 18350 4300 2    60   ~ 0
+TXD7
+Text Label 18350 3350 2    60   ~ 0
+RXD0
+Text Label 18350 3250 2    60   ~ 0
+RXD1
+Text Label 18350 3150 2    60   ~ 0
+RXD2
+Text Label 18350 3050 2    60   ~ 0
+RXD3
+Text Label 18350 2950 2    60   ~ 0
+RXD4
+Text Label 18350 2850 2    60   ~ 0
+RXD5
+Text Label 18350 2750 2    60   ~ 0
+RXD6
+Text Label 18350 2650 2    60   ~ 0
+RXD7
+$Comp
+L R R216
+U 1 1 50F20C25
+P 18650 3650
+F 0 "R216" V 18730 3650 50  0000 C CNN
+F 1 "0.0-NP" V 18650 3650 50  0000 C CNN
+F 4 "Panasonic" H 18650 1350 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEY0R00V" H 18650 1350 60  0001 C CNN "Part#"
+F 6 "RES 0.0 OHM 1/10W 0603 SMD" H 18650 1350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711" V 18650 1350 60  0001 C CNN "Field7"
+	1    18650 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R217
+U 1 1 50EF2213
+P 18650 3850
+F 0 "R217" V 18730 3850 50  0000 C CNN
+F 1 "0.0-NP" V 18650 3850 50  0000 C CNN
+F 4 "Panasonic" H 18650 1350 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEY0R00V" H 18650 1350 60  0001 C CNN "Part#"
+F 6 "RES 0.0 OHM 1/10W 0603 SMD" H 18650 1350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711" V 18650 1350 60  0001 C CNN "Field7"
+	1    18650 3850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R218
+U 1 1 50EF2219
+P 18650 4050
+F 0 "R218" V 18730 4050 50  0000 C CNN
+F 1 "0.0-NP" V 18650 4050 50  0000 C CNN
+F 4 "Panasonic" H 18650 1350 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEY0R00V" H 18650 1350 60  0001 C CNN "Part#"
+F 6 "RES 0.0 OHM 1/10W 0603 SMD" H 18650 1350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711" V 18650 1350 60  0001 C CNN "Field7"
+	1    18650 4050
+	0    -1   -1   0   
+$EndComp
+Text GLabel 18350 3650 0    39   Input ~ 0
+PHY0_TX_EN
+Text GLabel 18950 3650 2    39   Input ~ 0
+PHY0_GM_TX_EN
+Text Label 18350 3850 2    60   ~ 0
+GTX_CLK
+Text GLabel 18350 4050 0    39   Input ~ 0
+PHY0_TX_ER
+Text GLabel 18950 4050 2    39   Input ~ 0
+PHY0_GM_TX_ER
+$Comp
+L R R215
+U 1 1 50EF0378
+P 18650 2400
+F 0 "R215" V 18730 2400 50  0000 C CNN
+F 1 "0.0-NP" V 18650 2400 50  0000 C CNN
+F 4 "Panasonic" H 18650 1350 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEY0R00V" H 18650 1350 60  0001 C CNN "Part#"
+F 6 "RES 0.0 OHM 1/10W 0603 SMD" H 18650 1350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711" V 18650 1350 60  0001 C CNN "Field7"
+	1    18650 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R214
+U 1 1 50EF037E
+P 18650 2200
+F 0 "R214" V 18730 2200 50  0000 C CNN
+F 1 "0.0-NP" V 18650 2200 50  0000 C CNN
+F 4 "Panasonic" H 18650 1350 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEY0R00V" H 18650 1350 60  0001 C CNN "Part#"
+F 6 "RES 0.0 OHM 1/10W 0603 SMD" H 18650 1350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711" V 18650 1350 60  0001 C CNN "Field7"
+	1    18650 2200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R213
+U 1 1 50F20C12
+P 18650 2000
+F 0 "R213" V 18730 2000 50  0000 C CNN
+F 1 "0.0-NP" V 18650 2000 50  0000 C CNN
+F 4 "Panasonic" H 18650 1350 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEY0R00V" H 18650 1350 60  0001 C CNN "Part#"
+F 6 "RES 0.0 OHM 1/10W 0603 SMD" H 18650 1350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711" V 18650 1350 60  0001 C CNN "Field7"
+	1    18650 2000
+	0    -1   -1   0   
+$EndComp
+Text GLabel 18350 2000 0    39   Input ~ 0
+PHY0_RX_CLK
+Text GLabel 18950 2000 2    39   Input ~ 0
+PHY0_GM_RX_CLK
+Text GLabel 18350 2200 0    39   Input ~ 0
+PHY0_RX_ERR
+Text GLabel 18950 2200 2    39   Input ~ 0
+PHY0_GM_RX_ERR
+Text GLabel 18350 2400 0    39   Input ~ 0
+PHY0_RXDV
+Text GLabel 18950 2400 2    39   Input ~ 0
+PHY0_GM_RXDV
+$Comp
+L R R212
+U 1 1 50EF09BE
+P 18650 1550
+F 0 "R212" V 18730 1550 50  0000 C CNN
+F 1 "0.0-NP" V 18650 1550 50  0000 C CNN
+F 4 "Panasonic" H 18650 1350 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEY0R00V" H 18650 1350 60  0001 C CNN "Part#"
+F 6 "RES 0.0 OHM 1/10W 0603 SMD" H 18650 1350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711" V 18650 1350 60  0001 C CNN "Field7"
+	1    18650 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R211
+U 1 1 50EF09C4
+P 18650 1350
+F 0 "R211" V 18730 1350 50  0000 C CNN
+F 1 "0.0-NP" V 18650 1350 50  0000 C CNN
+F 4 "Panasonic" H 18650 1350 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEY0R00V" H 18650 1350 60  0001 C CNN "Part#"
+F 6 "RES 0.0 OHM 1/10W 0603 SMD" H 18650 1350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711" V 18650 1350 60  0001 C CNN "Field7"
+	1    18650 1350
+	0    -1   -1   0   
+$EndComp
+Text GLabel 18350 1350 0    39   Input ~ 0
+PHY0_MDC
+Text GLabel 18950 1350 2    39   Input ~ 0
+PHY0_GM_MDC
+Text GLabel 18950 1550 2    39   Input ~ 0
+PHY0_GM_MIO
+Text GLabel 18350 1550 0    39   Input ~ 0
+PHY0_MDIO
+Text Notes 800  7600 0    60   ~ 0
+Phyaddr[0:5] latched low at boot
+$Comp
+L R R201
+U 1 1 50EF0E9E
+P 900 8100
+F 0 "R201" V 980 8100 50  0000 C CNN
+F 1 "1k" V 900 8100 50  0000 C CNN
+F 4 "Panasonic" H 900 8100 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ102V" H 900 8100 60  0001 C CNN "Part#"
+F 6 "RES 1.0K OHM 1/10W 5% 0603 SMD" H 900 8100 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ102V/P1.0KGCT-ND/134874" V 900 8100 60  0001 C CNN "Field7"
+	1    900  8100
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR043
+U 1 1 50F20C16
+P 900 7800
+F 0 "#PWR043" H 900 7800 30  0001 C CNN
+F 1 "GND" H 900 7730 30  0001 C CNN
+	1    900  7800
+	-1   0    0    1   
+$EndComp
+Text Label 900  8450 3    60   ~ 0
+LED1
+Text GLabel 1000 8450 3    39   Input ~ 0
+PHY0_PHYADDR0
+$Comp
+L R R202
+U 1 1 50F20C17
+P 1250 8100
+F 0 "R202" V 1330 8100 50  0000 C CNN
+F 1 "1k" V 1250 8100 50  0000 C CNN
+F 4 "Panasonic" H 900 8100 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ102V" H 900 8100 60  0001 C CNN "Part#"
+F 6 "RES 1.0K OHM 1/10W 5% 0603 SMD" H 900 8100 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ102V/P1.0KGCT-ND/134874" V 900 8100 60  0001 C CNN "Field7"
+	1    1250 8100
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR044
+U 1 1 50F20C18
+P 1250 7800
+F 0 "#PWR044" H 1250 7800 30  0001 C CNN
+F 1 "GND" H 1250 7730 30  0001 C CNN
+	1    1250 7800
+	-1   0    0    1   
+$EndComp
+Text Label 1250 8450 3    60   ~ 0
+LED2
+Text GLabel 1350 8450 3    39   Input ~ 0
+PHY0_PHYADDR1
+$Comp
+L R R203
+U 1 1 50EF11F7
+P 1600 8100
+F 0 "R203" V 1680 8100 50  0000 C CNN
+F 1 "1k" V 1600 8100 50  0000 C CNN
+F 4 "Panasonic" H 900 8100 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ102V" H 900 8100 60  0001 C CNN "Part#"
+F 6 "RES 1.0K OHM 1/10W 5% 0603 SMD" H 900 8100 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ102V/P1.0KGCT-ND/134874" V 900 8100 60  0001 C CNN "Field7"
+	1    1600 8100
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR045
+U 1 1 50EF11FD
+P 1600 7800
+F 0 "#PWR045" H 1600 7800 30  0001 C CNN
+F 1 "GND" H 1600 7730 30  0001 C CNN
+	1    1600 7800
+	-1   0    0    1   
+$EndComp
+Text Label 1600 8450 3    60   ~ 0
+LED3
+Text GLabel 1700 8450 3    39   Input ~ 0
+PHY0_PHYADDR2
+$Comp
+L R R205
+U 1 1 50EF1209
+P 1950 8100
+F 0 "R205" V 2030 8100 50  0000 C CNN
+F 1 "1k" V 1950 8100 50  0000 C CNN
+F 4 "Panasonic" H 900 8100 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ102V" H 900 8100 60  0001 C CNN "Part#"
+F 6 "RES 1.0K OHM 1/10W 5% 0603 SMD" H 900 8100 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ102V/P1.0KGCT-ND/134874" V 900 8100 60  0001 C CNN "Field7"
+	1    1950 8100
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR046
+U 1 1 50F20C1C
+P 1950 7800
+F 0 "#PWR046" H 1950 7800 30  0001 C CNN
+F 1 "GND" H 1950 7730 30  0001 C CNN
+	1    1950 7800
+	-1   0    0    1   
+$EndComp
+Text Label 1950 8450 3    60   ~ 0
+LED4
+Text GLabel 2050 8450 3    39   Input ~ 0
+PHY0_PHYADDR3
+$Comp
+L R R206
+U 1 1 50F20C1D
+P 2300 8100
+F 0 "R206" V 2380 8100 50  0000 C CNN
+F 1 "1k" V 2300 8100 50  0000 C CNN
+F 4 "Panasonic" H 900 8100 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ102V" H 900 8100 60  0001 C CNN "Part#"
+F 6 "RES 1.0K OHM 1/10W 5% 0603 SMD" H 900 8100 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ102V/P1.0KGCT-ND/134874" V 900 8100 60  0001 C CNN "Field7"
+	1    2300 8100
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR047
+U 1 1 50EF1221
+P 2300 7800
+F 0 "#PWR047" H 2300 7800 30  0001 C CNN
+F 1 "GND" H 2300 7730 30  0001 C CNN
+	1    2300 7800
+	-1   0    0    1   
+$EndComp
+Text Label 2300 8450 3    60   ~ 0
+LED5
+Text GLabel 2400 8450 3    39   Input ~ 0
+PHY0_PHYADDR4
+$Comp
+L R_PACK8 RP201
+U 1 1 50EF1441
+P 1300 10200
+F 0 "RP201" H 1300 10650 40  0000 C CNN
+F 1 "220" H 1300 9750 40  0000 C CNN
+F 2 "1506" H 1300 10200 60  0001 C CNN
+F 4 "Panasonic" H 1300 10200 60  0001 C CNN "Manufacturer"
+F 5 "EXB-2HV221JV" H 1300 10200 60  0001 C CNN "Part#"
+F 6 "RES ARRAY 220 OHM 8 RES 1506" H 1300 10200 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/EXB-2HV221JV/Y1221CT-ND/285373" H 1300 10200 60  0001 C CNN "Field7"
+	1    1300 10200
+	1    0    0    -1  
+$EndComp
+Text Label 1000 10550 2    60   ~ 0
+LED1
+Text Label 1000 10450 2    60   ~ 0
+LED2
+Text Label 1000 10350 2    60   ~ 0
+LED3
+Text Label 1000 10250 2    60   ~ 0
+LED4
+Text Label 1000 10150 2    60   ~ 0
+LED5
+Text Label 1000 10050 2    60   ~ 0
+LED6
+Text Label 1600 10050 0    60   ~ 0
+LED6_D
+Text Label 1600 10150 0    60   ~ 0
+LED5_D
+Text Label 1600 10250 0    60   ~ 0
+LED4_D
+Text Label 1600 10350 0    60   ~ 0
+LED3_D
+Text Label 1600 10450 0    60   ~ 0
+LED2_D
+Text Label 1600 10550 0    60   ~ 0
+LED1_D
+NoConn ~ 1500 9950
+NoConn ~ 1500 9850
+NoConn ~ 1100 9850
+NoConn ~ 1100 9950
+Text Label 2100 9500 0    60   ~ 0
+DVDDH
+$Comp
+L LED D201
+U 1 1 50EF1FCB
+P 2300 9700
+F 0 "D201" H 2300 9800 50  0000 C CNN
+F 1 "PHY0_LINK10-YLW" H 2300 9600 50  0000 C CNN
+F 4 "Osram" H 2300 9700 60  0001 C CNN "Manufacturer"
+F 5 "LY Q976-P1S2-36" H 2300 9700 60  0001 C CNN "Part#"
+F 6 "LED CHIPLED 587NM YLW 0603 SMD" H 2300 9700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/LY%20Q976-P1S2-36/475-2558-1-ND/1802685" H 2300 9700 60  0001 C CNN "Field7"
+	1    2300 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D202
+U 1 1 50F20C23
+P 2300 10000
+F 0 "D202" H 2300 10100 50  0000 C CNN
+F 1 "PHY0_LINK100-GRN" H 2300 9900 50  0000 C CNN
+F 4 "Osram" H 2300 10000 60  0001 C CNN "Manufacturer"
+F 5 "LG Q971-KN-1" H 2300 10000 60  0001 C CNN "Part#"
+F 6 "LED CHIPLED 570NM GREEN 0603 SMD" H 2300 10000 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/LG%20Q971-KN-1/475-1409-1-ND/1802597" H 2300 10000 60  0001 C CNN "Field7"
+	1    2300 10000
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D203
+U 1 1 50F20C24
+P 2300 10300
+F 0 "D203" H 2300 10400 50  0000 C CNN
+F 1 "PHY0_LINK1000-BLUE" H 2300 10200 50  0000 C CNN
+F 4 "Osram" H 2300 10300 60  0001 C CNN "Manufacturer"
+F 5 "LB Q39G-L2N2-35-1" H 2300 10300 60  0001 C CNN "Part#"
+F 6 "LED CHIPLED BLUE 470NM 0603 SMD" H 2300 10300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/LB%20Q39G-L2N2-35-1/475-2816-1-ND/2176355" H 2300 10300 60  0001 C CNN "Field7"
+	1    2300 10300
+	1    0    0    -1  
+$EndComp
+Text Label 2550 11200 0    60   ~ 0
+LED1_D
+Text Label 2550 10900 0    60   ~ 0
+LED2_D
+Text Label 2550 10600 0    60   ~ 0
+LED3_D
+Text Label 2550 10300 0    60   ~ 0
+LED4_D
+Text Label 2550 10000 0    60   ~ 0
+LED5_D
+Text Label 2550 9700 0    60   ~ 0
+LED6_D
+Text GLabel 2750 8450 3    39   Input ~ 0
+PHY0_RXDV
+$Comp
+L R R207
+U 1 1 50F20C28
+P 2750 8100
+F 0 "R207" V 2830 8100 50  0000 C CNN
+F 1 "1k" V 2750 8100 50  0000 C CNN
+F 4 "Panasonic" H 900 8100 60  0001 C CNN "Manufacturer"
+F 5 "ERJ-3GEYJ102V" H 900 8100 60  0001 C CNN "Part#"
+F 6 "RES 1.0K OHM 1/10W 5% 0603 SMD" H 900 8100 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/ERJ-3GEYJ102V/P1.0KGCT-ND/134874" V 900 8100 60  0001 C CNN "Field7"
+	1    2750 8100
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR048
+U 1 1 50EF325A
+P 2750 7800
+F 0 "#PWR048" H 2750 7800 30  0001 C CNN
+F 1 "GND" H 2750 7730 30  0001 C CNN
+	1    2750 7800
+	-1   0    0    1   
+$EndComp
+Text Notes 2550 7600 0    60   ~ 0
+CLK125_EN
+Text Notes 650  7350 0    79   ~ 0
+Strapping pins
+Text Notes 700  9450 0    79   ~ 0
+Status LED
+Text GLabel 18950 4300 2    39   Input ~ 0
+PHY0_GM_TXD7
+Text GLabel 18950 4400 2    39   Input ~ 0
+PHY0_GM_TXD6
+Text GLabel 18950 4500 2    39   Input ~ 0
+PHY0_GM_TXD5
+Text GLabel 18950 4600 2    39   Input ~ 0
+PHY0_GM_TXD4
+Text GLabel 18950 4700 2    39   Input ~ 0
+PHY0_GM_TXD3
+Text GLabel 18950 4800 2    39   Input ~ 0
+PHY0_GM_TXD2
+Text GLabel 18950 4900 2    39   Input ~ 0
+PHY0_GM_TXD1
+Text GLabel 18950 5000 2    39   Input ~ 0
+PHY0_GM_TXD0
+Text GLabel 18950 3850 2    39   Input ~ 0
+PHY0_GM_GTK_CLK
+Text GLabel 18950 2650 2    39   Input ~ 0
+PHY0_GM_RXD7
+Text GLabel 18950 2750 2    39   Input ~ 0
+PHY0_GM_RXD6
+Text GLabel 18950 2850 2    39   Input ~ 0
+PHY0_GM_RXD5
+Text GLabel 18950 2950 2    39   Input ~ 0
+PHY0_GM_RXD4
+Text GLabel 18950 3050 2    39   Input ~ 0
+PHY0_GM_RXD3
+Text GLabel 18950 3150 2    39   Input ~ 0
+PHY0_GM_RXD2
+Text GLabel 18950 3250 2    39   Input ~ 0
+PHY0_GM_RXD1
+Text GLabel 18950 3350 2    39   Input ~ 0
+PHY0_GM_RXD0
+Text GLabel 18350 5200 0    39   Input ~ 0
+PHY0_CLK125_NDO
+Text GLabel 18950 5200 2    39   Input ~ 0
+PHY0_CLK125_NDO
+Text GLabel 18350 5300 0    39   Input ~ 0
+PHY0_PHYADDR0
+Text GLabel 18350 5400 0    39   Input ~ 0
+PHY0_PHYADDR1
+Text GLabel 18350 5500 0    39   Input ~ 0
+PHY0_PHYADDR2
+Text GLabel 18350 5600 0    39   Input ~ 0
+PHY0_PHYADDR3
+Text GLabel 18350 5700 0    39   Input ~ 0
+PHY0_PHYADDR4
+Text GLabel 18350 5800 0    39   Input ~ 0
+PHY0_RXDV
+Text GLabel 18950 5300 2    39   Input ~ 0
+PHY0_PHYADDR0
+Text GLabel 18950 5400 2    39   Input ~ 0
+PHY0_PHYADDR1
+Text GLabel 18950 5500 2    39   Input ~ 0
+PHY0_PHYADDR2
+Text GLabel 18950 5600 2    39   Input ~ 0
+PHY0_PHYADDR3
+Text GLabel 18950 5700 2    39   Input ~ 0
+PHY0_PHYADDR4
+Text GLabel 18950 5800 2    39   Input ~ 0
+PHY0_RXDV
+Text GLabel 18350 5900 0    39   Input ~ 0
+PHY0_TX_CLK
+Text GLabel 18950 5900 2    39   Input ~ 0
+PHY0_TX_CLK
+Text Notes 18950 1050 0    79   ~ 0
+FPGA Interface
+Text GLabel 18350 6000 0    39   Input ~ 0
+PHY0_HW_RST
+Text GLabel 18950 6000 2    39   Input ~ 0
+PHY0_HW_RST
+Text GLabel 8300 6050 3    39   Input ~ 0
+PHY0_TXRXP_A
+Text GLabel 8400 6050 3    39   Input ~ 0
+PHY0_TXRXM_A
+Text GLabel 9300 6050 3    39   Input ~ 0
+PHY0_TXRXP_B
+Text GLabel 9400 6050 3    39   Input ~ 0
+PHY0_TXRXM_B
+Text GLabel 9600 6050 3    39   Input ~ 0
+PHY0_TXRXP_C
+Text GLabel 9700 6050 3    39   Input ~ 0
+PHY0_TXRXM_C
+Text GLabel 10600 6000 3    39   Input ~ 0
+PHY0_TXRXP_D
+Text GLabel 10700 6000 3    39   Input ~ 0
+PHY0_TXRXM_D
+Text Label 3800 8200 1    60   ~ 0
+AVDDL_PMOS
+$Comp
+L CP1 C204
+U 1 1 50EF459E
+P 3800 8550
+F 0 "C204" H 3850 8650 50  0000 L CNN
+F 1 "47uF" H 3850 8450 50  0000 L CNN
+F 2 "2312" H 1150 1650 60  0001 C CNN
+F 4 "Kemet" H 1150 1650 60  0001 C CNN "Manufacturer"
+F 5 "T491C476K016ZT" H 1150 1650 60  0001 C CNN "Part#"
+F 6 "CAP TANT 47UF 16V 10% 2312" H 1150 1650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491C476K016ZT/495-2247-1-ND/770413" H 1150 1650 60  0001 C CNN "Field7"
+	1    3800 8550
+	1    0    0    -1  
+$EndComp
+$Comp
+L FBEAD FB204
+U 1 1 50EF4683
+P 5200 8250
+F 0 "FB204" H 5150 8350 60  0000 C CNN
+F 1 "FBEAD" H 5200 8100 60  0000 C CNN
+F 4 "TDK" H 5200 7600 60  0001 C CNN "Manufacturer"
+F 5 "MPZ1608S101A" H 5200 7600 60  0001 C CNN "Part#"
+F 6 "FERRITE CHIP 100 OHM 3A 0603" H 5200 7600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894" H 5200 7600 60  0001 C CNN "Field7"
+	1    5200 8250
+	1    0    0    -1  
+$EndComp
+$Comp
+L FBEAD FB205
+U 1 1 50EF4690
+P 5200 8900
+F 0 "FB205" H 5150 9000 60  0000 C CNN
+F 1 "FBEAD" H 5200 8750 60  0000 C CNN
+F 4 "TDK" H 5200 7600 60  0001 C CNN "Manufacturer"
+F 5 "MPZ1608S101A" H 5200 7600 60  0001 C CNN "Part#"
+F 6 "FERRITE CHIP 100 OHM 3A 0603" H 5200 7600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894" H 5200 7600 60  0001 C CNN "Field7"
+	1    5200 8900
+	1    0    0    -1  
+$EndComp
+$Comp
+L FBEAD FB203
+U 1 1 50EF4696
+P 5200 7600
+F 0 "FB203" H 5150 7700 60  0000 C CNN
+F 1 "FBEAD" H 5200 7450 60  0000 C CNN
+F 4 "TDK" H 5200 7600 60  0001 C CNN "Manufacturer"
+F 5 "MPZ1608S101A" H 5200 7600 60  0001 C CNN "Part#"
+F 6 "FERRITE CHIP 100 OHM 3A 0603" H 5200 7600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894" H 5200 7600 60  0001 C CNN "Field7"
+	1    5200 7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C212
+U 1 1 50F20C2E
+P 5750 9100
+F 0 "C212" H 5800 9200 50  0000 L CNN
+F 1 "10uF" H 5800 9000 50  0000 L CNN
+F 2 "1206" H 5750 7800 60  0001 C CNN
+F 4 "Kemet" H 5750 7800 60  0001 C CNN "Manufacturer"
+F 5 "T491A106K016ZT" H 5750 7800 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 16V 10% 1206" H 5750 7800 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491A106K016ZT/495-2236-1-ND/770402" H 5750 7800 60  0001 C CNN "Field7"
+	1    5750 9100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C215
+U 1 1 50F20C2F
+P 6200 9100
+F 0 "C215" H 6250 9200 50  0000 L CNN
+F 1 "0.1uF" H 6250 9000 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    6200 9100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR049
+U 1 1 50F20C30
+P 5750 9400
+F 0 "#PWR049" H 5750 9400 30  0001 C CNN
+F 1 "GND" H 5750 9330 30  0001 C CNN
+	1    5750 9400
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C211
+U 1 1 50EF4702
+P 5750 7800
+F 0 "C211" H 5800 7900 50  0000 L CNN
+F 1 "10uF" H 5800 7700 50  0000 L CNN
+F 2 "1206" H 5750 7800 60  0001 C CNN
+F 4 "Kemet" H 5750 7800 60  0001 C CNN "Manufacturer"
+F 5 "T491A106K016ZT" H 5750 7800 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 16V 10% 1206" H 5750 7800 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491A106K016ZT/495-2236-1-ND/770402" H 5750 7800 60  0001 C CNN "Field7"
+	1    5750 7800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C214
+U 1 1 50EF4714
+P 6200 7800
+F 0 "C214" H 6250 7900 50  0000 L CNN
+F 1 "0.1uF" H 6250 7700 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    6200 7800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR050
+U 1 1 50EF471A
+P 5750 8100
+F 0 "#PWR050" H 5750 8100 30  0001 C CNN
+F 1 "GND" H 5750 8030 30  0001 C CNN
+	1    5750 8100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR051
+U 1 1 50F20C34
+P 3800 8850
+F 0 "#PWR051" H 3800 8850 30  0001 C CNN
+F 1 "GND" H 3800 8780 30  0001 C CNN
+	1    3800 8850
+	1    0    0    -1  
+$EndComp
+Text Label 6550 7600 0    60   ~ 0
+AVDDL
+Text Label 6600 8250 0    60   ~ 0
+AVDD_PLL
+Text Label 6600 8900 0    60   ~ 0
+DVDDL
+$Comp
+L CP1 C219
+U 1 1 50EF5BC1
+P 7400 8350
+F 0 "C219" H 7450 8450 50  0000 L CNN
+F 1 "47uF" H 7450 8250 50  0000 L CNN
+F 2 "2312" H 1150 1650 60  0001 C CNN
+F 4 "Kemet" H 1150 1650 60  0001 C CNN "Manufacturer"
+F 5 "T491C476K016ZT" H 1150 1650 60  0001 C CNN "Part#"
+F 6 "CAP TANT 47UF 16V 10% 2312" H 1150 1650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491C476K016ZT/495-2247-1-ND/770413" H 1150 1650 60  0001 C CNN "Field7"
+	1    7400 8350
+	1    0    0    -1  
+$EndComp
+Text Label 7400 7700 1    60   ~ 0
+AVDDL
+$Comp
+L C C222
+U 1 1 50EF5BC8
+P 7850 8350
+F 0 "C222" H 7900 8450 50  0000 L CNN
+F 1 "10nF" H 7900 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    7850 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C224
+U 1 1 50EF5BCE
+P 8250 8350
+F 0 "C224" H 8300 8450 50  0000 L CNN
+F 1 "10nF" H 8300 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    8250 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR052
+U 1 1 50EF5BDE
+P 7400 9000
+F 0 "#PWR052" H 7400 9000 30  0001 C CNN
+F 1 "GND" H 7400 8930 30  0001 C CNN
+	1    7400 9000
+	1    0    0    -1  
+$EndComp
+Text Notes 7550 8050 0    39   ~ 0
+Pins 12,13 and 25,26
+$Comp
+L CP1 C226
+U 1 1 50EF63B9
+P 8650 8350
+F 0 "C226" H 8700 8450 50  0000 L CNN
+F 1 "10uF" H 8700 8250 50  0000 L CNN
+F 2 "1206" H 5750 7800 60  0001 C CNN
+F 4 "Kemet" H 5750 7800 60  0001 C CNN "Manufacturer"
+F 5 "T491A106K016ZT" H 5750 7800 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 16V 10% 1206" H 5750 7800 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491A106K016ZT/495-2236-1-ND/770402" H 5750 7800 60  0001 C CNN "Field7"
+	1    8650 8350
+	1    0    0    -1  
+$EndComp
+Text Label 8650 7700 1    60   ~ 0
+AVDD_PLL
+$Comp
+L C C228
+U 1 1 50F20C3A
+P 9100 8350
+F 0 "C228" H 9150 8450 50  0000 L CNN
+F 1 "0.1uF" H 9150 8250 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    9100 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C229
+U 1 1 50EF63C6
+P 9500 8350
+F 0 "C229" H 9550 8450 50  0000 L CNN
+F 1 "10nF" H 9550 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    9500 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR053
+U 1 1 50F20C3C
+P 8650 9000
+F 0 "#PWR053" H 8650 9000 30  0001 C CNN
+F 1 "GND" H 8650 8930 30  0001 C CNN
+	1    8650 9000
+	1    0    0    -1  
+$EndComp
+Text Notes 8800 8050 0    39   ~ 0
+Pins 120, 121
+$Comp
+L CP1 C231
+U 1 1 50EF63F6
+P 9900 8350
+F 0 "C231" H 9950 8450 50  0000 L CNN
+F 1 "47uF" H 9950 8250 50  0000 L CNN
+F 2 "2312" H 1150 1650 60  0001 C CNN
+F 4 "Kemet" H 1150 1650 60  0001 C CNN "Manufacturer"
+F 5 "T491C476K016ZT" H 1150 1650 60  0001 C CNN "Part#"
+F 6 "CAP TANT 47UF 16V 10% 2312" H 1150 1650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491C476K016ZT/495-2247-1-ND/770413" H 1150 1650 60  0001 C CNN "Field7"
+	1    9900 8350
+	1    0    0    -1  
+$EndComp
+Text Label 9900 7700 1    60   ~ 0
+DVDDL
+$Comp
+L C C233
+U 1 1 50EF63FD
+P 10350 8350
+F 0 "C233" H 10400 8450 50  0000 L CNN
+F 1 "10nF" H 10400 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    10350 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C235
+U 1 1 50EF6403
+P 10750 8350
+F 0 "C235" H 10800 8450 50  0000 L CNN
+F 1 "10nF" H 10800 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    10750 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR054
+U 1 1 50F20C40
+P 9900 9000
+F 0 "#PWR054" H 9900 9000 30  0001 C CNN
+F 1 "GND" H 9900 8930 30  0001 C CNN
+	1    9900 9000
+	1    0    0    -1  
+$EndComp
+Text Notes 10050 8050 0    39   ~ 0
+Pins 39, 49, 56, (74, 75), (86, 87), (103, 105), 114
+$Comp
+L C C237
+U 1 1 50EF642F
+P 11150 8350
+F 0 "C237" H 11200 8450 50  0000 L CNN
+F 1 "10nF" H 11200 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    11150 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C239
+U 1 1 50EF6435
+P 11550 8350
+F 0 "C239" H 11600 8450 50  0000 L CNN
+F 1 "10nF" H 11600 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    11550 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C242
+U 1 1 50EF643B
+P 11950 8350
+F 0 "C242" H 12000 8450 50  0000 L CNN
+F 1 "10nF" H 12000 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    11950 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C245
+U 1 1 50EF6441
+P 12350 8350
+F 0 "C245" H 12400 8450 50  0000 L CNN
+F 1 "10nF" H 12400 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    12350 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C246
+U 1 1 50EF6447
+P 12750 8350
+F 0 "C246" H 12800 8450 50  0000 L CNN
+F 1 "10nF" H 12800 8250 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    12750 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L FBEAD FB201
+U 1 1 50F20C46
+P 4100 10100
+F 0 "FB201" H 4050 10200 60  0000 C CNN
+F 1 "FBEAD" H 4100 9950 60  0000 C CNN
+F 4 "TDK" H 5200 7600 60  0001 C CNN "Manufacturer"
+F 5 "MPZ1608S101A" H 5200 7600 60  0001 C CNN "Part#"
+F 6 "FERRITE CHIP 100 OHM 3A 0603" H 5200 7600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894" H 5200 7600 60  0001 C CNN "Field7"
+	1    4100 10100
+	1    0    0    -1  
+$EndComp
+$Comp
+L +2.5V #PWR055
+U 1 1 50F20C47
+P 3800 10100
+F 0 "#PWR055" H 3800 10050 20  0001 C CNN
+F 1 "+2.5V" H 3800 10200 30  0000 C CNN
+	1    3800 10100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CP1 C205
+U 1 1 50F20C48
+P 4550 10300
+F 0 "C205" H 4600 10400 50  0000 L CNN
+F 1 "10uF" H 4600 10200 50  0000 L CNN
+F 2 "1206" H 5750 7800 60  0001 C CNN
+F 4 "Kemet" H 5750 7800 60  0001 C CNN "Manufacturer"
+F 5 "T491A106K016ZT" H 5750 7800 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 16V 10% 1206" H 5750 7800 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491A106K016ZT/495-2236-1-ND/770402" H 5750 7800 60  0001 C CNN "Field7"
+	1    4550 10300
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C207
+U 1 1 50EF7351
+P 4950 10300
+F 0 "C207" H 5000 10400 50  0000 L CNN
+F 1 "0.1uF" H 5000 10200 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    4950 10300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR056
+U 1 1 50EF7357
+P 4550 10600
+F 0 "#PWR056" H 4550 10600 30  0001 C CNN
+F 1 "GND" H 4550 10530 30  0001 C CNN
+	1    4550 10600
+	1    0    0    -1  
+$EndComp
+Text Label 5200 10100 0    60   ~ 0
+DVDDH
+$Comp
+L +3.3V #PWR057
+U 1 1 50EF7D2B
+P 3800 10850
+F 0 "#PWR057" H 3800 10810 30  0001 C CNN
+F 1 "+3.3V" H 3800 10960 30  0000 C CNN
+	1    3800 10850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L FBEAD FB202
+U 1 1 50F20C4C
+P 4100 10850
+F 0 "FB202" H 4050 10950 60  0000 C CNN
+F 1 "FBEAD" H 4100 10700 60  0000 C CNN
+F 4 "TDK" H 5200 7600 60  0001 C CNN "Manufacturer"
+F 5 "MPZ1608S101A" H 5200 7600 60  0001 C CNN "Part#"
+F 6 "FERRITE CHIP 100 OHM 3A 0603" H 5200 7600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894" H 5200 7600 60  0001 C CNN "Field7"
+	1    4100 10850
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C206
+U 1 1 50EF7D46
+P 4550 11050
+F 0 "C206" H 4600 11150 50  0000 L CNN
+F 1 "10uF" H 4600 10950 50  0000 L CNN
+F 2 "1206" H 5750 7800 60  0001 C CNN
+F 4 "Kemet" H 5750 7800 60  0001 C CNN "Manufacturer"
+F 5 "T491A106K016ZT" H 5750 7800 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 16V 10% 1206" H 5750 7800 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491A106K016ZT/495-2236-1-ND/770402" H 5750 7800 60  0001 C CNN "Field7"
+	1    4550 11050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C208
+U 1 1 50EF7D4C
+P 4950 11050
+F 0 "C208" H 5000 11150 50  0000 L CNN
+F 1 "0.1uF" H 5000 10950 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    4950 11050
+	1    0    0    -1  
+$EndComp
+Text Label 5200 10850 0    60   ~ 0
+AVDDH
+$Comp
+L GND #PWR058
+U 1 1 50EF7D5F
+P 4550 11350
+F 0 "#PWR058" H 4550 11350 30  0001 C CNN
+F 1 "GND" H 4550 11280 30  0001 C CNN
+	1    4550 11350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C213
+U 1 1 50EF876A
+P 5750 10750
+F 0 "C213" H 5800 10850 50  0000 L CNN
+F 1 "47uF" H 5800 10650 50  0000 L CNN
+F 2 "2312" H 1150 1650 60  0001 C CNN
+F 4 "Kemet" H 1150 1650 60  0001 C CNN "Manufacturer"
+F 5 "T491C476K016ZT" H 1150 1650 60  0001 C CNN "Part#"
+F 6 "CAP TANT 47UF 16V 10% 2312" H 1150 1650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491C476K016ZT/495-2247-1-ND/770413" H 1150 1650 60  0001 C CNN "Field7"
+	1    5750 10750
+	1    0    0    -1  
+$EndComp
+Text Label 5750 10100 1    60   ~ 0
+DVDDH
+$Comp
+L C C216
+U 1 1 50EF8771
+P 6200 10750
+F 0 "C216" H 6250 10850 50  0000 L CNN
+F 1 "10nF" H 6250 10650 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    6200 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C217
+U 1 1 50F20C52
+P 6600 10750
+F 0 "C217" H 6650 10850 50  0000 L CNN
+F 1 "10nF" H 6650 10650 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    6600 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR059
+U 1 1 50F20C53
+P 5750 11400
+F 0 "#PWR059" H 5750 11400 30  0001 C CNN
+F 1 "GND" H 5750 11330 30  0001 C CNN
+	1    5750 11400
+	1    0    0    -1  
+$EndComp
+Text Notes 5900 10450 0    39   ~ 0
+Pins 46, 57, 63, (68, 69), (81, 82), 92, 100, 106
+$Comp
+L C C218
+U 1 1 50F20C54
+P 7000 10750
+F 0 "C218" H 7050 10850 50  0000 L CNN
+F 1 "10nF" H 7050 10650 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    7000 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C220
+U 1 1 50EF8790
+P 7400 10750
+F 0 "C220" H 7450 10850 50  0000 L CNN
+F 1 "10nF" H 7450 10650 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    7400 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C221
+U 1 1 50EF8796
+P 7800 10750
+F 0 "C221" H 7850 10850 50  0000 L CNN
+F 1 "10nF" H 7850 10650 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    7800 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C223
+U 1 1 50EF879C
+P 8200 10750
+F 0 "C223" H 8250 10850 50  0000 L CNN
+F 1 "10nF" H 8250 10650 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    8200 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C225
+U 1 1 50F20C58
+P 8600 10750
+F 0 "C225" H 8650 10850 50  0000 L CNN
+F 1 "10nF" H 8650 10650 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    8600 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C227
+U 1 1 50EF87B3
+P 9000 10750
+F 0 "C227" H 9050 10850 50  0000 L CNN
+F 1 "10nF" H 9050 10650 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    9000 10750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C230
+U 1 1 50EF8BA4
+P 9600 10650
+F 0 "C230" H 9650 10750 50  0000 L CNN
+F 1 "47uF" H 9650 10550 50  0000 L CNN
+F 2 "2312" H 1150 1650 60  0001 C CNN
+F 4 "Kemet" H 1150 1650 60  0001 C CNN "Manufacturer"
+F 5 "T491C476K016ZT" H 1150 1650 60  0001 C CNN "Part#"
+F 6 "CAP TANT 47UF 16V 10% 2312" H 1150 1650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491C476K016ZT/495-2247-1-ND/770413" H 1150 1650 60  0001 C CNN "Field7"
+	1    9600 10650
+	1    0    0    -1  
+$EndComp
+Text Label 9600 10000 1    60   ~ 0
+AVDDH
+$Comp
+L C C232
+U 1 1 50EF8BAB
+P 10050 10650
+F 0 "C232" H 10100 10750 50  0000 L CNN
+F 1 "10nF" H 10100 10550 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    10050 10650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C234
+U 1 1 50EF8BB1
+P 10450 10650
+F 0 "C234" H 10500 10750 50  0000 L CNN
+F 1 "10nF" H 10500 10550 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    10450 10650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR060
+U 1 1 50F20C5D
+P 9600 11300
+F 0 "#PWR060" H 9600 11300 30  0001 C CNN
+F 1 "GND" H 9600 11230 30  0001 C CNN
+	1    9600 11300
+	1    0    0    -1  
+$EndComp
+Text Notes 9750 10350 0    39   ~ 0
+Pins 9, 16, 22, (29, 32), (122, 125), 128
+$Comp
+L C C236
+U 1 1 50F20C5E
+P 10850 10650
+F 0 "C236" H 10900 10750 50  0000 L CNN
+F 1 "10nF" H 10900 10550 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    10850 10650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C238
+U 1 1 50F20C5F
+P 11250 10650
+F 0 "C238" H 11300 10750 50  0000 L CNN
+F 1 "10nF" H 11300 10550 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    11250 10650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C240
+U 1 1 50F20C60
+P 11650 10650
+F 0 "C240" H 11700 10750 50  0000 L CNN
+F 1 "10nF" H 11700 10550 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    11650 10650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C243
+U 1 1 50EF8BD6
+P 12050 10650
+F 0 "C243" H 12100 10750 50  0000 L CNN
+F 1 "10nF" H 12100 10550 50  0000 L CNN
+F 4 "TDK" H 2800 1700 60  0001 C CNN "Manufacturer"
+F 5 "C1608X7R1C103K" H 2800 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 10000PF 16V 10% X7R 0603" H 2800 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608X7R1C103K/445-6855-1-ND/2619217" H 2800 1700 60  0001 C CNN "Field7"
+	1    12050 10650
+	1    0    0    -1  
+$EndComp
+$Comp
+L MIC5207-2.5YM5 U203
+U 1 1 50EFA11A
+P 13150 9450
+F 0 "U203" H 12900 9750 60  0000 C CNN
+F 1 "MIC5207-2.5YM5" H 13150 9650 47  0000 C CNN
+F 2 "SOT23-5" H 13150 9450 60  0001 C CNN
+F 4 "Micrel" H 13150 9450 60  0001 C CNN "Manufacturer"
+F 5 "MIC5207-2.5YM5 TR" H 13150 9450 60  0001 C CNN "Part#"
+F 6 "IC REG LDO 2.5V .18A SOT23-5" H 13150 9450 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MIC5207-2.5YM5%20TR/576-1266-1-ND/771893" H 13150 9450 60  0001 C CNN "Field7"
+	1    13150 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR061
+U 1 1 50EFA280
+P 11800 9200
+F 0 "#PWR061" H 11800 9160 30  0001 C CNN
+F 1 "+3.3V" H 11800 9310 30  0000 C CNN
+	1    11800 9200
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C241
+U 1 1 50F20C64
+P 11800 9450
+F 0 "C241" H 11850 9550 50  0000 L CNN
+F 1 "10uF" H 11850 9350 50  0000 L CNN
+F 2 "1206" H 5750 7800 60  0001 C CNN
+F 4 "Kemet" H 5750 7800 60  0001 C CNN "Manufacturer"
+F 5 "T491A106K016ZT" H 5750 7800 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 16V 10% 1206" H 5750 7800 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491A106K016ZT/495-2236-1-ND/770402" H 5750 7800 60  0001 C CNN "Field7"
+	1    11800 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C244
+U 1 1 50EFA28D
+P 12200 9450
+F 0 "C244" H 12250 9550 50  0000 L CNN
+F 1 "0.1uF" H 12250 9350 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    12200 9450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR062
+U 1 1 50EFA3F9
+P 11800 9750
+F 0 "#PWR062" H 11800 9750 30  0001 C CNN
+F 1 "GND" H 11800 9680 30  0001 C CNN
+	1    11800 9750
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C247
+U 1 1 50EFAB22
+P 13700 9750
+F 0 "C247" H 13750 9850 50  0000 L CNN
+F 1 "470pF" H 13750 9650 50  0000 L CNN
+F 4 "TDK" H 13700 9750 60  0001 C CNN "Manufacturer"
+F 5 "C1608C0G2A471J080AA" H 13700 9750 60  0001 C CNN "Part#"
+F 6 "CAP CER 470PF 100V 5% NP0 0603" H 13700 9750 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/C1608C0G2A471J080AA/445-2310-1-ND/789819" H 13700 9750 60  0001 C CNN "Field7"
+	1    13700 9750
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C248
+U 1 1 50F20C68
+P 14350 9550
+F 0 "C248" H 14400 9650 50  0000 L CNN
+F 1 "10uF" H 14400 9450 50  0000 L CNN
+F 2 "1206" H 5750 7800 60  0001 C CNN
+F 4 "Kemet" H 5750 7800 60  0001 C CNN "Manufacturer"
+F 5 "T491A106K016ZT" H 5750 7800 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 16V 10% 1206" H 5750 7800 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/T491A106K016ZT/495-2236-1-ND/770402" H 5750 7800 60  0001 C CNN "Field7"
+	1    14350 9550
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C249
+U 1 1 50F20C69
+P 14750 9550
+F 0 "C249" H 14800 9650 50  0000 L CNN
+F 1 "0.1uF" H 14800 9450 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    14750 9550
+	1    0    0    -1  
+$EndComp
+$Comp
+L +2.5V #PWR063
+U 1 1 50F20C6A
+P 14750 9200
+F 0 "#PWR063" H 14750 9150 20  0001 C CNN
+F 1 "+2.5V" H 14750 9300 30  0000 C CNN
+	1    14750 9200
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR064
+U 1 1 50F20C6B
+P 13700 10000
+F 0 "#PWR064" H 13700 10000 30  0001 C CNN
+F 1 "GND" H 13700 9930 30  0001 C CNN
+	1    13700 10000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR065
+U 1 1 50F20C6C
+P 14750 9850
+F 0 "#PWR065" H 14750 9850 30  0001 C CNN
+F 1 "GND" H 14750 9780 30  0001 C CNN
+	1    14750 9850
+	1    0    0    -1  
+$EndComp
+Text Notes 3700 7400 0    79   ~ 0
+Power
+$Comp
+L BELFUSE-0826-1X1T-M1-F MAG201
+U 1 1 50F20C6D
+P 18150 8800
+F 0 "MAG201" H 18200 8950 60  0000 C CNN
+F 1 "BELFUSE-0826-1X1T-M1-F" V 17850 8500 60  0000 C CNN
+F 4 "Bel Fuse Inc" H 18150 8800 60  0001 C CNN "Manufacturer"
+F 5 "0826-1X1T-M1-F" H 18150 8800 60  0001 C CNN "Part#"
+F 6 "MAGJACK 1PORT GO/Y LEDS 1GBT POE" H 18150 8800 60  0001 C CNN "Description"
+	1    18150 8800
+	1    0    0    -1  
+$EndComp
+Text GLabel 17050 8400 0    39   Input ~ 0
+PHY0_TXRXP_A
+Text GLabel 17050 8600 0    39   Input ~ 0
+PHY0_TXRXM_A
+Text GLabel 17050 8800 0    39   Input ~ 0
+PHY0_TXRXP_B
+Text GLabel 17050 9000 0    39   Input ~ 0
+PHY0_TXRXM_B
+Text GLabel 17050 9200 0    39   Input ~ 0
+PHY0_TXRXP_C
+Text GLabel 17050 9400 0    39   Input ~ 0
+PHY0_TXRXM_C
+Text GLabel 17050 9600 0    39   Input ~ 0
+PHY0_TXRXP_D
+Text GLabel 17050 9800 0    39   Input ~ 0
+PHY0_TXRXM_D
+Text GLabel 19100 8700 2    39   Input ~ 0
+MAG_VC_1
+Text GLabel 19100 8600 2    39   Input ~ 0
+MAG_VC_2
+Text GLabel 19100 8500 2    39   Input ~ 0
+MAG_VC_3
+Text GLabel 19100 8400 2    39   Input ~ 0
+MAG_VC_4
+$Comp
+L C C250
+U 1 1 50EFDDA0
+P 16250 8500
+F 0 "C250" H 16300 8600 50  0000 L CNN
+F 1 "0.1uF" H 16300 8400 50  0000 L CNN
+F 4 "0805" H 16250 8500 60  0001 C CNN "Description"
+	1    16250 8500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C251
+U 1 1 50EFDDCB
+P 16250 8900
+F 0 "C251" H 16300 9000 50  0000 L CNN
+F 1 "0.1uF" H 16300 8800 50  0000 L CNN
+F 4 "0805" H 16250 8900 60  0001 C CNN "Description"
+	1    16250 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C252
+U 1 1 50F20C70
+P 16250 9300
+F 0 "C252" H 16300 9400 50  0000 L CNN
+F 1 "0.1uF" H 16300 9200 50  0000 L CNN
+F 4 "0805" H 16250 9300 60  0001 C CNN "Description"
+	1    16250 9300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C253
+U 1 1 50F20C71
+P 16250 9700
+F 0 "C253" H 16300 9800 50  0000 L CNN
+F 1 "0.1uF" H 16300 9600 50  0000 L CNN
+F 4 "0805" H 16250 9700 60  0001 C CNN "Description"
+	1    16250 9700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR066
+U 1 1 50F20C72
+P 16000 8500
+F 0 "#PWR066" H 16000 8500 30  0001 C CNN
+F 1 "GND" H 16000 8430 30  0001 C CNN
+	1    16000 8500
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR067
+U 1 1 50F20C73
+P 16000 8900
+F 0 "#PWR067" H 16000 8900 30  0001 C CNN
+F 1 "GND" H 16000 8830 30  0001 C CNN
+	1    16000 8900
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR068
+U 1 1 50F20C74
+P 16000 9300
+F 0 "#PWR068" H 16000 9300 30  0001 C CNN
+F 1 "GND" H 16000 9230 30  0001 C CNN
+	1    16000 9300
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR069
+U 1 1 50F20C75
+P 16000 9700
+F 0 "#PWR069" H 16000 9700 30  0001 C CNN
+F 1 "GND" H 16000 9630 30  0001 C CNN
+	1    16000 9700
+	0    1    1    0   
+$EndComp
+Text Notes 15950 7400 0    79   ~ 0
+RJ45 w/ integrated magnetics
+Wire Wire Line
+	11850 3550 12000 3550
+Wire Wire Line
+	11850 2850 12000 2850
+Wire Wire Line
+	7300 5050 7150 5050
+Wire Wire Line
+	7300 4250 7150 4250
+Wire Wire Line
+	7300 4050 7150 4050
+Wire Wire Line
+	7300 3650 7150 3650
+Wire Wire Line
+	7300 3250 7150 3250
+Wire Wire Line
+	7300 3150 7150 3150
+Wire Wire Line
+	7300 2750 7150 2750
+Wire Wire Line
+	11300 2050 11300 1900
+Wire Wire Line
+	10800 2050 10800 1900
+Wire Wire Line
+	10700 2050 10700 1900
+Wire Wire Line
+	10000 2050 10000 1900
+Wire Wire Line
+	9900 2050 9900 1900
+Wire Wire Line
+	9500 2050 9500 1900
+Wire Wire Line
+	9400 2050 9400 1900
+Wire Wire Line
+	8800 2050 8800 1900
+Wire Wire Line
+	7700 2050 7700 1900
+Wire Wire Line
+	8400 1900 8400 2050
+Wire Wire Line
+	6900 4950 7300 4950
+Wire Wire Line
+	6350 4950 6400 4950
+Wire Wire Line
+	6400 4650 7300 4650
+Connection ~ 6050 4250
+Wire Wire Line
+	5900 4850 6400 4850
+Wire Wire Line
+	6400 4850 6400 4750
+Wire Wire Line
+	6400 4750 7300 4750
+Connection ~ 6050 4850
+Wire Wire Line
+	5450 4850 5500 4850
+Wire Wire Line
+	5450 4250 5500 4250
+Wire Wire Line
+	6400 4250 6400 4650
+Wire Wire Line
+	5900 4250 6400 4250
+Wire Wire Line
+	1150 1850 1150 1950
+Wire Wire Line
+	1150 1200 1150 1450
+Wire Wire Line
+	1600 1350 1150 1350
+Connection ~ 1150 1350
+Wire Wire Line
+	1600 1350 1600 1450
+Wire Wire Line
+	1750 1200 1750 1450
+Wire Wire Line
+	1900 1450 1900 1350
+Wire Wire Line
+	1900 1350 2800 1350
+Wire Wire Line
+	2350 1350 2350 1500
+Wire Wire Line
+	2800 1200 2800 1500
+Connection ~ 2350 1350
+Connection ~ 2800 1350
+Wire Wire Line
+	2350 1900 2800 1900
+Wire Wire Line
+	2350 1900 2350 1950
+Connection ~ 1650 3700
+Wire Wire Line
+	1650 4300 1650 4350
+Wire Wire Line
+	7050 4150 7300 4150
+Wire Wire Line
+	7900 1900 7900 2050
+Wire Wire Line
+	8700 1900 8700 2050
+Wire Wire Line
+	9200 1900 9200 2050
+Wire Wire Line
+	9300 1900 9300 2050
+Wire Wire Line
+	9700 1900 9700 2050
+Wire Wire Line
+	9800 1900 9800 2050
+Wire Wire Line
+	10400 1900 10400 2050
+Wire Wire Line
+	10500 1900 10500 2050
+Wire Wire Line
+	12000 2750 11850 2750
+Wire Wire Line
+	12000 3350 11850 3350
+Wire Wire Line
+	12000 3450 11850 3450
+Wire Wire Line
+	12000 4150 11850 4150
+Wire Wire Line
+	12000 4450 11850 4450
+Wire Wire Line
+	12000 5150 11850 5150
+Wire Wire Line
+	10800 5600 10800 5750
+Wire Wire Line
+	10500 5600 10500 5750
+Wire Wire Line
+	10200 5600 10200 5750
+Wire Wire Line
+	10100 5600 10100 5750
+Wire Wire Line
+	9800 5600 9800 5750
+Wire Wire Line
+	9200 5600 9200 5750
+Wire Wire Line
+	8900 5600 8900 5750
+Wire Wire Line
+	8800 5600 8800 5750
+Wire Wire Line
+	8500 5600 8500 5750
+Wire Wire Line
+	7150 5150 7300 5150
+Wire Wire Line
+	7150 4550 7300 4550
+Wire Wire Line
+	7150 3750 7300 3750
+Wire Wire Line
+	7150 2950 7300 2950
+Wire Wire Line
+	7150 2850 7300 2850
+Wire Wire Line
+	7150 2650 7300 2650
+Wire Wire Line
+	7150 4850 7300 4850
+Wire Wire Line
+	7150 4350 7300 4350
+Wire Wire Line
+	7150 4450 7300 4450
+Wire Wire Line
+	6950 3850 7300 3850
+Wire Wire Line
+	1050 3700 1950 3700
+Wire Wire Line
+	7300 3050 6950 3050
+Wire Wire Line
+	11400 5600 11400 5750
+Wire Wire Line
+	11850 4550 12000 4550
+Wire Wire Line
+	11850 4650 12000 4650
+Wire Wire Line
+	11850 4750 12000 4750
+Wire Wire Line
+	11850 4850 12000 4850
+Wire Wire Line
+	12000 4250 11850 4250
+Wire Wire Line
+	11850 2650 12300 2650
+Wire Wire Line
+	10900 1300 10900 2050
+Wire Wire Line
+	10600 1300 10600 2050
+Wire Wire Line
+	10300 1300 10300 2050
+Wire Wire Line
+	10200 1300 10200 2050
+Wire Wire Line
+	10100 1300 10100 2050
+Wire Wire Line
+	9600 1300 9600 2050
+Wire Wire Line
+	9100 1300 9100 2050
+Wire Wire Line
+	9000 1300 9000 2050
+Wire Wire Line
+	7800 1550 7800 2050
+Wire Wire Line
+	8000 1900 8000 2050
+Wire Wire Line
+	8100 1000 8100 2050
+Wire Wire Line
+	8050 1050 8100 1050
+Connection ~ 8100 1050
+Wire Wire Line
+	7450 1050 7550 1050
+Wire Wire Line
+	8200 1750 8200 2050
+Wire Wire Line
+	8300 1750 8300 2050
+Wire Wire Line
+	8600 1600 8600 2050
+Wire Wire Line
+	8500 1750 8500 2050
+Wire Wire Line
+	7150 1700 7200 1700
+Wire Wire Line
+	7700 1700 7800 1700
+Connection ~ 7800 1700
+Wire Wire Line
+	8900 1750 8900 2050
+Wire Wire Line
+	11000 1900 11000 2050
+Wire Wire Line
+	11100 1900 11100 2050
+Wire Wire Line
+	11200 1800 11200 2050
+Wire Wire Line
+	11400 1800 11400 2050
+Wire Wire Line
+	12450 2950 11850 2950
+Wire Wire Line
+	12450 3050 11850 3050
+Wire Wire Line
+	11850 3150 12450 3150
+Wire Wire Line
+	12450 3250 11850 3250
+Wire Wire Line
+	11850 3650 12450 3650
+Wire Wire Line
+	12450 3750 11850 3750
+Wire Wire Line
+	11850 3850 12450 3850
+Wire Wire Line
+	12450 3950 11850 3950
+Wire Wire Line
+	11850 4050 11950 4050
+Wire Wire Line
+	11850 4350 11950 4350
+Wire Wire Line
+	11850 4950 11950 4950
+Wire Wire Line
+	11850 5050 11950 5050
+Wire Wire Line
+	10000 5600 10000 5700
+Wire Wire Line
+	9900 5600 9900 5700
+Wire Wire Line
+	9500 5600 9500 5700
+Wire Wire Line
+	9100 5600 9100 5700
+Wire Wire Line
+	9000 5600 9000 5700
+Wire Wire Line
+	8700 5600 8700 5700
+Wire Wire Line
+	8600 5600 8600 5700
+Wire Wire Line
+	10300 5600 10300 5700
+Wire Wire Line
+	10400 5600 10400 5700
+Wire Wire Line
+	18450 4300 18350 4300
+Wire Wire Line
+	18350 4400 18450 4400
+Wire Wire Line
+	18450 4500 18350 4500
+Wire Wire Line
+	18350 4600 18450 4600
+Wire Wire Line
+	18450 4700 18350 4700
+Wire Wire Line
+	18350 4800 18450 4800
+Wire Wire Line
+	18450 4900 18350 4900
+Wire Wire Line
+	18350 5000 18450 5000
+Wire Wire Line
+	18950 5000 18850 5000
+Wire Wire Line
+	18850 4900 18950 4900
+Wire Wire Line
+	18950 4800 18850 4800
+Wire Wire Line
+	18850 4700 18950 4700
+Wire Wire Line
+	18950 4600 18850 4600
+Wire Wire Line
+	18850 4500 18950 4500
+Wire Wire Line
+	18950 4400 18850 4400
+Wire Wire Line
+	18850 4300 18950 4300
+Wire Wire Line
+	18450 2650 18350 2650
+Wire Wire Line
+	18350 2750 18450 2750
+Wire Wire Line
+	18450 2850 18350 2850
+Wire Wire Line
+	18350 2950 18450 2950
+Wire Wire Line
+	18450 3050 18350 3050
+Wire Wire Line
+	18350 3150 18450 3150
+Wire Wire Line
+	18450 3250 18350 3250
+Wire Wire Line
+	18350 3350 18450 3350
+Wire Wire Line
+	18950 3350 18850 3350
+Wire Wire Line
+	18850 3250 18950 3250
+Wire Wire Line
+	18950 3150 18850 3150
+Wire Wire Line
+	18850 3050 18950 3050
+Wire Wire Line
+	18950 2950 18850 2950
+Wire Wire Line
+	18850 2850 18950 2850
+Wire Wire Line
+	18950 2750 18850 2750
+Wire Wire Line
+	18850 2650 18950 2650
+Wire Wire Line
+	18350 3650 18400 3650
+Wire Wire Line
+	18900 3650 18950 3650
+Wire Wire Line
+	18350 3850 18400 3850
+Wire Wire Line
+	18900 3850 18950 3850
+Wire Wire Line
+	18900 4050 18950 4050
+Wire Wire Line
+	18400 4050 18350 4050
+Wire Wire Line
+	18950 2000 18900 2000
+Wire Wire Line
+	18950 2200 18900 2200
+Wire Wire Line
+	18950 2400 18900 2400
+Wire Wire Line
+	18400 2400 18350 2400
+Wire Wire Line
+	18400 2200 18350 2200
+Wire Wire Line
+	18400 2000 18350 2000
+Wire Wire Line
+	18350 1350 18400 1350
+Wire Wire Line
+	18350 1550 18400 1550
+Wire Wire Line
+	18900 1550 18950 1550
+Wire Wire Line
+	18900 1350 18950 1350
+Wire Wire Line
+	900  7850 900  7800
+Wire Wire Line
+	900  8350 900  8450
+Wire Wire Line
+	1000 8450 1000 8350
+Wire Wire Line
+	1000 8350 900  8350
+Wire Wire Line
+	1250 7850 1250 7800
+Wire Wire Line
+	1250 8350 1250 8450
+Wire Wire Line
+	1350 8450 1350 8350
+Wire Wire Line
+	1350 8350 1250 8350
+Wire Wire Line
+	1600 7850 1600 7800
+Wire Wire Line
+	1600 8350 1600 8450
+Wire Wire Line
+	1700 8450 1700 8350
+Wire Wire Line
+	1700 8350 1600 8350
+Wire Wire Line
+	1950 7850 1950 7800
+Wire Wire Line
+	1950 8350 1950 8450
+Wire Wire Line
+	2050 8450 2050 8350
+Wire Wire Line
+	2050 8350 1950 8350
+Wire Wire Line
+	2300 7850 2300 7800
+Wire Wire Line
+	2300 8350 2300 8450
+Wire Wire Line
+	2400 8450 2400 8350
+Wire Wire Line
+	2400 8350 2300 8350
+Wire Wire Line
+	1500 10050 1600 10050
+Wire Wire Line
+	1600 10150 1500 10150
+Wire Wire Line
+	1500 10250 1600 10250
+Wire Wire Line
+	1600 10350 1500 10350
+Wire Wire Line
+	1500 10450 1600 10450
+Wire Wire Line
+	1600 10550 1500 10550
+Wire Wire Line
+	1100 10550 1000 10550
+Wire Wire Line
+	1000 10450 1100 10450
+Wire Wire Line
+	1100 10350 1000 10350
+Wire Wire Line
+	1000 10250 1100 10250
+Wire Wire Line
+	1100 10150 1000 10150
+Wire Wire Line
+	1000 10050 1100 10050
+Wire Wire Line
+	2100 9500 2100 11200
+Connection ~ 2100 9700
+Connection ~ 2100 10000
+Connection ~ 2100 10300
+Connection ~ 2100 10600
+Wire Wire Line
+	2500 9700 2550 9700
+Wire Wire Line
+	2500 10000 2550 10000
+Wire Wire Line
+	2500 10300 2550 10300
+Wire Wire Line
+	2500 10600 2550 10600
+Wire Wire Line
+	2500 10900 2550 10900
+Connection ~ 2100 10900
+Wire Wire Line
+	2500 11200 2550 11200
+Wire Notes Line
+	600  9300 2950 9300
+Wire Notes Line
+	2950 9300 2950 11350
+Wire Notes Line
+	2950 11350 600  11350
+Wire Notes Line
+	600  11350 600  9300
+Wire Notes Line
+	600  9100 600  7200
+Wire Wire Line
+	2750 7800 2750 7850
+Wire Wire Line
+	2750 8350 2750 8450
+Wire Notes Line
+	600  7200 3150 7200
+Wire Notes Line
+	3150 7200 3150 9100
+Wire Notes Line
+	3150 9100 600  9100
+Wire Wire Line
+	18350 5200 18950 5200
+Wire Wire Line
+	18350 5300 18950 5300
+Wire Wire Line
+	18950 5400 18350 5400
+Wire Wire Line
+	18350 5500 18950 5500
+Wire Wire Line
+	18950 5600 18350 5600
+Wire Wire Line
+	18350 5700 18950 5700
+Wire Wire Line
+	18950 5800 18350 5800
+Wire Wire Line
+	18950 5900 18350 5900
+Wire Notes Line
+	18650 1100 19750 1100
+Wire Notes Line
+	19750 1100 19750 6300
+Wire Wire Line
+	7000 3350 7300 3350
+Wire Wire Line
+	18950 6000 18350 6000
+Wire Wire Line
+	10700 5600 10700 6000
+Wire Wire Line
+	10600 5600 10600 6000
+Wire Wire Line
+	9700 5600 9700 6050
+Wire Wire Line
+	9600 5600 9600 6050
+Wire Wire Line
+	9400 5600 9400 6050
+Wire Wire Line
+	9300 5600 9300 6050
+Wire Wire Line
+	8400 5600 8400 6050
+Wire Wire Line
+	8300 5600 8300 6050
+Wire Wire Line
+	5000 7600 5000 8900
+Wire Wire Line
+	5450 8900 6600 8900
+Wire Wire Line
+	6200 9300 5750 9300
+Wire Wire Line
+	5750 9300 5750 9400
+Wire Wire Line
+	5450 7600 6550 7600
+Connection ~ 5750 7600
+Wire Wire Line
+	6200 8000 5750 8000
+Wire Wire Line
+	5750 8000 5750 8100
+Connection ~ 5000 8250
+Wire Wire Line
+	5000 8250 3800 8250
+Wire Wire Line
+	3800 8200 3800 8350
+Connection ~ 3800 8250
+Wire Wire Line
+	3800 8750 3800 8850
+Connection ~ 6200 7600
+Wire Wire Line
+	6600 8250 5450 8250
+Connection ~ 6200 8900
+Connection ~ 5750 8900
+Wire Wire Line
+	7400 7700 7400 8150
+Wire Wire Line
+	7400 8550 7400 9000
+Wire Wire Line
+	7400 8150 8250 8150
+Connection ~ 7850 8150
+Wire Wire Line
+	7400 8550 8250 8550
+Connection ~ 7850 8550
+Wire Wire Line
+	8650 7700 8650 8150
+Wire Wire Line
+	8650 8550 8650 9000
+Wire Wire Line
+	8650 8150 9500 8150
+Connection ~ 9100 8150
+Wire Wire Line
+	8650 8550 9500 8550
+Connection ~ 9100 8550
+Wire Wire Line
+	9900 7700 9900 8150
+Wire Wire Line
+	9900 8550 9900 9000
+Wire Wire Line
+	9900 8150 12750 8150
+Connection ~ 10350 8150
+Wire Wire Line
+	9900 8550 12750 8550
+Connection ~ 10350 8550
+Connection ~ 10750 8150
+Connection ~ 11150 8150
+Connection ~ 11550 8150
+Connection ~ 11950 8150
+Connection ~ 12350 8150
+Connection ~ 12350 8550
+Connection ~ 11950 8550
+Connection ~ 11550 8550
+Connection ~ 10750 8550
+Connection ~ 11150 8550
+Wire Wire Line
+	3800 10100 3900 10100
+Wire Wire Line
+	4350 10100 5200 10100
+Connection ~ 4550 10100
+Connection ~ 4950 10100
+Wire Wire Line
+	4950 10500 4550 10500
+Wire Wire Line
+	4550 10500 4550 10600
+Wire Wire Line
+	4550 11250 4550 11350
+Wire Wire Line
+	4550 11250 4950 11250
+Wire Wire Line
+	4350 10850 5200 10850
+Connection ~ 4950 10850
+Connection ~ 4550 10850
+Wire Wire Line
+	3900 10850 3800 10850
+Wire Wire Line
+	5750 10100 5750 10550
+Wire Wire Line
+	5750 10950 5750 11400
+Wire Wire Line
+	5750 10550 9000 10550
+Connection ~ 6200 10550
+Wire Wire Line
+	5750 10950 9000 10950
+Connection ~ 6200 10950
+Connection ~ 6600 10550
+Connection ~ 7000 10550
+Connection ~ 7400 10550
+Connection ~ 7800 10550
+Connection ~ 8200 10550
+Connection ~ 8200 10950
+Connection ~ 7800 10950
+Connection ~ 7400 10950
+Connection ~ 6600 10950
+Connection ~ 7000 10950
+Connection ~ 8600 10550
+Connection ~ 8600 10950
+Wire Wire Line
+	9600 10000 9600 10450
+Wire Wire Line
+	9600 10850 9600 11300
+Connection ~ 10050 10450
+Connection ~ 10050 10850
+Connection ~ 10450 10450
+Connection ~ 10850 10450
+Connection ~ 11250 10450
+Connection ~ 11650 10450
+Connection ~ 12050 10450
+Connection ~ 12050 10850
+Connection ~ 11650 10850
+Connection ~ 11250 10850
+Connection ~ 10450 10850
+Connection ~ 10850 10850
+Wire Wire Line
+	9600 10450 12050 10450
+Wire Wire Line
+	9600 10850 12050 10850
+Wire Wire Line
+	11800 9200 11800 9250
+Wire Wire Line
+	11800 9650 11800 9750
+Wire Wire Line
+	11800 9650 12550 9650
+Wire Wire Line
+	11800 9250 12600 9250
+Wire Wire Line
+	12600 9250 12600 9550
+Wire Wire Line
+	12600 9350 12750 9350
+Connection ~ 12200 9250
+Wire Wire Line
+	12550 9650 12550 9450
+Wire Wire Line
+	12550 9450 12750 9450
+Connection ~ 12200 9650
+Wire Wire Line
+	12600 9550 12750 9550
+Connection ~ 12600 9350
+Wire Wire Line
+	13550 9550 13700 9550
+Wire Wire Line
+	13700 9950 13700 10000
+Wire Wire Line
+	13550 9350 14750 9350
+Connection ~ 14350 9350
+Wire Wire Line
+	14750 9350 14750 9200
+Wire Wire Line
+	14350 9750 14750 9750
+Wire Wire Line
+	14750 9750 14750 9850
+Wire Wire Line
+	18950 8400 19100 8400
+Wire Wire Line
+	19100 8500 18950 8500
+Wire Wire Line
+	18950 8600 19100 8600
+Wire Wire Line
+	19100 8700 18950 8700
+Wire Wire Line
+	17050 8400 17200 8400
+Wire Wire Line
+	17200 8600 17050 8600
+Wire Wire Line
+	17050 8800 17200 8800
+Wire Wire Line
+	17200 9000 17050 9000
+Wire Wire Line
+	17050 9200 17200 9200
+Wire Wire Line
+	17200 9400 17050 9400
+Wire Wire Line
+	17050 9600 17200 9600
+Wire Wire Line
+	17200 9800 17050 9800
+Wire Wire Line
+	16050 8500 16000 8500
+Wire Wire Line
+	16050 8900 16000 8900
+Wire Wire Line
+	16050 9300 16000 9300
+Wire Wire Line
+	16050 9700 16000 9700
+Wire Wire Line
+	16450 9700 17200 9700
+Wire Wire Line
+	17200 9300 16450 9300
+Wire Wire Line
+	16450 8900 17200 8900
+Wire Wire Line
+	17200 8500 16450 8500
+Wire Notes Line
+	3550 7200 15250 7200
+Wire Notes Line
+	15250 7200 15250 11650
+Wire Notes Line
+	15250 11650 3550 11650
+Wire Notes Line
+	3550 11650 3550 7200
+Wire Notes Line
+	15750 7200 19800 7200
+Wire Notes Line
+	19800 7200 19800 10800
+Wire Notes Line
+	19800 10800 15750 10800
+Wire Notes Line
+	15750 10800 15750 7200
+Wire Wire Line
+	1650 3700 1650 3800
+Wire Wire Line
+	18950 6100 18350 6100
+Text Notes 1300 2250 0    79   ~ 0
+PCB 1x1 inch copper \nground heatsink
+$Comp
+L LED D204
+U 1 1 50F20C77
+P 2300 10600
+F 0 "D204" H 2300 10700 50  0000 C CNN
+F 1 "PHY0_DUPLEX-YLW" H 2300 10500 50  0000 C CNN
+F 4 "Osram" H 2300 10600 60  0001 C CNN "Manufacturer"
+F 5 "LY Q976-P1S2-36" H 2300 10600 60  0001 C CNN "Part#"
+F 6 "LED CHIPLED 587NM YLW 0603 SMD" H 2300 10600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/LY%20Q976-P1S2-36/475-2558-1-ND/1802685" H 2300 10600 60  0001 C CNN "Field7"
+	1    2300 10600
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D205
+U 1 1 50F20C78
+P 2300 10900
+F 0 "D205" H 2300 11000 50  0000 C CNN
+F 1 "PHY0_RX-GRN" H 2300 10800 50  0000 C CNN
+F 4 "Osram" H 2300 10900 60  0001 C CNN "Manufacturer"
+F 5 "LG Q971-KN-1" H 2300 10900 60  0001 C CNN "Part#"
+F 6 "LED CHIPLED 570NM GREEN 0603 SMD" H 2300 10900 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/LG%20Q971-KN-1/475-1409-1-ND/1802597" H 2300 10900 60  0001 C CNN "Field7"
+	1    2300 10900
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D206
+U 1 1 50F20C79
+P 2300 11200
+F 0 "D206" H 2300 11300 50  0000 C CNN
+F 1 "PHY0_TX-GRN" H 2300 11100 50  0000 C CNN
+F 4 "Osram" H 2300 11200 60  0001 C CNN "Manufacturer"
+F 5 "LG Q971-KN-1" H 2300 11200 60  0001 C CNN "Part#"
+F 6 "LED CHIPLED 570NM GREEN 0603 SMD" H 2300 11200 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/LG%20Q971-KN-1/475-1409-1-ND/1802597" H 2300 11200 60  0001 C CNN "Field7"
+	1    2300 11200
+	1    0    0    -1  
+$EndComp
+Text Notes 17700 5750 1    79   ~ 0
+Series resistor values to be determined with testing.  DNP on initial build.
+Text GLabel 18950 6100 2    39   Input ~ 0
+PHY0_COL
+Text GLabel 18350 6100 0    39   Input ~ 0
+PHY0_COL
+Text GLabel 18350 6200 0    39   Input ~ 0
+PHY0_CRS
+Text GLabel 18950 6200 2    39   Input ~ 0
+PHY0_CRS
+Wire Wire Line
+	18350 6200 18950 6200
+NoConn ~ 18950 7900
+NoConn ~ 17200 7900
+NoConn ~ 17200 8200
+NoConn ~ 18950 8200
+$EndSCHEMATC

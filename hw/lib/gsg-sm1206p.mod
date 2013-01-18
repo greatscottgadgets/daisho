@@ -1,0 +1,35 @@
+PCBNEW-LibModule-V1  Mon 14 Jan 2013 10:27:07 PM EST
+# encoding utf-8
+Units mm
+$INDEX
+gsg-sm1206p
+$EndINDEX
+$MODULE gsg-sm1206p
+Po 0 0 0 15 50F4CC82 00000000 ~~
+Li gsg-sm1206p
+Sc 0
+AR 
+Op 0 0 0
+T0 0 2 1 1 0 0.15 N I 21 N "gsg-sm1206p"
+T1 0 -1.6 1 1 0 0.15 N V 21 N "VAL**"
+DS -2.6 -1 -2.6 1 0.15 21
+DS -2.4 -1 -2.4 1 0.15 21
+DS -2.4 1 2.4 1 0.15 21
+DS 2.4 1 2.4 -1 0.15 21
+DS 2.4 -1 -2.4 -1 0.15 21
+$PAD
+Sh "1" R 1.651 1.7272 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.4 0
+$EndPAD
+$PAD
+Sh "2" R 1.651 1.7272 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.394 0
+$EndPAD
+$EndMODULE gsg-sm1206p
+$EndLIBRARY

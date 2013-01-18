@@ -1,0 +1,863 @@
+EESchema Schematic File Version 2  date Mon 07 Jan 2013 07:07:13 PM EST
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:adm3307e
+LIBS:adm3310e
+LIBS:ftdi4232h
+LIBS:gsg-microusb
+LIBS:tc1262
+LIBS:rs232-cache
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title ""
+Date "8 jan 2013"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L ADM3310E U4
+U 1 1 50CF9AC7
+P 3200 2100
+F 0 "U4" H 3100 2750 60  0000 C CNN
+F 1 "ADM3310E" H 3250 2450 60  0000 C CNN
+F 4 "ADM" H 3200 2100 60  0001 C CNN "Manufacturer"
+F 5 "3310E" H 3200 2100 60  0001 C CNN "Part#"
+F 6 "http://www.digikey.com/product-detail/en/ADM3310EARUZ/ADM3310EARUZ-ND/997623" H 3200 2100 60  0001 C CNN "Field7"
+	1    3200 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L ADM3307E U5
+U 1 1 50D676B3
+P 7850 2100
+F 0 "U5" H 7750 2750 60  0000 C CNN
+F 1 "ADM3307E" H 7900 2450 60  0000 C CNN
+F 4 "AD" H 7850 2100 60  0001 C CNN "Manufacturer"
+F 5 "3307E" H 7850 2100 60  0001 C CNN "Part#"
+F 6 "http://www.digikey.com/product-detail/en/ADM3307EARUZ-REEL7/ADM3307EARUZ-REEL7CT-ND/3674784" H 7850 2100 60  0001 C CNN "Field7"
+	1    7850 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_8X2 P7
+U 1 1 50CFBF40
+P 3250 4350
+F 0 "P7" H 3250 4800 60  0000 C CNN
+F 1 "CONN_8X2" V 3250 4350 50  0000 C CNN
+F 4 "FCI" H 3250 4350 60  0001 C CNN "Manufacturer"
+F 5 "67996-416HLF" H 3250 4350 60  0001 C CNN "Part#"
+F 6 "CONN HEADER 16POS .100 STR TIN" H 3250 4350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/67996-416HLF/609-3220-ND/1878538" H 3250 4350 60  0001 C CNN "Field7"
+	1    3250 4350
+	1    0    0    -1  
+$EndComp
+Text Label 4050 2300 0    60   ~ 0
+CD-C-232
+Text Label 4050 2400 0    60   ~ 0
+DSR-C-232
+Text Label 4050 2500 0    60   ~ 0
+RXD-C-232
+Text Label 4050 2600 0    60   ~ 0
+CTS-C-232
+Text Label 4050 2700 0    60   ~ 0
+RI-C-232
+Text Label 8700 2400 0    60   ~ 0
+RI-D-232
+Text Label 8700 2300 0    60   ~ 0
+CTS-D-232
+Text Label 8700 2200 0    60   ~ 0
+RXD-D-232
+Text Label 8700 2100 0    60   ~ 0
+DSR-D-232
+Text Label 8700 2000 0    60   ~ 0
+CD-D-232
+Text Label 8700 2500 0    60   ~ 0
+RTS-D-232
+Text Label 8700 2600 0    60   ~ 0
+TXD-D-232
+Text Label 8700 2700 0    60   ~ 0
+DTR-D-232
+Text Label 4050 2200 0    60   ~ 0
+DTR-C-232
+Text Label 4050 2100 0    60   ~ 0
+TXD-C-232
+Text Label 4050 2000 0    60   ~ 0
+RTS-C-232
+$Comp
+L DB9 J4
+U 1 1 50CFD5E2
+P 7350 4350
+F 0 "J4" H 7350 4900 70  0000 C CNN
+F 1 "DB9" H 7350 3800 70  0000 C CNN
+F 4 "TE Connectivity" H 7350 4350 60  0001 C CNN "Manufacturer"
+F 5 "5-747904-4" H 7350 4350 60  0001 C CNN "Part#"
+F 6 "CONN D-SUB PLUG 9POS SLD CUP AU" H 7350 4350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/5-747904-4/A102056-ND/2262185" H 7350 4350 60  0001 C CNN "Field7"
+	1    7350 4350
+	1    0    0    -1  
+$EndComp
+Text Label 6800 4750 2    60   ~ 0
+CD-C-232
+Text Label 6800 4650 2    60   ~ 0
+DSR-C-232
+Text Label 6800 4550 2    60   ~ 0
+RXD-C-232
+Text Label 6800 4450 2    60   ~ 0
+RTS-C-232
+Text Label 6800 4350 2    60   ~ 0
+TXD-C-232
+Text Label 6800 4250 2    60   ~ 0
+CTS-C-232
+Text Label 6800 4150 2    60   ~ 0
+DTR-C-232
+Text Label 6800 4050 2    60   ~ 0
+RI-C-232
+$Comp
+L DB9 J5
+U 1 1 50CFD927
+P 9250 4350
+F 0 "J5" H 9250 4900 70  0000 C CNN
+F 1 "DB9" H 9250 3800 70  0000 C CNN
+F 4 "TE Connectivity" H 9250 4350 60  0001 C CNN "Manufacturer"
+F 5 "5-747905-2" H 9250 4350 60  0001 C CNN "Part#"
+F 6 "CONN D-SUB RCPT 9POS SLD CUP AU" H 9250 4350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/5-747905-2/A32510-ND/1014895" H 9250 4350 60  0001 C CNN "Field7"
+	1    9250 4350
+	1    0    0    -1  
+$EndComp
+Text Label 8700 4750 2    60   ~ 0
+CD-D-232
+Text Label 8700 4650 2    60   ~ 0
+DSR-D-232
+Text Label 8700 4550 2    60   ~ 0
+RXD-D-232
+Text Label 8700 4450 2    60   ~ 0
+RTS-D-232
+Text Label 8700 4350 2    60   ~ 0
+TXD-D-232
+Text Label 8700 4250 2    60   ~ 0
+CTS-D-232
+Text Label 8700 4150 2    60   ~ 0
+DTR-D-232
+Text Label 8700 4050 2    60   ~ 0
+RI-D-232
+Text GLabel 2500 2000 0    39   Input ~ 0
+RTS-C-TTL
+Text GLabel 2500 2100 0    39   Input ~ 0
+TXD-C-TTL
+Text GLabel 2500 2200 0    39   Input ~ 0
+DTR-C-TTL
+Text GLabel 2500 2300 0    39   Input ~ 0
+CD-C-TTL
+Text GLabel 2500 2400 0    39   Input ~ 0
+DSR-C-TTL
+Text GLabel 2500 2500 0    39   Input ~ 0
+RXD-C-TTL
+Text GLabel 2500 2600 0    39   Input ~ 0
+CTS-C-TTL
+Text GLabel 2500 2700 0    39   Input ~ 0
+RI-C-TTL
+Text GLabel 2800 4000 0    39   Input ~ 0
+CD-C-TTL
+Text GLabel 2800 4100 0    39   Input ~ 0
+DTR-C-TTL
+Text GLabel 2800 4200 0    39   Input ~ 0
+TXD-C-TTL
+Text GLabel 2800 4300 0    39   Input ~ 0
+RTS-C-TTL
+Text GLabel 2800 4400 0    39   Input ~ 0
+RI-C-TTL
+Text GLabel 2800 4500 0    39   Input ~ 0
+CTS-C-TTL
+Text GLabel 2800 4600 0    39   Input ~ 0
+RXD-C-TTL
+Text GLabel 2800 4700 0    39   Input ~ 0
+DSR-C-TTL
+Text GLabel 7100 2000 0    39   Input ~ 0
+CD-D-TTL
+Text GLabel 7100 2100 0    39   Input ~ 0
+DSR-D-TTL
+Text GLabel 7100 2200 0    39   Input ~ 0
+RXD-D-TTL
+Text GLabel 7100 2300 0    39   Input ~ 0
+CTS-D-TTL
+Text GLabel 7100 2400 0    39   Input ~ 0
+RI-D-TTL
+Text GLabel 7100 2500 0    39   Input ~ 0
+RTS-D-TTL
+Text GLabel 7100 2600 0    39   Input ~ 0
+TXD-D-TTL
+Text GLabel 7100 2700 0    39   Input ~ 0
+DTR-D-TTL
+Text GLabel 3700 4000 2    39   Input ~ 0
+CD-D-TTL
+Text GLabel 3700 4100 2    39   Input ~ 0
+DTR-D-TTL
+Text GLabel 3700 4200 2    39   Input ~ 0
+TXD-D-TTL
+Text GLabel 3700 4300 2    39   Input ~ 0
+RTS-D-TTL
+Text GLabel 3700 4400 2    39   Input ~ 0
+RI-D-TTL
+Text GLabel 3700 4500 2    39   Input ~ 0
+CTS-D-TTL
+Text GLabel 3700 4600 2    39   Input ~ 0
+RXD-D-TTL
+Text GLabel 3700 4700 2    39   Input ~ 0
+DSR-D-TTL
+$Comp
+L GND #PWR026
+U 1 1 50D10B03
+P 2500 1800
+F 0 "#PWR026" H 2500 1800 30  0001 C CNN
+F 1 "GND" H 2500 1730 30  0001 C CNN
+	1    2500 1800
+	0    1    1    0   
+$EndComp
+$Comp
+L +3.3V #PWR027
+U 1 1 50D10B13
+P 2500 1600
+F 0 "#PWR027" H 2500 1560 30  0001 C CNN
+F 1 "+3.3V" H 2500 1710 30  0000 C CNN
+	1    2500 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L +3.3V #PWR028
+U 1 1 50D10DE6
+P 7100 1500
+F 0 "#PWR028" H 7100 1460 30  0001 C CNN
+F 1 "+3.3V" H 7100 1610 30  0000 C CNN
+	1    7100 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR029
+U 1 1 50D10DEC
+P 7100 1800
+F 0 "#PWR029" H 7100 1800 30  0001 C CNN
+F 1 "GND" H 7100 1730 30  0001 C CNN
+	1    7100 1800
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR030
+U 1 1 50D115B9
+P 4000 1500
+F 0 "#PWR030" H 4000 1500 30  0001 C CNN
+F 1 "GND" H 4000 1430 30  0001 C CNN
+	1    4000 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C35
+U 1 1 50D676BC
+P 3200 900
+F 0 "C35" H 3250 1000 50  0000 L CNN
+F 1 "0.1uF" H 3250 800 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    3200 900 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C32
+U 1 1 50D676BD
+P 1650 1300
+F 0 "C32" H 1700 1400 50  0000 L CNN
+F 1 "0.1uF" H 1700 1200 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    1650 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C31
+U 1 1 50D676BE
+P 1300 1300
+F 0 "C31" H 1350 1400 50  0000 L CNN
+F 1 "T10uF" H 1350 1200 50  0000 L CNN
+F 4 "Tantalum" H 1300 1300 60  0001 C CNN "Description"
+F 4 "Rohm Semiconductor" H 1300 1300 60  0001 C CNN "Manufacturer"
+F 5 "TCM0J106M8R" H 1300 1300 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 6.3V 20% 0603" H 1300 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/TCM0J106M8R/511-1494-1-ND/1209671" H 1300 1300 60  0001 C CNN "Field7"
+	1    1300 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C34
+U 1 1 50D676BF
+P 2350 1050
+F 0 "C34" H 2400 1150 50  0000 L CNN
+F 1 "0.1uF" H 2400 950 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    2350 1050
+	0    1    1    0   
+$EndComp
+$Comp
+L C C33
+U 1 1 50D676C0
+P 2200 1450
+F 0 "C33" H 2250 1550 50  0000 L CNN
+F 1 "0.1uF" H 2250 1350 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    2200 1450
+	0    1    1    0   
+$EndComp
+$Comp
+L C C37
+U 1 1 50D676C1
+P 4800 1500
+F 0 "C37" H 4850 1600 50  0000 L CNN
+F 1 "0.1uF" H 4850 1400 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    4800 1500
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C36
+U 1 1 50D676C2
+P 4300 1300
+F 0 "C36" H 4350 1400 50  0000 L CNN
+F 1 "0.1uF" H 4350 1200 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    4300 1300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3900 2000 4050 2000
+Wire Wire Line
+	3900 2100 4050 2100
+Wire Wire Line
+	3900 2200 4050 2200
+Wire Wire Line
+	3900 2300 4050 2300
+Wire Wire Line
+	3900 2400 4050 2400
+Wire Wire Line
+	3900 2500 4050 2500
+Wire Wire Line
+	3900 2600 4050 2600
+Wire Wire Line
+	3900 2700 4050 2700
+Wire Wire Line
+	8550 2000 8700 2000
+Wire Wire Line
+	8550 2100 8700 2100
+Wire Wire Line
+	8550 2200 8700 2200
+Wire Wire Line
+	8550 2300 8700 2300
+Wire Wire Line
+	8550 2400 8700 2400
+Wire Wire Line
+	8550 2500 8700 2500
+Wire Wire Line
+	8550 2600 8700 2600
+Wire Wire Line
+	8550 2700 8700 2700
+Wire Wire Line
+	6800 4050 6900 4050
+Wire Wire Line
+	6800 4150 6900 4150
+Wire Wire Line
+	6800 4250 6900 4250
+Wire Wire Line
+	6800 4350 6900 4350
+Wire Wire Line
+	6800 4450 6900 4450
+Wire Wire Line
+	6800 4550 6900 4550
+Wire Wire Line
+	6800 4650 6900 4650
+Wire Wire Line
+	6800 4750 6900 4750
+Wire Wire Line
+	8700 4050 8800 4050
+Wire Wire Line
+	8700 4150 8800 4150
+Wire Wire Line
+	8700 4250 8800 4250
+Wire Wire Line
+	8700 4350 8800 4350
+Wire Wire Line
+	8700 4450 8800 4450
+Wire Wire Line
+	8700 4550 8800 4550
+Wire Wire Line
+	8700 4650 8800 4650
+Wire Wire Line
+	8700 4750 8800 4750
+Wire Wire Line
+	2550 1800 2500 1800
+Wire Wire Line
+	7200 1800 7100 1800
+Wire Wire Line
+	7200 1500 7100 1500
+Wire Wire Line
+	2550 1900 2350 1900
+Wire Wire Line
+	2350 1900 2350 1800
+Wire Wire Line
+	2350 1800 1900 1800
+Wire Wire Line
+	3900 1500 4000 1500
+Wire Wire Line
+	4500 1300 4500 1600
+Wire Wire Line
+	4500 1600 3900 1600
+Wire Wire Line
+	3900 1700 4800 1700
+$Comp
+L GND #PWR031
+U 1 1 50D25CBD
+P 4800 1250
+F 0 "#PWR031" H 4800 1250 30  0001 C CNN
+F 1 "GND" H 4800 1180 30  0001 C CNN
+	1    4800 1250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3900 1800 4950 1800
+Wire Wire Line
+	2500 1600 2550 1600
+Wire Wire Line
+	2000 1450 2000 1700
+Wire Wire Line
+	2000 1700 2550 1700
+Wire Wire Line
+	2550 1050 2550 1400
+$Comp
+L +3.3V #PWR032
+U 1 1 50D26060
+P 2100 1050
+F 0 "#PWR032" H 2100 1010 30  0001 C CNN
+F 1 "+3.3V" H 2100 1160 30  0000 C CNN
+	1    2100 1050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1900 1800 1900 900 
+$Comp
+L +3.3V #PWR033
+U 1 1 50D263EF
+P 1650 1050
+F 0 "#PWR033" H 1650 1010 30  0001 C CNN
+F 1 "+3.3V" H 1650 1160 30  0000 C CNN
+	1    1650 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR034
+U 1 1 50D263F5
+P 1300 1050
+F 0 "#PWR034" H 1300 1010 30  0001 C CNN
+F 1 "+3.3V" H 1300 1160 30  0000 C CNN
+	1    1300 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR035
+U 1 1 50D263FB
+P 1650 1550
+F 0 "#PWR035" H 1650 1550 30  0001 C CNN
+F 1 "GND" H 1650 1480 30  0001 C CNN
+	1    1650 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR036
+U 1 1 50D2640B
+P 1300 1550
+F 0 "#PWR036" H 1300 1550 30  0001 C CNN
+F 1 "GND" H 1300 1480 30  0001 C CNN
+	1    1300 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 1500 1300 1550
+Wire Wire Line
+	1650 1500 1650 1550
+Wire Wire Line
+	1650 1100 1650 1050
+Wire Wire Line
+	1300 1050 1300 1100
+Wire Wire Line
+	2550 1500 2400 1500
+Wire Wire Line
+	2400 1500 2400 1450
+Wire Wire Line
+	2100 1050 2150 1050
+Wire Wire Line
+	3900 1400 4100 1400
+Wire Wire Line
+	4100 1400 4100 1300
+Wire Wire Line
+	4800 1250 4800 1300
+Wire Wire Line
+	4950 1800 4950 900 
+Wire Wire Line
+	4950 900  3400 900 
+Wire Wire Line
+	1900 900  3000 900 
+$Comp
+L GND #PWR037
+U 1 1 50D26DE5
+P 9650 1900
+F 0 "#PWR037" H 9650 1900 30  0001 C CNN
+F 1 "GND" H 9650 1830 30  0001 C CNN
+	1    9650 1900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C44
+U 1 1 50D676CA
+P 9450 1600
+F 0 "C44" H 9500 1700 50  0000 L CNN
+F 1 "0.1uF" H 9500 1500 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    9450 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 1900 9650 1900
+Wire Wire Line
+	9450 1800 8550 1800
+$Comp
+L GND #PWR038
+U 1 1 50D676CB
+P 9450 1350
+F 0 "#PWR038" H 9450 1350 30  0001 C CNN
+F 1 "GND" H 9450 1280 30  0001 C CNN
+	1    9450 1350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9450 1400 9450 1350
+$Comp
+L C C43
+U 1 1 50D270F6
+P 9050 1500
+F 0 "C43" H 9100 1600 50  0000 L CNN
+F 1 "0.1uF" H 9100 1400 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    9050 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 1700 9050 1700
+Wire Wire Line
+	8550 1500 8900 1500
+Wire Wire Line
+	8900 1500 8900 1300
+Wire Wire Line
+	8900 1300 9050 1300
+$Comp
+L C C41
+U 1 1 50D27238
+P 7750 1000
+F 0 "C41" H 7800 1100 50  0000 L CNN
+F 1 "0.1uF" H 7800 900 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    7750 1000
+	0    1    1    0   
+$EndComp
+$Comp
+L C C42
+U 1 1 50D676CE
+P 8200 700
+F 0 "C42" H 8250 800 50  0000 L CNN
+F 1 "0.1uF" H 8250 600 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    8200 700 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8550 1400 8650 1400
+Wire Wire Line
+	8650 1400 8650 1000
+Wire Wire Line
+	8650 1000 7950 1000
+Wire Wire Line
+	7550 1000 6850 1000
+Wire Wire Line
+	6850 1000 6850 1600
+Wire Wire Line
+	6850 1600 7200 1600
+Wire Wire Line
+	8550 1600 8750 1600
+Wire Wire Line
+	8750 1600 8750 700 
+Wire Wire Line
+	8750 700  8400 700 
+Wire Wire Line
+	6750 700  6750 1700
+Wire Wire Line
+	6750 1700 7200 1700
+$Comp
+L C C40
+U 1 1 50D275E4
+P 6400 1400
+F 0 "C40" H 6450 1500 50  0000 L CNN
+F 1 "0.1uF" H 6450 1300 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    6400 1400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7200 1400 6600 1400
+$Comp
+L +3.3V #PWR039
+U 1 1 50D27697
+P 6100 1400
+F 0 "#PWR039" H 6100 1360 30  0001 C CNN
+F 1 "+3.3V" H 6100 1510 30  0000 C CNN
+	1    6100 1400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6200 1400 6100 1400
+$Comp
+L C C39
+U 1 1 50D27851
+P 5850 2150
+F 0 "C39" H 5900 2250 50  0000 L CNN
+F 1 "0.1uF" H 5900 2050 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 1300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 1300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 1300 60  0001 C CNN "Field7"
+	1    5850 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP1 C38
+U 1 1 50D676D2
+P 5500 2150
+F 0 "C38" H 5550 2250 50  0000 L CNN
+F 1 "T10uF" H 5550 2050 50  0000 L CNN
+F 4 "Tantalum" H 5500 2150 60  0001 C CNN "Description"
+F 4 "Rohm Semiconductor" H 1300 1300 60  0001 C CNN "Manufacturer"
+F 5 "TCM0J106M8R" H 1300 1300 60  0001 C CNN "Part#"
+F 6 "CAP TANT 10UF 6.3V 20% 0603" H 1300 1300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/TCM0J106M8R/511-1494-1-ND/1209671" H 1300 1300 60  0001 C CNN "Field7"
+	1    5500 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR040
+U 1 1 50D2785E
+P 5850 1900
+F 0 "#PWR040" H 5850 1860 30  0001 C CNN
+F 1 "+3.3V" H 5850 2010 30  0000 C CNN
+	1    5850 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR041
+U 1 1 50D27864
+P 5500 1900
+F 0 "#PWR041" H 5500 1860 30  0001 C CNN
+F 1 "+3.3V" H 5500 2010 30  0000 C CNN
+	1    5500 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR042
+U 1 1 50D2786A
+P 5850 2400
+F 0 "#PWR042" H 5850 2400 30  0001 C CNN
+F 1 "GND" H 5850 2330 30  0001 C CNN
+	1    5850 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR043
+U 1 1 50D27870
+P 5500 2400
+F 0 "#PWR043" H 5500 2400 30  0001 C CNN
+F 1 "GND" H 5500 2330 30  0001 C CNN
+	1    5500 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 2350 5500 2400
+Wire Wire Line
+	5850 2350 5850 2400
+Wire Wire Line
+	5850 1950 5850 1900
+Wire Wire Line
+	5500 1900 5500 1950
+Wire Wire Line
+	6750 700  8000 700 
+$Comp
+L GND #PWR044
+U 1 1 50D65DD7
+P 6700 3900
+F 0 "#PWR044" H 6700 3900 30  0001 C CNN
+F 1 "GND" H 6700 3830 30  0001 C CNN
+	1    6700 3900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6700 3900 6800 3900
+Wire Wire Line
+	6800 3900 6800 3950
+Wire Wire Line
+	6800 3950 6900 3950
+$Comp
+L GND #PWR045
+U 1 1 50D65E91
+P 8600 3900
+F 0 "#PWR045" H 8600 3900 30  0001 C CNN
+F 1 "GND" H 8600 3830 30  0001 C CNN
+	1    8600 3900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8600 3900 8700 3900
+Wire Wire Line
+	8700 3900 8700 3950
+Wire Wire Line
+	8700 3950 8800 3950
+Wire Wire Line
+	7100 2000 7200 2000
+Wire Wire Line
+	7100 2100 7200 2100
+Wire Wire Line
+	7100 2200 7200 2200
+Wire Wire Line
+	7100 2300 7200 2300
+Wire Wire Line
+	7100 2400 7200 2400
+Wire Wire Line
+	7100 2500 7200 2500
+Wire Wire Line
+	7100 2600 7200 2600
+Wire Wire Line
+	7100 2700 7200 2700
+Wire Wire Line
+	2500 2000 2550 2000
+Wire Wire Line
+	2550 2100 2500 2100
+Wire Wire Line
+	2500 2200 2550 2200
+Wire Wire Line
+	2550 2300 2500 2300
+Wire Wire Line
+	2500 2400 2550 2400
+Wire Wire Line
+	2550 2500 2500 2500
+Wire Wire Line
+	2500 2600 2550 2600
+Wire Wire Line
+	2550 2700 2500 2700
+Wire Wire Line
+	2800 4700 2850 4700
+Wire Wire Line
+	2850 4600 2800 4600
+Wire Wire Line
+	2800 4500 2850 4500
+Wire Wire Line
+	2850 4400 2800 4400
+Wire Wire Line
+	2800 4300 2850 4300
+Wire Wire Line
+	2850 4200 2800 4200
+Wire Wire Line
+	2800 4100 2850 4100
+Wire Wire Line
+	2800 4000 2850 4000
+Wire Wire Line
+	3650 4000 3700 4000
+Wire Wire Line
+	3700 4100 3650 4100
+Wire Wire Line
+	3650 4200 3700 4200
+Wire Wire Line
+	3700 4300 3650 4300
+Wire Wire Line
+	3650 4400 3700 4400
+Wire Wire Line
+	3700 4500 3650 4500
+Wire Wire Line
+	3650 4600 3700 4600
+Wire Wire Line
+	3700 4700 3650 4700
+Text GLabel 4650 1900 2    39   Input ~ 0
+SD-ALL-TTL
+Wire Wire Line
+	4650 1900 3900 1900
+Text GLabel 7100 1900 0    39   Input ~ 0
+SD-ALL-TTL
+Wire Wire Line
+	7100 1900 7200 1900
+$EndSCHEMATC

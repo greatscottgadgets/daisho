@@ -1,0 +1,195 @@
+PCBNEW-LibModule-V1  Mon 14 Jan 2013 11:54:11 PM EST
+# encoding utf-8
+Units mm
+$INDEX
+BELFUSE-MAG
+$EndINDEX
+$MODULE BELFUSE-MAG
+Po 0 0 0 15 50F4E0EB 00000000 ~~
+Li BELFUSE-MAG
+Sc 0
+AR 
+Op 0 0 0
+T0 0 12 1 1 0 0.15 N V 21 N "BELFUSE-MAG"
+T1 0 0.2 1 1 0 0.15 N V 21 N "VAL**"
+DS -1.4 -5.4 -1.4 -6.2 0.15 21
+DS -1.4 -6.2 1.4 -6.2 0.15 21
+DS 1.4 -6.2 1.4 -5.4 0.15 21
+DS 7.8 -7.6 7.8 -7.8 0.15 21
+DS -7.8 -7.8 -7.8 -5.4 0.15 21
+DS -7.8 -5.4 7.8 -5.4 0.15 21
+DS 7.8 -5.4 7.8 -7.6 0.15 21
+DS -9.55 25.02 9.55 25.02 0.15 21
+DS -9.55 -7.8 9.55 -7.8 0.15 21
+DS 9.55 -7.75 9.55 25.02 0.15 21
+DS -9.55 -7.75 -9.55 25.02 0.15 21
+$PAD
+Sh "" C 3.25 3.25 0 0 0
+Dr 3.25 0 0
+At HOLE N 00E0FFFF
+Ne 0 ""
+Po 6.35 0
+$EndPAD
+$PAD
+Sh "" C 3.25 3.25 0 0 0
+Dr 3.25 0 0
+At HOLE N 00E0FFFF
+Ne 0 ""
+Po -6.35 0
+$EndPAD
+$PAD
+Sh "" C 1.57 1.57 0 0 0
+Dr 1.57 0 0
+At HOLE N 00E0FFFF
+Ne 0 ""
+Po 8.065 -3.17
+$EndPAD
+$PAD
+Sh "" C 1.57 1.57 0 0 0
+Dr 1.57 0 0
+At HOLE N 00E0FFFF
+Ne 0 ""
+Po -8.065 -3.17
+$EndPAD
+$PAD
+Sh "16" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 5.59 6.64
+$EndPAD
+$PAD
+Sh "14" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 5.59 8.13
+$EndPAD
+$PAD
+Sh "13" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -5.59 8.13
+$EndPAD
+$PAD
+Sh "15" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -5.59 6.64
+$EndPAD
+$PAD
+Sh "1" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -5.08 15.24
+$EndPAD
+$PAD
+Sh "2" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -3.05 15.24
+$EndPAD
+$PAD
+Sh "3" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -1.02 15.24
+$EndPAD
+$PAD
+Sh "4" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 1.02 15.24
+$EndPAD
+$PAD
+Sh "5" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3.05 15.24
+$EndPAD
+$PAD
+Sh "6" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 5.08 15.24
+$EndPAD
+$PAD
+Sh "7" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -6.1 17.78
+$EndPAD
+$PAD
+Sh "8" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -4.07 17.78
+$EndPAD
+$PAD
+Sh "11" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 4.07 17.8
+$EndPAD
+$PAD
+Sh "12" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 6.1 17.78
+$EndPAD
+$PAD
+Sh "9" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -2.04 17.78
+$EndPAD
+$PAD
+Sh "10" C 0.9 0.9 0 0 0
+Dr 0.89 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 2.04 17.78
+$EndPAD
+$PAD
+Sh "20" C 1.1 1.1 0 0 0
+Dr 1.02 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 6.1 20.32
+$EndPAD
+$PAD
+Sh "19" C 1.1 1.1 0 0 0
+Dr 1.02 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po 3.555 20.32
+$EndPAD
+$PAD
+Sh "18" C 1.1 1.1 0 0 0
+Dr 1.02 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -3.555 20.32
+$EndPAD
+$PAD
+Sh "17" C 1.1 1.1 0 0 0
+Dr 1.02 0 0
+At STD N 00E0FFFF
+Ne 0 ""
+Po -6.1 20.32
+$EndPAD
+$EndMODULE BELFUSE-MAG
+$EndLIBRARY

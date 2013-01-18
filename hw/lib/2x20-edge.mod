@@ -1,0 +1,297 @@
+PCBNEW-LibModule-V1  Fri Jan 11 16:48:49 2013
+# encoding utf-8
+Units mm
+$INDEX
+GSG-HEADER-2x20-EDGE
+$EndINDEX
+$MODULE GSG-HEADER-2x20-EDGE
+Po 0 0 0 15 50F0A4DB 00000000 ~~
+Li GSG-HEADER-2x20-EDGE
+Sc 0
+AR 100MIL-HEADER-1x6-EDGE
+Op 0 0 0
+T0 0 -2.54 1.00076 1.00076 0 0.2032 N V 21 N "HEADER-2x20-EDGE"
+T1 0 -5.08 1.00076 1.00076 0 0.2032 N I 21 N "VAL**"
+T2 -25.42 -0.1 1.00076 1.00076 0 0.2032 N V 21 N "1"
+$PAD
+Sh "1" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -24.15 -0.1
+$EndPAD
+$PAD
+Sh "3" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -21.61 -0.1
+$EndPAD
+$PAD
+Sh "5" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -19.07 -0.1
+$EndPAD
+$PAD
+Sh "7" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -16.53 -0.1
+$EndPAD
+$PAD
+Sh "9" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -13.99 -0.1
+$EndPAD
+$PAD
+Sh "11" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -11.45 -0.1
+$EndPAD
+$PAD
+Sh "13" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -8.91 -0.1
+$EndPAD
+$PAD
+Sh "15" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -6.37 -0.1
+$EndPAD
+$PAD
+Sh "2" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -24.15 -0.1
+$EndPAD
+$PAD
+Sh "4" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -21.61 -0.1
+$EndPAD
+$PAD
+Sh "6" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -19.07 -0.1
+$EndPAD
+$PAD
+Sh "8" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -16.53 -0.1
+$EndPAD
+$PAD
+Sh "10" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -13.99 -0.1
+$EndPAD
+$PAD
+Sh "12" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -11.45 -0.1
+$EndPAD
+$PAD
+Sh "14" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -8.91 -0.1
+$EndPAD
+$PAD
+Sh "16" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -6.37 -0.1
+$EndPAD
+$PAD
+Sh "17" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -3.83 -0.1
+$EndPAD
+$PAD
+Sh "18" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -3.83 -0.1
+$EndPAD
+$PAD
+Sh "19" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po -1.29 -0.1
+$EndPAD
+$PAD
+Sh "20" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po -1.29 -0.1
+$EndPAD
+$PAD
+Sh "21" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 1.25 -0.1
+$EndPAD
+$PAD
+Sh "22" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 1.25 -0.1
+$EndPAD
+$PAD
+Sh "23" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 3.79 -0.1
+$EndPAD
+$PAD
+Sh "24" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 3.79 -0.1
+$EndPAD
+$PAD
+Sh "25" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 6.33 -0.1
+$EndPAD
+$PAD
+Sh "26" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 6.33 -0.1
+$EndPAD
+$PAD
+Sh "27" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 8.87 -0.1
+$EndPAD
+$PAD
+Sh "28" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 8.87 -0.1
+$EndPAD
+$PAD
+Sh "29" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 11.41 -0.1
+$EndPAD
+$PAD
+Sh "30" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 11.41 -0.1
+$EndPAD
+$PAD
+Sh "31" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 13.95 -0.1
+$EndPAD
+$PAD
+Sh "32" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 13.95 -0.1
+$EndPAD
+$PAD
+Sh "33" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 16.49 -0.1
+$EndPAD
+$PAD
+Sh "34" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 16.49 -0.1
+$EndPAD
+$PAD
+Sh "35" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 19.03 -0.1
+$EndPAD
+$PAD
+Sh "36" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 19.03 -0.1
+$EndPAD
+$PAD
+Sh "37" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 21.57 -0.1
+$EndPAD
+$PAD
+Sh "38" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 21.57 -0.1
+$EndPAD
+$PAD
+Sh "39" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00400001
+Ne 0 ""
+Po 24.11 -0.1
+$EndPAD
+$PAD
+Sh "40" R 1.016 2.54 0 0 0
+Dr 0 0 0
+At SMD N 00808000
+Ne 0 ""
+Po 24.11 -0.1
+$EndPAD
+$EndMODULE GSG-HEADER-2x20-EDGE
+$EndLIBRARY
