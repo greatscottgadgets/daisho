@@ -21,7 +21,7 @@ output	reg				stat_hs,
 input	wire			phy_clk,
 inout	wire	[7:0]	phy_d,
 input	wire			phy_dir,
-output	reg				phy_stp,
+output	wire			phy_stp,
 input	wire			phy_nxt,
 
 // connection to packet layer
@@ -30,9 +30,10 @@ output	wire	[7:0]	pkt_out_byte,
 output	wire			pkt_out_latch,
 
 output	wire			pkt_in_cts,
-output	reg				pkt_in_nxt,
+output	wire			pkt_in_nxt,
 input	wire	[7:0]	pkt_in_byte,
 input	wire			pkt_in_latch,
+input	wire			pkt_in_stp,
 
 // debug signals
 input	wire			dbg_trig,
@@ -47,14 +48,15 @@ output	wire	[1:0]	dbg_linestate
 //
 ////////////////////////////////////////////////////////////////////
 
-	reg				reset_1, reset_2;				// synchronizers
+	reg				reset_1, reset_2;
 	reg				opt_enable_hs_1, opt_enable_hs_2;
 	reg				phy_dir_1;
-	reg		[7:0]	phy_d_1;
 	reg		[7:0]	phy_d_out;
 	reg		[7:0]	phy_d_next;
-	assign 			phy_d 		= phy_dir_1 ? 8'bZZZZZZZZ : phy_d_out;
-
+	wire	[7:0]	phy_d_out_mux 	= (state == ST_PKT_2) ? pkt_in_byte : phy_d_out;
+	assign 			phy_d 			= phy_dir_1 ? 8'bZZZZZZZZ : phy_d_out_mux;
+	reg				phy_stp_out;
+	assign			phy_stp			= phy_stp_out ^ pkt_in_stp;
 	reg		[7:0]	in_rx_cmd;
 	reg				know_recv_packet;				// phy will drive NXT and DIR high
 													// simaltaneously to signify a receive
@@ -88,12 +90,15 @@ output	wire	[1:0]	dbg_linestate
 					TX_CMD_REGRD_IMM	= 3'b011,
 					TX_CMD_REGRD_EXT	= 3'b111;
 	
+	// mux local ULPI control with packet layer
 	assign	pkt_out_latch 	= rx_active & phy_dir & phy_nxt;
 	assign	pkt_out_byte 	= pkt_out_latch ? phy_d : 8'h0;
 	assign	pkt_out_act 	= rx_active;
 	
 	assign	pkt_in_cts		= (line_state == 2'b01) & ~phy_dir & 
 								can_send & (can_send_delay == 4'hF);
+	assign	pkt_in_nxt		= phy_nxt && (state == ST_PKT_1 || state == ST_PKT_2);
+	
 	reg				can_send;
 	reg		[3:0]	can_send_delay;
 	
@@ -111,7 +116,8 @@ output	wire	[1:0]	dbg_linestate
 					ST_TXCMD_2			= 7'd32,
 					ST_TXCMD_3			= 7'd33,
 					ST_PKT_0			= 7'd40,
-					ST_PKT_1			= 7'd41;
+					ST_PKT_1			= 7'd41,
+					ST_PKT_2			= 7'd42;
 	
 	reg		[7:0]	dc;
 	
@@ -124,7 +130,6 @@ always @(posedge phy_clk) begin
 	{opt_enable_hs_2, opt_enable_hs_1} <= {opt_enable_hs_1, opt_enable_hs};
 	{dbg_trig_2, dbg_trig_1} <= {dbg_trig_1, dbg_trig};
 	phy_dir_1 <= phy_dir;
-	phy_d_1 <= phy_d;
 	
 	dc <= dc + 1'b1;
 	
@@ -137,20 +142,20 @@ always @(posedge phy_clk) begin
 	end
 	
 	// default state
-	phy_stp <= 1'b0;
+	phy_stp_out <= 1'b0;
 	// account for the turnaround cycle delay
 	phy_d_out <= phy_d_next;
 	
 	
 	// main fsm
+	//
 	case(state)
 	ST_RST_0: begin
 		// reset state
 		phy_d_out <= 8'h0;
 		phy_d_next <= 8'h0;
-		phy_stp <= 1'b1;
+		phy_stp_out <= 1'b1;
 		phy_dir_1 <= 1'b1;
-		pkt_in_nxt <= 1'b0;
 		stat_fs <= 1'b0;
 		stat_hs <= 1'b0;
 		can_send <= 1'b0;
@@ -207,6 +212,7 @@ always @(posedge phy_clk) begin
 	
 	
 	// idle dispatch
+	//
 	ST_IDLE: begin
 		// see if PHY has stuff for us
 		if(phy_dir & ~phy_dir_1) begin
@@ -233,6 +239,7 @@ always @(posedge phy_clk) begin
 	end
 	
 	// process RX CMD or start packet
+	//
 	ST_RX_0: begin
 		// data is passed up to the packet layer
 		// see combinational logic near the top
@@ -241,19 +248,20 @@ always @(posedge phy_clk) begin
 		if(~phy_dir) state <= state_next;
 	end
 	
-	// send TX CMD
+	// transmit command TXCMD
+	//
 	ST_TXCMD_0: begin
 		// drive command onto bus
 		if(~tx_cmd_code[2]) begin
 			if(~tx_cmd_code[1]) 
-				phy_d_out <= {tx_cmd_code[1:0], 6'b0};				// transmit no PID
+				phy_d_next <= {tx_cmd_code[1:0], 6'b0};					// transmit no PID
 			else 				
-				phy_d_out <= {tx_cmd_code[1:0], tx_reg_addr[5:0]};	// immediate reg r/w
+				phy_d_next <= {tx_cmd_code[1:0], tx_reg_addr[5:0]};		// immediate reg r/w
 		end else begin
 			if(~tx_cmd_code[1]) 
-				phy_d_out <= {tx_cmd_code[1:0], 2'b0, tx_pid[3:0]};	// transmit with PID
+				phy_d_next <= {tx_cmd_code[1:0], 2'b0, tx_pid[3:0]};	// transmit with PID
 			else 				
-				phy_d_out <= {tx_cmd_code[1:0], 6'b101111};			// extended reg r/w
+				phy_d_next <= {tx_cmd_code[1:0], 6'b101111};			// extended reg r/w
 		end
 		
 		if(phy_nxt) begin
@@ -280,10 +288,9 @@ always @(posedge phy_clk) begin
 			state <= state_next;
 		end
 	end
-	
 	ST_TXCMD_1: begin
 		// assert STP on reg write
-		phy_stp <= 1'b1;
+		phy_stp_out <= 1'b1;
 		state <= state_next;
 	end
 	ST_TXCMD_2: begin
@@ -296,22 +303,30 @@ always @(posedge phy_clk) begin
 		state <= state_next;
 	end
 	
-	
-	// TODO
+	// data packet send
+	//
 	ST_PKT_0: begin
 		// accept packet data
+		// implied that first byte is PID
 		tx_cmd_code <= TX_CMD_XMIT_PID;
 		tx_pid <= pkt_in_byte[3:0];
-		//{pkt_in_byte[0], pkt_in_byte[1], pkt_in_byte[2], pkt_in_byte[3]};
+		can_send <= 0;
 		// call TXCMD
 		state <= ST_TXCMD_0;
 		state_next <= ST_PKT_1;
 	end
 	ST_PKT_1: begin
-		state <= ST_IDLE;
-		
+		// packet layer now has control
+		// and is handling lines
+		if(phy_nxt) state <= ST_PKT_2;
 	end
-	
+	ST_PKT_2: begin
+		if(pkt_in_stp) begin
+			phy_d_out <= 0;
+			phy_d_next <= 0;
+			state <= ST_IDLE;
+		end
+	end
 	
 	endcase
 	
@@ -321,5 +336,4 @@ always @(posedge phy_clk) begin
 end
 	
 endmodule
-	
 	
