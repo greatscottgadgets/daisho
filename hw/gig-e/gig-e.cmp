@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Tue 15 Jan 2013 11:12:59 PM EST
+Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Thu 24 Jan 2013 03:15:13 PM EST
 
 BeginCmp
 TimeStamp = /50EDF97F/50EE08A8;
@@ -347,28 +347,28 @@ BeginCmp
 TimeStamp = /50EDF97F/50EFDDA0;
 Reference = C250;
 ValeurCmp = 0.1uF;
-IdModule  = GSG-0402;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50EDF97F/50EFDDCB;
 Reference = C251;
 ValeurCmp = 0.1uF;
-IdModule  = GSG-0402;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50EDF97F/50F20C70;
 Reference = C252;
 ValeurCmp = 0.1uF;
-IdModule  = GSG-0402;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50EDF97F/50F20C71;
 Reference = C253;
 ValeurCmp = 0.1uF;
-IdModule  = GSG-0402;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
@@ -718,28 +718,28 @@ BeginCmp
 TimeStamp = /50F2029A/50F20C6E;
 Reference = C350;
 ValeurCmp = 0.1uF;
-IdModule  = GSG-0402;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50F2029A/50F20C6F;
 Reference = C351;
 ValeurCmp = 0.1uF;
-IdModule  = GSG-0402;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50F2029A/50EFDDD2;
 Reference = C352;
 ValeurCmp = 0.1uF;
-IdModule  = GSG-0402;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
 TimeStamp = /50F2029A/50EFDDD9;
 Reference = C353;
 ValeurCmp = 0.1uF;
-IdModule  = GSG-0402;
+IdModule  = SM0805;
 EndCmp
 
 BeginCmp
@@ -1044,13 +1044,6 @@ IdModule  = GSG-0603;
 EndCmp
 
 BeginCmp
-TimeStamp = /50EDF97F/50F62CE7;
-Reference = R219;
-ValeurCmp = 220;
-IdModule  = GSG-0603;
-EndCmp
-
-BeginCmp
 TimeStamp = /50F2029A/50F20C15;
 Reference = R301;
 ValeurCmp = 1k;
@@ -1173,13 +1166,6 @@ BeginCmp
 TimeStamp = /50F2029A/50F20C27;
 Reference = R318;
 ValeurCmp = 0.0-NP;
-IdModule  = GSG-0603;
-EndCmp
-
-BeginCmp
-TimeStamp = /50F2029A/50F62841;
-Reference = R319;
-ValeurCmp = 220;
 IdModule  = GSG-0603;
 EndCmp
 
