@@ -1,0 +1,52 @@
+# -------------------------------------------------------------------------- #
+# Daisho milestone 32 demonstration project on Terasic DE2-115 FPGA board and
+# HSMC communication board.
+# 
+# Copyright (C) 2013 Jared Boone, ShareBrained Technology, Inc.
+# 
+# This file is part of the Daisho project.
+# 
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+# 
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2012 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 12.1 Build 177 11/07/2012 SJ Web Edition
+# Date created = 18:28:04  January 19, 2013
+#
+# -------------------------------------------------------------------------- #
+
+QUARTUS_VERSION = "12.1"
+DATE = "18:28:04  January 19, 2013"
+
+# Revisions
+
+PROJECT_REVISION = "de2_115_rs232_passthrough"
