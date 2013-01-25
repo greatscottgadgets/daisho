@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 17 Jan 2013 11:43:25 PM EST
+EESchema Schematic File Version 2  date Wed 23 Jan 2013 04:24:48 PM EST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -42,7 +42,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 3
 Title ""
-Date "18 jan 2013"
+Date "23 jan 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -75,7 +75,7 @@ F 1 "GND" H 9850 5430 30  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	9850 5700 9850 5500
+	9850 5500 9850 5700
 Wire Wire Line
 	9950 5700 9950 5600
 Wire Wire Line
@@ -119,7 +119,7 @@ F 1 "GND" H 6050 5430 30  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6050 5700 6050 5500
+	6050 5500 6050 5700
 Wire Wire Line
 	6150 5700 6150 5600
 Wire Wire Line
@@ -275,174 +275,170 @@ U 50F2029A
 F0 "GigE Phy1" 50
 F1 "gig-e-phy1.sch" 50
 $EndSheet
-Text GLabel 6650 7950 3    39   Input ~ 0
-PHY0_GM_MDC
-Text GLabel 6750 7950 3    39   Input ~ 0
-PHY0_GM_MIO
-Text GLabel 6950 7950 3    39   Input ~ 0
-PHY0_GM_RX_CLK
-Text GLabel 7050 7950 3    39   Input ~ 0
-PHY0_GM_RX_ERR
-Text GLabel 7250 7950 3    39   Input ~ 0
-PHY0_GM_RXDV
-Text GLabel 7350 7950 3    39   Input ~ 0
-PHY0_GM_RXD7
-Text GLabel 7550 7950 3    39   Input ~ 0
-PHY0_GM_RXD6
-Text GLabel 7650 7950 3    39   Input ~ 0
-PHY0_GM_RXD5
-Text GLabel 7850 7950 3    39   Input ~ 0
-PHY0_GM_RXD4
-Text GLabel 7950 7950 3    39   Input ~ 0
-PHY0_GM_RXD3
-Text GLabel 8150 7950 3    39   Input ~ 0
-PHY0_GM_RXD2
-Text GLabel 8250 7950 3    39   Input ~ 0
-PHY0_GM_RXD1
-Text GLabel 8450 7950 3    39   Input ~ 0
-PHY0_GM_RXD0
-Text GLabel 8550 7950 3    39   Input ~ 0
-PHY0_GM_TX_EN
-Text GLabel 8750 7950 3    39   Input ~ 0
-PHY0_GM_GTK_CLK
-Text GLabel 8850 7950 3    39   Input ~ 0
-PHY0_GM_TX_ER
-Text GLabel 10450 7950 3    39   Input ~ 0
-PHY0_GM_TXD7
-Text GLabel 10550 7950 3    39   Input ~ 0
-PHY0_GM_TXD6
-Text GLabel 10750 7950 3    39   Input ~ 0
-PHY0_GM_TXD5
-Text GLabel 10850 7950 3    39   Input ~ 0
-PHY0_GM_TXD4
-Text GLabel 11050 7950 3    39   Input ~ 0
-PHY0_GM_TXD3
-Text GLabel 11150 7950 3    39   Input ~ 0
-PHY0_GM_TXD2
-Text GLabel 11350 7950 3    39   Input ~ 0
-PHY0_GM_TXD1
-Text GLabel 11450 7950 3    39   Input ~ 0
-PHY0_GM_TXD0
-Text GLabel 9050 7950 3    39   Input ~ 0
-PHY0_CLK125_NDO
-Text GLabel 9150 7950 3    39   Input ~ 0
-PHY0_PHYADDR0
-Text GLabel 11650 7950 3    39   Input ~ 0
-PHY0_PHYADDR1
-Text GLabel 11750 7950 3    39   Input ~ 0
-PHY0_PHYADDR2
-Text GLabel 11950 7950 3    39   Input ~ 0
-PHY0_PHYADDR3
 Text GLabel 12050 7950 3    39   Input ~ 0
-PHY0_PHYADDR4
+PHY0_GM_MDC
 Text GLabel 12250 7950 3    39   Input ~ 0
-PHY0_RXDV
+PHY0_GM_MIO
+Text GLabel 11950 7950 3    39   Input ~ 0
+PHY0_GM_RX_CLK
+Text GLabel 11750 7950 3    39   Input ~ 0
+PHY0_GM_RX_ERR
+Text GLabel 12850 5250 1    39   Input ~ 0
+PHY0_GM_RXDV
+Text GLabel 11450 5250 1    39   Input ~ 0
+PHY0_GM_RXD7
+Text GLabel 11650 5250 1    39   Input ~ 0
+PHY0_GM_RXD6
+Text GLabel 11750 5250 1    39   Input ~ 0
+PHY0_GM_RXD5
+Text GLabel 11950 5250 1    39   Input ~ 0
+PHY0_GM_RXD4
+Text GLabel 12050 5250 1    39   Input ~ 0
+PHY0_GM_RXD3
+Text GLabel 12250 5250 1    39   Input ~ 0
+PHY0_GM_RXD2
+Text GLabel 12350 5250 1    39   Input ~ 0
+PHY0_GM_RXD1
+Text GLabel 12550 5250 1    39   Input ~ 0
+PHY0_GM_RXD0
+Text GLabel 11350 5250 1    39   Input ~ 0
+PHY0_GM_TX_EN
+Text GLabel 11650 7950 3    39   Input ~ 0
+PHY0_GM_GTK_CLK
+Text GLabel 11150 5250 1    39   Input ~ 0
+PHY0_GM_TX_ER
+Text GLabel 11450 7950 3    39   Input ~ 0
+PHY0_GM_TXD7
+Text GLabel 11350 7950 3    39   Input ~ 0
+PHY0_GM_TXD6
+Text GLabel 11150 7950 3    39   Input ~ 0
+PHY0_GM_TXD5
+Text GLabel 11050 7950 3    39   Input ~ 0
+PHY0_GM_TXD4
+Text GLabel 10850 7950 3    39   Input ~ 0
+PHY0_GM_TXD3
+Text GLabel 10750 7950 3    39   Input ~ 0
+PHY0_GM_TXD2
+Text GLabel 10550 7950 3    39   Input ~ 0
+PHY0_GM_TXD1
+Text GLabel 10450 7950 3    39   Input ~ 0
+PHY0_GM_TXD0
 Text GLabel 12350 7950 3    39   Input ~ 0
+PHY0_CLK125_NDO
+Text GLabel 11050 5250 1    39   Input ~ 0
+PHY0_PHYADDR0
+Text GLabel 10850 5250 1    39   Input ~ 0
+PHY0_PHYADDR1
+Text GLabel 10750 5250 1    39   Input ~ 0
+PHY0_PHYADDR2
+Text GLabel 10550 5250 1    39   Input ~ 0
+PHY0_PHYADDR3
+Text GLabel 10450 5250 1    39   Input ~ 0
+PHY0_PHYADDR4
+Text GLabel 12950 5250 1    39   Input ~ 0
 PHY0_TX_CLK
-Text GLabel 12550 7950 3    39   Input ~ 0
+Text GLabel 12950 7950 3    39   Input ~ 0
 PHY0_HW_RST
-Text GLabel 6650 5300 1    39   Input ~ 0
+Text GLabel 8450 7900 3    39   Input ~ 0
 PHY1_GM_MDC
-Text GLabel 6750 5300 1    39   Input ~ 0
+Text GLabel 8550 7900 3    39   Input ~ 0
 PHY1_GM_MIO
-Text GLabel 6950 5300 1    39   Input ~ 0
+Text GLabel 8150 7900 3    39   Input ~ 0
 PHY1_GM_RX_CLK
-Text GLabel 7050 5300 1    39   Input ~ 0
+Text GLabel 7950 7900 3    39   Input ~ 0
 PHY1_GM_RX_ERR
-Text GLabel 7250 5300 1    39   Input ~ 0
+Text GLabel 7850 7900 3    39   Input ~ 0
 PHY1_GM_RXDV
-Text GLabel 7350 5300 1    39   Input ~ 0
-PHY1_GM_RXD7
 Text GLabel 7550 5300 1    39   Input ~ 0
-PHY1_GM_RXD6
+PHY1_GM_RXD7
 Text GLabel 7650 5300 1    39   Input ~ 0
-PHY1_GM_RXD5
+PHY1_GM_RXD6
 Text GLabel 7850 5300 1    39   Input ~ 0
-PHY1_GM_RXD4
+PHY1_GM_RXD5
 Text GLabel 7950 5300 1    39   Input ~ 0
-PHY1_GM_RXD3
+PHY1_GM_RXD4
 Text GLabel 8150 5300 1    39   Input ~ 0
-PHY1_GM_RXD2
+PHY1_GM_RXD3
 Text GLabel 8250 5300 1    39   Input ~ 0
-PHY1_GM_RXD1
+PHY1_GM_RXD2
 Text GLabel 8450 5300 1    39   Input ~ 0
-PHY1_GM_RXD0
+PHY1_GM_RXD1
 Text GLabel 8550 5300 1    39   Input ~ 0
-PHY1_GM_TX_EN
-Text GLabel 8750 5300 1    39   Input ~ 0
-PHY1_GM_GTK_CLK
-Text GLabel 8850 5300 1    39   Input ~ 0
-PHY1_GM_TX_ER
-Text GLabel 10450 5300 1    39   Input ~ 0
-PHY1_GM_TXD7
-Text GLabel 10550 5300 1    39   Input ~ 0
-PHY1_GM_TXD6
-Text GLabel 10750 5300 1    39   Input ~ 0
-PHY1_GM_TXD5
-Text GLabel 10850 5300 1    39   Input ~ 0
-PHY1_GM_TXD4
-Text GLabel 11050 5300 1    39   Input ~ 0
-PHY1_GM_TXD3
-Text GLabel 11150 5300 1    39   Input ~ 0
-PHY1_GM_TXD2
-Text GLabel 11350 5300 1    39   Input ~ 0
-PHY1_GM_TXD1
-Text GLabel 11450 5300 1    39   Input ~ 0
-PHY1_GM_TXD0
-Text GLabel 9050 5300 1    39   Input ~ 0
-PHY1_CLK125_NDO
+PHY1_GM_RXD0
 Text GLabel 9150 5300 1    39   Input ~ 0
+PHY1_GM_TX_EN
+Text GLabel 9050 5300 1    39   Input ~ 0
+PHY1_GM_GTK_CLK
+Text GLabel 7350 5300 1    39   Input ~ 0
+PHY1_GM_TX_ER
+Text GLabel 7650 7900 3    39   Input ~ 0
+PHY1_GM_TXD7
+Text GLabel 7550 7900 3    39   Input ~ 0
+PHY1_GM_TXD6
+Text GLabel 7350 7900 3    39   Input ~ 0
+PHY1_GM_TXD5
+Text GLabel 7250 7900 3    39   Input ~ 0
+PHY1_GM_TXD4
+Text GLabel 7050 7900 3    39   Input ~ 0
+PHY1_GM_TXD3
+Text GLabel 6950 7900 3    39   Input ~ 0
+PHY1_GM_TXD2
+Text GLabel 6750 7900 3    39   Input ~ 0
+PHY1_GM_TXD1
+Text GLabel 6650 7900 3    39   Input ~ 0
+PHY1_GM_TXD0
+Text GLabel 8750 5300 1    39   Input ~ 0
+PHY1_CLK125_NDO
+Text GLabel 7250 5300 1    39   Input ~ 0
 PHY1_PHYADDR0
-Text GLabel 11650 5300 1    39   Input ~ 0
+Text GLabel 7050 5300 1    39   Input ~ 0
 PHY1_PHYADDR1
-Text GLabel 11750 5300 1    39   Input ~ 0
+Text GLabel 6950 5300 1    39   Input ~ 0
 PHY1_PHYADDR2
-Text GLabel 11950 5300 1    39   Input ~ 0
+Text GLabel 6750 5300 1    39   Input ~ 0
 PHY1_PHYADDR3
-Text GLabel 12050 5300 1    39   Input ~ 0
+Text GLabel 6650 5300 1    39   Input ~ 0
 PHY1_PHYADDR4
-Text GLabel 12250 5300 1    39   Input ~ 0
-PHY1_RXDV
-Text GLabel 12350 5300 1    39   Input ~ 0
+Text GLabel 8850 7900 3    39   Input ~ 0
 PHY1_TX_CLK
-Text GLabel 12550 5300 1    39   Input ~ 0
+Text GLabel 8850 5300 1    39   Input ~ 0
 PHY1_HW_RST
 Wire Wire Line
-	6650 7500 6650 7950
+	10450 5700 10450 5250
 Wire Wire Line
-	6750 7500 6750 7950
+	10550 5700 10550 5250
 Wire Wire Line
-	6950 7950 6950 7500
+	10750 5250 10750 5700
 Wire Wire Line
-	7050 7500 7050 7950
+	10850 5700 10850 5250
 Wire Wire Line
-	7250 7950 7250 7500
+	11050 5250 11050 5700
 Wire Wire Line
-	7350 7500 7350 7950
+	11150 5700 11150 5250
 Wire Wire Line
-	7550 7950 7550 7500
+	11350 5250 11350 5700
 Wire Wire Line
-	7650 7500 7650 7950
+	11450 5700 11450 5250
 Wire Wire Line
-	7850 7950 7850 7500
+	11650 5250 11650 5700
 Wire Wire Line
-	7950 7500 7950 7950
+	11750 5700 11750 5250
 Wire Wire Line
-	8150 7950 8150 7500
+	11950 5250 11950 5700
 Wire Wire Line
-	8250 7500 8250 7950
+	12050 5700 12050 5250
 Wire Wire Line
-	8450 7950 8450 7500
+	12250 5250 12250 5700
 Wire Wire Line
-	8550 7500 8550 7950
+	12350 5700 12350 5250
 Wire Wire Line
-	8750 7950 8750 7500
+	12550 5250 12550 5700
 Wire Wire Line
-	8850 7500 8850 7950
+	12650 5700 12650 5250
 Wire Wire Line
-	9050 7950 9050 7500
+	12850 5250 12850 5700
 Wire Wire Line
-	9150 7500 9150 7950
+	12950 5700 12950 5250
 Wire Wire Line
 	10450 7500 10450 7950
 Wire Wire Line
@@ -472,45 +468,7 @@ Wire Wire Line
 Wire Wire Line
 	12350 7950 12350 7500
 Wire Wire Line
-	12550 7500 12550 7950
-Wire Wire Line
 	12650 7950 12650 7500
-Wire Wire Line
-	12650 5300 12650 5700
-Wire Wire Line
-	12550 5700 12550 5300
-Wire Wire Line
-	12350 5300 12350 5700
-Wire Wire Line
-	12250 5700 12250 5300
-Wire Wire Line
-	12050 5300 12050 5700
-Wire Wire Line
-	11950 5700 11950 5300
-Wire Wire Line
-	11750 5300 11750 5700
-Wire Wire Line
-	11650 5700 11650 5300
-Wire Wire Line
-	11450 5300 11450 5700
-Wire Wire Line
-	11350 5700 11350 5300
-Wire Wire Line
-	11150 5300 11150 5700
-Wire Wire Line
-	11050 5700 11050 5300
-Wire Wire Line
-	10850 5300 10850 5700
-Wire Wire Line
-	10750 5700 10750 5300
-Wire Wire Line
-	10550 5300 10550 5700
-Wire Wire Line
-	10450 5700 10450 5300
-Wire Wire Line
-	9150 5300 9150 5700
-Wire Wire Line
-	9050 5700 9050 5300
 Wire Wire Line
 	8850 5300 8850 5700
 Wire Wire Line
@@ -543,16 +501,60 @@ Wire Wire Line
 	6750 5300 6750 5700
 Wire Wire Line
 	6650 5700 6650 5300
+Wire Wire Line
+	9050 7500 9050 7900
+Wire Wire Line
+	8850 7900 8850 7500
+Wire Wire Line
+	8750 7500 8750 7900
+Wire Wire Line
+	8550 7900 8550 7500
+Wire Wire Line
+	8450 7500 8450 7900
+Wire Wire Line
+	8250 7900 8250 7500
+Wire Wire Line
+	8150 7500 8150 7900
+Wire Wire Line
+	7950 7900 7950 7500
+Wire Wire Line
+	7850 7500 7850 7900
+Wire Wire Line
+	7650 7900 7650 7500
+Wire Wire Line
+	7550 7500 7550 7900
+Wire Wire Line
+	7350 7900 7350 7500
+Wire Wire Line
+	7250 7500 7250 7900
+Wire Wire Line
+	7050 7900 7050 7500
+Wire Wire Line
+	6950 7500 6950 7900
+Wire Wire Line
+	6750 7900 6750 7500
+Wire Wire Line
+	6650 7500 6650 7900
 Text GLabel 12650 7950 3    39   Input ~ 0
 PHY0_COL
-Text GLabel 12650 5300 1    39   Input ~ 0
+Text GLabel 8750 7900 3    39   Input ~ 0
 PHY1_COL
-Text GLabel 12850 5300 1    39   Input ~ 0
+Text GLabel 8250 7900 3    39   Input ~ 0
 PHY1_CRS
 Wire Wire Line
-	12850 5300 12850 5700
-Text GLabel 12850 7950 3    39   Input ~ 0
-PHY1_CRS
+	9050 5300 9050 5700
+Text GLabel 12650 5250 1    39   Input ~ 0
+PHY0_CRS
 Wire Wire Line
 	12850 7950 12850 7500
+Wire Wire Line
+	9150 5300 9150 5700
+Text GLabel 9050 7900 3    39   Input ~ 0
+PHY1_INT_N
+Text GLabel 12850 7950 3    39   Input ~ 0
+PHY0_INT_N
+NoConn ~ 12550 7500
+Wire Wire Line
+	12950 7500 12950 7950
+NoConn ~ 9150 7500
 $EndSCHEMATC
