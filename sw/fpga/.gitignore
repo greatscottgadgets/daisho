@@ -1,0 +1,5 @@
+db/
+*.jdi
+*.qws
+incremental_db/
+output_files/
