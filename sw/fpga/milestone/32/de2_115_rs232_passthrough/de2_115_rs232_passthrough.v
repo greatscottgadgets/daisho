@@ -24,187 +24,124 @@
 
 module de2_115_rs232_passthrough(
 	// Clocks
-	CLOCK_50,
-	CLOCK2_50,
-	CLOCK3_50,
-	SMA_CLKIN,
-	SMA_CLKOUT,
+	input	wire	CLOCK_50,
+	input	wire	CLOCK2_50,
+	input	wire	CLOCK3_50,
+	input	wire	SMA_CLKIN,
+	output	wire	SMA_CLKOUT,
 	
 	// RS232/UART
-	UART_RXD,
-	UART_TXD,
-	UART_RTS,
-	UART_CTS,
+	input	wire	UART_RXD,
+	output	wire	UART_TXD,
+	input	wire	UART_RTS,
+	output	wire	UART_CTS,
 	
 	// PS2
-	PS2_DAT,
-	PS2_CLK,
-	PS2_DAT2,
-	PS2_CLK2,
+	inout	wire	PS2_DAT,
+	inout	wire	PS2_CLK,
+	inout	wire	PS2_DAT2,
+	inout	wire	PS2_CLK2,
 	
 	// LCD
-	LCD_ON,
-	LCD_BLON,
-	LCD_EN,
-	LCD_RW,
-	LCD_RS,
-	LCD_DATA,
+	output	wire	LCD_ON,
+	output	wire	LCD_BLON,
+	output	wire	LCD_EN,
+	output	wire	LCD_RW,
+	output	wire	LCD_RS,
+	inout	wire	[7:0]	LCD_DATA,
 	
 	// LEDs
-	LEDR,
-	LEDG,
+	output	wire	[17:0]	LEDR,
+	output	wire	[8:0]	LEDG,
 	
 	// Hex LEDs
-	HEX0,
-	HEX1,
-	HEX2,
-	HEX3,
-	HEX4,
-	HEX5,
-	HEX6,
-	HEX7,
+	output	wire	[6:0]	HEX0,
+	output	wire	[6:0]	HEX1,
+	output	wire	[6:0]	HEX2,
+	output	wire	[6:0]	HEX3,
+	output	wire	[6:0]	HEX4,
+	output	wire	[6:0]	HEX5,
+	output	wire	[6:0]	HEX6,
+	output	wire	[6:0]	HEX7,
 	
 	// Keys
-	KEY,
+	input	wire	[3:0]	KEY,
 	
 	// Switches
-	SW,
+	input	wire	[17:0]	SW,
 	
 	// HSMC communication board
-	HSMC_0_RXD,
-	HSMC_0_TXD,
-	RS485_0_RTS,
+	input	wire	HSMC_0_RXD,
+	output	wire	HSMC_0_TXD,
+	input	wire	RS485_0_RTS,
 	
-	HSMC_1_RXD,
-	HSMC_1_TXD,
-	RS485_1_RTS,
+	input	wire	HSMC_1_RXD,
+	output	wire	HSMC_1_TXD,
+	input	wire	RS485_1_RTS,
+	
+	// DCE
+	output	wire	DAISHO_RS232_A_RTS,
+	output	wire	DAISHO_RS232_A_TXD,
+	output	wire	DAISHO_RS232_A_DTR,
+	input	wire	DAISHO_RS232_A_RXD,
+	input	wire	DAISHO_RS232_A_CTS,
+	input	wire	DAISHO_RS232_A_CD,
+	input	wire	DAISHO_RS232_A_RI,
+	input	wire	DAISHO_RS232_A_DSR,
+	
+	// DTE
+	output	wire	DAISHO_RS232_B_RXD,
+	output	wire	DAISHO_RS232_B_CTS,
+	output	wire	DAISHO_RS232_B_CD,
+	output	wire	DAISHO_RS232_B_RI,
+	output	wire	DAISHO_RS232_B_DSR,
+	input	wire	DAISHO_RS232_B_RTS,
+	input	wire	DAISHO_RS232_B_TXD,
+	input	wire	DAISHO_RS232_B_DTR,
+	
+	// DCE
+	output	wire	DAISHO_RS232_C_RTS,
+	output	wire	DAISHO_RS232_C_TXD,
+	output	wire	DAISHO_RS232_C_DTR,
+	input	wire	DAISHO_RS232_C_RXD,
+	input	wire	DAISHO_RS232_C_CTS,
+	input	wire	DAISHO_RS232_C_CD,
+	input	wire	DAISHO_RS232_C_RI,
+	input	wire	DAISHO_RS232_C_DSR,
+	
+	// DTE
+	output	wire	DAISHO_RS232_D_RXD,
+	output	wire	DAISHO_RS232_D_CTS,
+	output	wire	DAISHO_RS232_D_CD,
+	output	wire	DAISHO_RS232_D_RI,
+	output	wire	DAISHO_RS232_D_DSR,
+	input	wire	DAISHO_RS232_D_RTS,
+	input	wire	DAISHO_RS232_D_TXD,
+	input	wire	DAISHO_RS232_D_DTR,
 
-	DAISHO_RS232_A_RXD,
-	DAISHO_RS232_A_TXD,
-	DAISHO_RS232_A_RTS,
-	DAISHO_RS232_A_CTS,
-	DAISHO_RS232_A_DTR,
-	DAISHO_RS232_A_CD,
-	DAISHO_RS232_A_RI,
-	DAISHO_RS232_A_DSR,
-
-	DAISHO_RS232_B_RXD,
-	DAISHO_RS232_B_TXD,
-	DAISHO_RS232_B_RTS,
-	DAISHO_RS232_B_CTS,
-	DAISHO_RS232_B_DTR,
-	DAISHO_RS232_B_CD,
-	DAISHO_RS232_B_RI,
-	DAISHO_RS232_B_DSR,
-
-	DAISHO_RS232_C_RXD,
-	DAISHO_RS232_C_TXD,
-	DAISHO_RS232_C_RTS,
-	DAISHO_RS232_C_CTS,
-	DAISHO_RS232_C_DTR,
-	DAISHO_RS232_C_CD,
-	DAISHO_RS232_C_RI,
-	DAISHO_RS232_C_DSR,
-
-	DAISHO_RS232_D_RXD,
-	DAISHO_RS232_D_TXD,
-	DAISHO_RS232_D_RTS,
-	DAISHO_RS232_D_CTS,
-	DAISHO_RS232_D_DTR,
-	DAISHO_RS232_D_CD,
-	DAISHO_RS232_D_RI,
-	DAISHO_RS232_D_DSR,
-
-	DAISHO_RS232_SD_ALL
+	output	wire	DAISHO_RS232_SD_ALL
 );
 
-input HSMC_0_RXD;
-output HSMC_0_TXD;
-input RS485_0_RTS;
+assign DAISHO_RS232_SD_ALL = 1'b0;
 
-input HSMC_1_RXD;
-output HSMC_1_TXD = 1'b1;
-input RS485_1_RTS;
+assign SMA_CLKOUT = 1'b0;
 
-// DCE
-output DAISHO_RS232_A_RTS;
-output DAISHO_RS232_A_TXD;
-output DAISHO_RS232_A_DTR;
-input DAISHO_RS232_A_RXD;
-input DAISHO_RS232_A_CTS;
-input DAISHO_RS232_A_CD;
-input DAISHO_RS232_A_RI;
-input DAISHO_RS232_A_DSR;
+assign UART_CTS = 1'b1;
 
-// DTE
-output DAISHO_RS232_B_RXD;
-output DAISHO_RS232_B_CTS;
-output DAISHO_RS232_B_CD;
-output DAISHO_RS232_B_RI;
-output DAISHO_RS232_B_DSR;
-input DAISHO_RS232_B_RTS;
-input DAISHO_RS232_B_TXD;
-input DAISHO_RS232_B_DTR;
+assign LCD_ON = 1'b0;
+assign LCD_BLON = 1'b0;
+assign LCD_EN = 1'b0;
+assign LCD_RW = 1'b0;
+assign LCD_RS = 1'b0;
 
-// DCE
-output DAISHO_RS232_C_RTS;
-output DAISHO_RS232_C_TXD;
-output DAISHO_RS232_C_DTR;
-input DAISHO_RS232_C_RXD;
-input DAISHO_RS232_C_CTS;
-input DAISHO_RS232_C_CD;
-input DAISHO_RS232_C_RI;
-input DAISHO_RS232_C_DSR;
-
-// DTE
-output DAISHO_RS232_D_RXD;
-output DAISHO_RS232_D_CTS;
-output DAISHO_RS232_D_CD;
-output DAISHO_RS232_D_RI;
-output DAISHO_RS232_D_DSR;
-input DAISHO_RS232_D_RTS;
-input DAISHO_RS232_D_TXD;
-input DAISHO_RS232_D_DTR;
-
-output DAISHO_RS232_SD_ALL = 1'b0;
-
-input CLOCK_50;
-input CLOCK2_50;
-input CLOCK3_50;
-input SMA_CLKIN;
-output SMA_CLKOUT = 1'b0;
-
-input UART_RXD;
-output UART_TXD = 1'b1;
-input UART_RTS;
-output UART_CTS = 1'b1;
-
-inout PS2_DAT;
-inout PS2_CLK;
-inout PS2_DAT2;
-inout PS2_CLK2;
-
-output LCD_ON = 1'b0;
-output LCD_BLON = 1'b0;
-output LCD_EN = 1'b0;
-output LCD_RW = 1'b0;
-output LCD_RS = 1'b0;
-inout [7:0] LCD_DATA;
-
-output [17:0] LEDR; // = 18'b101010101010101010;
-output [8:0] LEDG; // = 9'b101010101;
-
-output [6:0] HEX0 = 7'b1111111;
-output [6:0] HEX1 = 7'b1111111;
-output [6:0] HEX2 = 7'b1111111;
-output [6:0] HEX3 = 7'b1111111;
-output [6:0] HEX4 = 7'b1111111;
-output [6:0] HEX5 = 7'b1111111;
-output [6:0] HEX6 = 7'b1111111;
-output [6:0] HEX7 = 7'b1111111;
-
-input [3:0] KEY;
-input [17:0] SW;
+assign HEX0 = 7'b1111111;
+assign HEX1 = 7'b1111111;
+assign HEX2 = 7'b1111111;
+assign HEX3 = 7'b1111111;
+assign HEX4 = 7'b1111111;
+assign HEX5 = 7'b1111111;
+assign HEX6 = 7'b1111111;
+assign HEX7 = 7'b1111111;
 
 reg [31:0] clock_divider;
 
