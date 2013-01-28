@@ -1,17 +1,17 @@
-PCBNEW-LibModule-V1  Mon 14 Jan 2013 10:27:07 PM EST
+PCBNEW-LibModule-V1  Mon 21 Jan 2013 12:27:20 PM EST
 # encoding utf-8
 Units mm
 $INDEX
 gsg-sm1206p
 $EndINDEX
 $MODULE gsg-sm1206p
-Po 0 0 0 15 50F4CC82 00000000 ~~
+Po 0 0 0 15 50FD7A75 00000000 ~~
 Li gsg-sm1206p
 Sc 0
 AR 
 Op 0 0 0
-T0 0 2 1 1 0 0.15 N I 21 N "gsg-sm1206p"
-T1 0 -1.6 1 1 0 0.15 N V 21 N "VAL**"
+T0 0 0 0.5 0.5 900 0.125 N V 21 N "gsg-sm1206p"
+T1 -1.4 -1.4 0.5 0.5 0 0.125 N I 21 N "VAL**"
 DS -2.6 -1 -2.6 1 0.15 21
 DS -2.4 -1 -2.4 1 0.15 21
 DS -2.4 1 2.4 1 0.15 21

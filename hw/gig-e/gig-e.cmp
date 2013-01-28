@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-nov-02)-testing date = Thu 24 Jan 2013 03:15:13 PM EST
+Cmp-Mod V01 Created by CvPcb (2013-01-23 BZR 3920)-testing date = Mon Jan 28 12:27:54 2013
 
 BeginCmp
 TimeStamp = /50EDF97F/50EE08A8;
@@ -900,7 +900,7 @@ BeginCmp
 TimeStamp = /50F0CF77;
 Reference = JP101;
 ValeurCmp = TERASIC-HSMC;
-IdModule  = TERASIC-HSMC;
+IdModule  = TERASIC-HSMC-WITH-MOUNTS;
 EndCmp
 
 BeginCmp

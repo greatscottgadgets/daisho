@@ -1,17 +1,17 @@
-PCBNEW-LibModule-V1  Mon 14 Jan 2013 01:19:40 AM EST
+PCBNEW-LibModule-V1  Mon 21 Jan 2013 12:26:19 PM EST
 # encoding utf-8
 Units mm
 $INDEX
 gsg-2312
 $EndINDEX
 $MODULE gsg-2312
-Po 0 0 0 15 50F3A36F 00000000 ~~
+Po 0 0 0 15 50FD7A35 00000000 ~~
 Li gsg-2312
 Sc 0
 AR 
 Op 0 0 0
-T0 0 -2.5 1 1 0 0.15 N I 21 N "gsg-2312"
-T1 0.5 2.5 1 1 0 0.15 N V 21 N "VAL**"
+T0 1 0 0.5 0.5 900 0.125 N V 21 N "gsg-2312"
+T1 -0.6 -0.2 0.5 0.5 900 0.125 N V 21 N "VAL**"
 DS -4 -1.5 -4 1.5 0.15 21
 DS -3.5 -1.5 3.5 -1.5 0.15 21
 DS 3.5 -1.5 3.5 1.5 0.15 21
