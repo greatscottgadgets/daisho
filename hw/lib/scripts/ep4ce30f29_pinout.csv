@@ -1,0 +1,782 @@
+Bank Number,VREFB Group,Pin Name / Function,Optional Function(s),Configuration Function,F780,F484,DQS for X8/X9 in 780 FBGA,DQS for X16/X18 in 780 FBGA,DQS for X32/X36 in 780 FBGA,DQS for X8/X9 in 484 FBGA,DQS for X16/X18 in 484 FBGA,DQS for X32/X36 in 484 FBGA
+B1,  VREFB1N0,  IO,  DIFFIO_L1p,   ,   ,  G4,   ,   ,   ,   ,   ,   
+B1,  VREFB1N0,  IO,  DIFFIO_L1n,   ,  C2,  G3,  DQ2L,  DQ1L,  DQ1L,   ,   ,   
+B1,  VREFB1N0,  IO,   ,   ,  M9,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N0,  IO,  DIFFIO_L2p,   ,  D2,  B2,  DQ2L,  DQ1L,  DQ1L,  DQ2L,  DQ1L,  DQ1L
+B1,  VREFB1N0,  IO,  DIFFIO_L2n,   ,  D1,  B1,  DQ2L,  DQ1L,  DQ1L,  DQ2L,  DQ1L,  DQ1L
+B1,  VREFB1N0,  IO,  VREFB1N0,   ,  H7,  G5,   ,   ,   ,   ,   ,   
+B1,  VREFB1N0,  IO,  DIFFIO_L3p,   ,  E5,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N0,  IO,  DIFFIO_L3n,   ,  E4,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N0,  IO,  DIFFIO_L4p,  nRESET,  G6,  E4,  DQ2L,  DQ1L,  DQ1L,  DQ2L,  DQ1L,  DQ1L
+B1,  VREFB1N0,  IO,  DIFFIO_L4n,   ,  G5,  E3,  DQ2L,  DQ1L,  DQ1L,  DQ2L,  DQ1L,  DQ1L
+B1,  VREFB1N0,  IO,  DIFFIO_L5p,   ,  H4,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N0,  IO,  DIFFIO_L5n,   ,  H3,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N0,  IO,  DIFFIO_L6p,   ,  J5,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N0,  IO,  DIFFIO_L6n,   ,  G7,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L7p,   ,  E3,  C2,"  DQS2L/CQ3L,CDPCLK0","  DQS2L/CQ3L,CDPCLK0","  DQS2L/CQ3L,CDPCLK0","  DQS2L/CQ3L,CDPCLK0","  DQS2L/CQ3L,CDPCLK0","  DQS2L/CQ3L,CDPCLK0"
+B1,  VREFB1N1,  IO,  DIFFIO_L7n,   ,  F3,  C1,  DQ2L,  DQ1L,  DQ1L,  DQ2L,  DQ1L,  DQ1L
+B1,  VREFB1N1,  IO,  DIFFIO_L8p,   ,  F5,  D2,  DQ2L,  DQ1L,  DQ1L,  DQ2L,  DQ1L,  DQ1L
+B1,  VREFB1N1,  IO,  DIFFIO_L8n,"  DATA1,ASDO",  F4,  D1,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  VREFB1N1,   ,  L5,  H7,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L9p,   ,  G4,  H6,  DQ2L,  DQ1L,  DQ1L,  DQ2L,  DQ1L,  DQ1L
+B1,  VREFB1N1,  IO,  DIFFIO_L9n,   ,  G3,  J6,   ,   ,   ,  DQ2L,  DQ1L,  DQ1L
+B1,  VREFB1N1,  IO,  DIFFIO_L10p,"  FLASH_nCE,nCSO",  E2,  E2,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L10n,   ,  J6,  E1,   ,   ,   ,   ,  DQ1L,  DQ1L
+B1,  VREFB1N1,  IO,  DIFFIO_L11p,   ,  E1,   ,   ,  DQ1L,  DQ1L,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L11n,   ,  J7,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L12p,   ,  F2,  F2,  DM2L,  DM1L/BWS#1L,  DM1L/BWS#1L,  DM2L,  DM1L/BWS#1L,  DM1L/BWS#1L
+B1,  VREFB1N1,  IO,  DIFFIO_L12n,   ,  F1,  F1,  DQ0L,  DQ1L,  DQ1L,  DQ0L,  DQ1L,  DQ1L
+B1,  VREFB1N1,  IO,  DIFFIO_L13p,   ,  K4,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L13n,   ,  K3,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L14p,   ,  K7,  H8,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L14n,   ,  L6,  J8,   ,   ,   ,   ,   ,   
+B1,  VREFB1N1,  IO,  DIFFIO_L15p,   ,  L8,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L15n,   ,  L7,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L16p,   ,  M8,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L16n,   ,  M7,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L17p,   ,  L4,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L17n,   ,  L3,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L18p,   ,  H6,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L18n,   ,  H5,  J5,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L19p,   ,  J4,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L19n,   ,  J3,   ,  DQ0L,  DQ1L,  DQ1L,   ,   ,   
+B1,  VREFB1N2,  nSTATUS,   ,  nSTATUS,  M6,  K6,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  VREFB1N2,   ,  N8,  H5,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L20p,   ,  G2,  L8,  DQ0L,  DQ1L,  DQ1L,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L20n,   ,  G1,  K8,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L21p,   ,  M3,  J7,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L21n,   ,  K1,  K7,  DQ0L,  DQ1L,  DQ1L,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L22p,   ,  N4,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N2,  IO,  DIFFIO_L22n,   ,  N3,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  IO,   ,   ,  M4,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  IO,   ,   ,  K2,  J4,"  DQS0L/CQ1L,DPCLK0","  DQS0L/CQ1L,DPCLK0","  DQS0L/CQ1L,DPCLK0","  DQS0L/CQ1L,DPCLK0","  DQS0L/CQ1L,DPCLK0","  DQS0L/CQ1L,DPCLK0"
+B1,  VREFB1N3,  IO,  DIFFIO_L23p,   ,  L2,  H2,   ,   ,   ,  DQ0L,  DQ1L,  DQ1L
+B1,  VREFB1N3,  IO,  DIFFIO_L23n,   ,  L1,  H1,  DQ0L,  DQ1L,  DQ1L,  DQ0L,  DQ1L,  DQ1L
+B1,  VREFB1N3,  IO,  VREFB1N3,   ,  M5,  J3,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  IO,  DIFFIO_L24p,   ,  M2,  J2,   ,   ,   ,  DQ0L,  DQ1L,  DQ1L
+B1,  VREFB1N3,  IO,  DIFFIO_L24n,   ,  M1,  J1,  DQ0L,  DQ1L,  DQ1L,  DQ0L,  DQ1L,  DQ1L
+B1,  VREFB1N3,  IO,  DIFFIO_L25p,   ,  P2,   ,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  IO,  DIFFIO_L25n,   ,  P1,   ,  DQ0L,  DQ1L,  DQ1L,   ,   ,   
+B1,  VREFB1N3,  DCLK,   ,  DCLK,  P3,  K2,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  IO,   ,  DATA0,  N7,  K1,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  nCONFIG,   ,  nCONFIG,  P4,  K5,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  TDI,   ,  TDI,  P7,  L5,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  TCK,   ,  TCK,  P5,  L2,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  TMS,   ,  TMS,  P8,  L1,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  TDO,   ,  TDO,  P6,  L4,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  nCE,   ,  nCE,  R8,  L3,   ,   ,   ,   ,   ,   
+B1,  VREFB1N3,  CLK1,  DIFFCLK_0n,   ,  J1,  G1,   ,   ,   ,   ,   ,   
+B2,  VREFB2N0,  CLK2,  DIFFCLK_1p,   ,  Y2,  T2,   ,   ,   ,   ,   ,   
+B2,  VREFB2N0,  CLK3,  DIFFCLK_1n,   ,  Y1,  T1,   ,   ,   ,   ,   ,   
+B2,  VREFB2N0,  IO,  DIFFIO_L26p,   ,  R2,  L6,  DQ0L,  DQ1L,  DQ1L,  DQ0L,  DQ1L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L26n,   ,  R1,  M6,   ,  DQ1L,  DQ1L,  DQ0L,  DQ1L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L27p,   ,  U3,  M2,  DM0L,  DM1L/BWS#1L,  DM1L/BWS#1L,  DQ0L,  DQ1L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L27n,   ,  U2,  M1,   ,   ,   ,   ,  DQ1L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L28p,   ,  R3,  M4,  DQ1L,  DQ3L,  DQ1L,  DM0L,  DM1L/BWS#1L,  DM1L/BWS#1L
+B2,  VREFB2N0,  IO,  DIFFIO_L28n,   ,  R6,  M3,   ,   ,   ,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L29p,   ,  R4,  N2,  DQ1L,  DQ3L,  DQ1L,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L29n,   ,  R7,  N1,   ,   ,   ,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L30p,   ,  T4,   ,  DQ1L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N0,  IO,  DIFFIO_L30n,   ,  T3,  L7,   ,   ,   ,   ,   ,   
+B2,  VREFB2N0,  IO,  VREFB2N0,   ,  T8,  M5,   ,   ,   ,   ,   ,   
+B2,  VREFB2N0,  IO,  DIFFIO_L31p,   ,  U4,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N0,  IO,  DIFFIO_L31n,   ,  R5,   ,  DQ1L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N0,  IO,  DIFFIO_L32p,   ,  U1,  P2,  DQ1L,  DQ3L,  DQ1L,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L32n,   ,  V4,  P1,  DQ1L,  DQ3L,  DQ1L,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L33p,   ,  V3,  R2,   ,   ,   ,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N0,  IO,  DIFFIO_L33n,   ,  V2,  R1,  DQ1L,  DQ3L,  DQ1L,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N1,  IO,   ,   ,  V9,  N5,   ,   ,   ,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N1,  IO,  DIFFIO_L34p,   ,  AB2,  P4,"  DQS1L/CQ1L#,DPCLK1","  DQS1L/CQ1L#,DPCLK1","  DQS1L/CQ1L#,DPCLK1","  DQS1L/CQ1L#,DPCLK1","  DQS1L/CQ1L#,DPCLK1","  DQS1L/CQ1L#,DPCLK1"
+B2,  VREFB2N1,  IO,  DIFFIO_L34n,   ,  AB1,  P3,   ,   ,   ,  DQ1L,  DQ3L,  DQ1L
+B2,  VREFB2N1,  IO,   ,   ,  V1,   ,  DQ1L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L35p,   ,  W2,  U2,  DQ1L,  DQ3L,  DQ1L,  DM1L/BWS#1L,  DM3L/BWS#3L,  DM1L/BWS#1L
+B2,  VREFB2N1,  IO,  DIFFIO_L35n,   ,  W1,  U1,  DM1L/BWS#1L,  DM3L/BWS#3L,  DM1L/BWS#1L,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N1,  IO,  DIFFIO_L36p,   ,  W3,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L36n,   ,  W4,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L37p,   ,  V6,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L37n,   ,  U5,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L38p,   ,  Y5,  V2,   ,   ,   ,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N1,  IO,  DIFFIO_L38n,   ,  Y6,  V1,   ,   ,   ,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N1,  IO,  DIFFIO_L39p,   ,  V5,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L39n,   ,  U6,   ,  DQ3L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L40p,   ,  AA7,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L40n,   ,  AA6,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  VREFB2N1,   ,  T7,  P5,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L41p,   ,  AA8,  N6,   ,   ,   ,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N1,  IO,  DIFFIO_L41n,   ,  Y7,  M7,   ,   ,   ,   ,   ,   
+B2,  VREFB2N1,  IO,  DIFFIO_L42p,   ,  Y4,  M8,  DQ3L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L42n,   ,  Y3,  N8,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L43p,   ,  T9,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L43n,   ,  AC2,   ,  DQ3L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L44p,   ,  W8,  W2,   ,   ,   ,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N2,  IO,  DIFFIO_L44n,   ,  AC1,  W1,  DQ3L,  DQ3L,  DQ1L,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N2,  IO,  DIFFIO_L45p,   ,  V7,  Y2,   ,   ,   ,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N2,  IO,  DIFFIO_L45n,   ,  AC3,  Y1,  DQ3L,  DQ3L,  DQ1L,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N2,  IO,  DIFFIO_L46p,   ,  AD2,   ,  DQ3L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L46n,   ,  AD1,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L47p,   ,  AB3,   ,  DQ3L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L47n,   ,  AA4,   ,  DQ3L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N2,  IO,   ,   ,  W9,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L48p,   ,  AB7,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L48n,   ,  AC7,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  VREFB2N2,   ,  V8,  T3,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L49p,   ,  AE1,  N7,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L49n,   ,  AE2,  P7,  DQ3L,  DQ3L,  DQ1L,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L50p,   ,  AA5,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N2,  IO,  DIFFIO_L50n,   ,  AF2,  AA1,  DM3L/BWS#3L,  DM3L/BWS#3L,  DM1L/BWS#1L,  DQ3L,  DQ3L,  DQ1L
+B2,  VREFB2N3,  IO,  DIFFIO_L51p,   ,  AB6,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  DIFFIO_L51n,   ,  AB5,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,   ,   ,  AA3,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  RUP1,   ,  U7,  V4,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  RDN1,   ,  U8,  V3,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  DIFFIO_L52p,   ,  AC4,  P6,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  DIFFIO_L52n,   ,  AD3,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,   ,   ,  AD4,  T5,   ,   ,   ,  DM3L/BWS#3L,  DM3L/BWS#3L,  DM1L/BWS#1L
+B2,  VREFB2N3,  IO,   ,   ,  AE3,  T4,"  DQS3L/CQ3L#,CDPCLK1","  DQS3L/CQ3L#,CDPCLK1","  DQS3L/CQ3L#,CDPCLK1","  DQS3L/CQ3L#,CDPCLK1","  DQS3L/CQ3L#,CDPCLK1","  DQS3L/CQ3L#,CDPCLK1"
+B2,  VREFB2N3,  IO,  VREFB2N3,   ,  AB4,  R5,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,   ,   ,  AB8,  R6,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  DIFFIO_L53p,   ,  AC5,  R7,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  DIFFIO_L53n,   ,  AD5,  T7,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  DIFFIO_L54p,   ,  AE4,   ,   ,   ,   ,   ,   ,   
+B2,  VREFB2N3,  IO,  DIFFIO_L54n,   ,  AF3,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B1p,   ,  AC11,  V6,   ,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B1n,   ,  AD11,  V5,   ,   ,   ,  DM3B/BWS#3B,  DM3B/BWS#3B,  DM5B/BWS#5B
+B3,  VREFB3N3,  IO,  DIFFIO_B2p,   ,  AD12,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B2n,   ,  AE6,   ,  DM1B,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B3p,   ,  AF4,  U7,  DQ1B,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B3n,   ,  AB12,  U8,   ,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  VREFB3N3,   ,  Y10,  Y4,   ,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B4p,   ,  AG4,  Y3,   ,   ,   ,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N3,  IO,  DIFFIO_B4n,   ,  AG3,   ,  DQ1B,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B5p,   ,  AE7,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B5n,   ,  AE8,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N3,  IO,  DIFFIO_B6p,   ,  AD7,  Y6,"  DQS1B/CQ1B#,CDPCLK2","  DQS1B/CQ1B#,CDPCLK2","  DQS1B/CQ1B#,CDPCLK2","  DQS1B/CQ1B#,CDPCLK2","  DQS1B/CQ1B#,CDPCLK2","  DQS1B/CQ1B#,CDPCLK2"
+B3,  VREFB3N3,  IO,  DIFFIO_B6n,   ,  Y12,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  PLL1_CLKOUTp,   ,  AE5,  AA3,   ,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  PLL1_CLKOUTn,   ,  AF5,  AB3,   ,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B7p,   ,  AH3,  W6,  DQ1B,   ,   ,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N2,  IO,  DIFFIO_B7n,   ,  W10,  V7,   ,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,   ,   ,  AF6,  AA4,  DQ1B,   ,   ,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N2,  IO,  VREFB3N2,   ,  AA12,  AB4,   ,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B8p,   ,  AC12,  AA5,   ,   ,   ,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N2,  IO,  DIFFIO_B8n,   ,  AH4,  AB5,  DQ1B,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B9p,   ,  AC10,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B9n,   ,  AD8,   ,  DQ1B,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B10p,   ,  AG6,   ,  DQ1B,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B10n,   ,  AB13,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B11p,   ,  AH6,  T8,  DQ1B,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B11n,   ,  AA13,  T9,   ,   ,   ,   ,   ,   
+B3,  VREFB3N2,  IO,  DIFFIO_B12p,   ,  AB9,  W7,  DM3B/BWS#3B,  DM3B/BWS#3B,  DM5B/BWS#5B,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N2,  IO,  DIFFIO_B12n,   ,  AD10,  Y7,  DQ3B,  DQ3B,  DQ5B,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N2,  IO,  DIFFIO_B13p,   ,  AG7,  U9,  DQ3B,  DQ3B,  DQ5B,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N2,  IO,  DIFFIO_B13n,   ,  Y13,  V8,   ,   ,   ,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N2,  IO,   ,   ,  AH7,  W8,  DQ3B,  DQ3B,  DQ5B,  DQ3B,  DQ3B,  DQ5B
+B3,  VREFB3N1,  IO,  DIFFIO_B14p,   ,  AC8,  AA7,  DQ3B,  DQ3B,  DQ5B,  DM5B/BWS#5B,  DM3B/BWS#3B,  DM5B/BWS#5B
+B3,  VREFB3N1,  IO,  DIFFIO_B14n,   ,  AA10,  AB7,  DQ3B,  DQ3B,  DQ5B,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N1,  IO,   ,   ,  Y14,  Y8,   ,   ,   ,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N1,  IO,  DIFFIO_B15p,   ,  AG8,  T10,  DQ3B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N1,  IO,  DIFFIO_B15n,   ,  Y15,  T11,   ,   ,   ,   ,   ,   
+B3,  VREFB3N1,  IO,  VREFB3N1,   ,  AB11,  V9,   ,   ,   ,   ,   ,   
+B3,  VREFB3N1,  IO,  DIFFIO_B16p,   ,  AE10,  V10,"  DQS3B/CQ3B#,DPCLK2","  DQS3B/CQ3B#,DPCLK2","  DQS3B/CQ3B#,DPCLK2","  DQS3B/CQ3B#,DPCLK2","  DQS3B/CQ3B#,DPCLK2","  DQS3B/CQ3B#,DPCLK2"
+B3,  VREFB3N1,  IO,  DIFFIO_B16n,   ,  AH8,   ,  DQ3B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N1,  IO,  DIFFIO_B17p,   ,  AF7,   ,  DQ3B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N1,  IO,  DIFFIO_B17n,   ,  AH10,  U10,   ,   ,   ,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N1,  IO,  DIFFIO_B18p,   ,  AF9,  AA8,  DQ3B,  DQ3B,  DQ5B,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N1,  IO,  DIFFIO_B18n,   ,  AH12,  AB8,   ,   ,   ,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N1,  IO,  DIFFIO_B19p,   ,  AF8,   ,  DM5B/BWS#5B,  DM3B/BWS#3B,  DM5B/BWS#5B,   ,   ,   
+B3,  VREFB3N1,  IO,  DIFFIO_B19n,   ,  AF12,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N1,  IO,  DIFFIO_B20p,   ,  AE9,   ,  DQ5B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N1,  IO,  DIFFIO_B20n,   ,  AF13,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N1,  IO,  DIFFIO_B21p,   ,  AF10,  AA9,  DQ5B,  DQ3B,  DQ5B,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N1,  IO,  DIFFIO_B21n,   ,  AF11,  AB9,"  DQS5B/CQ5B#,DPCLK3","  DQS5B/CQ5B#,DPCLK3","  DQS5B/CQ5B#,DPCLK3","  DQS5B/CQ5B#,DPCLK3","  DQS5B/CQ5B#,DPCLK3","  DQS5B/CQ5B#,DPCLK3"
+B3,  VREFB3N0,  IO,  VREFB3N0,   ,  AA14,  U11,   ,   ,   ,   ,   ,   
+B3,  VREFB3N0,  IO,  DIFFIO_B22p,   ,  AG10,   ,  DQ5B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N0,  IO,  DIFFIO_B22n,   ,  AE12,   ,  DQ5B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N0,  IO,  DIFFIO_B23p,   ,  AE11,   ,  DQ5B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N0,  IO,  DIFFIO_B23n,   ,  AG11,   ,  DQ5B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N0,  IO,  DIFFIO_B24p,   ,  AH11,   ,  DQ5B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N0,  IO,  DIFFIO_B24n,   ,  AB14,   ,   ,   ,   ,   ,   ,   
+B3,  VREFB3N0,  IO,  DIFFIO_B25p,   ,  AE13,   ,  DQ5B,  DQ3B,  DQ5B,   ,   ,   
+B3,  VREFB3N0,  IO,  DIFFIO_B25n,   ,  AC14,  V11,   ,   ,   ,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N0,  IO,  DIFFIO_B26p,   ,  AG12,  W10,  DQ5B,  DQ3B,  DQ5B,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N0,  IO,  DIFFIO_B26n,   ,  AD14,  Y10,   ,   ,   ,  DQ5B,  DQ3B,  DQ5B
+B3,  VREFB3N0,  IO,  DIFFIO_B27p,   ,  AE14,  AA10,   ,   ,   ,  DM4B,  DM5B/BWS#5B,  DM5B/BWS#5B
+B3,  VREFB3N0,  IO,  DIFFIO_B27n,   ,  AF14,  AB10,   ,   ,   ,   ,  DQ5B,  DQ5B
+B3,  VREFB3N0,  CLK15,  DIFFCLK_6p,   ,  AG14,  AA11,   ,   ,   ,   ,   ,   
+B3,  VREFB3N0,  CLK14,  DIFFCLK_6n,   ,  AH14,  AB11,   ,   ,   ,   ,   ,   
+B4,  VREFB4N3,  CLK13,  DIFFCLK_7p,   ,  AG15,  AA12,   ,   ,   ,   ,   ,   
+B4,  VREFB4N3,  CLK12,  DIFFCLK_7n,   ,  AH15,  AB12,   ,   ,   ,   ,   ,   
+B4,  VREFB4N3,  IO,  DIFFIO_B28p,   ,  AB15,  AA13,   ,   ,   ,  DQ4B,  DQ5B,  DQ5B
+B4,  VREFB4N3,  IO,  DIFFIO_B28n,   ,  AC15,  AB13,  DM4B,  DM5B/BWS#5B,  DM5B/BWS#5B,  DQ4B,  DQ5B,  DQ5B
+B4,  VREFB4N3,  IO,  DIFFIO_B29p,   ,  AD15,  AA14,   ,   ,   ,  DQ4B,  DQ5B,  DQ5B
+B4,  VREFB4N3,  IO,  DIFFIO_B29n,   ,  AE15,  AB14,   ,  DQ5B,  DQ5B,  DQ4B,  DQ5B,  DQ5B
+B4,  VREFB4N3,  IO,   ,   ,  AA16,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N3,  IO,  VREFB4N3,   ,  AA15,  V12,   ,   ,   ,   ,   ,   
+B4,  VREFB4N3,  IO,  DIFFIO_B30p,   ,  AF15,   ,  DQ4B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N3,  IO,  DIFFIO_B30n,   ,  AG17,   ,  DQ4B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N3,  IO,  DIFFIO_B31p,   ,  AH17,   ,  DQ4B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N3,  IO,  DIFFIO_B31n,   ,  W16,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N3,  IO,  DIFFIO_B32p,   ,  AF16,  W13,  DQ4B,  DQ5B,  DQ5B,  DQ4B,  DQ5B,  DQ5B
+B4,  VREFB4N3,  IO,  DIFFIO_B32n,   ,  AF17,  Y13,"  DQS4B/CQ5B,DPCLK4","  DQS4B/CQ5B,DPCLK4","  DQS4B/CQ5B,DPCLK4","  DQS4B/CQ5B,DPCLK4","  DQS4B/CQ5B,DPCLK4","  DQS4B/CQ5B,DPCLK4"
+B4,  VREFB4N3,  IO,  DIFFIO_B33p,   ,  AB16,  AA15,  DQ4B,  DQ5B,  DQ5B,  DQ4B,  DQ5B,  DQ5B
+B4,  VREFB4N3,  IO,  DIFFIO_B33n,   ,  AE16,  AB15,   ,   ,   ,  DQ4B,  DQ5B,  DQ5B
+B4,  VREFB4N3,  IO,  DIFFIO_B34p,   ,  AE17,  U12,  DQ4B,  DQ5B,  DQ5B,  DQ4B,  DQ5B,  DQ5B
+B4,  VREFB4N3,  IO,  DIFFIO_B34n,   ,  AG18,   ,  DQ4B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B35p,   ,  AH18,  AA16,  DQ4B,  DQ5B,  DQ5B,  DM2B,  DM5B/BWS#5B,  DM5B/BWS#5B
+B4,  VREFB4N2,  IO,  DIFFIO_B35n,   ,  AH19,  AB16,  DM2B,  DM5B/BWS#5B,  DM5B/BWS#5B,  DQ2B,  DQ5B,  DQ5B
+B4,  VREFB4N2,  IO,  DIFFIO_B36p,   ,  AD17,  T12,  DQ2B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B36n,   ,  AF18,  T13,   ,   ,   ,   ,   ,   
+B4,  VREFB4N2,  IO,   ,   ,  AE18,  V13,"  DQS2B/CQ3B,DPCLK5","  DQS2B/CQ3B,DPCLK5","  DQS2B/CQ3B,DPCLK5","  DQS2B/CQ3B,DPCLK5","  DQS2B/CQ3B,DPCLK5","  DQS2B/CQ3B,DPCLK5"
+B4,  VREFB4N2,  IO,  VREFB4N2,   ,  Y17,  W14,   ,   ,   ,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B37p,   ,  AG21,   ,  DQ2B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B37n,   ,  AC17,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B38p,   ,  AH21,   ,  DQ2B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B38n,   ,  AG22,  U13,  DQ2B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B39p,   ,  AH22,  V14,  DQ2B,  DQ5B,  DQ5B,  DQ2B,  DQ5B,  DQ5B
+B4,  VREFB4N2,  IO,  DIFFIO_B39n,   ,  AG19,  U14,   ,   ,   ,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B40p,   ,  AH23,  U15,  DQ2B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N2,  IO,  DIFFIO_B40n,   ,  AE19,  V15,  DQ2B,  DQ5B,  DQ5B,  DQ2B,  DQ5B,  DQ5B
+B4,  VREFB4N1,  IO,  DIFFIO_B41p,   ,  AF24,   ,  DQ2B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B41n,   ,  AF19,  W15,   ,   ,   ,  DQ2B,  DQ5B,  DQ5B
+B4,  VREFB4N1,  IO,  DIFFIO_B42p,   ,  AF25,  T14,  DM0B,  DQ5B,  DQ5B,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B42n,   ,  AF20,  T15,  DQ0B,   ,   ,  DQ2B,  DQ5B,  DQ5B
+B4,  VREFB4N1,  IO,   ,   ,  AD18,  AB18,  DQ0B,   ,   ,  DQ2B,  DQ5B,  DQ5B
+B4,  VREFB4N1,  IO,  DIFFIO_B43p,   ,  Y19,  AA17,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B43n,   ,  AE21,  AB17,  DQ0B,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  VREFB4N1,   ,  AC18,  AA18,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B44p,   ,  AB18,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B44n,   ,  AA19,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B45p,   ,  AD19,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B45n,   ,  AE20,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B46p,   ,  AC19,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B46n,   ,  AB19,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  RUP2,   ,  AA17,  AA19,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  RDN2,   ,  AB17,  AB19,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,   ,   ,  AD21,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N1,  IO,  DIFFIO_B47p,   ,  AF21,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B47n,   ,  AE25,   ,  DQ0B,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B48p,   ,  AC21,  W17,   ,   ,   ,  DQ2B,  DQ5B,  DQ5B
+B4,  VREFB4N0,  IO,  DIFFIO_B48n,   ,  AF26,  Y17,"  DQS0B/CQ1B,CDPCLK3","  DQS0B/CQ1B,CDPCLK3","  DQS0B/CQ1B,CDPCLK3","  DQS0B/CQ1B,CDPCLK3","  DQS0B/CQ1B,CDPCLK3","  DQS0B/CQ1B,CDPCLK3"
+B4,  VREFB4N0,  IO,  DIFFIO_B49p,   ,  AG25,  AA20,   ,   ,   ,   ,  DQ5B,  DQ5B
+B4,  VREFB4N0,  IO,  DIFFIO_B49n,   ,  AH25,  AB20,  DQ0B,   ,   ,  DQ2B,  DQ5B,  DQ5B
+B4,  VREFB4N0,  IO,  VREFB4N0,   ,  AB20,  V16,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B50p,   ,  AG23,  U16,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B50n,   ,  AF22,  U17,  DQ0B,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B51p,   ,  AE24,   ,  DQ0B,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B51n,   ,  AG26,   ,  DQ0B,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  PLL4_CLKOUTp,   ,  AE23,  T16,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  PLL4_CLKOUTn,   ,  AF23,  R16,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B52p,   ,  AD22,  R14,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B52n,   ,  AE22,  R15,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B53p,   ,  AB21,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,  DIFFIO_B53n,   ,  AC22,   ,   ,   ,   ,   ,   ,   
+B4,  VREFB4N0,  IO,   ,   ,  AH26,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R56n,   ,  AA21,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R56p,   ,  AB22,  AA21,   ,   ,   ,  DM3R/BWS#3R,  DM3R/BWS#3R,  DM1R/BWS#1R
+B5,  VREFB5N3,  IO,  DIFFIO_R55n,   ,  AB24,   ,  DM3R/BWS#3R,  DM3R/BWS#3R,  DM1R/BWS#1R,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R55p,   ,  AC24,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  RUP3,   ,  AA22,  T17,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  RDN3,   ,  AB23,  T18,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,   ,   ,  AD25,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,   ,   ,  AF27,  W20,"  DQS3R/CQ3R#,CDPCLK4","  DQS3R/CQ3R#,CDPCLK4","  DQS3R/CQ3R#,CDPCLK4","  DQS3R/CQ3R#,CDPCLK4","  DQS3R/CQ3R#,CDPCLK4","  DQS3R/CQ3R#,CDPCLK4"
+B5,  VREFB5N3,  IO,  DIFFIO_R54n,   ,  AE26,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R54p,   ,  AE27,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R53n,   ,  Y22,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R53p,   ,  AD24,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  VREFB5N3,   ,  AA24,  W19,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R52n,   ,  AC25,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R52p,   ,  AD26,   ,  DQ3R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N3,  IO,  DIFFIO_R51n,   ,  AE28,  Y22,  DQ3R,  DQ3R,  DQ1R,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N2,  IO,  DIFFIO_R51p,   ,  AA23,  Y21,   ,   ,   ,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R50n,   ,  AD28,  U20,  DQ3R,  DQ3R,  DQ1R,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N2,  IO,  DIFFIO_R50p,   ,  Y23,  U19,   ,   ,   ,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R49n,   ,  AD27,  W22,  DQ3R,  DQ3R,  DQ1R,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N2,  IO,  DIFFIO_R49p,   ,  AC26,  W21,   ,   ,   ,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N2,  IO,  DIFFIO_R48n,   ,  Y24,   ,  DQ3R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R48p,   ,  W22,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R47n,   ,  AC28,   ,  DQ3R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R47p,   ,  W21,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R46n,   ,  AC27,  P15,  DQ3R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R46p,   ,  AB26,  P16,  DQ3R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N2,  IO,   ,   ,  V26,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N2,  IO,  VREFB5N2,   ,  U24,  R17,   ,   ,   ,   ,   ,   
+B5,  VREFB5N2,  IO,   ,   ,  V22,  P17,   ,   ,   ,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R45n,   ,  AA26,  V22,  DQ3R,  DQ3R,  DQ1R,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N2,  IO,  DIFFIO_R45p,   ,  U26,  V21,   ,   ,   ,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N2,  IO,  DIFFIO_R44n,   ,  AB28,  R20,  DM1R/BWS#1R,  DM3R/BWS#3R,  DM1R/BWS#1R,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N2,  IO,  DIFFIO_R44p,   ,  AB27,   ,  DQ1R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N2,  IO,  DIFFIO_R43n,   ,  V21,  U22,   ,   ,   ,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N1,  IO,  DIFFIO_R43p,   ,  Y26,  U21,  DQ1R,  DQ3R,  DQ1R,  DQ3R,  DQ3R,  DQ1R
+B5,  VREFB5N1,  IO,  DIFFIO_R42n,   ,  U20,  R18,   ,   ,   ,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R42p,   ,  W26,  R19,  DQ1R,  DQ3R,  DQ1R,  DM1R/BWS#1R,  DM3R/BWS#3R,  DM1R/BWS#1R
+B5,  VREFB5N1,  IO,  DIFFIO_R41n,   ,  W27,   ,  DQ1R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R41p,   ,  W28,   ,  DQ1R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R40n,   ,  AB25,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R40p,   ,  V28,  N16,  DQ1R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R39n,   ,  AA25,  R22,   ,   ,   ,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N1,  IO,  DIFFIO_R39p,   ,  V27,  R21,   ,   ,   ,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N1,  IO,  VREFB5N1,   ,  U23,  P20,   ,   ,   ,   ,   ,   
+B5,  VREFB5N1,  IO,   ,   ,  W25,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R38n,   ,  V25,  P22,  DQ1R,  DQ3R,  DQ1R,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N1,  IO,  DIFFIO_R38p,   ,  R22,  P21,   ,   ,   ,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N1,  IO,  DIFFIO_R37n,   ,  V24,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R37p,   ,  U27,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R36n,   ,  V23,  N20,   ,   ,   ,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N1,  IO,  DIFFIO_R36p,   ,  U28,  N19,  DQ1R,  DQ3R,  DQ1R,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R35n,   ,  Y25,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N1,  IO,  DIFFIO_R35p,   ,  T26,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,  DIFFIO_R34n,   ,  W20,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,  DIFFIO_R34p,   ,  U22,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,  DIFFIO_R33n,   ,  V20,  N17,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,  DIFFIO_R33p,   ,  T25,  N18,"  DQS1R/CQ1R#,DPCLK6","  DQS1R/CQ1R#,DPCLK6","  DQS1R/CQ1R#,DPCLK6","  DQS1R/CQ1R#,DPCLK6","  DQS1R/CQ1R#,DPCLK6","  DQS1R/CQ1R#,DPCLK6"
+B5,  VREFB5N0,  IO,  DIFFIO_R32n,  DEV_OE,  T22,  N22,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,  DIFFIO_R32p,  DEV_CLRn,  T21,  N21,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,  DIFFIO_R31n,   ,  R26,  M22,  DQ1R,  DQ3R,  DQ1R,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N0,  IO,  DIFFIO_R31p,   ,  R25,  M21,   ,   ,   ,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N0,  IO,  DIFFIO_R30n,   ,  R28,  M20,  DM0R,  DM1R/BWS#1R,  DM1R/BWS#1R,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N0,  IO,  DIFFIO_R30p,   ,  U25,  M19,   ,   ,   ,  DQ1R,  DQ3R,  DQ1R
+B5,  VREFB5N0,  IO,  VREFB5N0,   ,  R24,  M16,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,   ,   ,  R27,   ,   ,  DQ1R,  DQ1R,   ,   ,   
+B5,  VREFB5N0,  IO,  DIFFIO_R29n,   ,  R23,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,  DIFFIO_R29p,   ,  R21,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  IO,   ,   ,  P21,   ,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  CLK7,  DIFFCLK_3n,   ,  Y28,  T22,   ,   ,   ,   ,   ,   
+B5,  VREFB5N0,  CLK6,  DIFFCLK_3p,   ,  Y27,  T21,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  CLK5,  DIFFCLK_2n,   ,  J28,  G22,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  CLK4,  DIFFCLK_2p,   ,  J27,  G21,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  CONF_DONE,   ,  CONF_DONE,  P24,  M18,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  MSEL0,   ,  MSEL0,  N22,  M17,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  MSEL1,   ,  MSEL1,  P23,  L18,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  MSEL2,   ,  MSEL2,  M22,  L17,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  MSEL3,   ,  MSEL3,  P22,  K20,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R28n,   ,  K25,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R28p,   ,  M24,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R27n,  INIT_DONE,  P26,  L22,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R27p,  CRC_ERROR,  P25,  L21,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R26n,   ,  H26,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R26p,   ,  L25,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  VREFB6N3,   ,  N21,  K19,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R25n,   ,  N25,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R25p,   ,  G24,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R24n,  nCEO,  P28,  K22,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R24p,  CLKUSR,  P27,  K21,   ,   ,   ,   ,   ,   
+B6,  VREFB6N3,  IO,  DIFFIO_R23n,   ,  N26,  J22,"  DQS0R/CQ1R,DPCLK7","  DQS0R/CQ1R,DPCLK7","  DQS0R/CQ1R,DPCLK7","  DQS0R/CQ1R,DPCLK7","  DQS0R/CQ1R,DPCLK7","  DQS0R/CQ1R,DPCLK7"
+B6,  VREFB6N3,  IO,  DIFFIO_R23p,   ,  L22,  J21,   ,   ,   ,  DM0R,  DM1R/BWS#1R,  DM1R/BWS#1R
+B6,  VREFB6N3,  IO,  DIFFIO_R22n,   ,  M28,  H22,  DQ0R,  DQ1R,  DQ1R,  DQ0R,  DQ1R,  DQ1R
+B6,  VREFB6N2,  IO,  DIFFIO_R22p,   ,  M23,  H21,   ,   ,   ,  DQ0R,  DQ1R,  DQ1R
+B6,  VREFB6N2,  IO,   ,   ,  M27,   ,  DQ0R,  DQ1R,  DQ1R,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R21n,   ,  L20,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R21p,   ,  M26,   ,  DQ0R,  DQ1R,  DQ1R,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R20n,   ,  K22,  K17,   ,   ,   ,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R20p,   ,  L23,  K18,   ,   ,   ,  DQ0R,  DQ1R,  DQ1R
+B6,  VREFB6N2,  IO,   ,   ,  J26,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R19n,   ,  H25,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R19p,   ,  K21,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N2,  IO,  VREFB6N2,   ,  M25,  J18,   ,   ,   ,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R18n,   ,  J23,  F22,   ,   ,   ,  DQ0R,  DQ1R,  DQ1R
+B6,  VREFB6N2,  IO,  DIFFIO_R18p,   ,  L28,  F21,  DQ0R,  DQ1R,  DQ1R,  DQ0R,  DQ1R,  DQ1R
+B6,  VREFB6N2,  IO,  DIFFIO_R17n,   ,  L27,   ,  DQ0R,  DQ1R,  DQ1R,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R17p,   ,  L24,   ,  DQ0R,  DQ1R,  DQ1R,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R16n,   ,  E25,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R16p,   ,  K28,   ,  DQ0R,  DQ1R,  DQ1R,   ,   ,   
+B6,  VREFB6N2,  IO,  DIFFIO_R15n,   ,  F24,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R15p,   ,  K27,   ,  DQ0R,  DQ1R,  DQ1R,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R14n,   ,  J24,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R14p,   ,  L26,   ,  DM2R,  DM1R/BWS#1R,  DM1R/BWS#1R,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R13n,   ,  H23,  H20,   ,   ,   ,  DQ0R,  DQ1R,  DQ1R
+B6,  VREFB6N1,  IO,  DIFFIO_R13p,   ,  J25,  H19,   ,  DQ1R,  DQ1R,  DQ0R,  DQ1R,  DQ1R
+B6,  VREFB6N1,  IO,  DIFFIO_R12n,  nWE,  G28,  E22,  DQ2R,  DQ1R,  DQ1R,  DQ0R,  DQ1R,  DQ1R
+B6,  VREFB6N1,  IO,  DIFFIO_R12p,  nOE,  G27,  E21,  DQ2R,  DQ1R,  DQ1R,   ,  DQ1R,  DQ1R
+B6,  VREFB6N1,  IO,  DIFFIO_R11n,   ,  H22,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R11p,   ,  H24,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N1,  IO,  VREFB6N1,   ,  M21,  H18,   ,   ,   ,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R10n,   ,  G25,  J17,   ,   ,   ,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R10p,   ,  K26,  H16,  DQ2R,  DQ1R,  DQ1R,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R9n,   ,  G26,  D22,   ,   ,   ,  DM2R,  DM1R/BWS#1R,  DM1R/BWS#1R
+B6,  VREFB6N1,  IO,  DIFFIO_R9p,   ,  G23,  D21,   ,   ,   ,   ,  DQ1R,  DQ1R
+B6,  VREFB6N1,  IO,  DIFFIO_R8n,  nAVD,  F28,  F20,  DQ2R,  DQ1R,  DQ1R,  DQ2R,  DQ1R,  DQ1R
+B6,  VREFB6N1,  IO,  DIFFIO_R8p,   ,  F27,  F19,   ,   ,   ,  DQ2R,  DQ1R,  DQ1R
+B6,  VREFB6N1,  IO,  DIFFIO_R7n,  PADD23,  E28,  G18,  DQ2R,  DQ1R,  DQ1R,  DQ2R,  DQ1R,  DQ1R
+B6,  VREFB6N1,  IO,  DIFFIO_R7p,   ,  G22,  H17,   ,   ,   ,   ,   ,   
+B6,  VREFB6N1,  IO,  DIFFIO_R6n,   ,  E27,  C22,  DQ2R,  DQ1R,  DQ1R,  DQ2R,  DQ1R,  DQ1R
+B6,  VREFB6N0,  IO,  DIFFIO_R6p,   ,  H21,  C21,   ,   ,   ,  DQ2R,  DQ1R,  DQ1R
+B6,  VREFB6N0,  IO,   ,   ,  F26,   ,  DQ2R,  DQ1R,  DQ1R,   ,   ,   
+B6,  VREFB6N0,  IO,  DIFFIO_R5n,  PADD22,  D28,  B22,   ,   ,   ,  DQ2R,  DQ1R,  DQ1R
+B6,  VREFB6N0,  IO,  DIFFIO_R5p,  PADD21,  D27,  B21,  DQ2R,  DQ1R,  DQ1R,  DQ2R,  DQ1R,  DQ1R
+B6,  VREFB6N0,  IO,  DIFFIO_R4n,  PADD20,  C27,  C20,"  DQS2R/CQ3R,CDPCLK5","  DQS2R/CQ3R,CDPCLK5","  DQS2R/CQ3R,CDPCLK5","  DQS2R/CQ3R,CDPCLK5","  DQS2R/CQ3R,CDPCLK5","  DQS2R/CQ3R,CDPCLK5"
+B6,  VREFB6N0,  IO,  DIFFIO_R4p,   ,  F25,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N0,  IO,  VREFB6N0,   ,  J22,  D20,   ,   ,   ,   ,   ,   
+B6,  VREFB6N0,  IO,  DIFFIO_R3n,   ,  E26,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N0,  IO,  DIFFIO_R3p,   ,  E24,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N0,  IO,  DIFFIO_R2n,   ,  D25,  F17,   ,   ,   ,  DQ2R,  DQ1R,  DQ1R
+B6,  VREFB6N0,  IO,  DIFFIO_R2p,   ,  D24,  G17,   ,   ,   ,   ,   ,   
+B6,  VREFB6N0,  IO,  DIFFIO_R1n,   ,  D26,   ,   ,   ,   ,   ,   ,   
+B6,  VREFB6N0,  IO,  DIFFIO_R1p,   ,  C26,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,   ,   ,  G21,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  DIFFIO_T52n,   ,  B26,   ,  DQ0T,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  DIFFIO_T52p,   ,  D22,   ,  DQ0T,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  DIFFIO_T51n,   ,  E22,  F16,  DQ0T,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  DIFFIO_T51p,   ,  J19,  E16,   ,   ,   ,  DQ2T,  DQ5T,  DQ5T
+B7,  VREFB7N0,  IO,  DIFFIO_T50n,   ,  A26,  F15,  DQ0T,   ,   ,  DQ2T,  DQ5T,  DQ5T
+B7,  VREFB7N0,  IO,  DIFFIO_T50p,   ,  G20,  G16,   ,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,   ,   ,  B25,   ,  DQ0T,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  DIFFIO_T49n,   ,  G19,  G15,   ,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  DIFFIO_T49p,   ,  A25,  F14,"  DQS0T/CQ1T,CDPCLK6","  DQS0T/CQ1T,CDPCLK6","  DQS0T/CQ1T,CDPCLK6","  DQS0T/CQ1T,CDPCLK6","  DQS0T/CQ1T,CDPCLK6","  DQS0T/CQ1T,CDPCLK6"
+B7,  VREFB7N0,  IO,  DIFFIO_T48n,   ,  F21,  H15,  DQ0T,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  DIFFIO_T48p,   ,  C25,  H14,  DQ0T,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  VREFB7N0,   ,  F22,  D17,   ,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,   ,   ,  A23,   ,  DQ0T,   ,   ,   ,   ,   
+B7,  VREFB7N0,  IO,  DIFFIO_T47n,   ,  H19,  C19,   ,   ,   ,  DQ2T,  DQ5T,  DQ5T
+B7,  VREFB7N0,  IO,  DIFFIO_T47p,   ,  B23,  D19,  DM0T,   ,   ,  DQ2T,  DQ5T,  DQ5T
+B7,  VREFB7N0,  IO,  PLL2_CLKOUTn,   ,  C23,  A20,   ,   ,   ,   ,   ,   
+B7,  VREFB7N1,  IO,  PLL2_CLKOUTp,   ,  D23,  B20,   ,   ,   ,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T46n,   ,  C24,   ,  DQ2T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T46p,   ,  E21,  C17,   ,   ,   ,  DQ2T,  DQ5T,  DQ5T
+B7,  VREFB7N1,  IO,  RUP4,   ,  F19,  B19,   ,   ,   ,   ,   ,   
+B7,  VREFB7N1,  IO,  RDN4,   ,  E19,  A19,   ,   ,   ,   ,   ,   
+B7,  VREFB7N1,  IO,   ,   ,  C22,   ,  DQ2T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T45n,   ,  D21,  A18,  DQ2T,  DQ5T,  DQ5T,  DQ2T,  DQ5T,  DQ5T
+B7,  VREFB7N1,  IO,  DIFFIO_T45p,  PADD0,  B22,  B18,   ,   ,   ,   ,   ,   
+B7,  VREFB7N1,  IO,  VREFB7N1,   ,  F18,  D15,   ,   ,   ,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T44n,   ,  C21,  E15,  DQ2T,  DQ5T,  DQ5T,  DQ2T,  DQ5T,  DQ5T
+B7,  VREFB7N1,  IO,  DIFFIO_T44p,   ,  D19,  G14,   ,   ,   ,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T43n,   ,  A22,   ,  DQ2T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T43p,   ,  A21,   ,  DQ2T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T42n,   ,  B21,  G13,  DQ2T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T42p,   ,  E18,   ,  DQ2T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N1,  IO,  DIFFIO_T41n,  PADD1,  C18,  A17,   ,  DQ5T,  DQ5T,  DQ2T,  DQ5T,  DQ5T
+B7,  VREFB7N2,  IO,  DIFFIO_T41p,  PADD2,  D18,  B17,   ,   ,   ,   ,  DQ5T,  DQ5T
+B7,  VREFB7N2,  IO,  DIFFIO_T40n,   ,  C20,  A16,  DM2T,  DM5T/BWS#5T,  DM5T/BWS#5T,  DM2T,  DM5T/BWS#5T,  DM5T/BWS#5T
+B7,  VREFB7N2,  IO,  DIFFIO_T40p,   ,  H17,  B16,   ,   ,   ,  DQ4T,  DQ5T,  DQ5T
+B7,  VREFB7N2,  IO,  VREFB7N2,   ,  G17,  C15,   ,   ,   ,   ,   ,   
+B7,  VREFB7N2,  IO,  DIFFIO_T39n,   ,  D20,   ,  DQ4T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N2,  IO,  DIFFIO_T39p,   ,  C19,   ,  DQ4T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N2,  IO,  DIFFIO_T38n,  PADD3,  C17,  E14,  DQ4T,  DQ5T,  DQ5T,  DQ4T,  DQ5T,  DQ5T
+B7,  VREFB7N2,  IO,  DIFFIO_T38p,   ,  G18,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N2,  IO,   ,   ,  H15,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N2,  IO,  DIFFIO_T37n,   ,  F17,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N2,  IO,  DIFFIO_T37p,  PADD4,  D17,  F13,"  DQS2T/CQ3T,DPCLK8","  DQS2T/CQ3T,DPCLK8","  DQS2T/CQ3T,DPCLK8","  DQS2T/CQ3T,DPCLK8","  DQS2T/CQ3T,DPCLK8","  DQS2T/CQ3T,DPCLK8"
+B7,  VREFB7N2,  IO,  DIFFIO_T36n,  PADD5,  A19,  A15,  DQ4T,  DQ5T,  DQ5T,  DQ4T,  DQ5T,  DQ5T
+B7,  VREFB7N3,  IO,  DIFFIO_T36p,  PADD6,  B19,  B15,  DQ4T,  DQ5T,  DQ5T,  DQ4T,  DQ5T,  DQ5T
+B7,  VREFB7N3,  IO,  DIFFIO_T35n,  PADD7,  A18,  C13,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T35p,  PADD8,  B18,  D13,  DQ4T,  DQ5T,  DQ5T,  DQ4T,  DQ5T,  DQ5T
+B7,  VREFB7N3,  IO,  DIFFIO_T34n,   ,  E17,   ,  DQ4T,  DQ5T,  DQ5T,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T34p,   ,  J16,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T33n,   ,  J17,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T33p,   ,  H16,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T32n,   ,  G16,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T32p,   ,  F15,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  VREFB7N3,   ,  G15,  E13,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T31n,  PADD9,  C16,  A14,  DQ4T,  DQ5T,  DQ5T,  DQ4T,  DQ5T,  DQ5T
+B7,  VREFB7N3,  IO,  DIFFIO_T31p,  PADD10,  D16,  B14,   ,   ,   ,  DQ4T,  DQ5T,  DQ5T
+B7,  VREFB7N3,  IO,  DIFFIO_T30n,   ,  H14,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T30p,   ,  K15,   ,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T29n,  PADD11,  A17,  A13,   ,  DQ5T,  DQ5T,  DQ4T,  DQ5T,  DQ5T
+B7,  VREFB7N3,  IO,  DIFFIO_T29p,  PADD12,  B17,  B13,"  DQS4T/CQ5T,DPCLK9","  DQS4T/CQ5T,DPCLK9","  DQS4T/CQ5T,DPCLK9","  DQS4T/CQ5T,DPCLK9","  DQS4T/CQ5T,DPCLK9","  DQS4T/CQ5T,DPCLK9"
+B7,  VREFB7N3,  IO,  DIFFIO_T28n,   ,  E15,   ,  DM4T,  DM5T/BWS#5T,  DM5T/BWS#5T,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T28p,   ,  J14,  E12,   ,   ,   ,   ,  DQ5T,  DQ5T
+B7,  VREFB7N3,  IO,  DIFFIO_T27n,  PADD13,  C15,  E11,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  IO,  DIFFIO_T27p,  PADD14,  D15,  F11,  DQ5T,  DQ3T,  DQ5T,  DM4T,  DM5T/BWS#5T,  DM5T/BWS#5T
+B7,  VREFB7N3,  CLK8,  DIFFCLK_5n,   ,  A15,  A12,   ,   ,   ,   ,   ,   
+B7,  VREFB7N3,  CLK9,  DIFFCLK_5p,   ,  B15,  B12,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  CLK10,  DIFFCLK_4n,   ,  A14,  A11,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  CLK11,  DIFFCLK_4p,   ,  B14,  B11,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  IO,  DIFFIO_T26n,   ,  C13,  D10,  DQ5T,  DQ3T,  DQ5T,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N0,  IO,  DIFFIO_T26p,   ,  D13,  E10,  DQ5T,  DQ3T,  DQ5T,   ,   ,   
+B8,  VREFB8N0,  IO,  DIFFIO_T25n,   ,  C14,  A10,  DQ5T,  DQ3T,  DQ5T,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N0,  IO,  DIFFIO_T25p,  PADD15,  D14,  B10,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  IO,  DIFFIO_T24n,  PADD16,  C12,  A9,  DQ5T,  DQ3T,  DQ5T,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N0,  IO,  DIFFIO_T24p,  PADD17,  D12,  B9,"  DQS5T/CQ5T#,DPCLK10","  DQS5T/CQ5T#,DPCLK10","  DQS5T/CQ5T#,DPCLK10","  DQS5T/CQ5T#,DPCLK10","  DQS5T/CQ5T#,DPCLK10","  DQS5T/CQ5T#,DPCLK10"
+B8,  VREFB8N0,  IO,  DIFFIO_T23n,   ,  A12,   ,  DQ5T,  DQ3T,  DQ5T,   ,   ,   
+B8,  VREFB8N0,  IO,  VREFB8N0,   ,  G14,  C10,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  IO,  DIFFIO_T22n,   ,  K13,  G11,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  IO,  DIFFIO_T22p,   ,  F14,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  IO,   ,   ,  E14,   ,  DQ5T,  DQ3T,  DQ5T,   ,   ,   
+B8,  VREFB8N0,  IO,  DIFFIO_T21n,   ,  H12,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  IO,  DIFFIO_T21p,   ,  J12,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N0,  IO,  DIFFIO_T20n,  DATA2,  A11,  A8,  DQ5T,  DQ3T,  DQ5T,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N1,  IO,  DIFFIO_T20p,  DATA3,  B11,  B8,  DQ5T,  DQ3T,  DQ5T,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N1,  IO,  DIFFIO_T19n,  PADD18,  A10,  A7,   ,   ,   ,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N1,  IO,  DIFFIO_T19p,  DATA4,  B10,  B7,  DM5T/BWS#5T,  DM3T/BWS#3T,  DM5T/BWS#5T,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N1,  IO,  DIFFIO_T18n,  PADD19,  G13,  A6,   ,   ,   ,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N1,  IO,  DIFFIO_T18p,  DATA15,  H13,  B6,  DQ3T,  DQ3T,  DQ5T,  DQ5T,  DQ3T,  DQ5T
+B8,  VREFB8N1,  IO,  DIFFIO_T17n,   ,  B8,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N1,  IO,  DIFFIO_T17p,   ,  C10,   ,  DQ3T,  DQ3T,  DQ5T,   ,   ,   
+B8,  VREFB8N1,  IO,   ,   ,  D11,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N1,  IO,  VREFB8N1,   ,  F11,  E9,   ,   ,   ,   ,   ,   
+B8,  VREFB8N1,  IO,  DIFFIO_T16n,  DATA14,  E12,  C8,"  DQS3T/CQ3T#,DPCLK11","  DQS3T/CQ3T#,DPCLK11","  DQS3T/CQ3T#,DPCLK11","  DQS3T/CQ3T#,DPCLK11","  DQS3T/CQ3T#,DPCLK11","  DQS3T/CQ3T#,DPCLK11"
+B8,  VREFB8N1,  IO,  DIFFIO_T16p,  DATA13,  F12,  C7,   ,   ,   ,  DM5T/BWS#5T,  DM3T/BWS#3T,  DM5T/BWS#5T
+B8,  VREFB8N1,  IO,  DIFFIO_T15n,   ,  D10,   ,  DQ3T,  DQ3T,  DQ5T,   ,   ,   
+B8,  VREFB8N1,  IO,  DIFFIO_T15p,   ,  F10,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N1,  IO,  DIFFIO_T14n,   ,  E11,  H11,  DQ3T,  DQ3T,  DQ5T,   ,   ,   
+B8,  VREFB8N1,  IO,  DIFFIO_T14p,   ,  E8,  H10,   ,   ,   ,   ,   ,   
+B8,  VREFB8N1,  IO,  DIFFIO_T13n,   ,  E10,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T13p,   ,  E7,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T12n,   ,  A7,   ,  DQ3T,  DQ3T,  DQ5T,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T12p,   ,  G10,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T11n,   ,  G11,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T11p,  DATA5,  B7,  A5,  DQ3T,  DQ3T,  DQ5T,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N2,  IO,  DIFFIO_T10n,   ,  B3,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T10p,   ,  J10,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T9n,   ,  F8,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T9p,   ,  F7,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  VREFB8N2,   ,  G12,  B5,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T8n,   ,  A6,  G10,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T8p,  DATA6,  B6,  F10,  DQ3T,  DQ3T,  DQ5T,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N2,  IO,  DIFFIO_T7n,  DATA7,  C11,  C6,  DQ3T,  DQ3T,  DQ5T,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N2,  IO,  DIFFIO_T7p,   ,  H10,  D7,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,   ,   ,  G8,   ,   ,   ,   ,   ,   ,   
+B8,  VREFB8N2,  IO,  DIFFIO_T6n,   ,  C9,  A4,  DQ3T,  DQ3T,  DQ5T,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N3,  IO,  DIFFIO_T6p,  DATA8,  D9,  B4,   ,   ,   ,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N3,  IO,  DIFFIO_T5n,  DATA9,  A8,  F8,  DM3T/BWS#3T,  DM3T/BWS#3T,  DM5T/BWS#5T,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N3,  IO,  DIFFIO_T5p,   ,  C8,  G8,  DQ1T,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,   ,   ,  D8,   ,  DQ1T,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,  DIFFIO_T4n,  DATA10,  C7,  A3,  DQ1T,   ,   ,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N3,  IO,  DIFFIO_T4p,  DATA11,  D7,  B3,   ,   ,   ,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N3,  IO,  VREFB8N3,   ,  G9,  D6,   ,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,   ,   ,  D6,  E7,  DQ1T,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,  DIFFIO_T3n,   ,  A4,  C3,  DQ1T,   ,   ,  DQ3T,  DQ3T,  DQ5T
+B8,  VREFB8N3,  IO,  DIFFIO_T3p,  DATA12,  B4,  C4,"  DQS1T/CQ1T#,CDPCLK7","  DQS1T/CQ1T#,CDPCLK7","  DQS1T/CQ1T#,CDPCLK7","  DQS1T/CQ1T#,CDPCLK7","  DQS1T/CQ1T#,CDPCLK7","  DQS1T/CQ1T#,CDPCLK7"
+B8,  VREFB8N3,  IO,  DIFFIO_T2n,   ,  A3,   ,  DQ1T,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,  DIFFIO_T2p,   ,  C6,   ,  DQ1T,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,  DIFFIO_T1n,   ,  H8,  F7,   ,   ,   ,  DM3T/BWS#3T,  DM3T/BWS#3T,  DM5T/BWS#5T
+B8,  VREFB8N3,  IO,  DIFFIO_T1p,   ,  C4,  G7,  DQ1T,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,   ,   ,  D4,  F9,  DM1T,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,  PLL3_CLKOUTn,   ,  C5,  E6,   ,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,  PLL3_CLKOUTp,   ,  D5,  E5,   ,   ,   ,   ,   ,   
+B8,  VREFB8N3,  IO,   ,   ,  C3,  G9,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  K10,  L10,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  K12,  L11,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  K14,  M10,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  K18,  M11,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  K20,  L12,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  L11,  L13,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  L15,  M12,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  L17,  M13,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  L19,  N11,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  L9,  K11,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  M10,  N12,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  M12,  K12,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  M14,  K13,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  M16,  N13,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  M18,  N10,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N11,  K10,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N13,  J9,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N15,  F12,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N17,  H12,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N19,  H13,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  P10,  J15,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  P12,  K16,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  P14,  L15,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  P16,  N15,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  P18,  R13,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  P20,  R11,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  R11,  R9,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  R13,  P8,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  R15,  A1,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  R17,  C5,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  R19,  C9,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  R9,  C11,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T10,  C12,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T12,  C14,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T14,  C16,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T16,  A22,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T18,  E20,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  U11,  G20,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  U13,  L20,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  U15,  P19,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  U17,  V20,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  U19,  Y20,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  V10,  AB22,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  V12,  Y18,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  V14,  Y16,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  V18,  Y12,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  W11,  Y11,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  W15,  Y9,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  W17,  Y5,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  W19,  AB1,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AA2,  N3,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AA27,  U3,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AC6,  W3,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AC9,  D3,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AC13,  F3,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AC16,  K3,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AC20,  G2,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AC23,  AA2,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AF1,  AA22,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AF28,  H3,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AG2,  R3,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AG5,  AB6,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AG9,  Y15,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AG13,  T20,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AG16,  J19,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AG20,  C18,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AG24,  D8,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  AG27,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B2,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B5,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B9,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B16,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B20,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B24,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B27,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  C1,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  C28,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  F6,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  F9,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  F13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  F16,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  F20,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  F23,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  H2,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  H27,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  J11,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  J18,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  K6,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  K16,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  K23,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  L13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  M20,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N2,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N6,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N9,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N23,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  N27,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T2,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T6,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T20,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T23,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  T27,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  U9,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  V16,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  W6,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  W13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  W23,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  Y11,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  Y18,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  J2,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  D3,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GND,   ,   ,  B12,   ,   ,   ,   ,   ,   ,   
+ ,   ,  GNDA1,   ,   ,  AA9,  U5,   ,   ,   ,   ,   ,   
+ ,   ,  GNDA2,   ,   ,  H20,  E18,   ,   ,   ,   ,   ,   
+ ,   ,  GNDA3,   ,   ,  H9,  F5,   ,   ,   ,   ,   ,   
+ ,   ,  GNDA4,   ,   ,  AA20,  V18,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  K9,  J11,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  K11,  J12,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  L16,  L14,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  K17,  M14,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  K19,  P11,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  L10,  P12,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  L12,  L9,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  L14,  M9,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  L18,  J13,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  N20,  J14,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  M11,  K14,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  M13,  J10,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  M15,  K9,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  M17,  N9,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  M19,  P9,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  N10,  P10,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  N12,  P13,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  N14,  P14,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  N16,  N14,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  N18,  J16,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  P9,  K15,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  P11,  L16,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  P13,  M15,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  P15,  R12,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  P17,  R10,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  P19,  R8,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  R10,  H9,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  R12,  G12,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  R14,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  R16,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  R18,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  R20,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  T11,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  T13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  T15,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  T17,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  T19,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  U10,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  U12,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  U14,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  U16,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  U18,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  V11,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  V15,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  V17,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  V19,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  V13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  W12,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  W14,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCINT,   ,   ,  W18,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO1,   ,   ,  B1,  D4,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO1,   ,   ,  H1,  F4,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO1,   ,   ,  K5,  K4,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO1,   ,   ,  K8,  H4,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO1,   ,   ,  N1,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO1,   ,   ,  N5,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO2,   ,   ,  AA1,  N4,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO2,   ,   ,  AG1,  U4,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO2,   ,   ,  T1,  W4,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO2,   ,   ,  T5,  R4,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO2,   ,   ,  W7,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO2,   ,   ,  W5,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AA11,  AB2,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AD6,  W5,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AD9,  W9,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AD13,  W11,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AH2,  AA6,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AH5,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AH9,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AH13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO3,   ,   ,  AB10,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  AA18,  AB21,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  AD16,  W12,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  AD20,  W16,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  AD23,  W18,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  AH16,  Y14,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  AH20,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  AH24,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  AH27,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO4,   ,   ,  Y16,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO5,   ,   ,  AA28,  P18,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO5,   ,   ,  AG28,  V19,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO5,   ,   ,  T24,  Y19,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO5,   ,   ,  T28,  T19,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO5,   ,   ,  U21,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO5,   ,   ,  W24,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO6,   ,   ,  B28,  E19,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO6,   ,   ,  H28,  G19,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO6,   ,   ,  K24,  L19,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO6,   ,   ,  L21,  J20,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO6,   ,   ,  N24,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO6,   ,   ,  N28,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  A16,  A21,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  A20,  D12,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  A24,  D14,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  A27,  D16,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  E16,  D18,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  E20,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  E23,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  H18,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO7,   ,   ,  J15,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  A2,  A2,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  A5,  D5,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  A9,  D9,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  A13,  D11,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  E6,  E8,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  E9,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  E13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  H11,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCIO8,   ,   ,  J13,   ,   ,   ,   ,   ,   ,   
+ ,   ,  VCCA1,   ,   ,  Y8,  T6,   ,   ,   ,   ,   ,   
+ ,   ,  VCCA2,   ,   ,  J21,  F18,   ,   ,   ,   ,   ,   
+ ,   ,  VCCA3,   ,   ,  J8,  G6,   ,   ,   ,   ,   ,   
+ ,   ,  VCCA4,   ,   ,  Y21,  U18,   ,   ,   ,   ,   ,   
+ ,   ,  VCCD_PLL1,   ,   ,  Y9,  U6,   ,   ,   ,   ,   ,   
+ ,   ,  VCCD_PLL2,   ,   ,  J20,  E17,   ,   ,   ,   ,   ,   
+ ,   ,  VCCD_PLL3,   ,   ,  J9,  F6,   ,   ,   ,   ,   ,   
+ ,   ,  VCCD_PLL4,   ,   ,  Y20,  V17,   ,   ,   ,   ,   ,   
