@@ -1,0 +1,6259 @@
+PCBNEW-LibModule-V1  Monday, January 21, 2013 08:04:28 PM
+# encoding utf-8
+$INDEX
+ALTERA_F780
+$EndINDEX
+$MODULE ALTERA_F780
+Po 0 0 0 15 50FE0FC4 00000000 ~~
+Li ALTERA_F780
+Sc 0
+AR
+Op 0 0 0
+T0 0 0 394 394 0 59 N V 21 N "ALTERA_F780"
+T1 0 0 394 394 0 59 N V 21 N "VAL**"
+DS -5709 -5709 5709 -5709 59 21
+DS 5709 -5709 5709 5709 59 21
+DS 5709 5709 -5709 5709 59 21
+DS -5709 5709 -5709 -5709 59 21
+$PAD
+Sh "A2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "A27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "B28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "C28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "D28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "E28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "F28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "G28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "H28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "J28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "K28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "L28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "M28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "N28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "P28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 -197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "R28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 197
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "T28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 591
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "U28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 984
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "V28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 1378
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "W28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 1772
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "Y28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 2165
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AA28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 2559
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AB28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 2953
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AC28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 3346
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AD28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 3740
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AE28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 4134
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AF28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 4528
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG1" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -5315 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AG28" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 5315 4921
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH2" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4921 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH3" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4528 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH4" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4134 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH5" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3740 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH6" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3346 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH7" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2953 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH8" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2559 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH9" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2165 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH10" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1772 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH11" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1378 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH12" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -984 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH13" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -591 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH14" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -197 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH15" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 197 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH16" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 591 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH17" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 984 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH18" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1378 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH19" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1772 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH20" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2165 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH21" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2559 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH22" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2953 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH23" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3346 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH24" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3740 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH25" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4134 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH26" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4528 5315
+.SolderMask 14
+$EndPAD
+$PAD
+Sh "AH27" C 150 150 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4921 5315
+.SolderMask 14
+$EndPAD
+$EndMODULE ALTERA_F780
+$EndLIBRARY
