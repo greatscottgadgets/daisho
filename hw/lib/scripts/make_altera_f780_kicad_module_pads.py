@@ -21,59 +21,37 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-columns = [
-    '1',  '2',  '3',  '4',  '5',  '6',  '7',
-    '8',  '9',  '10', '11', '12', '13', '14',
-    '15', '16', '17', '18', '19', '20', '21',
-    '22', '23', '24', '25', '26', '27', '28',
-]
+from kicad import mm_to_kicad, make_nsmd_bga_pads
 
-rows = [
-    'A',  'B',  'C',  'D',  'E',  'F',  'G',
-    'H',  'J',  'K',  'L',  'M',  'N',  'P',
-    'R',  'T',  'U',  'V',  'W',  'Y',  'AA',
-    'AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH',
-]
+bga_definition = {
+	'spacing': 1.0,
 
-pads_to_omit = [
-    'A1',
-    'A28',
-    'AH1',
-    'AH28',
-]
+	'pad_diameter': 0.5,
+	
+	'solder_mask_clearance': 0.075,
+	
+	'columns': [
+	    '1',  '2',  '3',  '4',  '5',  '6',  '7',
+	    '8',  '9',  '10', '11', '12', '13', '14',
+	    '15', '16', '17', '18', '19', '20', '21',
+	    '22', '23', '24', '25', '26', '27', '28',
+	],
 
-def make_nsmd_bga_pad(pad_name, position):
-    data = {
-        'pad_name': pad_name,
-        'x': position[0],
-        'y': position[1],
-    }
-    return [
-        '$PAD',
-        'Sh "%(pad_name)s" C 0.38 0.38 0 0 0' % data,
-        'Dr 0 0 0',
-        'At SMD N 00888000',
-        'Ne 0 ""',
-        'Po %(x)s %(y)s' % data,
-        '.SolderMask 0.035',
-        '$EndPAD',
-    ]
+	'rows': [
+	    'A',  'B',  'C',  'D',  'E',  'F',  'G',
+	    'H',  'J',  'K',  'L',  'M',  'N',  'P',
+	    'R',  'T',  'U',  'V',  'W',  'Y',  'AA',
+	    'AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH',
+	],
 
-x_spacing = 1.0
-y_spacing = 1.0
+	'pads_to_omit': [
+	    'A1',
+	    'A28',
+	    'AH1',
+	    'AH28',
+	],
+}
 
-x_offset = float((len(columns) - 1) * x_spacing) / -2.0
-y_offset = float((len(rows) - 1) * y_spacing) / -2.0
-
-lines = []
-for y_index in range(len(rows)):
-    row = rows[y_index]
-    y = y_index * y_spacing + y_offset
-    for x_index in range(len(columns)):
-        column = columns[x_index]
-        x = x_index * x_spacing + x_offset
-        pad_name = '%s%s' % (row, column)
-        if pad_name not in pads_to_omit:
-            lines.extend(make_nsmd_bga_pad(pad_name, [x, y]))
+lines = make_nsmd_bga_pads(**bga_definition)
 
 print('\n'.join(lines))
