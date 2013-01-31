@@ -1,4 +1,4 @@
-update=Tue 15 Jan 2013 07:45:45 PM EST
+update=Sun 20 Jan 2013 12:05:51 AM EST
 version=1
 last_client=pcbnew
 [general]
@@ -56,9 +56,9 @@ EquName1=devcms
 [pcbnew]
 version=1
 LastNetListRead=gig-e.net
-PadDrill=1.02
-PadSizeH=1.02
-PadSizeV=1.02
+PadDrill=2
+PadSizeH=2
+PadSizeV=2
 PcbTextSizeV=1
 PcbTextSizeH=1
 PcbTextThickness=0.3
