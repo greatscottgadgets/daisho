@@ -106,41 +106,43 @@ output	wire	[2:0]	dbg_pkt_type
 	reg		[10:0]	dc;		// delay counter
 	reg		[10:0]	bc;		// byte counter
 	
+	reg		[6:0]	local_dev_addr;
 	// TODO flatten
 	reg		[15:0]	crc16, crc16_1, crc16_2;
 	wire	[15:0]	crc16_fix = ~{crc16_2[8], crc16_2[9], crc16_2[10], crc16_2[11], 
-								crc16_2[12], crc16_2[13], crc16_2[14], crc16_2[15],
-								crc16_2[0], crc16_2[1], crc16_2[2], crc16_2[3], 
-								crc16_2[4], crc16_2[5], crc16_2[6], crc16_2[7]}; 
+									crc16_2[12], crc16_2[13], crc16_2[14], crc16_2[15],
+									crc16_2[0], crc16_2[1], crc16_2[2], crc16_2[3], 
+									crc16_2[4], crc16_2[5], crc16_2[6], crc16_2[7]}; 
 								
 	wire	[15:0]	crc16_fix_out = ~{crc16[8], crc16[9], crc16[10], crc16[11], 
-								crc16[12], crc16[13], crc16[14], crc16[15],
-								crc16[0], crc16[1], crc16[2], crc16[3], 
-								crc16[4], crc16[5], crc16[6], crc16[7]}; 
+									crc16[12], crc16[13], crc16[14], crc16[15],
+									crc16[0], crc16[1], crc16[2], crc16[3], 
+									crc16[4], crc16[5], crc16[6], crc16[7]}; 
 
 	assign			buf_in_data = in_byte;
 	assign			buf_in_wren = in_latch;
 	
 	reg				out_byte_buf;
 	reg		[7:0]	out_byte_out;
-	assign			out_byte	= out_byte_buf ? buf_out_q : out_byte_out;
-	reg		[6:0]	assigned_dev_addr;
+	reg		[1:0]	out_byte_crc;
+	wire	[7:0]	out_crc_mux = 	out_byte_crc[0] ? crc16_fix_out[15:8] : crc16_fix_out[7:0];
+	assign			out_byte	= 	out_byte_crc[1] ? out_crc_mux :
+									out_byte_buf ? buf_out_q : out_byte_out;
 	
 	reg		[5:0]	state /* synthesis preserve */;
-	parameter [5:0]	ST_RST_0			= 7'd0,
-					ST_RST_1			= 7'd1,
-					ST_IDLE				= 7'd10,
-					ST_IN_0				= 7'd20,
-					ST_IN_1				= 7'd21,
-					ST_IN_TOK			= 7'd22,
-					ST_PRE_EOP			= 7'd24,
-					ST_WAIT_EOP			= 7'd25,
-					ST_DATA_CRC			= 7'd26,
-					ST_OUT_PRE			= 7'd39,
-					ST_OUT_0			= 7'd40,
-					ST_OUT_1			= 7'd41,
-					ST_OUT_2			= 7'd42,
-					ST_OUT_3			= 7'd43;
+	parameter [5:0]	ST_RST_0			= 6'd0,
+					ST_RST_1			= 6'd1,
+					ST_IDLE				= 6'd10,
+					ST_IN_1				= 6'd21,
+					ST_IN_TOK			= 6'd22,
+					ST_PRE_EOP			= 6'd24,
+					ST_WAIT_EOP			= 6'd25,
+					ST_DATA_CRC			= 6'd26,
+					ST_OUT_PRE			= 6'd39,
+					ST_OUT_0			= 6'd40,
+					ST_OUT_1			= 6'd41,
+					ST_OUT_2			= 6'd42,
+					ST_OUT_3			= 6'd43;
 					
 	assign dbg_pkt_type = pkt_type;
 	
@@ -164,7 +166,7 @@ always @(posedge phy_clk) begin
 		err_crc_pkt <= 0;
 		err_pid_out_of_seq <= 0;
 		pid_send <= 0;
-		assigned_dev_addr <= 0;
+		local_dev_addr <= 0;
 		xfer_in <= 0;
 		xfer_out <= 0;
 		state <= ST_RST_1;
@@ -177,62 +179,53 @@ always @(posedge phy_clk) begin
 	
 	ST_IDLE: begin
 		// idle state
-		xfer_in <= 0;
+		//xfer_in <= 0;
 		xfer_out <= 0;
 		
-		if(in_act & ~in_act_1) begin
-			// new packet incoming
-			
-			// TODO verify this 1cycle delay will not pose a problem
-			// for handling usb2.0 HIGH SPEED transfers
-			
-			state <= ST_IN_0;
-		end
-	end
-	
-	
-	ST_IN_0: begin
-		// wait for valid bytes
-		if(in_latch) begin
-			// check validity of PID
-			if(pid_valid) begin
-			
-				// save it for later
-				pid_stored <= pid;
-				pid_last <= pid_stored;
+		if(in_act) begin
+
+			// wait for valid bytes
+			if(in_latch) begin
+				// check validity of PID
+				if(pid_valid) begin
 				
-				case(pid) 
-				PID_TOKEN_OUT, 	
-				PID_TOKEN_IN, 
-				PID_TOKEN_SOF, 
-				PID_TOKEN_SETUP: pkt_type <= PKT_TYPE_TOKEN; // expect 16 bits of data
-				
-				PID_DATA_0,	
-				PID_DATA_1, 
-				PID_DATA_2,	
-				PID_DATA_M:  	pkt_type <= PKT_TYPE_DATA; 	// variable length
-				
-				PID_HAND_ACK, 
-				PID_HAND_NAK, 
-				PID_HAND_STALL, 
-				PID_HAND_NYET:  pkt_type <= PKT_TYPE_HAND; 	// handshaking, very short
-				
-				PID_SPEC_PREERR, 
-				PID_SPEC_SPLIT, 
-				PID_SPEC_PING, 
-				PID_SPEC_LPM:  	pkt_type <= PKT_TYPE_SPEC; 	// special cases
-				endcase
-				
-				// reset byte count and latch in packet
-				bc <= 0;
-				crc16 <= 16'hffff;
-				buf_in_addr <= 0;
-				state <= ST_IN_1;
-			end else begin
-				// sit out the rest of the packet, flag error
-				//pid_stored <= INVALID
-				err_crc_pid <= 1;
-				state <= ST_WAIT_EOP;
+					// save it for later
+					pid_stored <= pid;
+					pid_last <= pid_stored;
+					
+					case(pid) 
+					PID_TOKEN_OUT, 	
+					PID_TOKEN_IN, 
+					PID_TOKEN_SOF, 
+					PID_TOKEN_SETUP: pkt_type <= PKT_TYPE_TOKEN; // expect 16 bits of data
+					
+					PID_DATA_0,	
+					PID_DATA_1, 
+					PID_DATA_2,	
+					PID_DATA_M:  	pkt_type <= PKT_TYPE_DATA; 	// variable length
+					
+					PID_HAND_ACK, 
+					PID_HAND_NAK, 
+					PID_HAND_STALL, 
+					PID_HAND_NYET:  pkt_type <= PKT_TYPE_HAND; 	// handshaking, very short
+					
+					PID_SPEC_PREERR, 
+					PID_SPEC_SPLIT, 
+					PID_SPEC_PING, 
+					PID_SPEC_LPM:  	pkt_type <= PKT_TYPE_SPEC; 	// special cases
+					endcase
+					
+					// reset byte count and latch in packet
+					bc <= 0;
+					crc16 <= 16'hffff;
+					buf_in_addr <= 0;
+					state <= ST_IN_1;
+				end else begin
+					// sit out the rest of the packet, flag error
+					//pid_stored <= INVALID
+					err_crc_pid <= 1;
+					state <= ST_WAIT_EOP;
+				end
 			end
 		end
 	end
@@ -240,15 +233,6 @@ always @(posedge phy_clk) begin
 	ST_IN_1: begin
 		// read in packet data
 		crc16_byte_sel <= 0;
-		
-		if(pkt_type == PKT_TYPE_DATA) begin
-			// check to see if it's for us
-			if(packet_token_addr == assigned_dev_addr && 
-				(pid_last == PID_TOKEN_OUT || pid_last == PID_TOKEN_SETUP)) begin
-				// pass through data to protocol layer
-				xfer_in <= 1;
-			end
-		end
 		
 		if(in_latch) begin
 			bc <= bc + 1'b1;
@@ -302,29 +286,37 @@ always @(posedge phy_clk) begin
 		state <= ST_WAIT_EOP;
 		
 		case(pid_stored)
-		PID_TOKEN_IN: begin
-			// switch protocol layer to proper endpoint
-			xfer_out <= 1;
-			pid_send <= PID_DATA_1;
-			// send endpoint OUT buffer
-			state <= ST_OUT_PRE;
-		end
-		PID_TOKEN_OUT: begin
-			//
-		end
 		PID_TOKEN_SOF: begin
 			dbg_frame_num <= packet_token_frame;
 		end
-		PID_TOKEN_SETUP: begin
-			//
-		end
 		endcase
 		
-		xfer_pid <= pid_stored;
-		
-		if(pid_stored != PID_TOKEN_SOF)
-			xfer_endp <= packet_token_endp;
+		// only parse tokens at our address
+		if(packet_token_addr == local_dev_addr) begin
+			case(pid_stored)
+			PID_TOKEN_IN: begin
+				// switch protocol layer to proper endpoint
+				xfer_out <= 1;
+				pid_send <= PID_DATA_1;
+				local_dev_addr <= dev_addr;
+				// send endpoint OUT buffer
+				state <= ST_OUT_PRE;
+			end
+			PID_TOKEN_OUT: begin
+				//
+			end
+			PID_TOKEN_SETUP: begin
+				//
+				xfer_in <= 1;
+			end
+			endcase
 			
+			xfer_pid <= pid_stored;
+			
+			if(pid_stored != PID_TOKEN_SOF)
+				xfer_endp <= packet_token_endp;
+		end
+		
 		// confirm token CRC5
 		if(packet_token_crc5 != next_crc5) begin
 			err_crc_tok <= 1;
@@ -336,6 +328,7 @@ always @(posedge phy_clk) begin
 	end
 	ST_WAIT_EOP: begin
 		// detect EOP
+		out_latch <= 0;
 		if(~in_act) state <= ST_IDLE;
 	end
 	
@@ -358,8 +351,11 @@ always @(posedge phy_clk) begin
 	// TODO reduce, check HS use case
 	ST_OUT_PRE: begin
 		// wait for protocol FSM/endpoint FSM to be ready (usually already is)
-		bc <= buf_out_len + 2;
-		if(xfer_ready) state <= ST_OUT_0;
+		
+		if(xfer_ready) begin
+			bc <= buf_out_len + 2;
+			state <= ST_OUT_0;
+		end
 	end
 	ST_OUT_0: begin
 		// send packet through ULPI
@@ -373,7 +369,7 @@ always @(posedge phy_clk) begin
 	end
 	ST_OUT_1: begin
 		// write PID
-		out_byte_out <= ~pid_send;
+		out_byte_out <= {4'h4, ~pid_send};
 		out_latch <= 1;
 		buf_out_addr <= 0;
 		state <= ST_OUT_2;
@@ -394,9 +390,10 @@ always @(posedge phy_clk) begin
 		if(out_nxt) begin
 			// phy wants another byte
 			if(bc == 0) begin
-				out_latch <= 0;
+				//out_latch <= 0;
 				out_stp <= 1;
 				state <= ST_WAIT_EOP;
+				out_byte_crc <= 2'b00;
 			end else begin
 				// switch mux to bram
 				out_byte_buf <= 1;
@@ -405,31 +402,23 @@ always @(posedge phy_clk) begin
 			buf_out_addr <= buf_out_addr + 1'b1;
 			bc <= bc - 1'b1;
 			
-			if(buf_out_addr > 0 && buf_out_addr < buf_out_len ) 
+			if(buf_out_addr > 0 && bc > 1)
 				crc16 <= next_crc16;
+				
+			if(bc == 2) out_byte_crc <= 2'b11;
+			if(bc == 1) out_byte_crc <= 2'b10;
 			
 		end
-		if(~out_nxt & out_nxt_1 & out_nxt_2) begin
+		if(~out_nxt & out_nxt_1 ) begin 
 			// falling edge 
-			// bump the bram index back to account for delay
-			buf_out_addr <= buf_out_addr - 1'b1;
+			// keep this byte
+			out_byte_out <= buf_out_q;
+			out_byte_buf <= 0;
 		end
 		
-		// last two bytes sent are CRC16
-		case(buf_out_len - buf_out_addr + 1)
-		0: begin
-			out_byte_buf <= 0;
-			out_byte_out <= crc16_fix_out[7:0];
-		end
-		1: begin
-			out_byte_buf <= 0;
-			out_byte_out <= crc16_fix_out[15:8];
-		end
-		endcase
 	end
 	
 	endcase
-	
 	
 	if(~reset_2) begin
 		// reset
