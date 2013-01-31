@@ -46,9 +46,9 @@ pads_to_omit = [
 def make_nsmd_bga_pad(pad_name, position):
     data = {
         'pad_name': pad_name,
-		'pad_width': mm_to_kicad(0.45),
-		'pad_height': mm_to_kicad(0.45),
-		'solder_mask': mm_to_kicad(0.035),
+		'pad_width': mm_to_kicad(0.35),
+		'pad_height': mm_to_kicad(0.35),
+		'solder_mask': mm_to_kicad(0.075),
         'x': mm_to_kicad(position[0]),
         'y': mm_to_kicad(position[1]),
     }
