@@ -1,2 +1,5 @@
 .DS_Store
 *.pyc
+*.bak
+*-cache.lib
+*.000
