@@ -1,0 +1,237 @@
+EESchema Schematic File Version 2  date Thursday, January 31, 2013 11:18:57 PM
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:ddr2_sdram_sodimm
+LIBS:ep4ce30f29
+LIBS:tusb1310a
+LIBS:main_board-cache
+EELAYER 25  0
+EELAYER END
+$Descr A3 16535 11700
+encoding utf-8
+Sheet 1 10
+Title "Daisho Project Main Board"
+Date "1 feb 2013"
+Rev "0"
+Comp "ShareBrained Technology, Inc."
+Comment1 "Copyright © 2013 Jared Boone"
+Comment2 "License: GNU General Public License, version 2"
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Bus Line
+	9800 3300 11300 3300
+Wire Wire Line
+	6500 10100 7300 10100
+Connection ~ 6900 9800
+Wire Wire Line
+	7300 9800 6500 9800
+Wire Wire Line
+	6500 9100 7300 9100
+Connection ~ 6900 7700
+Wire Wire Line
+	7300 7700 6900 7700
+Wire Wire Line
+	7300 8300 6900 8300
+Wire Wire Line
+	6900 8300 6900 7600
+Connection ~ 6900 8700
+Wire Wire Line
+	7300 8700 6900 8700
+Wire Wire Line
+	9800 3500 11300 3500
+Wire Bus Line
+	9800 3600 11300 3600
+Wire Bus Line
+	4350 4350 4900 4350
+Wire Bus Line
+	4350 4450 4900 4450
+Wire Wire Line
+	4350 4000 4900 4000
+Wire Wire Line
+	4350 3750 4900 3750
+Wire Wire Line
+	4350 3650 4900 3650
+Wire Wire Line
+	4350 4550 4350 4550
+Wire Wire Line
+	4900 4100 4350 4100
+Wire Bus Line
+	4900 4550 4350 4550
+Wire Bus Line
+	9800 3700 11300 3700
+Wire Wire Line
+	9800 3800 11300 3800
+Wire Wire Line
+	6900 8600 7300 8600
+Wire Wire Line
+	7300 8400 6900 8400
+Wire Wire Line
+	6900 8400 6900 9800
+Connection ~ 6900 8600
+Wire Wire Line
+	7300 7800 6900 7800
+Connection ~ 6900 7800
+Wire Wire Line
+	7300 7600 6500 7600
+Connection ~ 6900 7600
+Wire Wire Line
+	7300 9600 6500 9600
+Wire Wire Line
+	7300 9900 6500 9900
+Wire Wire Line
+	7300 10200 6500 10200
+Wire Bus Line
+	9800 3200 11300 3200
+Wire Wire Line
+	9800 3100 11300 3100
+$Sheet
+S 7300 7500 1000 400 
+U 510239EE
+F0 "ddr2_power" 60
+F1 "ddr2_power.sch" 60
+F2 "VCC_IO" I L 7300 7700 60 
+F3 "VCC_SPD" I L 7300 7800 60 
+F4 "VCC_CORE" I L 7300 7600 60 
+$EndSheet
+$Sheet
+S 7300 9500 900  800 
+U 5109F714
+F0 "usb1_power" 60
+F1 "usb1_power.sch" 60
+F2 "VCC_1V1D" I L 7300 10100 60 
+F3 "VCC_1V1A" I L 7300 10200 60 
+F4 "VCC_1V8A" I L 7300 9900 60 
+F5 "VCC_3V3A" I L 7300 9600 60 
+F6 "VCC_1V8D" I L 7300 9800 60 
+$EndSheet
+$Sheet
+S 7300 8200 1000 1000
+U 510239FC
+F0 "fpga_power" 60
+F1 "fpga_power.sch" 60
+F2 "VCCIO_DDR2" I L 7300 8300 60 
+F3 "VCCIO_USB2" I L 7300 8700 60 
+F4 "VCCD_PLL" I L 7300 9000 60 
+F5 "VCCIO_USB1" I L 7300 8600 60 
+F6 "VCCINT" I L 7300 9100 60 
+F7 "VCCA" I L 7300 8900 60 
+F8 "VCCIO_USB0" I L 7300 8400 60 
+$EndSheet
+$Sheet
+S 4500 7500 2000 2800
+U 510B2194
+F0 "power_ldo" 60
+F1 "power_ldo.sch" 60
+F2 "DDR2_1V8" O R 6500 7600 60 
+F3 "USB_1V1D" O R 6500 10100 60 
+F4 "USB_1V1A" O R 6500 10200 60 
+F5 "FPGA_1V2D" O R 6500 9100 60 
+F6 "USB_3V3A" O R 6500 9600 60 
+F7 "USB_1V8D" O R 6500 9800 60 
+F8 "USB_1V8A" O R 6500 9900 60 
+$EndSheet
+$Sheet
+S 8100 3000 1700 2700
+U 510AF04B
+F0 "fpga_usb1" 60
+F1 "fpga_usb1.sch" 60
+F2 "USB1_RX_DATAK[1..0]" I R 9800 3700 60 
+F3 "USB1_RX_DATA[15..0]" I R 9800 3600 60 
+F4 "USB1_PCLK" I R 9800 3500 60 
+F5 "USB1_RX_VALID" I R 9800 3800 60 
+F6 "USB1_TX_DATAK[1..0]" O R 9800 3300 60 
+F7 "USB1_TX_DATA[15..0]" O R 9800 3200 60 
+F8 "USB1_TX_CLK" O R 9800 3100 60 
+$EndSheet
+$Sheet
+S 11300 3000 1300 1500
+U 5109FB2D
+F0 "usb1_interfaces" 60
+F1 "usb1_interfaces.sch" 60
+F2 "RX_VALID" O L 11300 3800 60 
+F3 "RX_DATAK[1..0]" O L 11300 3700 60 
+F4 "RX_DATA[15..0]" O L 11300 3600 60 
+F5 "PCLK" O L 11300 3500 60 
+F6 "TX_CLK" I L 11300 3100 60 
+F7 "TX_DATA[15..0]" I L 11300 3200 60 
+F8 "TX_DATAK[1..0]" I L 11300 3300 60 
+F9 "ULPI_NXT" O L 11300 4300 60 
+F10 "ULPI_DIR" O L 11300 4200 60 
+F11 "ULPI_CLK" O L 11300 4000 60 
+F12 "ULPI_STP" I L 11300 4400 60 
+F13 "ULPI_DATA[7..0]" B L 11300 4100 60 
+$EndSheet
+$Sheet
+S 11300 5000 1300 700 
+U 510A0455
+F0 "usb1_configuration" 60
+F1 "usb1_configuration.sch" 60
+$EndSheet
+$Sheet
+S 2100 3500 2250 1850
+U 5101C6D6
+F0 "fpga_ddr2" 60
+F1 "fpga_ddr2.sch" 60
+F2 "DDR2_DQS[7..0]" B R 4350 4450 60 
+F3 "DDR2_DM[7..0]" O R 4350 4550 60 
+F4 "DDR2_CK#0" O R 4350 3750 60 
+F5 "DDR2_CK0" O R 4350 3650 60 
+F6 "DDR2_CK#1" O R 4350 4100 60 
+F7 "DDR2_CK1" O R 4350 4000 60 
+F8 "DDR2_DQ[63..0]" B R 4350 4350 60 
+$EndSheet
+$Sheet
+S 4900 3500 1150 2100
+U 50FA09AE
+F0 "ddr2" 50
+F1 "ddr2.sch" 50
+F2 "CK#1" I L 4900 4100 60 
+F3 "CK1" I L 4900 4000 60 
+F4 "CK#0" I L 4900 3750 60 
+F5 "CK0" I L 4900 3650 60 
+F6 "DQ[63..0]" B L 4900 4350 60 
+F7 "DM[7..0]" I L 4900 4550 60 
+F8 "DQS[7..0]" B L 4900 4450 60 
+F9 "SA[1..0]" I R 6050 5250 60 
+F10 "SDA" B R 6050 5150 60 
+F11 "SCL" I R 6050 5050 60 
+F12 "ODT[1..0]" I L 4900 5450 60 
+F13 "S#[3..0]" I L 4900 5300 60 
+F14 "WE#" I L 4900 5150 60 
+F15 "CAS#" I L 4900 5050 60 
+F16 "RAS#" I L 4900 4950 60 
+F17 "CKE1" I L 4900 4200 60 
+F18 "CKE0" I L 4900 3850 60 
+F19 "A[15..0]" I L 4900 4800 60 
+F20 "BA[2..0]" I L 4900 4700 60 
+$EndSheet
+$EndSCHEMATC
