@@ -1,34 +1,11 @@
-EESchema Schematic File Version 2  date Thursday, January 31, 2013 11:18:57 PM
+EESchema Schematic File Version 2  date Saturday, February 09, 2013 11:10:56 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
 LIBS:conn
 LIBS:linear
 LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:special
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
 LIBS:contrib
-LIBS:valves
 LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
@@ -39,7 +16,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 4 10
 Title "Daisho Project Main Board"
-Date "1 feb 2013"
+Date "9 feb 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
