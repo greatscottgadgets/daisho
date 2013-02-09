@@ -31,7 +31,7 @@ output	reg		[3:0]	xfer_endp,
 output	reg		[3:0]	xfer_pid,
 input	wire			xfer_ready,
 
-output	reg		[8:0]	buf_in_addr,
+output	wire	[8:0]	buf_in_addr,
 output	wire	[7:0]	buf_in_data,
 output	wire			buf_in_wren,
 output	reg		[8:0]	buf_out_addr,
@@ -57,8 +57,6 @@ output	wire	[2:0]	dbg_pkt_type
 	reg				in_act_1;
 	reg				out_nxt_1, out_nxt_2;
 	
-	reg		[3:0]	pkt_pid;
-
 	// pid input
 	wire	[3:0]	pid			= in_byte[7:4];
 	wire			pid_valid 	= (pid == ~in_byte[3:0]);
@@ -97,9 +95,10 @@ output	wire	[2:0]	dbg_pkt_type
 
 	// usb token data has reversed bitfields. in addition, the data is sent 
 	// in reverse bit order, which is reversed per-byte by the PHY.
+	// these are not valid for SOF 
 	reg		[15:0]	packet_token;
-	wire	[6:0]	packet_token_addr	= {packet_token[2:0], packet_token[11:8]};
-	wire	[3:0]	packet_token_endp	= packet_token[15:12];
+	wire	[6:0]	packet_token_addr	= packet_token[14:8] /* synthesis keep */;
+	wire	[3:0]	packet_token_endp	= {packet_token[2:0], packet_token[15]} /* synthesis keep */;
 	wire	[4:0]	packet_token_crc5 	= packet_token[7:3];
 	wire	[10:0]	packet_token_frame	= {packet_token[2:0], packet_token[15:8]};
 	
@@ -119,9 +118,16 @@ output	wire	[2:0]	dbg_pkt_type
 									crc16[0], crc16[1], crc16[2], crc16[3], 
 									crc16[4], crc16[5], crc16[6], crc16[7]}; 
 
-	assign			buf_in_data = in_byte;
-	assign			buf_in_wren = in_latch;
+	// two byte delay for incoming data
+	//
+	assign			buf_in_addr = buf_in_addr_0;
+	assign			buf_in_data = buf_in_data_0;
+	assign			buf_in_wren = buf_in_wren_0;
 	
+	reg		[8:0]	buf_in_addr_2, buf_in_addr_1, buf_in_addr_0;
+	reg		[7:0]	buf_in_data_1, buf_in_data_0;
+	reg				buf_in_wren_1, buf_in_wren_0;
+
 	reg				out_byte_buf;
 	reg		[7:0]	out_byte_out;
 	reg		[1:0]	out_byte_crc;
@@ -153,6 +159,14 @@ always @(posedge phy_clk) begin
 	out_nxt_2 <= out_nxt_1;
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	
+	if(in_latch) begin
+		// delay incoming data by 2 bytes
+		// we don't know incoming packet size, only that the last two bytes are CRC
+		{buf_in_addr_1, buf_in_addr_0} <= {buf_in_addr_2, buf_in_addr_1};
+		{buf_in_data_1, buf_in_data_0} <= {in_byte, buf_in_data_1};
+		{buf_in_wren_1, buf_in_wren_0} <= {in_latch && (state == ST_IN_1) && (bc < 512), buf_in_wren_1};
+	end
+	
 	dc <= dc + 1'b1;
 	
 	out_stp <= 0;
@@ -161,11 +175,14 @@ always @(posedge phy_clk) begin
 	ST_RST_0: begin
 		// reset state
 		// NOTE: assigned address from host is lost
+		bc <= 0;
 		err_crc_pid <= 0;
 		err_crc_tok <= 0;
 		err_crc_pkt <= 0;
 		err_pid_out_of_seq <= 0;
 		pid_send <= 0;
+		pid_stored <= 0;
+		pid_last <= 0;
 		local_dev_addr <= 0;
 		xfer_in <= 0;
 		xfer_out <= 0;
@@ -218,11 +235,10 @@ always @(posedge phy_clk) begin
 					// reset byte count and latch in packet
 					bc <= 0;
 					crc16 <= 16'hffff;
-					buf_in_addr <= 0;
+					buf_in_addr_2 <= 0;
 					state <= ST_IN_1;
 				end else begin
 					// sit out the rest of the packet, flag error
-					//pid_stored <= INVALID
 					err_crc_pid <= 1;
 					state <= ST_WAIT_EOP;
 				end
@@ -236,47 +252,47 @@ always @(posedge phy_clk) begin
 		
 		if(in_latch) begin
 			bc <= bc + 1'b1;
-			buf_in_addr <= buf_in_addr + 1'b1;
+			buf_in_addr_2 <= buf_in_addr_2 + 1'b1;
 			
 			// advance CRCs
 			crc16 <= next_crc16;
 			crc16_1 <= crc16;
 			crc16_2 <= crc16_1;
 			
-			// TODO generalize this case
 			// this only handles TOKEN packets
-			case(bc)
-			0: packet_token[15:8] <= in_byte;
-			1: begin 
-				packet_token[7:0] <= in_byte;
-				crc5_data <= {in_byte[2:0], packet_token[15:8]};
-				// finished, process TOKEN 
-				if(pkt_type == PKT_TYPE_TOKEN) state <= ST_IN_TOK;
+			if(pkt_type == PKT_TYPE_TOKEN) begin
+				case(bc)
+				0: packet_token[15:8] <= in_byte;
+				1: begin 
+					packet_token[7:0] <= in_byte;
+					crc5_data <= {in_byte[2:0], packet_token[15:8]};
+					// finished, process TOKEN 
+					state <= ST_IN_TOK;
+				end
+				endcase
 			end
-			endcase
 			
 			// setup packets are 10 bytes long (8 without CRC)
 			packet_crc <= {packet_crc[7:0], in_byte};
-			if(pid_last == PID_TOKEN_SETUP && bc == 9) begin
-				// confirm CRC16
-				state <= ST_DATA_CRC;
-				// no more data for protocol layer
-				xfer_in <= 0;
-			end
-			
 		end
 		
-		// TODO generalize this case
 		// detect EOP
 		if(~in_act) begin
-			// was it a zero-length OUT?
-			if(pid_last == PID_TOKEN_OUT && bc == 2) begin
-				// send ack
-				pid_send <= PID_HAND_ACK;
-				bc <= 0;
-				state <= ST_OUT_0;
-			end else begin
-				state <= ST_IDLE;
+			// default is to IDLE
+			state <= ST_IDLE;
+			
+			if(packet_token_addr == local_dev_addr) begin
+				// was it a zero-length OUT?
+				if(pid_last == PID_TOKEN_OUT && bc == 2) begin
+					pid_send <= PID_HAND_ACK;
+					bc <= 0;
+					state <= ST_OUT_0;
+					xfer_in <= 0;
+
+				end else if(pid_last == PID_TOKEN_OUT || pid_last == PID_TOKEN_SETUP) begin
+					state <= ST_DATA_CRC;
+					xfer_in <= 0;
+				end
 			end
 		end
 	end
@@ -304,6 +320,7 @@ always @(posedge phy_clk) begin
 			end
 			PID_TOKEN_OUT: begin
 				//
+				xfer_in <= 1;
 			end
 			PID_TOKEN_SETUP: begin
 				//

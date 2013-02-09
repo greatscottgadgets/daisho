@@ -12,6 +12,7 @@ module usb2_ulpi (
 
 // top-level interface
 input	wire			reset_n,
+output	wire			reset_local,
 input	wire			opt_enable_hs,
 output	wire			stat_connected,
 output	reg				stat_fs,
@@ -51,6 +52,8 @@ output	wire	[1:0]	dbg_linestate
 ////////////////////////////////////////////////////////////////////
 
 	reg				reset_1, reset_2;
+	reg				reset_ulpi;
+	assign			reset_local = reset_n & reset_ulpi;
 	reg				opt_enable_hs_1, opt_enable_hs_2;
 	reg				phy_dir_1;
 	reg		[7:0]	phy_d_out;
@@ -176,13 +179,15 @@ always @(posedge phy_clk) begin
 		stat_hs <= 1'b0;
 		can_send <= 1'b0;
 		vbus_valid_1 <= 1'b0;
-		
 		dc <= 0;
 		dc_wrap <= 0;
 		
 		state <= ST_RST_1;
 	end
 	ST_RST_1: begin
+		// take other modules out of reset, whether initial or caused by 
+		// usb cable disconnect
+		reset_ulpi <= 1;
 		// reset phy and set mode
 		tx_cmd_code <= 		TX_CMD_REGWR_IMM;
 		tx_reg_addr <= 		6'h4;
@@ -250,7 +255,7 @@ always @(posedge phy_clk) begin
 			// accept packet data
 			if(pkt_in_latch) state <= ST_PKT_0;
 			
-			if(se0_bus_reset & opt_enable_hs) begin
+			if(se0_bus_reset & opt_enable_hs_2) begin
 				// currently full speed, want to enumerate as high speed
 				state <= ST_CHIRP_0;
 			end
@@ -417,7 +422,10 @@ always @(posedge phy_clk) begin
 	if(~reset_2) state <= ST_RST_0;
 	
 	// disconnected
-	if(~vbus_valid & vbus_valid_1) state <= ST_RST_0;
+	if(~vbus_valid & vbus_valid_1) begin
+		reset_ulpi <= 0;
+		state <= ST_RST_0;
+	end
 end
 	
 endmodule
