@@ -509,10 +509,10 @@ $EndComp
 Text Notes 10050 8000 0    60   ~ 0
 DDR2 operates in DQS single-ended mode. All DQS# == VSS
 $Comp
-L GND #PWR013
+L GND #PWR018
 U 1 1 50FAE476
 P 9700 7800
-F 0 "#PWR013" H 9700 7800 30  0001 C CNN
+F 0 "#PWR018" H 9700 7800 30  0001 C CNN
 F 1 "GND" H 9700 7730 30  0001 C CNN
 	1    9700 7800
 	1    0    0    -1  

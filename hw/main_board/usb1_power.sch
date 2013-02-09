@@ -14,7 +14,7 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 4 10
+Sheet 3 10
 Title "Daisho Project Main Board"
 Date "9 feb 2013"
 Rev "0"
@@ -24,8 +24,8 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 10200 5950 2    60   ~ 0
-M14 "needs 1uF cap"
+Text Notes 6600 4750 0    60   ~ 0
+Internal resistors pull to USB 3.0 transceiver mode.
 Connection ~ 9900 5600
 Wire Wire Line
 	9900 5100 9900 5800
@@ -40,8 +40,6 @@ Connection ~ 11900 5900
 Wire Wire Line
 	11900 6000 11900 4500
 Connection ~ 6900 7600
-Wire Wire Line
-	6900 7700 6900 5900
 Wire Wire Line
 	11900 5900 11800 5900
 Connection ~ 6900 7400
@@ -214,7 +212,7 @@ Wire Wire Line
 	4900 7500 5000 7500
 Connection ~ 4900 7400
 Wire Wire Line
-	6900 5900 6800 5900
+	6800 5900 6900 5900
 Wire Wire Line
 	6800 6000 6900 6000
 Wire Wire Line
@@ -253,6 +251,10 @@ Connection ~ 9900 4700
 Wire Wire Line
 	4800 6200 5000 6200
 Connection ~ 4900 6200
+Wire Wire Line
+	6900 5900 6900 7700
+Text Notes 10200 5950 2    60   ~ 0
+M14 "needs 1uF cap"
 Text HLabel 4800 6200 0    60   Input ~ 0
 VCC_1V1D
 Text HLabel 9800 5100 0    60   Input ~ 0
