@@ -27,7 +27,6 @@ input	wire	[7:0]	buf_out_addr,
 output	wire	[7:0]	buf_out_q,
 output	reg		[5:0]	buf_out_len,
 
-input	wire			se0_reset,
 output	reg		[6:0]	dev_addr,
 
 output	reg				err_setup_pkt,
@@ -90,7 +89,6 @@ output	reg				dbg
 	reg		[15:0]	packet_out_len;
 	reg		[3:0]	dev_config;
 	
-	reg		[3:0]	cnt;
 	reg		[6:0]	dc;
 	
 	reg		[5:0]	state /* synthesis preserve */;
@@ -117,8 +115,6 @@ always @(posedge phy_clk) begin
 	xfer_out_1 <= xfer_out;
 	
 	dc <= dc + 1'b1;
-	
-	//if(se0_reset) dev_addr <= 0;
 	
 	// main fsm
 	case(state) 
@@ -162,7 +158,6 @@ always @(posedge phy_clk) begin
 		if(~xfer_in) begin
 			// end of setup packet, hopefully it was 8+2crc bytes as expected
 			dc <= 0;
-			cnt <= 0;
 			buf_in_rdaddr <= 0;
 			state <= ST_IN_PARSE_0;
 		end
@@ -207,6 +202,8 @@ always @(posedge phy_clk) begin
 	
 	ST_REQ_DESCR: begin
 		
+		state <= ST_RDLEN_0;
+		
 		// GET_DESCRIPTOR
 		case(packet_setup_wval)
 		16'h0100: begin
@@ -216,6 +213,8 @@ always @(posedge phy_clk) begin
 		16'h0200: begin
 			// config descriptor
 			descrip_addr_offset <= DESCR_OFF_CONFIG;
+			desired_out_len <= 32;
+			state <= ST_RDLEN_2;
 		end
 		16'h0300: begin
 			// string: languages
@@ -242,7 +241,6 @@ always @(posedge phy_clk) begin
 		end
 		endcase
 		
-		state <= ST_RDLEN_0;
 	end
 	ST_RDLEN_0: begin
 		// wait cycle if descriptor BRAM has a buffered output
@@ -297,8 +295,12 @@ always @(posedge phy_clk) begin
 end
 	
 	
-// endpoint IN buffer
+// endpoint OUT buffer
 // 64 bytes
+// terminology here: USB specs defines IN as device reads going into the PC,
+// and OUT transfers as device writes from the PC. from a device standpoint
+// this may seem backwards but it's just for consistency, which is not entirely
+// reflected in these conventions locally
 
 	reg		[5:0]	buf_in_rdaddr;
 	wire	[7:0]	buf_in_q;
@@ -313,7 +315,7 @@ mf_usb2_ep0in	iu2ep0i (
 );
 
 
-// endpoint OUT buffer
+// endpoint IN buffer
 // segmented
 // relevant descriptors (device, interface, endpoint etc)
 

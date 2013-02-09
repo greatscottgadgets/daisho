@@ -40,26 +40,60 @@ output	reg				dbg
 	reg				xfer_in_1;
 	reg				xfer_out_1;
 	
-	assign			xfer_ready			= sel_endp == SEL_ENDP0 ? ep0_xfer_ready_latch : 1'h0;
+	assign			xfer_ready			= 	sel_endp == SEL_ENDP0 ? ep0_xfer_ready_latch : 
+											sel_endp == SEL_ENDP1 ? ep1_xfer_ready_latch : 
+											sel_endp == SEL_ENDP2 ? ep2_xfer_ready_latch : 1'h0;
 	// mux outputs
 	wire			ep0_xfer_ready;
 	reg				ep0_xfer_ready_1;
 	reg				ep0_xfer_ready_latch;
-	wire			ep0_xfer_in			= sel_endp == SEL_ENDP0 ? xfer_in : 1'h0;
-	wire			ep0_xfer_out		= sel_endp == SEL_ENDP0 ? xfer_out : 1'h0;
-	wire	[3:0]	ep0_xfer_pid		= sel_endp == SEL_ENDP0 ? xfer_pid : 4'h0;
+	wire			ep0_xfer_in			= 	sel_endp == SEL_ENDP0 ? xfer_in : 1'h0;
+	wire			ep0_xfer_out		= 	sel_endp == SEL_ENDP0 ? xfer_out : 1'h0;
+	wire	[3:0]	ep0_xfer_pid		= 	sel_endp == SEL_ENDP0 ? xfer_pid : 4'h0;
+	
+	wire			ep1_xfer_ready;
+	reg				ep1_xfer_ready_1;
+	reg				ep1_xfer_ready_latch;
+	wire			ep1_xfer_in			= 	sel_endp == SEL_ENDP1 ? xfer_in : 1'h0;
+	wire			ep1_xfer_out		= 	sel_endp == SEL_ENDP1 ? xfer_out : 1'h0;
+	wire	[3:0]	ep1_xfer_pid		= 	sel_endp == SEL_ENDP1 ? xfer_pid : 4'h0;
+	
+	wire			ep2_xfer_ready;
+	reg				ep2_xfer_ready_1;
+	reg				ep2_xfer_ready_latch;
+	wire			ep2_xfer_in			= 	sel_endp == SEL_ENDP2 ? xfer_in : 1'h0;
+	wire			ep2_xfer_out		= 	sel_endp == SEL_ENDP2 ? xfer_out : 1'h0;
+	wire	[3:0]	ep2_xfer_pid		= 	sel_endp == SEL_ENDP2 ? xfer_pid : 4'h0;
 	
 	// mux bram signals
-	wire	[5:0]	ep0_buf_in_addr		= sel_endp == SEL_ENDP0 ? buf_in_addr[5:0] : 6'h0;
-	wire	[7:0]	ep0_buf_in_data		= sel_endp == SEL_ENDP0 ? buf_in_data : 8'h0;
-	wire			ep0_buf_in_wren		= sel_endp == SEL_ENDP0 ? buf_in_wren : 1'h0;
-	wire	[7:0]	ep0_buf_out_addr	= sel_endp == SEL_ENDP0 ? buf_out_addr[7:0] : 7'h0;
+	wire	[5:0]	ep0_buf_in_addr		= 	sel_endp == SEL_ENDP0 ? buf_in_addr[5:0] : 6'h0;
+	wire	[7:0]	ep0_buf_in_data		= 	sel_endp == SEL_ENDP0 ? buf_in_data : 8'h0;
+	wire			ep0_buf_in_wren		= 	sel_endp == SEL_ENDP0 ? buf_in_wren : 1'h0;
+	wire	[7:0]	ep0_buf_out_addr	= 	sel_endp == SEL_ENDP0 ? buf_out_addr[7:0] : 7'h0;
 	wire	[7:0]	ep0_buf_out_q;
 	wire	[9:0]	ep0_buf_out_len;
+	
+	wire	[8:0]	ep1_buf_in_addr		= 	sel_endp == SEL_ENDP1 ? buf_in_addr : 9'h0;
+	wire	[7:0]	ep1_buf_in_data		= 	sel_endp == SEL_ENDP1 ? buf_in_data : 8'h0;
+	wire			ep1_buf_in_wren		= 	sel_endp == SEL_ENDP1 ? buf_in_wren : 1'h0;
+	wire	[8:0]	ep1_buf_out_addr	= 	sel_endp == SEL_ENDP1 ? buf_out_addr : 9'h0;
+	wire	[7:0]	ep1_buf_out_q;
+	wire	[9:0]	ep1_buf_out_len;
+	
+	wire	[8:0]	ep2_buf_in_addr		= 	sel_endp == SEL_ENDP2 ? buf_in_addr : 9'h0;
+	wire	[7:0]	ep2_buf_in_data		= 	sel_endp == SEL_ENDP2 ? buf_in_data : 8'h0;
+	wire			ep2_buf_in_wren		= 	sel_endp == SEL_ENDP2 ? buf_in_wren : 1'h0;
+	wire	[8:0]	ep2_buf_out_addr	= 	sel_endp == SEL_ENDP2 ? buf_out_addr : 9'h0;
+	wire	[7:0]	ep2_buf_out_q;
+	wire	[9:0]	ep2_buf_out_len;
 
 	// NOTE this assumes 512 bytes maximum endpoint buffer addressing	
-	assign			buf_out_q			= sel_endp == SEL_ENDP0 ? ep0_buf_out_q : 8'h0;
-	assign			buf_out_len			= sel_endp == SEL_ENDP0 ? ep0_buf_out_len : 10'h0;
+	assign			buf_out_q			= 	sel_endp == SEL_ENDP0 ? ep0_buf_out_q :
+											sel_endp == SEL_ENDP1 ? ep1_buf_out_q : 
+											sel_endp == SEL_ENDP2 ? ep2_buf_out_q : 8'h0;
+	assign			buf_out_len			= 	sel_endp == SEL_ENDP0 ? ep0_buf_out_len : 
+											sel_endp == SEL_ENDP1 ? ep1_buf_out_len : 
+											sel_endp == SEL_ENDP2 ? ep2_buf_out_len : 10'h0;
 	
 	reg		[3:0]	sel_endp;
 	parameter [3:0]	SEL_FREE 	= 0,
@@ -87,7 +121,11 @@ always @(posedge phy_clk) begin
 	xfer_out_1 <= xfer_out;
 	
 	ep0_xfer_ready_1 <= ep0_xfer_ready;
+	ep1_xfer_ready_1 <= ep1_xfer_ready;
+	ep2_xfer_ready_1 <= ep2_xfer_ready;
 	if(ep0_xfer_ready & ~ep0_xfer_ready_1) ep0_xfer_ready_latch <= 1;
+	if(ep1_xfer_ready & ~ep1_xfer_ready_1) ep1_xfer_ready_latch <= 1;
+	if(ep2_xfer_ready & ~ep2_xfer_ready_1) ep2_xfer_ready_latch <= 1;
 	else
 	// see if the rising edge has triggered when it was already high
 	if(ep0_xfer_ready & ~ep0_xfer_ready_1 & ep0_xfer_ready_latch) err_missed_ep_ready <= 1;
@@ -113,6 +151,8 @@ always @(posedge phy_clk) begin
 			// OUT xfer, pick endpoint
 			case(xfer_endp)
 			0: 			sel_endp <= SEL_ENDP0;
+			1: 			sel_endp <= SEL_ENDP1;
+			2: 			sel_endp <= SEL_ENDP2;
 			default: 	sel_endp <= SEL_FREE;
 			endcase
 			state <= ST_XFER_IN;
@@ -123,6 +163,14 @@ always @(posedge phy_clk) begin
 			case(xfer_endp)
 			0: 			begin
 				sel_endp <= SEL_ENDP0;
+				//ep0_xfer_ready_latch <= 0;
+			end
+			1: 			begin
+				sel_endp <= SEL_ENDP1;
+				//ep0_xfer_ready_latch <= 0;
+			end
+			2: 			begin
+				sel_endp <= SEL_ENDP2;
 				//ep0_xfer_ready_latch <= 0;
 			end
 			default: 	sel_endp <= SEL_FREE;
@@ -160,7 +208,7 @@ end
 
 ////////////////////////////////////////////////////////////
 //
-// ENDPOINT 0
+// ENDPOINT 0 IN/OUT
 //
 ////////////////////////////////////////////////////////////
 
@@ -180,10 +228,39 @@ usb2_ep0 ipep (
 	.buf_out_q		( ep0_buf_out_q ),
 	.buf_out_len	( ep0_buf_out_len ),
 	
-	.se0_reset		( se0_reset ),
-	
 	.dev_addr		( dev_addr )
 );
+
+////////////////////////////////////////////////////////////
+//
+// ENDPOINT 1 IN
+//
+////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////
+//
+// ENDPOINT 2 OUT
+//
+////////////////////////////////////////////////////////////
+
+usb2_ep2 ipep2 (
+	.phy_clk		( phy_clk ),
+	.reset_n		( reset_n ),
+
+	.xfer_in		( ep2_xfer_in ),
+	.xfer_out		( ep2_xfer_out ),
+	.xfer_pid		( ep2_xfer_pid ),
+	.xfer_ready		( ep2_xfer_ready ),
+	
+	.buf_in_addr	( ep2_buf_in_addr ),
+	.buf_in_data	( ep2_buf_in_data ),
+	.buf_in_wren	( ep2_buf_in_wren ),
+	.buf_out_addr	( ep2_buf_out_addr ),
+	.buf_out_q		( ep2_buf_out_q ),
+	.buf_out_len	( ep2_buf_out_len )
+);
+
 
 
 endmodule
