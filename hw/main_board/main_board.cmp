@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Wednesday, January 30, 2013 10:07:38 PM
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Friday, February 08, 2013 12:30:15 PM
 
 BeginCmp
 TimeStamp = /510239FC/50FE5565;
@@ -197,6 +197,69 @@ IdModule  = TE_1473005-4;
 EndCmp
 
 BeginCmp
+TimeStamp = /5101C6D6/51155893;
+Reference = R1;
+ValeurCmp = 50R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5101C6D6/51155899;
+Reference = R2;
+ValeurCmp = 50R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5101C6D6/51155995;
+Reference = R3;
+ValeurCmp = 50R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5101C6D6/5115599E;
+Reference = R4;
+ValeurCmp = 50R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /510A0455/51148613;
+Reference = R5;
+ValeurCmp = R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /510A0455/511486B3;
+Reference = R6;
+ValeurCmp = R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /510A0455/511486FB;
+Reference = R7;
+ValeurCmp = 10K;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5109FB2D/511488C6;
+Reference = R8;
+ValeurCmp = 90K9;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5109FB2D/511488CA;
+Reference = R9;
+ValeurCmp = 10K;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
 TimeStamp = /510239FC/50FE20C7;
 Reference = U1;
 ValeurCmp = EP4CE30F29;
@@ -204,7 +267,7 @@ IdModule  = ALTERA_F780;
 EndCmp
 
 BeginCmp
-TimeStamp = /510A0455/510A04CC;
+TimeStamp = /5109F714/5109F75E;
 Reference = U2;
 ValeurCmp = TUSB1310A;
 IdModule  = TUSB1310A;
