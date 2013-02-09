@@ -1,4 +1,4 @@
-update=Sun 20 Jan 2013 12:05:51 AM EST
+update=Sat 02 Feb 2013 05:44:53 PM EST
 version=1
 last_client=pcbnew
 [general]
@@ -56,20 +56,20 @@ EquName1=devcms
 [pcbnew]
 version=1
 LastNetListRead=gig-e.net
-PadDrill=2
-PadSizeH=2
-PadSizeV=2
+PadDrill=0
+PadSizeH=0.35
+PadSizeV=0.3
 PcbTextSizeV=1
 PcbTextSizeH=1
 PcbTextThickness=0.3
 ModuleTextSizeV=1
 ModuleTextSizeH=1
 ModuleTextSizeThickness=0.15
-SolderMaskClearance=0
+SolderMaskClearance=0.1524
 SolderMaskMinWidth=0
 DrawSegmentWidth=0.2
 BoardOutlineThickness=0.15
-ModuleOutlineThickness=0.15
+ModuleOutlineThickness=0.05
 [pcbnew/libraries]
 LibDir=../lib/
 LibName1=sockets
