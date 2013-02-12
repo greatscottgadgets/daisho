@@ -26,7 +26,9 @@ output	reg				out_stp,
 
 // PROTOCOL
 output	reg				xfer_in,
+output	reg				xfer_in_ok,
 output	reg				xfer_out,
+output	reg				xfer_out_ok,
 output	reg		[3:0]	xfer_endp,
 output	reg		[3:0]	xfer_pid,
 input	wire			xfer_ready,
@@ -34,7 +36,7 @@ input	wire			xfer_ready,
 output	wire	[8:0]	buf_in_addr,
 output	wire	[7:0]	buf_in_data,
 output	wire			buf_in_wren,
-output	reg		[8:0]	buf_out_addr,
+output	reg		[9:0]	buf_out_addr,
 input	wire	[7:0]	buf_out_q,
 input	wire	[9:0]	buf_out_len,
 
@@ -56,6 +58,7 @@ output	wire	[2:0]	dbg_pkt_type
 	reg 			reset_1, reset_2;
 	reg				in_act_1;
 	reg				out_nxt_1, out_nxt_2;
+	reg				xfer_ready_1;
 	
 	// pid input
 	wire	[3:0]	pid			= in_byte[7:4];
@@ -91,13 +94,21 @@ output	wire	[2:0]	dbg_pkt_type
 					PKT_TYPE_SPEC	= 3'h4;
 	
 	reg		[15:0]	packet_crc;
+	reg		[1:0]	data_toggle;
+	wire	[3:0]	data_pid 		= 	data_toggle == DATA_TOGGLE_1 ? PID_DATA_1 :
+										data_toggle == DATA_TOGGLE_2 ? PID_DATA_2 :
+										data_toggle == DATA_TOGGLE_M ? PID_DATA_M : PID_DATA_0;
+	parameter [1:0]	DATA_TOGGLE_0	= 2'b00;
+	parameter [1:0]	DATA_TOGGLE_1	= 2'b01;
+	parameter [1:0]	DATA_TOGGLE_2	= 2'b10;
+	parameter [1:0]	DATA_TOGGLE_M	= 2'b11;
 	
-
 	// usb token data has reversed bitfields. in addition, the data is sent 
 	// in reverse bit order, which is reversed per-byte by the PHY.
 	// these are not valid for SOF 
 	reg		[15:0]	packet_token;
 	wire	[6:0]	packet_token_addr	= packet_token[14:8] /* synthesis keep */;
+	reg		[6:0]	packet_token_addr_stored;
 	wire	[3:0]	packet_token_endp	= {packet_token[2:0], packet_token[15]} /* synthesis keep */;
 	wire	[4:0]	packet_token_crc5 	= packet_token[7:3];
 	wire	[10:0]	packet_token_frame	= {packet_token[2:0], packet_token[15:8]};
@@ -116,7 +127,7 @@ output	wire	[2:0]	dbg_pkt_type
 	wire	[15:0]	crc16_fix_out = ~{crc16[8], crc16[9], crc16[10], crc16[11], 
 									crc16[12], crc16[13], crc16[14], crc16[15],
 									crc16[0], crc16[1], crc16[2], crc16[3], 
-									crc16[4], crc16[5], crc16[6], crc16[7]}; 
+									crc16[4], crc16[5], crc16[6], crc16[7]} /* synthesis keep */; 
 
 	// two byte delay for incoming data
 	//
@@ -157,6 +168,7 @@ always @(posedge phy_clk) begin
 	in_act_1 <= in_act;
 	out_nxt_1 <= out_nxt;
 	out_nxt_2 <= out_nxt_1;
+	xfer_ready_1 <= xfer_ready;
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	
 	if(in_latch) begin
@@ -180,12 +192,15 @@ always @(posedge phy_clk) begin
 		err_crc_tok <= 0;
 		err_crc_pkt <= 0;
 		err_pid_out_of_seq <= 0;
+		data_toggle <= DATA_TOGGLE_0;
 		pid_send <= 0;
 		pid_stored <= 0;
 		pid_last <= 0;
 		local_dev_addr <= 0;
 		xfer_in <= 0;
+		xfer_in_ok <= 0;
 		xfer_out <= 0;
+		xfer_out_ok <= 0;
 		state <= ST_RST_1;
 	end
 	ST_RST_1: begin
@@ -249,7 +264,7 @@ always @(posedge phy_clk) begin
 	ST_IN_1: begin
 		// read in packet data
 		crc16_byte_sel <= 0;
-		
+			
 		if(in_latch) begin
 			bc <= bc + 1'b1;
 			buf_in_addr_2 <= buf_in_addr_2 + 1'b1;
@@ -280,6 +295,17 @@ always @(posedge phy_clk) begin
 		if(~in_act) begin
 			// default is to IDLE
 			state <= ST_IDLE;
+			
+			// data toggle
+			if(packet_token_addr_stored == local_dev_addr) begin
+				if(pid_stored == PID_HAND_ACK) begin
+					data_toggle <= data_toggle + 1'b1;
+					// bulk transfers only utilize DATA0 and DATA1
+					if(data_toggle == DATA_TOGGLE_1) data_toggle <= DATA_TOGGLE_0;
+					// tell packet layer transfer succeeded
+					if(pid_last == PID_TOKEN_IN) xfer_out_ok <= 1;
+				end
+			end
 			
 			if(packet_token_addr == local_dev_addr) begin
 				// was it a zero-length OUT?
@@ -313,7 +339,9 @@ always @(posedge phy_clk) begin
 			PID_TOKEN_IN: begin
 				// switch protocol layer to proper endpoint
 				xfer_out <= 1;
-				pid_send <= PID_DATA_1;
+				xfer_out_ok <= 0;
+				// endpoint 0 or control transfers are only DATA1
+				pid_send <= packet_token_endp == 0 ? PID_DATA_1 : data_pid;
 				local_dev_addr <= dev_addr;
 				// send endpoint OUT buffer
 				state <= ST_OUT_PRE;
@@ -321,6 +349,7 @@ always @(posedge phy_clk) begin
 			PID_TOKEN_OUT: begin
 				//
 				xfer_in <= 1;
+				xfer_in_ok <= 0;
 			end
 			PID_TOKEN_SETUP: begin
 				//
@@ -330,8 +359,16 @@ always @(posedge phy_clk) begin
 			
 			xfer_pid <= pid_stored;
 			
-			if(pid_stored != PID_TOKEN_SOF)
+			// in case of IN/OUT/SETUP
+			if(pid_stored != PID_TOKEN_SOF) begin
 				xfer_endp <= packet_token_endp;
+			end
+				
+		end
+		
+		if(pid_stored != PID_TOKEN_SOF) begin
+			// save intended device address for later data stages
+			packet_token_addr_stored <= packet_token_addr;
 		end
 		
 		// confirm token CRC5
@@ -369,7 +406,7 @@ always @(posedge phy_clk) begin
 	ST_OUT_PRE: begin
 		// wait for protocol FSM/endpoint FSM to be ready (usually already is)
 		
-		if(xfer_ready) begin
+		if(xfer_ready & xfer_ready_1) begin
 			bc <= buf_out_len + 2;
 			state <= ST_OUT_0;
 		end
