@@ -24,6 +24,7 @@ output	reg				xfer_ready,
 input	wire	[8:0]	buf_in_addr,
 input	wire	[7:0]	buf_in_data,
 input	wire			buf_in_wren,
+
 input	wire	[8:0]	buf_out_addr,
 output	wire	[7:0]	buf_out_q,
 output	reg		[9:0]	buf_out_len,
@@ -41,6 +42,7 @@ output	wire			dbg
 					PID_TOKEN_IN	= 4'h6,
 					PID_TOKEN_SOF	= 4'hA,
 					PID_TOKEN_SETUP	= 4'h2,
+					PID_TOKEN_PING	= 4'hB,
 					PID_DATA_0		= 4'hC,
 					PID_DATA_1		= 4'h4,
 					PID_DATA_2		= 4'h8,
@@ -51,7 +53,6 @@ output	wire			dbg
 					PID_HAND_NYET	= 4'h9,
 					PID_SPEC_PREERR	= 4'h3,
 					PID_SPEC_SPLIT	= 4'h7,
-					PID_SPEC_PING	= 4'hB,
 					PID_SPEC_LPM	= 4'hF;
 	
 	
