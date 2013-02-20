@@ -4,7 +4,7 @@
 // MODULE: altsyncram 
 
 // ============================================================
-// File Name: mf_usb2_ep1in.v
+// File Name: mf_usb2_ep.v
 // Megafunction Name(s):
 // 			altsyncram
 //
@@ -36,24 +36,26 @@
 // synopsys translate_off
 `timescale 1 ps / 1 ps
 // synopsys translate_on
-module mf_usb2_ep1in (
-	clock,
+module mf_usb2_ep (
 	data,
 	rdaddress,
+	rdclock,
 	wraddress,
+	wrclock,
 	wren,
 	q);
 
-	input	  clock;
 	input	[7:0]  data;
 	input	[8:0]  rdaddress;
+	input	  rdclock;
 	input	[8:0]  wraddress;
+	input	  wrclock;
 	input	  wren;
 	output	[7:0]  q;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
-	tri1	  clock;
+	tri1	  wrclock;
 	tri0	  wren;
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_on
@@ -64,10 +66,11 @@ module mf_usb2_ep1in (
 
 	altsyncram	altsyncram_component (
 				.address_a (wraddress),
-				.clock0 (clock),
+				.clock0 (wrclock),
 				.data_a (data),
 				.wren_a (wren),
 				.address_b (rdaddress),
+				.clock1 (rdclock),
 				.q_b (sub_wire0),
 				.aclr0 (1'b0),
 				.aclr1 (1'b0),
@@ -75,7 +78,6 @@ module mf_usb2_ep1in (
 				.addressstall_b (1'b0),
 				.byteena_a (1'b1),
 				.byteena_b (1'b1),
-				.clock1 (1'b1),
 				.clocken0 (1'b1),
 				.clocken1 (1'b1),
 				.clocken2 (1'b1),
@@ -88,7 +90,7 @@ module mf_usb2_ep1in (
 				.wren_b (1'b0));
 	defparam
 		altsyncram_component.address_aclr_b = "NONE",
-		altsyncram_component.address_reg_b = "CLOCK0",
+		altsyncram_component.address_reg_b = "CLOCK1",
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_input_b = "BYPASS",
 		altsyncram_component.clock_enable_output_b = "BYPASS",
@@ -100,7 +102,6 @@ module mf_usb2_ep1in (
 		altsyncram_component.outdata_aclr_b = "NONE",
 		altsyncram_component.outdata_reg_b = "UNREGISTERED",
 		altsyncram_component.power_up_uninitialized = "FALSE",
-		altsyncram_component.read_during_write_mode_mixed_ports = "DONT_CARE",
 		altsyncram_component.widthad_a = 9,
 		altsyncram_component.widthad_b = 9,
 		altsyncram_component.width_a = 8,
@@ -131,7 +132,7 @@ endmodule
 // Retrieval info: PRIVATE: CLRrren NUMERIC "0"
 // Retrieval info: PRIVATE: CLRwraddress NUMERIC "0"
 // Retrieval info: PRIVATE: CLRwren NUMERIC "0"
-// Retrieval info: PRIVATE: Clock NUMERIC "0"
+// Retrieval info: PRIVATE: Clock NUMERIC "1"
 // Retrieval info: PRIVATE: Clock_A NUMERIC "0"
 // Retrieval info: PRIVATE: Clock_B NUMERIC "0"
 // Retrieval info: PRIVATE: IMPLEMENT_IN_LES NUMERIC "0"
@@ -154,7 +155,7 @@ endmodule
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 // Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_B NUMERIC "3"
 // Retrieval info: PRIVATE: REGdata NUMERIC "1"
-// Retrieval info: PRIVATE: REGq NUMERIC "1"
+// Retrieval info: PRIVATE: REGq NUMERIC "0"
 // Retrieval info: PRIVATE: REGrdaddress NUMERIC "1"
 // Retrieval info: PRIVATE: REGrren NUMERIC "1"
 // Retrieval info: PRIVATE: REGwraddress NUMERIC "1"
@@ -174,7 +175,7 @@ endmodule
 // Retrieval info: PRIVATE: rden NUMERIC "0"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: ADDRESS_ACLR_B STRING "NONE"
-// Retrieval info: CONSTANT: ADDRESS_REG_B STRING "CLOCK0"
+// Retrieval info: CONSTANT: ADDRESS_REG_B STRING "CLOCK1"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_B STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
@@ -186,28 +187,29 @@ endmodule
 // Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_REG_B STRING "UNREGISTERED"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
-// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "9"
 // Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "9"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "8"
 // Retrieval info: CONSTANT: WIDTH_B NUMERIC "8"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
-// Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
 // Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL "data[7..0]"
 // Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL "q[7..0]"
 // Retrieval info: USED_PORT: rdaddress 0 0 9 0 INPUT NODEFVAL "rdaddress[8..0]"
+// Retrieval info: USED_PORT: rdclock 0 0 0 0 INPUT NODEFVAL "rdclock"
 // Retrieval info: USED_PORT: wraddress 0 0 9 0 INPUT NODEFVAL "wraddress[8..0]"
+// Retrieval info: USED_PORT: wrclock 0 0 0 0 INPUT VCC "wrclock"
 // Retrieval info: USED_PORT: wren 0 0 0 0 INPUT GND "wren"
 // Retrieval info: CONNECT: @address_a 0 0 9 0 wraddress 0 0 9 0
 // Retrieval info: CONNECT: @address_b 0 0 9 0 rdaddress 0 0 9 0
-// Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
+// Retrieval info: CONNECT: @clock0 0 0 0 0 wrclock 0 0 0 0
+// Retrieval info: CONNECT: @clock1 0 0 0 0 rdclock 0 0 0 0
 // Retrieval info: CONNECT: @data_a 0 0 8 0 data 0 0 8 0
 // Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0
 // Retrieval info: CONNECT: q 0 0 8 0 @q_b 0 0 8 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep1in.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep1in.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep1in.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep1in.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep1in_inst.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep1in_bb.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep.bsf FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep_inst.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL mf_usb2_ep_bb.v FALSE
 // Retrieval info: LIB_FILE: altera_mf

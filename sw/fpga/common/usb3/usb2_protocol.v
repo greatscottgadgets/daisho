@@ -321,7 +321,7 @@ usb2_ep0 ipep (
 ////////////////////////////////////////////////////////////
 
 
-usb2_ep1 ipep1 (
+usb2_ep ipep1 (
 	.phy_clk		( phy_clk ),
 	.reset_n		( reset_n ),
 
@@ -344,7 +344,7 @@ usb2_ep1 ipep1 (
 //
 ////////////////////////////////////////////////////////////
 
-usb2_ep2 ipep2 (
+usb2_ep ipep2 (
 	.phy_clk		( phy_clk ),
 	.reset_n		( reset_n ),
 
