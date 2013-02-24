@@ -1,6 +1,6 @@
 
 //
-// usb 2.0 endpoint 2 OUT
+// usb 2.0 endpoint abstract
 //
 // Copyright (c) 2012-2013 Marshall H.
 // All rights reserved.
@@ -8,7 +8,7 @@
 // See LICENSE.TXT for details.
 //
 
-module usb2_ep2 (
+module usb2_ep (
 
 // top-level interface
 input	wire			phy_clk,
@@ -17,15 +17,17 @@ input	wire			reset_n,
 // PROTOCOL
 input	wire			xfer_in,
 input	wire			xfer_out,
+input	wire			xfer_out_ok,
 input	wire	[3:0]	xfer_pid,
 output	reg				xfer_ready,
 
 input	wire	[8:0]	buf_in_addr,
 input	wire	[7:0]	buf_in_data,
 input	wire			buf_in_wren,
-input	wire	[7:0]	buf_out_addr,
+
+input	wire	[8:0]	buf_out_addr,
 output	wire	[7:0]	buf_out_q,
-output	reg		[5:0]	buf_out_len,
+output	reg		[9:0]	buf_out_len,
 
 output	wire			dbg
 
@@ -34,11 +36,13 @@ output	wire			dbg
 	reg 			reset_1, reset_2;
 	reg				xfer_in_1;
 	reg				xfer_out_1;
+	reg				xfer_out_ok_1;
 	
 	parameter [3:0]	PID_TOKEN_OUT	= 4'hE,
 					PID_TOKEN_IN	= 4'h6,
 					PID_TOKEN_SOF	= 4'hA,
 					PID_TOKEN_SETUP	= 4'h2,
+					PID_TOKEN_PING	= 4'hB,
 					PID_DATA_0		= 4'hC,
 					PID_DATA_1		= 4'h4,
 					PID_DATA_2		= 4'h8,
@@ -49,21 +53,20 @@ output	wire			dbg
 					PID_HAND_NYET	= 4'h9,
 					PID_SPEC_PREERR	= 4'h3,
 					PID_SPEC_SPLIT	= 4'h7,
-					PID_SPEC_PING	= 4'hB,
 					PID_SPEC_LPM	= 4'hF;
 	
-	reg		[8:0]	desired_out_len;
+	
+	reg		[9:0]	desired_out_len;
 	reg		[15:0]	packet_out_len;
-
+	
+	reg		[3:0]	cnt;
 	reg		[6:0]	dc;
 	
 	reg		[5:0]	state /* synthesis preserve */;
 	parameter [5:0]	ST_RST_0			= 6'd0,
 					ST_RST_1			= 6'd1,
 					ST_IDLE				= 6'd10,
-					ST_IN_WAIT			= 6'd20,
-					ST_IN_PARSE_0		= 6'd21,
-					ST_IN_PARSE_1		= 6'd22;
+					ST_IN_WAIT			= 6'd20;					
 
 					
 always @(posedge phy_clk) begin
@@ -72,6 +75,7 @@ always @(posedge phy_clk) begin
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	xfer_in_1 <= xfer_in;
 	xfer_out_1 <= xfer_out;
+	xfer_out_ok_1 <= xfer_out_ok;
 	
 	dc <= dc + 1'b1;
 		
@@ -93,20 +97,29 @@ always @(posedge phy_clk) begin
 		if(xfer_in & ~xfer_in_1) begin
 			// data is coming to this endpoint!
 			xfer_ready <= 0;
+			buf_out_len <= 512;
 			state <= ST_IN_WAIT;
 		end
 		
+		if(xfer_out_ok & ~xfer_out_ok_1) begin
+			buf_out_len <= 0;
+		end
+		
 		if(xfer_out & ~xfer_out_1) begin
-			// reading data from this endpoint's IN buffer
+			// reading data from this endpoint's OUT buffer
 			xfer_ready <= 1;
+			//
+			state <= ST_IDLE;
 		end
 	end
 	
 	ST_IN_WAIT: begin
 		// wait for end of transaction
 		if(~xfer_in) begin
+			// end of setup packet, hopefully it was 8+2crc bytes as expected
 			dc <= 0;
-			state <= ST_IN_PARSE_0;
+			cnt <= 0;
+			state <= ST_IDLE;
 		end
 	end
 	
@@ -118,15 +131,14 @@ always @(posedge phy_clk) begin
 	end
 	
 end
-	
 
-// endpoint OUT buffer
 
-mf_usb2_ep2out	mf_usb2_ep2out_inst (
-	.clock 		( phy_clk ),
+mf_usb2_ep	iu2ep (
 	.data 		( buf_in_data ),
 	.rdaddress 	( buf_out_addr ),
+	.rdclock	( phy_clk ),
 	.wraddress 	( buf_in_addr ),
+	.wrclock	( phy_clk ),
 	.wren 		( buf_in_wren ),
 	.q 			( buf_out_q )
 );
