@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, February 09, 2013 11:10:56 AM
+EESchema Schematic File Version 2  date Tuesday, February 26, 2013 02:12:30 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -14,9 +14,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 7 10
+Sheet 10 11
 Title "Daisho Project Main Board"
-Date "9 feb 2013"
+Date "26 feb 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -158,10 +158,10 @@ Wire Wire Line
 	9100 8500 9100 8700
 Connection ~ 9100 8600
 $Comp
-L GND #PWR013
+L GND #PWR016
 U 1 1 5114892E
 P 9100 9300
-F 0 "#PWR013" H 9100 9300 30  0001 C CNN
+F 0 "#PWR016" H 9100 9300 30  0001 C CNN
 F 1 "GND" H 9100 9230 30  0001 C CNN
 	1    9100 9300
 	1    0    0    -1  

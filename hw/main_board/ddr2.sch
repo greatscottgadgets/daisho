@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, February 09, 2013 11:10:56 AM
+EESchema Schematic File Version 2  date Tuesday, February 26, 2013 02:12:30 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -14,9 +14,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 8 10
+Sheet 12 11
 Title "Daisho Project Main Board"
-Date "9 feb 2013"
+Date "26 feb 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -509,10 +509,10 @@ $EndComp
 Text Notes 10050 8000 0    60   ~ 0
 DDR2 operates in DQS single-ended mode. All DQS# == VSS
 $Comp
-L GND #PWR018
+L GND #PWR019
 U 1 1 50FAE476
 P 9700 7800
-F 0 "#PWR018" H 9700 7800 30  0001 C CNN
+F 0 "#PWR019" H 9700 7800 30  0001 C CNN
 F 1 "GND" H 9700 7730 30  0001 C CNN
 	1    9700 7800
 	1    0    0    -1  

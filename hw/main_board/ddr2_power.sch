@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, February 09, 2013 11:10:56 AM
+EESchema Schematic File Version 2  date Tuesday, February 26, 2013 02:12:30 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -14,9 +14,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 7 10
+Sheet 4 11
 Title "Daisho Project Main Board"
-Date "9 feb 2013"
+Date "26 feb 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -258,10 +258,10 @@ F 1 "DDR2_SDRAM_SODIMM" H 9750 3800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR01
+L GND #PWR04
 U 1 1 50FD8B95
 P 7800 6950
-F 0 "#PWR01" H 7800 6950 30  0001 C CNN
+F 0 "#PWR04" H 7800 6950 30  0001 C CNN
 F 1 "GND" H 7800 6880 30  0001 C CNN
 	1    7800 6950
 	-1   0    0    -1  
@@ -279,10 +279,10 @@ F 1 "DDR2_SDRAM_SODIMM" H 7100 3750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L GND #PWR05
 U 1 1 50FF9E85
 P 6400 7050
-F 0 "#PWR02" H 6400 7050 30  0001 C CNN
+F 0 "#PWR05" H 6400 7050 30  0001 C CNN
 F 1 "GND" H 6400 6980 30  0001 C CNN
 	1    6400 7050
 	1    0    0    -1  
