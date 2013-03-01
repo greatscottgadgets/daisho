@@ -25,22 +25,25 @@ output	reg				out_latch,
 output	reg				out_stp,
 
 // PROTOCOL
-output	reg				xfer_in,
-output	reg				xfer_in_ok,
-output	reg				xfer_out,
-output	reg				xfer_out_ok,
-output	reg				xfer_query,
-output	reg		[3:0]	xfer_endp,
-output	reg		[3:0]	xfer_pid,
+output	reg		[3:0]	sel_endp,
 
 output	wire	[8:0]	buf_in_addr,
 output	wire	[7:0]	buf_in_data,
 output	wire			buf_in_wren,
 input	wire			buf_in_ready,
+output	reg				buf_in_commit,
+output	reg		[9:0]	buf_in_commit_len,
+input	wire			buf_in_commit_ack,
+
 output	reg		[9:0]	buf_out_addr,
 input	wire	[7:0]	buf_out_q,
 input	wire	[9:0]	buf_out_len,
-input	wire			buf_out_ready,
+input	wire			buf_out_hasdata,
+output	reg				buf_out_arm,
+input	wire			buf_out_arm_ack,
+
+output	reg				data_toggle_act,
+input	wire	[1:0]	data_toggle,
 
 input	wire	[6:0]	dev_addr,
 
@@ -52,7 +55,6 @@ output	reg				err_pid_out_of_seq,
 
 output	reg		[10:0]	dbg_frame_num,
 output	wire	[2:0]	dbg_pkt_type
-
 
 );
 
@@ -95,7 +97,6 @@ output	wire	[2:0]	dbg_pkt_type
 					PKT_TYPE_SPEC	= 3'h4;
 	
 	reg		[15:0]	packet_crc;
-	reg		[1:0]	data_toggle;
 	wire	[3:0]	data_pid 		= 	data_toggle == DATA_TOGGLE_1 ? PID_DATA_1 :
 										data_toggle == DATA_TOGGLE_2 ? PID_DATA_2 :
 										data_toggle == DATA_TOGGLE_M ? PID_DATA_M : PID_DATA_0;
@@ -128,13 +129,13 @@ output	wire	[2:0]	dbg_pkt_type
 	wire	[15:0]	crc16_fix_out = ~{crc16[8], crc16[9], crc16[10], crc16[11], 
 									crc16[12], crc16[13], crc16[14], crc16[15],
 									crc16[0], crc16[1], crc16[2], crc16[3], 
-									crc16[4], crc16[5], crc16[6], crc16[7]} /* synthesis keep */; 
+									crc16[4], crc16[5], crc16[6], crc16[7]}; 
 
 	// two byte delay for incoming data
 	//
 	assign			buf_in_addr = buf_in_addr_0;
 	assign			buf_in_data = buf_in_data_0;
-	assign			buf_in_wren = buf_in_wren_0;
+	assign			buf_in_wren = buf_in_wren_0 && (state == ST_IN_1) && (pkt_type == PKT_TYPE_DATA);
 	
 	reg		[8:0]	buf_in_addr_2, buf_in_addr_1, buf_in_addr_0;
 	reg		[7:0]	buf_in_data_1, buf_in_data_0;
@@ -149,8 +150,10 @@ output	wire	[2:0]	dbg_pkt_type
 	wire	[7:0]	out_crc_mux = 	out_byte_crc[0] ? crc16_fix_out[15:8] : crc16_fix_out[7:0];
 	assign			out_byte	= 	out_byte_crc[1] ? out_crc_mux :
 									out_byte_buf ? buf_out_q : out_byte_out;
+	//reg		[9:0]	bytes_tosend /* synthesis noprune */;
+	//reg		[9:0]	bytes_sent /* synthesis noprune */;
 	
-	reg		[5:0]	state /* synthesis preserve */;
+	reg		[5:0]	state;
 	parameter [5:0]	ST_RST_0			= 6'd0,
 					ST_RST_1			= 6'd1,
 					ST_IDLE				= 6'd10,
@@ -174,7 +177,6 @@ always @(posedge phy_clk) begin
 	in_act_1 <= in_act;
 	out_nxt_1 <= out_nxt;
 	out_nxt_2 <= out_nxt_1;
-	
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	
 	if(in_latch) begin
@@ -182,12 +184,16 @@ always @(posedge phy_clk) begin
 		// we don't know incoming packet size, only that the last two bytes are CRC
 		{buf_in_addr_1, buf_in_addr_0} <= {buf_in_addr_2, buf_in_addr_1};
 		{buf_in_data_1, buf_in_data_0} <= {in_byte, buf_in_data_1};
-		{buf_in_wren_1, buf_in_wren_0} <= {in_latch && (state == ST_IN_1) && (bc < 512) && buf_in_ready_latch, buf_in_wren_1};
+		{buf_in_wren_1, buf_in_wren_0} <= {in_latch && (bc < 512) && buf_in_ready_latch && 
+											(packet_token_addr_stored == dev_addr), buf_in_wren_1};
 	end
 	
 	dc <= dc + 1'b1;
 	
 	out_stp <= 0;
+	buf_in_commit <= 0;
+	buf_out_arm <= 0;
+	data_toggle_act <= 0;
 	
 	case(state)
 	ST_RST_0: begin
@@ -198,15 +204,14 @@ always @(posedge phy_clk) begin
 		err_crc_tok <= 0;
 		err_crc_pkt <= 0;
 		err_pid_out_of_seq <= 0;
-		data_toggle <= DATA_TOGGLE_0;
 		pid_send <= 0;
 		pid_stored <= 0;
 		pid_last <= 0;
 		local_dev_addr <= 0;
-		xfer_in <= 0;
-		xfer_in_ok <= 0;
-		xfer_out <= 0;
-		xfer_out_ok <= 0;
+		
+		buf_in_commit <= 0;
+		buf_out_arm <= 0;
+		
 		state <= ST_RST_1;
 	end
 	ST_RST_1: begin
@@ -217,9 +222,7 @@ always @(posedge phy_clk) begin
 	
 	ST_IDLE: begin
 		// idle state
-		//xfer_in <= 0;
-		xfer_out <= 0;
-		
+
 		if(in_act) begin
 
 			// wait for valid bytes
@@ -306,11 +309,14 @@ always @(posedge phy_clk) begin
 			// data toggle
 			if(packet_token_addr_stored == local_dev_addr) begin
 				if(pid_stored == PID_HAND_ACK) begin
-					data_toggle <= data_toggle + 1'b1;
-					// bulk transfers only utilize DATA0 and DATA1
-					if(data_toggle == DATA_TOGGLE_1) data_toggle <= DATA_TOGGLE_0;
-					// tell packet layer transfer succeeded
-					if(pid_last == PID_TOKEN_IN) xfer_out_ok <= 1;
+					// yay
+					data_toggle_act <= 1;
+					// tell endpoints transfer succeeded
+					if(pid_last == PID_TOKEN_IN) begin
+						//bytes_tosend <= 0;
+						//bytes_sent <= 0;
+						buf_out_arm <= 1;
+					end
 				end
 			end
 			
@@ -320,11 +326,12 @@ always @(posedge phy_clk) begin
 					pid_send <= PID_HAND_ACK;
 					bc <= 0;
 					state <= ST_OUT_0;
-					xfer_in <= 0;
-
+					buf_in_commit <= 1;
+					buf_in_commit_len <= 0;
 				end else if(pid_last == PID_TOKEN_OUT || pid_last == PID_TOKEN_SETUP) begin
 					state <= ST_DATA_CRC;
-					xfer_in <= 0;
+					buf_in_commit <= 1;
+					buf_in_commit_len <= bc-2;
 				end
 			end
 		end
@@ -352,37 +359,28 @@ always @(posedge phy_clk) begin
 			case(pid_stored)
 			PID_TOKEN_IN: begin
 				// switch protocol layer to proper endpoint
-				xfer_out <= 1;
-				xfer_out_ok <= 0;
-				// endpoint 0 or control transfers are only DATA1
-				pid_send <= packet_token_endp == 0 ? PID_DATA_1 : data_pid;
 				local_dev_addr <= dev_addr;
 				// send endpoint OUT buffer
 				state <= ST_OUT_PRE_0;
 			end
 			PID_TOKEN_OUT: begin
 				//
-				xfer_in <= 1;
-				xfer_in_ok <= 0;
 			end
 			PID_TOKEN_SETUP: begin
 				//
-				xfer_in <= 1;
 			end
 			PID_TOKEN_PING: begin
 				//
-				xfer_query <= 1;
 				// special case: reply to PING
-				state <= ST_IN_TOK_PING;
 				dc <= 0;
+				state <= ST_IN_TOK_PING;
 			end
 			endcase
 			
-			xfer_pid <= pid_stored;
-	
-			// in case of IN/OUT/SETUP
+			// in case of IN/OUT/SETUP/PING
 			if(pid_stored != PID_TOKEN_SOF) begin
-				xfer_endp <= packet_token_endp;
+				// tell protocol layer which endpoint was selected
+				sel_endp <= packet_token_endp;
 			end
 		end
 		
@@ -398,9 +396,9 @@ always @(posedge phy_clk) begin
 			pid_send <= buf_in_ready ? PID_HAND_ACK : PID_HAND_NAK;
 			bc <= 0;
 			state <= ST_OUT_0;
-			xfer_query <= 0;
 		end		
 	end
+	
 	ST_PRE_EOP: begin				
 		state <= ST_WAIT_EOP;
 	end
@@ -424,28 +422,35 @@ always @(posedge phy_clk) begin
 			err_crc_pkt <= 1;
 			state <= ST_WAIT_EOP;
 		end
-		
 	end
-
 	
 	
 	ST_OUT_PRE_0: begin
 		dc <= 0;
+		pid_send <= data_pid;
 		state <= ST_OUT_PRE_1;
 	end
 	ST_OUT_PRE_1: begin
 		// wait for protocol FSM/endpoint FSM to be ready (usually already is)
 			
-		if(buf_out_ready) begin
+		if(buf_out_hasdata) begin
 			// good to go
 			bc <= buf_out_len + 2;
+			// note: needs more work to allow
+			// multipart transfers not exactly 512 bytes
+			//bytes_tosend <= buf_out_len;
+			//bytes_sent <= 0;
 			state <= ST_OUT_0;
 		end else begin
 			// wait a bit
 			if(dc == 31) begin
 				// not ready, NAK
-				bc <= 0;
-				pid_send <= PID_HAND_NAK;
+				//if(bytes_sent != bytes_tosend) begin
+					pid_send <= PID_HAND_NAK;
+					bc <= 0;
+				//end else begin
+				//	bc <= 2;
+				//end
 				state <= ST_OUT_0;
 			end
 		end
@@ -495,13 +500,17 @@ always @(posedge phy_clk) begin
 			
 			buf_out_addr <= buf_out_addr + 1'b1;
 			bc <= bc - 1'b1;
-			
-			if(buf_out_addr > 0 && bc > 1)
+
+			// NOTE: a nominal 9bit address reg here
+			// will wrap to 0 and confuse this, solution
+			// is to make it 10 bits :)
+			if(buf_out_addr > 0 && bc > 1) begin
 				crc16 <= next_crc16;
+				//bytes_sent <= bytes_sent + 1'b1;
+			end
 				
 			if(bc == 2) out_byte_crc <= 2'b11;
 			if(bc == 1) out_byte_crc <= 2'b10;
-			
 		end
 		if(~out_nxt & out_nxt_1 ) begin 
 			// falling edge 
@@ -519,7 +528,6 @@ always @(posedge phy_clk) begin
 	end
 
 end
-
 
 //
 // crc5-usb

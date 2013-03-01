@@ -39,7 +39,6 @@ input	wire			pkt_in_stp,
 output	wire			se0_reset,
 
 // debug signals
-input	wire			dbg_trig,
 output	wire	[1:0]	dbg_linestate
 
 );
@@ -65,7 +64,7 @@ output	wire	[1:0]	dbg_linestate
 	assign			phy_stp			= phy_stp_out ^ pkt_in_stp;
 	reg		[7:0]	in_rx_cmd;
 	reg				know_recv_packet;				// phy will drive NXT and DIR high
-													// simaltaneously to signify a receive
+													// simultaneously to signify a receive
 													// packet as opposed to normal RX_CMD
 													// in any case the RX_CMD will reflect this 
 													// just a bit later anyway
@@ -73,18 +72,18 @@ output	wire	[1:0]	dbg_linestate
 	wire	[1:0]	line_state	= in_rx_cmd[1:0];
 	wire	[1:0]	vbus_state	= in_rx_cmd[3:2];
 	wire	[1:0]	rx_event	= in_rx_cmd[5:4];
-	wire			id_gnd		= in_rx_cmd[6];
-	wire			alt_int		= in_rx_cmd[7];
+	//wire			id_gnd		= in_rx_cmd[6];
+	//wire			alt_int		= in_rx_cmd[7];
 	
-	wire			sess_end	= (vbus_state == 2'b00);
-	wire			sess_valid	= (vbus_state == 2'b10);
+	//wire			sess_end	= (vbus_state == 2'b00);
+	//wire			sess_valid	= (vbus_state == 2'b10);
 	wire			vbus_valid	= (vbus_state == 2'b11);
 	reg				vbus_valid_1; 
 	assign			stat_connected = vbus_valid;	// in HS mode explicit bit-stuff error will
 													// also signal EOP but this is Good Enough(tm)	
-	wire			rx_active	= (rx_event[0]) /* synthesis keep */;
-	wire			rx_error	= (rx_event == 2'b11);
-	wire			host_discon	= (rx_event == 2'b10); // only valid in host mode	
+	wire			rx_active	= (rx_event[0]);
+	//wire			rx_error	= (rx_event == 2'b11);
+	//wire			host_discon	= (rx_event == 2'b10); // only valid in host mode	
 	
 	reg		[2:0]	tx_cmd_code;					// ULPI TX_CMD code with extra bit
 	reg		[7:0]	tx_reg_addr;					// register address (6 and 8bit)
@@ -106,11 +105,13 @@ output	wire	[1:0]	dbg_linestate
 	assign	pkt_in_cts		= ~phy_dir & can_send;
 	assign	pkt_in_nxt		= phy_nxt && (state == ST_PKT_1 || state == ST_PKT_2);
 	
+	reg				pkt_in_latch_defer;
+	
 	reg				can_send;
 	reg		[3:0]	can_send_delay;
 	
-	reg		[6:0]	state /* synthesis preserve */;
-	reg		[6:0]	state_next /* synthesis preserve */;
+	reg		[6:0]	state;
+	reg		[6:0]	state_next;
 	parameter [6:0]	ST_RST_0			= 7'd0,
 					ST_RST_1			= 7'd1,
 					ST_RST_2			= 7'd2,
@@ -140,14 +141,12 @@ output	wire	[1:0]	dbg_linestate
 	assign			se0_reset		= se0_bus_reset;
 	
 	assign 			dbg_linestate = line_state;
-	reg 			dbg_trig_1, dbg_trig_2;
 	
 always @(posedge phy_clk) begin
 
 	// edge detection / synchronize
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	{opt_enable_hs_2, opt_enable_hs_1} <= {opt_enable_hs_1, opt_enable_hs};
-	{dbg_trig_2, dbg_trig_1} <= {dbg_trig_1, dbg_trig};
 	vbus_valid_1 <= vbus_valid;
 	phy_dir_1 <= phy_dir;
 
@@ -165,6 +164,8 @@ always @(posedge phy_clk) begin
 	phy_stp_out <= 1'b0;
 	// account for the turnaround cycle delay
 	phy_d_out <= phy_d_next;
+	// catch latches while receiving
+	if(pkt_in_latch) pkt_in_latch_defer <= 1;
 	
 	// main fsm
 	//
@@ -181,6 +182,7 @@ always @(posedge phy_clk) begin
 		vbus_valid_1 <= 1'b0;
 		dc <= 0;
 		dc_wrap <= 0;
+		pkt_in_latch_defer <= 0;
 		
 		state <= ST_RST_1;
 	end
@@ -243,6 +245,8 @@ always @(posedge phy_clk) begin
 		// see if PHY has stuff for us
 		if(phy_dir & ~phy_dir_1) begin
 			// rising edge of dir
+			
+			// make sure we're not clobbering a request from the packet layer
 			can_send <= 0;
 			know_recv_packet <= phy_nxt;
 			dc <= 0;
@@ -253,8 +257,9 @@ always @(posedge phy_clk) begin
 			can_send <= 1;
 			
 			// accept packet data
-			if(pkt_in_latch) state <= ST_PKT_0;
-			
+			if(pkt_in_latch | pkt_in_latch_defer) begin	
+				state <= ST_PKT_0;
+			end else
 			if(se0_bus_reset & opt_enable_hs_2) begin
 				// currently full speed, want to enumerate as high speed
 				state <= ST_CHIRP_0;
@@ -355,6 +360,7 @@ always @(posedge phy_clk) begin
 			phy_d_sel <= 0;
 			phy_d_out <= 0;
 			phy_d_next <= 0;
+			pkt_in_latch_defer <= 0;
 			state <= ST_IDLE;
 		end
 	end
