@@ -92,6 +92,7 @@ output	reg				err_setup_pkt
 					REQ_SET_DESCR		= 8'h7,
 					REQ_GET_CONFIG		= 8'h8,
 					REQ_SET_CONFIG		= 8'h9,
+					REQ_SET_INTERFACE	= 8'hB,
 					REQ_SYNCH_FRAME		= 8'h12;
 	wire	[15:0]	packet_setup_wval	= {packet_setup[55:48], packet_setup[63:56]};
 	wire	[15:0]	packet_setup_widx	= {packet_setup[39:32], packet_setup[47:40]};
@@ -132,8 +133,9 @@ output	reg				err_setup_pkt
 					ST_RDLEN_2			= 6'd33,
 					ST_REQ_GETCONFIG	= 6'd34,
 					ST_REQ_SETCONFIG	= 6'd35,
-					ST_REQ_SETADDR		= 6'd36,
-					ST_REQ_VENDOR		= 6'd37;
+					ST_REQ_SETINTERFACE	= 6'd36,
+					ST_REQ_SETADDR		= 6'd37,
+					ST_REQ_VENDOR		= 6'd38;
 					
 	reg		[5:0]	state_out;
 	parameter [5:0]	ST_OUT_ARM			= 6'd11,
@@ -228,6 +230,9 @@ always @(posedge phy_clk) begin
 			REQ_SET_CONFIG: begin
 				state_in <= ST_REQ_SETCONFIG;
 			end
+			REQ_SET_INTERFACE: begin
+				state_in <= ST_REQ_SETINTERFACE;
+			end
 			REQ_SET_ADDR: begin
 				state_in <= ST_REQ_SETADDR;
 			end
@@ -252,7 +257,7 @@ always @(posedge phy_clk) begin
 		16'h0200: begin
 			// config descriptor
 			descrip_addr_offset <= DESCR_OFF_CONFIG;
-			desired_out_len <= 32;
+			desired_out_len <= 41;
 			state_in <= ST_RDLEN_2;
 		end
 		16'h0300: begin
@@ -311,6 +316,16 @@ always @(posedge phy_clk) begin
 	ST_REQ_SETCONFIG: begin
 		// SET DEVICE CONFIGURATION
 		dev_config <= packet_setup_wval[6:0];
+	
+		// send 0byte response (DATA1)
+		len_out <= 0;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
+	end
+	ST_REQ_SETINTERFACE: begin
+		// SET INTERFACE
+		//dev_config <= packet_setup_wval[6:0];
 	
 		// send 0byte response (DATA1)
 		len_out <= 0;
@@ -424,13 +439,13 @@ mf_usb2_ep0in	iu2ep0i (
 	parameter [7:0] DESCR_OFF_DEVICE	= 8'd0;
 	parameter [7:0] DESCR_OFF_DEVQUAL	= 8'd18;
 	parameter [7:0] DESCR_OFF_CONFIG	= 8'd32;
-	parameter [7:0] DESCR_OFF_PRODNAME	= 8'd64;
-	parameter [7:0] DESCR_OFF_SERIAL	= 8'd106;
-	parameter [7:0] DESCR_OFF_STRING0	= 8'd132;
-	parameter [7:0] DESCR_OFF_MFGNAME	= 8'd136;
+	parameter [7:0] DESCR_OFF_PRODNAME	= 8'd73;
+	parameter [7:0] DESCR_OFF_SERIAL	= 8'd115;
+	parameter [7:0] DESCR_OFF_STRING0	= 8'd196;
+	parameter [7:0] DESCR_OFF_MFGNAME	= 8'd200;
 	
-	parameter [7:0] RESP_OFF_CONFIGY	= 8'd176;
-	parameter [7:0] RESP_OFF_CONFIGN	= 8'd177;
+	parameter [7:0] RESP_OFF_CONFIGN	= 8'd254;
+	parameter [7:0] RESP_OFF_CONFIGY	= 8'd255;
 	
 	reg		[7:0]	descrip_addr_offset;
 	

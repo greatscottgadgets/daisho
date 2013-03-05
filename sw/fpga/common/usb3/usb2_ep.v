@@ -32,6 +32,8 @@ output	wire			buf_out_hasdata,
 input	wire			buf_out_arm,
 output	wire			buf_out_arm_ack,
 
+input	wire	[1:0]	mode,
+
 input	wire			data_toggle_act,
 output	reg		[1:0]	data_toggle
 
@@ -39,8 +41,8 @@ output	reg		[1:0]	data_toggle
 
 	// synchronizers
 	reg 			reset_1, reset_2;
-	reg				buf_in_commit_1, buf_in_commit_2;
-	reg				buf_out_arm_1, buf_out_arm_2;
+	reg				buf_in_commit_1, buf_in_commit_2, buf_in_commit_3;
+	reg				buf_out_arm_1, buf_out_arm_2, buf_out_arm_3;
 	
 	parameter [1:0]	DATA_TOGGLE_0	= 2'b00;
 	parameter [1:0]	DATA_TOGGLE_1	= 2'b01;
@@ -55,7 +57,7 @@ output	reg		[1:0]	data_toggle
 	reg				ready_in_a;
 	reg				ready_in_b;
 	assign			buf_in_ready 		= 	ptr_in ? ready_in_b : ready_in_a;
-	assign			buf_in_commit_ack	= 	(state_in == ST_IN_COMMIT);
+	assign			buf_in_commit_ack	= 	(state_in == ST_IN_COMMIT || state_in == ST_IN_SWAP);
 	
 	reg		[9:0]	len_out_a;
 	reg		[9:0]	len_out_b;
@@ -63,8 +65,13 @@ output	reg		[1:0]	data_toggle
 	reg				hasdata_out_b;
 	assign			buf_out_len			=	ptr_out ? len_out_b : len_out_a;
 	assign			buf_out_hasdata 	= 	ptr_out ? hasdata_out_b : hasdata_out_a;
-	assign			buf_out_arm_ack 	= 	(state_out == ST_OUT_ARM);
+	assign			buf_out_arm_ack 	= 	(state_out == ST_OUT_ARM || state_out == ST_OUT_SWAP);
 	
+	parameter [1:0]	EP_MODE_CONTROL		= 2'd0,
+					EP_MODE_ISOCH		= 2'd1,
+					EP_MODE_BULK		= 2'd2,
+					EP_MODE_INTERRUPT	= 2'd3;
+					
 	reg		[3:0]	dc;
 	
 	reg		[5:0]	state_in;
@@ -82,8 +89,10 @@ always @(posedge phy_clk) begin
 
 	// synchronizers
 	{reset_2, reset_1} <= {reset_1, reset_n};
-	{buf_in_commit_2, buf_in_commit_1} <= {buf_in_commit_1, buf_in_commit};
-	{buf_out_arm_2, buf_out_arm_1} <= {buf_out_arm_1, buf_out_arm};
+	{buf_in_commit_3, buf_in_commit_2, buf_in_commit_1} <= 
+		{buf_in_commit_2, buf_in_commit_1, buf_in_commit};
+	{buf_out_arm_3, buf_out_arm_2, buf_out_arm_1} <= 
+		{buf_out_arm_2, buf_out_arm_1, buf_out_arm};
 	
 	dc <= dc + 1'b1;
 		
@@ -114,7 +123,7 @@ always @(posedge phy_clk) begin
 	
 	ST_IDLE: begin
 		// idle state
-		if(buf_in_commit_1 & ~buf_in_commit_2) begin
+		if(buf_in_commit_2 & ~buf_in_commit_3) begin
 			// external device has written to this endpoint
 			len_in <= buf_in_commit_len;
 			dc <= 0;
@@ -174,7 +183,7 @@ always @(posedge phy_clk) begin
 	end
 	ST_IDLE: begin
 		// idle state
-		if(buf_out_arm_1 & ~buf_out_arm_2) begin
+		if(buf_out_arm_2 & ~buf_out_arm_3) begin
 			// free up this endpoint
 			dc <= 0;
 			state_out <= ST_OUT_ARM;

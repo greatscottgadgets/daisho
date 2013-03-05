@@ -48,6 +48,8 @@ output	wire			ext_buf_out_hasdata,
 input	wire			ext_buf_out_arm,
 output	wire			ext_buf_out_arm_ack,
 
+output	wire	[1:0]	endp_mode,
+
 input	wire			data_toggle_act,
 output	wire	[1:0]	data_toggle,
 
@@ -119,13 +121,26 @@ output	wire			err_setup_pkt
 	assign			buf_out_arm_ack		= 	sel_endp == SEL_ENDP0 ? ep0_buf_out_arm_ack : 
 											sel_endp == SEL_ENDP1 ? ep1_buf_out_arm_ack : 1'h0;
 											
+	assign			endp_mode			=	sel_endp == SEL_ENDP1 ? EP1_MODE : 
+											sel_endp == SEL_ENDP2 ? EP2_MODE : EP_MODE_CONTROL;
+											
 	assign			data_toggle			= 	sel_endp == SEL_ENDP0 ? ep0_data_toggle : 
 											sel_endp == SEL_ENDP1 ? ep1_data_toggle : 
 											sel_endp == SEL_ENDP2 ? ep2_data_toggle : 2'h0;
 											
-	parameter [3:0]	SEL_ENDP0 	= 0,
-					SEL_ENDP1 	= 1,
-					SEL_ENDP2 	= 2;
+	parameter [3:0]	SEL_ENDP0 			= 4'd0,
+					SEL_ENDP1 			= 4'd1,
+					SEL_ENDP2 			= 4'd2;
+					
+	parameter [1:0]	EP_MODE_CONTROL		= 2'd0,
+					EP_MODE_ISOCH		= 2'd1,
+					EP_MODE_BULK		= 2'd2,
+					EP_MODE_INTERRUPT	= 2'd3;
+					
+	// assign endpoint modes here and also 
+	// in the descriptor strings
+	wire	[1:0]	EP1_MODE			= EP_MODE_BULK;
+	wire	[1:0]	EP2_MODE			= EP_MODE_BULK;
 					
 	reg		[5:0]	dc;
 	
@@ -229,6 +244,8 @@ usb2_ep iep1 (
 	.buf_out_arm		( ep1_buf_out_arm ),
 	.buf_out_arm_ack	( ep1_buf_out_arm_ack ),
 	
+	.mode				( EP1_MODE ),
+	
 	.data_toggle_act	( ep1_data_toggle_act ),
 	.data_toggle		( ep1_data_toggle )
 );
@@ -260,6 +277,8 @@ usb2_ep iep2 (
 	.buf_out_hasdata	( ext_buf_out_hasdata ),
 	.buf_out_arm		( ext_buf_out_arm ),
 	.buf_out_arm_ack	( ext_buf_out_arm_ack ),
+	
+	.mode				( EP2_MODE ),
 	
 	.data_toggle_act	( ep2_data_toggle_act ),
 	.data_toggle		( ep2_data_toggle )

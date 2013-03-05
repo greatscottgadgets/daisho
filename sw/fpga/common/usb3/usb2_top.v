@@ -157,6 +157,8 @@ usb2_packet ip (
 	.buf_out_arm		( prot_buf_out_arm ),
 	.buf_out_arm_ack	( prot_buf_out_arm_ack ),
 	
+	.endp_mode			( prot_endp_mode ),
+	
 	.data_toggle_act	( prot_data_toggle_act ),
 	.data_toggle		( prot_data_toggle ),
 	
@@ -196,6 +198,7 @@ usb2_packet ip (
 	wire			prot_buf_out_arm_ack;
 	wire	[6:0]	prot_dev_addr;
 	
+	wire	[1:0]	prot_endp_mode;
 	wire			prot_data_toggle_act;
 	wire	[1:0]	prot_data_toggle;
 	
@@ -245,6 +248,8 @@ usb2_protocol ipr (
 	.vend_req_act		( vend_req_act ),
 	.vend_req_request	( vend_req_request ),
 	.vend_req_val		( vend_req_val ),
+	
+	.endp_mode			( prot_endp_mode ),
 	
 	.data_toggle_act	( prot_data_toggle_act ),
 	.data_toggle		( prot_data_toggle ),

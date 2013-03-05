@@ -42,6 +42,8 @@ input	wire			buf_out_hasdata,
 output	reg				buf_out_arm,
 input	wire			buf_out_arm_ack,
 
+input	wire	[1:0]	endp_mode,
+
 output	reg				data_toggle_act,
 input	wire	[1:0]	data_toggle,
 
@@ -64,46 +66,53 @@ output	wire	[2:0]	dbg_pkt_type
 	reg				out_nxt_1, out_nxt_2;
 	
 	// pid input
-	wire	[3:0]	pid			= in_byte[7:4];
-	wire			pid_valid 	= (pid == ~in_byte[3:0]);
+	wire	[3:0]	pid					= in_byte[7:4];
+	wire			pid_valid 			= (pid == ~in_byte[3:0]);
 	reg		[3:0]	pid_stored;
 	reg		[3:0]	pid_last;
 	// pid output
 	reg		[3:0]	pid_send;
 	
-	parameter [3:0]	PID_TOKEN_OUT	= 4'hE,
-					PID_TOKEN_IN	= 4'h6,
-					PID_TOKEN_SOF	= 4'hA,
-					PID_TOKEN_SETUP	= 4'h2,
-					PID_TOKEN_PING	= 4'hB,
-					PID_DATA_0		= 4'hC,
-					PID_DATA_1		= 4'h4,
-					PID_DATA_2		= 4'h8,
-					PID_DATA_M		= 4'h0,
-					PID_HAND_ACK	= 4'hD,
-					PID_HAND_NAK	= 4'h5,
-					PID_HAND_STALL	= 4'h1,
-					PID_HAND_NYET	= 4'h9,
-					PID_SPEC_PREERR	= 4'h3,
-					PID_SPEC_SPLIT	= 4'h7,
-					PID_SPEC_LPM	= 4'hF;
+	parameter [3:0]	PID_TOKEN_OUT		= 4'hE,
+					PID_TOKEN_IN		= 4'h6,
+					PID_TOKEN_SOF		= 4'hA,
+					PID_TOKEN_SETUP		= 4'h2,
+					PID_TOKEN_PING		= 4'hB,
+					PID_DATA_0			= 4'hC,
+					PID_DATA_1			= 4'h4,
+					PID_DATA_2			= 4'h8,
+					PID_DATA_M			= 4'h0,
+					PID_HAND_ACK		= 4'hD,
+					PID_HAND_NAK		= 4'h5,
+					PID_HAND_STALL		= 4'h1,
+					PID_HAND_NYET		= 4'h9,
+					PID_SPEC_PREERR		= 4'h3,
+					PID_SPEC_SPLIT		= 4'h7,
+					PID_SPEC_LPM		= 4'hF;
 
 	reg		[2:0]	pkt_type;
 	
-	parameter [2:0]	PKT_TYPE_UNDEF	= 3'h0,
-					PKT_TYPE_TOKEN	= 3'h1,
-					PKT_TYPE_DATA	= 3'h2,
-					PKT_TYPE_HAND	= 3'h3,
-					PKT_TYPE_SPEC	= 3'h4;
+	parameter [2:0]	PKT_TYPE_UNDEF		= 3'h0,
+					PKT_TYPE_TOKEN		= 3'h1,
+					PKT_TYPE_DATA		= 3'h2,
+					PKT_TYPE_HAND		= 3'h3,
+					PKT_TYPE_SPEC		= 3'h4;
 	
 	reg		[15:0]	packet_crc;
-	wire	[3:0]	data_pid 		= 	data_toggle == DATA_TOGGLE_1 ? PID_DATA_1 :
-										data_toggle == DATA_TOGGLE_2 ? PID_DATA_2 :
-										data_toggle == DATA_TOGGLE_M ? PID_DATA_M : PID_DATA_0;
-	parameter [1:0]	DATA_TOGGLE_0	= 2'b00;
-	parameter [1:0]	DATA_TOGGLE_1	= 2'b01;
-	parameter [1:0]	DATA_TOGGLE_2	= 2'b10;
-	parameter [1:0]	DATA_TOGGLE_M	= 2'b11;
+	
+	parameter [1:0]	EP_MODE_CONTROL		= 2'd0,
+					EP_MODE_ISOCH		= 2'd1,
+					EP_MODE_BULK		= 2'd2,
+					EP_MODE_INTERRUPT	= 2'd3;
+					
+	wire	[3:0]	data_pid 			= 	data_toggle == DATA_TOGGLE_1 ? PID_DATA_1 :
+											data_toggle == DATA_TOGGLE_2 ? PID_DATA_2 :
+											data_toggle == DATA_TOGGLE_M ? PID_DATA_M : PID_DATA_0;
+										
+	parameter [1:0]	DATA_TOGGLE_0		= 2'b00;
+	parameter [1:0]	DATA_TOGGLE_1		= 2'b01;
+	parameter [1:0]	DATA_TOGGLE_2		= 2'b10;
+	parameter [1:0]	DATA_TOGGLE_M		= 2'b11;
 	
 	// usb token data has reversed bitfields. in addition, the data is sent 
 	// in reverse bit order, which is reversed per-byte by the PHY.
@@ -416,7 +425,8 @@ always @(posedge phy_clk) begin
 			// send ACK
 			pid_send <= buf_in_ready_latch ? PID_HAND_ACK : PID_HAND_NAK;
 			bc <= 0;
-			state <= ST_OUT_0;
+			// don't ACK isochronous transfers
+			state <= (endp_mode == EP_MODE_ISOCH) ? ST_WAIT_EOP : ST_OUT_0;
 		end else begin
 			// invalid CRC, wait for packet to end (it probably did)
 			err_crc_pkt <= 1;
@@ -451,7 +461,7 @@ always @(posedge phy_clk) begin
 				//end else begin
 				//	bc <= 2;
 				//end
-				state <= ST_OUT_0;
+				state <= (endp_mode == EP_MODE_ISOCH) ? ST_WAIT_EOP : ST_OUT_0;
 			end
 		end
 	end
@@ -479,7 +489,16 @@ always @(posedge phy_clk) begin
 			state <= ST_OUT_3;
 		end else begin
 			if(out_nxt) begin
+				// packet send complete
 				out_stp <= 1;
+				if(endp_mode == EP_MODE_ISOCH) begin
+					// normally the endpoint buffer is not freed until
+					// a correspending ACK is received from the host,
+					// but with isochronous there will never be an ACK.
+					// re-arm the buffer right after completion.
+					data_toggle_act <= 1;
+					buf_out_arm <= 1;
+				end
 				state <= ST_WAIT_EOP;
 			end
 		end
