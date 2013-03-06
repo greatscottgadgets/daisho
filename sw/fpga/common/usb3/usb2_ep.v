@@ -12,135 +12,235 @@ module usb2_ep (
 
 // top-level interface
 input	wire			phy_clk,
+input	wire			rd_clk,
+input	wire			wr_clk,
 input	wire			reset_n,
 
 // PROTOCOL
-input	wire			xfer_in,
-input	wire			xfer_out,
-input	wire			xfer_out_ok,
-input	wire	[3:0]	xfer_pid,
-output	reg				xfer_ready,
-
 input	wire	[8:0]	buf_in_addr,
 input	wire	[7:0]	buf_in_data,
 input	wire			buf_in_wren,
+output	wire			buf_in_ready,
+input	wire			buf_in_commit,
+input	wire	[9:0]	buf_in_commit_len,
+output	wire			buf_in_commit_ack,
 
 input	wire	[8:0]	buf_out_addr,
 output	wire	[7:0]	buf_out_q,
-output	reg		[9:0]	buf_out_len,
+output	wire	[9:0]	buf_out_len,
+output	wire			buf_out_hasdata,
+input	wire			buf_out_arm,
+output	wire			buf_out_arm_ack,
 
-output	wire			dbg
+input	wire	[1:0]	mode,
+
+input	wire			data_toggle_act,
+output	reg		[1:0]	data_toggle
 
 );
 
+	// synchronizers
 	reg 			reset_1, reset_2;
-	reg				xfer_in_1;
-	reg				xfer_out_1;
-	reg				xfer_out_ok_1;
+	reg				buf_in_commit_1, buf_in_commit_2, buf_in_commit_3;
+	reg				buf_out_arm_1, buf_out_arm_2, buf_out_arm_3;
 	
-	parameter [3:0]	PID_TOKEN_OUT	= 4'hE,
-					PID_TOKEN_IN	= 4'h6,
-					PID_TOKEN_SOF	= 4'hA,
-					PID_TOKEN_SETUP	= 4'h2,
-					PID_TOKEN_PING	= 4'hB,
-					PID_DATA_0		= 4'hC,
-					PID_DATA_1		= 4'h4,
-					PID_DATA_2		= 4'h8,
-					PID_DATA_M		= 4'h0,
-					PID_HAND_ACK	= 4'hD,
-					PID_HAND_NAK	= 4'h5,
-					PID_HAND_STALL	= 4'h1,
-					PID_HAND_NYET	= 4'h9,
-					PID_SPEC_PREERR	= 4'h3,
-					PID_SPEC_SPLIT	= 4'h7,
-					PID_SPEC_LPM	= 4'hF;
+	parameter [1:0]	DATA_TOGGLE_0	= 2'b00;
+	parameter [1:0]	DATA_TOGGLE_1	= 2'b01;
+	parameter [1:0]	DATA_TOGGLE_2	= 2'b10;
+	parameter [1:0]	DATA_TOGGLE_M	= 2'b11;
 	
+	// for keeping track of the endpoint double buffering
+	reg				ptr_in;
+	reg				ptr_out;
 	
-	reg		[9:0]	desired_out_len;
-	reg		[15:0]	packet_out_len;
+	reg		[9:0]	len_in;
+	reg				ready_in_a;
+	reg				ready_in_b;
+	assign			buf_in_ready 		= 	ptr_in ? ready_in_b : ready_in_a;
+	assign			buf_in_commit_ack	= 	(state_in == ST_IN_COMMIT || state_in == ST_IN_SWAP);
 	
-	reg		[3:0]	cnt;
-	reg		[6:0]	dc;
+	reg		[9:0]	len_out_a;
+	reg		[9:0]	len_out_b;
+	reg				hasdata_out_a;
+	reg				hasdata_out_b;
+	assign			buf_out_len			=	ptr_out ? len_out_b : len_out_a;
+	assign			buf_out_hasdata 	= 	ptr_out ? hasdata_out_b : hasdata_out_a;
+	assign			buf_out_arm_ack 	= 	(state_out == ST_OUT_ARM || state_out == ST_OUT_SWAP);
 	
-	reg		[5:0]	state /* synthesis preserve */;
+	parameter [1:0]	EP_MODE_CONTROL		= 2'd0,
+					EP_MODE_ISOCH		= 2'd1,
+					EP_MODE_BULK		= 2'd2,
+					EP_MODE_INTERRUPT	= 2'd3;
+					
+	reg		[3:0]	dc;
+	
+	reg		[5:0]	state_in;
 	parameter [5:0]	ST_RST_0			= 6'd0,
 					ST_RST_1			= 6'd1,
 					ST_IDLE				= 6'd10,
-					ST_IN_WAIT			= 6'd20;					
-
+					ST_IN_COMMIT		= 6'd11,
+					ST_IN_SWAP			= 6'd12;
 					
+	reg		[5:0]	state_out;	
+	parameter [5:0]	ST_OUT_ARM			= 6'd11,
+					ST_OUT_SWAP			= 6'd12;	
+	
 always @(posedge phy_clk) begin
 
 	// synchronizers
 	{reset_2, reset_1} <= {reset_1, reset_n};
-	xfer_in_1 <= xfer_in;
-	xfer_out_1 <= xfer_out;
-	xfer_out_ok_1 <= xfer_out_ok;
+	{buf_in_commit_3, buf_in_commit_2, buf_in_commit_1} <= 
+		{buf_in_commit_2, buf_in_commit_1, buf_in_commit};
+	{buf_out_arm_3, buf_out_arm_2, buf_out_arm_1} <= 
+		{buf_out_arm_2, buf_out_arm_1, buf_out_arm};
 	
 	dc <= dc + 1'b1;
 		
-	// main fsm
-	case(state) 
+	if(data_toggle_act) begin
+		data_toggle <= data_toggle + 1'b1;
+		// modify for non-bulk endpoints
+		// bulk transfers only utilize DATA0 and DATA1
+		if(data_toggle == DATA_TOGGLE_1) data_toggle <= DATA_TOGGLE_0;
+	end
+	
+	// input FSM
+	//
+	case(state_in) 
 	ST_RST_0: begin
-		xfer_ready <= 0;
-		buf_out_len <= 0;
-		desired_out_len <= 0;
-		state <= ST_RST_1;
+		// reset buffer index
+		ptr_in <= 0;
+		data_toggle <= DATA_TOGGLE_0;
+		
+		ready_in_a <= 1;
+		ready_in_b <= 1;
+				
+		// configure default state		
+		state_in <= ST_RST_1;
 	end
 	ST_RST_1: begin
-		state <= ST_IDLE;
+		state_in <= ST_IDLE;
 	end
 	
 	ST_IDLE: begin
 		// idle state
-		
-		if(xfer_in & ~xfer_in_1) begin
-			// data is coming to this endpoint!
-			xfer_ready <= 0;
-			buf_out_len <= 512;
-			state <= ST_IN_WAIT;
-		end
-		
-		if(xfer_out_ok & ~xfer_out_ok_1) begin
-			buf_out_len <= 0;
-		end
-		
-		if(xfer_out & ~xfer_out_1) begin
-			// reading data from this endpoint's OUT buffer
-			xfer_ready <= 1;
-			//
-			state <= ST_IDLE;
+		if(buf_in_commit_2 & ~buf_in_commit_3) begin
+			// external device has written to this endpoint
+			len_in <= buf_in_commit_len;
+			dc <= 0;
+			state_in <= ST_IN_COMMIT;
 		end
 	end
-	
-	ST_IN_WAIT: begin
-		// wait for end of transaction
-		if(~xfer_in) begin
-			// end of setup packet, hopefully it was 8+2crc bytes as expected
-			dc <= 0;
-			cnt <= 0;
-			state <= ST_IDLE;
+	ST_IN_COMMIT: begin
+		// generate ACK pulse, 4 cycles long for slower clock domains
+		if(dc == 3) begin
+			state_in <= ST_IN_SWAP;
 		end
+	end
+	ST_IN_SWAP: begin
+		// swap the current buffer
+		//ptr_in <= ~ptr_in;
+		
+		// current buffer is now not ready anymore
+		case(ptr_in)
+		0: ready_in_a <= 0;
+		1: ready_in_b <= 0;
+		endcase
+		
+		// tell output FSM this has data
+		case(ptr_in)
+		0: hasdata_out_a <= 1;
+		1: hasdata_out_b <= 1;
+		endcase
+		
+		// copy over the amount of data intended to be sent
+		case(ptr_in)
+		0: len_out_a <= len_in;
+		1: len_out_b <= len_in;
+		endcase
+		
+		state_in <= ST_IDLE;
 	end
 	
 	endcase
 	
+	//////////////////////////////////////////////////////
+	
+	// output FSM
+	//
+	case(state_out) 
+	ST_RST_0: begin
+		// reset buffer index
+		ptr_out <= 0;
+		
+		hasdata_out_a <= 0;
+		hasdata_out_b <= 0;
+		
+		// configure default state		
+		state_out <= ST_RST_1;
+	end
+	ST_RST_1: begin
+		state_out <= ST_IDLE;
+	end
+	ST_IDLE: begin
+		// idle state
+		if(buf_out_arm_2 & ~buf_out_arm_3) begin
+			// free up this endpoint
+			dc <= 0;
+			state_out <= ST_OUT_ARM;
+		end
+	end
+	ST_OUT_ARM: begin
+		// generate ARM_ACK pulse, several cycles for compat with slower FSMs
+		if(dc == 3) begin
+			state_out <= ST_OUT_SWAP;
+		end
+	end
+	ST_OUT_SWAP: begin
+		// swap the current buffer
+		//ptr_out <= ~ptr_out;
+		
+		// current buffer is now ready for data
+		case(ptr_out)
+		0: ready_in_a <= 1;
+		1: ready_in_b <= 1;
+		endcase
+		
+		// update hasdata status
+		case(ptr_out)
+		0: hasdata_out_a <= 0;
+		1: hasdata_out_b <= 0;
+		endcase
+		
+		state_out <= ST_IDLE;
+	end
+	
+	endcase
+		
 	if(~reset_2) begin
 		// reset
-		state <= ST_RST_0;
+		state_in <= ST_RST_0;
+		state_out <= ST_RST_0;
 	end
 	
 end
 
+// endpoint bram
+//
 
+	// segment the space into two 512 byte buffers
+	//
+	wire	[9:0]	rd_addr = buf_out_addr + (ptr_out ? 10'd512 : 10'h0);
+	wire	[9:0]	wr_addr = buf_in_addr + (ptr_in ? 10'd512 : 10'h0);
+	
 mf_usb2_ep	iu2ep (
+	.rdclock	( rd_clk ),
+	.rdaddress 	( rd_addr ),
+	.q 			( buf_out_q ),
+	
+	.wrclock	( wr_clk ),
+	.wraddress 	( wr_addr ),
 	.data 		( buf_in_data ),
-	.rdaddress 	( buf_out_addr ),
-	.rdclock	( phy_clk ),
-	.wraddress 	( buf_in_addr ),
-	.wrclock	( phy_clk ),
-	.wren 		( buf_in_wren ),
-	.q 			( buf_out_q )
+	.wren 		( buf_in_wren )
 );
 
 	

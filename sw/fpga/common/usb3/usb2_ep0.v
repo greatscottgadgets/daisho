@@ -15,28 +15,41 @@ input	wire			phy_clk,
 input	wire			reset_n,
 
 // PROTOCOL
-input	wire			xfer_in,
-input	wire			xfer_out,
-input	wire	[3:0]	xfer_pid,
-output	reg				xfer_ready,
+input	wire	[3:0]	buf_in_pid,
 
-input	wire	[5:0]	buf_in_addr,
+input	wire	[8:0]	buf_in_addr,
 input	wire	[7:0]	buf_in_data,
 input	wire			buf_in_wren,
-input	wire	[7:0]	buf_out_addr,
+output	wire			buf_in_ready,
+input	wire			buf_in_commit,
+input	wire	[9:0]	buf_in_commit_len,
+output	wire			buf_in_commit_ack,
+
+input	wire	[8:0]	buf_out_addr,
 output	wire	[7:0]	buf_out_q,
-output	reg		[5:0]	buf_out_len,
+output	wire	[9:0]	buf_out_len,
+output	wire			buf_out_hasdata,
+input	wire			buf_out_arm,
+output	wire			buf_out_arm_ack,
+
+output	reg				vend_req_act,
+output	reg		[7:0]	vend_req_request,
+output	reg		[15:0]	vend_req_val,
+//output	reg		[15:0]	vend_req_index,
+//output	reg		[15:0]	vend_req_len,
+
+input	wire			data_toggle_act,
+output	reg		[1:0]	data_toggle,
 
 output	reg		[6:0]	dev_addr,
 
-output	reg				err_setup_pkt,
-output	reg				dbg
+output	reg				err_setup_pkt
 
 );
 
 	reg 			reset_1, reset_2;
-	reg				xfer_in_1;
-	reg				xfer_out_1;
+	reg				buf_in_commit_1, buf_in_commit_2;
+	reg				buf_out_arm_1, buf_out_arm_2;
 	
 	parameter [3:0]	PID_TOKEN_OUT	= 4'hE,
 					PID_TOKEN_IN	= 4'h6,
@@ -79,6 +92,7 @@ output	reg				dbg
 					REQ_SET_DESCR		= 8'h7,
 					REQ_GET_CONFIG		= 8'h8,
 					REQ_SET_CONFIG		= 8'h9,
+					REQ_SET_INTERFACE	= 8'hB,
 					REQ_SYNCH_FRAME		= 8'h12;
 	wire	[15:0]	packet_setup_wval	= {packet_setup[55:48], packet_setup[63:56]};
 	wire	[15:0]	packet_setup_widx	= {packet_setup[39:32], packet_setup[47:40]};
@@ -89,13 +103,28 @@ output	reg				dbg
 	reg		[15:0]	packet_out_len;
 	reg		[3:0]	dev_config;
 	
+	reg				ptr_in;
+	reg				ptr_out;
+	
+	reg		[9:0]	len_in;
+	reg				ready_in;
+	assign			buf_in_ready 		= 	ready_in;
+	assign			buf_in_commit_ack	= 	(state_in == ST_IN_COMMIT);
+	
+	reg		[9:0]	len_out;
+	reg				hasdata_out;
+	assign			buf_out_len			=	len_out;
+	assign			buf_out_hasdata 	= 	hasdata_out;
+	assign			buf_out_arm_ack 	= 	(state_out == ST_OUT_ARM);
+	
 	reg		[6:0]	dc;
 	
-	reg		[5:0]	state /* synthesis preserve */;
+	reg		[5:0]	state_in;
 	parameter [5:0]	ST_RST_0			= 6'd0,
 					ST_RST_1			= 6'd1,
 					ST_IDLE				= 6'd10,
-					ST_IN_WAIT			= 6'd20,
+					ST_IN_COMMIT		= 6'd11,
+					ST_IN_SWAP			= 6'd20,
 					ST_IN_PARSE_0		= 6'd21,
 					ST_IN_PARSE_1		= 6'd22,
 					ST_REQ_DESCR		= 6'd30,
@@ -104,70 +133,76 @@ output	reg				dbg
 					ST_RDLEN_2			= 6'd33,
 					ST_REQ_GETCONFIG	= 6'd34,
 					ST_REQ_SETCONFIG	= 6'd35,
-					ST_REQ_SETADDR		= 6'd36;
+					ST_REQ_SETINTERFACE	= 6'd36,
+					ST_REQ_SETADDR		= 6'd37,
+					ST_REQ_VENDOR		= 6'd38;
+					
+	reg		[5:0]	state_out;
+	parameter [5:0]	ST_OUT_ARM			= 6'd11,
+					ST_OUT_SWAP			= 6'd20;
 
 					
 always @(posedge phy_clk) begin
 
 	// synchronizers
 	{reset_2, reset_1} <= {reset_1, reset_n};
-	xfer_in_1 <= xfer_in;
-	xfer_out_1 <= xfer_out;
+	{buf_in_commit_2, buf_in_commit_1} <= {buf_in_commit_1, buf_in_commit};
+	{buf_out_arm_2, buf_out_arm_1} <= {buf_out_arm_1, buf_out_arm};
 	
 	dc <= dc + 1'b1;
 	
+	// clear act strobe after 4 cycles
+	if(dc == 3) vend_req_act <= 1'b0;
+	
 	// main fsm
-	case(state) 
+	case(state_in) 
 	ST_RST_0: begin
-		xfer_ready <= 0;
-		buf_out_len <= 0;
+		len_out <= 0;
+		
+		// data toggle is fixed at DATA1
+		data_toggle <= 2'b01;
+		
 		desired_out_len <= 0;
 		dev_addr <= 0;
 		dev_config <= 0;
 		err_setup_pkt <= 0;
-		state <= ST_RST_1;
+		
+		ready_in <= 1;
+		
+		state_in <= ST_RST_1;
 	end
 	ST_RST_1: begin
-		state <= ST_IDLE;
+		state_in <= ST_IDLE;
 	end
-	
 	ST_IDLE: begin
 		// idle state
-		
-		if(xfer_in & ~xfer_in_1) begin
-			// data is coming to this endpoint!
-			xfer_ready <= 0;
-			if(xfer_pid == PID_TOKEN_SETUP) begin
+		if(buf_in_commit_1 & ~buf_in_commit_2) begin
+			// external device has written to this endpoint
+			len_in <= buf_in_commit_len;
+
+			ready_in <= 0;
+			//if(buf_in_pid == PID_TOKEN_SETUP) begin
 				// wait for data latch
-				state <= ST_IN_WAIT;
-			end
-		end
-		
-		if(xfer_out & ~xfer_out_1) begin
-			// reading data from this endpoint's OUT buffer
-			//if(xfer_pid == PID_TOKEN_SETUP) begin
-				// wait for data latch
-			//	state <= 20;
+				dc <= 0;
+				state_in <= ST_IN_COMMIT;
 			//end
-			xfer_ready <= 1;
+		end
+	end
+	ST_IN_COMMIT: begin
+		// generate ACK pulse
+		if(dc == 3) begin
+			dc <= 0;
+			buf_in_rdaddr <= 0;
+			state_in <= ST_IN_PARSE_0;
 		end
 	end
 	
-	ST_IN_WAIT: begin
-		// wait for end of transaction
-		if(~xfer_in) begin
-			// end of setup packet, hopefully it was 8+2crc bytes as expected
-			dc <= 0;
-			buf_in_rdaddr <= 0;
-			state <= ST_IN_PARSE_0;
-		end
-	end
 	ST_IN_PARSE_0: begin
 		// parse setup packet
 		buf_in_rdaddr <= buf_in_rdaddr + 1'b1;
 		
 		packet_setup <= {packet_setup[71:0], buf_in_q[7:0]};
-		if(dc == (10+2-1)) state <= ST_IN_PARSE_1;		
+		if(dc == (10+2-1)) state_in <= ST_IN_PARSE_1;		
 	end
 	ST_IN_PARSE_1: begin
 		// parse setup packet
@@ -178,31 +213,40 @@ always @(posedge phy_clk) begin
 		//	err_setup_pkt <= 1;
 		//	state <= 10;
 		//end else begin
+		
+		if(packet_setup_type == SETUP_TYPE_VENDOR) begin
+			// parse vendor request
+			state_in <= ST_REQ_VENDOR;
+		end else begin
 			// proceed with parsing
 			
 			case(packet_setup_req)
 			REQ_GET_DESCR: begin
-				state <= ST_REQ_DESCR;
+				state_in <= ST_REQ_DESCR;
 			end
 			REQ_GET_CONFIG: begin
-				state <= ST_REQ_GETCONFIG;
+				state_in <= ST_REQ_GETCONFIG;
 			end
 			REQ_SET_CONFIG: begin
-				state <= ST_REQ_SETCONFIG;
+				state_in <= ST_REQ_SETCONFIG;
+			end
+			REQ_SET_INTERFACE: begin
+				state_in <= ST_REQ_SETINTERFACE;
 			end
 			REQ_SET_ADDR: begin
-				state <= ST_REQ_SETADDR;
+				state_in <= ST_REQ_SETADDR;
 			end
 			default: begin
-				state <= ST_IDLE;
+				ready_in <= 1;
+				state_in <= ST_IDLE;
 			end
 			endcase
-		//end
+		end
 	end
 	
 	ST_REQ_DESCR: begin
 		
-		state <= ST_RDLEN_0;
+		state_in <= ST_RDLEN_0;
 		
 		// GET_DESCRIPTOR
 		case(packet_setup_wval)
@@ -213,8 +257,8 @@ always @(posedge phy_clk) begin
 		16'h0200: begin
 			// config descriptor
 			descrip_addr_offset <= DESCR_OFF_CONFIG;
-			desired_out_len <= 32;
-			state <= ST_RDLEN_2;
+			desired_out_len <= 41;
+			state_in <= ST_RDLEN_2;
 		end
 		16'h0300: begin
 			// string: languages
@@ -244,52 +288,125 @@ always @(posedge phy_clk) begin
 	end
 	ST_RDLEN_0: begin
 		// wait cycle if descriptor BRAM has a buffered output
-		state <= ST_RDLEN_1;
+		state_in <= ST_RDLEN_1;
 	end
 	ST_RDLEN_1: begin
 		// pick off the first byte at the pointer
 		desired_out_len <= buf_out_q;
-		state <= ST_RDLEN_2;
+		state_in <= ST_RDLEN_2;
 	end
 	ST_RDLEN_2: begin
 		// pick smaller of the setup packet's wanted length and the stored length
-		buf_out_len <= packet_out_len < desired_out_len ? packet_out_len : desired_out_len; 
+		len_out <= packet_out_len < desired_out_len ? packet_out_len : desired_out_len; 
 		// send response (DATA1)
-		xfer_ready <= 1;
-		state <= ST_IDLE;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
 	end
 	ST_REQ_GETCONFIG: begin
 		// GET DEVICE CONFIGURATION
 		
-		// send response (DATA1)
-		buf_out_len <= 1;
+		// send 1byte response (DATA1)
+		len_out <= 1;
+		ready_in <= 1;
+		hasdata_out <= 1;
 		descrip_addr_offset <= dev_config ? RESP_OFF_CONFIGY : RESP_OFF_CONFIGN;
-		xfer_ready <= 1;
-		state <= ST_IDLE;
+		state_in <= ST_IDLE;
 	end
 	ST_REQ_SETCONFIG: begin
 		// SET DEVICE CONFIGURATION
 		dev_config <= packet_setup_wval[6:0];
 	
-		// send response (DATA1)
-		buf_out_len <= 0;
-		xfer_ready <= 1;
-		state <= ST_IDLE;
+		// send 0byte response (DATA1)
+		len_out <= 0;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
+	end
+	ST_REQ_SETINTERFACE: begin
+		// SET INTERFACE
+		//dev_config <= packet_setup_wval[6:0];
+	
+		// send 0byte response (DATA1)
+		len_out <= 0;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
 	end
 	ST_REQ_SETADDR: begin
 		// SET DEVICE ADDRESS
 		dev_addr <= packet_setup_wval[6:0];
 	
-		// send response (DATA1)
-		buf_out_len <= 0;
-		xfer_ready <= 1;
-		state <= ST_IDLE;
+		// send 0byte response (DATA1)
+		len_out <= 0;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
 	end
+	
+	ST_REQ_VENDOR: begin
+		// VENDOR REQUEST
+		vend_req_request <= packet_setup_req;
+		vend_req_val <= packet_setup_wval;
+		//vend_req_index <= packet_setup_widx;
+		// optional data stage for bidir control transfers
+		// would require additional unsupported code in this endpoint
+		//vend_req_len <= packet_setup_wlen;
+		// signal to external interface there was a vend_req
+		vend_req_act <= 1'b1;
+		dc <= 0;
+		// send 0byte response (DATA1)
+		len_out <= 0;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
+	end
+	endcase
+	
+
+	
+	// output FSM
+	//
+	case(state_out) 
+	ST_RST_0: begin
+		hasdata_out <= 0;
+		
+		// configure default state		
+		state_out <= ST_RST_1;
+	end
+	ST_RST_1: begin
+		state_out <= ST_IDLE;
+	end
+	ST_IDLE: begin
+		// idle state
+		if(buf_out_arm_1 & ~buf_out_arm_2) begin
+			// free up this endpoint
+			dc <= 0;
+			state_out <= ST_OUT_ARM;
+		end
+	end
+	ST_OUT_ARM: begin
+		// generate ARM_ACK pulse, several cycles for compat with slower FSMs
+		if(dc == 3) begin
+			state_out <= ST_OUT_SWAP;
+		end
+	end
+	ST_OUT_SWAP: begin
+		// this endpoint is not double buffered!
+		// current buffer is now ready for data
+		ready_in <= 1;
+		// update hasdata status
+		hasdata_out <= 0;
+		
+		state_out <= ST_IDLE;
+	end
+	
 	endcase
 	
 	if(~reset_2) begin
 		// reset
-		state <= ST_RST_0;
+		state_in <= ST_RST_0;
+		state_out <= ST_RST_0;
 	end
 	
 end
@@ -322,13 +439,13 @@ mf_usb2_ep0in	iu2ep0i (
 	parameter [7:0] DESCR_OFF_DEVICE	= 8'd0;
 	parameter [7:0] DESCR_OFF_DEVQUAL	= 8'd18;
 	parameter [7:0] DESCR_OFF_CONFIG	= 8'd32;
-	parameter [7:0] DESCR_OFF_PRODNAME	= 8'd64;
-	parameter [7:0] DESCR_OFF_SERIAL	= 8'd106;
-	parameter [7:0] DESCR_OFF_STRING0	= 8'd132;
-	parameter [7:0] DESCR_OFF_MFGNAME	= 8'd136;
+	parameter [7:0] DESCR_OFF_PRODNAME	= 8'd73;
+	parameter [7:0] DESCR_OFF_SERIAL	= 8'd115;
+	parameter [7:0] DESCR_OFF_STRING0	= 8'd196;
+	parameter [7:0] DESCR_OFF_MFGNAME	= 8'd200;
 	
-	parameter [7:0] RESP_OFF_CONFIGY	= 8'd176;
-	parameter [7:0] RESP_OFF_CONFIGN	= 8'd177;
+	parameter [7:0] RESP_OFF_CONFIGN	= 8'd254;
+	parameter [7:0] RESP_OFF_CONFIGY	= 8'd255;
 	
 	reg		[7:0]	descrip_addr_offset;
 	
