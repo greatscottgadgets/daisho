@@ -24,11 +24,9 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 6600 4750 0    60   ~ 0
-Internal resistors pull to USB 3.0 transceiver mode.
-Connection ~ 9900 5600
 Wire Wire Line
-	9900 5100 9900 5800
+	9900 6400 9900 6300
+Connection ~ 9900 5600
 Wire Wire Line
 	9900 5800 10000 5800
 Connection ~ 9900 5100
@@ -253,8 +251,31 @@ Wire Wire Line
 Connection ~ 4900 6200
 Wire Wire Line
 	6900 5900 6900 7700
-Text Notes 10200 5950 2    60   ~ 0
-M14 "needs 1uF cap"
+Wire Wire Line
+	9900 5900 9900 5100
+Connection ~ 9900 5800
+$Comp
+L GND #PWR?
+U 1 1 5136A7E7
+P 9900 6400
+F 0 "#PWR?" H 9900 6400 30  0001 C CNN
+F 1 "GND" H 9900 6330 30  0001 C CNN
+	1    9900 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5136A7E6
+P 9900 6100
+F 0 "C?" H 9950 6200 50  0000 L CNN
+F 1 "1U" H 9950 6000 50  0000 L CNN
+	1    9900 6100
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6800 4600
+NoConn ~ 6800 4500
+Text Notes 6600 4750 0    60   ~ 0
+Internal resistors pull to USB 3.0 transceiver mode.
 Text HLabel 4800 6200 0    60   Input ~ 0
 VCC_1V1D
 Text HLabel 9800 5100 0    60   Input ~ 0

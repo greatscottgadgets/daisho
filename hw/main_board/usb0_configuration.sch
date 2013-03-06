@@ -24,6 +24,10 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 8000 7100
+Text Notes 7900 7450 2    60   ~ 0
+Test points here?\nOr just wire to FPGA?\nA small waste of FPGA pins and routing
+NoConn ~ 8000 7000
 Entry Wire Line
 	6900 3600 7000 3700
 Entry Wire Line
@@ -132,21 +136,21 @@ Entry Wire Line
 	6900 4900 7000 5000
 Entry Wire Line
 	6900 4800 7000 4900
-Text HLabel 6700 6300 0    60   Output ~ 0
+Text HLabel 6700 6300 0    60   Input ~ 0
 ELAS_BUF_MODE
-Text HLabel 6700 6100 0    60   Output ~ 0
+Text HLabel 6700 6100 0    60   Input ~ 0
 RATE
-Text HLabel 6700 5900 0    60   Output ~ 0
+Text HLabel 6700 5900 0    60   Input ~ 0
 RX_TERMINATION
-Text HLabel 6700 5800 0    60   Output ~ 0
+Text HLabel 6700 5800 0    60   Input ~ 0
 RX_POLARITY
-Text HLabel 6700 5600 0    60   Output ~ 0
+Text HLabel 6700 5600 0    60   Input ~ 0
 TX_SWING
-Text HLabel 6700 5100 0    60   Output ~ 0
+Text HLabel 6700 5100 0    60   Input ~ 0
 TX_MARGIN[2..0]
-Text HLabel 6700 4800 0    60   Output ~ 0
+Text HLabel 6700 4800 0    60   Input ~ 0
 TX_DEEMPH[1..0]
-Text HLabel 6700 4700 0    60   Output ~ 0
+Text HLabel 6700 4700 0    60   Input ~ 0
 TX_ONESZEROS
 Text Label 7100 6300 0    60   ~ 0
 ELAS_BUF_MODE
@@ -192,19 +196,19 @@ Text Label 7100 2700 0    60   ~ 0
 TX_DETRX_LPBK
 Text Label 7100 2500 0    60   ~ 0
 PHY_RESETN
-Text HLabel 6700 4100 0    60   Input ~ 0
+Text HLabel 6700 4100 0    60   Output ~ 0
 POWERPRESENT
 Text HLabel 6700 3900 0    60   BiDi ~ 0
 PHY_STATUS
-Text HLabel 6700 3500 0    60   Output ~ 0
+Text HLabel 6700 3500 0    60   Input ~ 0
 POWER_DOWN[1..0]
-Text HLabel 6700 3100 0    60   Input ~ 0
+Text HLabel 6700 3100 0    60   Output ~ 0
 RX_STATUS[2..0]
 Text HLabel 6700 3000 0    60   BiDi ~ 0
 RX_ELECIDLE
-Text HLabel 6700 2800 0    60   Output ~ 0
+Text HLabel 6700 2800 0    60   Input ~ 0
 TX_ELECIDLE
-Text HLabel 6700 2700 0    60   Output ~ 0
+Text HLabel 6700 2700 0    60   Input ~ 0
 TX_DETRX_LPBK
 Text HLabel 6700 2500 0    60   Input ~ 0
 PHY_RESET#
@@ -232,7 +236,7 @@ L R R6
 U 1 1 511486B3
 P 7100 8650
 F 0 "R6" V 7180 8650 50  0000 C CNN
-F 1 "R" V 7100 8650 50  0000 C CNN
+F 1 "10K" V 7100 8650 50  0000 C CNN
 	1    7100 8650
 	1    0    0    -1  
 $EndComp
@@ -256,7 +260,7 @@ L R R5
 U 1 1 51148613
 P 6900 8650
 F 0 "R5" V 6980 8650 50  0000 C CNN
-F 1 "R" V 6900 8650 50  0000 C CNN
+F 1 "10K" V 6900 8650 50  0000 C CNN
 	1    6900 8650
 	1    0    0    -1  
 $EndComp
