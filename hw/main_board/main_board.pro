@@ -1,4 +1,4 @@
-update=Monday, February 25, 2013 04:45:39 PM
+update=Monday, March 04, 2013 11:11:33 PM
 version=1
 last_client=pcbnew
 [general]
@@ -78,3 +78,4 @@ LibName6=display
 LibName7=altera
 LibName8=te_1473005-4
 LibName9=tusb1310a
+LibName10=samtec_qth-090-01-f-d-a

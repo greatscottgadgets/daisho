@@ -23,6 +23,9 @@ factor_mm_to_kicad_old_units = 1.0 / 25.4 * 10000.0
 def mm_to_kicad(mm):
 	return int(round(float(mm) * factor_mm_to_kicad_old_units))
 
+def degrees_to_kicad(degrees):
+	return int(round(float(degrees) * 10.0))
+
 def make_nsmd_bga_pad(pad_name, pad_diameter, solder_mask_clearance, position):
     data = {
         'pad_name': pad_name,
@@ -61,3 +64,56 @@ def make_nsmd_bga_pads(spacing, pad_diameter, solder_mask_clearance, columns, ro
 	            lines.extend(make_nsmd_bga_pad(pad_name, pad_diameter, solder_mask_clearance, [x, y]))
 
 	return lines
+
+def make_nsmd_rect_pad(pad_name, pad_width, pad_height, rotation, position):
+	data = {
+		'pad_name': pad_name,
+		'pad_width': mm_to_kicad(pad_width),
+		'pad_height': mm_to_kicad(pad_height),
+		'orientation': degrees_to_kicad(rotation),
+		'x': mm_to_kicad(position[0]),
+		'y': mm_to_kicad(position[1]),
+	}
+	return [
+		'$PAD',
+		'Sh "%(pad_name)s" R %(pad_width)s %(pad_height)s 0 0 %(orientation)d' % data,
+		'Dr 0 0 0',
+		'At SMD N 00888000',
+		'Ne 0 ""',
+		'Po %(x)s %(y)s' % data,
+		'$EndPAD',
+	]
+
+def make_npth_hole(diameter, position):
+	data = {
+		'diameter': mm_to_kicad(diameter),
+		'x': mm_to_kicad(position[0]),
+		'y': mm_to_kicad(position[1]),
+	}
+	return [
+		'$PAD',
+		'Sh "" C %(diameter)s %(diameter)s 0 0 0' % data,
+		'Dr %(diameter)s 0 0' % data,
+		'At HOLE N 00E0FFFF',
+		'Ne 0 ""',
+		'Po %(x)s %(y)s' % data,
+		'$EndPAD',
+	]
+
+def make_pth_hole(pad_name, drill_diameter, pad_diameter, position):
+	data = {
+		'pad_name': pad_name,
+		'drill_diameter': mm_to_kicad(drill_diameter),
+		'pad_diameter': mm_to_kicad(pad_diameter),
+		'x': mm_to_kicad(position[0]),
+		'y': mm_to_kicad(position[1]),
+	}
+	return [
+		'$PAD',
+		'Sh "%(pad_name)s" C %(pad_diameter)s %(pad_diameter)s 0 0 0' % data,
+		'Dr %(drill_diameter)s 0 0' % data,
+		'At STD N 00E0FFFF',
+		'Ne 0 ""',
+		'Po %(x)s %(y)s' % data,
+		'$EndPAD',
+	]
