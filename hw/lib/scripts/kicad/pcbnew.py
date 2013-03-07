@@ -1,4 +1,4 @@
-# Utilities for working with KiCAD data and files.
+# Utilities for working with KiCAD PCBNew data and files.
 # 
 # Copyright (C) 2013 Jared Boone, ShareBrained Technology, Inc.
 # 

@@ -21,7 +21,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from kicad import make_nsmd_rect_pad, make_npth_hole, make_pth_hole
+from kicad.pcbnew import make_nsmd_rect_pad, make_npth_hole, make_pth_hole
 	
 def shift_pad_positions(position_delta, pads):
 	for pad in pads:

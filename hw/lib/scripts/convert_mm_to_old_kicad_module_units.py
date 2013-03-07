@@ -24,7 +24,7 @@
 import sys
 
 from coroutine import coroutine
-from kicad import mm_to_kicad
+from kicad.pcbnew import mm_to_kicad
 
 def convert_mm_args(arg_indices):
 	def _convert(line):

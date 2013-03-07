@@ -21,7 +21,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-from kicad import mm_to_kicad, make_nsmd_bga_pads
+from kicad.pcbnew import mm_to_kicad, make_nsmd_bga_pads
 
 bga_definition = {
 	'spacing': 1.0,
