@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday, March 05, 2013 06:23:51 PM
+EESchema Schematic File Version 2  date Wednesday, March 06, 2013 10:23:01 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -14,9 +14,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 6 11
+Sheet 7 11
 Title "Daisho Project Main Board"
-Date "6 mar 2013"
+Date "7 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -255,19 +255,19 @@ Wire Wire Line
 	9900 5900 9900 5100
 Connection ~ 9900 5800
 $Comp
-L GND #PWR?
+L GND #PWR07
 U 1 1 5136A7E7
 P 9900 6400
-F 0 "#PWR?" H 9900 6400 30  0001 C CNN
+F 0 "#PWR07" H 9900 6400 30  0001 C CNN
 F 1 "GND" H 9900 6330 30  0001 C CNN
 	1    9900 6400
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C?
+L C C1
 U 1 1 5136A7E6
 P 9900 6100
-F 0 "C?" H 9950 6200 50  0000 L CNN
+F 0 "C1" H 9950 6200 50  0000 L CNN
 F 1 "1U" H 9950 6000 50  0000 L CNN
 	1    9900 6100
 	1    0    0    -1  
@@ -287,19 +287,19 @@ VCC_3V3A
 Text HLabel 4800 4500 0    60   Input ~ 0
 VCC_1V8D
 $Comp
-L GND #PWR06
+L GND #PWR08
 U 1 1 5109F898
 P 6900 7700
-F 0 "#PWR06" H 6900 7700 30  0001 C CNN
+F 0 "#PWR08" H 6900 7700 30  0001 C CNN
 F 1 "GND" H 6900 7630 30  0001 C CNN
 	1    6900 7700
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR07
+L GND #PWR09
 U 1 1 5109F87B
 P 11900 6000
-F 0 "#PWR07" H 11900 6000 30  0001 C CNN
+F 0 "#PWR09" H 11900 6000 30  0001 C CNN
 F 1 "GND" H 11900 5930 30  0001 C CNN
 	1    11900 6000
 	1    0    0    -1  

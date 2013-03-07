@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Friday, February 08, 2013 12:30:15 PM
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Tuesday, March 05, 2013 06:51:55 PM
+
+BeginCmp
+TimeStamp = /5109F714/5136A7E6;
+Reference = C1;
+ValeurCmp = 1U;
+IdModule  = SM0402;
+EndCmp
 
 BeginCmp
 TimeStamp = /510239FC/50FE5565;
@@ -227,14 +234,14 @@ EndCmp
 BeginCmp
 TimeStamp = /510A0455/51148613;
 Reference = R5;
-ValeurCmp = R;
+ValeurCmp = 10K;
 IdModule  = SM0402;
 EndCmp
 
 BeginCmp
 TimeStamp = /510A0455/511486B3;
 Reference = R6;
-ValeurCmp = R;
+ValeurCmp = 10K;
 IdModule  = SM0402;
 EndCmp
 
@@ -260,14 +267,14 @@ IdModule  = SM0402;
 EndCmp
 
 BeginCmp
-TimeStamp = /510239FC/50FE20C7;
+TimeStamp = /5129C23F/5129C259;
 Reference = U1;
 ValeurCmp = EP4CE30F29;
 IdModule  = ALTERA_F780;
 EndCmp
 
 BeginCmp
-TimeStamp = /5109F714/5109F75E;
+TimeStamp = /5109FB2D/5109FB8E;
 Reference = U2;
 ValeurCmp = TUSB1310A;
 IdModule  = TUSB1310A;
