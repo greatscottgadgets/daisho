@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday, March 08, 2013 04:12:01 PM
+EESchema Schematic File Version 2  date Friday, March 08, 2013 11:22:18 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,7 +17,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 15
 Title "Daisho Project Main Board"
-Date "8 mar 2013"
+Date "9 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -25,116 +25,116 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Bus Line
+	8500 7500 9200 7500
+Wire Bus Line
+	12700 3950 13500 3950
+Wire Bus Line
+	12700 4450 13500 4450
+Wire Wire Line
+	12700 4950 13500 4950
+Wire Wire Line
+	12700 4750 13500 4750
+Wire Wire Line
+	12700 4350 13500 4350
+Wire Wire Line
+	12700 4050 13500 4050
+Wire Wire Line
+	12700 3450 13500 3450
+Wire Wire Line
+	12700 3750 13500 3750
+Wire Wire Line
+	12700 1350 13500 1350
+Wire Bus Line
+	12700 1450 13500 1450
+Wire Wire Line
+	4000 10400 3200 10400
+Wire Wire Line
+	4000 10100 3200 10100
+Wire Wire Line
+	4000 9800 3200 9800
+Connection ~ 3600 7800
+Wire Wire Line
+	4000 7800 3200 7800
+Connection ~ 3600 8000
+Wire Wire Line
+	4000 8000 3600 8000
+Connection ~ 3600 8800
+Wire Wire Line
+	3600 10000 3600 8600
+Wire Wire Line
+	3600 8600 4000 8600
+Wire Wire Line
+	4000 8800 3600 8800
+Wire Wire Line
+	12700 2050 13500 2050
+Wire Bus Line
+	12700 1950 13500 1950
+Wire Bus Line
+	4000 5950 3450 5950
+Wire Wire Line
+	4000 5500 3450 5500
+Wire Wire Line
+	3450 5950 3450 5950
+Wire Wire Line
+	3450 5050 4000 5050
+Wire Wire Line
+	3450 5150 4000 5150
+Wire Wire Line
+	3450 5400 4000 5400
+Wire Bus Line
+	3450 5850 4000 5850
+Wire Bus Line
+	3450 5750 4000 5750
+Wire Bus Line
+	12700 1850 13500 1850
+Wire Wire Line
+	12700 1750 13500 1750
+Wire Wire Line
+	3600 8900 4000 8900
+Connection ~ 3600 8900
+Wire Wire Line
+	3600 7800 3600 8500
+Wire Wire Line
+	3600 8500 4000 8500
+Wire Wire Line
+	3600 7900 4000 7900
+Connection ~ 3600 7900
+Wire Wire Line
+	3200 9300 4000 9300
+Wire Wire Line
+	4000 10000 3200 10000
+Connection ~ 3600 10000
+Wire Wire Line
+	3200 10300 4000 10300
+Wire Bus Line
+	12700 1550 13500 1550
+Wire Wire Line
+	12700 3650 13500 3650
+Wire Bus Line
+	12700 3850 13500 3850
+Wire Wire Line
+	13500 3550 12700 3550
+Wire Wire Line
+	13500 4150 12700 4150
+Wire Wire Line
+	13500 4650 12700 4650
+Wire Wire Line
+	13500 4850 12700 4850
+Wire Wire Line
+	13500 5050 12700 5050
+Wire Bus Line
+	13500 4550 12700 4550
+Wire Bus Line
+	8500 8900 9200 8900
 $Sheet
 S 9200 6100 1300 3800
 U 5138E240
 F0 "front_end" 60
 F1 "front_end.sch" 60
-F2 "FE_BANK0_DIFFN[10..0]" B L 9200 7600 60 
-F3 "FE_BANK0_DIFFP[10..0]" B L 9200 7500 60 
-F4 "FE_BANK0_SE[29..0]" B L 9200 7800 60 
-F5 "FE_C[55..0]" B L 9200 8900 60 
+F2 "FE_B[51..0]" B L 9200 7500 60 
+F3 "FE_C[51..0]" B L 9200 8900 60 
 $EndSheet
-Wire Bus Line
-	8500 8900 9200 8900
-Wire Bus Line
-	13500 4550 12700 4550
-Wire Wire Line
-	13500 5050 12700 5050
-Wire Wire Line
-	13500 4850 12700 4850
-Wire Wire Line
-	13500 4650 12700 4650
-Wire Wire Line
-	13500 4150 12700 4150
-Wire Wire Line
-	13500 3550 12700 3550
-Wire Bus Line
-	12700 3850 13500 3850
-Wire Wire Line
-	12700 3650 13500 3650
-Wire Bus Line
-	12700 1550 13500 1550
-Wire Wire Line
-	3200 10300 4000 10300
-Connection ~ 3600 10000
-Wire Wire Line
-	4000 10000 3200 10000
-Wire Wire Line
-	3200 9300 4000 9300
-Connection ~ 3600 7900
-Wire Wire Line
-	3600 7900 4000 7900
-Wire Wire Line
-	4000 8500 3600 8500
-Wire Wire Line
-	3600 8500 3600 7800
-Connection ~ 3600 8900
-Wire Wire Line
-	3600 8900 4000 8900
-Wire Wire Line
-	12700 1750 13500 1750
-Wire Bus Line
-	12700 1850 13500 1850
-Wire Bus Line
-	3450 5750 4000 5750
-Wire Bus Line
-	3450 5850 4000 5850
-Wire Wire Line
-	3450 5400 4000 5400
-Wire Wire Line
-	3450 5150 4000 5150
-Wire Wire Line
-	3450 5050 4000 5050
-Wire Wire Line
-	3450 5950 3450 5950
-Wire Wire Line
-	4000 5500 3450 5500
-Wire Bus Line
-	4000 5950 3450 5950
-Wire Bus Line
-	12700 1950 13500 1950
-Wire Wire Line
-	12700 2050 13500 2050
-Wire Wire Line
-	4000 8800 3600 8800
-Wire Wire Line
-	4000 8600 3600 8600
-Wire Wire Line
-	3600 8600 3600 10000
-Connection ~ 3600 8800
-Wire Wire Line
-	4000 8000 3600 8000
-Connection ~ 3600 8000
-Wire Wire Line
-	4000 7800 3200 7800
-Connection ~ 3600 7800
-Wire Wire Line
-	4000 9800 3200 9800
-Wire Wire Line
-	4000 10100 3200 10100
-Wire Wire Line
-	4000 10400 3200 10400
-Wire Bus Line
-	12700 1450 13500 1450
-Wire Wire Line
-	12700 1350 13500 1350
-Wire Wire Line
-	12700 3750 13500 3750
-Wire Wire Line
-	12700 3450 13500 3450
-Wire Wire Line
-	12700 4050 13500 4050
-Wire Wire Line
-	12700 4350 13500 4350
-Wire Wire Line
-	12700 4750 13500 4750
-Wire Wire Line
-	12700 4950 13500 4950
-Wire Bus Line
-	12700 4450 13500 4450
-Wire Bus Line
-	12700 3950 13500 3950
 $Sheet
 S 6800 6100 1700 1000
 U 51394328
@@ -161,13 +161,14 @@ F0 "fpga_front_end_bank_1" 60
 F1 "fpga_front_end_bank_1.sch" 60
 F2 "VREF" I L 6800 8900 60 
 F3 "VCCIO" I L 6800 9000 60 
-F4 "D[55..0]" B R 8500 8900 60 
+F4 "D[51..0]" B R 8500 8900 60 
 $EndSheet
 $Sheet
 S 6800 7400 1700 1100
 U 5138E12B
 F0 "fpga_front_end_bank_0" 60
 F1 "fpga_front_end_bank_0.sch" 60
+F2 "D[51..0]" B R 8500 7500 60 
 $EndSheet
 $Sheet
 S 13500 1250 1700 900 

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday, March 08, 2013 04:12:01 PM
+EESchema Schematic File Version 2  date Friday, March 08, 2013 11:22:18 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -16,15 +16,129 @@ EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
 Sheet 2 15
-Title ""
-Date "8 mar 2013"
-Rev ""
-Comp ""
-Comment1 ""
-Comment2 ""
+Title "Daisho Project Main Board"
+Date "9 mar 2013"
+Rev "0"
+Comp "ShareBrained Technology, Inc."
+Comment1 "Copyright © 2013 Jared Boone"
+Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 2600 1400 0    60   BiDi ~ 0
+FE_B[51..0]
+Text Label 9300 1500 0    60   ~ 0
+FE_B0
+Text Label 9300 1600 0    60   ~ 0
+FE_B2
+Text Label 9300 1700 0    60   ~ 0
+FE_B4
+Text Label 9300 1800 0    60   ~ 0
+FE_B6
+Text Label 9300 1900 0    60   ~ 0
+FE_B8
+Text Label 9300 2100 0    60   ~ 0
+FE_B10
+Text Label 9300 2200 0    60   ~ 0
+FE_B12
+Text Label 9300 2300 0    60   ~ 0
+FE_B14
+Text Label 9300 2400 0    60   ~ 0
+FE_B16
+Text Label 9300 2500 0    60   ~ 0
+FE_B18
+Text Label 9300 2700 0    60   ~ 0
+FE_B20
+Text Label 9300 2800 0    60   ~ 0
+FE_B22
+Text Label 9300 2900 0    60   ~ 0
+FE_B24
+Text Label 9300 3000 0    60   ~ 0
+FE_B26
+Text Label 9300 3100 0    60   ~ 0
+FE_B28
+Text Label 9300 3300 0    60   ~ 0
+FE_B30
+Text Label 9300 3400 0    60   ~ 0
+FE_B32
+Text Label 9300 3500 0    60   ~ 0
+FE_B34
+Text Label 9300 3600 0    60   ~ 0
+FE_B36
+Text Label 9300 3700 0    60   ~ 0
+FE_B38
+Text Label 9300 3900 0    60   ~ 0
+FE_B40
+Text Label 9300 4000 0    60   ~ 0
+FE_B42
+Text Label 9300 4100 0    60   ~ 0
+FE_B44
+Text Label 9300 4200 0    60   ~ 0
+FE_B46
+Text Label 9300 4300 0    60   ~ 0
+FE_B48
+Text Label 9300 4400 0    60   ~ 0
+FE_B50
+Text Label 11400 4400 0    60   ~ 0
+FE_B51
+Text Label 11400 4300 0    60   ~ 0
+FE_B49
+Text Label 11400 4200 0    60   ~ 0
+FE_B47
+Text Label 11400 4100 0    60   ~ 0
+FE_B45
+Text Label 11400 4000 0    60   ~ 0
+FE_B43
+Text Label 11400 3900 0    60   ~ 0
+FE_B41
+Text Label 11400 3700 0    60   ~ 0
+FE_B39
+Text Label 11400 3600 0    60   ~ 0
+FE_B37
+Text Label 11400 3500 0    60   ~ 0
+FE_B35
+Text Label 11400 3400 0    60   ~ 0
+FE_B33
+Text Label 11400 3300 0    60   ~ 0
+FE_B31
+Text Label 11400 3100 0    60   ~ 0
+FE_B29
+Text Label 11400 3000 0    60   ~ 0
+FE_B27
+Text Label 11400 2900 0    60   ~ 0
+FE_B25
+Text Label 11400 2800 0    60   ~ 0
+FE_B23
+Text Label 11400 2700 0    60   ~ 0
+FE_B21
+Text Label 11400 2500 0    60   ~ 0
+FE_B19
+Text Label 11400 2400 0    60   ~ 0
+FE_B17
+Text Label 11400 2300 0    60   ~ 0
+FE_B15
+Text Label 11400 2200 0    60   ~ 0
+FE_B13
+Text Label 11400 2100 0    60   ~ 0
+FE_B11
+Text Label 11400 1900 0    60   ~ 0
+FE_B9
+Text Label 11400 1800 0    60   ~ 0
+FE_B7
+Text Label 11400 1700 0    60   ~ 0
+FE_B5
+Wire Wire Line
+	9100 4400 9900 4400
+Wire Wire Line
+	9100 2300 9900 2300
+Wire Wire Line
+	9100 3500 9900 3500
+Wire Wire Line
+	11900 4100 11100 4100
+Wire Wire Line
+	11900 2900 11100 2900
+Wire Wire Line
+	11900 1700 11100 1700
 Wire Wire Line
 	9900 9000 9100 9000
 Wire Wire Line
@@ -39,29 +153,26 @@ Wire Wire Line
 	9900 6300 9100 6300
 Connection ~ 11200 7800
 Wire Wire Line
-	11100 7800 11200 7800
+	11200 7800 11100 7800
 Connection ~ 9800 8400
 Wire Wire Line
 	9900 8400 9800 8400
 Connection ~ 9800 7200
 Wire Wire Line
-	9900 7200 9800 7200
+	9800 7200 9900 7200
 Wire Wire Line
 	9800 9200 9800 6600
 Wire Wire Line
 	9800 6600 9900 6600
 Connection ~ 11200 3200
 Wire Wire Line
-	11100 3200 11200 3200
-Connection ~ 11200 4400
-Wire Wire Line
-	11100 4400 11200 4400
+	11200 3200 11100 3200
 Connection ~ 9800 3800
 Wire Wire Line
 	9900 3800 9800 3800
 Connection ~ 9800 2600
 Wire Wire Line
-	9900 2600 9800 2600
+	9800 2600 9900 2600
 Wire Wire Line
 	9800 4600 9800 2000
 Wire Wire Line
@@ -107,58 +218,58 @@ Wire Wire Line
 Wire Wire Line
 	9900 6100 9100 6100
 Wire Wire Line
-	11100 4200 12300 4200
+	11100 4200 11900 4200
 Wire Wire Line
-	11100 3900 12300 3900
+	11100 3900 11900 3900
 Wire Wire Line
-	11100 3600 12300 3600
+	11100 3600 11900 3600
 Wire Wire Line
-	11100 3300 12300 3300
+	11100 3300 11900 3300
 Wire Wire Line
-	11100 3000 12300 3000
+	11100 3000 11900 3000
 Wire Wire Line
-	11100 2700 12300 2700
+	11100 2700 11900 2700
 Wire Wire Line
-	11100 2400 12300 2400
+	11100 2400 11900 2400
 Wire Wire Line
-	11100 2100 12300 2100
+	11100 2100 11900 2100
 Wire Wire Line
-	11100 1800 12300 1800
+	11100 1800 11900 1800
 Wire Wire Line
-	11100 1500 12300 1500
+	11100 1500 11900 1500
 Wire Wire Line
-	9900 4200 8700 4200
+	9900 4200 9100 4200
 Wire Wire Line
-	9900 3900 8700 3900
+	9900 3900 9100 3900
 Wire Wire Line
-	9900 3600 8700 3600
+	9900 3600 9100 3600
 Wire Wire Line
-	9900 3300 8700 3300
+	9900 3300 9100 3300
 Wire Wire Line
-	9900 3000 8700 3000
+	9900 3000 9100 3000
 Wire Wire Line
-	9900 2700 8700 2700
+	9900 2700 9100 2700
 Wire Wire Line
-	9900 2400 8700 2400
+	9900 2400 9100 2400
 Wire Wire Line
-	9900 2100 8700 2100
+	9900 2100 9100 2100
 Wire Wire Line
-	9900 1800 8700 1800
+	9900 1800 9100 1800
 Wire Wire Line
-	9900 1500 8700 1500
+	9900 1500 9100 1500
 Connection ~ 10450 9500
 Wire Wire Line
-	10450 9400 10450 9500
+	10450 9500 10450 9400
 Wire Wire Line
 	10350 9400 10350 9600
 Connection ~ 10450 4900
 Wire Wire Line
-	10450 4800 10450 4900
+	10450 4900 10450 4800
 Wire Wire Line
 	10350 4800 10350 5000
 Connection ~ 4350 7200
 Wire Wire Line
-	4450 7200 4450 7100
+	4450 7100 4450 7200
 Wire Wire Line
 	4250 7100 4250 7300
 Wire Wire Line
@@ -186,45 +297,45 @@ Wire Wire Line
 	10550 9500 10550 9400
 Connection ~ 10550 9500
 Wire Wire Line
-	9900 1600 8700 1600
+	9900 1600 9100 1600
 Wire Wire Line
-	9900 1900 8700 1900
+	9900 1900 9100 1900
 Wire Wire Line
-	9900 2200 8700 2200
+	9900 2200 9100 2200
 Wire Wire Line
-	9900 2500 8700 2500
+	9900 2500 9100 2500
 Wire Wire Line
-	9900 2800 8700 2800
+	9900 2800 9100 2800
 Wire Wire Line
-	9900 3100 8700 3100
+	9900 3100 9100 3100
 Wire Wire Line
-	9900 3400 8700 3400
+	9900 3400 9100 3400
 Wire Wire Line
-	9900 3700 8700 3700
+	9900 3700 9100 3700
 Wire Wire Line
-	9900 4000 8700 4000
+	9900 4000 9100 4000
 Wire Wire Line
-	9900 4300 8700 4300
+	9900 4300 9100 4300
 Wire Wire Line
-	11100 1600 12300 1600
+	11100 1600 11900 1600
 Wire Wire Line
-	11100 1900 12300 1900
+	11100 1900 11900 1900
 Wire Wire Line
-	11100 2200 12300 2200
+	11100 2200 11900 2200
 Wire Wire Line
-	11100 2500 12300 2500
+	11100 2500 11900 2500
 Wire Wire Line
-	11100 2800 12300 2800
+	11100 2800 11900 2800
 Wire Wire Line
-	11100 3100 12300 3100
+	11100 3100 11900 3100
 Wire Wire Line
-	11100 3400 12300 3400
+	11100 3400 11900 3400
 Wire Wire Line
-	11100 3700 12300 3700
+	11100 3700 11900 3700
 Wire Wire Line
-	11100 4000 12300 4000
+	11100 4000 11900 4000
 Wire Wire Line
-	11100 4300 12300 4300
+	11100 4300 11900 4300
 Wire Wire Line
 	9900 6200 9100 6200
 Wire Wire Line
@@ -273,9 +384,6 @@ Wire Wire Line
 	9800 3200 9900 3200
 Connection ~ 9800 3200
 Wire Wire Line
-	9800 4400 9900 4400
-Connection ~ 9800 4400
-Wire Wire Line
 	11200 3800 11100 3800
 Connection ~ 11200 3800
 Wire Wire Line
@@ -306,10 +414,24 @@ Wire Wire Line
 	11900 8700 11100 8700
 Wire Wire Line
 	11900 9000 11100 9000
+Wire Wire Line
+	9900 1700 9100 1700
+Wire Wire Line
+	11900 2300 11100 2300
+Wire Wire Line
+	11900 3500 11100 3500
+Wire Wire Line
+	9100 4100 9900 4100
+Wire Wire Line
+	9100 2900 9900 2900
+Wire Wire Line
+	11900 4400 11100 4400
+Text Label 11400 1600 0    60   ~ 0
+FE_B3
+Text Label 11400 1500 0    60   ~ 0
+FE_B1
 Text HLabel 2600 1600 0    60   BiDi ~ 0
-FE_C[55..0]
-Text HLabel 2600 1200 0    60   BiDi ~ 0
-FE_BANK0_SE[29..0]
+FE_C[51..0]
 Text Label 11400 9000 0    60   ~ 0
 FE_C51
 Text Label 9300 9000 0    60   ~ 0
@@ -450,54 +572,6 @@ Text Label 9300 6100 0    60   ~ 0
 FE_C0
 Text Label 9300 6200 0    60   ~ 0
 FE_C2
-Text Label 8900 3100 0    60   ~ 0
-FE_BANK0_DIFFN10
-Text Label 8900 3000 0    60   ~ 0
-FE_BANK0_DIFFP10
-Text Label 11300 2800 0    60   ~ 0
-FE_BANK0_DIFFN9
-Text Label 11300 2700 0    60   ~ 0
-FE_BANK0_DIFFP9
-Text Label 8900 2800 0    60   ~ 0
-FE_BANK0_DIFFN8
-Text Label 8900 2700 0    60   ~ 0
-FE_BANK0_DIFFP8
-Text Label 11300 2500 0    60   ~ 0
-FE_BANK0_DIFFN7
-Text Label 11300 2400 0    60   ~ 0
-FE_BANK0_DIFFP7
-Text Label 8900 2500 0    60   ~ 0
-FE_BANK0_DIFFN6
-Text Label 8900 2400 0    60   ~ 0
-FE_BANK0_DIFFP6
-Text Label 11300 2200 0    60   ~ 0
-FE_BANK0_DIFFN5
-Text Label 11300 2100 0    60   ~ 0
-FE_BANK0_DIFFP5
-Text Label 8900 2200 0    60   ~ 0
-FE_BANK0_DIFFN4
-Text Label 8900 2100 0    60   ~ 0
-FE_BANK0_DIFFP4
-Text Label 11300 1900 0    60   ~ 0
-FE_BANK0_DIFFN3
-Text Label 11300 1800 0    60   ~ 0
-FE_BANK0_DIFFP3
-Text Label 8900 1900 0    60   ~ 0
-FE_BANK0_DIFFN2
-Text Label 8900 1800 0    60   ~ 0
-FE_BANK0_DIFFP2
-Text Label 11300 1600 0    60   ~ 0
-FE_BANK0_DIFFN1
-Text Label 11300 1500 0    60   ~ 0
-FE_BANK0_DIFFP1
-Text Label 8900 1600 0    60   ~ 0
-FE_BANK0_DIFFN0
-Text Label 8900 1500 0    60   ~ 0
-FE_BANK0_DIFFP0
-Text HLabel 2600 1000 0    60   BiDi ~ 0
-FE_BANK0_DIFFN[10..0]
-Text HLabel 2600 800  0    60   BiDi ~ 0
-FE_BANK0_DIFFP[10..0]
 $Comp
 L GND #PWR05
 U 1 1 51392416
