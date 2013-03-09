@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday, March 06, 2013 10:23:01 PM
+EESchema Schematic File Version 2  date Friday, March 08, 2013 04:12:01 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -9,14 +9,15 @@ LIBS:contrib
 LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
+LIBS:samtec_qth-090-d
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 10 11
+Sheet 3 15
 Title "Daisho Project Main Board"
-Date "7 mar 2013"
+Date "8 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -563,10 +564,10 @@ Entry Wire Line
 Text HLabel 12000 2400 0    60   Input ~ 0
 DDR2_VIO
 $Comp
-L GND #PWR018
+L GND #PWR08
 U 1 1 511559B7
 P 12100 3900
-F 0 "#PWR018" H 12100 3900 30  0001 C CNN
+F 0 "#PWR08" H 12100 3900 30  0001 C CNN
 F 1 "GND" H 12100 3830 30  0001 C CNN
 	1    12100 3900
 	1    0    0    -1  
@@ -577,9 +578,9 @@ U 1 1 5115599E
 P 12100 3550
 F 0 "R4" V 12180 3550 50  0000 C CNN
 F 1 "50R" V 12100 3550 50  0000 C CNN
-F 4 "1%" V 12250 3550 60  0000 C CNN "Tolerance"
+F 4 "1%" V 12000 3550 60  0000 C CNN "Tolerance"
 	1    12100 3550
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L R R3
@@ -587,17 +588,17 @@ U 1 1 51155995
 P 12100 2750
 F 0 "R3" V 12180 2750 50  0000 C CNN
 F 1 "50R" V 12100 2750 50  0000 C CNN
-F 4 "1%" V 12250 2750 60  0000 C CNN "Tolerance"
+F 4 "1%" V 12000 2750 60  0000 C CNN "Tolerance"
 	1    12100 2750
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text HLabel 7300 6600 0    60   Input ~ 0
 DDR2_VIO
 $Comp
-L GND #PWR019
+L GND #PWR09
 U 1 1 5115592B
 P 7400 8100
-F 0 "#PWR019" H 7400 8100 30  0001 C CNN
+F 0 "#PWR09" H 7400 8100 30  0001 C CNN
 F 1 "GND" H 7400 8030 30  0001 C CNN
 	1    7400 8100
 	1    0    0    -1  
@@ -608,9 +609,9 @@ U 1 1 51155899
 P 7400 7750
 F 0 "R2" V 7480 7750 50  0000 C CNN
 F 1 "50R" V 7400 7750 50  0000 C CNN
-F 4 "1%" V 7550 7750 60  0000 C CNN "Tolerance"
+F 4 "1%" V 7300 7750 60  0000 C CNN "Tolerance"
 	1    7400 7750
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L R R1
@@ -618,9 +619,9 @@ U 1 1 51155893
 P 7400 6950
 F 0 "R1" V 7480 6950 50  0000 C CNN
 F 1 "50R" V 7400 6950 50  0000 C CNN
-F 4 "1%" V 7550 6950 60  0000 C CNN "Tolerance"
+F 4 "1%" V 7300 6950 60  0000 C CNN "Tolerance"
 	1    7400 6950
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text Label 3000 7100 0    60   ~ 0
 DDR2_DM5

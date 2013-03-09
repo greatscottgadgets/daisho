@@ -15,23 +15,23 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 10 15
-Title "Daisho Project Main Board"
+Sheet 5 15
+Title ""
 Date "8 mar 2013"
-Rev "0"
-Comp "ShareBrained Technology, Inc."
-Comment1 "Copyright © 2013 Jared Boone"
-Comment2 "License: GNU General Public License, version 2"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
 L EP4CE30F29 U1
-U 1 1 5129C259
-P 8500 2350
-F 0 "U1" H 8500 2400 60  0000 C CNN
-F 1 "EP4CE30F29" H 8550 2300 60  0000 C CNN
-	1    8500 2350
+U 8 1 51393517
+P 8500 2200
+F 0 "U1" H 8500 2250 60  0000 C CNN
+F 1 "EP4CE30F29" H 8550 2150 60  0000 C CNN
+	8    8500 2200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

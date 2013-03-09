@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday, March 06, 2013 10:23:01 PM
+EESchema Schematic File Version 2  date Friday, March 08, 2013 04:12:01 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -9,14 +9,15 @@ LIBS:contrib
 LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
+LIBS:samtec_qth-090-d
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 2 11
+Sheet 6 15
 Title "Daisho Project Main Board"
-Date "7 mar 2013"
+Date "8 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -178,10 +179,10 @@ Wire Wire Line
 	7900 8300 7800 8300
 Connection ~ 7900 8100
 $Comp
-L GND #PWR02
+L GND #PWR011
 U 1 1 5114892E
 P 9100 9300
-F 0 "#PWR02" H 9100 9300 30  0001 C CNN
+F 0 "#PWR011" H 9100 9300 30  0001 C CNN
 F 1 "GND" H 9100 9230 30  0001 C CNN
 	1    9100 9300
 	1    0    0    -1  
@@ -192,9 +193,9 @@ U 1 1 511488CA
 P 9100 8950
 F 0 "R9" V 9180 8950 50  0000 C CNN
 F 1 "10K" V 9100 8950 50  0000 C CNN
-F 4 "1%" V 9250 8950 60  0000 C CNN "Tolerance"
+F 4 "1%" V 9000 8950 60  0000 C CNN "Tolerance"
 	1    9100 8950
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L R R8
@@ -202,9 +203,9 @@ U 1 1 511488C6
 P 9100 8250
 F 0 "R8" V 9180 8250 50  0000 C CNN
 F 1 "90K9" V 9100 8250 50  0000 C CNN
-F 4 "1%" V 9250 8250 60  0000 C CNN "Tolerance"
+F 4 "1%" V 9000 8250 60  0000 C CNN "Tolerance"
 	1    9100 8250
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text HLabel 9000 4800 2    60   Output ~ 0
 RX_VALID
