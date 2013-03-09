@@ -69,8 +69,8 @@ def make_signal_pads():
 		})
 	return center(pads)
 
-def make_ground_pads():
-	pad_name = 'GND'
+def make_ground_pads(bank_index):
+	pad_name_prefix = chr(ord('A') + bank_index)
 	short_pad_width = 2.54
 	short_pad_spacing = 16.89
 	long_pad_width = 4.7
@@ -79,28 +79,28 @@ def make_ground_pads():
 	pad_y = 0.0
 	return [
 		{
-			'pad_name': pad_name,
+			'pad_name': pad_name_prefix + '0',
 			'pad_width': short_pad_width,
 			'pad_height': pad_height,
 			'rotation': 0.0,
 			'position': [-short_pad_spacing / 2.0, pad_y],
 		},
 		{
-			'pad_name': pad_name,
+			'pad_name': pad_name_prefix + '1',
 			'pad_width': long_pad_width,
 			'pad_height': pad_height,
 			'rotation': 0.0,
 			'position': [-long_pad_spacing / 2.0, pad_y],
 		},
 		{
-			'pad_name': pad_name,
+			'pad_name': pad_name_prefix + '2',
 			'pad_width': long_pad_width,
 			'pad_height': pad_height,
 			'rotation': 0.0,
 			'position': [long_pad_spacing / 2.0, pad_y],
 		},
 		{
-			'pad_name': pad_name,
+			'pad_name': pad_name_prefix + '3',
 			'pad_width': short_pad_width,
 			'pad_height': pad_height,
 			'rotation': 0.0,
@@ -172,7 +172,7 @@ def make_footprint(banks):
 			bank_index * 60,
 			make_signal_pads()
 		)
-		ground_pads = make_ground_pads()
+		ground_pads = make_ground_pads(bank_index)
 		bank_pads = signal_pads + ground_pads
 		pads += shift_pad_positions(
 					bank_position,

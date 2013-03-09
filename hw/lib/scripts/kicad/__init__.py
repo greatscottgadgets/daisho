@@ -17,3 +17,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+import datetime
+
+def date_to_kicad(dt):
+	# TODO: day of month should not be zero-padded.
+	# e.g. "Thursday, March 7, 2013 12:06:00 PM"
+	data = {
+		'weekday': dt.strftime('%A'),
+		'month': dt.strftime('%B'),
+		'day': str(dt.day),
+		'year': '%04d' % dt.year,
+		'hour': dt.strftime('%I'),
+		'minute': '%02d' % dt.minute,
+		'second': '%02d' % dt.second,
+		'am_pm': dt.strftime('%p'),
+	}
+	return '{weekday}, {month} {day}, {year} {hour}:{minute}:{second} {am_pm}'.format(**data)
