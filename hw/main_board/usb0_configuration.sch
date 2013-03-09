@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday, March 06, 2013 10:23:01 PM
+EESchema Schematic File Version 2  date Friday, March 08, 2013 04:12:01 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -9,14 +9,15 @@ LIBS:contrib
 LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
+LIBS:samtec_qth-090-d
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 3 11
+Sheet 8 15
 Title "Daisho Project Main Board"
-Date "7 mar 2013"
+Date "8 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -218,15 +219,15 @@ U 1 1 511486FB
 P 7650 8500
 F 0 "R7" V 7730 8500 50  0000 C CNN
 F 1 "10K" V 7650 8500 50  0000 C CNN
-F 4 "1%" V 7800 8500 60  0000 C CNN "Tolerance"
+F 4 "1%" V 7550 8500 60  0000 C CNN "Tolerance"
 	1    7650 8500
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR03
+L GND #PWR013
 U 1 1 511486B7
 P 7100 9000
-F 0 "#PWR03" H 7100 9000 30  0001 C CNN
+F 0 "#PWR013" H 7100 9000 30  0001 C CNN
 F 1 "GND" H 7100 8930 30  0001 C CNN
 	1    7100 9000
 	1    0    0    -1  
@@ -238,17 +239,17 @@ P 7100 8650
 F 0 "R6" V 7180 8650 50  0000 C CNN
 F 1 "10K" V 7100 8650 50  0000 C CNN
 	1    7100 8650
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text HLabel 6800 8300 0    60   Input ~ 0
 OUT_ENABLE
 Text HLabel 6800 6900 0    60   Input ~ 0
 XI
 $Comp
-L GND #PWR04
+L GND #PWR014
 U 1 1 51148639
 P 6900 9000
-F 0 "#PWR04" H 6900 9000 30  0001 C CNN
+F 0 "#PWR014" H 6900 9000 30  0001 C CNN
 F 1 "GND" H 6900 8930 30  0001 C CNN
 	1    6900 9000
 	1    0    0    -1  
@@ -262,7 +263,7 @@ P 6900 8650
 F 0 "R5" V 6980 8650 50  0000 C CNN
 F 1 "10K" V 6900 8650 50  0000 C CNN
 	1    6900 8650
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 $Comp
 L TUSB1310A U2

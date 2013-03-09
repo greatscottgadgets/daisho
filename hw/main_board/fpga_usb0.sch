@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday, March 06, 2013 10:23:01 PM
+EESchema Schematic File Version 2  date Friday, March 08, 2013 04:12:01 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -9,14 +9,15 @@ LIBS:contrib
 LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
+LIBS:samtec_qth-090-d
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 2 11
+Sheet 8 15
 Title "Daisho Project Main Board"
-Date "7 mar 2013"
+Date "8 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -246,10 +247,10 @@ USB0_PHY_RESETN
 Text Notes 5800 2950 2    60   ~ 0
 Only PS and JTAG programming modes supported.\nPS uses standard power-on reset (POR) delay of 50 to 200 ms.\nPS interface voltage determined by Bank 1 VCCIO.
 $Comp
-L GND #PWR01
+L GND #PWR012
 U 1 1 512AEDBF
 P 5900 3200
-F 0 "#PWR01" H 5900 3200 30  0001 C CNN
+F 0 "#PWR012" H 5900 3200 30  0001 C CNN
 F 1 "GND" H 5900 3130 30  0001 C CNN
 	1    5900 3200
 	1    0    0    -1  
@@ -258,12 +259,6 @@ Text HLabel 2400 6250 0    60   Output ~ 0
 USB0_TX_ELECIDLE
 Text HLabel 2400 6350 0    60   BiDi ~ 0
 USB0_RX_ELECIDLE
-Text Label 3100 6850 0    60   ~ 0
-USB0_RX_STATUS0
-Text Label 3100 6750 0    60   ~ 0
-USB0_RX_STATUS1
-Text Label 3100 6650 0    60   ~ 0
-USB0_RX_STATUS2
 Text HLabel 2400 6450 0    60   Input ~ 0
 USB0_RX_STATUS[2..0]
 Text Label 6200 2500 0    60   ~ 0
@@ -294,7 +289,7 @@ Text Label 6200 7800 0    60   ~ 0
 USB0_PIPE_RX_DATA10
 Text Label 6200 6000 0    60   ~ 0
 USB0_PIPE_RX_DATA11
-Text Label 6200 9100 0    60   ~ 0
+Text Label 6200 8600 0    60   ~ 0
 USB0_PIPE_RX_DATAK0
 Text Label 6200 9300 0    60   ~ 0
 USB0_PIPE_RX_DATAK1
