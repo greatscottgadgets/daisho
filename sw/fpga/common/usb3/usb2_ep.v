@@ -138,7 +138,7 @@ always @(posedge phy_clk) begin
 	end
 	ST_IN_SWAP: begin
 		// swap the current buffer
-		//ptr_in <= ~ptr_in;
+		ptr_in <= ~ptr_in;
 		
 		// current buffer is now not ready anymore
 		case(ptr_in)
@@ -197,7 +197,7 @@ always @(posedge phy_clk) begin
 	end
 	ST_OUT_SWAP: begin
 		// swap the current buffer
-		//ptr_out <= ~ptr_out;
+		ptr_out <= ~ptr_out;
 		
 		// current buffer is now ready for data
 		case(ptr_out)
