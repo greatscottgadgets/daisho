@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,12 +10,13 @@ LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
 LIBS:samtec_qth-090-d
+LIBS:mic5207-bm5
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 3 15
+Sheet 4 15
 Title "Daisho Project Main Board"
 Date "11 mar 2013"
 Rev "0"
@@ -25,8 +26,19 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 5550 7900 0    60   ~ 0
+Text Label 9250 2500 0    60   ~ 0
 VCCIO
+Connection ~ 9100 2900
+Wire Wire Line
+	9100 2900 9000 2900
+Connection ~ 9100 2700
+Wire Wire Line
+	9100 2700 9000 2700
+Connection ~ 9100 2500
+Wire Wire Line
+	9100 2500 9100 3000
+Wire Wire Line
+	9100 3000 9000 3000
 Wire Wire Line
 	5400 7900 6100 7900
 Wire Wire Line
@@ -49,11 +61,23 @@ Wire Wire Line
 	6100 8600 6100 8500
 Wire Wire Line
 	6100 9300 6100 9400
+Wire Wire Line
+	9000 2500 9700 2500
+Wire Wire Line
+	9000 2600 9100 2600
+Connection ~ 9100 2600
+Wire Wire Line
+	9000 2800 9100 2800
+Connection ~ 9100 2800
+Text HLabel 2200 1700 0    60   Input ~ 0
+VCCIO
+Text Label 5550 7900 0    60   ~ 0
+VCCIO
 $Comp
-L GND #PWR010
+L GND #PWR026
 U 1 1 513CF83E
 P 6100 9400
-F 0 "#PWR010" H 6100 9400 30  0001 C CNN
+F 0 "#PWR026" H 6100 9400 30  0001 C CNN
 F 1 "GND" H 6100 9330 30  0001 C CNN
 	1    6100 9400
 	1    0    0    -1  

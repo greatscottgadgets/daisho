@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,12 +10,13 @@ LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
 LIBS:samtec_qth-090-d
+LIBS:mic5207-bm5
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 13 15
+Sheet 14 15
 Title "Daisho Project Main Board"
 Date "11 mar 2013"
 Rev "0"
@@ -25,12 +26,6 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Connection ~ 10050 5250
-Wire Wire Line
-	10150 5250 9950 5250
-Connection ~ 10050 5950
-Wire Wire Line
-	10150 5950 9950 5950
 Connection ~ 3500 2500
 Wire Wire Line
 	3400 2500 3600 2500
@@ -44,12 +39,6 @@ Wire Wire Line
 	5500 2800 5400 2800
 Wire Wire Line
 	5500 2600 5400 2600
-Connection ~ 8050 6950
-Wire Wire Line
-	7950 6950 8150 6950
-Connection ~ 8050 5250
-Wire Wire Line
-	7950 5250 8150 5250
 Wire Wire Line
 	12750 2200 12650 2200
 Wire Wire Line
@@ -553,170 +542,6 @@ Wire Wire Line
 	3400 7100 3400 4700
 Wire Wire Line
 	5400 7100 5400 4700
-Wire Wire Line
-	10050 6950 10050 7750
-Wire Wire Line
-	10050 7750 9950 7750
-Wire Wire Line
-	9950 7650 10050 7650
-Connection ~ 10050 7650
-Wire Wire Line
-	9950 7550 10050 7550
-Connection ~ 10050 7550
-Wire Wire Line
-	9950 7450 10050 7450
-Connection ~ 10050 7450
-Wire Wire Line
-	9950 7350 10050 7350
-Connection ~ 10050 7350
-Wire Wire Line
-	9950 7250 10050 7250
-Connection ~ 10050 7250
-Wire Wire Line
-	9950 7150 10050 7150
-Connection ~ 10050 7150
-Wire Wire Line
-	9950 7050 10050 7050
-Connection ~ 10050 7050
-Wire Wire Line
-	9950 6750 10050 6750
-Wire Wire Line
-	10050 6750 10050 5950
-Wire Wire Line
-	9950 6050 10050 6050
-Connection ~ 10050 6050
-Wire Wire Line
-	10050 6150 9950 6150
-Connection ~ 10050 6150
-Wire Wire Line
-	9950 6250 10050 6250
-Connection ~ 10050 6250
-Wire Wire Line
-	10050 6350 9950 6350
-Connection ~ 10050 6350
-Wire Wire Line
-	9950 6450 10050 6450
-Connection ~ 10050 6450
-Wire Wire Line
-	10050 6550 9950 6550
-Connection ~ 10050 6550
-Wire Wire Line
-	9950 6650 10050 6650
-Connection ~ 10050 6650
-Wire Wire Line
-	9950 5750 10050 5750
-Wire Wire Line
-	10050 5750 10050 5250
-Wire Wire Line
-	9950 5350 10050 5350
-Connection ~ 10050 5350
-Wire Wire Line
-	10050 5450 9950 5450
-Connection ~ 10050 5450
-Wire Wire Line
-	9950 5550 10050 5550
-Connection ~ 10050 5550
-Wire Wire Line
-	10050 5650 9950 5650
-Connection ~ 10050 5650
-Wire Wire Line
-	9950 5050 10050 5050
-Wire Wire Line
-	10050 5050 10050 4550
-Wire Wire Line
-	9950 4650 10050 4650
-Connection ~ 10050 4650
-Wire Wire Line
-	10050 4750 9950 4750
-Connection ~ 10050 4750
-Wire Wire Line
-	9950 4850 10050 4850
-Connection ~ 10050 4850
-Wire Wire Line
-	10050 4950 9950 4950
-Connection ~ 10050 4950
-Wire Wire Line
-	8050 4550 8050 5050
-Wire Wire Line
-	8050 5050 8150 5050
-Wire Wire Line
-	8150 4950 8050 4950
-Connection ~ 8050 4950
-Wire Wire Line
-	8050 4850 8150 4850
-Connection ~ 8050 4850
-Wire Wire Line
-	8150 4750 8050 4750
-Connection ~ 8050 4750
-Wire Wire Line
-	8050 4650 8150 4650
-Connection ~ 8050 4650
-Wire Wire Line
-	8050 5250 8050 5750
-Wire Wire Line
-	8050 5750 8150 5750
-Wire Wire Line
-	8150 5650 8050 5650
-Connection ~ 8050 5650
-Wire Wire Line
-	8050 5550 8150 5550
-Connection ~ 8050 5550
-Wire Wire Line
-	8150 5450 8050 5450
-Connection ~ 8050 5450
-Wire Wire Line
-	8050 5350 8150 5350
-Connection ~ 8050 5350
-Wire Wire Line
-	8050 5950 8050 6750
-Wire Wire Line
-	8050 6750 8150 6750
-Wire Wire Line
-	8150 6650 8050 6650
-Connection ~ 8050 6650
-Wire Wire Line
-	8150 6550 8050 6550
-Connection ~ 8050 6550
-Wire Wire Line
-	8050 6450 8150 6450
-Connection ~ 8050 6450
-Wire Wire Line
-	8150 6350 8050 6350
-Connection ~ 8050 6350
-Wire Wire Line
-	8050 6250 8150 6250
-Connection ~ 8050 6250
-Wire Wire Line
-	8150 6150 8050 6150
-Connection ~ 8050 6150
-Wire Wire Line
-	8050 6050 8150 6050
-Connection ~ 8050 6050
-Wire Wire Line
-	8050 6950 8050 7750
-Wire Wire Line
-	8050 7750 8150 7750
-Wire Wire Line
-	8150 7650 8050 7650
-Connection ~ 8050 7650
-Wire Wire Line
-	8150 7550 8050 7550
-Connection ~ 8050 7550
-Wire Wire Line
-	8150 7450 8050 7450
-Connection ~ 8050 7450
-Wire Wire Line
-	8050 7350 8150 7350
-Connection ~ 8050 7350
-Wire Wire Line
-	8150 7250 8050 7250
-Connection ~ 8050 7250
-Wire Wire Line
-	8050 7150 8150 7150
-Connection ~ 8050 7150
-Wire Wire Line
-	8150 7050 8050 7050
-Connection ~ 8050 7050
 Connection ~ 3400 4700
 Connection ~ 5400 4700
 Wire Wire Line
@@ -888,15 +713,6 @@ Wire Wire Line
 	2400 9500 2400 9600
 Connection ~ 2800 9500
 Wire Wire Line
-	10150 4550 9950 4550
-Connection ~ 10050 4550
-Wire Wire Line
-	7950 5950 8150 5950
-Connection ~ 8050 5950
-Wire Wire Line
-	7950 4550 8150 4550
-Connection ~ 8050 4550
-Wire Wire Line
 	5500 2700 5400 2700
 Connection ~ 5500 2600
 Wire Wire Line
@@ -909,11 +725,6 @@ Connection ~ 3500 2700
 Wire Wire Line
 	5600 2500 5400 2500
 Connection ~ 5500 2500
-Wire Wire Line
-	10150 6950 9950 6950
-Connection ~ 10050 6950
-Text HLabel 10150 5250 2    60   Input ~ 0
-VCCIO_USB0
 Text HLabel 5700 9500 2    60   Input ~ 0
 VCCINT
 Text HLabel 5700 8600 2    60   Input ~ 0
@@ -924,24 +735,10 @@ Text HLabel 3300 4700 0    60   Input ~ 0
 VCCINT
 Text HLabel 5500 4700 2    60   Input ~ 0
 VCCINT
-Text HLabel 10150 6950 2    60   Input ~ 0
-VCCIO_FE_B
-Text HLabel 10150 5950 2    60   Input ~ 0
-VCCIO_FE_C
 Text HLabel 5600 2500 2    60   Input ~ 0
 VCCD_PLL
 Text HLabel 3400 2500 0    60   Input ~ 0
 VCCA
-Text HLabel 7950 4550 0    60   Input ~ 0
-VCCIO_CONFIG
-Text HLabel 10150 4550 2    60   Input ~ 0
-VCCIO_DDR2
-Text HLabel 7950 6950 0    60   Input ~ 0
-VCCIO_DDR2
-Text HLabel 7950 5950 0    60   Input ~ 0
-VCCIO_DDR2
-Text HLabel 7950 5250 0    60   Input ~ 0
-VCCIO_FE_A
 $Comp
 L EP4CE30F29 U1
 U 9 1 50FE20C7
@@ -952,19 +749,19 @@ F 1 "EP4CE30F29" H 13700 1850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR023
+L GND #PWR036
 U 1 1 50FE5664
 P 14650 8200
-F 0 "#PWR023" H 14650 8200 30  0001 C CNN
+F 0 "#PWR036" H 14650 8200 30  0001 C CNN
 F 1 "GND" H 14650 8130 30  0001 C CNN
 	1    14650 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR024
+L GND #PWR037
 U 1 1 50FE5673
 P 12650 8000
-F 0 "#PWR024" H 12650 8000 30  0001 C CNN
+F 0 "#PWR037" H 12650 8000 30  0001 C CNN
 F 1 "GND" H 12650 7930 30  0001 C CNN
 	1    12650 8000
 	1    0    0    -1  
@@ -985,15 +782,6 @@ P 4400 4400
 F 0 "U1" H 4400 4450 60  0000 C CNN
 F 1 "EP4CE30F29" H 4450 4350 60  0000 C CNN
 	11   4400 4400
-	1    0    0    -1  
-$EndComp
-$Comp
-L EP4CE30F29 U1
-U 12 1 50FF15D5
-P 9050 4250
-F 0 "U1" H 9050 4300 60  0000 C CNN
-F 1 "EP4CE30F29" H 9100 4200 60  0000 C CNN
-	12   9050 4250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1060,10 +848,10 @@ F 1 "100N" H 3250 7900 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR025
+L GND #PWR038
 U 1 1 50FE47F5
 P 5600 8400
-F 0 "#PWR025" H 5600 8400 30  0001 C CNN
+F 0 "#PWR038" H 5600 8400 30  0001 C CNN
 F 1 "GND" H 5600 8330 30  0001 C CNN
 	1    5600 8400
 	1    0    0    -1  
@@ -1132,10 +920,10 @@ F 1 "100N" H 3250 9700 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR026
+L GND #PWR039
 U 1 1 50FE54FE
 P 5600 10200
-F 0 "#PWR026" H 5600 10200 30  0001 C CNN
+F 0 "#PWR039" H 5600 10200 30  0001 C CNN
 F 1 "GND" H 5600 10130 30  0001 C CNN
 	1    5600 10200
 	1    0    0    -1  
@@ -1204,10 +992,10 @@ F 1 "100N" H 3250 8800 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR027
+L GND #PWR040
 U 1 1 50FE554B
 P 5600 9300
-F 0 "#PWR027" H 5600 9300 30  0001 C CNN
+F 0 "#PWR040" H 5600 9300 30  0001 C CNN
 F 1 "GND" H 5600 9230 30  0001 C CNN
 	1    5600 9300
 	1    0    0    -1  

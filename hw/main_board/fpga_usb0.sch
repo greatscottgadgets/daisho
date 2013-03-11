@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,12 +10,13 @@ LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
 LIBS:samtec_qth-090-d
+LIBS:mic5207-bm5
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 8 15
+Sheet 9 15
 Title "Daisho Project Main Board"
 Date "11 mar 2013"
 Rev "0"
@@ -25,6 +26,29 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 2400 4200 0    60   Input ~ 0
+VREF
+Text Label 6300 3800 0    60   ~ 0
+VREF
+Text Label 6300 7200 0    60   ~ 0
+VREF
+Text Label 6300 8800 0    60   ~ 0
+VREF
+Text Notes 4000 5450 0    60   ~ 0
+Using a VREF pin here is OK only if it's in\nOUTPUT (due to higher input capacitance).
+Text HLabel 9500 2500 2    60   Input ~ 0
+VCCIO
+Connection ~ 9300 2900
+Wire Wire Line
+	9200 2900 9300 2900
+Connection ~ 9300 2700
+Wire Wire Line
+	9200 2700 9300 2700
+Connection ~ 9300 2500
+Wire Wire Line
+	9300 2500 9300 3000
+Wire Wire Line
+	9300 3000 9200 3000
 Wire Bus Line
 	2400 7050 2500 7050
 Wire Bus Line
@@ -218,6 +242,14 @@ Wire Bus Line
 	2700 6450 2700 7150
 Wire Bus Line
 	2700 7150 2400 7150
+Wire Wire Line
+	9500 2500 9200 2500
+Wire Wire Line
+	9200 2600 9300 2600
+Connection ~ 9300 2600
+Wire Wire Line
+	9200 2800 9300 2800
+Connection ~ 9300 2800
 Text HLabel 2400 7650 0    60   Output ~ 0
 USB0_ELAS_BUF_MODE
 Text HLabel 2400 7550 0    60   Output ~ 0
@@ -247,10 +279,10 @@ USB0_PHY_RESETN
 Text Notes 5800 2950 2    60   ~ 0
 Only PS and JTAG programming modes supported.\nPS uses standard power-on reset (POR) delay of 50 to 200 ms.\nPS interface voltage determined by Bank 1 VCCIO.
 $Comp
-L GND #PWR015
+L GND #PWR028
 U 1 1 512AEDBF
 P 5900 3200
-F 0 "#PWR015" H 5900 3200 30  0001 C CNN
+F 0 "#PWR028" H 5900 3200 30  0001 C CNN
 F 1 "GND" H 5900 3130 30  0001 C CNN
 	1    5900 3200
 	1    0    0    -1  

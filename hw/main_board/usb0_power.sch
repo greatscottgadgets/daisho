@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,6 +10,7 @@ LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
 LIBS:samtec_qth-090-d
+LIBS:mic5207-bm5
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -256,10 +257,10 @@ Wire Wire Line
 	9900 5900 9900 5100
 Connection ~ 9900 5800
 $Comp
-L GND #PWR020
+L GND #PWR033
 U 1 1 5136A7E7
 P 9900 6400
-F 0 "#PWR020" H 9900 6400 30  0001 C CNN
+F 0 "#PWR033" H 9900 6400 30  0001 C CNN
 F 1 "GND" H 9900 6330 30  0001 C CNN
 	1    9900 6400
 	1    0    0    -1  
@@ -288,19 +289,19 @@ VCC_3V3A
 Text HLabel 4800 4500 0    60   Input ~ 0
 VCC_1V8D
 $Comp
-L GND #PWR021
+L GND #PWR034
 U 1 1 5109F898
 P 6900 7700
-F 0 "#PWR021" H 6900 7700 30  0001 C CNN
+F 0 "#PWR034" H 6900 7700 30  0001 C CNN
 F 1 "GND" H 6900 7630 30  0001 C CNN
 	1    6900 7700
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR022
+L GND #PWR035
 U 1 1 5109F87B
 P 11900 6000
-F 0 "#PWR022" H 11900 6000 30  0001 C CNN
+F 0 "#PWR035" H 11900 6000 30  0001 C CNN
 F 1 "GND" H 11900 5930 30  0001 C CNN
 	1    11900 6000
 	1    0    0    -1  

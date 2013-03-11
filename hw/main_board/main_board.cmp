@@ -1,9 +1,72 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Sunday, March 10, 2013 05:41:20 PM
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Sunday, March 10, 2013 11:24:17 PM
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
 Reference = C1;
 ValeurCmp = 1U;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6533;
+Reference = C31;
+ValeurCmp = C;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D675C;
+Reference = C32;
+ValeurCmp = C;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6824;
+Reference = C33;
+ValeurCmp = C;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6522;
+Reference = C34;
+ValeurCmp = C;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6A12;
+Reference = C35;
+ValeurCmp = C;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6A66;
+Reference = C36;
+ValeurCmp = C;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6551;
+Reference = C37;
+ValeurCmp = C;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6A80;
+Reference = C38;
+ValeurCmp = C;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6AAE;
+Reference = C39;
+ValeurCmp = C;
 IdModule  = SM0402;
 EndCmp
 
@@ -197,7 +260,7 @@ IdModule  = SM0402;
 EndCmp
 
 BeginCmp
-TimeStamp = /510239EE/50FD8AE5;
+TimeStamp = /50FA09AE/50FA09C5;
 Reference = J1;
 ValeurCmp = DDR2_SDRAM_SODIMM;
 IdModule  = TE_1473005-4;
@@ -302,7 +365,49 @@ IdModule  = SM0402;
 EndCmp
 
 BeginCmp
-TimeStamp = /51394328/5139434C;
+TimeStamp = /5138E240/513D6639;
+Reference = R31;
+ValeurCmp = R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6627;
+Reference = R32;
+ValeurCmp = R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6635;
+Reference = R33;
+ValeurCmp = R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D662C;
+Reference = R34;
+ValeurCmp = R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D663D;
+Reference = R35;
+ValeurCmp = R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D6631;
+Reference = R36;
+ValeurCmp = R;
+IdModule  = SM0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5101C6D6/51009C9D;
 Reference = U1;
 ValeurCmp = EP4CE30F29;
 IdModule  = ALTERA_F780;
@@ -313,6 +418,27 @@ TimeStamp = /5109FB2D/5109FB8E;
 Reference = U2;
 ValeurCmp = TUSB1310A;
 IdModule  = TUSB1310A;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D61F8;
+Reference = U31;
+ValeurCmp = MIC5207-BM5;
+IdModule  = SOT23-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D61DD;
+Reference = U32;
+ValeurCmp = MIC5207-BM5;
+IdModule  = SOT23-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E240/513D61ED;
+Reference = U33;
+ValeurCmp = MIC5207-BM5;
+IdModule  = SOT23-5;
 EndCmp
 
 EndListe

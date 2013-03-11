@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,6 +10,7 @@ LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
 LIBS:samtec_qth-090-d
+LIBS:mic5207-bm5
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -510,10 +511,10 @@ $EndComp
 Text Notes 10050 8000 0    60   ~ 0
 DDR2 operates in DQS single-ended mode. All DQS# == VSS
 $Comp
-L GND #PWR031
+L GND #PWR022
 U 1 1 50FAE476
 P 9700 7800
-F 0 "#PWR031" H 9700 7800 30  0001 C CNN
+F 0 "#PWR022" H 9700 7800 30  0001 C CNN
 F 1 "GND" H 9700 7730 30  0001 C CNN
 	1    9700 7800
 	1    0    0    -1  

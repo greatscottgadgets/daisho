@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -10,6 +10,7 @@ LIBS:ddr2_sdram_sodimm
 LIBS:ep4ce30f29
 LIBS:tusb1310a
 LIBS:samtec_qth-090-d
+LIBS:mic5207-bm5
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -224,10 +225,10 @@ F 4 "1%" V 7550 8500 60  0000 C CNN "Tolerance"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR016
+L GND #PWR029
 U 1 1 511486B7
 P 7100 9000
-F 0 "#PWR016" H 7100 9000 30  0001 C CNN
+F 0 "#PWR029" H 7100 9000 30  0001 C CNN
 F 1 "GND" H 7100 8930 30  0001 C CNN
 	1    7100 9000
 	1    0    0    -1  
@@ -246,10 +247,10 @@ OUT_ENABLE
 Text HLabel 6800 6900 0    60   Input ~ 0
 XI
 $Comp
-L GND #PWR017
+L GND #PWR030
 U 1 1 51148639
 P 6900 9000
-F 0 "#PWR017" H 6900 9000 30  0001 C CNN
+F 0 "#PWR030" H 6900 9000 30  0001 C CNN
 F 1 "GND" H 6900 8930 30  0001 C CNN
 	1    6900 9000
 	1    0    0    -1  
