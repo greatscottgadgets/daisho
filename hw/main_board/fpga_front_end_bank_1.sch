@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 11:03:27 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -16,7 +16,7 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 3 15
+Sheet 5 15
 Title "Daisho Project Main Board"
 Date "11 mar 2013"
 Rev "0"
@@ -272,7 +272,7 @@ L R R11
 U 1 1 51393D16
 P 6000 4950
 F 0 "R11" V 6080 4950 50  0000 C CNN
-F 1 "50" V 6000 4950 50  0000 C CNN
+F 1 "50R" V 6000 4950 50  0000 C CNN
 F 4 "1%" V 5900 4950 60  0000 C CNN "Tolerance"
 	1    6000 4950
 	-1   0    0    1   
@@ -282,7 +282,7 @@ L R R10
 U 1 1 51393D12
 P 6000 4150
 F 0 "R10" V 6080 4150 50  0000 C CNN
-F 1 "50" V 6000 4150 50  0000 C CNN
+F 1 "50R" V 6000 4150 50  0000 C CNN
 F 4 "1%" V 5900 4150 60  0000 C CNN "Tolerance"
 	1    6000 4150
 	-1   0    0    1   

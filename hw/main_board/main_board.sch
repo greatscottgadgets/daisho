@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 11:03:27 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -316,9 +316,9 @@ S 2900 1900 1000 1000
 U 510239FC
 F0 "fpga_power" 60
 F1 "fpga_power.sch" 60
-F3 "VCCD_PLL" I L 2900 2700 60 
-F4 "VCCINT" I L 2900 2800 60 
-F5 "VCCA" I L 2900 2600 60 
+F2 "VCCD_PLL" I L 2900 2700 60 
+F3 "VCCINT" I L 2900 2800 60 
+F4 "VCCA" I L 2900 2600 60 
 $EndSheet
 $Sheet
 S 900  1200 1200 2850
