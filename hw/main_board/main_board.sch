@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday, March 08, 2013 11:22:18 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,7 +17,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 1 15
 Title "Daisho Project Main Board"
-Date "9 mar 2013"
+Date "11 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -25,121 +25,127 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Bus Line
-	8500 7500 9200 7500
-Wire Bus Line
-	12700 3950 13500 3950
-Wire Bus Line
-	12700 4450 13500 4450
-Wire Wire Line
-	12700 4950 13500 4950
-Wire Wire Line
-	12700 4750 13500 4750
-Wire Wire Line
-	12700 4350 13500 4350
-Wire Wire Line
-	12700 4050 13500 4050
-Wire Wire Line
-	12700 3450 13500 3450
-Wire Wire Line
-	12700 3750 13500 3750
-Wire Wire Line
-	12700 1350 13500 1350
-Wire Bus Line
-	12700 1450 13500 1450
-Wire Wire Line
-	4000 10400 3200 10400
-Wire Wire Line
-	4000 10100 3200 10100
-Wire Wire Line
-	4000 9800 3200 9800
-Connection ~ 3600 7800
-Wire Wire Line
-	4000 7800 3200 7800
-Connection ~ 3600 8000
-Wire Wire Line
-	4000 8000 3600 8000
-Connection ~ 3600 8800
-Wire Wire Line
-	3600 10000 3600 8600
-Wire Wire Line
-	3600 8600 4000 8600
-Wire Wire Line
-	4000 8800 3600 8800
-Wire Wire Line
-	12700 2050 13500 2050
-Wire Bus Line
-	12700 1950 13500 1950
-Wire Bus Line
-	4000 5950 3450 5950
-Wire Wire Line
-	4000 5500 3450 5500
-Wire Wire Line
-	3450 5950 3450 5950
-Wire Wire Line
-	3450 5050 4000 5050
-Wire Wire Line
-	3450 5150 4000 5150
-Wire Wire Line
-	3450 5400 4000 5400
-Wire Bus Line
-	3450 5850 4000 5850
-Wire Bus Line
-	3450 5750 4000 5750
-Wire Bus Line
-	12700 1850 13500 1850
-Wire Wire Line
-	12700 1750 13500 1750
-Wire Wire Line
-	3600 8900 4000 8900
-Connection ~ 3600 8900
-Wire Wire Line
-	3600 7800 3600 8500
-Wire Wire Line
-	3600 8500 4000 8500
-Wire Wire Line
-	3600 7900 4000 7900
-Connection ~ 3600 7900
-Wire Wire Line
-	3200 9300 4000 9300
-Wire Wire Line
-	4000 10000 3200 10000
-Connection ~ 3600 10000
-Wire Wire Line
-	3200 10300 4000 10300
-Wire Bus Line
-	12700 1550 13500 1550
-Wire Wire Line
-	12700 3650 13500 3650
-Wire Bus Line
-	12700 3850 13500 3850
-Wire Wire Line
-	13500 3550 12700 3550
-Wire Wire Line
-	13500 4150 12700 4150
-Wire Wire Line
-	13500 4650 12700 4650
-Wire Wire Line
-	13500 4850 12700 4850
-Wire Wire Line
-	13500 5050 12700 5050
-Wire Bus Line
-	13500 4550 12700 4550
-Wire Bus Line
-	8500 8900 9200 8900
 $Sheet
-S 9200 6100 1300 3800
+S 9200 4800 1300 5100
 U 5138E240
 F0 "front_end" 60
 F1 "front_end.sch" 60
 F2 "FE_B[51..0]" B L 9200 7500 60 
 F3 "FE_C[51..0]" B L 9200 8900 60 
+F4 "EEPROM_SDA" B L 9200 5000 60 
+F5 "EEPROM_SCL" I L 9200 4900 60 
+F6 "VCC_3V3D" I R 10500 5000 60 
+F7 "VCC_RAW" I R 10500 4900 60 
+F8 "VCCIO_A" O R 10500 6200 60 
+F9 "VCCIO_C" O R 10500 8900 60 
+F10 "VCCIO_B" O R 10500 7500 60 
+F11 "FE_A[39..0]" B L 9200 6200 60 
 $EndSheet
+Wire Bus Line
+	8500 6200 9200 6200
+Wire Bus Line
+	8500 8900 9200 8900
+Wire Bus Line
+	13500 4550 12700 4550
+Wire Wire Line
+	13500 5050 12700 5050
+Wire Wire Line
+	13500 4850 12700 4850
+Wire Wire Line
+	13500 4650 12700 4650
+Wire Wire Line
+	13500 4150 12700 4150
+Wire Wire Line
+	13500 3550 12700 3550
+Wire Bus Line
+	12700 3850 13500 3850
+Wire Wire Line
+	12700 3650 13500 3650
+Wire Bus Line
+	12700 1550 13500 1550
+Wire Wire Line
+	3200 10300 4000 10300
+Connection ~ 3600 10000
+Wire Wire Line
+	4000 10000 3200 10000
+Wire Wire Line
+	3200 9300 4000 9300
+Connection ~ 3600 7900
+Wire Wire Line
+	3600 7900 4000 7900
+Wire Wire Line
+	4000 8500 3600 8500
+Wire Wire Line
+	3600 8500 3600 7800
+Wire Wire Line
+	12700 1750 13500 1750
+Wire Bus Line
+	12700 1850 13500 1850
+Wire Bus Line
+	3450 5750 4000 5750
+Wire Bus Line
+	3450 5850 4000 5850
+Wire Wire Line
+	3450 5400 4000 5400
+Wire Wire Line
+	3450 5150 4000 5150
+Wire Wire Line
+	3450 5050 4000 5050
+Wire Wire Line
+	3450 5950 3450 5950
+Wire Wire Line
+	4000 5500 3450 5500
+Wire Bus Line
+	4000 5950 3450 5950
+Wire Bus Line
+	12700 1950 13500 1950
+Wire Wire Line
+	12700 2050 13500 2050
+Wire Wire Line
+	4000 8600 3600 8600
+Wire Wire Line
+	3600 8600 3600 10000
+Wire Wire Line
+	4000 8000 3600 8000
+Connection ~ 3600 8000
+Wire Wire Line
+	4000 7800 3200 7800
+Connection ~ 3600 7800
+Wire Wire Line
+	4000 9800 3200 9800
+Wire Wire Line
+	4000 10100 3200 10100
+Wire Wire Line
+	4000 10400 3200 10400
+Wire Bus Line
+	12700 1450 13500 1450
+Wire Wire Line
+	12700 1350 13500 1350
+Wire Wire Line
+	12700 3750 13500 3750
+Wire Wire Line
+	12700 3450 13500 3450
+Wire Wire Line
+	12700 4050 13500 4050
+Wire Wire Line
+	12700 4350 13500 4350
+Wire Wire Line
+	12700 4750 13500 4750
+Wire Wire Line
+	12700 4950 13500 4950
+Wire Bus Line
+	12700 4450 13500 4450
+Wire Bus Line
+	12700 3950 13500 3950
+Wire Bus Line
+	8500 7500 9200 7500
 $Sheet
-S 6800 6100 1700 1000
+S 6800 6100 1700 400 
 U 51394328
 F0 "fpga_front_end_misc" 60
 F1 "fpga_front_end_misc.sch" 60
+F2 "D[39..0]" B R 8500 6200 60 
+F3 "VREF" I L 6800 6200 60 
 $EndSheet
 $Sheet
 S 1200 4900 2250 1850
@@ -155,20 +161,20 @@ F7 "DDR2_CK1" O R 3450 5400 60
 F8 "DDR2_DQ[63..0]" B R 3450 5750 60 
 $EndSheet
 $Sheet
-S 6800 8800 1700 1100
+S 6800 8800 1700 400 
 U 5138E160
 F0 "fpga_front_end_bank_1" 60
 F1 "fpga_front_end_bank_1.sch" 60
 F2 "VREF" I L 6800 8900 60 
-F3 "VCCIO" I L 6800 9000 60 
 F4 "D[51..0]" B R 8500 8900 60 
 $EndSheet
 $Sheet
-S 6800 7400 1700 1100
+S 6800 7400 1700 400 
 U 5138E12B
 F0 "fpga_front_end_bank_0" 60
 F1 "fpga_front_end_bank_0.sch" 60
 F2 "D[51..0]" B R 8500 7500 60 
+F3 "VREF" I L 6800 7500 60 
 $EndSheet
 $Sheet
 S 13500 1250 1700 900 
@@ -275,12 +281,14 @@ U 510239FC
 F0 "fpga_power" 60
 F1 "fpga_power.sch" 60
 F2 "VCCIO_DDR2" I L 4000 8500 60 
-F3 "VCCIO_USB2" I L 4000 8900 60 
-F4 "VCCD_PLL" I L 4000 9200 60 
-F5 "VCCIO_USB1" I L 4000 8800 60 
-F6 "VCCINT" I L 4000 9300 60 
-F7 "VCCA" I L 4000 9100 60 
-F8 "VCCIO_USB0" I L 4000 8600 60 
+F3 "VCCD_PLL" I L 4000 9200 60 
+F4 "VCCINT" I L 4000 9300 60 
+F5 "VCCA" I L 4000 9100 60 
+F6 "VCCIO_USB0" I L 4000 8600 60 
+F7 "VCCIO_FE_B" I R 5000 8900 60 
+F8 "VCCIO_FE_C" I R 5000 9000 60 
+F9 "VCCIO_CONFIG" I R 5000 8700 60 
+F10 "VCCIO_FE_A" I R 5000 8800 60 
 $EndSheet
 $Sheet
 S 1200 7700 2000 2800

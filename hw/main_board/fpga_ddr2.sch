@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday, March 08, 2013 04:12:01 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,7 +17,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 3 15
 Title "Daisho Project Main Board"
-Date "8 mar 2013"
+Date "11 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -564,10 +564,10 @@ Entry Wire Line
 Text HLabel 12000 2400 0    60   Input ~ 0
 DDR2_VIO
 $Comp
-L GND #PWR08
+L GND #PWR011
 U 1 1 511559B7
 P 12100 3900
-F 0 "#PWR08" H 12100 3900 30  0001 C CNN
+F 0 "#PWR011" H 12100 3900 30  0001 C CNN
 F 1 "GND" H 12100 3830 30  0001 C CNN
 	1    12100 3900
 	1    0    0    -1  
@@ -595,10 +595,10 @@ $EndComp
 Text HLabel 7300 6600 0    60   Input ~ 0
 DDR2_VIO
 $Comp
-L GND #PWR09
+L GND #PWR012
 U 1 1 5115592B
 P 7400 8100
-F 0 "#PWR09" H 7400 8100 30  0001 C CNN
+F 0 "#PWR012" H 7400 8100 30  0001 C CNN
 F 1 "GND" H 7400 8030 30  0001 C CNN
 	1    7400 8100
 	1    0    0    -1  

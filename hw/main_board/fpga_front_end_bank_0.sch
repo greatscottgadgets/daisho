@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 09, 2013 12:16:38 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,7 +17,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 6 15
 Title "Daisho Project Main Board"
-Date "9 mar 2013"
+Date "11 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -25,6 +25,8 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 2900 1900 0    60   Input ~ 0
+VREF
 Wire Wire Line
 	7600 6500 6600 6500
 Wire Wire Line
@@ -145,31 +147,31 @@ Text Label 7000 3400 0    60   ~ 0
 VREF
 Text Label 7000 4900 0    60   ~ 0
 VREF
-Text Label 7000 5600 0    60   ~ 0
-D6
-Text Label 7000 7100 0    60   ~ 0
-D5
-Text Label 7000 7300 0    60   ~ 0
-D4
-Text Label 7000 6400 0    60   ~ 0
-D3
-Text Label 7000 5500 0    60   ~ 0
-D2
-Text Label 7000 6500 0    60   ~ 0
-D1
-Text Label 7000 5700 0    60   ~ 0
-D0
-Text Label 7000 5300 0    60   ~ 0
-D7
-Text Label 7000 5400 0    60   ~ 0
-D8
 Text Label 7000 6000 0    60   ~ 0
-D9
+D6
+Text Label 7000 5500 0    60   ~ 0
+D5
+Text Label 7000 5400 0    60   ~ 0
+D4
+Text Label 7000 6500 0    60   ~ 0
+D3
+Text Label 7000 5300 0    60   ~ 0
+D2
+Text Label 7000 5700 0    60   ~ 0
+D1
+Text Label 7000 5600 0    60   ~ 0
+D0
+Text Label 7000 6400 0    60   ~ 0
+D7
 Text Label 7000 4800 0    60   ~ 0
-D10
-Text Label 7000 5100 0    60   ~ 0
-D11
+D8
+Text Label 7000 7300 0    60   ~ 0
+D9
 Text Label 7000 5000 0    60   ~ 0
+D10
+Text Label 7000 7100 0    60   ~ 0
+D11
+Text Label 7000 5100 0    60   ~ 0
 D12
 Text Label 7000 3700 0    60   ~ 0
 D14
@@ -249,7 +251,7 @@ Text Label 7000 2500 0    60   ~ 0
 D48
 Text Label 7000 2600 0    60   ~ 0
 D50
-Text HLabel 2950 1650 0    60   BiDi ~ 0
+Text HLabel 2900 1700 0    60   BiDi ~ 0
 D[51..0]
 $Comp
 L EP4CE30F29 U1

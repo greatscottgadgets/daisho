@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Friday, March 08, 2013 04:12:01 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,7 +17,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 8 15
 Title "Daisho Project Main Board"
-Date "8 mar 2013"
+Date "11 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -247,10 +247,10 @@ USB0_PHY_RESETN
 Text Notes 5800 2950 2    60   ~ 0
 Only PS and JTAG programming modes supported.\nPS uses standard power-on reset (POR) delay of 50 to 200 ms.\nPS interface voltage determined by Bank 1 VCCIO.
 $Comp
-L GND #PWR012
+L GND #PWR015
 U 1 1 512AEDBF
 P 5900 3200
-F 0 "#PWR012" H 5900 3200 30  0001 C CNN
+F 0 "#PWR015" H 5900 3200 30  0001 C CNN
 F 1 "GND" H 5900 3130 30  0001 C CNN
 	1    5900 3200
 	1    0    0    -1  

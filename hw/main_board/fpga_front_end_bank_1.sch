@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 09, 2013 12:16:38 PM
+EESchema Schematic File Version 2  date Sunday, March 10, 2013 08:24:38 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,7 +17,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 5 15
 Title "Daisho Project Main Board"
-Date "9 mar 2013"
+Date "11 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -157,27 +157,27 @@ Wire Wire Line
 	7000 3200 6400 3200
 Text Label 6600 2500 0    60   ~ 0
 D51
-Text Label 6600 2800 0    60   ~ 0
+Text Label 6450 6500 0    60   ~ 0
 D50
-Text Label 6600 3100 0    60   ~ 0
+Text Label 6600 2800 0    60   ~ 0
 D49
-Text Label 6600 4400 0    60   ~ 0
+Text Label 6600 6000 0    60   ~ 0
 D48
-Text Label 6600 3300 0    60   ~ 0
+Text Label 6450 3100 0    60   ~ 0
 D47
-Text Label 6600 3500 0    60   ~ 0
+Text Label 6450 7700 0    60   ~ 0
 D46
 Text Label 6600 5600 0    60   ~ 0
 D44
-Text Label 6600 7700 0    60   ~ 0
+Text Label 6600 3500 0    60   ~ 0
 D41
 Text Label 6600 7300 0    60   ~ 0
 D40
 Text Label 6600 8600 0    60   ~ 0
 D38
-Text Label 6600 6500 0    60   ~ 0
+Text Label 6600 4400 0    60   ~ 0
 D45
-Text Label 6600 6000 0    60   ~ 0
+Text Label 6450 3300 0    60   ~ 0
 D43
 Text Label 6600 6700 0    60   ~ 0
 D42
@@ -185,7 +185,7 @@ Text Label 6600 3600 0    60   ~ 0
 D39
 Text Label 6600 7800 0    60   ~ 0
 D36
-Text HLabel 4400 3100 0    60   BiDi ~ 0
+Text HLabel 4400 2500 0    60   BiDi ~ 0
 D[51..0]
 Text Label 6600 2600 0    60   ~ 0
 D34
@@ -229,13 +229,11 @@ Text Label 5500 3800 0    60   ~ 0
 VCCIO
 Text HLabel 4400 2700 0    60   Input ~ 0
 VREF
-Text HLabel 4400 2500 0    60   Input ~ 0
-VCCIO
 $Comp
-L GND #PWR010
+L GND #PWR013
 U 1 1 51393F4B
 P 6000 5300
-F 0 "#PWR010" H 6000 5300 30  0001 C CNN
+F 0 "#PWR013" H 6000 5300 30  0001 C CNN
 F 1 "GND" H 6000 5230 30  0001 C CNN
 	1    6000 5300
 	1    0    0    -1  
