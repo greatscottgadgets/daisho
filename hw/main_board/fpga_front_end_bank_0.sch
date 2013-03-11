@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 11:03:27 AM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 11:19:55 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,10 +26,45 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 2900 2100 0    60   Input ~ 0
+Text HLabel 6000 9900 2    60   Input ~ 0
 VCCIO
-Text Label 9700 2500 0    60   ~ 0
-VCCIO
+$Comp
+L GND #PWR?
+U 1 1 513E1F35
+P 5700 10600
+F 0 "#PWR?" H 5700 10600 30  0001 C CNN
+F 1 "GND" H 5700 10530 30  0001 C CNN
+	1    5700 10600
+	1    0    0    -1  
+$EndComp
+Connection ~ 2900 10500
+Wire Wire Line
+	2900 10400 2900 10500
+Connection ~ 3700 10500
+Wire Wire Line
+	3700 10400 3700 10500
+Connection ~ 4500 10500
+Wire Wire Line
+	4500 10400 4500 10500
+Connection ~ 5300 10500
+Wire Wire Line
+	5300 10400 5300 10500
+Wire Wire Line
+	5700 10500 2500 10500
+Wire Wire Line
+	2500 10500 2500 10400
+Connection ~ 3300 9900
+Wire Wire Line
+	3300 9900 3300 10000
+Connection ~ 4100 9900
+Wire Wire Line
+	4100 9900 4100 10000
+Connection ~ 4900 9900
+Wire Wire Line
+	4900 9900 4900 10000
+Connection ~ 5700 9900
+Wire Wire Line
+	5700 9900 5700 10000
 Connection ~ 9500 3200
 Wire Wire Line
 	9400 3200 9500 3200
@@ -170,6 +205,119 @@ Connection ~ 9500 2900
 Wire Wire Line
 	9400 3100 9500 3100
 Connection ~ 9500 3100
+Wire Wire Line
+	2500 10000 2500 9900
+Wire Wire Line
+	2500 9900 6000 9900
+Wire Wire Line
+	5300 9900 5300 10000
+Connection ~ 5300 9900
+Wire Wire Line
+	4500 9900 4500 10000
+Connection ~ 4500 9900
+Wire Wire Line
+	3700 9900 3700 10000
+Connection ~ 3700 9900
+Wire Wire Line
+	2900 9900 2900 10000
+Connection ~ 2900 9900
+Wire Wire Line
+	5700 10400 5700 10600
+Connection ~ 5700 10500
+Wire Wire Line
+	4900 10400 4900 10500
+Connection ~ 4900 10500
+Wire Wire Line
+	4100 10400 4100 10500
+Connection ~ 4100 10500
+Wire Wire Line
+	3300 10400 3300 10500
+Connection ~ 3300 10500
+$Comp
+L C C79
+U 1 1 513E1ED7
+P 5700 10200
+F 0 "C79" H 5750 10300 50  0000 L CNN
+F 1 "C" H 5750 10100 50  0000 L CNN
+	1    5700 10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C78
+U 1 1 513E1ED5
+P 5300 10200
+F 0 "C78" H 5350 10300 50  0000 L CNN
+F 1 "C" H 5350 10100 50  0000 L CNN
+	1    5300 10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C77
+U 1 1 513E1ED0
+P 4900 10200
+F 0 "C77" H 4950 10300 50  0000 L CNN
+F 1 "C" H 4950 10100 50  0000 L CNN
+	1    4900 10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C76
+U 1 1 513E1ECA
+P 4500 10200
+F 0 "C76" H 4550 10300 50  0000 L CNN
+F 1 "C" H 4550 10100 50  0000 L CNN
+	1    4500 10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C75
+U 1 1 513E1EC8
+P 4100 10200
+F 0 "C75" H 4150 10300 50  0000 L CNN
+F 1 "C" H 4150 10100 50  0000 L CNN
+	1    4100 10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C74
+U 1 1 513E1EC5
+P 3700 10200
+F 0 "C74" H 3750 10300 50  0000 L CNN
+F 1 "C" H 3750 10100 50  0000 L CNN
+	1    3700 10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C73
+U 1 1 513E1EC1
+P 3300 10200
+F 0 "C73" H 3350 10300 50  0000 L CNN
+F 1 "C" H 3350 10100 50  0000 L CNN
+	1    3300 10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C72
+U 1 1 513E1EB6
+P 2900 10200
+F 0 "C72" H 2950 10300 50  0000 L CNN
+F 1 "C" H 2950 10100 50  0000 L CNN
+	1    2900 10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C71
+U 1 1 513E1EA6
+P 2500 10200
+F 0 "C71" H 2550 10300 50  0000 L CNN
+F 1 "C" H 2550 10100 50  0000 L CNN
+	1    2500 10200
+	1    0    0    -1  
+$EndComp
+Text HLabel 2900 2100 0    60   Input ~ 0
+VCCIO
+Text Label 9700 2500 0    60   ~ 0
+VCCIO
 Text HLabel 2900 1900 0    60   Input ~ 0
 VREF
 Text Label 7100 7900 0    60   ~ 0
