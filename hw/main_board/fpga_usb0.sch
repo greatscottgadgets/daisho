@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,16 +26,12 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 2400 4200 0    60   Input ~ 0
-VREF
-Text Label 6300 3800 0    60   ~ 0
-VREF
-Text Label 6300 7200 0    60   ~ 0
-VREF
-Text Label 6300 8800 0    60   ~ 0
-VREF
-Text Notes 4000 5450 0    60   ~ 0
-Using a VREF pin here is OK only if it's in\nOUTPUT (due to higher input capacitance).
+Text Notes 9300 4450 0    60   ~ 0
+Avoid use of VREF pins as I/O, as they have higher pin capacitance,\nand therefore are slow down both input and output signals.
+NoConn ~ 7400 3800
+NoConn ~ 7400 5500
+NoConn ~ 7400 7200
+NoConn ~ 7400 8800
 Text HLabel 9500 2500 2    60   Input ~ 0
 VCCIO
 Connection ~ 9300 2900
@@ -104,8 +100,6 @@ Wire Wire Line
 Wire Wire Line
 	7400 4400 6100 4400
 Wire Wire Line
-	7400 3800 6100 3800
-Wire Wire Line
 	7400 6000 6100 6000
 Wire Wire Line
 	7400 3500 6100 3500
@@ -162,8 +156,6 @@ Wire Wire Line
 Wire Wire Line
 	7400 5200 6100 5200
 Wire Wire Line
-	7400 5500 6100 5500
-Wire Wire Line
 	7400 6500 6100 6500
 Wire Wire Line
 	7400 2700 5700 2700
@@ -208,11 +200,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 7000 6100 7000
 Wire Wire Line
-	7400 7200 6100 7200
-Wire Wire Line
 	7400 8000 6100 8000
-Wire Wire Line
-	7400 8800 6100 8800
 Wire Wire Line
 	7400 9200 6100 9200
 Wire Wire Line
@@ -279,10 +267,10 @@ USB0_PHY_RESETN
 Text Notes 5800 2950 2    60   ~ 0
 Only PS and JTAG programming modes supported.\nPS uses standard power-on reset (POR) delay of 50 to 200 ms.\nPS interface voltage determined by Bank 1 VCCIO.
 $Comp
-L GND #PWR028
+L GND #PWR031
 U 1 1 512AEDBF
 P 5900 3200
-F 0 "#PWR028" H 5900 3200 30  0001 C CNN
+F 0 "#PWR031" H 5900 3200 30  0001 C CNN
 F 1 "GND" H 5900 3130 30  0001 C CNN
 	1    5900 3200
 	1    0    0    -1  
@@ -355,7 +343,7 @@ Text Label 6200 6300 0    60   ~ 0
 USB0_PIPE_TX_DATA12
 Text Label 6200 4900 0    60   ~ 0
 USB0_PIPE_TX_DATA11
-Text Label 6200 5500 0    60   ~ 0
+Text Label 6200 3300 0    60   ~ 0
 USB0_PIPE_TX_DATA10
 Text Label 6200 5700 0    60   ~ 0
 USB0_PIPE_TX_DATA9

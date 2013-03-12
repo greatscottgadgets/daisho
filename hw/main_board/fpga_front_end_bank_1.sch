@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 11:19:55 AM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,10 +29,10 @@ $EndDescr
 Text HLabel 5500 10000 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR?
+L GND #PWR026
 U 1 1 513E203A
 P 5200 10700
-F 0 "#PWR?" H 5200 10700 30  0001 C CNN
+F 0 "#PWR026" H 5200 10700 30  0001 C CNN
 F 1 "GND" H 5200 10630 30  0001 C CNN
 	1    5200 10700
 	1    0    0    -1  
@@ -407,10 +407,10 @@ VCCIO
 Text HLabel 4400 2700 0    60   Input ~ 0
 VREF
 $Comp
-L GND #PWR025
+L GND #PWR027
 U 1 1 51393F4B
 P 6000 5300
-F 0 "#PWR025" H 6000 5300 30  0001 C CNN
+F 0 "#PWR027" H 6000 5300 30  0001 C CNN
 F 1 "GND" H 6000 5230 30  0001 C CNN
 	1    6000 5300
 	1    0    0    -1  

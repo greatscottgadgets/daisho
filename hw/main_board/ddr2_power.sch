@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sunday, March 10, 2013 11:24:02 PM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -260,10 +260,10 @@ F 1 "DDR2_SDRAM_SODIMM" H 9750 3800 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR031
+L GND #PWR034
 U 1 1 50FD8B95
 P 7800 6950
-F 0 "#PWR031" H 7800 6950 30  0001 C CNN
+F 0 "#PWR034" H 7800 6950 30  0001 C CNN
 F 1 "GND" H 7800 6880 30  0001 C CNN
 	1    7800 6950
 	-1   0    0    -1  
@@ -281,10 +281,10 @@ F 1 "DDR2_SDRAM_SODIMM" H 7100 3750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR032
+L GND #PWR035
 U 1 1 50FF9E85
 P 6400 7050
-F 0 "#PWR032" H 6400 7050 30  0001 C CNN
+F 0 "#PWR035" H 6400 7050 30  0001 C CNN
 F 1 "GND" H 6400 6980 30  0001 C CNN
 	1    6400 7050
 	1    0    0    -1  

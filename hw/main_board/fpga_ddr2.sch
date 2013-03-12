@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 11:03:27 AM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,16 +26,12 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 1500 2100 0    60   Input ~ 0
-VREF
-Text Label 12700 9100 0    60   ~ 0
-VREF
-Text Label 12700 7100 0    60   ~ 0
-VREF
-Text Label 12700 5500 0    60   ~ 0
-VREF
-Text Label 12700 3900 0    60   ~ 0
-VREF
+Text Notes 1450 9400 0    60   ~ 0
+ODT is used for memory writes.\nODT is not effective for reads, so scenario is "no-parallel" termination,\nwhich isn't ideal from a signal quality perspective.\nBut a VTT supply and parallel termination resistors\n(on DQ[63..0] and DQS[7..0]) are avoided.
+Wire Wire Line
+	8100 8800 6700 8800
+Wire Wire Line
+	3600 4100 2200 4100
 Wire Wire Line
 	13100 3900 12500 3900
 Wire Wire Line
@@ -501,6 +497,18 @@ Wire Wire Line
 	13100 9100 12500 9100
 Wire Wire Line
 	13100 5500 12500 5500
+Wire Wire Line
+	3600 4000 2200 4000
+Wire Wire Line
+	8100 8700 6700 8700
+Text Label 12700 9100 0    60   ~ 0
+VREF
+Text Label 12700 7100 0    60   ~ 0
+VREF
+Text Label 12700 5500 0    60   ~ 0
+VREF
+Text Label 12700 3900 0    60   ~ 0
+VREF
 Text Label 7700 3400 0    60   ~ 0
 VREF
 Text Label 7700 5000 0    60   ~ 0
@@ -520,10 +528,10 @@ VREF
 Text HLabel 11000 10000 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR?
+L GND #PWR023
 U 1 1 513E0563
 P 10700 10700
-F 0 "#PWR?" H 10700 10700 30  0001 C CNN
+F 0 "#PWR023" H 10700 10700 30  0001 C CNN
 F 1 "GND" H 10700 10630 30  0001 C CNN
 	1    10700 10700
 	1    0    0    -1  
@@ -1071,10 +1079,10 @@ Entry Wire Line
 Text HLabel 11300 2400 0    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR023
+L GND #PWR024
 U 1 1 511559B7
 P 11500 3900
-F 0 "#PWR023" H 11500 3900 30  0001 C CNN
+F 0 "#PWR024" H 11500 3900 30  0001 C CNN
 F 1 "GND" H 11500 3830 30  0001 C CNN
 	1    11500 3900
 	1    0    0    -1  
@@ -1100,10 +1108,10 @@ F 4 "1%" V 11400 2750 60  0000 C CNN "Tolerance"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR024
+L GND #PWR025
 U 1 1 5115592B
 P 6500 8100
-F 0 "#PWR024" H 6500 8100 30  0001 C CNN
+F 0 "#PWR025" H 6500 8100 30  0001 C CNN
 F 1 "GND" H 6500 8030 30  0001 C CNN
 	1    6500 8100
 	1    0    0    -1  

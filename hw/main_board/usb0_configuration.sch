@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 11:03:27 AM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -225,10 +225,10 @@ F 4 "1%" V 7550 8500 60  0000 C CNN "Tolerance"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR029
+L GND #PWR032
 U 1 1 511486B7
 P 7100 9000
-F 0 "#PWR029" H 7100 9000 30  0001 C CNN
+F 0 "#PWR032" H 7100 9000 30  0001 C CNN
 F 1 "GND" H 7100 8930 30  0001 C CNN
 	1    7100 9000
 	1    0    0    -1  
@@ -247,10 +247,10 @@ OUT_ENABLE
 Text HLabel 6800 6900 0    60   Input ~ 0
 XI
 $Comp
-L GND #PWR030
+L GND #PWR033
 U 1 1 51148639
 P 6900 9000
-F 0 "#PWR030" H 6900 9000 30  0001 C CNN
+F 0 "#PWR033" H 6900 9000 30  0001 C CNN
 F 1 "GND" H 6900 8930 30  0001 C CNN
 	1    6900 9000
 	1    0    0    -1  

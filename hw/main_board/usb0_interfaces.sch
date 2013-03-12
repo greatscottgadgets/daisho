@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 11:03:27 AM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -180,10 +180,10 @@ Wire Wire Line
 	7900 8300 7800 8300
 Connection ~ 7900 8100
 $Comp
-L GND #PWR027
+L GND #PWR030
 U 1 1 5114892E
 P 9100 9300
-F 0 "#PWR027" H 9100 9300 30  0001 C CNN
+F 0 "#PWR030" H 9100 9300 30  0001 C CNN
 F 1 "GND" H 9100 9230 30  0001 C CNN
 	1    9100 9300
 	1    0    0    -1  

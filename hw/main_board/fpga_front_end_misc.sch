@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 11:03:27 AM
+EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -74,10 +74,10 @@ VCCIO
 Text Label 5550 7900 0    60   ~ 0
 VCCIO
 $Comp
-L GND #PWR026
+L GND #PWR028
 U 1 1 513CF83E
 P 6100 9400
-F 0 "#PWR026" H 6100 9400 30  0001 C CNN
+F 0 "#PWR028" H 6100 9400 30  0001 C CNN
 F 1 "GND" H 6100 9330 30  0001 C CNN
 	1    6100 9400
 	1    0    0    -1  
