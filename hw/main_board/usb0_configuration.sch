@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
+EESchema Schematic File Version 2  date Thursday, March 14, 2013 10:28:19 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -18,7 +18,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 10 15
 Title "Daisho Project Main Board"
-Date "11 mar 2013"
+Date "15 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -26,6 +26,13 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 9800 8600
+NoConn ~ 9800 8500
+NoConn ~ 9800 8400
+NoConn ~ 9800 8300
+NoConn ~ 9800 8200
+NoConn ~ 9800 8100
+NoConn ~ 9800 8000
 NoConn ~ 8000 7100
 Text Notes 7900 7450 2    60   ~ 0
 Test points here?\nOr just wire to FPGA?\nA small waste of FPGA pins and routing

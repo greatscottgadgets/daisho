@@ -1,11 +1,11 @@
-# EESchema Netlist Version 1.1 created  Monday, March 11, 2013 04:57:37 PM
+# EESchema Netlist Version 1.1 created  Thursday, March 14, 2013 10:28:24 PM
 (
  ( /5138E240/513D6AAE $noname  C39 C {Lib=C}
   (    1 /fpga_front_end_bank_1/VCCIO )
   (    2 GND )
  )
  ( /5138E240/513D6A80 $noname  C38 C {Lib=C}
-  (    1 N-000299 )
+  (    1 N-000277 )
   (    2 GND )
  )
  ( /5138E240/513D6A66 $noname  C36 C {Lib=C}
@@ -13,7 +13,7 @@
   (    2 GND )
  )
  ( /5138E240/513D6A12 $noname  C35 C {Lib=C}
-  (    1 N-000300 )
+  (    1 N-000276 )
   (    2 GND )
  )
  ( /5138E240/513D6824 $noname  C33 C {Lib=C}
@@ -21,31 +21,31 @@
   (    2 GND )
  )
  ( /5138E240/513D675C $noname  C32 C {Lib=C}
-  (    1 N-000298 )
+  (    1 N-000275 )
   (    2 GND )
  )
  ( /5138E240/513D663D $noname  R35 R {Lib=R}
   (    1 GND )
-  (    2 N-000299 )
+  (    2 N-000277 )
  )
  ( /5138E240/513D6639 $noname  R31 R {Lib=R}
   (    1 GND )
-  (    2 N-000298 )
+  (    2 N-000275 )
  )
  ( /5138E240/513D6635 $noname  R33 R {Lib=R}
   (    1 GND )
-  (    2 N-000300 )
+  (    2 N-000276 )
  )
  ( /5138E240/513D6631 $noname  R36 R {Lib=R}
-  (    1 N-000299 )
+  (    1 N-000277 )
   (    2 /fpga_front_end_bank_1/VCCIO )
  )
  ( /5138E240/513D662C $noname  R34 R {Lib=R}
-  (    1 N-000300 )
+  (    1 N-000276 )
   (    2 /fpga_front_end_bank_0/VCCIO )
  )
  ( /5138E240/513D6627 $noname  R32 R {Lib=R}
-  (    1 N-000298 )
+  (    1 N-000275 )
   (    2 /fpga_front_end_misc/VCCIO )
  )
  ( /5138E240/513D6551 $noname  C37 C {Lib=C}
@@ -64,21 +64,21 @@
   (    1 /front_end/VCC_RAW )
   (    2 GND )
   (    3 /front_end/EN_VCCIO )
-  (    4 N-000298 )
+  (    4 N-000275 )
   (    5 /fpga_front_end_misc/VCCIO )
  )
  ( /5138E240/513D61ED $noname  U33 MIC5207-BM5 {Lib=MIC5207-BM5}
   (    1 /front_end/VCC_RAW )
   (    2 GND )
   (    3 /front_end/EN_VCCIO )
-  (    4 N-000299 )
+  (    4 N-000277 )
   (    5 /fpga_front_end_bank_1/VCCIO )
  )
  ( /5138E240/513D61DD $noname  U32 MIC5207-BM5 {Lib=MIC5207-BM5}
   (    1 /front_end/VCC_RAW )
   (    2 GND )
   (    3 /front_end/EN_VCCIO )
-  (    4 N-000300 )
+  (    4 N-000276 )
   (    5 /fpga_front_end_bank_0/VCCIO )
  )
  ( /5138E240/513914AE $noname  J2 SAMTEC_QTH-090-D {Lib=SAMTEC_QTH-090-D}
@@ -574,18 +574,18 @@
  )
  ( /5101C6D6/5115599E $noname  R4 50R {Lib=R}
   (    1 GND )
-  (    2 N-000115 )
+  (    2 N-000046 )
  )
  ( /5101C6D6/51155995 $noname  R3 50R {Lib=R}
-  (    1 N-000151 )
+  (    1 N-000045 )
   (    2 +1.8V )
  )
  ( /5101C6D6/51155899 $noname  R2 50R {Lib=R}
   (    1 GND )
-  (    2 N-000150 )
+  (    2 N-000047 )
  )
  ( /5101C6D6/51155893 $noname  R1 50R {Lib=R}
-  (    1 N-000149 )
+  (    1 N-000048 )
   (    2 +1.8V )
  )
  ( /5101C6D6/51009C9D $noname  U1 EP4CE30F29 {Lib=EP4CE30F29}
@@ -631,16 +631,16 @@
   ( AA14 /fpga_ddr2/VREF )
   ( AA15 /fpga_ddr2/VREF )
   ( AA16 ? )
-  ( AA17 N-000149 )
+  ( AA17 N-000048 )
   ( AA18 +1.8V )
   ( AA19 ? )
   ( AA20 GND )
   ( AA21 ? )
-  ( AA22 N-000151 )
+  ( AA22 N-000045 )
   ( AA23 ? )
   ( AA24 /fpga_ddr2/VREF )
   ( AA25 ? )
-  ( AA26 ? )
+  ( AA26 /fpga_ddr2/ULPI_NXT )
   ( AA27 GND )
   ( AA28 +1.8V )
   (  AB1 ? )
@@ -659,13 +659,13 @@
   ( AB14 ? )
   ( AB15 ? )
   ( AB16 /fpga_ddr2/DDR2_DQ37 )
-  ( AB17 N-000150 )
+  ( AB17 N-000047 )
   ( AB18 ? )
   ( AB19 ? )
   ( AB20 /fpga_ddr2/VREF )
   ( AB21 ? )
   ( AB22 ? )
-  ( AB23 N-000115 )
+  ( AB23 N-000046 )
   ( AB24 /fpga_ddr2/DDR2_DM1 )
   ( AB25 ? )
   ( AB26 /fpga_ddr2/DDR2_DQ12 )
@@ -939,7 +939,7 @@
   (  E16 /fpga_front_end_bank_1/VCCIO )
   (  E17 /fpga_front_end_bank_1/D40 )
   (  E18 /fpga_front_end_bank_1/D44 )
-  (  E19 N-000276 )
+  (  E19 N-000265 )
   (  E20 /fpga_front_end_bank_1/VCCIO )
   (  E21 /fpga_front_end_bank_1/D45 )
   (  E22 /fpga_front_end_bank_1/D49 )
@@ -967,7 +967,7 @@
   (  F16 GND )
   (  F17 /fpga_front_end_bank_1/D42 )
   (  F18 /fpga_front_end_bank_1/VREF )
-  (  F19 N-000277 )
+  (  F19 N-000264 )
   (  F20 GND )
   (  F21 /fpga_front_end_bank_1/D41 )
   (  F22 /fpga_front_end_bank_1/VREF )
@@ -1226,9 +1226,9 @@
   (  R23 ? )
   (  R24 /fpga_ddr2/VREF )
   (  R25 ? )
-  (  R26 ? )
-  (  R27 ? )
-  (  R28 ? )
+  (  R26 /fpga_ddr2/ULPI_DIR )
+  (  R27 /fpga_ddr2/ULPI_STP )
+  (  R28 /fpga_ddr2/ULPI_DATA7 )
   (   T1 /fpga_front_end_misc/VCCIO )
   (   T2 GND )
   (   T3 ? )
@@ -1254,7 +1254,7 @@
   (  T23 GND )
   (  T24 +1.8V )
   (  T25 /fpga_ddr2/DDR2_DQS0 )
-  (  T26 ? )
+  (  T26 /fpga_ddr2/ULPI_DATA6 )
   (  T27 GND )
   (  T28 +1.8V )
   (   U1 ? )
@@ -1263,8 +1263,8 @@
   (   U4 ? )
   (   U5 ? )
   (   U6 ? )
-  (   U7 N-000303 )
-  (   U8 N-000302 )
+  (   U7 N-000291 )
+  (   U8 N-000290 )
   (   U9 GND )
   (  U10 +1.2V )
   (  U11 GND )
@@ -1283,7 +1283,7 @@
   (  U24 /fpga_ddr2/VREF )
   (  U25 ? )
   (  U26 ? )
-  (  U27 ? )
+  (  U27 /fpga_ddr2/ULPI_DATA5 )
   (  U28 /fpga_ddr2/DDR2_DQ0 )
   (   V1 ? )
   (   V2 ? )
@@ -1310,8 +1310,8 @@
   (  V23 ? )
   (  V24 ? )
   (  V25 /fpga_ddr2/DDR2_DQ4 )
-  (  V26 ? )
-  (  V27 ? )
+  (  V26 /fpga_ddr2/ULPI_DATA4 )
+  (  V27 /fpga_ddr2/ULPI_DATA3 )
   (  V28 /fpga_ddr2/DDR2_DQ1 )
   (   W1 ? )
   (   W2 ? )
@@ -1337,7 +1337,7 @@
   (  W22 ? )
   (  W23 GND )
   (  W24 +1.8V )
-  (  W25 ? )
+  (  W25 /fpga_ddr2/ULPI_DATA2 )
   (  W26 /fpga_ddr2/DDR2_DQ5 )
   (  W27 /fpga_ddr2/DDR2_DQ3 )
   (  W28 /fpga_ddr2/DDR2_DQ2 )
@@ -1365,10 +1365,10 @@
   (  Y22 ? )
   (  Y23 ? )
   (  Y24 /fpga_ddr2/DDR2_DQ13 )
-  (  Y25 ? )
+  (  Y25 /fpga_ddr2/ULPI_DATA0 )
   (  Y26 /fpga_ddr2/DDR2_DQ6 )
-  (  Y27 ? )
-  (  Y28 ? )
+  (  Y27 /fpga_ddr2/ULPI_DATA1 )
+  (  Y28 /fpga_ddr2/ULPI_CLK )
  )
  ( /5138E160/513E1FD0 $noname  C89 C {Lib=C}
   (    1 /fpga_front_end_bank_1/VCCIO )
@@ -1408,18 +1408,18 @@
  )
  ( /5138E160/51393D16 $noname  R11 50R {Lib=R}
   (    1 GND )
-  (    2 N-000276 )
+  (    2 N-000265 )
  )
  ( /5138E160/51393D12 $noname  R10 50R {Lib=R}
-  (    1 N-000277 )
+  (    1 N-000264 )
   (    2 /fpga_front_end_bank_1/VCCIO )
  )
  ( /51394328/513CF80F $noname  R22 50R {Lib=R}
   (    1 GND )
-  (    2 N-000302 )
+  (    2 N-000290 )
  )
  ( /51394328/513CF7DE $noname  R21 50R {Lib=R}
-  (    1 N-000303 )
+  (    1 N-000291 )
   (    2 /fpga_front_end_misc/VCCIO )
  )
  ( /5138E12B/513E1ED7 $noname  C79 C {Lib=C}
@@ -1460,10 +1460,10 @@
  )
  ( /5109FB2D/511488CA $noname  R9 10K {Lib=R}
   (    1 GND )
-  (    2 N-000156 )
+  (    2 N-000144 )
  )
  ( /5109FB2D/511488C6 $noname  R8 90K9 {Lib=R}
-  (    1 N-000156 )
+  (    1 N-000144 )
   (    2 ? )
  )
  ( /5109FB2D/5109FB8E $noname  U2 TUSB1310A {Lib=TUSB1310A}
@@ -1529,7 +1529,7 @@
   (  E11 ? )
   (  E12 ? )
   (  E13 GND )
-  (  E14 N-000155 )
+  (  E14 N-000143 )
   (   F1 /usb0_interfaces/RX_VALID )
   (   F2 /power_ldo/USB_1V1A )
   (   F3 /usb0_configuration/ELAS_BUF_MODE )
@@ -1541,7 +1541,7 @@
   (  F11 ? )
   (  F12 GND )
   (  F13 GND )
-  (  F14 N-000155 )
+  (  F14 N-000143 )
   (   G1 /usb0_interfaces/TX_DATAK1 )
   (   G2 /usb0_interfaces/TX_DATA15 )
   (   G3 /usb0_configuration/POWER_DOWN1 )
@@ -1565,7 +1565,7 @@
   (  H11 /usb0_configuration/ELAS_BUF_MODE )
   (  H12 ? )
   (  H13 GND )
-  (  H14 N-000155 )
+  (  H14 N-000143 )
   (   J1 /usb0_interfaces/TX_DATAK0 )
   (   J2 /usb0_interfaces/TX_DATA12 )
   (   J3 /usb0_configuration/ELAS_BUF_MODE )
@@ -1577,7 +1577,7 @@
   (  J11 /usb0_configuration/RESET# )
   (  J12 ? )
   (  J13 GND )
-  (  J14 N-000155 )
+  (  J14 N-000143 )
   (   K1 /usb0_interfaces/TX_CLK )
   (   K2 /power_ldo/USB_1V1A )
   (   K3 /usb0_configuration/ELAS_BUF_MODE )
@@ -1598,16 +1598,16 @@
   (  L10 /usb0_configuration/OUT_ENABLE )
   (  L11 /usb0_configuration/POWER_DOWN0 )
   (  L12 GND )
-  (  L13 N-000173 )
-  (  L14 N-000172 )
+  (  L13 N-000158 )
+  (  L14 N-000161 )
   (   M1 /usb0_interfaces/TX_DATA8 )
   (   M2 /usb0_interfaces/TX_DATA9 )
   (   M3 +1.8V )
   (   M4 /usb0_configuration/ELAS_BUF_MODE )
   (   M5 /usb0_configuration/ELAS_BUF_MODE )
   (   M6 /usb0_configuration/ELAS_BUF_MODE )
-  (   M7 ? )
-  (   M8 ? )
+  (   M7 /fpga_ddr2/ULPI_DIR )
+  (   M8 /fpga_ddr2/ULPI_STP )
   (   M9 /usb0_configuration/RX_STATUS0 )
   (  M10 /usb0_configuration/RX_STATUS1 )
   (  M11 /usb0_configuration/RX_STATUS2 )
@@ -1619,13 +1619,13 @@
   (   N3 /usb0_interfaces/TX_DATA3 )
   (   N4 /usb0_interfaces/TX_DATA1 )
   (   N5 /power_ldo/USB_1V1A )
-  (   N6 ? )
-  (   N7 ? )
-  (   N8 ? )
-  (   N9 ? )
+  (   N6 /fpga_ddr2/ULPI_DATA7 )
+  (   N7 /fpga_ddr2/ULPI_DATA5 )
+  (   N8 /fpga_ddr2/ULPI_DATA3 )
+  (   N9 /fpga_ddr2/ULPI_DATA0 )
   (  N10 /power_ldo/USB_1V1A )
-  (  N11 ? )
-  (  N12 N-000156 )
+  (  N11 /fpga_ddr2/ULPI_NXT )
+  (  N12 N-000144 )
   (  N13 GND )
   (  N14 +1.8V )
   (   P1 /usb0_interfaces/TX_DATA6 )
@@ -1633,19 +1633,19 @@
   (   P3 /usb0_interfaces/TX_DATA2 )
   (   P4 /power_ldo/USB_1V1A )
   (   P5 /usb0_interfaces/TX_DATA0 )
-  (   P6 ? )
-  (   P7 ? )
-  (   P8 ? )
-  (   P9 ? )
+  (   P6 /fpga_ddr2/ULPI_DATA6 )
+  (   P7 /fpga_ddr2/ULPI_DATA4 )
+  (   P8 /fpga_ddr2/ULPI_DATA2 )
+  (   P9 /fpga_ddr2/ULPI_DATA1 )
   (  P10 /power_ldo/USB_1V1A )
-  (  P11 ? )
+  (  P11 /fpga_ddr2/ULPI_CLK )
   (  P12 +3.3V )
-  (  P13 N-000155 )
-  (  P14 N-000155 )
+  (  P13 N-000143 )
+  (  P14 N-000143 )
  )
  ( /510A0455/511486FB $noname  R7 10K {Lib=R}
-  (    1 N-000173 )
-  (    2 N-000172 )
+  (    1 N-000158 )
+  (    2 N-000161 )
  )
  ( /510A0455/511486B3 $noname  R6 10K {Lib=R}
   (    1 GND )
@@ -1654,6 +1654,170 @@
  ( /510A0455/51148613 $noname  R5 10K {Lib=R}
   (    1 GND )
   (    2 /usb0_configuration/RESET# )
+ )
+ ( /5109F714/51429E10 $noname  C150 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429E0F $noname  C149 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429E0D $noname  C148 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429E0C $noname  C147 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429E0A $noname  C146 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429E01 $noname  C145 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429DFD $noname  C144 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429DF8 $noname  C143 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429DF3 $noname  C142 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429DEB $noname  C141 C {Lib=C}
+  (    1 +3.3V )
+  (    2 GND )
+ )
+ ( /5109F714/51429D2E $noname  C135 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D2C $noname  C134 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D2A $noname  C133 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D28 $noname  C132 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D26 $noname  C131 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D22 $noname  C130 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D20 $noname  C129 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D1E $noname  C128 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D1C $noname  C127 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D1A $noname  C126 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D18 $noname  C125 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D16 $noname  C124 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D14 $noname  C123 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D0B $noname  C122 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429D06 $noname  C121 C {Lib=C}
+  (    1 /power_ldo/USB_1V1A )
+  (    2 GND )
+ )
+ ( /5109F714/51429C5C $noname  C116 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429C59 $noname  C115 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BD2 $noname  C114 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BD0 $noname  C113 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BCF $noname  C112 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BCD $noname  C111 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BCB $noname  C110 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BC8 $noname  C109 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BC6 $noname  C108 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BC3 $noname  C107 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BBD $noname  C106 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BBB $noname  C105 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BB8 $noname  C104 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BB5 $noname  C103 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BB2 $noname  C102 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
+ )
+ ( /5109F714/51429BAA $noname  C101 C {Lib=C}
+  (    1 +1.8V )
+  (    2 GND )
  )
  ( /5109F714/5136A7E6 $noname  C1 1U {Lib=C}
   (    1 /power_ldo/USB_1V1A )
@@ -2161,6 +2325,211 @@ $component R5
  R?-*
  SM1206
 $endlist
+$component C150
+ SM*
+ C?
+ C1-1
+$endlist
+$component C149
+ SM*
+ C?
+ C1-1
+$endlist
+$component C148
+ SM*
+ C?
+ C1-1
+$endlist
+$component C147
+ SM*
+ C?
+ C1-1
+$endlist
+$component C146
+ SM*
+ C?
+ C1-1
+$endlist
+$component C145
+ SM*
+ C?
+ C1-1
+$endlist
+$component C144
+ SM*
+ C?
+ C1-1
+$endlist
+$component C143
+ SM*
+ C?
+ C1-1
+$endlist
+$component C142
+ SM*
+ C?
+ C1-1
+$endlist
+$component C141
+ SM*
+ C?
+ C1-1
+$endlist
+$component C135
+ SM*
+ C?
+ C1-1
+$endlist
+$component C134
+ SM*
+ C?
+ C1-1
+$endlist
+$component C133
+ SM*
+ C?
+ C1-1
+$endlist
+$component C132
+ SM*
+ C?
+ C1-1
+$endlist
+$component C131
+ SM*
+ C?
+ C1-1
+$endlist
+$component C130
+ SM*
+ C?
+ C1-1
+$endlist
+$component C129
+ SM*
+ C?
+ C1-1
+$endlist
+$component C128
+ SM*
+ C?
+ C1-1
+$endlist
+$component C127
+ SM*
+ C?
+ C1-1
+$endlist
+$component C126
+ SM*
+ C?
+ C1-1
+$endlist
+$component C125
+ SM*
+ C?
+ C1-1
+$endlist
+$component C124
+ SM*
+ C?
+ C1-1
+$endlist
+$component C123
+ SM*
+ C?
+ C1-1
+$endlist
+$component C122
+ SM*
+ C?
+ C1-1
+$endlist
+$component C121
+ SM*
+ C?
+ C1-1
+$endlist
+$component C116
+ SM*
+ C?
+ C1-1
+$endlist
+$component C115
+ SM*
+ C?
+ C1-1
+$endlist
+$component C114
+ SM*
+ C?
+ C1-1
+$endlist
+$component C113
+ SM*
+ C?
+ C1-1
+$endlist
+$component C112
+ SM*
+ C?
+ C1-1
+$endlist
+$component C111
+ SM*
+ C?
+ C1-1
+$endlist
+$component C110
+ SM*
+ C?
+ C1-1
+$endlist
+$component C109
+ SM*
+ C?
+ C1-1
+$endlist
+$component C108
+ SM*
+ C?
+ C1-1
+$endlist
+$component C107
+ SM*
+ C?
+ C1-1
+$endlist
+$component C106
+ SM*
+ C?
+ C1-1
+$endlist
+$component C105
+ SM*
+ C?
+ C1-1
+$endlist
+$component C104
+ SM*
+ C?
+ C1-1
+$endlist
+$component C103
+ SM*
+ C?
+ C1-1
+$endlist
+$component C102
+ SM*
+ C?
+ C1-1
+$endlist
+$component C101
+ SM*
+ C?
+ C1-1
+$endlist
 $component C1
  SM*
  C?
@@ -2305,89 +2674,105 @@ $endfootprintlist
 }
 { Pin List by Nets
 Net 1 "/fpga_front_end_misc/VREF" "VREF"
- U1 T8
  U1 T7
  U1 V8
  U1 AB4
+ U1 T8
 Net 2 "/fpga_front_end_bank_1/VREF" "VREF"
- U1 F22
  U1 F18
- U1 G15
  U1 G17
-Net 4 "/usb0_configuration/OUT_ENABLE" "OUT_ENABLE"
- R6 2
- U2 L10
-Net 5 "/fpga_power/VCCD_PLL" "VCCD_PLL"
- U1 J20
- U1 Y20
- U1 Y9
- U1 J9
-Net 6 "/fpga_configuration/VCCIO" "VCCIO"
- U1 N1
+ U1 F22
+ U1 G15
+Net 4 "/fpga_configuration/VCCIO" "VCCIO"
  U1 K5
- U1 N5
- U1 K8
- U1 H1
  U1 B1
-Net 7 "/usb0_configuration/ELAS_BUF_MODE" "ELAS_BUF_MODE"
- U2 E3
+ U1 H1
+ U1 N5
+ U1 N1
+ U1 K8
+Net 5 "/usb0_configuration/ELAS_BUF_MODE" "ELAS_BUF_MODE"
+ U2 H11
+ U2 M6
+ U2 M5
  U2 C9
  U2 C8
- U2 H11
- U2 D3
- U2 M6
- U2 M4
- U2 M5
- U2 K3
- U2 J3
+ U2 E3
  U2 F3
  U2 L6
+ U2 J3
+ U2 K3
+ U2 M4
+ U2 D3
+Net 6 "+3.3V" "+3.3V"
+ U2 P12
+ C141 1
+Net 7 "/fpga_power/VCCD_PLL" "VCCD_PLL"
+ U1 Y20
+ U1 J20
+ U1 Y9
+ U1 J9
 Net 8 "/fpga_power/VCCA" "VCCA"
- U1 Y21
- U1 J21
  U1 Y8
  U1 J8
-Net 9 "/power_ldo/USB_1V1A" "USB_1V1A"
- U2 A5
- U2 E1
- U2 A10
- U2 B10
- U2 N10
- U2 P10
- U2 D13
- U2 K13
- U2 M14
- U2 L1
- U2 F2
- U2 K2
- U2 C4
- U2 P4
- U2 G13
- U2 B6
- U2 N5
- U2 C11
- U2 C12
- U2 D14
- U2 G14
- U2 K14
- C1 1
+ U1 J21
+ U1 Y21
+Net 9 "/usb0_configuration/RESET#" "RESET#"
+ R5 2
+ U2 J11
 Net 10 "+1.2V" "+1.2V"
- U1 K19
- U1 L16
- U1 N16
- U1 R16
- U1 U16
- U1 K17
- U1 M17
- U1 P17
- U1 T17
- U1 V17
- U1 L18
+ U1 N12
+ U1 L12
+ U1 V11
+ U1 U10
+ U1 P9
+ U1 L10
+ U1 N10
+ U1 R10
+ U1 N20
+ U1 R20
+ U1 K11
+ U1 M11
+ U1 P11
+ U1 K9
+ U1 V13
+ U1 T11
+ U1 T13
+ U1 P13
+ U1 M13
+ U1 W12
+ U1 U12
+ U1 R12
+ C4024 1
+ C4021 1
+ C4018 1
+ C4015 1
+ C4012 1
+ C4017 1
+ C4009 1
+ C4004 1
+ C4014 1
+ C4011 1
+ C4008 1
+ C4027 1
+ C4001 1
+ C4005 1
+ C4002 1
+ C4006 1
+ C4003 1
+ C4026 1
  C4023 1
- U1 R18
- U1 U18
- U1 W18
- U1 V15
+ C4020 1
+ U1 L14
+ C4013 1
+ C4010 1
+ C4007 1
+ U1 N14
+ U1 R14
+ U1 U14
+ U1 W14
+ U1 M15
+ U1 P15
+ U1 K19
  U1 M19
  U1 P19
  U1 T19
@@ -2395,248 +2780,287 @@ Net 10 "+1.2V" "+1.2V"
  C4025 1
  C4022 1
  C4019 1
- C4004 1
- C4020 1
- C4017 1
- C4014 1
  C4016 1
- C4021 1
- C4013 1
- C4010 1
- C4007 1
- C4027 1
- C4024 1
- C4018 1
- C4015 1
- C4012 1
- C4009 1
- C4026 1
+ U1 M17
+ U1 R16
+ U1 U18
+ U1 R18
  U1 N18
- U1 P15
+ U1 L18
+ U1 V17
+ U1 T17
+ U1 P17
  U1 T15
- U1 K11
- U1 M11
- U1 P11
- U1 T11
- U1 V11
- U1 K9
- U1 N12
- U1 R12
- U1 U12
- U1 W12
- U1 M13
- U1 P13
- U1 T13
- U1 V13
- U1 L14
- U1 N14
- U1 R14
- U1 U14
- U1 W14
- U1 L12
- C4011 1
- C4008 1
- U1 M15
- C4001 1
- C4005 1
- C4002 1
- C4006 1
- C4003 1
- U1 P9
- U1 L10
- U1 N10
- U1 R10
- U1 U10
- U1 N20
- U1 R20
-Net 12 "+1.8V" "+1.8V"
- U2 F4
+ U1 K17
+ U1 V15
+ U1 L16
+ U1 U16
+ U1 W18
+ U1 N16
+Net 11 "+1.8V" "+1.8V"
+ C62 1
+ C104 1
+ C63 1
+ C49 1
+ C48 1
+ C52 1
+ C47 1
+ C46 1
+ U1 Y16
+ C45 1
+ U1 AD20
+ C102 1
+ C101 1
+ C103 1
+ C51 1
+ C41 1
+ C50 1
+ C105 1
+ U1 AH13
+ C54 1
+ U1 AH9
+ C53 1
+ R1 2
+ U1 B28
+ U1 H28
+ U1 N28
+ R3 2
+ C61 1
+ C44 1
+ C56 1
+ C60 1
+ U1 AH20
+ C59 1
+ U1 L21
+ C58 1
  U1 N24
  U1 K24
- U1 N28
- U1 H28
- U1 B28
- U1 L21
- C41 1
+ C57 1
+ U1 AD9
+ C55 1
+ J1 95
+ U1 AD16
+ U1 U21
+ U1 AH27
+ U1 AH16
+ U2 B2
  U2 L8
  U2 D8
  U2 L7
- U2 A13
- U2 C10
- R3 2
- C62 1
- U2 D9
- C61 1
- C60 1
- C59 1
- C58 1
- C57 1
- C56 1
- C55 1
- C54 1
- C64 1
- C63 1
- C43 1
- C42 1
- U2 H4
  U2 L4
+ U2 D7
+ U2 L5
+ U1 AD23
+ U1 AD6
+ U1 AH5
+ U1 AH2
+ C142 1
+ C144 1
+ C143 1
+ U1 AB10
+ U1 AA11
+ U2 H4
+ U2 G4
+ U2 F4
  U2 E4
  U2 D4
  U2 M3
  U2 C3
- U2 B2
+ U2 D9
  U2 N14
- U2 G4
- U2 L9
+ J1 1
+ U1 W24
+ J1 82
+ J1 81
+ U1 AH24
+ U1 T28
+ U1 T24
+ C112 1
+ J1 87
+ C109 1
+ U2 C10
+ J1 88
+ C110 1
  J1 111
+ C111 1
  J1 112
  J1 103
+ C113 1
  J1 104
+ C114 1
  J1 117
+ C115 1
  J1 118
- J1 199
- J1 88
- C44 1
- C53 1
- C52 1
- C51 1
- C50 1
- C49 1
- C48 1
- C47 1
- C46 1
- C45 1
- J1 1
- J1 81
- J1 82
- J1 95
- J1 96
- J1 87
- U1 AH9
- U1 AB10
- U1 AA11
- U1 AD9
- U1 T24
- U1 W24
- U1 AH5
- U1 AD6
- U1 AH2
- U1 AD13
- U1 AH13
- U1 U21
- U1 AA28
- U1 AG28
- U1 T28
- U1 AD23
- U1 AH24
- U1 AD20
- U1 Y16
- U1 AH20
- U1 AH27
+ C42 1
  U1 AA18
- U1 AD16
- U2 D7
- R1 2
- U1 AH16
- U2 L5
-Net 14 "/usb0_configuration/RESET#" "RESET#"
- R5 2
- U2 J11
-Net 15 "/usb0_interfaces/PCLK" "PCLK"
+ C116 1
+ U1 AG28
+ C107 1
+ C106 1
+ J1 96
+ C108 1
+ C64 1
+ U2 L9
+ U1 AA28
+ C43 1
+ J1 199
+ U2 A13
+ U1 AD13
+Net 12 "/usb0_configuration/OUT_ENABLE" "OUT_ENABLE"
+ U2 L10
+ R6 2
+Net 14 "/power_ldo/USB_1V1A" "USB_1V1A"
+ C124 1
+ C126 1
+ C125 1
+ U2 D14
+ U2 G14
+ U2 K14
+ U2 M14
+ U2 E1
+ U2 L1
+ U2 F2
+ U2 K2
+ U2 C4
+ C134 1
+ C135 1
+ C133 1
+ C145 1
+ C146 1
+ U2 G13
+ C147 1
+ U2 B6
+ C123 1
+ C122 1
+ C121 1
+ U2 P4
+ U2 A5
+ U2 N5
+ C1 1
+ U2 C11
+ U2 C12
+ U2 K13
+ C131 1
+ C132 1
+ U2 D13
+ C130 1
+ C127 1
+ U2 A10
+ U2 B10
+ U2 N10
+ U2 P10
+ C150 1
+ C129 1
+ C149 1
+ C128 1
+ C148 1
+Net 15 "/fpga_front_end_bank_0/VREF" "VREF"
+ U1 G12
+ U1 G14
+ U1 G9
+ U1 F11
+Net 16 "/usb0_interfaces/TX_CLK" "TX_CLK"
+ U1 L26
+ U2 K1
+Net 17 "/usb0_interfaces/PCLK" "PCLK"
  U2 A6
  U1 J27
-Net 16 "/usb0_interfaces/TX_CLK" "TX_CLK"
- U2 K1
- U1 L26
-Net 17 "/fpga_front_end_bank_0/VREF" "VREF"
- U1 G14
- U1 G12
- U1 F11
- U1 G9
-Net 18 "/usb0_interfaces/RX_VALID" "RX_VALID"
+Net 18 "/fpga_ddr2/ULPI_DIR" "ULPI_DIR"
+ U1 R26
+ U2 M7
+Net 19 "/fpga_ddr2/ULPI_STP" "ULPI_STP"
+ U2 M8
+ U1 R27
+Net 20 "/usb0_interfaces/RX_VALID" "RX_VALID"
  U1 J28
  U2 F1
-Net 25 "/front_end/VCC_RAW" "VCC_RAW"
- U32 1
- C37 1
- U33 1
- C31 1
- C34 1
- U31 1
-Net 26 "/fpga_front_end_misc/VCCIO" "VCCIO"
+Net 21 "/fpga_ddr2/ULPI_NXT" "ULPI_NXT"
+ U1 AA26
+ U2 N11
+Net 22 "/fpga_ddr2/ULPI_CLK" "ULPI_CLK"
+ U1 Y28
+ U2 P11
+Net 25 "/fpga_front_end_misc/VCCIO" "VCCIO"
  C33 1
+ U31 5
+ R32 2
+ R21 2
  U1 AG1
  U1 AA1
- U31 5
- J2 11
- J2 23
- R32 2
  U1 W7
- J2 35
- J2 47
  U1 T1
  U1 W5
  U1 T5
- R21 2
-Net 27 "/fpga_front_end_bank_1/VCCIO" "VCCIO"
- C88 1
- R10 2
- C83 1
- J2 167
- C89 1
- J2 155
- C85 1
- J2 131
- C84 1
- J2 143
- C82 1
- C86 1
- C87 1
- C81 1
- R36 2
- U1 J15
- U1 H18
- U1 A27
- U33 5
- U1 A24
- U1 E23
- U1 A16
+ J2 35
+ J2 23
+ J2 47
+ J2 11
+Net 27 "/front_end/VCC_RAW" "VCC_RAW"
+ C34 1
+ U31 1
+ C31 1
+ U33 1
+ U32 1
+ C37 1
+Net 28 "/fpga_front_end_bank_1/VCCIO" "VCCIO"
  U1 A20
  U1 E20
+ U1 A24
+ U1 A27
+ C89 1
  U1 E16
+ U1 A16
+ U1 J15
+ U1 H18
+ J2 131
+ J2 155
+ J2 167
+ J2 143
+ U1 E23
  C39 1
-Net 28 "/fpga_front_end_bank_0/VCCIO" "VCCIO"
+ U33 5
+ R36 2
+ C83 1
+ C85 1
+ C84 1
+ C86 1
+ C87 1
+ C88 1
+ R10 2
+ C81 1
+ C82 1
+Net 29 "/fpga_front_end_bank_0/VCCIO" "VCCIO"
+ U1 E6
+ U1 A5
+ U1 A2
  J2 83
- C78 1
- U1 E13
- C36 1
  C79 1
- U1 H11
- C72 1
- U1 A13
- C71 1
- U32 5
+ J2 71
  J2 95
  J2 107
- U1 J13
- U1 A2
- U1 A5
- U1 E9
- C77 1
- U1 E6
- J2 71
- U1 A9
- C76 1
- R34 2
  C75 1
- C74 1
+ U32 5
+ C71 1
+ C72 1
  C73 1
-Net 30 "/ddr2/CK1" "CK1"
- J1 164
- U1 AE5
-Net 31 "/ddr2/CK#0" "CK#0"
- J1 32
+ C74 1
+ C76 1
+ C77 1
+ C78 1
+ R34 2
+ U1 H11
+ U1 A13
+ U1 E13
+ C36 1
+ U1 J13
+ U1 A9
+ U1 E9
+Net 30 "/ddr2/CK#0" "CK#0"
  U1 AF23
+ J1 32
+Net 31 "/ddr2/CK1" "CK1"
+ U1 AE5
+ J1 164
 Net 32 "/ddr2/CK0" "CK0"
  J1 30
  U1 AE23
@@ -2644,69 +3068,160 @@ Net 33 "/ddr2/CK#1" "CK#1"
  U1 AF5
  J1 166
 Net 41 "/front_end/EN_VCCIO" "EN_VCCIO"
- U32 3
  U33 3
  U31 3
+ U32 3
 Net 42 "GND" "GND"
- J1 190
- J1 150
- J1 59
- J1 39
- J1 78
- J1 48
- J1 28
- J1 18
- J1 77
- J1 47
- J1 133
- J1 187
- J1 177
- J1 127
- J1 196
+ U1 N23
+ U1 T14
+ U1 T23
+ U1 W23
+ U1 K14
+ U1 U13
+ U1 W13
+ U1 F23
+ U1 K23
+ J1 168
+ J1 165
  J1 156
- J1 121
+ J1 196
+ J1 72
+ J1 177
+ J1 187
+ J1 128
+ J1 138
  J1 155
+ J1 178
+ J1 139
+ J1 149
+ J1 127
+ J1 33
  J1 145
  J1 184
  J1 144
  J1 193
  J1 183
- J1 128
+ J1 133
  J1 172
- J1 162
+ J1 42
+ J1 12
+ J1 71
+ J1 41
+ J1 21
+ J1 60
+ J1 40
+ J1 59
+ U2 G9
+ J1 18
  J1 132
  J1 122
  J1 171
  J1 161
- J1 165
- J1 40
- J1 71
+ J1 121
+ J1 190
+ J1 150
+ J1 9
+ J1 39
+ J1 78
+ J1 48
+ J1 28
+ J1 162
+ J1 77
+ J1 47
  J1 27
  J1 66
+ J1 65
  J1 15
  J1 54
  J1 34
  J1 24
  J1 53
- J1 33
- J1 72
- J1 42
- J1 12
- J1 41
- J1 21
- J1 60
- J1 65
- J1 149
- J1 139
- J1 178
- J1 168
- J1 138
- U1 B16
- C34 2
- C31 2
- C37 2
- R33 1
- U1 AG5
+ J1 8
+ J1 3
+ J1 2
+ U2 M13
+ U2 F9
+ U2 F12
+ C147 2
+ C146 2
+ C145 2
+ C144 2
+ C143 2
+ C142 2
+ C141 2
+ C135 2
+ C134 2
+ U2 B14
+ U2 N13
+ U2 J8
+ U2 H8
+ U2 G8
+ U2 F8
+ U2 J7
+ U2 H7
+ U2 G7
+ U2 J6
+ U2 H6
+ U2 G6
+ U2 F6
+ U2 F7
+ U1 V18
+ U1 T18
+ U1 Y18
+ U1 C28
+ U1 L19
+ U1 N19
+ U1 R19
+ U1 U19
+ U1 W19
+ U1 AA9
+ U1 P20
+ U1 AG9
+ U1 AA20
+ U1 AC20
+ U1 AG20
+ U1 AC13
+ U1 T6
+ U1 F20
+ U1 B20
+ U1 V10
+ U1 T10
+ U1 P10
+ U1 M10
+ U1 K10
+ U1 F6
+ U1 R9
+ U1 N9
+ U1 L9
+ U1 H9
+ U1 F9
+ U1 B9
+ U1 W6
+ U1 AG13
+ U1 N6
+ U1 K6
+ U1 U9
+ U1 J11
+ U1 AG2
+ U1 AA2
+ U1 V12
+ U1 T12
+ U1 P12
+ U1 M12
+ U1 AA27
+ U1 B12
+ U1 AF1
+ U1 Y11
+ U1 W11
+ U1 U11
+ U1 R11
+ U1 N11
+ U1 L11
+ U1 B13
+ U1 T20
+ U1 K12
+ U1 AG27
+ U1 AF28
  U1 W15
  U1 U15
  U1 R15
@@ -2714,1018 +3229,992 @@ Net 42 "GND" "GND"
  U1 L15
  U1 B24
  U1 V14
- U1 T14
- U1 P14
- U1 M14
- U1 AC16
- U1 AF28
- U1 F9
- U1 AA27
- U1 AG16
- U1 K14
- U1 AG24
- U1 AC23
- U1 AG13
- U1 AC13
- U1 AG20
- U1 AC20
- U1 AA20
- U1 AG9
- U1 AC9
- U1 AA9
- U1 AG27
- U1 AC6
- U1 M18
- U1 K18
- U1 J18
- U1 T27
- U1 F16
- U1 H27
- U1 B27
- U1 W17
- U1 U17
- U1 R17
- U1 N17
- U1 L17
- U1 P18
- U1 V16
- U1 T16
- U1 P16
- U1 M16
- U1 K16
- U1 N27
- U1 P12
- U1 T12
- U1 V12
- C4006 2
- U1 B13
- U1 W19
- U1 T23
- U1 N23
- U1 K23
- U1 F23
- U1 W13
- U1 U13
  U1 R13
+ U1 P14
+ U1 P18
+ U1 AC23
+ U1 AG24
+ U1 AC16
+ U1 AG16
+ U1 AC9
+ U1 AG5
+ U1 B16
+ U1 F16
+ U1 K16
+ U1 M16
+ U1 P16
+ U1 T16
+ U1 V16
+ U1 AC6
+ U1 L17
+ U1 H20
+ U1 R17
+ U1 U17
+ U1 W17
+ U1 B27
+ U1 H27
+ U1 N27
+ U1 T27
+ U1 J18
+ U1 K18
+ U1 M18
+ U1 N17
  U1 N13
  U1 L13
  U1 F13
- U1 AG2
- U1 AA2
- U1 W23
- U1 U19
- U1 R19
- U1 N19
- U1 L19
- U1 C28
- U1 Y18
- U1 V18
- U1 T18
- U1 W6
- U1 B2
- U1 H2
- U1 J2
- U1 N2
- U1 T2
- U1 D3
- U1 B5
- U1 F6
- U1 K6
- U1 N6
- U1 T6
- U1 B9
- U1 C1
- C4003 2
- R31 1
- R35 1
- C32 2
- C33 2
- R22 1
- C4002 2
- U1 AF1
- U1 H20
- U1 M12
- U1 M20
- U1 P20
- U1 T20
- U1 J11
- U1 L11
- U1 N11
- U1 R11
- U1 U11
- U1 W11
- U1 Y11
- U1 F20
- U1 B12
- U1 K12
- U1 K20
- C4022 2
- C4025 2
- C35 2
- C4023 2
  C4005 2
- C4001 2
- C4004 2
- C4008 2
- C4011 2
- C4014 2
- C4017 2
- C4020 2
- C36 2
- U1 H9
- U1 L9
- U1 N9
- U1 R9
- U1 U9
- U1 K10
- U1 M10
- U1 P10
- U1 T10
- U1 V10
- U1 B20
  C4016 2
- C4018 2
- C38 2
- C4026 2
- C4009 2
- C4012 2
- C4015 2
- C39 2
- C4021 2
- C4019 2
- C4024 2
- C4027 2
- C4007 2
- C4010 2
  C4013 2
- U31 2
- U33 2
- U32 2
- J2 96
- J2 108
- J2 B0
- J2 B1
+ C4010 2
+ C4007 2
+ C4019 2
+ C4017 2
+ C4014 2
+ C4011 2
+ C4008 2
+ C4001 2
+ C4022 2
+ C4002 2
+ C4006 2
+ C4003 2
+ C4004 2
+ C4027 2
+ C4024 2
+ C4021 2
+ C4018 2
+ C4015 2
+ C4009 2
+ C4026 2
+ C4023 2
+ C4020 2
+ C4025 2
+ U1 B5
+ U1 D3
+ U1 T2
+ U1 N2
+ U1 J2
+ U1 H2
+ U1 B2
+ U1 C1
+ U1 M20
+ U1 K20
+ C4012 2
+ U1 M14
+ J2 C0
+ J1 29
+ J1 68
+ J2 C2
+ J2 C3
+ J1 11
+ J2 C1
+ J2 60
+ J1 49
+ J1 129
+ J1 167
+ J1 186
+ J1 146
+ U1 P23
+ U1 P22
+ U1 N22
  U1 M22
- U2 J6
- U2 H6
- R5 1
- U2 G6
- C79 2
- U2 F6
- C78 2
- C77 2
+ J2 168
+ J2 A0
+ J2 108
  J2 36
  J2 48
- J2 A0
- J2 24
- C76 2
- C74 2
- C73 2
- C72 2
- C71 2
- J1 167
- C75 2
- J1 146
  J2 A1
- J1 186
- J2 72
- J2 B2
+ J2 12
+ J2 A2
+ J2 A3
+ J2 24
+ J2 156
+ J2 132
+ J2 144
  J2 B3
  J2 84
+ J2 96
+ J2 B0
+ J2 B1
+ J2 72
+ J2 B2
+ C149 2
+ C150 2
+ R9 1
  R6 1
- J2 A3
- C86 2
+ R5 1
+ R22 1
+ R35 1
+ U32 2
+ C32 2
+ R31 1
+ C72 2
+ C78 2
+ C77 2
+ C76 2
+ C75 2
+ C74 2
+ C73 2
+ C71 2
+ U33 2
+ C34 2
+ C79 2
+ C81 2
+ C89 2
+ R33 1
  C88 2
  C87 2
+ C86 2
  C85 2
  C84 2
  C83 2
  C82 2
- C81 2
- C89 2
- U1 P22
- U1 N22
  R11 1
- R9 1
- U1 P23
- J1 129
- J2 60
- J1 11
- J1 49
- J1 29
- J1 68
- C54 2
- C55 2
- C64 2
- C44 2
- C43 2
- C61 2
- C59 2
- C62 2
- C41 2
- C42 2
- C60 2
- C63 2
- C58 2
- C57 2
- C56 2
- J1 3
- C47 2
- C46 2
- C45 2
- J1 2
- J1 8
- J1 9
- C49 2
- C53 2
- C52 2
- C51 2
- C50 2
- C48 2
- U2 F8
- U2 J7
- U2 H7
- U2 G7
- U2 H9
- J2 156
- J2 144
- C1 2
- J2 168
- U2 G8
- J2 C0
- J2 C1
- U2 J9
- J2 12
- U2 F12
- U2 B11
- J2 A2
- U2 F7
- U2 G9
- U2 F9
- U2 J8
- U2 H8
- R4 1
- R2 1
- J2 C2
- J2 C3
- U2 B14
- U2 N13
- U2 M13
- U2 J13
- U2 H13
- U2 F13
- U2 E13
+ U31 2
+ C31 2
+ C37 2
+ C39 2
+ C38 2
+ C36 2
+ C35 2
+ C33 2
  U2 B13
- J2 132
+ U2 E13
+ U2 F13
+ U2 H13
+ C101 2
+ C106 2
+ C105 2
+ C104 2
+ C103 2
+ C102 2
+ U2 M12
+ C1 2
+ R2 1
+ C122 2
+ C108 2
+ C107 2
+ C42 2
+ C43 2
+ C125 2
+ C130 2
+ C129 2
+ C128 2
+ C127 2
+ C126 2
+ C124 2
+ C123 2
+ C121 2
+ U2 G12
  U2 B12
  U2 D12
- U2 G12
  U2 K12
  U2 L12
- U2 M12
-Net 115 "" ""
- U1 AB23
- R4 2
-Net 149 "" ""
- U1 AA17
- R1 1
-Net 150 "" ""
- U1 AB17
- R2 2
-Net 151 "" ""
- U1 AA22
+ C47 2
+ C53 2
+ C54 2
+ C55 2
+ C56 2
+ C57 2
+ C58 2
+ C59 2
+ C60 2
+ C45 2
+ C46 2
+ C49 2
+ C50 2
+ C51 2
+ C52 2
+ C48 2
+ C61 2
+ C41 2
+ C62 2
+ C63 2
+ C64 2
+ R4 1
+ C109 2
+ U2 J13
+ U2 H9
+ U2 J9
+ C44 2
+ U2 B11
+ C131 2
+ C132 2
+ C133 2
+ C112 2
+ C116 2
+ C115 2
+ C114 2
+ C113 2
+ C111 2
+ C110 2
+ C148 2
+Net 45 "" ""
  R3 1
-Net 152 "/fpga_ddr2/VREF" "VREF"
- U1 AC18
- U1 AA12
- U1 U23
- U1 U24
- U1 R24
- U1 AA24
- U1 AB20
- U1 AA15
- U1 Y17
- U1 AA14
+ U1 AA22
+Net 46 "" ""
+ R4 2
+ U1 AB23
+Net 47 "" ""
+ R2 2
+ U1 AB17
+Net 48 "" ""
+ R1 1
+ U1 AA17
+Net 140 "/fpga_ddr2/VREF" "VREF"
  U1 AB11
+ U1 AA12
+ U1 Y17
+ U1 AB20
  U1 Y10
-Net 155 "" ""
+ U1 AA14
+ U1 AA15
+ U1 AC18
+ U1 U23
+ U1 R24
+ U1 U24
+ U1 AA24
+Net 143 "" ""
  U2 J14
  U2 H14
  U2 F14
  U2 E14
  U2 P13
  U2 P14
-Net 156 "" ""
+Net 144 "" ""
+ R9 2
  U2 N12
  R8 1
- R9 2
-Net 172 "" ""
- U2 L14
- R7 2
-Net 173 "" ""
+Net 158 "" ""
  U2 L13
  R7 1
-Net 276 "" ""
- U1 E19
- R11 2
-Net 277 "" ""
- R10 1
+Net 161 "" ""
+ U2 L14
+ R7 2
+Net 264 "" ""
  U1 F19
-Net 298 "" ""
- R31 2
+ R10 1
+Net 265 "" ""
+ R11 2
+ U1 E19
+Net 275 "" ""
  C32 1
- R32 1
  U31 4
-Net 299 "" ""
- R35 2
- U33 4
- C38 1
- R36 1
-Net 300 "" ""
+ R31 2
+ R32 1
+Net 276 "" ""
  R33 2
  C35 1
  U32 4
  R34 1
-Net 302 "" ""
- R22 2
+Net 277 "" ""
+ U33 4
+ R35 2
+ C38 1
+ R36 1
+Net 290 "" ""
  U1 U8
-Net 303 "" ""
- U1 U7
+ R22 2
+Net 291 "" ""
  R21 1
-Net 393 "/fpga_front_end_bank_1/D50" "D50"
- U1 G18
- J2 180
-Net 394 "/fpga_front_end_bank_1/D40" "D40"
- U1 E17
- J2 170
-Net 395 "/fpga_front_end_bank_1/D41" "D41"
- J2 169
- U1 F21
-Net 396 "/fpga_front_end_bank_1/D42" "D42"
- J2 172
- U1 F17
-Net 397 "/fpga_front_end_bank_1/D43" "D43"
- J2 171
+ U1 U7
+Net 363 "/fpga_front_end_bank_1/D51" "D51"
+ U1 G21
+ J2 179
+Net 365 "/fpga_front_end_bank_1/D43" "D43"
  U1 G19
-Net 398 "/fpga_front_end_bank_1/D44" "D44"
- J2 174
- U1 E18
-Net 399 "/fpga_front_end_bank_1/D45" "D45"
- J2 173
+ J2 171
+Net 367 "/fpga_front_end_bank_1/D45" "D45"
  U1 E21
-Net 400 "/fpga_front_end_bank_1/D46" "D46"
- J2 176
- U1 G16
-Net 401 "/fpga_front_end_bank_1/D47" "D47"
- J2 175
- U1 G20
-Net 402 "/fpga_front_end_bank_1/D48" "D48"
- U1 H17
- J2 178
-Net 403 "/fpga_front_end_bank_1/D49" "D49"
+ J2 173
+Net 370 "/fpga_front_end_bank_1/D49" "D49"
  U1 E22
  J2 177
-Net 405 "/fpga_front_end_bank_1/D51" "D51"
- J2 179
- U1 G21
-Net 414 "/fpga_front_end_bank_0/D23" "D23"
- J2 87
- U1 C6
-Net 415 "/fpga_front_end_bank_0/D12" "D12"
- U1 F12
- J2 76
-Net 416 "/fpga_front_end_bank_0/D13" "D13"
- J2 75
- U1 C3
-Net 417 "/fpga_front_end_bank_0/D14" "D14"
- J2 78
- U1 E14
-Net 418 "/fpga_front_end_bank_0/D15" "D15"
- J2 77
- U1 D4
-Net 419 "/fpga_front_end_bank_0/D16" "D16"
- J2 80
- U1 B3
-Net 420 "/fpga_front_end_bank_0/D17" "D17"
- J2 79
- U1 C4
-Net 421 "/fpga_front_end_bank_0/D18" "D18"
- U1 A3
- J2 82
-Net 422 "/fpga_front_end_bank_0/D19" "D19"
- J2 81
- U1 C5
-Net 423 "/fpga_front_end_bank_0/D20" "D20"
- J2 86
- U1 B4
-Net 424 "/fpga_front_end_bank_0/D21" "D21"
- U1 D5
- J2 85
-Net 425 "/fpga_front_end_bank_0/D22" "D22"
+Net 372 "/fpga_front_end_bank_1/D41" "D41"
+ U1 F21
+ J2 169
+Net 376 "/fpga_front_end_bank_1/D37" "D37"
+ J2 163
+ U1 C24
+Net 378 "/fpga_front_end_bank_1/D44" "D44"
+ U1 E18
+ J2 174
+Net 380 "/fpga_front_end_bank_1/D38" "D38"
+ J2 166
+ U1 E15
+Net 382 "/fpga_front_end_bank_1/D46" "D46"
+ U1 G16
+ J2 176
+Net 385 "/fpga_front_end_bank_1/D48" "D48"
+ U1 H17
+ J2 178
+Net 387 "/fpga_front_end_bank_1/D40" "D40"
+ J2 170
+ U1 E17
+Net 389 "/fpga_front_end_bank_1/D50" "D50"
+ J2 180
+ U1 G18
+Net 391 "/fpga_front_end_bank_1/D36" "D36"
+ J2 164
+ U1 F15
+Net 394 "/fpga_front_end_bank_1/D42" "D42"
+ J2 172
+ U1 F17
+Net 397 "/fpga_front_end_bank_1/D34" "D34"
+ J2 162
+ U1 B26
+Net 399 "/fpga_front_end_bank_1/D35" "D35"
+ U1 D23
+ J2 161
+Net 400 "/fpga_front_end_bank_1/D39" "D39"
+ J2 165
+ U1 C25
+Net 401 "/fpga_front_end_bank_1/D47" "D47"
+ U1 G20
+ J2 175
+Net 403 "/fpga_front_end_bank_0/D22" "D22"
  U1 A4
  J2 88
+Net 404 "/fpga_front_end_bank_0/D29" "D29"
+ J2 93
+ U1 D7
+Net 405 "/fpga_front_end_bank_0/D6" "D6"
+ J2 68
+ U1 G11
+Net 406 "/fpga_front_end_bank_0/D18" "D18"
+ U1 A3
+ J2 82
+Net 407 "/fpga_front_end_bank_0/D10" "D10"
+ U1 E12
+ J2 74
+Net 408 "/fpga_front_end_bank_0/D2" "D2"
+ U1 F10
+ J2 64
+Net 409 "/fpga_front_end_bank_0/D26" "D26"
+ U1 A6
+ J2 92
+Net 411 "/fpga_front_end_bank_0/D8" "D8"
+ U1 D11
+ J2 70
+Net 413 "/fpga_front_end_bank_0/D16" "D16"
+ J2 80
+ U1 B3
+Net 414 "/fpga_front_end_bank_0/D12" "D12"
+ U1 F12
+ J2 76
+Net 415 "/fpga_front_end_bank_0/D0" "D0"
+ J2 62
+ U1 E10
+Net 416 "/fpga_front_end_bank_0/D20" "D20"
+ U1 B4
+ J2 86
+Net 418 "/fpga_front_end_bank_0/D24" "D24"
+ U1 B6
+ J2 90
+Net 419 "/fpga_front_end_bank_0/D4" "D4"
+ U1 E11
+ J2 66
+Net 420 "/fpga_front_end_bank_0/D28" "D28"
+ U1 B7
+ J2 94
+Net 422 "/fpga_front_end_bank_0/D7" "D7"
+ U1 F8
+ J2 67
+Net 424 "/fpga_front_end_bank_0/D9" "D9"
+ U1 D9
+ J2 69
 Net 426 "/fpga_front_end_bank_0/D11" "D11"
  J2 73
  U1 G8
-Net 427 "/fpga_front_end_bank_0/D24" "D24"
- U1 B6
- J2 90
-Net 428 "/fpga_front_end_bank_0/D25" "D25"
- U1 D6
- J2 89
-Net 429 "/fpga_front_end_bank_0/D26" "D26"
- J2 92
- U1 A6
-Net 430 "/fpga_front_end_bank_0/D27" "D27"
- U1 C7
- J2 91
-Net 431 "/fpga_front_end_bank_0/D28" "D28"
- U1 B7
- J2 94
-Net 432 "/fpga_front_end_bank_0/D29" "D29"
- U1 D7
- J2 93
-Net 433 "/fpga_front_end_bank_0/D30" "D30"
- J2 98
- U1 A7
-Net 434 "/fpga_front_end_bank_0/D31" "D31"
- U1 C8
- J2 97
-Net 435 "/fpga_front_end_bank_0/D32" "D32"
- J2 100
- U1 B8
-Net 436 "/fpga_front_end_bank_0/D33" "D33"
- U1 D8
- J2 99
-Net 437 "/fpga_front_end_bank_0/D0" "D0"
- J2 62
- U1 E10
-Net 446 "/fpga_front_end_bank_1/D39" "D39"
- J2 165
- U1 C25
-Net 447 "/fpga_front_end_bank_0/D1" "D1"
+Net 428 "/fpga_front_end_bank_0/D15" "D15"
+ U1 D4
+ J2 77
+Net 429 "/fpga_front_end_bank_0/D13" "D13"
+ U1 C3
+ J2 75
+Net 430 "/fpga_front_end_bank_0/D17" "D17"
+ J2 79
+ U1 C4
+Net 432 "/fpga_front_end_bank_0/D19" "D19"
+ J2 81
+ U1 C5
+Net 433 "/fpga_front_end_bank_0/D1" "D1"
  U1 E7
  J2 61
-Net 448 "/fpga_front_end_bank_0/D2" "D2"
- J2 64
- U1 F10
-Net 449 "/fpga_front_end_bank_0/D3" "D3"
- U1 F7
+Net 434 "/fpga_front_end_bank_0/D21" "D21"
+ U1 D5
+ J2 85
+Net 436 "/fpga_front_end_bank_0/D23" "D23"
+ U1 C6
+ J2 87
+Net 437 "/fpga_front_end_bank_0/D3" "D3"
  J2 63
-Net 450 "/fpga_front_end_bank_0/D4" "D4"
- U1 E11
- J2 66
-Net 451 "/fpga_front_end_bank_0/D5" "D5"
- J2 65
+ U1 F7
+Net 438 "/fpga_front_end_bank_0/D25" "D25"
+ U1 D6
+ J2 89
+Net 440 "/fpga_front_end_bank_0/D27" "D27"
+ J2 91
+ U1 C7
+Net 441 "/fpga_front_end_bank_0/D5" "D5"
  U1 E8
-Net 452 "/fpga_front_end_bank_0/D6" "D6"
- U1 G11
- J2 68
-Net 453 "/fpga_front_end_bank_0/D7" "D7"
- U1 F8
- J2 67
-Net 454 "/fpga_front_end_bank_0/D8" "D8"
- J2 70
- U1 D11
-Net 455 "/fpga_front_end_bank_0/D9" "D9"
- J2 69
- U1 D9
-Net 456 "/fpga_front_end_bank_0/D10" "D10"
- U1 E12
- J2 74
-Net 457 "/fpga_ddr2/DDR2_DQ50" "DDR2_DQ50"
- U1 AH7
- J1 173
-Net 458 "/fpga_ddr2/DDR2_DQ39" "DDR2_DQ39"
- J1 136
- U1 AF15
-Net 459 "/fpga_ddr2/DDR2_DQ40" "DDR2_DQ40"
- U1 AG12
- J1 141
-Net 460 "/fpga_ddr2/DDR2_DQ41" "DDR2_DQ41"
- J1 143
- U1 AH11
-Net 461 "/fpga_ddr2/DDR2_DQ42" "DDR2_DQ42"
- U1 AG11
- J1 151
-Net 462 "/fpga_ddr2/DDR2_DQ43" "DDR2_DQ43"
- J1 153
- U1 AG10
-Net 463 "/fpga_ddr2/DDR2_DQ44" "DDR2_DQ44"
- J1 140
- U1 AE12
-Net 464 "/fpga_ddr2/DDR2_DQ45" "DDR2_DQ45"
- U1 AE11
- J1 142
-Net 465 "/fpga_ddr2/DDR2_DQ46" "DDR2_DQ46"
- J1 152
- U1 AF10
-Net 466 "/fpga_ddr2/DDR2_DQ47" "DDR2_DQ47"
- U1 AE9
- J1 154
-Net 467 "/fpga_ddr2/DDR2_DQ48" "DDR2_DQ48"
- J1 157
- U1 AH8
-Net 468 "/fpga_ddr2/DDR2_DQ49" "DDR2_DQ49"
- J1 159
- U1 AG8
-Net 469 "/fpga_ddr2/DDR2_DQ38" "DDR2_DQ38"
- U1 AE17
- J1 134
-Net 470 "/fpga_ddr2/DDR2_DQ51" "DDR2_DQ51"
- U1 AG7
- J1 175
-Net 471 "/fpga_ddr2/DDR2_DQ52" "DDR2_DQ52"
- U1 AC8
- J1 158
-Net 472 "/fpga_ddr2/DDR2_DQ53" "DDR2_DQ53"
- J1 160
- U1 AF9
-Net 473 "/fpga_ddr2/DDR2_DQ54" "DDR2_DQ54"
- J1 174
- U1 AF7
-Net 474 "/fpga_ddr2/DDR2_DQ55" "DDR2_DQ55"
- J1 176
- U1 AD10
-Net 475 "/fpga_ddr2/DDR2_DQ56" "DDR2_DQ56"
- U1 AH6
- J1 179
-Net 476 "/fpga_ddr2/DDR2_DQ57" "DDR2_DQ57"
+ J2 65
+Net 443 "/fpga_front_end_bank_1/D33" "D33"
+ U1 C23
+ J2 159
+Net 446 "/fpga_front_end_bank_0/D14" "D14"
+ U1 E14
+ J2 78
+Net 447 "/fpga_ddr2/DDR2_DQ57" "DDR2_DQ57"
  U1 AG6
  J1 181
-Net 477 "/fpga_ddr2/DDR2_DQ58" "DDR2_DQ58"
+Net 448 "/fpga_ddr2/DDR2_DQ41" "DDR2_DQ41"
+ U1 AH11
+ J1 143
+Net 449 "/fpga_ddr2/DDR2_DQ53" "DDR2_DQ53"
+ U1 AF9
+ J1 160
+Net 450 "/fpga_ddr2/DDR2_DQ45" "DDR2_DQ45"
+ J1 142
+ U1 AE11
+Net 451 "/fpga_ddr2/DDR2_DQ37" "DDR2_DQ37"
+ U1 AB16
+ J1 126
+Net 452 "/fpga_ddr2/DDR2_DQ61" "DDR2_DQ61"
+ J1 182
+ U1 AF6
+Net 453 "/fpga_ddr2/DDR2_DQ29" "DDR2_DQ29"
+ U1 AH23
+ J1 64
+Net 454 "/fpga_ddr2/DDR2_DQ43" "DDR2_DQ43"
+ U1 AG10
+ J1 153
+Net 455 "/fpga_ddr2/DDR2_DQ31" "DDR2_DQ31"
+ U1 AD17
+ J1 76
+Net 456 "/fpga_ddr2/DDR2_DQ51" "DDR2_DQ51"
+ J1 175
+ U1 AG7
+Net 457 "/fpga_ddr2/DDR2_DQ47" "DDR2_DQ47"
+ U1 AE9
+ J1 154
+Net 458 "/fpga_ddr2/DDR2_DQ35" "DDR2_DQ35"
+ U1 AH17
+ J1 137
+Net 459 "/fpga_ddr2/DDR2_DQ55" "DDR2_DQ55"
+ U1 AD10
+ J1 176
+Net 460 "/fpga_ddr2/DDR2_DQ27" "DDR2_DQ27"
+ J1 75
+ U1 AH21
+Net 461 "/fpga_ddr2/DDR2_DQ59" "DDR2_DQ59"
+ J1 191
+ U1 AH3
+Net 462 "/fpga_ddr2/DDR2_DQ39" "DDR2_DQ39"
+ J1 136
+ U1 AF15
+Net 463 "/fpga_ddr2/DDR2_DQ63" "DDR2_DQ63"
+ J1 194
+ U1 AG3
+Net 464 "/fpga_ddr2/DDR2_DQ23" "DDR2_DQ23"
+ J1 58
+ U1 AD18
+Net 465 "/fpga_ddr2/DDR2_DQ42" "DDR2_DQ42"
+ U1 AG11
+ J1 151
+Net 466 "/fpga_ddr2/DDR2_DQ30" "DDR2_DQ30"
+ J1 74
+ U1 AE19
+Net 467 "/fpga_ddr2/DDR2_DQ44" "DDR2_DQ44"
+ U1 AE12
+ J1 140
+Net 468 "/fpga_ddr2/DDR2_DQ24" "DDR2_DQ24"
+ J1 61
+ U1 AG22
+Net 469 "/fpga_ddr2/DDR2_DQ46" "DDR2_DQ46"
+ J1 152
+ U1 AF10
+Net 470 "/fpga_ddr2/DDR2_DQ32" "DDR2_DQ32"
+ U1 AG18
+ J1 123
+Net 471 "/fpga_ddr2/DDR2_DQ50" "DDR2_DQ50"
+ J1 173
+ U1 AH7
+Net 472 "/fpga_ddr2/DDR2_DQ48" "DDR2_DQ48"
+ U1 AH8
+ J1 157
+Net 473 "/fpga_ddr2/DDR2_DQ34" "DDR2_DQ34"
+ U1 AG17
+ J1 135
+Net 474 "/fpga_ddr2/DDR2_DQ52" "DDR2_DQ52"
+ J1 158
+ U1 AC8
+Net 475 "/fpga_ddr2/DDR2_DQ26" "DDR2_DQ26"
+ J1 73
+ U1 AG21
+Net 476 "/fpga_ddr2/DDR2_DQ54" "DDR2_DQ54"
+ U1 AF7
+ J1 174
+Net 477 "/fpga_ddr2/DDR2_DQ36" "DDR2_DQ36"
+ U1 AF16
+ J1 124
+Net 478 "/fpga_ddr2/DDR2_DQ56" "DDR2_DQ56"
+ J1 179
+ U1 AH6
+Net 479 "/fpga_ddr2/DDR2_DQ22" "DDR2_DQ22"
+ U1 AF20
+ J1 56
+Net 480 "/fpga_ddr2/DDR2_DQ58" "DDR2_DQ58"
  U1 AH4
  J1 189
-Net 478 "/fpga_ddr2/DDR2_DQ59" "DDR2_DQ59"
- U1 AH3
- J1 191
-Net 479 "/fpga_ddr2/DDR2_DQ60" "DDR2_DQ60"
- J1 180
+Net 481 "/fpga_ddr2/DDR2_DQ38" "DDR2_DQ38"
+ J1 134
+ U1 AE17
+Net 482 "/fpga_ddr2/DDR2_DQ60" "DDR2_DQ60"
  U1 AD8
-Net 480 "/fpga_ddr2/DDR2_DQ27" "DDR2_DQ27"
- U1 AH21
- J1 75
-Net 481 "/fpga_ddr2/DDR2_DQ16" "DDR2_DQ16"
- J1 43
- U1 AG26
-Net 482 "/fpga_ddr2/DDR2_DQ17" "DDR2_DQ17"
- U1 AH25
- J1 45
-Net 483 "/fpga_ddr2/DDR2_DQ18" "DDR2_DQ18"
- U1 AF22
- J1 55
-Net 484 "/fpga_ddr2/DDR2_DQ20" "DDR2_DQ20"
+ J1 180
+Net 483 "/fpga_ddr2/DDR2_DQ28" "DDR2_DQ28"
+ U1 AF24
+ J1 62
+Net 484 "/fpga_ddr2/DDR2_DQ62" "DDR2_DQ62"
+ J1 192
+ U1 AF4
+Net 485 "/fpga_ddr2/DDR2_DQ40" "DDR2_DQ40"
+ J1 141
+ U1 AG12
+Net 486 "/fpga_ddr2/DDR2_DQ20" "DDR2_DQ20"
  J1 44
  U1 AE25
-Net 485 "/fpga_ddr2/DDR2_DQ21" "DDR2_DQ21"
- U1 AE24
+Net 487 "/fpga_ddr2/ULPI_DATA0" "ULPI_DATA0"
+ U2 N9
+ U1 Y25
+Net 488 "/fpga_ddr2/DDR2_DQ21" "DDR2_DQ21"
  J1 46
-Net 486 "/fpga_ddr2/DDR2_DQ22" "DDR2_DQ22"
- J1 56
- U1 AF20
-Net 487 "/fpga_ddr2/DDR2_DQ23" "DDR2_DQ23"
- U1 AD18
- J1 58
-Net 488 "/fpga_ddr2/DDR2_DQ24" "DDR2_DQ24"
- U1 AG22
- J1 61
+ U1 AE24
 Net 489 "/fpga_ddr2/DDR2_DQ25" "DDR2_DQ25"
  J1 63
  U1 AH22
-Net 490 "/fpga_ddr2/DDR2_DQ26" "DDR2_DQ26"
- U1 AG21
- J1 73
-Net 491 "/fpga_ddr2/DDR2_DQ61" "DDR2_DQ61"
- J1 182
- U1 AF6
-Net 492 "/fpga_ddr2/DDR2_DQ28" "DDR2_DQ28"
- J1 62
- U1 AF24
-Net 493 "/fpga_ddr2/DDR2_DQ29" "DDR2_DQ29"
- J1 64
- U1 AH23
-Net 494 "/fpga_ddr2/DDR2_DQ30" "DDR2_DQ30"
- J1 74
- U1 AE19
-Net 495 "/fpga_ddr2/DDR2_DQ31" "DDR2_DQ31"
- J1 76
- U1 AD17
-Net 496 "/fpga_ddr2/DDR2_DQ32" "DDR2_DQ32"
- U1 AG18
- J1 123
-Net 497 "/fpga_ddr2/DDR2_DQ33" "DDR2_DQ33"
+Net 490 "/fpga_ddr2/DDR2_DQ33" "DDR2_DQ33"
  J1 125
  U1 AH18
-Net 498 "/fpga_ddr2/DDR2_DQ34" "DDR2_DQ34"
- U1 AG17
- J1 135
-Net 499 "/fpga_ddr2/DDR2_DQ35" "DDR2_DQ35"
- J1 137
- U1 AH17
-Net 500 "/fpga_ddr2/DDR2_DQ36" "DDR2_DQ36"
- U1 AF16
- J1 124
-Net 501 "/fpga_ddr2/DDR2_DQ37" "DDR2_DQ37"
- J1 126
- U1 AB16
-Net 502 "/fpga_front_end_bank_1/D28" "D28"
- U1 A25
- J2 154
-Net 503 "/fpga_front_end_bank_1/D18" "D18"
- J2 142
- U1 B21
-Net 504 "/fpga_front_end_bank_1/D19" "D19"
- J2 141
- U1 C19
-Net 505 "/fpga_front_end_bank_1/D20" "D20"
- J2 146
- U1 A22
-Net 506 "/fpga_front_end_bank_1/D21" "D21"
- J2 145
- U1 D20
-Net 507 "/fpga_front_end_bank_1/D22" "D22"
- U1 B22
- J2 148
-Net 508 "/fpga_front_end_bank_1/D23" "D23"
- U1 C20
- J2 147
-Net 509 "/fpga_front_end_bank_1/D24" "D24"
- J2 150
- U1 A23
-Net 510 "/fpga_front_end_bank_1/D25" "D25"
- J2 149
+Net 491 "/fpga_ddr2/DDR2_DQ49" "DDR2_DQ49"
+ J1 159
+ U1 AG8
+Net 492 "/fpga_front_end_bank_1/D25" "D25"
  U1 C21
-Net 511 "/fpga_front_end_bank_1/D26" "D26"
- J2 152
- U1 B23
-Net 512 "/fpga_front_end_bank_1/D27" "D27"
- U1 D21
- J2 151
-Net 513 "/fpga_front_end_bank_1/D17" "D17"
- U1 D19
- J2 139
-Net 514 "/fpga_front_end_bank_1/D29" "D29"
- J2 153
- U1 C22
-Net 515 "/fpga_front_end_bank_1/D30" "D30"
- J2 158
- U1 B25
-Net 516 "/fpga_front_end_bank_1/D31" "D31"
- U1 D22
- J2 157
-Net 517 "/fpga_front_end_bank_1/D32" "D32"
+ J2 149
+Net 493 "/fpga_front_end_bank_1/D32" "D32"
  J2 160
  U1 A26
-Net 518 "/fpga_front_end_bank_1/D33" "D33"
- J2 159
- U1 C23
-Net 519 "/fpga_front_end_bank_1/D34" "D34"
- J2 162
- U1 B26
-Net 520 "/fpga_front_end_bank_1/D35" "D35"
- U1 D23
- J2 161
-Net 521 "/fpga_front_end_bank_1/D36" "D36"
- U1 F15
- J2 164
-Net 522 "/fpga_front_end_bank_1/D37" "D37"
- U1 C24
- J2 163
-Net 523 "/fpga_front_end_bank_1/D38" "D38"
- U1 E15
- J2 166
-Net 524 "/fpga_front_end_bank_1/D6" "D6"
- U1 B17
- J2 128
-Net 525 "/fpga_ddr2/DDR2_DQ62" "DDR2_DQ62"
- J1 192
- U1 AF4
-Net 526 "/fpga_ddr2/DDR2_DQ63" "DDR2_DQ63"
- J1 194
- U1 AG3
-Net 527 "/fpga_front_end_bank_1/D0" "D0"
- U1 A15
- J2 122
-Net 528 "/fpga_front_end_bank_1/D1" "D1"
- J2 121
- U1 D15
-Net 529 "/fpga_front_end_bank_1/D2" "D2"
- J2 124
- U1 B15
-Net 530 "/fpga_front_end_bank_1/D3" "D3"
- U1 D16
- J2 123
-Net 531 "/fpga_front_end_bank_1/D4" "D4"
- U1 A17
- J2 126
-Net 532 "/fpga_front_end_bank_1/D5" "D5"
- U1 C15
- J2 125
-Net 533 "/fpga_front_end_bank_0/D34" "D34"
- J2 102
- U1 A8
-Net 534 "/fpga_front_end_bank_1/D7" "D7"
- U1 C16
- J2 127
-Net 535 "/fpga_front_end_bank_1/D8" "D8"
- U1 A18
- J2 130
-Net 536 "/fpga_front_end_bank_1/D9" "D9"
+Net 494 "/fpga_front_end_bank_1/D9" "D9"
  U1 D17
  J2 129
-Net 537 "/fpga_front_end_bank_1/D10" "D10"
- U1 B18
- J2 134
-Net 538 "/fpga_front_end_bank_1/D11" "D11"
+Net 495 "/fpga_front_end_bank_1/D21" "D21"
+ U1 D20
+ J2 145
+Net 496 "/fpga_front_end_bank_1/D13" "D13"
+ U1 D18
+ J2 135
+Net 497 "/fpga_front_end_bank_1/D5" "D5"
+ J2 125
+ U1 C15
+Net 498 "/fpga_front_end_bank_1/D29" "D29"
+ J2 153
+ U1 C22
+Net 499 "/fpga_front_end_bank_1/D11" "D11"
  U1 C17
  J2 133
-Net 539 "/fpga_front_end_bank_1/D12" "D12"
- U1 A19
+Net 500 "/fpga_front_end_bank_1/D19" "D19"
+ J2 141
+ U1 C19
+Net 501 "/fpga_front_end_bank_1/D15" "D15"
+ J2 137
+ U1 C18
+Net 502 "/fpga_front_end_bank_1/D3" "D3"
+ U1 D16
+ J2 123
+Net 503 "/fpga_front_end_bank_1/D23" "D23"
+ J2 147
+ U1 C20
+Net 504 "/fpga_front_end_bank_1/D27" "D27"
+ J2 151
+ U1 D21
+Net 505 "/fpga_front_end_bank_1/D7" "D7"
+ U1 C16
+ J2 127
+Net 506 "/fpga_front_end_bank_1/D31" "D31"
+ J2 157
+ U1 D22
+Net 507 "/fpga_ddr2/ULPI_DATA4" "ULPI_DATA4"
+ U2 P7
+ U1 V26
+Net 508 "/fpga_front_end_bank_1/D10" "D10"
+ U1 B18
+ J2 134
+Net 509 "/fpga_front_end_bank_1/D12" "D12"
  J2 136
-Net 540 "/fpga_front_end_bank_1/D13" "D13"
- J2 135
- U1 D18
-Net 541 "/fpga_front_end_bank_1/D14" "D14"
+ U1 A19
+Net 510 "/fpga_ddr2/ULPI_DATA5" "ULPI_DATA5"
+ U2 N7
+ U1 U27
+Net 511 "/fpga_front_end_bank_1/D14" "D14"
  J2 138
  U1 B19
-Net 542 "/fpga_front_end_bank_1/D15" "D15"
- U1 C18
- J2 137
-Net 543 "/fpga_front_end_bank_1/D16" "D16"
- U1 A21
+Net 512 "/fpga_front_end_bank_1/D0" "D0"
+ J2 122
+ U1 A15
+Net 513 "/fpga_front_end_bank_1/D18" "D18"
+ J2 142
+ U1 B21
+Net 514 "/fpga_front_end_bank_1/D16" "D16"
  J2 140
-Net 544 "/usb0_configuration/RX_STATUS2" "RX_STATUS2"
- U2 M11
- U2 C7
-Net 545 "/usb0_configuration/RX_STATUS0" "RX_STATUS0"
- U2 M9
- U2 C5
-Net 546 "/usb0_configuration/RX_STATUS1" "RX_STATUS1"
- U2 M10
- U2 C6
-Net 547 "/usb0_configuration/POWER_DOWN0" "POWER_DOWN0"
- U2 L11
- U2 H3
-Net 548 "/usb0_configuration/POWER_DOWN1" "POWER_DOWN1"
- U2 K11
- U2 G3
-Net 549 "/usb0_interfaces/TX_DATA7" "TX_DATA7"
- U1 N25
- U2 N1
-Net 550 "/usb0_interfaces/TX_DATAK0" "TX_DATAK0"
- U2 J1
- U1 K28
-Net 551 "/usb0_interfaces/TX_DATAK1" "TX_DATAK1"
- U2 G1
- U1 J26
-Net 552 "/usb0_interfaces/TX_DATA0" "TX_DATA0"
- U2 P5
- U1 P28
-Net 553 "/usb0_interfaces/TX_DATA1" "TX_DATA1"
- U1 P27
- U2 N4
-Net 554 "/usb0_interfaces/TX_DATA2" "TX_DATA2"
- U1 P25
- U2 P3
-Net 555 "/usb0_interfaces/TX_DATA3" "TX_DATA3"
- U2 N3
- U1 P26
-Net 556 "/usb0_interfaces/TX_DATA4" "TX_DATA4"
- U2 P2
- U1 M28
-Net 557 "/usb0_interfaces/TX_DATA5" "TX_DATA5"
- U2 N2
- U1 N26
-Net 558 "/usb0_interfaces/TX_DATA6" "TX_DATA6"
- U1 M27
- U2 P1
-Net 559 "/usb0_interfaces/TX_DATA8" "TX_DATA8"
- U2 M1
- U1 L27
-Net 560 "/usb0_interfaces/TX_DATA9" "TX_DATA9"
- U2 M2
- U1 L28
-Net 561 "/usb0_interfaces/TX_DATA10" "TX_DATA10"
- U2 L2
- U1 M24
-Net 562 "/usb0_interfaces/TX_DATA11" "TX_DATA11"
- U1 M26
- U2 L3
-Net 563 "/usb0_interfaces/TX_DATA12" "TX_DATA12"
+ U1 A21
+Net 515 "/fpga_front_end_bank_1/D2" "D2"
+ U1 B15
+ J2 124
+Net 516 "/fpga_front_end_bank_1/D20" "D20"
+ U1 A22
+ J2 146
+Net 517 "/fpga_ddr2/ULPI_DATA7" "ULPI_DATA7"
+ U1 R28
+ U2 N6
+Net 518 "/fpga_front_end_bank_1/D22" "D22"
+ J2 148
+ U1 B22
+Net 519 "/fpga_front_end_bank_1/D4" "D4"
+ J2 126
+ U1 A17
+Net 520 "/fpga_front_end_bank_1/D24" "D24"
+ U1 A23
+ J2 150
+Net 521 "/fpga_ddr2/ULPI_DATA3" "ULPI_DATA3"
+ U2 N8
+ U1 V27
+Net 522 "/fpga_front_end_bank_1/D26" "D26"
+ J2 152
+ U1 B23
+Net 523 "/fpga_front_end_bank_1/D6" "D6"
+ U1 B17
+ J2 128
+Net 524 "/fpga_front_end_bank_1/D28" "D28"
+ U1 A25
+ J2 154
+Net 525 "/fpga_front_end_bank_1/D30" "D30"
+ J2 158
+ U1 B25
+Net 526 "/fpga_front_end_bank_1/D8" "D8"
+ U1 A18
+ J2 130
+Net 527 "/fpga_ddr2/ULPI_DATA1" "ULPI_DATA1"
+ U1 Y27
+ U2 P9
+Net 528 "/fpga_front_end_bank_0/D30" "D30"
+ J2 98
+ U1 A7
+Net 529 "/fpga_ddr2/ULPI_DATA2" "ULPI_DATA2"
+ U1 W25
+ U2 P8
+Net 530 "/fpga_ddr2/ULPI_DATA6" "ULPI_DATA6"
+ U1 T26
+ U2 P6
+Net 531 "/fpga_front_end_bank_1/D1" "D1"
+ J2 121
+ U1 D15
+Net 532 "/fpga_front_end_bank_1/D17" "D17"
+ U1 D19
+ J2 139
+Net 533 "/usb0_interfaces/TX_DATA12" "TX_DATA12"
  U1 K27
  U2 J2
-Net 564 "/usb0_interfaces/TX_DATA13" "TX_DATA13"
- U1 K26
- U2 H1
-Net 565 "/usb0_interfaces/TX_DATA14" "TX_DATA14"
- U1 K25
+Net 534 "/usb0_interfaces/TX_DATA4" "TX_DATA4"
+ U2 P2
+ U1 M28
+Net 535 "/usb0_interfaces/TX_DATA6" "TX_DATA6"
+ U1 M27
+ U2 P1
+Net 536 "/usb0_interfaces/TX_DATA10" "TX_DATA10"
+ U1 M24
+ U2 L2
+Net 537 "/usb0_interfaces/TX_DATA2" "TX_DATA2"
+ U1 P25
+ U2 P3
+Net 538 "/usb0_interfaces/TX_DATA14" "TX_DATA14"
  U2 H2
-Net 566 "/usb0_interfaces/TX_DATA15" "TX_DATA15"
+ U1 K25
+Net 539 "/usb0_interfaces/TX_DATAK0" "TX_DATAK0"
+ U2 J1
+ U1 K28
+Net 540 "/usb0_interfaces/TX_DATA5" "TX_DATA5"
+ U1 N26
+ U2 N2
+Net 541 "/usb0_configuration/RX_STATUS0" "RX_STATUS0"
+ U2 M9
+ U2 C5
+Net 542 "/usb0_interfaces/TX_DATAK1" "TX_DATAK1"
+ U1 J26
+ U2 G1
+Net 543 "/usb0_configuration/RX_STATUS2" "RX_STATUS2"
+ U2 C7
+ U2 M11
+Net 544 "/usb0_interfaces/TX_DATA7" "TX_DATA7"
+ U2 N1
+ U1 N25
+Net 545 "/usb0_interfaces/TX_DATA9" "TX_DATA9"
+ U1 L28
+ U2 M2
+Net 546 "/usb0_interfaces/TX_DATA1" "TX_DATA1"
+ U2 N4
+ U1 P27
+Net 547 "/usb0_configuration/RX_STATUS1" "RX_STATUS1"
+ U2 M10
+ U2 C6
+Net 548 "/usb0_interfaces/TX_DATA11" "TX_DATA11"
+ U2 L3
+ U1 M26
+Net 549 "/usb0_configuration/POWER_DOWN0" "POWER_DOWN0"
+ U2 L11
+ U2 H3
+Net 550 "/usb0_interfaces/TX_DATA13" "TX_DATA13"
+ U2 H1
+ U1 K26
+Net 551 "/usb0_interfaces/TX_DATA3" "TX_DATA3"
+ U2 N3
+ U1 P26
+Net 552 "/usb0_configuration/POWER_DOWN1" "POWER_DOWN1"
+ U2 K11
+ U2 G3
+Net 553 "/usb0_interfaces/TX_DATA15" "TX_DATA15"
  U2 G2
  U1 L25
-Net 567 "/usb0_interfaces/RX_DATA15" "RX_DATA15"
+Net 554 "/usb0_interfaces/RX_DATA14" "RX_DATA14"
+ U1 D27
+ U2 A9
+Net 555 "/usb0_interfaces/RX_DATA15" "RX_DATA15"
  U2 B9
  U1 D28
-Net 568 "/usb0_interfaces/RX_DATA11" "RX_DATA11"
- U1 E25
- U2 B5
-Net 569 "/usb0_interfaces/RX_DATA0" "RX_DATA0"
- U2 E2
- U1 J25
-Net 570 "/usb0_interfaces/RX_DATA1" "RX_DATA1"
- U1 G28
- U2 D2
-Net 571 "/usb0_interfaces/RX_DATA2" "RX_DATA2"
- U1 H26
- U2 D1
-Net 572 "/usb0_interfaces/RX_DATA3" "RX_DATA3"
- U2 C1
- U1 G27
-Net 573 "/usb0_interfaces/RX_DATA4" "RX_DATA4"
- U2 C2
- U1 G26
-Net 574 "/usb0_interfaces/RX_DATA5" "RX_DATA5"
- U1 G25
- U2 B1
-Net 575 "/usb0_interfaces/RX_DATA6" "RX_DATA6"
- U2 A2
- U1 F25
-Net 576 "/usb0_interfaces/RX_DATA7" "RX_DATA7"
- U1 F28
- U2 A3
-Net 577 "/usb0_interfaces/RX_DATA8" "RX_DATA8"
- U1 F26
- U2 B3
-Net 578 "/usb0_interfaces/RX_DATA9" "RX_DATA9"
- U2 A4
- U1 E26
-Net 579 "/usb0_interfaces/RX_DATA10" "RX_DATA10"
- U1 F27
- U2 B4
-Net 580 "/usb0_interfaces/RX_DATAK1" "RX_DATAK1"
- U1 D26
- U2 B7
-Net 581 "/usb0_interfaces/RX_DATA12" "RX_DATA12"
- U2 B8
- U1 E28
-Net 582 "/usb0_interfaces/RX_DATA13" "RX_DATA13"
+Net 556 "/usb0_interfaces/TX_DATA0" "TX_DATA0"
+ U1 P28
+ U2 P5
+Net 557 "/usb0_interfaces/TX_DATA8" "TX_DATA8"
+ U1 L27
+ U2 M1
+Net 558 "/usb0_interfaces/RX_DATA13" "RX_DATA13"
  U2 A8
  U1 E27
-Net 583 "/usb0_interfaces/RX_DATA14" "RX_DATA14"
- U2 A9
- U1 D27
-Net 584 "/fpga_front_end_bank_0/D45" "D45"
- U1 D12
- J2 113
-Net 585 "/fpga_front_end_bank_0/D35" "D35"
- U1 C9
- J2 101
-Net 586 "/fpga_front_end_bank_0/D36" "D36"
- J2 104
- U1 B10
-Net 587 "/fpga_front_end_bank_0/D37" "D37"
- J2 103
- U1 C10
-Net 588 "/fpga_front_end_bank_0/D38" "D38"
- U1 A10
- J2 106
-Net 589 "/fpga_front_end_bank_0/D39" "D39"
- U1 D10
- J2 105
-Net 590 "/fpga_front_end_bank_0/D40" "D40"
- U1 B11
+Net 559 "/usb0_interfaces/RX_DATA11" "RX_DATA11"
+ U1 E25
+ U2 B5
+Net 560 "/usb0_interfaces/RX_DATA7" "RX_DATA7"
+ U1 F28
+ U2 A3
+Net 561 "/usb0_interfaces/RX_DATAK1" "RX_DATAK1"
+ U2 B7
+ U1 D26
+Net 562 "/fpga_front_end_bank_0/D48" "D48"
+ U1 A14
+ J2 118
+Net 563 "/fpga_front_end_bank_0/D40" "D40"
  J2 110
-Net 591 "/fpga_front_end_bank_0/D41" "D41"
- J2 109
- U1 C11
-Net 592 "/fpga_front_end_bank_0/D42" "D42"
+ U1 B11
+Net 564 "/fpga_front_end_bank_0/D42" "D42"
  J2 112
  U1 A11
-Net 593 "/fpga_front_end_bank_0/D43" "D43"
- U1 C12
- J2 111
-Net 594 "/fpga_front_end_bank_0/D44" "D44"
- U1 A12
- J2 114
-Net 595 "/fpga_front_end_bank_0/D46" "D46"
+Net 565 "/usb0_interfaces/RX_DATA5" "RX_DATA5"
+ U2 B1
+ U1 G25
+Net 566 "/usb0_interfaces/RX_DATA1" "RX_DATA1"
+ U2 D2
+ U1 G28
+Net 567 "/fpga_front_end_bank_0/D46" "D46"
  U1 C14
  J2 116
-Net 596 "/fpga_front_end_bank_0/D47" "D47"
+Net 568 "/usb0_interfaces/RX_DATA9" "RX_DATA9"
+ U1 E26
+ U2 A4
+Net 569 "/fpga_front_end_bank_0/D38" "D38"
+ J2 106
+ U1 A10
+Net 570 "/fpga_front_end_bank_0/D50" "D50"
+ U1 B14
+ J2 120
+Net 571 "/fpga_front_end_bank_0/D34" "D34"
+ J2 102
+ U1 A8
+Net 572 "/fpga_front_end_bank_0/D41" "D41"
+ J2 109
+ U1 C11
+Net 573 "/usb0_interfaces/RX_DATAK0" "RX_DATAK0"
+ U2 A7
+ U1 C27
+Net 574 "/fpga_front_end_bank_0/D35" "D35"
+ J2 101
+ U1 C9
+Net 575 "/usb0_interfaces/RX_DATA0" "RX_DATA0"
+ U1 J25
+ U2 E2
+Net 576 "/fpga_front_end_bank_0/D43" "D43"
+ U1 C12
+ J2 111
+Net 577 "/usb0_interfaces/RX_DATA4" "RX_DATA4"
+ U1 G26
+ U2 C2
+Net 578 "/usb0_interfaces/RX_DATA2" "RX_DATA2"
+ U2 D1
+ U1 H26
+Net 579 "/fpga_front_end_bank_0/D45" "D45"
+ U1 D12
+ J2 113
+Net 580 "/usb0_interfaces/RX_DATA6" "RX_DATA6"
+ U1 F25
+ U2 A2
+Net 581 "/fpga_front_end_bank_0/D37" "D37"
+ U1 C10
+ J2 103
+Net 582 "/usb0_interfaces/RX_DATA8" "RX_DATA8"
+ U1 F26
+ U2 B3
+Net 583 "/fpga_front_end_bank_0/D47" "D47"
  J2 115
  U1 C13
-Net 597 "/fpga_front_end_bank_0/D48" "D48"
- J2 118
- U1 A14
-Net 598 "/fpga_front_end_bank_0/D49" "D49"
+Net 584 "/usb0_interfaces/RX_DATA10" "RX_DATA10"
+ U1 F27
+ U2 B4
+Net 585 "/fpga_front_end_bank_0/D33" "D33"
+ J2 99
+ U1 D8
+Net 586 "/usb0_interfaces/RX_DATA12" "RX_DATA12"
+ U1 E28
+ U2 B8
+Net 587 "/fpga_front_end_bank_0/D49" "D49"
  U1 D13
  J2 117
-Net 599 "/fpga_front_end_bank_0/D50" "D50"
- J2 120
- U1 B14
-Net 600 "/fpga_front_end_bank_0/D51" "D51"
+Net 588 "/fpga_front_end_bank_0/D39" "D39"
+ J2 105
+ U1 D10
+Net 589 "/fpga_front_end_bank_0/D51" "D51"
  J2 119
  U1 D14
-Net 601 "/usb0_interfaces/RX_DATAK0" "RX_DATAK0"
- U1 C27
- U2 A7
-Net 606 "/fpga_ddr2/DDR2_DQ19" "DDR2_DQ19"
+Net 590 "/fpga_front_end_bank_0/D31" "D31"
+ J2 97
+ U1 C8
+Net 591 "/fpga_front_end_bank_0/D32" "D32"
+ J2 100
+ U1 B8
+Net 592 "/fpga_front_end_bank_0/D36" "D36"
+ J2 104
+ U1 B10
+Net 593 "/fpga_front_end_bank_0/D44" "D44"
+ J2 114
+ U1 A12
+Net 594 "/usb0_interfaces/RX_DATA3" "RX_DATA3"
+ U2 C1
+ U1 G27
+Net 595 "/fpga_ddr2/DDR2_DQ19" "DDR2_DQ19"
  J1 57
  U1 AE21
-Net 611 "/fpga_ddr2/DDR2_DQ15" "DDR2_DQ15"
- J1 38
- U1 AD26
-Net 628 "/fpga_ddr2/DDR2_DM7" "DDR2_DM7"
- J1 185
+Net 600 "/fpga_ddr2/DDR2_DQS7" "DDR2_DQS7"
+ J1 188
+ U1 AD7
+Net 602 "/fpga_ddr2/DDR2_DM7" "DDR2_DM7"
  U1 AE6
-Net 629 "/fpga_ddr2/DDR2_DM1" "DDR2_DM1"
- U1 AB24
- J1 26
-Net 630 "/fpga_ddr2/DDR2_DM2" "DDR2_DM2"
- U1 AF25
- J1 52
-Net 631 "/fpga_ddr2/DDR2_DM3" "DDR2_DM3"
- U1 AH19
- J1 67
-Net 632 "/fpga_ddr2/DDR2_DM4" "DDR2_DM4"
- U1 AC15
- J1 130
-Net 633 "/fpga_ddr2/DDR2_DM5" "DDR2_DM5"
- U1 AF8
- J1 147
-Net 634 "/fpga_ddr2/DDR2_DM6" "DDR2_DM6"
- J1 170
- U1 AB9
-Net 636 "/fpga_ddr2/DDR2_DQS0" "DDR2_DQS0"
- U1 T25
- J1 13
-Net 637 "/fpga_ddr2/DDR2_DQS1" "DDR2_DQS1"
- U1 AF27
+ J1 185
+Net 604 "/fpga_ddr2/DDR2_DQS1" "DDR2_DQS1"
  J1 31
-Net 638 "/fpga_ddr2/DDR2_DQS2" "DDR2_DQS2"
- J1 51
- U1 AF26
-Net 639 "/fpga_ddr2/DDR2_DQS3" "DDR2_DQS3"
- J1 70
- U1 AE18
-Net 640 "/fpga_ddr2/DDR2_DQS4" "DDR2_DQS4"
- J1 131
- U1 AF17
-Net 641 "/fpga_ddr2/DDR2_DQS5" "DDR2_DQS5"
+ U1 AF27
+Net 606 "/fpga_ddr2/DDR2_DQS5" "DDR2_DQS5"
  J1 148
  U1 AF11
-Net 642 "/fpga_ddr2/DDR2_DQS6" "DDR2_DQS6"
+Net 608 "/fpga_ddr2/DDR2_DM5" "DDR2_DM5"
+ U1 AF8
+ J1 147
+Net 612 "/fpga_ddr2/DDR2_DM1" "DDR2_DM1"
+ J1 26
+ U1 AB24
+Net 614 "/fpga_ddr2/DDR2_DQS0" "DDR2_DQS0"
+ U1 T25
+ J1 13
+Net 616 "/fpga_ddr2/DDR2_DM2" "DDR2_DM2"
+ U1 AF25
+ J1 52
+Net 618 "/fpga_ddr2/DDR2_DQS2" "DDR2_DQS2"
+ U1 AF26
+ J1 51
+Net 619 "/fpga_ddr2/DDR2_DQS4" "DDR2_DQS4"
+ J1 131
+ U1 AF17
+Net 620 "/fpga_ddr2/DDR2_DM4" "DDR2_DM4"
+ J1 130
+ U1 AC15
+Net 622 "/fpga_ddr2/DDR2_DQS6" "DDR2_DQS6"
  J1 169
  U1 AE10
-Net 643 "/fpga_ddr2/DDR2_DQS7" "DDR2_DQS7"
- U1 AD7
- J1 188
-Net 646 "/fpga_ddr2/DDR2_DQ4" "DDR2_DQ4"
- J1 4
- U1 V25
-Net 647 "/fpga_ddr2/DDR2_DQ0" "DDR2_DQ0"
- U1 U28
- J1 5
-Net 648 "/fpga_ddr2/DDR2_DQ1" "DDR2_DQ1"
- J1 7
- U1 V28
-Net 649 "/fpga_ddr2/DDR2_DQ2" "DDR2_DQ2"
- U1 W28
- J1 17
-Net 650 "/fpga_ddr2/DDR2_DQ3" "DDR2_DQ3"
- J1 19
- U1 W27
-Net 651 "/fpga_ddr2/DDR2_DQ5" "DDR2_DQ5"
- U1 W26
- J1 6
-Net 652 "/fpga_ddr2/DDR2_DQ6" "DDR2_DQ6"
- U1 Y26
- J1 14
-Net 653 "/fpga_ddr2/DDR2_DQ7" "DDR2_DQ7"
- U1 AB27
- J1 16
-Net 654 "/fpga_ddr2/DDR2_DQ8" "DDR2_DQ8"
- J1 23
- U1 AC28
-Net 655 "/fpga_ddr2/DDR2_DQ9" "DDR2_DQ9"
- U1 AC27
- J1 25
-Net 656 "/fpga_ddr2/DDR2_DQ10" "DDR2_DQ10"
- U1 AD28
- J1 35
-Net 657 "/fpga_ddr2/DDR2_DQ11" "DDR2_DQ11"
- U1 AD27
- J1 37
-Net 658 "/fpga_ddr2/DDR2_DQ12" "DDR2_DQ12"
- J1 20
- U1 AB26
-Net 659 "/fpga_ddr2/DDR2_DQ13" "DDR2_DQ13"
- J1 22
- U1 Y24
-Net 660 "/fpga_ddr2/DDR2_DQ14" "DDR2_DQ14"
- J1 36
- U1 AE28
-Net 669 "/fpga_ddr2/DDR2_DM0" "DDR2_DM0"
+Net 624 "/fpga_ddr2/DDR2_DM0" "DDR2_DM0"
  J1 10
  U1 AB28
+Net 628 "/fpga_ddr2/DDR2_DM6" "DDR2_DM6"
+ U1 AB9
+ J1 170
+Net 631 "/fpga_ddr2/DDR2_DM3" "DDR2_DM3"
+ J1 67
+ U1 AH19
+Net 632 "/fpga_ddr2/DDR2_DQS3" "DDR2_DQS3"
+ U1 AE18
+ J1 70
+Net 633 "/fpga_ddr2/DDR2_DQ11" "DDR2_DQ11"
+ J1 37
+ U1 AD27
+Net 634 "/fpga_ddr2/DDR2_DQ18" "DDR2_DQ18"
+ J1 55
+ U1 AF22
+Net 635 "/fpga_ddr2/DDR2_DQ7" "DDR2_DQ7"
+ J1 16
+ U1 AB27
+Net 636 "/fpga_ddr2/DDR2_DQ15" "DDR2_DQ15"
+ J1 38
+ U1 AD26
+Net 637 "/fpga_ddr2/DDR2_DQ5" "DDR2_DQ5"
+ J1 6
+ U1 W26
+Net 638 "/fpga_ddr2/DDR2_DQ1" "DDR2_DQ1"
+ U1 V28
+ J1 7
+Net 639 "/fpga_ddr2/DDR2_DQ9" "DDR2_DQ9"
+ J1 25
+ U1 AC27
+Net 640 "/fpga_ddr2/DDR2_DQ13" "DDR2_DQ13"
+ U1 Y24
+ J1 22
+Net 641 "/fpga_ddr2/DDR2_DQ17" "DDR2_DQ17"
+ J1 45
+ U1 AH25
+Net 644 "/fpga_ddr2/DDR2_DQ0" "DDR2_DQ0"
+ U1 U28
+ J1 5
+Net 645 "/fpga_ddr2/DDR2_DQ4" "DDR2_DQ4"
+ U1 V25
+ J1 4
+Net 646 "/fpga_ddr2/DDR2_DQ2" "DDR2_DQ2"
+ J1 17
+ U1 W28
+Net 647 "/fpga_ddr2/DDR2_DQ6" "DDR2_DQ6"
+ U1 Y26
+ J1 14
+Net 648 "/fpga_ddr2/DDR2_DQ8" "DDR2_DQ8"
+ U1 AC28
+ J1 23
+Net 649 "/fpga_ddr2/DDR2_DQ10" "DDR2_DQ10"
+ U1 AD28
+ J1 35
+Net 651 "/fpga_ddr2/DDR2_DQ12" "DDR2_DQ12"
+ J1 20
+ U1 AB26
+Net 652 "/fpga_ddr2/DDR2_DQ14" "DDR2_DQ14"
+ J1 36
+ U1 AE28
+Net 653 "/fpga_ddr2/DDR2_DQ16" "DDR2_DQ16"
+ J1 43
+ U1 AG26
+Net 657 "/fpga_ddr2/DDR2_DQ3" "DDR2_DQ3"
+ U1 W27
+ J1 19
 }
 #End

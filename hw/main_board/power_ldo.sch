@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
+EESchema Schematic File Version 2  date Thursday, March 14, 2013 10:28:19 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -18,7 +18,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 13 15
 Title "Daisho Project Main Board"
-Date "11 mar 2013"
+Date "15 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -59,10 +59,10 @@ USB_1V1A
 Text HLabel 4750 3350 2    60   Output ~ 0
 FPGA_1V2D
 $Comp
-L +1.2V #PWR044
+L +1.2V #PWR049
 U 1 1 510B222D
 P 4500 3100
-F 0 "#PWR044" H 4500 3240 20  0001 C CNN
+F 0 "#PWR049" H 4500 3240 20  0001 C CNN
 F 1 "+1.2V" H 4500 3210 30  0000 C CNN
 	1    4500 3100
 	1    0    0    -1  
@@ -70,10 +70,10 @@ $EndComp
 Text HLabel 7450 4850 2    60   Output ~ 0
 USB_3V3A
 $Comp
-L +3.3V #PWR045
+L +3.3V #PWR050
 U 1 1 510B220A
 P 7200 4650
-F 0 "#PWR045" H 7200 4610 30  0001 C CNN
+F 0 "#PWR050" H 7200 4610 30  0001 C CNN
 F 1 "+3.3V" H 7200 4760 30  0000 C CNN
 	1    7200 4650
 	1    0    0    -1  
@@ -83,10 +83,10 @@ USB_1V8D
 Text HLabel 7450 3950 2    60   Output ~ 0
 USB_1V8A
 $Comp
-L +1.8V #PWR046
+L +1.8V #PWR051
 U 1 1 510B21CA
 P 7200 3850
-F 0 "#PWR046" H 7200 3990 20  0001 C CNN
+F 0 "#PWR051" H 7200 3990 20  0001 C CNN
 F 1 "+1.8V" H 7200 3960 30  0000 C CNN
 	1    7200 3850
 	1    0    0    -1  
