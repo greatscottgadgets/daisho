@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday, March 14, 2013 10:28:19 PM
+EESchema Schematic File Version 2  date Monday, March 18, 2013 02:32:12 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -11,6 +11,7 @@ LIBS:ep4ce30f29
 LIBS:tusb1310a
 LIBS:samtec_qth-090-d
 LIBS:mic5207-bm5
+LIBS:quartzcms4_ground
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -18,7 +19,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 14 15
 Title "Daisho Project Main Board"
-Date "15 mar 2013"
+Date "18 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -749,19 +750,19 @@ F 1 "EP4CE30F29" H 13700 1850 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR044
+L GND #PWR047
 U 1 1 50FE5664
 P 14650 8200
-F 0 "#PWR044" H 14650 8200 30  0001 C CNN
+F 0 "#PWR047" H 14650 8200 30  0001 C CNN
 F 1 "GND" H 14650 8130 30  0001 C CNN
 	1    14650 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR045
+L GND #PWR048
 U 1 1 50FE5673
 P 12650 8000
-F 0 "#PWR045" H 12650 8000 30  0001 C CNN
+F 0 "#PWR048" H 12650 8000 30  0001 C CNN
 F 1 "GND" H 12650 7930 30  0001 C CNN
 	1    12650 8000
 	1    0    0    -1  
@@ -848,10 +849,10 @@ F 1 "100N" H 3250 7900 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR046
+L GND #PWR049
 U 1 1 50FE47F5
 P 5600 8400
-F 0 "#PWR046" H 5600 8400 30  0001 C CNN
+F 0 "#PWR049" H 5600 8400 30  0001 C CNN
 F 1 "GND" H 5600 8330 30  0001 C CNN
 	1    5600 8400
 	1    0    0    -1  
@@ -920,10 +921,10 @@ F 1 "100N" H 3250 9700 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR047
+L GND #PWR050
 U 1 1 50FE54FE
 P 5600 10200
-F 0 "#PWR047" H 5600 10200 30  0001 C CNN
+F 0 "#PWR050" H 5600 10200 30  0001 C CNN
 F 1 "GND" H 5600 10130 30  0001 C CNN
 	1    5600 10200
 	1    0    0    -1  
@@ -992,10 +993,10 @@ F 1 "100N" H 3250 8800 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR048
+L GND #PWR051
 U 1 1 50FE554B
 P 5600 9300
-F 0 "#PWR048" H 5600 9300 30  0001 C CNN
+F 0 "#PWR051" H 5600 9300 30  0001 C CNN
 F 1 "GND" H 5600 9230 30  0001 C CNN
 	1    5600 9300
 	1    0    0    -1  

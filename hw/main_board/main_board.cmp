@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Thursday, March 14, 2013 09:18:34 PM
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Monday, March 18, 2013 02:18:21 PM
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -652,6 +652,41 @@ IdModule  = IPC_CAPC1005X55N;
 EndCmp
 
 BeginCmp
+TimeStamp = /5109F714/5144DBD7;
+Reference = C160;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5109F714/5144DC55;
+Reference = C161;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5109F714/5144DC60;
+Reference = C162;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /510A0455/514607BA;
+Reference = C170;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /510A0455/514607C2;
+Reference = C171;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
 TimeStamp = /510239FC/50FE5565;
 Reference = C4001;
 ValeurCmp = 100N;
@@ -855,6 +890,27 @@ IdModule  = SAMTEC_QTH-090-01-F-D-A;
 EndCmp
 
 BeginCmp
+TimeStamp = /5109F714/5144DC0C;
+Reference = L1;
+ValeurCmp = INDUCTOR;
+IdModule  = IPC_INDC1608X95N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5109F714/5144DC57;
+Reference = L2;
+ValeurCmp = INDUCTOR;
+IdModule  = IPC_INDC1608X95N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5109F714/5144DC8D;
+Reference = L3;
+ValeurCmp = INDUCTOR;
+IdModule  = IPC_INDC1608X95N;
+EndCmp
+
+BeginCmp
 TimeStamp = /5101C6D6/51155893;
 Reference = R1;
 ValeurCmp = 50R;
@@ -1020,6 +1076,13 @@ TimeStamp = /5138E240/513D61ED;
 Reference = U33;
 ValeurCmp = MIC5207-BM5;
 IdModule  = SOT23-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /510A0455/514782E6;
+Reference = X1;
+ValeurCmp = 40M;
+IdModule  = IPC_OSCCC320X500X105-4N;
 EndCmp
 
 EndListe

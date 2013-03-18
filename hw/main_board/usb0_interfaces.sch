@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 11, 2013 04:57:32 PM
+EESchema Schematic File Version 2  date Monday, March 18, 2013 02:32:12 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -11,6 +11,7 @@ LIBS:ep4ce30f29
 LIBS:tusb1310a
 LIBS:samtec_qth-090-d
 LIBS:mic5207-bm5
+LIBS:quartzcms4_ground
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -18,7 +19,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 8 15
 Title "Daisho Project Main Board"
-Date "11 mar 2013"
+Date "18 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
