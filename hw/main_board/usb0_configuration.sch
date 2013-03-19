@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 18, 2013 02:32:12 PM
+EESchema Schematic File Version 2  date Monday, March 18, 2013 05:10:50 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -19,7 +19,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 10 15
 Title "Daisho Project Main Board"
-Date "18 mar 2013"
+Date "19 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -27,6 +27,14 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 7300 9100 0    60   ~ 0
+OUT_ENABLE
+Text Label 7300 9000 0    60   ~ 0
+RESET#
+Text Label 7700 7800 0    60   ~ 0
+XO
+Text Label 7700 7700 0    60   ~ 0
+XI
 Text Label 7450 8100 0    60   ~ 0
 VSSOSC
 Connection ~ 7350 8100
@@ -163,13 +171,9 @@ F 5 "20pF" H 6900 7100 60  0001 C CNN "Cload"
 	1    6900 7100
 	0    -1   -1   0   
 $EndComp
-Text Notes 6350 7450 2    60   ~ 0
+Text Notes 6350 7200 2    60   ~ 0
 Also support reference clock from Si535x with jumper?
-Text Notes 6350 7300 2    60   ~ 0
-Remove jumper power to oscillator if crystal present.
-Text Notes 6350 7000 2    60   ~ 0
-Also accept oscillator in same footprint, must meet jitter specs.
-Text Notes 6350 7150 2    60   ~ 0
+Text Notes 6350 7050 2    60   ~ 0
 18pF CL is OK, according to datasheet max/min specs.
 Text Notes 7800 7050 0    60   ~ 0
 Errata claims SSC and non-40MHz crystals are not compatible.\nUse 40MHz crystal if SSC is required.
