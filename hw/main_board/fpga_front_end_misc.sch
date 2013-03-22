@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 18, 2013 02:32:12 PM
+EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,9 +17,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 6 15
+Sheet 10 15
 Title "Daisho Project Main Board"
-Date "18 mar 2013"
+Date "22 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -27,8 +27,13 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 9250 2500 0    60   ~ 0
-VCCIO
+Wire Wire Line
+	5300 9300 5300 9400
+Connection ~ 5700 8700
+Wire Wire Line
+	5700 8700 4900 8700
+Wire Wire Line
+	5700 8800 5700 8500
 Connection ~ 9100 2900
 Wire Wire Line
 	9100 2900 9000 2900
@@ -41,7 +46,7 @@ Wire Wire Line
 Wire Wire Line
 	9100 3000 9000 3000
 Wire Wire Line
-	5400 7900 6100 7900
+	4900 7900 6100 7900
 Wire Wire Line
 	6100 7900 6100 8000
 Wire Wire Line
@@ -63,16 +68,77 @@ Wire Wire Line
 Wire Wire Line
 	6100 9300 6100 9400
 Wire Wire Line
-	9000 2500 9700 2500
+	9700 2500 9000 2500
 Wire Wire Line
-	9000 2600 9100 2600
+	9100 2600 9000 2600
 Connection ~ 9100 2600
 Wire Wire Line
-	9000 2800 9100 2800
+	9100 2800 9000 2800
 Connection ~ 9100 2800
+Wire Wire Line
+	5700 9300 5700 9400
+Wire Wire Line
+	5700 8000 5700 7900
+Connection ~ 5700 7900
+Wire Wire Line
+	5300 8700 5300 8900
+Connection ~ 5300 8700
+$Comp
+L GND #PWR?
+U 1 1 514BA518
+P 5300 9400
+F 0 "#PWR?" H 5300 9400 30  0001 C CNN
+F 1 "GND" H 5300 9330 30  0001 C CNN
+	1    5300 9400
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C21
+U 1 1 514BA511
+P 5300 9100
+F 0 "C21" H 5350 9200 50  0000 L CNN
+F 1 "C" H 5350 9000 50  0000 L CNN
+	1    5300 9100
+	1    0    0    -1  
+$EndComp
+Text Notes 2000 9100 0    60   ~ 0
+AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sink much current. You can create the\nvoltage with a regulator or resistor divider network."
+Text Label 5000 8700 0    60   ~ 0
+VREF
+$Comp
+L GND #PWR?
+U 1 1 514BA28E
+P 5700 9400
+F 0 "#PWR?" H 5700 9400 30  0001 C CNN
+F 1 "GND" H 5700 9330 30  0001 C CNN
+	1    5700 9400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R24
+U 1 1 514BA28B
+P 5700 9050
+F 0 "R24" V 5780 9050 50  0000 C CNN
+F 1 "1K0" V 5700 9050 50  0000 C CNN
+F 4 "1%" V 5600 9050 60  0000 C CNN "Tolerance"
+	1    5700 9050
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R23
+U 1 1 514BA27F
+P 5700 8250
+F 0 "R23" V 5780 8250 50  0000 C CNN
+F 1 "1K0" V 5700 8250 50  0000 C CNN
+F 4 "1%" V 5600 8250 60  0000 C CNN "Tolerance"
+	1    5700 8250
+	-1   0    0    1   
+$EndComp
+Text Label 9250 2500 0    60   ~ 0
+VCCIO
 Text HLabel 2200 1700 0    60   Input ~ 0
 VCCIO
-Text Label 5550 7900 0    60   ~ 0
+Text Label 5100 7900 0    60   ~ 0
 VCCIO
 $Comp
 L GND #PWR028
@@ -111,10 +177,8 @@ Text Label 6600 9200 0    60   ~ 0
 VREF
 Text Label 6600 3700 0    60   ~ 0
 VREF
-Text HLabel 2200 1500 0    60   Input ~ 0
-VREF
 Text HLabel 2200 1300 0    60   BiDi ~ 0
-D[39..0]
+D[41..0]
 $Comp
 L EP4CE30F29 U1
 U 2 1 5139434C

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 18, 2013 02:32:12 PM
+EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,9 +17,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 5 15
+Sheet 9 15
 Title "Daisho Project Main Board"
-Date "18 mar 2013"
+Date "22 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -27,17 +27,19 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 5500 10000 2    60   Input ~ 0
-VCCIO
-$Comp
-L GND #PWR026
-U 1 1 513E203A
-P 5200 10700
-F 0 "#PWR026" H 5200 10700 30  0001 C CNN
-F 1 "GND" H 5200 10630 30  0001 C CNN
-	1    5200 10700
-	1    0    0    -1  
-$EndComp
+Text Label 4700 4600 0    60   ~ 0
+VREF
+Connection ~ 5200 4600
+Wire Wire Line
+	4500 4600 5200 4600
+Wire Wire Line
+	5200 4600 5600 4600
+Wire Wire Line
+	5200 5200 5200 5300
+Wire Wire Line
+	5600 4700 5600 4600
+Wire Wire Line
+	5600 4600 5600 4400
 Connection ~ 2400 10600
 Wire Wire Line
 	2400 10500 2400 10600
@@ -51,7 +53,21 @@ Connection ~ 4800 10600
 Wire Wire Line
 	4800 10500 4800 10600
 Wire Wire Line
-	5200 10600 2000 10600
+	5200 10600 4800 10600
+Wire Wire Line
+	4800 10600 4400 10600
+Wire Wire Line
+	4400 10600 4000 10600
+Wire Wire Line
+	4000 10600 3600 10600
+Wire Wire Line
+	3600 10600 3200 10600
+Wire Wire Line
+	3200 10600 2800 10600
+Wire Wire Line
+	2800 10600 2400 10600
+Wire Wire Line
+	2400 10600 2000 10600
 Wire Wire Line
 	2000 10600 2000 10500
 Connection ~ 2800 10000
@@ -79,7 +95,9 @@ Connection ~ 8900 2600
 Wire Wire Line
 	8800 2600 8900 2600
 Wire Wire Line
-	8800 2500 9500 2500
+	9500 2500 8900 2500
+Wire Wire Line
+	8900 2500 8800 2500
 Wire Wire Line
 	7000 3200 6400 3200
 Wire Wire Line
@@ -195,7 +213,9 @@ Wire Wire Line
 Wire Wire Line
 	6000 3900 6000 3800
 Wire Wire Line
-	6000 3800 5300 3800
+	6000 3800 5600 3800
+Wire Wire Line
+	5600 3800 4500 3800
 Wire Wire Line
 	7000 5000 6400 5000
 Wire Wire Line
@@ -209,45 +229,143 @@ Wire Wire Line
 Wire Wire Line
 	8800 3300 8900 3300
 Wire Wire Line
-	8900 3300 8900 2500
+	8900 3300 8900 3200
+Wire Wire Line
+	8900 3200 8900 3100
+Wire Wire Line
+	8900 3100 8900 3000
+Wire Wire Line
+	8900 3000 8900 2900
+Wire Wire Line
+	8900 2900 8900 2800
+Wire Wire Line
+	8900 2800 8900 2700
+Wire Wire Line
+	8900 2700 8900 2600
+Wire Wire Line
+	8900 2600 8900 2500
 Connection ~ 8900 2500
 Wire Wire Line
-	8800 2700 8900 2700
+	8900 2700 8800 2700
 Connection ~ 8900 2700
 Wire Wire Line
-	8800 2900 8900 2900
+	8900 2900 8800 2900
 Connection ~ 8900 2900
 Wire Wire Line
-	8800 3100 8900 3100
+	8900 3100 8800 3100
 Connection ~ 8900 3100
 Wire Wire Line
 	2000 10100 2000 10000
 Wire Wire Line
-	2000 10000 5500 10000
+	2000 10000 2400 10000
 Wire Wire Line
-	4800 10100 4800 10000
+	2400 10000 2800 10000
+Wire Wire Line
+	2800 10000 3200 10000
+Wire Wire Line
+	3200 10000 3600 10000
+Wire Wire Line
+	3600 10000 4000 10000
+Wire Wire Line
+	4000 10000 4400 10000
+Wire Wire Line
+	4400 10000 4800 10000
+Wire Wire Line
+	4800 10000 5200 10000
+Wire Wire Line
+	5200 10000 5500 10000
+Wire Wire Line
+	4800 10000 4800 10100
 Connection ~ 4800 10000
 Wire Wire Line
-	4000 10100 4000 10000
+	4000 10000 4000 10100
 Connection ~ 4000 10000
 Wire Wire Line
-	3200 10100 3200 10000
+	3200 10000 3200 10100
 Connection ~ 3200 10000
 Wire Wire Line
-	2400 10100 2400 10000
+	2400 10000 2400 10100
 Connection ~ 2400 10000
 Wire Wire Line
-	5200 10500 5200 10700
+	5200 10700 5200 10600
+Wire Wire Line
+	5200 10600 5200 10500
 Connection ~ 5200 10600
 Wire Wire Line
-	4400 10500 4400 10600
+	4400 10600 4400 10500
 Connection ~ 4400 10600
 Wire Wire Line
-	3600 10500 3600 10600
+	3600 10600 3600 10500
 Connection ~ 3600 10600
 Wire Wire Line
-	2800 10500 2800 10600
+	2800 10600 2800 10500
 Connection ~ 2800 10600
+Wire Wire Line
+	5600 3800 5600 3900
+Connection ~ 5600 3800
+Wire Wire Line
+	5600 5200 5600 5300
+Wire Wire Line
+	5200 4600 5200 4800
+Connection ~ 5600 4600
+$Comp
+L GND #PWR?
+U 1 1 514BAC1B
+P 5200 5300
+F 0 "#PWR?" H 5200 5300 30  0001 C CNN
+F 1 "GND" H 5200 5230 30  0001 C CNN
+	1    5200 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C23
+U 1 1 514BAC16
+P 5200 5000
+F 0 "C23" H 5250 5100 50  0000 L CNN
+F 1 "C" H 5250 4900 50  0000 L CNN
+	1    5200 5000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 514BAC0D
+P 5600 5300
+F 0 "#PWR?" H 5600 5300 30  0001 C CNN
+F 1 "GND" H 5600 5230 30  0001 C CNN
+	1    5600 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R13
+U 1 1 514BABF8
+P 5600 4950
+F 0 "R13" V 5680 4950 50  0000 C CNN
+F 1 "1K0" V 5600 4950 50  0000 C CNN
+F 4 "1%" V 5500 4950 60  0000 C CNN "Tolerance"
+	1    5600 4950
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R12
+U 1 1 514BABD4
+P 5600 4150
+F 0 "R12" V 5680 4150 50  0000 C CNN
+F 1 "1K0" V 5600 4150 50  0000 C CNN
+F 4 "1%" V 5500 4150 60  0000 C CNN "Tolerance"
+	1    5600 4150
+	-1   0    0    1   
+$EndComp
+Text HLabel 5500 10000 2    60   Input ~ 0
+VCCIO
+$Comp
+L GND #PWR026
+U 1 1 513E203A
+P 5200 10700
+F 0 "#PWR026" H 5200 10700 30  0001 C CNN
+F 1 "GND" H 5200 10630 30  0001 C CNN
+	1    5200 10700
+	1    0    0    -1  
+$EndComp
 $Comp
 L C C89
 U 1 1 513E1FD0
@@ -403,10 +521,8 @@ Text Label 6500 5000 0    60   ~ 0
 VREF
 Text Label 6500 7900 0    60   ~ 0
 VREF
-Text Label 5500 3800 0    60   ~ 0
+Text Label 4700 3800 0    60   ~ 0
 VCCIO
-Text HLabel 4400 2700 0    60   Input ~ 0
-VREF
 $Comp
 L GND #PWR027
 U 1 1 51393F4B

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 18, 2013 02:32:12 PM
+EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,9 +17,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 15 15
+Sheet 16 15
 Title "Daisho Project Main Board"
-Date "18 mar 2013"
+Date "22 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -28,42 +28,47 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	7200 4350 7450 4350
+	4500 3550 4750 3550
 Wire Wire Line
-	4500 3100 4500 3350
+	7450 4450 7200 4450
+Wire Wire Line
+	7200 4350 7450 4350
 Wire Wire Line
 	4500 3350 4750 3350
 Wire Wire Line
 	7450 3950 7200 3950
 Wire Wire Line
-	7200 4150 7450 4150
+	7200 4050 7450 4050
 Wire Wire Line
 	7450 4850 7200 4850
 Wire Wire Line
-	7450 3350 7200 3350
+	7450 3250 7200 3250
 Wire Wire Line
 	7200 3150 7450 3150
+Wire Wire Line
+	7450 4550 7200 4550
+Wire Wire Line
+	4750 3450 4500 3450
+Text HLabel 4750 3550 2    60   Output ~ 0
+FPGA_VCCD_PLL
+Text HLabel 4750 3450 2    60   Output ~ 0
+FPGA_VCCA
+Text HLabel 7450 4450 2    60   Output ~ 0
+DDR2_VCCSPD
+Text HLabel 7450 4550 2    60   Output ~ 0
+DDR2_VREF
 Text HLabel 7450 4350 2    60   Output ~ 0
 DDR2_1V8
-Text HLabel 7450 3350 2    60   Output ~ 0
-USB_1V1D
+Text HLabel 7450 3250 2    60   Output ~ 0
+USB_VDD1P1
 Text HLabel 7450 3150 2    60   Output ~ 0
-USB_1V1A
+USB_VDDA1P1
 Text HLabel 4750 3350 2    60   Output ~ 0
-FPGA_1V2D
-$Comp
-L +1.2V #PWR052
-U 1 1 510B222D
-P 4500 3100
-F 0 "#PWR052" H 4500 3240 20  0001 C CNN
-F 1 "+1.2V" H 4500 3210 30  0000 C CNN
-	1    4500 3100
-	1    0    0    -1  
-$EndComp
+FPGA_VCCINT
 Text HLabel 7450 4850 2    60   Output ~ 0
-USB_3V3A
-Text HLabel 7450 4150 2    60   Output ~ 0
-USB_1V8D
+USB_VDDA3P3
+Text HLabel 7450 4050 2    60   Output ~ 0
+USB_VDD1P8
 Text HLabel 7450 3950 2    60   Output ~ 0
-USB_1V8A
+USB_VDDA1P8
 $EndSCHEMATC

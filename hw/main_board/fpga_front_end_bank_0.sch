@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 18, 2013 02:32:12 PM
+EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,9 +17,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 7 15
+Sheet 11 15
 Title "Daisho Project Main Board"
-Date "18 mar 2013"
+Date "22 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -27,17 +27,17 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 6000 9900 2    60   Input ~ 0
+Text Label 3700 7100 0    60   ~ 0
+VREF
+Text Label 3700 6400 0    60   ~ 0
 VCCIO
-$Comp
-L GND #PWR029
-U 1 1 513E1F35
-P 5700 10600
-F 0 "#PWR029" H 5700 10600 30  0001 C CNN
-F 1 "GND" H 5700 10530 30  0001 C CNN
-	1    5700 10600
-	1    0    0    -1  
-$EndComp
+Wire Wire Line
+	4600 7700 4600 7800
+Connection ~ 4200 7100
+Wire Wire Line
+	4200 7300 4200 7100
+Wire Wire Line
+	4600 7000 4600 7200
 Connection ~ 2900 10500
 Wire Wire Line
 	2900 10400 2900 10500
@@ -234,6 +234,73 @@ Connection ~ 4100 10500
 Wire Wire Line
 	3300 10400 3300 10500
 Connection ~ 3300 10500
+Wire Wire Line
+	4600 6500 4600 6400
+Wire Wire Line
+	4600 6400 3500 6400
+Wire Wire Line
+	4600 7100 3500 7100
+Connection ~ 4600 7100
+Wire Wire Line
+	4200 7700 4200 7800
+$Comp
+L GND #PWR?
+U 1 1 514BAB65
+P 4200 7800
+F 0 "#PWR?" H 4200 7800 30  0001 C CNN
+F 1 "GND" H 4200 7730 30  0001 C CNN
+	1    4200 7800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C22
+U 1 1 514BAB61
+P 4200 7500
+F 0 "C22" H 4250 7600 50  0000 L CNN
+F 1 "C" H 4250 7400 50  0000 L CNN
+	1    4200 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 514BAB5C
+P 4600 7800
+F 0 "#PWR?" H 4600 7800 30  0001 C CNN
+F 1 "GND" H 4600 7730 30  0001 C CNN
+	1    4600 7800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R42
+U 1 1 514BAB55
+P 4600 7450
+F 0 "R42" V 4680 7450 50  0000 C CNN
+F 1 "1K0" V 4600 7450 50  0000 C CNN
+F 4 "1%" V 4500 7450 60  0000 C CNN "Tolerance"
+	1    4600 7450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R R41
+U 1 1 514BAB23
+P 4600 6750
+F 0 "R41" V 4680 6750 50  0000 C CNN
+F 1 "1K0" V 4600 6750 50  0000 C CNN
+F 4 "1%" V 4500 6750 60  0000 C CNN "Tolerance"
+	1    4600 6750
+	-1   0    0    -1  
+$EndComp
+Text HLabel 6000 9900 2    60   Input ~ 0
+VCCIO
+$Comp
+L GND #PWR029
+U 1 1 513E1F35
+P 5700 10600
+F 0 "#PWR029" H 5700 10600 30  0001 C CNN
+F 1 "GND" H 5700 10530 30  0001 C CNN
+	1    5700 10600
+	1    0    0    -1  
+$EndComp
 $Comp
 L C C79
 U 1 1 513E1ED7
@@ -319,8 +386,6 @@ Text HLabel 2900 2100 0    60   Input ~ 0
 VCCIO
 Text Label 9700 2500 0    60   ~ 0
 VCCIO
-Text HLabel 2900 1900 0    60   Input ~ 0
-VREF
 Text Label 7100 7900 0    60   ~ 0
 VREF
 Text Label 7100 6600 0    60   ~ 0
