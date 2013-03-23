@@ -26,6 +26,33 @@ def mm_to_kicad(mm):
 def degrees_to_kicad(degrees):
 	return int(round(float(degrees) * 10.0))
 
+def make_silkscreen_line(start, end, width):
+	data = {
+		'x1': mm_to_kicad(start[0]),
+		'y1': mm_to_kicad(start[1]),
+		'x2': mm_to_kicad(end[0]),
+		'y2': mm_to_kicad(end[1]),
+		'width': mm_to_kicad(width),
+		'layer': 21,
+	}
+	return [
+		'DS %(x1)d %(y1)d %(x2)d %(y2)d %(width)d %(layer)d' % data,
+	]
+
+def make_silkscreen_rectangle(corners, width):
+	corners = (
+		(corners[0][0], corners[0][1]),
+		(corners[1][0], corners[0][1]),
+		(corners[1][0], corners[1][1]),
+		(corners[0][0], corners[1][1]),
+	)
+	result = []
+	result += make_silkscreen_line(corners[0], corners[1], width)
+	result += make_silkscreen_line(corners[1], corners[2], width)
+	result += make_silkscreen_line(corners[2], corners[3], width)
+	result += make_silkscreen_line(corners[3], corners[0], width)
+	return result
+	
 def make_nsmd_bga_pad(pad_name, pad_diameter, solder_mask_clearance, position):
     data = {
         'pad_name': pad_name,
@@ -117,3 +144,66 @@ def make_pth_hole(pad_name, drill_diameter, pad_diameter, position):
 		'Po %(x)s %(y)s' % data,
 		'$EndPAD',
 	]
+	
+def make_square_qfp(n, pitch, land, c1, c2, r1, r2, v1, v2):
+	if n % 4 != 0:
+		raise RuntimeError('QFP pin count must be evenly divisible by 4')
+	
+	n_side = n / 4
+	pin_row_offset = ((n_side - 1) * pitch) / 2.0
+	
+	lines = []
+	
+	lines += make_silkscreen_rectangle(
+		((-r1 / 2.0, -r2 / 2.0), (r1 / 2.0, r2 / 2.0)),
+		0.2032,
+	)	
+
+	lines += make_silkscreen_rectangle(
+		((-v1 / 2.0, -v2 / 2.0), (v1 / 2.0, v2 / 2.0)),
+		0.2032,
+	)	
+
+	for i in range(n_side):
+		lines += make_nsmd_rect_pad(
+			pad_name=1 + i + (n_side * 0),
+			pad_width=land['y'],
+			pad_height=land['x'],
+			rotation=0.0,
+			position=(
+				c1 / -2.0,
+				(i * pitch) - pin_row_offset,
+			),
+		)
+		lines += make_nsmd_rect_pad(
+			pad_name=1 + i + (n_side * 1),
+			pad_width=land['y'],
+			pad_height=land['x'],
+			rotation=90.0,
+			position=(
+				(i * pitch) - pin_row_offset,
+				c2 / 2.0,
+			),
+		)
+		lines += make_nsmd_rect_pad(
+			pad_name=1 + i + (n_side * 2),
+			pad_width=land['y'],
+			pad_height=land['x'],
+			rotation=180.0,
+			position=(
+				c1 / 2.0,
+				pin_row_offset - (i * pitch),
+			),
+		)
+		lines += make_nsmd_rect_pad(
+			pad_name=1 + i + (n_side * 3),
+			pad_width=land['y'],
+			pad_height=land['x'],
+			rotation=270.0,
+			position=(
+				pin_row_offset - (i * pitch),
+				c2 / -2.0,
+			),
+		)
+	
+	return lines
