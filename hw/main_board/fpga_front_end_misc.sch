@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -12,14 +12,17 @@ LIBS:tusb1310a
 LIBS:samtec_qth-090-d
 LIBS:mic5207-bm5
 LIBS:quartzcms4_ground
+LIBS:lpc11u1x
+LIBS:gsg-microusb
+LIBS:pnp_sot23
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 10 15
+Sheet 12 16
 Title "Daisho Project Main Board"
-Date "22 mar 2013"
+Date "23 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -84,10 +87,10 @@ Wire Wire Line
 	5300 8700 5300 8900
 Connection ~ 5300 8700
 $Comp
-L GND #PWR?
+L GND #PWR036
 U 1 1 514BA518
 P 5300 9400
-F 0 "#PWR?" H 5300 9400 30  0001 C CNN
+F 0 "#PWR036" H 5300 9400 30  0001 C CNN
 F 1 "GND" H 5300 9330 30  0001 C CNN
 	1    5300 9400
 	1    0    0    -1  
@@ -106,10 +109,10 @@ AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sin
 Text Label 5000 8700 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR?
+L GND #PWR037
 U 1 1 514BA28E
 P 5700 9400
-F 0 "#PWR?" H 5700 9400 30  0001 C CNN
+F 0 "#PWR037" H 5700 9400 30  0001 C CNN
 F 1 "GND" H 5700 9330 30  0001 C CNN
 	1    5700 9400
 	1    0    0    -1  
@@ -141,10 +144,10 @@ VCCIO
 Text Label 5100 7900 0    60   ~ 0
 VCCIO
 $Comp
-L GND #PWR028
+L GND #PWR038
 U 1 1 513CF83E
 P 6100 9400
-F 0 "#PWR028" H 6100 9400 30  0001 C CNN
+F 0 "#PWR038" H 6100 9400 30  0001 C CNN
 F 1 "GND" H 6100 9330 30  0001 C CNN
 	1    6100 9400
 	1    0    0    -1  

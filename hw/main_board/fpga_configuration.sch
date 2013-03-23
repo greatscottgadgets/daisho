@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -12,14 +12,17 @@ LIBS:tusb1310a
 LIBS:samtec_qth-090-d
 LIBS:mic5207-bm5
 LIBS:quartzcms4_ground
+LIBS:lpc11u1x
+LIBS:gsg-microusb
+LIBS:pnp_sot23
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 5 15
+Sheet 4 16
 Title "Daisho Project Main Board"
-Date "22 mar 2013"
+Date "23 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -27,8 +30,26 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Wire Line
-	7400 9800 7400 9900
+Text HLabel 5300 3700 0    60   Output ~ 0
+SPI_MISO
+Text HLabel 5300 3600 0    60   Input ~ 0
+SPI_MOSI
+Text HLabel 5300 3500 0    60   Input ~ 0
+SPI_CS#
+Text HLabel 5300 3400 0    60   Input ~ 0
+SPI_SCLK
+Text HLabel 5300 3200 0    60   BiDi ~ 0
+I2C_SDA
+Text HLabel 5300 3100 0    60   Output ~ 0
+I2C_SCL
+Text Label 6600 7900 0    60   ~ 0
+VREF
+Text Label 6600 6800 0    60   ~ 0
+VREF
+Text Label 6600 4400 0    60   ~ 0
+VREF
+Text Label 6600 3100 0    60   ~ 0
+VREF
 Wire Wire Line
 	7600 9100 6400 9100
 Wire Wire Line
@@ -76,27 +97,6 @@ Wire Wire Line
 	7600 7900 6400 7900
 Wire Wire Line
 	7600 3100 6400 3100
-Wire Wire Line
-	7400 9100 7400 9300
-Connection ~ 7400 9100
-$Comp
-L GND #PWR?
-U 1 1 5148E4DC
-P 7400 9900
-F 0 "#PWR?" H 7400 9900 30  0001 C CNN
-F 1 "GND" H 7400 9830 30  0001 C CNN
-	1    7400 9900
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R?
-U 1 1 5148E4CC
-P 7400 9550
-F 0 "R?" V 7480 9550 50  0000 C CNN
-F 1 "R" V 7400 9550 50  0000 C CNN
-	1    7400 9550
-	1    0    0    -1  
-$EndComp
 Text HLabel 6400 9100 0    60   Input ~ 0
 FPGA_NCE
 Text HLabel 6400 9000 0    60   Output ~ 0
@@ -115,14 +115,6 @@ Text HLabel 6400 8400 0    60   Input ~ 0
 FPGA_DCLK
 Text HLabel 6400 8500 0    60   Input ~ 0
 FPGA_DATA0
-Text HLabel 3900 3100 0    60   Output ~ 0
-FE_VCC_EN
-Text HLabel 3900 2900 0    60   Output ~ 0
-FE_EN
-Text HLabel 3900 2700 0    60   BiDi ~ 0
-FE_SDA
-Text HLabel 3900 2600 0    60   Output ~ 0
-FE_SCL
 Text HLabel 9700 2700 2    60   Input ~ 0
 VCCIO
 $Comp

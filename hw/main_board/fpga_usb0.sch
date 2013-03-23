@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -12,14 +12,17 @@ LIBS:tusb1310a
 LIBS:samtec_qth-090-d
 LIBS:mic5207-bm5
 LIBS:quartzcms4_ground
+LIBS:lpc11u1x
+LIBS:gsg-microusb
+LIBS:pnp_sot23
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 5 15
+Sheet 9 16
 Title "Daisho Project Main Board"
-Date "22 mar 2013"
+Date "23 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -268,10 +271,10 @@ USB0_PHY_RESETN
 Text Notes 5800 2950 2    60   ~ 0
 Only PS and JTAG programming modes supported.\nPS uses standard power-on reset (POR) delay of 50 to 200 ms.\nPS interface voltage determined by Bank 1 VCCIO.
 $Comp
-L GND #PWR031
+L GND #PWR028
 U 1 1 512AEDBF
 P 5900 3200
-F 0 "#PWR031" H 5900 3200 30  0001 C CNN
+F 0 "#PWR028" H 5900 3200 30  0001 C CNN
 F 1 "GND" H 5900 3130 30  0001 C CNN
 	1    5900 3200
 	1    0    0    -1  

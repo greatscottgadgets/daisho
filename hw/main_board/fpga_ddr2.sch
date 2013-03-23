@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -12,14 +12,17 @@ LIBS:tusb1310a
 LIBS:samtec_qth-090-d
 LIBS:mic5207-bm5
 LIBS:quartzcms4_ground
+LIBS:lpc11u1x
+LIBS:gsg-microusb
+LIBS:pnp_sot23
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 8 15
+Sheet 10 16
 Title "Daisho Project Main Board"
-Date "22 mar 2013"
+Date "23 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -595,10 +598,10 @@ VREF
 Text HLabel 11000 10000 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR023
+L GND #PWR029
 U 1 1 513E0563
 P 10700 10700
-F 0 "#PWR023" H 10700 10700 30  0001 C CNN
+F 0 "#PWR029" H 10700 10700 30  0001 C CNN
 F 1 "GND" H 10700 10630 30  0001 C CNN
 	1    10700 10700
 	1    0    0    -1  
@@ -1142,10 +1145,10 @@ Entry Wire Line
 Text HLabel 11300 2400 0    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR024
+L GND #PWR030
 U 1 1 511559B7
 P 11500 3900
-F 0 "#PWR024" H 11500 3900 30  0001 C CNN
+F 0 "#PWR030" H 11500 3900 30  0001 C CNN
 F 1 "GND" H 11500 3830 30  0001 C CNN
 	1    11500 3900
 	1    0    0    -1  
@@ -1171,10 +1174,10 @@ F 4 "1%" V 11400 2750 60  0000 C CNN "Tolerance"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR025
+L GND #PWR031
 U 1 1 5115592B
 P 6500 8100
-F 0 "#PWR025" H 6500 8100 30  0001 C CNN
+F 0 "#PWR031" H 6500 8100 30  0001 C CNN
 F 1 "GND" H 6500 8030 30  0001 C CNN
 	1    6500 8100
 	1    0    0    -1  

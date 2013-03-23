@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -12,14 +12,17 @@ LIBS:tusb1310a
 LIBS:samtec_qth-090-d
 LIBS:mic5207-bm5
 LIBS:quartzcms4_ground
+LIBS:lpc11u1x
+LIBS:gsg-microusb
+LIBS:pnp_sot23
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 11 15
+Sheet 3 16
 Title "Daisho Project Main Board"
-Date "22 mar 2013"
+Date "23 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -244,10 +247,10 @@ Connection ~ 4600 7100
 Wire Wire Line
 	4200 7700 4200 7800
 $Comp
-L GND #PWR?
+L GND #PWR014
 U 1 1 514BAB65
 P 4200 7800
-F 0 "#PWR?" H 4200 7800 30  0001 C CNN
+F 0 "#PWR014" H 4200 7800 30  0001 C CNN
 F 1 "GND" H 4200 7730 30  0001 C CNN
 	1    4200 7800
 	1    0    0    -1  
@@ -262,10 +265,10 @@ F 1 "C" H 4250 7400 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR015
 U 1 1 514BAB5C
 P 4600 7800
-F 0 "#PWR?" H 4600 7800 30  0001 C CNN
+F 0 "#PWR015" H 4600 7800 30  0001 C CNN
 F 1 "GND" H 4600 7730 30  0001 C CNN
 	1    4600 7800
 	1    0    0    -1  
@@ -293,10 +296,10 @@ $EndComp
 Text HLabel 6000 9900 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR029
+L GND #PWR016
 U 1 1 513E1F35
 P 5700 10600
-F 0 "#PWR029" H 5700 10600 30  0001 C CNN
+F 0 "#PWR016" H 5700 10600 30  0001 C CNN
 F 1 "GND" H 5700 10530 30  0001 C CNN
 	1    5700 10600
 	1    0    0    -1  

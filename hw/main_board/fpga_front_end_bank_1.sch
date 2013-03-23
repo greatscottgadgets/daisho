@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thursday, March 21, 2013 06:04:59 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -12,14 +12,17 @@ LIBS:tusb1310a
 LIBS:samtec_qth-090-d
 LIBS:mic5207-bm5
 LIBS:quartzcms4_ground
+LIBS:lpc11u1x
+LIBS:gsg-microusb
+LIBS:pnp_sot23
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 9 15
+Sheet 11 16
 Title "Daisho Project Main Board"
-Date "22 mar 2013"
+Date "23 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -31,73 +34,53 @@ Text Label 4700 4600 0    60   ~ 0
 VREF
 Connection ~ 5200 4600
 Wire Wire Line
-	4500 4600 5200 4600
-Wire Wire Line
-	5200 4600 5600 4600
+	4500 4600 5600 4600
 Wire Wire Line
 	5200 5200 5200 5300
 Wire Wire Line
-	5600 4700 5600 4600
-Wire Wire Line
-	5600 4600 5600 4400
+	5600 4700 5600 4400
 Connection ~ 2400 10600
 Wire Wire Line
-	2400 10500 2400 10600
+	2400 10600 2400 10500
 Connection ~ 3200 10600
 Wire Wire Line
-	3200 10500 3200 10600
+	3200 10600 3200 10500
 Connection ~ 4000 10600
 Wire Wire Line
-	4000 10500 4000 10600
+	4000 10600 4000 10500
 Connection ~ 4800 10600
 Wire Wire Line
 	4800 10500 4800 10600
 Wire Wire Line
-	5200 10600 4800 10600
-Wire Wire Line
-	4800 10600 4400 10600
-Wire Wire Line
-	4400 10600 4000 10600
-Wire Wire Line
-	4000 10600 3600 10600
-Wire Wire Line
-	3600 10600 3200 10600
-Wire Wire Line
-	3200 10600 2800 10600
-Wire Wire Line
-	2800 10600 2400 10600
-Wire Wire Line
-	2400 10600 2000 10600
+	5200 10600 2000 10600
 Wire Wire Line
 	2000 10600 2000 10500
 Connection ~ 2800 10000
 Wire Wire Line
-	2800 10100 2800 10000
+	2800 10000 2800 10100
 Connection ~ 3600 10000
 Wire Wire Line
-	3600 10100 3600 10000
+	3600 10000 3600 10100
 Connection ~ 4400 10000
 Wire Wire Line
-	4400 10100 4400 10000
+	4400 10000 4400 10100
 Connection ~ 5200 10000
 Wire Wire Line
-	5200 10100 5200 10000
+	5200 10000 5200 10100
 Connection ~ 8900 3200
 Wire Wire Line
 	8800 3200 8900 3200
 Connection ~ 8900 3000
 Wire Wire Line
-	8800 3000 8900 3000
+	8900 3000 8800 3000
 Connection ~ 8900 2800
 Wire Wire Line
-	8800 2800 8900 2800
+	8900 2800 8800 2800
 Connection ~ 8900 2600
 Wire Wire Line
-	8800 2600 8900 2600
+	8900 2600 8800 2600
 Wire Wire Line
-	9500 2500 8900 2500
-Wire Wire Line
-	8900 2500 8800 2500
+	9500 2500 8800 2500
 Wire Wire Line
 	7000 3200 6400 3200
 Wire Wire Line
@@ -213,9 +196,7 @@ Wire Wire Line
 Wire Wire Line
 	6000 3900 6000 3800
 Wire Wire Line
-	6000 3800 5600 3800
-Wire Wire Line
-	5600 3800 4500 3800
+	6000 3800 4500 3800
 Wire Wire Line
 	7000 5000 6400 5000
 Wire Wire Line
@@ -229,21 +210,7 @@ Wire Wire Line
 Wire Wire Line
 	8800 3300 8900 3300
 Wire Wire Line
-	8900 3300 8900 3200
-Wire Wire Line
-	8900 3200 8900 3100
-Wire Wire Line
-	8900 3100 8900 3000
-Wire Wire Line
-	8900 3000 8900 2900
-Wire Wire Line
-	8900 2900 8900 2800
-Wire Wire Line
-	8900 2800 8900 2700
-Wire Wire Line
-	8900 2700 8900 2600
-Wire Wire Line
-	8900 2600 8900 2500
+	8900 3300 8900 2500
 Connection ~ 8900 2500
 Wire Wire Line
 	8900 2700 8800 2700
@@ -257,23 +224,7 @@ Connection ~ 8900 3100
 Wire Wire Line
 	2000 10100 2000 10000
 Wire Wire Line
-	2000 10000 2400 10000
-Wire Wire Line
-	2400 10000 2800 10000
-Wire Wire Line
-	2800 10000 3200 10000
-Wire Wire Line
-	3200 10000 3600 10000
-Wire Wire Line
-	3600 10000 4000 10000
-Wire Wire Line
-	4000 10000 4400 10000
-Wire Wire Line
-	4400 10000 4800 10000
-Wire Wire Line
-	4800 10000 5200 10000
-Wire Wire Line
-	5200 10000 5500 10000
+	2000 10000 5500 10000
 Wire Wire Line
 	4800 10000 4800 10100
 Connection ~ 4800 10000
@@ -287,9 +238,7 @@ Wire Wire Line
 	2400 10000 2400 10100
 Connection ~ 2400 10000
 Wire Wire Line
-	5200 10700 5200 10600
-Wire Wire Line
-	5200 10600 5200 10500
+	5200 10700 5200 10500
 Connection ~ 5200 10600
 Wire Wire Line
 	4400 10600 4400 10500
@@ -309,10 +258,10 @@ Wire Wire Line
 	5200 4600 5200 4800
 Connection ~ 5600 4600
 $Comp
-L GND #PWR?
+L GND #PWR032
 U 1 1 514BAC1B
 P 5200 5300
-F 0 "#PWR?" H 5200 5300 30  0001 C CNN
+F 0 "#PWR032" H 5200 5300 30  0001 C CNN
 F 1 "GND" H 5200 5230 30  0001 C CNN
 	1    5200 5300
 	1    0    0    -1  
@@ -327,10 +276,10 @@ F 1 "C" H 5250 4900 50  0000 L CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L GND #PWR033
 U 1 1 514BAC0D
 P 5600 5300
-F 0 "#PWR?" H 5600 5300 30  0001 C CNN
+F 0 "#PWR033" H 5600 5300 30  0001 C CNN
 F 1 "GND" H 5600 5230 30  0001 C CNN
 	1    5600 5300
 	1    0    0    -1  
@@ -358,10 +307,10 @@ $EndComp
 Text HLabel 5500 10000 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR026
+L GND #PWR034
 U 1 1 513E203A
 P 5200 10700
-F 0 "#PWR026" H 5200 10700 30  0001 C CNN
+F 0 "#PWR034" H 5200 10700 30  0001 C CNN
 F 1 "GND" H 5200 10630 30  0001 C CNN
 	1    5200 10700
 	1    0    0    -1  
@@ -524,10 +473,10 @@ VREF
 Text Label 4700 3800 0    60   ~ 0
 VCCIO
 $Comp
-L GND #PWR027
+L GND #PWR035
 U 1 1 51393F4B
 P 6000 5300
-F 0 "#PWR027" H 6000 5300 30  0001 C CNN
+F 0 "#PWR035" H 6000 5300 30  0001 C CNN
 F 1 "GND" H 6000 5230 30  0001 C CNN
 	1    6000 5300
 	1    0    0    -1  
