@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Saturday, March 23, 2013 11:43:04 AM
+Cmp-Mod V01 Genere par PcbNew le Saturday, March 23, 2013 01:03:18 PM
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1180,14 +1180,14 @@ BeginCmp
 TimeStamp = /5138E12B/51393517;
 Reference = U1;
 ValeurCmp = EP4CE30F29;
-IdModule  = ALTERA_F780;
+IdModule  = IPC_BGA780C100P28X28_2900X2900X350;
 EndCmp
 
 BeginCmp
 TimeStamp = /5109FB2D/5109FB8E;
 Reference = U2;
 ValeurCmp = TUSB1310A;
-IdModule  = TUSB1310A;
+IdModule  = IPC_BGA175C80P14X14_1200X1200X140;
 EndCmp
 
 BeginCmp
