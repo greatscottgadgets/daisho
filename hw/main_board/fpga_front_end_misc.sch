@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 23, 2013 08:49:37 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 10:44:52 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -52,7 +52,7 @@ Wire Wire Line
 	9100 2700 9000 2700
 Connection ~ 9100 2500
 Wire Wire Line
-	9100 3000 9100 2500
+	9100 2500 9100 3000
 Wire Wire Line
 	9100 3000 9000 3000
 Wire Wire Line

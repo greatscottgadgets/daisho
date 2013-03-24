@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 23, 2013 08:49:37 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 10:44:52 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -31,6 +31,57 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	6400 9200 7600 9200
+Wire Wire Line
+	7600 3100 6400 3100
+Wire Wire Line
+	7600 7900 6400 7900
+Wire Wire Line
+	7600 4700 6400 4700
+Wire Wire Line
+	7600 8400 6400 8400
+Wire Wire Line
+	7600 9000 6400 9000
+Wire Wire Line
+	7600 8800 6400 8800
+Wire Wire Line
+	7600 8500 6400 8500
+Connection ~ 9500 3000
+Wire Wire Line
+	9400 3000 9500 3000
+Connection ~ 9500 2800
+Wire Wire Line
+	9400 2800 9500 2800
+Wire Wire Line
+	9400 2700 9700 2700
+Wire Wire Line
+	9400 3200 9500 3200
+Wire Wire Line
+	9500 3200 9500 2700
+Connection ~ 9500 2700
+Wire Wire Line
+	9400 2900 9500 2900
+Connection ~ 9500 2900
+Wire Wire Line
+	9400 3100 9500 3100
+Connection ~ 9500 3100
+Wire Wire Line
+	7600 8700 6400 8700
+Wire Wire Line
+	7600 8900 6400 8900
+Wire Wire Line
+	7600 8600 6400 8600
+Wire Wire Line
+	7600 6700 6400 6700
+Wire Wire Line
+	7600 6800 6400 6800
+Wire Wire Line
+	7600 4400 6400 4400
+Wire Wire Line
+	7600 9100 6400 9100
+Text HLabel 6400 9200 0    60   Input ~ 0
+FPGA_CLK1
 Text HLabel 5300 3700 0    60   Output ~ 0
 SPI_MISO
 Text HLabel 5300 3600 0    60   Input ~ 0
@@ -51,53 +102,6 @@ Text Label 6600 4400 0    60   ~ 0
 VREF
 Text Label 6600 3100 0    60   ~ 0
 VREF
-Wire Wire Line
-	7600 9100 6400 9100
-Wire Wire Line
-	7600 4400 6400 4400
-Wire Wire Line
-	7600 6800 6400 6800
-Wire Wire Line
-	7600 6700 6400 6700
-Wire Wire Line
-	7600 8600 6400 8600
-Wire Wire Line
-	7600 8900 6400 8900
-Wire Wire Line
-	7600 8700 6400 8700
-Connection ~ 9500 3100
-Wire Wire Line
-	9400 3100 9500 3100
-Connection ~ 9500 2900
-Wire Wire Line
-	9400 2900 9500 2900
-Connection ~ 9500 2700
-Wire Wire Line
-	9500 2700 9500 3200
-Wire Wire Line
-	9500 3200 9400 3200
-Wire Wire Line
-	9400 2700 9700 2700
-Wire Wire Line
-	9400 2800 9500 2800
-Connection ~ 9500 2800
-Wire Wire Line
-	9400 3000 9500 3000
-Connection ~ 9500 3000
-Wire Wire Line
-	7600 8500 6400 8500
-Wire Wire Line
-	7600 8800 6400 8800
-Wire Wire Line
-	7600 9000 6400 9000
-Wire Wire Line
-	7600 8400 6400 8400
-Wire Wire Line
-	7600 4700 6400 4700
-Wire Wire Line
-	7600 7900 6400 7900
-Wire Wire Line
-	7600 3100 6400 3100
 Text HLabel 6400 9100 0    60   Input ~ 0
 FPGA_NCE
 Text HLabel 6400 9000 0    60   Output ~ 0

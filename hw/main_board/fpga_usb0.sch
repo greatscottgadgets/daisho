@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 23, 2013 08:49:37 PM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 10:44:52 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -21,7 +21,7 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 9 16
+Sheet 4 16
 Title "Daisho Project Main Board"
 Date "24 mar 2013"
 Rev "0"
