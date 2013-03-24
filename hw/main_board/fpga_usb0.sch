@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 08:49:37 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -15,6 +15,7 @@ LIBS:quartzcms4_ground
 LIBS:lpc11u1x
 LIBS:gsg-microusb
 LIBS:pnp_sot23
+LIBS:si5351c-b
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -22,7 +23,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 9 16
 Title "Daisho Project Main Board"
-Date "23 mar 2013"
+Date "24 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -30,6 +31,10 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 2400 5850 0    60   Output ~ 0
+USB0_OUT_ENABLE
+Text HLabel 2400 5750 0    60   Output ~ 0
+USB0_RESETN
 Text Notes 9300 4450 0    60   ~ 0
 Avoid use of VREF pins as I/O, as they have higher pin capacitance,\nand therefore are slow down both input and output signals.
 NoConn ~ 7400 3800
@@ -271,10 +276,10 @@ USB0_PHY_RESETN
 Text Notes 5800 2950 2    60   ~ 0
 Only PS and JTAG programming modes supported.\nPS uses standard power-on reset (POR) delay of 50 to 200 ms.\nPS interface voltage determined by Bank 1 VCCIO.
 $Comp
-L GND #PWR028
+L GND #PWR021
 U 1 1 512AEDBF
 P 5900 3200
-F 0 "#PWR028" H 5900 3200 30  0001 C CNN
+F 0 "#PWR021" H 5900 3200 30  0001 C CNN
 F 1 "GND" H 5900 3130 30  0001 C CNN
 	1    5900 3200
 	1    0    0    -1  

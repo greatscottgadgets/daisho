@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 08:49:37 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -15,14 +15,15 @@ LIBS:quartzcms4_ground
 LIBS:lpc11u1x
 LIBS:gsg-microusb
 LIBS:pnp_sot23
+LIBS:si5351c-b
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 12 16
+Sheet 13 16
 Title "Daisho Project Main Board"
-Date "23 mar 2013"
+Date "24 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -30,11 +31,17 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 6600 2600 0    60   ~ 0
+D39
+Text Label 6600 2500 0    60   ~ 0
+D37
+Wire Wire Line
+	7200 2600 6400 2600
 Wire Wire Line
 	5300 9300 5300 9400
 Connection ~ 5700 8700
 Wire Wire Line
-	5700 8700 4900 8700
+	4900 8700 5700 8700
 Wire Wire Line
 	5700 8800 5700 8500
 Connection ~ 9100 2900
@@ -45,7 +52,7 @@ Wire Wire Line
 	9100 2700 9000 2700
 Connection ~ 9100 2500
 Wire Wire Line
-	9100 2500 9100 3000
+	9100 3000 9100 2500
 Wire Wire Line
 	9100 3000 9000 3000
 Wire Wire Line
@@ -86,11 +93,13 @@ Connection ~ 5700 7900
 Wire Wire Line
 	5300 8700 5300 8900
 Connection ~ 5300 8700
+Wire Wire Line
+	7200 2500 6400 2500
 $Comp
-L GND #PWR036
+L GND #PWR045
 U 1 1 514BA518
 P 5300 9400
-F 0 "#PWR036" H 5300 9400 30  0001 C CNN
+F 0 "#PWR045" H 5300 9400 30  0001 C CNN
 F 1 "GND" H 5300 9330 30  0001 C CNN
 	1    5300 9400
 	1    0    0    -1  
@@ -109,10 +118,10 @@ AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sin
 Text Label 5000 8700 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR037
+L GND #PWR046
 U 1 1 514BA28E
 P 5700 9400
-F 0 "#PWR037" H 5700 9400 30  0001 C CNN
+F 0 "#PWR046" H 5700 9400 30  0001 C CNN
 F 1 "GND" H 5700 9330 30  0001 C CNN
 	1    5700 9400
 	1    0    0    -1  
@@ -144,10 +153,10 @@ VCCIO
 Text Label 5100 7900 0    60   ~ 0
 VCCIO
 $Comp
-L GND #PWR038
+L GND #PWR047
 U 1 1 513CF83E
 P 6100 9400
-F 0 "#PWR038" H 6100 9400 30  0001 C CNN
+F 0 "#PWR047" H 6100 9400 30  0001 C CNN
 F 1 "GND" H 6100 9330 30  0001 C CNN
 	1    6100 9400
 	1    0    0    -1  

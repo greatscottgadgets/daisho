@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 08:49:37 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -15,6 +15,7 @@ LIBS:quartzcms4_ground
 LIBS:lpc11u1x
 LIBS:gsg-microusb
 LIBS:pnp_sot23
+LIBS:si5351c-b
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -22,7 +23,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 14 16
 Title "Daisho Project Main Board"
-Date "23 mar 2013"
+Date "24 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -30,10 +31,6 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 7300 9100 0    60   ~ 0
-OUT_ENABLE
-Text Label 7300 9000 0    60   ~ 0
-RESET#
 Text Label 7700 7800 0    60   ~ 0
 XO
 Text Label 7700 7700 0    60   ~ 0
@@ -303,7 +300,7 @@ TX_ELECIDLE
 Text HLabel 6700 2700 0    60   Input ~ 0
 TX_DETRX_LPBK
 Text HLabel 6700 2500 0    60   Input ~ 0
-PHY_RESET#
+PHY_RESETN
 $Comp
 L R R7
 U 1 1 511486FB
@@ -315,10 +312,10 @@ F 4 "1%" V 7550 9300 60  0000 C CNN "Tolerance"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR040
+L GND #PWR022
 U 1 1 511486B7
 P 7100 9800
-F 0 "#PWR040" H 7100 9800 30  0001 C CNN
+F 0 "#PWR022" H 7100 9800 30  0001 C CNN
 F 1 "GND" H 7100 9730 30  0001 C CNN
 	1    7100 9800
 	1    0    0    -1  
@@ -335,16 +332,16 @@ $EndComp
 Text HLabel 6800 9100 0    60   Input ~ 0
 OUT_ENABLE
 $Comp
-L GND #PWR041
+L GND #PWR023
 U 1 1 51148639
 P 6900 9800
-F 0 "#PWR041" H 6900 9800 30  0001 C CNN
+F 0 "#PWR023" H 6900 9800 30  0001 C CNN
 F 1 "GND" H 6900 9730 30  0001 C CNN
 	1    6900 9800
 	1    0    0    -1  
 $EndComp
 Text HLabel 6800 9000 0    60   Input ~ 0
-RESET#
+RESETN
 $Comp
 L R R5
 U 1 1 51148613

@@ -1,7 +1,35 @@
-# EESchema Netlist Version 1.1 created  Saturday, March 23, 2013 02:15:13 PM
+# EESchema Netlist Version 1.1 created  Saturday, March 23, 2013 08:49:49 PM
 (
  ( /5109F714/5136A7E6 IPC_CAPC1005X55N C1 1U
   ( 1 /usb0_power/A1P1 )
+  ( 2 GND )
+ )
+ ( /514BB3A7/514E5301 IPC_CAPC1005X55N C10 C
+  ( 1 GND )
+  ( 2 N-000413 )
+ )
+ ( /514BB3A7/514E530B IPC_CAPC1005X55N C11 C
+  ( 1 N-000414 )
+  ( 2 GND )
+ )
+ ( /514BB3A7/514E5578 IPC_CAPC1005X55N C12 C
+  ( 1 /clock_generator/FE_VCLK )
+  ( 2 GND )
+ )
+ ( /514BB3A7/514E558C IPC_CAPC1005X55N C13 C
+  ( 1 /clock_generator/FPGA_VCLK )
+  ( 2 GND )
+ )
+ ( /514BB3A7/514E55C7 IPC_CAPC1005X55N C14 C
+  ( 1 /clock_generator/FPGA_VCLK )
+  ( 2 GND )
+ )
+ ( /514BB3A7/514E55CA IPC_CAPC1005X55N C15 C
+  ( 1 /clock_generator/FE_VCLK )
+  ( 2 GND )
+ )
+ ( /514BB3A7/514E55CD IPC_CAPC1005X55N C16 C
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 GND )
  )
  ( /51394328/514BA511 IPC_CAPC1005X55N C21 C
@@ -369,27 +397,27 @@
   ( 2 /usb0_configuration/VSSOSC )
  )
  ( /5148D8EF/514CEE59 IPC_CAPC1005X55N C200 C
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 GND )
  )
  ( /5148D8EF/514CEE60 IPC_CAPC1005X55N C201 C
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 GND )
  )
  ( /5148D8EF/514CED59 IPC_CAPC1005X55N C202 18P
   ( 1 GND )
-  ( 2 N-000399 )
+  ( 2 N-000376 )
  )
  ( /5148D8EF/514CED50 IPC_CAPC1005X55N C203 18P
-  ( 1 N-000406 )
+  ( 1 N-000365 )
   ( 2 GND )
  )
  ( /5148D8EF/514DEB40 IPC_CAPC1005X55N C204 10N
-  ( 1 N-000403 )
+  ( 1 N-000374 )
   ( 2 GND )
  )
  ( /5148D8EF/514DEFD7 IPC_CAPC1005X55N C205 10N
-  ( 1 N-000405 )
+  ( 1 N-000379 )
   ( 2 GND )
  )
  ( /510239FC/50FE5565 IPC_CAPC1005X55N C4001 100N
@@ -750,18 +778,18 @@
   ( 46 ? )
   ( 47 /front_end/FE_VCCIO_A )
   ( 48 /front_end/FE_V1P8 )
-  ( 49 ? )
+  ( 49 /fpga_front_end_misc/D37 )
   ( 50 ? )
-  ( 51 ? )
+  ( 51 /fpga_front_end_misc/D39 )
   ( 52 ? )
   ( 53 ? )
   ( 54 ? )
-  ( 55 ? )
-  ( 56 ? )
-  ( 57 ? )
-  ( 58 ? )
+  ( 55 /clock_generator/FE_CLKB_P )
+  ( 56 /clock_generator/FE_CLKA_P )
+  ( 57 /clock_generator/FE_CLKB_N )
+  ( 58 /clock_generator/FE_CLKA_N )
   ( 59 ? )
-  ( 60 ? )
+  ( 60 /clock_generator/FE_CLKSRC )
   ( 61 /fpga_front_end_bank_0/D1 )
   ( 62 /fpga_front_end_bank_0/D0 )
   ( 63 /fpga_front_end_bank_0/D3 )
@@ -896,15 +924,15 @@
   ( C3 GND )
  )
  ( /5148D8EF/514DD885 GSG-USB-MICROB-FCI-10103594 J3 GSG-USB-MICRO-B-SHIELD
-  ( 1 N-000405 )
-  ( 2 N-000360 )
-  ( 3 N-000400 )
+  ( 1 N-000379 )
+  ( 2 N-000366 )
+  ( 3 N-000373 )
   ( 4 ? )
   ( 5 GND )
-  ( 6 N-000403 )
+  ( 6 N-000374 )
  )
  ( /5148D8EF/514CF69B $noname$ J4 CONN_5X2
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 /microcontroller/SWDIO )
   ( 3 GND )
   ( 4 /microcontroller/SWCLK )
@@ -928,53 +956,53 @@
   ( 2 /usb0_power/A1P1 )
  )
  ( /5148D8EF/514DF31C IPC_SOT95P230X110-3N Q1 BC857
-  ( 1 N-000402 )
-  ( 2 /microcontroller/VCC )
-  ( 3 N-000401 )
+  ( 1 N-000371 )
+  ( 2 /clock_generator/FE_VCLK )
+  ( 3 N-000375 )
  )
  ( /5101C6D6/51155893 IPC_RESC1005X40N R1 50R
-  ( 1 N-000075 )
+  ( 1 N-000128 )
   ( 2 /power_ldo/DDR2_1V8 )
  )
  ( /5101C6D6/51155899 IPC_RESC1005X40N R2 50R
   ( 1 GND )
-  ( 2 N-000071 )
+  ( 2 N-000087 )
  )
  ( /5101C6D6/51155995 IPC_RESC1005X40N R3 50R
-  ( 1 N-000074 )
+  ( 1 N-000127 )
   ( 2 /power_ldo/DDR2_1V8 )
  )
  ( /5101C6D6/5115599E IPC_RESC1005X40N R4 50R
   ( 1 GND )
-  ( 2 N-000072 )
+  ( 2 N-000078 )
  )
  ( /510A0455/51148613 IPC_RESC1005X40N R5 10K
   ( 1 GND )
-  ( 2 /usb0_configuration/RESET# )
+  ( 2 /usb0_configuration/RESETN )
  )
  ( /510A0455/511486B3 IPC_RESC1005X40N R6 10K
   ( 1 GND )
   ( 2 /usb0_configuration/OUT_ENABLE )
  )
  ( /510A0455/511486FB IPC_RESC1005X40N R7 10K
-  ( 1 N-000167 )
-  ( 2 N-000168 )
+  ( 1 N-000185 )
+  ( 2 N-000186 )
  )
  ( /5109FB2D/511488C6 IPC_RESC1005X40N R8 90K9
-  ( 1 N-000165 )
+  ( 1 N-000173 )
   ( 2 ? )
  )
  ( /5109FB2D/511488CA IPC_RESC1005X40N R9 10K
   ( 1 GND )
-  ( 2 N-000165 )
+  ( 2 N-000173 )
  )
  ( /5138E160/51393D12 IPC_RESC1005X40N R10 50R
-  ( 1 N-000284 )
+  ( 1 N-000285 )
   ( 2 /front_end/FE_VCCIO_C )
  )
  ( /5138E160/51393D16 IPC_RESC1005X40N R11 50R
   ( 1 GND )
-  ( 2 N-000282 )
+  ( 2 N-000286 )
  )
  ( /5138E160/514BABD4 IPC_RESC1005X40N R12 1K0
   ( 1 /fpga_front_end_bank_1/VREF )
@@ -984,8 +1012,16 @@
   ( 1 GND )
   ( 2 /fpga_front_end_bank_1/VREF )
  )
+ ( /514BB3A7/514E542D IPC_RESC1005X40N R14 4K7
+  ( 1 /clock_generator/FE_VCLK )
+  ( 2 /clock_generator/CLOCKGEN_INTR )
+ )
+ ( /514BB3A7/514E57C7 IPC_RESC1005X40N R15 10K
+  ( 1 /clock_generator/FE_VCLK )
+  ( 2 /clock_generator/CLOCKGEN_OEB# )
+ )
  ( /51394328/513CF7DE IPC_RESC1005X40N R21 50R
-  ( 1 N-000298 )
+  ( 1 N-000297 )
   ( 2 /front_end/FE_VCCIO_A )
  )
  ( /51394328/513CF80F IPC_RESC1005X40N R22 50R
@@ -1009,23 +1045,23 @@
   ( 2 GND )
  )
  ( /5148D8EF/5148D9B2 IPC_RESC1005X40N R50 10K
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 ? )
  )
  ( /5148D8EF/5148D9B7 IPC_RESC1005X40N R51 10K
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 /fpga_configuration/FPGA_NSTATUS )
  )
  ( /5148D8EF/514CA594 IPC_RESC1005X40N R52 10K
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 ? )
  )
  ( /5148D8EF/514CF7F4 IPC_RESC1005X40N R53 10K
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 /microcontroller/SWDIO )
  )
  ( /5148D8EF/514CF13E IPC_RESC1005X40N R54 10K
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 /microcontroller/RESET# )
  )
  ( /5148D8EF/514CF814 IPC_RESC1005X40N R55 10K
@@ -1037,42 +1073,42 @@
   ( 2 GND )
  )
  ( /5148D8EF/514CA532 IPC_RESC1005X40N R57 1K
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 /front_end/FE_I2C_SCL )
  )
  ( /5148D8EF/514CA538 IPC_RESC1005X40N R58 1K
-  ( 1 /microcontroller/VCC )
+  ( 1 /clock_generator/FE_VCLK )
   ( 2 /front_end/FE_I2C_SDA )
  )
  ( /5148D8EF/514CFCEB IPC_RESC1005X40N R59 1K5
-  ( 1 N-000401 )
-  ( 2 N-000400 )
+  ( 1 N-000375 )
+  ( 2 N-000373 )
  )
  ( /5148D8EF/514CFADD IPC_RESC1005X40N R60 100R
-  ( 1 N-000362 )
-  ( 2 N-000405 )
+  ( 1 N-000381 )
+  ( 2 N-000379 )
  )
  ( /5148D8EF/514CFA50 IPC_RESC1005X40N R61 33R
-  ( 1 N-000368 )
-  ( 2 N-000360 )
+  ( 1 N-000372 )
+  ( 2 N-000366 )
  )
  ( /5148D8EF/514CFA64 IPC_RESC1005X40N R62 33R
-  ( 1 N-000361 )
-  ( 2 N-000400 )
+  ( 1 N-000380 )
+  ( 2 N-000373 )
  )
  ( /5148D8EF/514DEB3F IPC_RESC1005X40N R63 1M
-  ( 1 N-000403 )
+  ( 1 N-000374 )
   ( 2 GND )
  )
  ( /5148D8EF/514DEE8C IPC_RESC1005X40N R64 3K
-  ( 1 N-000376 )
-  ( 2 N-000402 )
+  ( 1 N-000369 )
+  ( 2 N-000371 )
  )
  ( /5148D8EF/514DEF20 IPC_RESC1005X40N R65 24K
-  ( 1 /microcontroller/VCC )
-  ( 2 N-000402 )
+  ( 1 /clock_generator/FE_VCLK )
+  ( 2 N-000371 )
  )
- ( /5138E12B/51393517 IPC_BGA780C100P28X28_2900X2900X350 U1 EP4CE30F29
+ ( /5129BCC5/5129BD1C IPC_BGA780C100P28X28_2900X2900X350 U1 EP4CE30F29
   ( A2 /front_end/FE_VCCIO_B )
   ( A3 /fpga_front_end_bank_0/D18 )
   ( A4 /fpga_front_end_bank_0/D22 )
@@ -1115,12 +1151,12 @@
   ( AA14 /fpga_ddr2/DDR2_VREF )
   ( AA15 /fpga_ddr2/DDR2_VREF )
   ( AA16 ? )
-  ( AA17 N-000075 )
+  ( AA17 N-000128 )
   ( AA18 /power_ldo/DDR2_1V8 )
   ( AA19 ? )
   ( AA20 GND )
   ( AA21 ? )
-  ( AA22 N-000074 )
+  ( AA22 N-000127 )
   ( AA23 ? )
   ( AA24 /fpga_ddr2/DDR2_VREF )
   ( AA25 ? )
@@ -1143,13 +1179,13 @@
   ( AB14 ? )
   ( AB15 ? )
   ( AB16 /fpga_ddr2/DDR2_DQ37 )
-  ( AB17 N-000071 )
+  ( AB17 N-000087 )
   ( AB18 ? )
   ( AB19 ? )
   ( AB20 /fpga_ddr2/DDR2_VREF )
   ( AB21 ? )
   ( AB22 ? )
-  ( AB23 N-000072 )
+  ( AB23 N-000078 )
   ( AB24 /fpga_ddr2/DDR2_DM1 )
   ( AB25 ? )
   ( AB26 /fpga_ddr2/DDR2_DQ12 )
@@ -1321,7 +1357,7 @@
   ( AH25 /fpga_ddr2/DDR2_DQ17 )
   ( AH26 ? )
   ( AH27 /power_ldo/DDR2_1V8 )
-  ( B1 /fpga_configuration/VCCIO )
+  ( B1 /clock_generator/FE_VCLK )
   ( B2 GND )
   ( B3 /fpga_front_end_bank_0/D16 )
   ( B4 /fpga_front_end_bank_0/D20 )
@@ -1423,7 +1459,7 @@
   ( E16 /front_end/FE_VCCIO_C )
   ( E17 /fpga_front_end_bank_1/D40 )
   ( E18 /fpga_front_end_bank_1/D44 )
-  ( E19 N-000282 )
+  ( E19 N-000286 )
   ( E20 /front_end/FE_VCCIO_C )
   ( E21 /fpga_front_end_bank_1/D45 )
   ( E22 /fpga_front_end_bank_1/D49 )
@@ -1451,7 +1487,7 @@
   ( F16 GND )
   ( F17 /fpga_front_end_bank_1/D42 )
   ( F18 /fpga_front_end_bank_1/VREF )
-  ( F19 N-000284 )
+  ( F19 N-000285 )
   ( F20 GND )
   ( F21 /fpga_front_end_bank_1/D41 )
   ( F22 /fpga_front_end_bank_1/VREF )
@@ -1489,7 +1525,7 @@
   ( G26 /usb0_interfaces/RX_DATA4 )
   ( G27 /usb0_interfaces/RX_DATA3 )
   ( G28 /usb0_interfaces/RX_DATA1 )
-  ( H1 /fpga_configuration/VCCIO )
+  ( H1 /clock_generator/FE_VCLK )
   ( H2 GND )
   ( H3 ? )
   ( H4 ? )
@@ -1549,10 +1585,10 @@
   ( K2 ? )
   ( K3 ? )
   ( K4 ? )
-  ( K5 /fpga_configuration/VCCIO )
+  ( K5 /clock_generator/FE_VCLK )
   ( K6 GND )
   ( K7 ? )
-  ( K8 /fpga_configuration/VCCIO )
+  ( K8 /clock_generator/FE_VCLK )
   ( K9 /power_ldo/FPGA_VCCINT )
   ( K10 GND )
   ( K11 /power_ldo/FPGA_VCCINT )
@@ -1629,11 +1665,11 @@
   ( M26 /usb0_interfaces/TX_DATA11 )
   ( M27 /usb0_interfaces/TX_DATA6 )
   ( M28 /usb0_interfaces/TX_DATA4 )
-  ( N1 /fpga_configuration/VCCIO )
+  ( N1 /clock_generator/FE_VCLK )
   ( N2 GND )
   ( N3 ? )
   ( N4 ? )
-  ( N5 /fpga_configuration/VCCIO )
+  ( N5 /clock_generator/FE_VCLK )
   ( N6 GND )
   ( N7 ? )
   ( N8 /fpga_configuration/VREF )
@@ -1747,7 +1783,7 @@
   ( U4 ? )
   ( U5 ? )
   ( U6 ? )
-  ( U7 N-000298 )
+  ( U7 N-000297 )
   ( U8 N-000299 )
   ( U9 GND )
   ( U10 /power_ldo/FPGA_VCCINT )
@@ -1825,8 +1861,8 @@
   ( W26 /fpga_ddr2/DDR2_DQ5 )
   ( W27 /fpga_ddr2/DDR2_DQ3 )
   ( W28 /fpga_ddr2/DDR2_DQ2 )
-  ( Y1 ? )
-  ( Y2 ? )
+  ( Y1 /fpga_front_end_misc/D39 )
+  ( Y2 /fpga_front_end_misc/D37 )
   ( Y3 ? )
   ( Y4 ? )
   ( Y5 ? )
@@ -1854,7 +1890,7 @@
   ( Y27 /fpga_ddr2/ULPI_DATA1 )
   ( Y28 /fpga_ddr2/ULPI_CLK )
  )
- ( /5109FB2D/5109FB8E IPC_BGA175C80P14X14_1200X1200X140 U2 TUSB1310A
+ ( /510A0455/510A04CC IPC_BGA175C80P14X14_1200X1200X140 U2 TUSB1310A
   ( A2 /usb0_interfaces/RX_DATA6 )
   ( A3 /usb0_interfaces/RX_DATA7 )
   ( A4 /usb0_interfaces/RX_DATA9 )
@@ -1917,7 +1953,7 @@
   ( E11 ? )
   ( E12 ? )
   ( E13 GND )
-  ( E14 N-000164 )
+  ( E14 N-000174 )
   ( F1 /usb0_interfaces/RX_VALID )
   ( F2 /power_ldo/USB_VDD1P1 )
   ( F3 /usb0_configuration/ELAS_BUF_MODE )
@@ -1929,7 +1965,7 @@
   ( F11 ? )
   ( F12 GND )
   ( F13 GND )
-  ( F14 N-000164 )
+  ( F14 N-000174 )
   ( G1 /usb0_interfaces/TX_DATAK1 )
   ( G2 /usb0_interfaces/TX_DATA15 )
   ( G3 /usb0_configuration/POWER_DOWN1 )
@@ -1953,7 +1989,7 @@
   ( H11 /usb0_configuration/ELAS_BUF_MODE )
   ( H12 ? )
   ( H13 GND )
-  ( H14 N-000164 )
+  ( H14 N-000174 )
   ( J1 /usb0_interfaces/TX_DATAK0 )
   ( J2 /usb0_interfaces/TX_DATA12 )
   ( J3 /usb0_configuration/ELAS_BUF_MODE )
@@ -1962,10 +1998,10 @@
   ( J7 GND )
   ( J8 GND )
   ( J9 GND )
-  ( J11 /usb0_configuration/RESET# )
+  ( J11 /usb0_configuration/RESETN )
   ( J12 ? )
   ( J13 GND )
-  ( J14 N-000164 )
+  ( J14 N-000174 )
   ( K1 /usb0_interfaces/TX_CLK )
   ( K2 /power_ldo/USB_VDD1P1 )
   ( K3 /usb0_configuration/ELAS_BUF_MODE )
@@ -1986,8 +2022,8 @@
   ( L10 /usb0_configuration/OUT_ENABLE )
   ( L11 /usb0_configuration/POWER_DOWN0 )
   ( L12 GND )
-  ( L13 N-000167 )
-  ( L14 N-000168 )
+  ( L13 N-000185 )
+  ( L14 N-000186 )
   ( M1 /usb0_interfaces/TX_DATA8 )
   ( M2 /usb0_interfaces/TX_DATA9 )
   ( M3 /power_ldo/USB_VDD1P8 )
@@ -2013,7 +2049,7 @@
   ( N9 /fpga_ddr2/ULPI_DATA0 )
   ( N10 /power_ldo/USB_VDD1P1 )
   ( N11 /fpga_ddr2/ULPI_NXT )
-  ( N12 N-000165 )
+  ( N12 N-000173 )
   ( N13 GND )
   ( N14 /usb0_power/A1P8 )
   ( P1 /usb0_interfaces/TX_DATA6 )
@@ -2028,8 +2064,8 @@
   ( P10 /power_ldo/USB_VDD1P1 )
   ( P11 /fpga_ddr2/ULPI_CLK )
   ( P12 /usb0_power/A3P3 )
-  ( P13 N-000164 )
-  ( P14 N-000164 )
+  ( P13 N-000174 )
+  ( P14 N-000174 )
  )
  ( /5148D8EF/514CE90F IPC_QFP50P900X900X160-48N U3 LPC11U1X
   ( 1 ? )
@@ -2037,23 +2073,23 @@
   ( 3 /microcontroller/RESET# )
   ( 4 ? )
   ( 5 GND )
-  ( 6 N-000406 )
-  ( 7 N-000399 )
-  ( 8 /microcontroller/VCC )
+  ( 6 N-000365 )
+  ( 7 N-000376 )
+  ( 8 /clock_generator/FE_VCLK )
   ( 9 ? )
   ( 10 ? )
   ( 11 ? )
   ( 12 ? )
   ( 13 /microcontroller/SPI_SCK1 )
-  ( 14 N-000362 )
+  ( 14 N-000381 )
   ( 15 /front_end/FE_I2C_SCL )
   ( 16 /front_end/FE_I2C_SDA )
   ( 17 /microcontroller/SPI_MOSI1 )
   ( 18 /microcontroller/SPI_SSEL1 )
-  ( 19 N-000368 )
-  ( 20 N-000361 )
+  ( 19 N-000372 )
+  ( 20 N-000380 )
   ( 21 ? )
-  ( 22 N-000376 )
+  ( 22 N-000369 )
   ( 23 ? )
   ( 24 ? )
   ( 25 ? )
@@ -2075,11 +2111,34 @@
   ( 41 GND )
   ( 42 ? )
   ( 43 /microcontroller/SPI_SCK1 )
-  ( 44 /microcontroller/VCC )
+  ( 44 /clock_generator/FE_VCLK )
   ( 45 ? )
   ( 46 ? )
   ( 47 ? )
   ( 48 ? )
+ )
+ ( /514BB3A7/514E5234 IPC_QFN50P400X400X90-21L U4 SI5351C-B
+  ( 1 N-000414 )
+  ( 2 N-000413 )
+  ( 3 /clock_generator/CLOCKGEN_INTR )
+  ( 4 /front_end/FE_I2C_SCL )
+  ( 5 /front_end/FE_I2C_SDA )
+  ( 6 /clock_generator/FE_CLKSRC )
+  ( 7 /clock_generator/CLOCKGEN_OEB# )
+  ( 8 ? )
+  ( 9 ? )
+  ( 10 /clock_generator/FPGA_VCLK )
+  ( 11 /clock_generator/FPGA_VCLK )
+  ( 12 ? )
+  ( 13 ? )
+  ( 14 /clock_generator/FE_VCLK )
+  ( 15 /clock_generator/FE_CLKB_N )
+  ( 16 /clock_generator/FE_CLKB_P )
+  ( 17 /clock_generator/FE_CLKA_N )
+  ( 18 /clock_generator/FE_VCLK )
+  ( 19 /clock_generator/FE_CLKA_P )
+  ( 20 /clock_generator/FE_VCLK )
+  ( 21 GND )
  )
  ( /510A0455/514782E6 IPC_OSCCC320X500X105-4N X1 40M
   ( 1 /usb0_configuration/XO )
@@ -2088,15 +2147,56 @@
   ( 4 /usb0_configuration/VSSOSC )
  )
  ( /5148D8EF/514CECAC IPC_OSCCC320X500X105-4N X2 12M
-  ( 1 N-000399 )
+  ( 1 N-000376 )
   ( 2 GND )
-  ( 3 N-000406 )
+  ( 3 N-000365 )
+  ( 4 GND )
+ )
+ ( /514BB3A7/514E52C4 IPC_OSCCC320X500X105-4N X3 25M
+  ( 1 N-000413 )
+  ( 2 GND )
+  ( 3 N-000414 )
   ( 4 GND )
  )
 )
 *
 { Allowed footprints by component:
 $component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C10
+ SM*
+ C?
+ C1-1
+$endlist
+$component C11
+ SM*
+ C?
+ C1-1
+$endlist
+$component C12
+ SM*
+ C?
+ C1-1
+$endlist
+$component C13
+ SM*
+ C?
+ C1-1
+$endlist
+$component C14
+ SM*
+ C?
+ C1-1
+$endlist
+$component C15
+ SM*
+ C?
+ C1-1
+$endlist
+$component C16
  SM*
  C?
  C1-1
@@ -2815,6 +2915,20 @@ $component R13
  R?-*
  SM1206
 $endlist
+$component R14
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R15
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
 $component R21
  R?
  SM0603
@@ -2973,6 +3087,9 @@ $component X1
  IPC_OSC*
 $endlist
 $component X2
+ IPC_OSC*
+$endlist
+$component X3
  IPC_OSC*
 $endlist
 $endfootprintlist

@@ -1,9 +1,58 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Saturday, March 23, 2013 02:15:13 PM
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Saturday, March 23, 2013 08:49:49 PM
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
 Reference = C1;
 ValeurCmp = 1U;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E5301;
+Reference = C10;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E530B;
+Reference = C11;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E5578;
+Reference = C12;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E558C;
+Reference = C13;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E55C7;
+Reference = C14;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E55CA;
+Reference = C15;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E55CD;
+Reference = C16;
+ValeurCmp = C;
 IdModule  = IPC_CAPC1005X55N;
 EndCmp
 
@@ -1023,6 +1072,20 @@ IdModule  = IPC_RESC1005X40N;
 EndCmp
 
 BeginCmp
+TimeStamp = /514BB3A7/514E542D;
+Reference = R14;
+ValeurCmp = 4K7;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E57C7;
+Reference = R15;
+ValeurCmp = 10K;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
 TimeStamp = /51394328/513CF7DE;
 Reference = R21;
 ValeurCmp = 50R;
@@ -1177,14 +1240,14 @@ IdModule  = IPC_RESC1005X40N;
 EndCmp
 
 BeginCmp
-TimeStamp = /5138E12B/51393517;
+TimeStamp = /5129BCC5/5129BD1C;
 Reference = U1;
 ValeurCmp = EP4CE30F29;
 IdModule  = IPC_BGA780C100P28X28_2900X2900X350;
 EndCmp
 
 BeginCmp
-TimeStamp = /5109FB2D/5109FB8E;
+TimeStamp = /510A0455/510A04CC;
 Reference = U2;
 ValeurCmp = TUSB1310A;
 IdModule  = IPC_BGA175C80P14X14_1200X1200X140;
@@ -1198,6 +1261,13 @@ IdModule  = IPC_QFP50P900X900X160-48N;
 EndCmp
 
 BeginCmp
+TimeStamp = /514BB3A7/514E5234;
+Reference = U4;
+ValeurCmp = SI5351C-B;
+IdModule  = IPC_QFN50P400X400X90-21L;
+EndCmp
+
+BeginCmp
 TimeStamp = /510A0455/514782E6;
 Reference = X1;
 ValeurCmp = 40M;
@@ -1208,6 +1278,13 @@ BeginCmp
 TimeStamp = /5148D8EF/514CECAC;
 Reference = X2;
 ValeurCmp = 12M;
+IdModule  = IPC_OSCCC320X500X105-4N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/514E52C4;
+Reference = X3;
+ValeurCmp = 25M;
 IdModule  = IPC_OSCCC320X500X105-4N;
 EndCmp
 

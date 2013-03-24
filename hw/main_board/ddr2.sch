@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 23, 2013 11:24:01 AM
+EESchema Schematic File Version 2  date Saturday, March 23, 2013 08:49:37 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -15,6 +15,7 @@ LIBS:quartzcms4_ground
 LIBS:lpc11u1x
 LIBS:gsg-microusb
 LIBS:pnp_sot23
+LIBS:si5351c-b
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -22,7 +23,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 7 16
 Title "Daisho Project Main Board"
-Date "23 mar 2013"
+Date "24 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -31,10 +32,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L GND #PWR020
+L GND #PWR030
 U 1 1 514B69D6
 P 10500 4500
-F 0 "#PWR020" H 10500 4500 30  0001 C CNN
+F 0 "#PWR030" H 10500 4500 30  0001 C CNN
 F 1 "GND" H 10500 4430 30  0001 C CNN
 	1    10500 4500
 	1    0    0    -1  
@@ -53,10 +54,10 @@ F 1 "DDR2_SDRAM_SODIMM" H 11200 1200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR021
+L GND #PWR031
 U 1 1 514B69D4
 P 11900 4400
-F 0 "#PWR021" H 11900 4400 30  0001 C CNN
+F 0 "#PWR031" H 11900 4400 30  0001 C CNN
 F 1 "GND" H 11900 4330 30  0001 C CNN
 	1    11900 4400
 	-1   0    0    -1  
@@ -780,10 +781,10 @@ $EndComp
 Text Notes 3700 5000 0    60   ~ 0
 DDR2 operates in DQS single-ended mode. All DQS# == VSS
 $Comp
-L GND #PWR022
+L GND #PWR032
 U 1 1 50FAE476
 P 5200 4700
-F 0 "#PWR022" H 5200 4700 30  0001 C CNN
+F 0 "#PWR032" H 5200 4700 30  0001 C CNN
 F 1 "GND" H 5200 4630 30  0001 C CNN
 	1    5200 4700
 	1    0    0    -1  
