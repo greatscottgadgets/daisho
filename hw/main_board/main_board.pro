@@ -1,4 +1,4 @@
-update=Saturday, March 23, 2013 01:11:27 PM
+update=Saturday, March 23, 2013 01:31:02 PM
 version=1
 last_client=pcbnew
 [general]
@@ -91,3 +91,4 @@ LibName13=gsg-microusb
 LibName14=ipc_sot95p230x110-3n
 LibName15=ipc_bga780c100p28x28_2900x2900x350
 LibName16=ipc_bga175c80p14x14_1200x1200x140
+LibName17=ipc_qfp50p900x900x160-48n

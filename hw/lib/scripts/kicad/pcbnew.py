@@ -145,7 +145,7 @@ def make_pth_hole(pad_name, drill_diameter, pad_diameter, position):
 		'$EndPAD',
 	]
 	
-def make_square_qfp(n, pitch, land, c1, c2, r1, r2, v1, v2):
+def make_square_qf(n, pitch, land, c1, c2, r1, r2, v1, v2):
 	if n % 4 != 0:
 		raise RuntimeError('QFP pin count must be evenly divisible by 4')
 	
@@ -205,5 +205,21 @@ def make_square_qfp(n, pitch, land, c1, c2, r1, r2, v1, v2):
 				c2 / -2.0,
 			),
 		)
+	
+	return lines
+
+def make_square_qfp(n, pitch, land, c1, c2, r1, r2, v1, v2):
+	return make_square_qf(n, pitch, land, c1, c2, r1, r2, v1, v2)
+
+def make_square_qfn(n, pitch, land, thermal, c1, c2, r1, r2, v1, v2):
+	lines = make_square_qfp(n, pitch, land, c1, c2, r1, r2, v1, v2)
+	
+	lines += make_nsmd_rect_pad(
+		pad_name=n + 1,
+		pad_width=thermal['x'],
+		pad_height=thermal['y'],
+		rotation=0.0,
+		position=(0, 0),
+	)
 	
 	return lines

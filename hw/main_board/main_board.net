@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Saturday, March 23, 2013 11:43:04 AM
+# EESchema Netlist Version 1.1 created  Saturday, March 23, 2013 02:15:13 PM
 (
  ( /5109F714/5136A7E6 IPC_CAPC1005X55N C1 1U
   ( 1 /usb0_power/A1P1 )
@@ -378,18 +378,18 @@
  )
  ( /5148D8EF/514CED59 IPC_CAPC1005X55N C202 18P
   ( 1 GND )
-  ( 2 N-000398 )
+  ( 2 N-000399 )
  )
  ( /5148D8EF/514CED50 IPC_CAPC1005X55N C203 18P
-  ( 1 N-000382 )
+  ( 1 N-000406 )
   ( 2 GND )
  )
  ( /5148D8EF/514DEB40 IPC_CAPC1005X55N C204 10N
-  ( 1 N-000399 )
+  ( 1 N-000403 )
   ( 2 GND )
  )
  ( /5148D8EF/514DEFD7 IPC_CAPC1005X55N C205 10N
-  ( 1 N-000404 )
+  ( 1 N-000405 )
   ( 2 GND )
  )
  ( /510239FC/50FE5565 IPC_CAPC1005X55N C4001 100N
@@ -896,12 +896,12 @@
   ( C3 GND )
  )
  ( /5148D8EF/514DD885 GSG-USB-MICROB-FCI-10103594 J3 GSG-USB-MICRO-B-SHIELD
-  ( 1 N-000404 )
-  ( 2 N-000400 )
-  ( 3 N-000401 )
+  ( 1 N-000405 )
+  ( 2 N-000360 )
+  ( 3 N-000400 )
   ( 4 ? )
   ( 5 GND )
-  ( 6 N-000399 )
+  ( 6 N-000403 )
  )
  ( /5148D8EF/514CF69B $noname$ J4 CONN_5X2
   ( 1 /microcontroller/VCC )
@@ -930,7 +930,7 @@
  ( /5148D8EF/514DF31C IPC_SOT95P230X110-3N Q1 BC857
   ( 1 N-000402 )
   ( 2 /microcontroller/VCC )
-  ( 3 N-000403 )
+  ( 3 N-000401 )
  )
  ( /5101C6D6/51155893 IPC_RESC1005X40N R1 50R
   ( 1 N-000075 )
@@ -1045,34 +1045,34 @@
   ( 2 /front_end/FE_I2C_SDA )
  )
  ( /5148D8EF/514CFCEB IPC_RESC1005X40N R59 1K5
-  ( 1 N-000403 )
-  ( 2 N-000401 )
- )
- ( /5148D8EF/514CFADD IPC_RESC1005X40N R60 100R
-  ( 1 N-000395 )
-  ( 2 N-000404 )
- )
- ( /5148D8EF/514CFA50 IPC_RESC1005X40N R61 33R
-  ( 1 N-000360 )
+  ( 1 N-000401 )
   ( 2 N-000400 )
  )
+ ( /5148D8EF/514CFADD IPC_RESC1005X40N R60 100R
+  ( 1 N-000362 )
+  ( 2 N-000405 )
+ )
+ ( /5148D8EF/514CFA50 IPC_RESC1005X40N R61 33R
+  ( 1 N-000368 )
+  ( 2 N-000360 )
+ )
  ( /5148D8EF/514CFA64 IPC_RESC1005X40N R62 33R
-  ( 1 N-000379 )
-  ( 2 N-000401 )
+  ( 1 N-000361 )
+  ( 2 N-000400 )
  )
  ( /5148D8EF/514DEB3F IPC_RESC1005X40N R63 1M
-  ( 1 N-000399 )
+  ( 1 N-000403 )
   ( 2 GND )
  )
  ( /5148D8EF/514DEE8C IPC_RESC1005X40N R64 3K
-  ( 1 N-000405 )
+  ( 1 N-000376 )
   ( 2 N-000402 )
  )
  ( /5148D8EF/514DEF20 IPC_RESC1005X40N R65 24K
   ( 1 /microcontroller/VCC )
   ( 2 N-000402 )
  )
- ( /5138E12B/51393517 ALTERA_F780 U1 EP4CE30F29
+ ( /5138E12B/51393517 IPC_BGA780C100P28X28_2900X2900X350 U1 EP4CE30F29
   ( A2 /front_end/FE_VCCIO_B )
   ( A3 /fpga_front_end_bank_0/D18 )
   ( A4 /fpga_front_end_bank_0/D22 )
@@ -1854,7 +1854,7 @@
   ( Y27 /fpga_ddr2/ULPI_DATA1 )
   ( Y28 /fpga_ddr2/ULPI_CLK )
  )
- ( /5109FB2D/5109FB8E TUSB1310A U2 TUSB1310A
+ ( /5109FB2D/5109FB8E IPC_BGA175C80P14X14_1200X1200X140 U2 TUSB1310A
   ( A2 /usb0_interfaces/RX_DATA6 )
   ( A3 /usb0_interfaces/RX_DATA7 )
   ( A4 /usb0_interfaces/RX_DATA9 )
@@ -2031,29 +2031,29 @@
   ( P13 N-000164 )
   ( P14 N-000164 )
  )
- ( /5148D8EF/514CE90F $noname$ U3 LPC11U1X
+ ( /5148D8EF/514CE90F IPC_QFP50P900X900X160-48N U3 LPC11U1X
   ( 1 ? )
   ( 2 /microcontroller/SPI_SSEL1 )
   ( 3 /microcontroller/RESET# )
   ( 4 ? )
   ( 5 GND )
-  ( 6 N-000382 )
-  ( 7 N-000398 )
+  ( 6 N-000406 )
+  ( 7 N-000399 )
   ( 8 /microcontroller/VCC )
   ( 9 ? )
   ( 10 ? )
   ( 11 ? )
   ( 12 ? )
   ( 13 /microcontroller/SPI_SCK1 )
-  ( 14 N-000395 )
+  ( 14 N-000362 )
   ( 15 /front_end/FE_I2C_SCL )
   ( 16 /front_end/FE_I2C_SDA )
   ( 17 /microcontroller/SPI_MOSI1 )
   ( 18 /microcontroller/SPI_SSEL1 )
-  ( 19 N-000360 )
-  ( 20 N-000379 )
+  ( 19 N-000368 )
+  ( 20 N-000361 )
   ( 21 ? )
-  ( 22 N-000405 )
+  ( 22 N-000376 )
   ( 23 ? )
   ( 24 ? )
   ( 25 ? )
@@ -2088,9 +2088,9 @@
   ( 4 /usb0_configuration/VSSOSC )
  )
  ( /5148D8EF/514CECAC IPC_OSCCC320X500X105-4N X2 12M
-  ( 1 N-000398 )
+  ( 1 N-000399 )
   ( 2 GND )
-  ( 3 N-000382 )
+  ( 3 N-000406 )
   ( 4 GND )
  )
 )

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Genere par PcbNew le Saturday, March 23, 2013 01:03:18 PM
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Saturday, March 23, 2013 02:15:13 PM
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1194,7 +1194,7 @@ BeginCmp
 TimeStamp = /5148D8EF/514CE90F;
 Reference = U3;
 ValeurCmp = LPC11U1X;
-IdModule  = ;
+IdModule  = IPC_QFP50P900X900X160-48N;
 EndCmp
 
 BeginCmp
