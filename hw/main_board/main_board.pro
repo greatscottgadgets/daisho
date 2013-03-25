@@ -1,4 +1,4 @@
-update=Saturday, March 23, 2013 06:07:37 PM
+update=Monday, March 25, 2013 03:16:10 PM
 version=1
 last_client=eeschema
 [general]
@@ -94,3 +94,4 @@ LibName14=lpc11u1x
 LibName15=gsg-microusb
 LibName16=pnp_sot23
 LibName17=si5351c-b
+LibName18=tps62410

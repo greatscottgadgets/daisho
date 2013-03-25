@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Saturday, March 23, 2013 10:44:52 PM
+EESchema Schematic File Version 2  date Monday, March 25, 2013 04:30:54 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -16,14 +16,15 @@ LIBS:lpc11u1x
 LIBS:gsg-microusb
 LIBS:pnp_sot23
 LIBS:si5351c-b
+LIBS:tps62410
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 13 16
+Sheet 14 16
 Title "Daisho Project Main Board"
-Date "24 mar 2013"
+Date "25 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -31,173 +32,398 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 6600 2600 0    60   ~ 0
+Text Notes 12000 2200 0    60   ~ 0
+TODO: I DO NOT LIKE THIS.
+Text Label 14400 2800 0    60   ~ 0
+VCCIO
+Connection ~ 14200 2800
+Wire Wire Line
+	14900 2800 14200 2800
+Wire Wire Line
+	14200 2800 13800 2800
+Wire Wire Line
+	13800 2800 13400 2800
+Wire Wire Line
+	13400 2800 13000 2800
+Wire Wire Line
+	13000 2800 12600 2800
+Wire Wire Line
+	12600 2800 12200 2800
+Wire Wire Line
+	12200 2800 11900 2800
+Connection ~ 13400 2800
+Wire Wire Line
+	13800 2800 13800 2900
+Wire Wire Line
+	13000 2800 13000 2900
+Wire Wire Line
+	12200 2900 12200 2800
+Wire Wire Line
+	12200 2800 12200 2500
+Connection ~ 13400 3400
+Wire Wire Line
+	13800 3400 13800 3300
+Connection ~ 12600 3400
+Wire Wire Line
+	13000 3400 13000 3300
+Wire Wire Line
+	12200 3500 12200 3400
+Wire Wire Line
+	12200 3400 12200 3300
+Wire Wire Line
+	2150 4650 2850 4650
+Wire Wire Line
+	2850 4650 2850 4550
+Wire Wire Line
+	2150 3550 2650 3550
+Connection ~ 10700 3500
+Wire Wire Line
+	10700 3400 10700 3500
+Wire Wire Line
+	11100 3100 11100 3500
+Wire Wire Line
+	11100 3500 10700 3500
+Wire Wire Line
+	10700 3500 10400 3500
+Wire Wire Line
+	10400 2800 10700 2800
+Wire Wire Line
+	10700 2800 10900 2800
+Wire Wire Line
+	5900 2500 5100 2500
+Connection ~ 4000 8700
+Wire Wire Line
+	4000 8900 4000 8700
+Connection ~ 4400 7900
+Wire Wire Line
+	4400 8000 4400 7900
+Wire Wire Line
+	4400 9300 4400 9400
+Connection ~ 7800 2800
+Wire Wire Line
+	7800 2800 7700 2800
+Connection ~ 7800 2600
+Wire Wire Line
+	7800 2600 7700 2600
+Wire Wire Line
+	7700 2500 7800 2500
+Wire Wire Line
+	7800 2500 8400 2500
+Wire Wire Line
+	4800 9300 4800 9400
+Wire Wire Line
+	4800 8500 4800 8600
+Wire Wire Line
+	4800 8600 5900 8600
+Wire Wire Line
+	5100 7800 5900 7800
+Wire Wire Line
+	5900 3700 5100 3700
+Wire Wire Line
+	5100 6000 5900 6000
+Wire Wire Line
+	5100 9200 5900 9200
+Wire Wire Line
+	5900 8700 4800 8700
+Wire Wire Line
+	4800 8700 4800 8800
+Wire Wire Line
+	4800 8000 4800 7900
+Wire Wire Line
+	4800 7900 4400 7900
+Wire Wire Line
+	4400 7900 3600 7900
+Wire Wire Line
+	7700 3000 7800 3000
+Wire Wire Line
+	7800 3000 7800 2900
+Wire Wire Line
+	7800 2900 7800 2800
+Wire Wire Line
+	7800 2800 7800 2700
+Wire Wire Line
+	7800 2700 7800 2600
+Wire Wire Line
+	7800 2600 7800 2500
+Connection ~ 7800 2500
+Wire Wire Line
+	7800 2700 7700 2700
+Connection ~ 7800 2700
+Wire Wire Line
+	7800 2900 7700 2900
+Connection ~ 7800 2900
+Wire Wire Line
+	4400 8500 4400 8700
+Wire Wire Line
+	4400 8700 4400 8800
+Wire Wire Line
+	4400 8700 4000 8700
+Wire Wire Line
+	4000 8700 3600 8700
+Connection ~ 4400 8700
+Wire Wire Line
+	4000 9300 4000 9400
+Wire Wire Line
+	5900 2600 5100 2600
+Wire Wire Line
+	12200 2500 10400 2500
+Wire Wire Line
+	10700 2900 10700 2800
+Connection ~ 10700 2800
+Connection ~ 12200 2800
+Wire Wire Line
+	2850 3850 2850 4050
+Wire Wire Line
+	11300 2800 11500 2800
+Wire Wire Line
+	12600 3400 12600 3300
+Connection ~ 12200 3400
+Wire Wire Line
+	13400 3400 13400 3300
+Connection ~ 13000 3400
+Wire Wire Line
+	14200 3300 14200 3400
+Wire Wire Line
+	14200 3400 13800 3400
+Wire Wire Line
+	13800 3400 13400 3400
+Wire Wire Line
+	13400 3400 13000 3400
+Wire Wire Line
+	13000 3400 12600 3400
+Wire Wire Line
+	12600 3400 12200 3400
+Connection ~ 13800 3400
+Wire Wire Line
+	12600 2800 12600 2900
+Connection ~ 12600 2800
+Wire Wire Line
+	13400 2800 13400 2900
+Connection ~ 13000 2800
+Wire Wire Line
+	14200 2800 14200 2900
+Connection ~ 13800 2800
+$Comp
+L GND #PWR?
+U 1 1 514F7BF4
+P 12200 3500
+F 0 "#PWR?" H 12200 3500 30  0001 C CNN
+F 1 "GND" H 12200 3430 30  0001 C CNN
+	1    12200 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 514F7BE2
+P 14200 3100
+F 0 "C?" H 14250 3200 50  0000 L CNN
+F 1 "C" H 14250 3000 50  0000 L CNN
+	1    14200 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 514F7BDC
+P 13800 3100
+F 0 "C?" H 13850 3200 50  0000 L CNN
+F 1 "C" H 13850 3000 50  0000 L CNN
+	1    13800 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 514F7BD9
+P 13400 3100
+F 0 "C?" H 13450 3200 50  0000 L CNN
+F 1 "C" H 13450 3000 50  0000 L CNN
+	1    13400 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 514F7BD8
+P 13000 3100
+F 0 "C?" H 13050 3200 50  0000 L CNN
+F 1 "C" H 13050 3000 50  0000 L CNN
+	1    13000 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 514F7BD5
+P 12600 3100
+F 0 "C?" H 12650 3200 50  0000 L CNN
+F 1 "C" H 12650 3000 50  0000 L CNN
+	1    12600 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 514F7BCB
+P 12200 3100
+F 0 "C?" H 12250 3200 50  0000 L CNN
+F 1 "C" H 12250 3000 50  0000 L CNN
+	1    12200 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 514F7B6D
+P 11750 2800
+F 0 "R?" V 11830 2800 50  0000 C CNN
+F 1 "10R" V 11750 2800 50  0000 C CNN
+	1    11750 2800
+	0    1    -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 514F3EE2
+P 2850 4300
+F 0 "R?" V 2930 4300 50  0000 C CNN
+F 1 "R" V 2850 4300 50  0000 C CNN
+	1    2850 4300
+	-1   0    0    -1  
+$EndComp
+Text HLabel 2150 3550 0    60   Input ~ 0
+VCCIO
+$Comp
+L MOSFET_N Q?
+U 1 1 514F3E9B
+P 2850 3650
+F 0 "Q?" H 2860 3820 60  0000 R CNN
+F 1 "MOSFET_N" H 2860 3500 60  0000 R CNN
+	1    2850 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 514F3CA4
+P 10700 3150
+F 0 "R?" V 10780 3150 50  0000 C CNN
+F 1 "10K" V 10700 3150 50  0000 C CNN
+	1    10700 3150
+	-1   0    0    -1  
+$EndComp
+Text HLabel 10400 3500 0    60   Input ~ 0
+VCCIO_DEFAULT_EN
+Text HLabel 10400 2800 0    60   Input ~ 0
+V3P3
+$Comp
+L MOSFET_P Q?
+U 1 1 514F3B8A
+P 11100 2900
+F 0 "Q?" H 11100 3090 60  0000 R CNN
+F 1 "MOSFET_P" H 11100 2720 60  0000 R CNN
+	1    11100 2900
+	0    1    -1   0   
+$EndComp
+Text Label 5300 2600 0    60   ~ 0
 D39
-Text Label 6600 2500 0    60   ~ 0
+Text Label 5300 2500 0    60   ~ 0
 D37
-Wire Wire Line
-	7200 2600 6400 2600
-Wire Wire Line
-	5300 9300 5300 9400
-Connection ~ 5700 8700
-Wire Wire Line
-	4900 8700 5700 8700
-Wire Wire Line
-	5700 8800 5700 8500
-Connection ~ 9100 2900
-Wire Wire Line
-	9100 2900 9000 2900
-Connection ~ 9100 2700
-Wire Wire Line
-	9100 2700 9000 2700
-Connection ~ 9100 2500
-Wire Wire Line
-	9100 2500 9100 3000
-Wire Wire Line
-	9100 3000 9000 3000
-Wire Wire Line
-	4900 7900 6100 7900
-Wire Wire Line
-	6100 7900 6100 8000
-Wire Wire Line
-	6100 8800 6100 8700
-Wire Wire Line
-	6100 8700 7200 8700
-Wire Wire Line
-	6400 9200 7200 9200
-Wire Wire Line
-	6400 6000 7200 6000
-Wire Wire Line
-	7200 3700 6400 3700
-Wire Wire Line
-	6400 7800 7200 7800
-Wire Wire Line
-	7200 8600 6100 8600
-Wire Wire Line
-	6100 8600 6100 8500
-Wire Wire Line
-	6100 9300 6100 9400
-Wire Wire Line
-	9700 2500 9000 2500
-Wire Wire Line
-	9100 2600 9000 2600
-Connection ~ 9100 2600
-Wire Wire Line
-	9100 2800 9000 2800
-Connection ~ 9100 2800
-Wire Wire Line
-	5700 9300 5700 9400
-Wire Wire Line
-	5700 8000 5700 7900
-Connection ~ 5700 7900
-Wire Wire Line
-	5300 8700 5300 8900
-Connection ~ 5300 8700
-Wire Wire Line
-	7200 2500 6400 2500
 $Comp
 L GND #PWR045
 U 1 1 514BA518
-P 5300 9400
-F 0 "#PWR045" H 5300 9400 30  0001 C CNN
-F 1 "GND" H 5300 9330 30  0001 C CNN
-	1    5300 9400
+P 4000 9400
+F 0 "#PWR045" H 4000 9400 30  0001 C CNN
+F 1 "GND" H 4000 9330 30  0001 C CNN
+	1    4000 9400
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C21
 U 1 1 514BA511
-P 5300 9100
-F 0 "C21" H 5350 9200 50  0000 L CNN
-F 1 "C" H 5350 9000 50  0000 L CNN
-	1    5300 9100
+P 4000 9100
+F 0 "C21" H 4050 9200 50  0000 L CNN
+F 1 "C" H 4050 9000 50  0000 L CNN
+	1    4000 9100
 	1    0    0    -1  
 $EndComp
-Text Notes 2000 9100 0    60   ~ 0
+Text Notes 700  9100 0    60   ~ 0
 AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sink much current. You can create the\nvoltage with a regulator or resistor divider network."
-Text Label 5000 8700 0    60   ~ 0
+Text Label 3700 8700 0    60   ~ 0
 VREF
 $Comp
 L GND #PWR046
 U 1 1 514BA28E
-P 5700 9400
-F 0 "#PWR046" H 5700 9400 30  0001 C CNN
-F 1 "GND" H 5700 9330 30  0001 C CNN
-	1    5700 9400
+P 4400 9400
+F 0 "#PWR046" H 4400 9400 30  0001 C CNN
+F 1 "GND" H 4400 9330 30  0001 C CNN
+	1    4400 9400
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R24
 U 1 1 514BA28B
-P 5700 9050
-F 0 "R24" V 5780 9050 50  0000 C CNN
-F 1 "1K0" V 5700 9050 50  0000 C CNN
-F 4 "1%" V 5600 9050 60  0000 C CNN "Tolerance"
-	1    5700 9050
+P 4400 9050
+F 0 "R24" V 4480 9050 50  0000 C CNN
+F 1 "1K0" V 4400 9050 50  0000 C CNN
+F 4 "1%" V 4300 9050 60  0000 C CNN "Tolerance"
+	1    4400 9050
 	-1   0    0    1   
 $EndComp
 $Comp
 L R R23
 U 1 1 514BA27F
-P 5700 8250
-F 0 "R23" V 5780 8250 50  0000 C CNN
-F 1 "1K0" V 5700 8250 50  0000 C CNN
-F 4 "1%" V 5600 8250 60  0000 C CNN "Tolerance"
-	1    5700 8250
+P 4400 8250
+F 0 "R23" V 4480 8250 50  0000 C CNN
+F 1 "1K0" V 4400 8250 50  0000 C CNN
+F 4 "1%" V 4300 8250 60  0000 C CNN "Tolerance"
+	1    4400 8250
 	-1   0    0    1   
 $EndComp
-Text Label 9250 2500 0    60   ~ 0
+Text Label 7950 2500 0    60   ~ 0
 VCCIO
-Text HLabel 2200 1700 0    60   Input ~ 0
-VCCIO
-Text Label 5100 7900 0    60   ~ 0
+Text HLabel 10400 2500 0    60   Input ~ 0
+V_FE
+Text Label 3800 7900 0    60   ~ 0
 VCCIO
 $Comp
 L GND #PWR047
 U 1 1 513CF83E
-P 6100 9400
-F 0 "#PWR047" H 6100 9400 30  0001 C CNN
-F 1 "GND" H 6100 9330 30  0001 C CNN
-	1    6100 9400
+P 4800 9400
+F 0 "#PWR047" H 4800 9400 30  0001 C CNN
+F 1 "GND" H 4800 9330 30  0001 C CNN
+	1    4800 9400
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R22
 U 1 1 513CF80F
-P 6100 9050
-F 0 "R22" V 6180 9050 50  0000 C CNN
-F 1 "50R" V 6100 9050 50  0000 C CNN
-F 4 "1%" V 6000 9050 60  0000 C CNN "Tolerance"
-	1    6100 9050
+P 4800 9050
+F 0 "R22" V 4880 9050 50  0000 C CNN
+F 1 "50R" V 4800 9050 50  0000 C CNN
+F 4 "1%" V 4700 9050 60  0000 C CNN "Tolerance"
+	1    4800 9050
 	-1   0    0    1   
 $EndComp
 $Comp
 L R R21
 U 1 1 513CF7DE
-P 6100 8250
-F 0 "R21" V 6180 8250 50  0000 C CNN
-F 1 "50R" V 6100 8250 50  0000 C CNN
-F 4 "1%" V 6000 8250 60  0000 C CNN "Tolerance"
-	1    6100 8250
+P 4800 8250
+F 0 "R21" V 4880 8250 50  0000 C CNN
+F 1 "50R" V 4800 8250 50  0000 C CNN
+F 4 "1%" V 4700 8250 60  0000 C CNN "Tolerance"
+	1    4800 8250
 	-1   0    0    1   
 $EndComp
-Text Label 6600 6000 0    60   ~ 0
+Text Label 5300 6000 0    60   ~ 0
 VREF
-Text Label 6600 7800 0    60   ~ 0
+Text Label 5300 7800 0    60   ~ 0
 VREF
-Text Label 6600 9200 0    60   ~ 0
+Text Label 5300 9200 0    60   ~ 0
 VREF
-Text Label 6600 3700 0    60   ~ 0
+Text Label 5300 3700 0    60   ~ 0
 VREF
 Text HLabel 2200 1300 0    60   BiDi ~ 0
 D[41..0]
 $Comp
 L EP4CE30F29 U1
 U 2 1 5139434C
-P 8100 2200
-F 0 "U1" H 8100 2250 60  0000 C CNN
-F 1 "EP4CE30F29" H 8150 2150 60  0000 C CNN
-	2    8100 2200
+P 6800 2200
+F 0 "U1" H 6800 2250 60  0000 C CNN
+F 1 "EP4CE30F29" H 6850 2150 60  0000 C CNN
+	2    6800 2200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
