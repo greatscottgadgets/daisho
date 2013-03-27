@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 25, 2013 04:30:54 PM
+EESchema Schematic File Version 2  date Tuesday, March 26, 2013 09:41:35 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -24,7 +24,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 9 16
 Title "Daisho Project Main Board"
-Date "25 mar 2013"
+Date "26 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -32,6 +32,217 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 8900 1250 0    60   Input ~ 0
+V_FE
+$Comp
+L MOSFET_P Q?
+U 1 1 5151E9B3
+P 9600 1650
+F 0 "Q?" H 9600 1840 60  0000 R CNN
+F 1 "MOSFET_P" H 9600 1470 60  0000 R CNN
+	1    9600 1650
+	0    1    -1   0   
+$EndComp
+Text HLabel 8900 1550 0    60   Input ~ 0
+V3P3
+Text HLabel 8900 2250 0    60   Input ~ 0
+VCCIO_DEFAULT_EN
+$Comp
+L R R?
+U 1 1 5151E9B2
+P 9200 1900
+F 0 "R?" V 9280 1900 50  0000 C CNN
+F 1 "10K" V 9200 1900 50  0000 C CNN
+	1    9200 1900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L MOSFET_N Q?
+U 1 1 5151E9B1
+P 10950 3250
+F 0 "Q?" H 10960 3420 60  0000 R CNN
+F 1 "MOSFET_N" H 10960 3100 60  0000 R CNN
+	1    10950 3250
+	0    -1   -1   0   
+$EndComp
+Text HLabel 10250 3150 0    60   Input ~ 0
+VCCIO
+$Comp
+L R R?
+U 1 1 5151E9B0
+P 10950 3900
+F 0 "R?" V 11030 3900 50  0000 C CNN
+F 1 "R" V 10950 3900 50  0000 C CNN
+	1    10950 3900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5151E9AF
+P 10250 1550
+F 0 "R?" V 10330 1550 50  0000 C CNN
+F 1 "10R" V 10250 1550 50  0000 C CNN
+	1    10250 1550
+	0    1    -1   0   
+$EndComp
+$Comp
+L C C?
+U 1 1 5151E9AE
+P 10700 1850
+F 0 "C?" H 10750 1950 50  0000 L CNN
+F 1 "C" H 10750 1750 50  0000 L CNN
+	1    10700 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5151E9AD
+P 11100 1850
+F 0 "C?" H 11150 1950 50  0000 L CNN
+F 1 "C" H 11150 1750 50  0000 L CNN
+	1    11100 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5151E9AC
+P 11500 1850
+F 0 "C?" H 11550 1950 50  0000 L CNN
+F 1 "C" H 11550 1750 50  0000 L CNN
+	1    11500 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5151E9AB
+P 11900 1850
+F 0 "C?" H 11950 1950 50  0000 L CNN
+F 1 "C" H 11950 1750 50  0000 L CNN
+	1    11900 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5151E9AA
+P 12300 1850
+F 0 "C?" H 12350 1950 50  0000 L CNN
+F 1 "C" H 12350 1750 50  0000 L CNN
+	1    12300 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5151E9A9
+P 12700 1850
+F 0 "C?" H 12750 1950 50  0000 L CNN
+F 1 "C" H 12750 1750 50  0000 L CNN
+	1    12700 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5151E9A8
+P 10700 2250
+F 0 "#PWR?" H 10700 2250 30  0001 C CNN
+F 1 "GND" H 10700 2180 30  0001 C CNN
+	1    10700 2250
+	1    0    0    -1  
+$EndComp
+Connection ~ 12300 1550
+Wire Wire Line
+	12700 1550 12700 1650
+Connection ~ 11500 1550
+Wire Wire Line
+	11900 1550 11900 1650
+Connection ~ 11100 1550
+Wire Wire Line
+	11100 1550 11100 1650
+Connection ~ 12300 2150
+Wire Wire Line
+	11100 2150 10700 2150
+Wire Wire Line
+	11500 2150 11100 2150
+Wire Wire Line
+	11900 2150 11500 2150
+Wire Wire Line
+	12300 2150 11900 2150
+Wire Wire Line
+	12700 2150 12300 2150
+Wire Wire Line
+	12700 2050 12700 2150
+Connection ~ 11500 2150
+Wire Wire Line
+	11900 2150 11900 2050
+Connection ~ 10700 2150
+Wire Wire Line
+	11100 2150 11100 2050
+Wire Wire Line
+	9800 1550 10000 1550
+Wire Wire Line
+	10950 3450 10950 3650
+Connection ~ 10700 1550
+Connection ~ 9200 1550
+Wire Wire Line
+	9200 1650 9200 1550
+Wire Wire Line
+	10700 1250 8900 1250
+Wire Wire Line
+	9200 1550 9400 1550
+Wire Wire Line
+	8900 1550 9200 1550
+Wire Wire Line
+	9200 2250 8900 2250
+Wire Wire Line
+	9600 2250 9200 2250
+Wire Wire Line
+	9600 1850 9600 2250
+Wire Wire Line
+	9200 2150 9200 2250
+Connection ~ 9200 2250
+Wire Wire Line
+	10250 3150 10750 3150
+Wire Wire Line
+	10950 4250 10950 4150
+Wire Wire Line
+	10250 4250 10950 4250
+Wire Wire Line
+	10700 2150 10700 2050
+Wire Wire Line
+	10700 2250 10700 2150
+Wire Wire Line
+	11500 2150 11500 2050
+Connection ~ 11100 2150
+Wire Wire Line
+	12300 2150 12300 2050
+Connection ~ 11900 2150
+Wire Wire Line
+	10700 1550 10700 1250
+Wire Wire Line
+	10700 1650 10700 1550
+Wire Wire Line
+	11500 1550 11500 1650
+Wire Wire Line
+	12300 1550 12300 1650
+Connection ~ 11900 1550
+Wire Wire Line
+	10700 1550 10400 1550
+Wire Wire Line
+	11100 1550 10700 1550
+Wire Wire Line
+	11500 1550 11100 1550
+Wire Wire Line
+	11900 1550 11500 1550
+Wire Wire Line
+	12300 1550 11900 1550
+Wire Wire Line
+	12700 1550 12300 1550
+Wire Wire Line
+	13400 1550 12700 1550
+Connection ~ 12700 1550
+Text Label 12900 1550 0    60   ~ 0
+VCCIO
+Text Notes 10500 950  0    60   ~ 0
+TODO: I DO NOT LIKE THIS.
 Text HLabel 1600 6400 0    60   Input ~ 0
 FE_V1P8
 Connection ~ 2600 6400

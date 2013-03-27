@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 25, 2013 04:30:54 PM
+EESchema Schematic File Version 2  date Tuesday, March 26, 2013 09:41:35 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -22,9 +22,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 3 16
+Sheet 4 16
 Title "Daisho Project Main Board"
-Date "25 mar 2013"
+Date "26 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -308,7 +308,7 @@ F 1 "10N" H 2450 7450 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 2800 4900 2    60   Input ~ 0
-VCC
+V3P3
 $Comp
 L R R65
 U 1 1 514DEF20
@@ -436,7 +436,7 @@ F 1 "10K" V 13700 2850 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Text HLabel 13500 1200 0    60   Input ~ 0
-VCC
+V3P3
 $Comp
 L R R53
 U 1 1 514CF7F4
@@ -462,7 +462,7 @@ F 1 "GND" H 12700 2430 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 12500 2000 0    60   Input ~ 0
-VCC
+V3P3
 $Comp
 L CONN_5X2 J4
 U 1 1 514CF69B
@@ -508,7 +508,7 @@ F 1 "10K" V 14000 1550 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Text HLabel 4000 4900 0    60   Input ~ 0
-VCC
+V3P3
 Text Label 11000 6100 0    60   ~ 0
 SWCLK
 Text Label 11000 5100 0    60   ~ 0
@@ -523,7 +523,7 @@ F 1 "GND" H 9000 1430 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 8700 800  0    60   Input ~ 0
-VCC
+V3P3
 $Comp
 L C C201
 U 1 1 514CEE60
@@ -552,9 +552,9 @@ F 1 "GND" H 10900 4830 30  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text HLabel 11700 4600 2    60   Input ~ 0
-VCC
+V3P3
 Text HLabel 5300 4900 0    60   Input ~ 0
-VCC
+V3P3
 $Comp
 L GND #PWR016
 U 1 1 514CED61
@@ -655,7 +655,7 @@ F 1 "10K" V 5500 1150 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Text HLabel 5100 800  0    60   Input ~ 0
-VCC
+V3P3
 $Comp
 L R R58
 U 1 1 514CA538
@@ -717,7 +717,7 @@ F 1 "10K" V 3200 1150 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 Text HLabel 2700 800  0    60   Input ~ 0
-VCC
+V3P3
 Text HLabel 2700 2000 0    60   Output ~ 0
 FPGA_NCONFIG
 Text HLabel 2700 1800 0    60   Output ~ 0

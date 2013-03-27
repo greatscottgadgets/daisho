@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, March 25, 2013 04:30:54 PM
+EESchema Schematic File Version 2  date Tuesday, March 26, 2013 09:41:35 PM
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -22,9 +22,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 7 16
+Sheet 10 16
 Title "Daisho Project Main Board"
-Date "25 mar 2013"
+Date "26 mar 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -78,9 +78,9 @@ F 1 "DDR2_SDRAM_SODIMM" H 13900 1200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 13100 1600 0    60   Input ~ 0
-VCC_CORE
+V1P8
 Text HLabel 13100 2900 0    60   Input ~ 0
-VCC_SPD
+V3P3
 Text HLabel 13100 3100 0    60   Input ~ 0
 VREF
 Wire Wire Line
