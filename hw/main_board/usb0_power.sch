@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday, March 26, 2013 09:41:35 PM
+EESchema Schematic File Version 2  date Tue 02 Apr 2013 03:28:02 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,14 +17,16 @@ LIBS:gsg-microusb
 LIBS:pnp_sot23
 LIBS:si5351c-b
 LIBS:tps62410
+LIBS:usb3_micro_ab
+LIBS:usb3_esd_son50-10
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 16 16
+Sheet 15 15
 Title "Daisho Project Main Board"
-Date "26 mar 2013"
+Date "2 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -32,6 +34,16 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text GLabel 10300 8900 0    60   Input ~ 0
+V1P1
+Text GLabel 10300 7900 0    60   Input ~ 0
+V1P8
+Text GLabel 10300 6900 0    60   Input ~ 0
+V3P3
+Text GLabel 2000 9700 0    60   Input ~ 0
+V1P1
+Text GLabel 2000 8700 0    60   Input ~ 0
+V1P8
 Text Label 4400 6200 0    60   ~ 0
 D1P1
 Text Label 4400 4500 0    60   ~ 0
@@ -572,10 +584,10 @@ F 1 "INDUCTOR" V 11200 8900 40  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR049
+L GND #PWR072
 U 1 1 5144DC6E
 P 10600 9600
-F 0 "#PWR049" H 10600 9600 30  0001 C CNN
+F 0 "#PWR072" H 10600 9600 30  0001 C CNN
 F 1 "GND" H 10600 9530 30  0001 C CNN
 	1    10600 9600
 	1    0    0    -1  
@@ -590,10 +602,10 @@ F 1 "C" H 10650 9100 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR050
+L GND #PWR073
 U 1 1 5144DC5C
 P 10600 8600
-F 0 "#PWR050" H 10600 8600 30  0001 C CNN
+F 0 "#PWR073" H 10600 8600 30  0001 C CNN
 F 1 "GND" H 10600 8530 30  0001 C CNN
 	1    10600 8600
 	1    0    0    -1  
@@ -617,10 +629,10 @@ F 1 "C" H 10650 8100 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR051
+L GND #PWR074
 U 1 1 5144DC31
 P 10600 7600
-F 0 "#PWR051" H 10600 7600 30  0001 C CNN
+F 0 "#PWR074" H 10600 7600 30  0001 C CNN
 F 1 "GND" H 10600 7530 30  0001 C CNN
 	1    10600 7600
 	1    0    0    -1  
@@ -643,35 +655,29 @@ F 1 "C" H 10650 7100 50  0000 L CNN
 	1    10600 7200
 	1    0    0    -1  
 $EndComp
-Text HLabel 10300 8900 0    60   Input ~ 0
-V1P1
-Text HLabel 10300 7900 0    60   Input ~ 0
-V1P8
-Text HLabel 10300 6900 0    60   Input ~ 0
-V3P3
 $Comp
-L GND #PWR052
+L GND #PWR075
 U 1 1 51429E1A
 P 11600 7600
-F 0 "#PWR052" H 11600 7600 30  0001 C CNN
+F 0 "#PWR075" H 11600 7600 30  0001 C CNN
 F 1 "GND" H 11600 7530 30  0001 C CNN
 	1    11600 7600
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR053
+L GND #PWR076
 U 1 1 51429E18
 P 11600 8600
-F 0 "#PWR053" H 11600 8600 30  0001 C CNN
+F 0 "#PWR076" H 11600 8600 30  0001 C CNN
 F 1 "GND" H 11600 8530 30  0001 C CNN
 	1    11600 8600
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR054
+L GND #PWR077
 U 1 1 51429E15
 P 11600 9600
-F 0 "#PWR054" H 11600 9600 30  0001 C CNN
+F 0 "#PWR077" H 11600 9600 30  0001 C CNN
 F 1 "GND" H 11600 9530 30  0001 C CNN
 	1    11600 9600
 	1    0    0    -1  
@@ -766,13 +772,11 @@ F 1 "C" H 11650 7100 50  0000 L CNN
 	1    11600 7200
 	1    0    0    -1  
 $EndComp
-Text HLabel 2000 9700 0    60   Input ~ 0
-V1P1
 $Comp
-L GND #PWR055
+L GND #PWR078
 U 1 1 51429D92
 P 2300 10400
-F 0 "#PWR055" H 2300 10400 30  0001 C CNN
+F 0 "#PWR078" H 2300 10400 30  0001 C CNN
 F 1 "GND" H 2300 10330 30  0001 C CNN
 	1    2300 10400
 	1    0    0    -1  
@@ -913,16 +917,14 @@ F 1 "C" H 2350 9900 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR056
+L GND #PWR079
 U 1 1 51429CB2
 P 2300 9400
-F 0 "#PWR056" H 2300 9400 30  0001 C CNN
+F 0 "#PWR079" H 2300 9400 30  0001 C CNN
 F 1 "GND" H 2300 9330 30  0001 C CNN
 	1    2300 9400
 	1    0    0    -1  
 $EndComp
-Text HLabel 2000 8700 0    60   Input ~ 0
-V1P8
 $Comp
 L C C116
 U 1 1 51429C5C
@@ -1068,10 +1070,10 @@ F 1 "C" H 2350 8900 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR057
+L GND #PWR080
 U 1 1 5136A7E7
 P 9900 6400
-F 0 "#PWR057" H 9900 6400 30  0001 C CNN
+F 0 "#PWR080" H 9900 6400 30  0001 C CNN
 F 1 "GND" H 9900 6330 30  0001 C CNN
 	1    9900 6400
 	1    0    0    -1  
@@ -1090,19 +1092,19 @@ NoConn ~ 6800 4500
 Text Notes 6600 4750 0    60   ~ 0
 Internal resistors pull to USB 3.0 transceiver mode.
 $Comp
-L GND #PWR058
+L GND #PWR081
 U 1 1 5109F898
 P 6900 7700
-F 0 "#PWR058" H 6900 7700 30  0001 C CNN
+F 0 "#PWR081" H 6900 7700 30  0001 C CNN
 F 1 "GND" H 6900 7630 30  0001 C CNN
 	1    6900 7700
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR059
+L GND #PWR082
 U 1 1 5109F87B
 P 11900 6000
-F 0 "#PWR059" H 11900 6000 30  0001 C CNN
+F 0 "#PWR082" H 11900 6000 30  0001 C CNN
 F 1 "GND" H 11900 5930 30  0001 C CNN
 	1    11900 6000
 	1    0    0    -1  

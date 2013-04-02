@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday, March 26, 2013 09:41:35 PM
+EESchema Schematic File Version 2  date Tue 02 Apr 2013 03:28:02 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,14 +17,16 @@ LIBS:gsg-microusb
 LIBS:pnp_sot23
 LIBS:si5351c-b
 LIBS:tps62410
+LIBS:usb3_micro_ab
+LIBS:usb3_esd_son50-10
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 10 16
+Sheet 8 15
 Title "Daisho Project Main Board"
-Date "26 mar 2013"
+Date "2 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -32,11 +34,15 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text GLabel 13100 2900 0    60   Input ~ 0
+V3P3
+Text GLabel 13100 1600 0    60   Input ~ 0
+V1P8
 $Comp
-L GND #PWR030
+L GND #PWR035
 U 1 1 514B69D6
 P 10500 4500
-F 0 "#PWR030" H 10500 4500 30  0001 C CNN
+F 0 "#PWR035" H 10500 4500 30  0001 C CNN
 F 1 "GND" H 10500 4430 30  0001 C CNN
 	1    10500 4500
 	1    0    0    -1  
@@ -55,10 +61,10 @@ F 1 "DDR2_SDRAM_SODIMM" H 11200 1200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR031
+L GND #PWR036
 U 1 1 514B69D4
 P 11900 4400
-F 0 "#PWR031" H 11900 4400 30  0001 C CNN
+F 0 "#PWR036" H 11900 4400 30  0001 C CNN
 F 1 "GND" H 11900 4330 30  0001 C CNN
 	1    11900 4400
 	-1   0    0    -1  
@@ -77,10 +83,6 @@ F 1 "DDR2_SDRAM_SODIMM" H 13900 1200 60  0000 C CNN
 	1    13900 1300
 	1    0    0    -1  
 $EndComp
-Text HLabel 13100 1600 0    60   Input ~ 0
-V1P8
-Text HLabel 13100 2900 0    60   Input ~ 0
-V3P3
 Text HLabel 13100 3100 0    60   Input ~ 0
 VREF
 Wire Wire Line
@@ -652,10 +654,8 @@ Text HLabel 7900 5100 0    60   Input ~ 0
 CAS#
 Text HLabel 7900 5000 0    60   Input ~ 0
 RAS#
-Text HLabel 7900 2200 0    60   Input ~ 0
-CKE1
-Text HLabel 7900 1800 0    60   Input ~ 0
-CKE0
+Text HLabel 7500 1800 0    60   Input ~ 0
+CKE[1..0]
 Text HLabel 7300 2700 0    60   Input ~ 0
 A[15..0]
 Text HLabel 7300 2300 0    60   Input ~ 0
@@ -736,14 +736,10 @@ Entry Wire Line
 	7500 4100 7600 4200
 Entry Wire Line
 	7500 4200 7600 4300
-Text HLabel 7900 2100 0    60   Input ~ 0
-CK#1
-Text HLabel 7900 2000 0    60   Input ~ 0
-CK1
-Text HLabel 7900 1700 0    60   Input ~ 0
-CK#0
-Text HLabel 7900 1600 0    60   Input ~ 0
-CK0
+Text HLabel 7500 1700 0    60   Input ~ 0
+CK#[1..0]
+Text HLabel 7500 1600 0    60   Input ~ 0
+CK[1..0]
 Text HLabel 1600 1300 0    60   BiDi ~ 0
 DQ[63..0]
 Text HLabel 4200 1550 0    60   Input ~ 0
@@ -782,10 +778,10 @@ $EndComp
 Text Notes 3700 5000 0    60   ~ 0
 DDR2 operates in DQS single-ended mode. All DQS# == VSS
 $Comp
-L GND #PWR032
+L GND #PWR037
 U 1 1 50FAE476
 P 5200 4700
-F 0 "#PWR032" H 5200 4700 30  0001 C CNN
+F 0 "#PWR037" H 5200 4700 30  0001 C CNN
 F 1 "GND" H 5200 4630 30  0001 C CNN
 	1    5200 4700
 	1    0    0    -1  

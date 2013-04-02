@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday, March 26, 2013 09:41:35 PM
+EESchema Schematic File Version 2  date Tue 02 Apr 2013 03:28:02 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,14 +17,16 @@ LIBS:gsg-microusb
 LIBS:pnp_sot23
 LIBS:si5351c-b
 LIBS:tps62410
+LIBS:usb3_micro_ab
+LIBS:usb3_esd_son50-10
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 12 16
+Sheet 9 15
 Title "Daisho Project Main Board"
-Date "26 mar 2013"
+Date "2 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -32,22 +34,84 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text Label 12400 9600 0    60   ~ 0
+FPGA_CLK_N1
+Text Label 12400 9700 0    60   ~ 0
+FPGA_CLK_P1
+Text Label 2900 9100 0    60   ~ 0
+FPGA_CLK_N0
+Text Label 2900 9000 0    60   ~ 0
+FPGA_CLK_P0
+Text Notes 4650 850  2    60   ~ 0
+TODO: VREF supply or voltage!
+Text GLabel 6600 6600 0    60   Input ~ 0
+V1P8
+Text GLabel 5700 2700 2    60   Input ~ 0
+V1P8
+Text GLabel 11000 10000 2    60   Input ~ 0
+V1P8
+Text GLabel 15200 2700 2    60   Input ~ 0
+V1P8
+Text GLabel 11300 2400 0    60   Input ~ 0
+V1P8
+Text GLabel 10500 2700 2    60   Input ~ 0
+V1P8
+Text Label 7800 8800 0    60   ~ 0
+DDR2_CK#0
+Text Label 7800 8700 0    60   ~ 0
+DDR2_CK0
 Wire Wire Line
-	7000 2700 8400 2700
+	3600 4100 3000 4100
 Wire Wire Line
-	3600 9100 2900 9100
+	13100 5400 11700 5400
+Connection ~ 15200 600 
 Wire Wire Line
-	1500 1200 2400 1200
+	15200 700  15200 600 
+Connection ~ 14400 600 
 Wire Wire Line
-	13100 4000 11700 4000
+	14400 600  14400 700 
+Connection ~ 13600 600 
+Wire Wire Line
+	13600 600  13600 700 
+Connection ~ 12800 600 
+Wire Wire Line
+	12800 600  12800 700 
+Connection ~ 12000 600 
+Wire Wire Line
+	12000 600  12000 700 
+Connection ~ 11200 600 
+Wire Wire Line
+	11200 600  11200 700 
+Connection ~ 11600 1200
+Wire Wire Line
+	11600 1100 11600 1200
+Connection ~ 12400 1200
+Wire Wire Line
+	12400 1200 12400 1100
+Connection ~ 13200 1200
+Wire Wire Line
+	13200 1200 13200 1100
+Connection ~ 14000 1200
+Wire Wire Line
+	14000 1200 14000 1100
+Connection ~ 14800 1200
+Wire Wire Line
+	14800 1200 14800 1100
+Connection ~ 15600 1200
+Wire Wire Line
+	15600 1300 15600 1100
+Wire Wire Line
+	3600 9100 2800 9100
+Wire Wire Line
+	1900 800  3100 800 
+Wire Wire Line
+	11700 4000 13100 4000
 Wire Wire Line
 	13100 5700 11700 5700
 Wire Wire Line
 	13100 7900 11700 7900
 Wire Wire Line
-	13100 5400 11700 5400
-Wire Wire Line
-	13100 5800 11700 5800
+	11700 5800 13100 5800
 Wire Wire Line
 	13100 9000 11700 9000
 Wire Wire Line
@@ -57,9 +121,7 @@ Wire Bus Line
 Wire Wire Line
 	13100 9200 11700 9200
 Wire Wire Line
-	8400 8800 7000 8800
-Wire Wire Line
-	3600 4100 2200 4100
+	8400 8800 7800 8800
 Wire Wire Line
 	13100 3900 12500 3900
 Wire Wire Line
@@ -142,13 +204,13 @@ Connection ~ 1900 10000
 Wire Wire Line
 	1900 10100 1900 10000
 Wire Wire Line
-	1500 10600 10700 10600
+	10700 10600 1500 10600
 Wire Wire Line
 	1500 10600 1500 10500
 Wire Bus Line
-	12300 1400 2200 1400
+	1900 1400 12300 1400
 Wire Bus Line
-	11900 1800 2200 1800
+	11900 1800 1900 1800
 Connection ~ 15000 2900
 Wire Wire Line
 	15000 2900 14900 2900
@@ -156,9 +218,9 @@ Connection ~ 15000 3100
 Wire Wire Line
 	14900 3100 15000 3100
 Wire Wire Line
-	14900 2700 15200 2700
+	15200 2700 14900 2700
 Wire Bus Line
-	7400 1600 7400 7800
+	7400 7800 7400 1600
 Connection ~ 10300 3400
 Wire Wire Line
 	10200 3400 10300 3400
@@ -172,7 +234,7 @@ Connection ~ 10300 2800
 Wire Wire Line
 	10300 2800 10200 2800
 Wire Wire Line
-	10500 2700 10200 2700
+	10200 2700 10500 2700
 Connection ~ 5500 3300
 Wire Wire Line
 	5500 3300 5400 3300
@@ -184,11 +246,11 @@ Wire Wire Line
 	5500 2900 5400 2900
 Connection ~ 5500 2700
 Wire Wire Line
-	5500 3500 5500 2700
+	5500 2700 5500 3500
 Wire Wire Line
 	5500 3500 5400 3500
 Wire Bus Line
-	2400 8500 2400 1800
+	2400 1800 2400 8500
 Wire Wire Line
 	3600 3500 2500 3500
 Wire Wire Line
@@ -218,11 +280,11 @@ Wire Wire Line
 Wire Wire Line
 	8400 3600 7300 3600
 Wire Wire Line
-	7300 3900 8400 3900
+	8400 3900 7300 3900
 Wire Wire Line
 	8400 4300 7300 4300
 Wire Wire Line
-	7300 4500 8400 4500
+	8400 4500 7300 4500
 Wire Wire Line
 	8400 5100 7300 5100
 Wire Wire Line
@@ -288,9 +350,9 @@ Wire Wire Line
 Wire Wire Line
 	3600 5400 2900 5400
 Wire Bus Line
-	2800 7000 2800 1400
+	2800 1400 2800 7000
 Wire Bus Line
-	2600 1600 2600 7500
+	2600 7500 2600 1600
 Wire Wire Line
 	3600 3000 2900 3000
 Wire Wire Line
@@ -324,7 +386,7 @@ Wire Wire Line
 Wire Wire Line
 	13100 5900 12400 5900
 Wire Bus Line
-	12300 5800 12300 1400
+	12300 1400 12300 5800
 Wire Wire Line
 	13100 7300 12000 7300
 Wire Wire Line
@@ -370,7 +432,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 7900 2500 7900
 Wire Wire Line
-	3600 7500 2500 7500
+	2500 7500 3600 7500
 Wire Wire Line
 	3600 6900 2500 6900
 Wire Wire Line
@@ -390,7 +452,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 3100 2500 3100
 Wire Wire Line
-	5400 2700 5700 2700
+	5700 2700 5400 2700
 Wire Wire Line
 	5500 2800 5400 2800
 Connection ~ 5500 2800
@@ -404,9 +466,9 @@ Wire Wire Line
 	5400 3400 5500 3400
 Connection ~ 5500 3400
 Wire Wire Line
-	10300 3500 10200 3500
+	10200 3500 10300 3500
 Wire Wire Line
-	10300 2700 10300 3500
+	10300 3500 10300 2700
 Connection ~ 10300 2700
 Wire Wire Line
 	10300 2900 10200 2900
@@ -418,94 +480,94 @@ Wire Wire Line
 	10300 3300 10200 3300
 Connection ~ 10300 3300
 Wire Bus Line
-	7200 1800 7200 8500
+	7200 8500 7200 1800
 Wire Bus Line
-	7600 1400 7600 6000
+	7600 6000 7600 1400
 Wire Wire Line
-	15000 3200 14900 3200
+	14900 3200 15000 3200
 Wire Wire Line
-	15000 2700 15000 3200
+	15000 3200 15000 2700
 Connection ~ 15000 2700
 Wire Wire Line
-	14900 3000 15000 3000
+	15000 3000 14900 3000
 Connection ~ 15000 3000
 Wire Wire Line
 	14900 2800 15000 2800
 Connection ~ 15000 2800
 Wire Bus Line
-	12100 1600 2200 1600
+	12100 1600 1900 1600
 Wire Wire Line
-	1500 10000 1500 10100
+	1500 10100 1500 10000
 Wire Wire Line
-	11000 10000 1500 10000
+	1500 10000 11000 10000
 Wire Wire Line
-	10700 10700 10700 10500
+	10700 10500 10700 10700
 Connection ~ 10700 10600
 Wire Wire Line
 	1900 10500 1900 10600
 Connection ~ 1900 10600
 Wire Wire Line
-	2300 10100 2300 10000
+	2300 10000 2300 10100
 Connection ~ 2300 10000
 Wire Wire Line
-	2700 10500 2700 10600
+	2700 10600 2700 10500
 Connection ~ 2700 10600
 Wire Wire Line
-	3100 10100 3100 10000
+	3100 10000 3100 10100
 Connection ~ 3100 10000
 Wire Wire Line
-	3500 10500 3500 10600
+	3500 10600 3500 10500
 Connection ~ 3500 10600
 Wire Wire Line
-	3900 10500 3900 10600
+	3900 10600 3900 10500
 Connection ~ 3900 10600
 Wire Wire Line
-	4300 10500 4300 10600
+	4300 10600 4300 10500
 Connection ~ 4300 10600
 Wire Wire Line
-	4700 10500 4700 10600
+	4700 10600 4700 10500
 Connection ~ 4700 10600
 Wire Wire Line
-	5100 10100 5100 10000
+	5100 10000 5100 10100
 Connection ~ 5100 10000
 Wire Wire Line
-	5500 10500 5500 10600
+	5500 10600 5500 10500
 Connection ~ 5500 10600
 Wire Wire Line
-	5900 10100 5900 10000
+	5900 10000 5900 10100
 Connection ~ 5900 10000
 Wire Wire Line
-	6300 10500 6300 10600
+	6300 10600 6300 10500
 Connection ~ 6300 10600
 Wire Wire Line
-	6700 10100 6700 10000
+	6700 10000 6700 10100
 Connection ~ 6700 10000
 Wire Wire Line
-	7100 10500 7100 10600
+	7100 10600 7100 10500
 Connection ~ 7100 10600
 Wire Wire Line
-	7500 10100 7500 10000
+	7500 10000 7500 10100
 Connection ~ 7500 10000
 Wire Wire Line
-	7900 10100 7900 10000
+	7900 10000 7900 10100
 Connection ~ 7900 10000
 Wire Wire Line
-	8300 10500 8300 10600
+	8300 10600 8300 10500
 Connection ~ 8300 10600
 Wire Wire Line
-	8700 10100 8700 10000
+	8700 10000 8700 10100
 Connection ~ 8700 10000
 Wire Wire Line
-	9100 10500 9100 10600
+	9100 10600 9100 10500
 Connection ~ 9100 10600
 Wire Wire Line
-	9500 10100 9500 10000
+	9500 10000 9500 10100
 Connection ~ 9500 10000
 Wire Wire Line
-	9900 10500 9900 10600
+	9900 10600 9900 10500
 Connection ~ 9900 10600
 Wire Wire Line
-	10300 10500 10300 10600
+	10300 10600 10300 10500
 Connection ~ 10300 10600
 Wire Wire Line
 	3600 3300 3000 3300
@@ -520,11 +582,11 @@ Wire Wire Line
 Wire Wire Line
 	13100 5500 12500 5500
 Wire Wire Line
-	3600 4000 2200 4000
+	3600 4000 3000 4000
 Wire Wire Line
-	8400 8700 7000 8700
+	8400 8700 7800 8700
 Wire Wire Line
-	11700 9700 13100 9700
+	12300 9700 13100 9700
 Wire Wire Line
 	13100 8900 11700 8900
 Wire Wire Line
@@ -536,75 +598,204 @@ Wire Wire Line
 Wire Wire Line
 	13100 7000 11700 7000
 Wire Wire Line
-	13100 7200 11700 7200
+	11700 7200 13100 7200
 Wire Wire Line
 	13100 6900 11700 6900
 Wire Wire Line
-	13100 6700 11700 6700
+	11700 6700 13100 6700
 Wire Wire Line
 	13100 3500 11700 3500
 Wire Wire Line
-	13100 9600 11700 9600
+	13100 9600 12300 9600
 Wire Wire Line
-	3600 9000 2900 9000
+	3600 9000 2800 9000
 Wire Wire Line
-	7000 2800 8400 2800
-Text HLabel 7000 2800 0    60   Input ~ 0
-FPGA_CLKB_N
-Text HLabel 7000 2700 0    60   Input ~ 0
-FPGA_CLKB_P
-Text HLabel 1500 3300 0    60   Output ~ 0
-ODT[1..0]
-Text HLabel 1500 3200 0    60   Output ~ 0
-S#[3..0]
-Text HLabel 1500 3000 0    60   Output ~ 0
-WE#
-Text HLabel 1500 2900 0    60   Output ~ 0
-CAS#
-Text HLabel 1500 2800 0    60   Output ~ 0
-RAS#
-Text HLabel 1500 2600 0    60   Output ~ 0
-A[15..0]
-Text HLabel 1500 2500 0    60   Output ~ 0
-BA[2..0]
-Text HLabel 1500 2300 0    60   Output ~ 0
-DDR2_CKE1
-Text HLabel 1500 2200 0    60   Output ~ 0
-DDR2_CKE0
-Text HLabel 2900 9100 0    60   Input ~ 0
-FPGA_CLKA_N
-Text HLabel 2900 9000 0    60   Input ~ 0
-FPGA_CLKA_P
-Text Label 1700 1200 0    60   ~ 0
+	11200 1100 11200 1200
+Wire Wire Line
+	11200 1200 15600 1200
+Wire Wire Line
+	15200 1100 15200 1200
+Connection ~ 15200 1200
+Wire Wire Line
+	14400 1200 14400 1100
+Connection ~ 14400 1200
+Wire Wire Line
+	13600 1200 13600 1100
+Connection ~ 13600 1200
+Wire Wire Line
+	12800 1200 12800 1100
+Connection ~ 12800 1200
+Wire Wire Line
+	12000 1200 12000 1100
+Connection ~ 12000 1200
+Wire Wire Line
+	15600 700  15600 600 
+Wire Wire Line
+	15600 600  10600 600 
+Wire Wire Line
+	11600 600  11600 700 
+Connection ~ 11600 600 
+Wire Wire Line
+	12400 600  12400 700 
+Connection ~ 12400 600 
+Wire Wire Line
+	13200 600  13200 700 
+Connection ~ 13200 600 
+Wire Wire Line
+	14000 600  14000 700 
+Connection ~ 14000 600 
+Wire Wire Line
+	14800 600  14800 700 
+Connection ~ 14800 600 
+Text HLabel 1900 1100 0    60   Output ~ 0
+DDR2_CK#[1..0]
+Text Label 3000 4100 0    60   ~ 0
+DDR2_CK#1
+Text Label 3000 4000 0    60   ~ 0
+DDR2_CK1
+Text Label 10800 600  0    60   ~ 0
 VREF
-Text HLabel 1500 1200 0    60   Input ~ 0
+$Comp
+L GND #PWR038
+U 1 1 51562CDE
+P 15600 1300
+F 0 "#PWR038" H 15600 1300 30  0001 C CNN
+F 1 "GND" H 15600 1230 30  0001 C CNN
+	1    15600 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C180
+U 1 1 51562CD5
+P 11200 900
+F 0 "C180" H 11250 1000 50  0000 L CNN
+F 1 "C" H 11250 800 50  0000 L CNN
+	1    11200 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C181
+U 1 1 51562CD3
+P 11600 900
+F 0 "C181" H 11650 1000 50  0000 L CNN
+F 1 "C" H 11650 800 50  0000 L CNN
+	1    11600 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C182
+U 1 1 51562CD1
+P 12000 900
+F 0 "C182" H 12050 1000 50  0000 L CNN
+F 1 "C" H 12050 800 50  0000 L CNN
+	1    12000 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C191
+U 1 1 51562CCD
+P 15600 900
+F 0 "C191" H 15650 1000 50  0000 L CNN
+F 1 "C" H 15650 800 50  0000 L CNN
+	1    15600 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C190
+U 1 1 51562CCB
+P 15200 900
+F 0 "C190" H 15250 1000 50  0000 L CNN
+F 1 "C" H 15250 800 50  0000 L CNN
+	1    15200 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C189
+U 1 1 51562CC9
+P 14800 900
+F 0 "C189" H 14850 1000 50  0000 L CNN
+F 1 "C" H 14850 800 50  0000 L CNN
+	1    14800 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C188
+U 1 1 51562CC6
+P 14400 900
+F 0 "C188" H 14450 1000 50  0000 L CNN
+F 1 "C" H 14450 800 50  0000 L CNN
+	1    14400 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C187
+U 1 1 51562CC3
+P 14000 900
+F 0 "C187" H 14050 1000 50  0000 L CNN
+F 1 "C" H 14050 800 50  0000 L CNN
+	1    14000 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C186
+U 1 1 51562CBF
+P 13600 900
+F 0 "C186" H 13650 1000 50  0000 L CNN
+F 1 "C" H 13650 800 50  0000 L CNN
+	1    13600 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C185
+U 1 1 51562CBC
+P 13200 900
+F 0 "C185" H 13250 1000 50  0000 L CNN
+F 1 "C" H 13250 800 50  0000 L CNN
+	1    13200 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C183
+U 1 1 51562CB7
+P 12400 900
+F 0 "C183" H 12450 1000 50  0000 L CNN
+F 1 "C" H 12450 800 50  0000 L CNN
+	1    12400 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C184
+U 1 1 51562C84
+P 12800 900
+F 0 "C184" H 12850 1000 50  0000 L CNN
+F 1 "C" H 12850 800 50  0000 L CNN
+	1    12800 900 
+	1    0    0    -1  
+$EndComp
+Text HLabel 1900 2800 0    60   Output ~ 0
+ODT[1..0]
+Text HLabel 1900 2700 0    60   Output ~ 0
+S#[3..0]
+Text HLabel 1900 2500 0    60   Output ~ 0
+WE#
+Text HLabel 1900 2400 0    60   Output ~ 0
+CAS#
+Text HLabel 1900 2300 0    60   Output ~ 0
+RAS#
+Text HLabel 1900 2100 0    60   Output ~ 0
+A[15..0]
+Text HLabel 1900 2000 0    60   Output ~ 0
+BA[2..0]
+Text HLabel 1900 1200 0    60   Output ~ 0
+DDR2_CKE[1..0]
+Text HLabel 1900 3100 0    60   Input ~ 0
+FPGA_CLK_N[1..0]
+Text HLabel 1900 3000 0    60   Input ~ 0
+FPGA_CLK_P[1..0]
+Text Label 2400 800  0    60   ~ 0
+VREF
+Text HLabel 1900 800  0    60   Input ~ 0
 DDR2_VREF
-Text Label 12400 7900 0    60   ~ 0
-ULPI_DATA0
-Text Label 12300 9700 0    60   ~ 0
-ULPI_DATA1
-Text Label 12400 7200 0    60   ~ 0
-ULPI_DATA2
-Text Label 12400 7000 0    60   ~ 0
-ULPI_DATA3
-Text Label 12400 5400 0    60   ~ 0
-ULPI_DATA4
-Text Label 12400 7600 0    60   ~ 0
-ULPI_DATA5
-Text Label 12400 8000 0    60   ~ 0
-ULPI_DATA6
-Text Label 12300 8900 0    60   ~ 0
-ULPI_DATA7
-Text HLabel 11700 8500 0    60   BiDi ~ 0
-ULPI_DATA[7..0]
-Text HLabel 11700 5700 0    60   Input ~ 0
-ULPI_NXT
-Text HLabel 11700 8700 0    60   Input ~ 0
-ULPI_DIR
-Text HLabel 11700 9200 0    60   Output ~ 0
-ULPI_STP
-Text HLabel 11700 9600 0    60   Input ~ 0
-ULPI_CLK
 Text Notes 1450 9400 0    60   ~ 0
 ODT is used for memory writes.\nODT is not effective for reads, so scenario is "no-parallel" termination,\nwhich isn't ideal from a signal quality perspective.\nBut a VTT supply and parallel termination resistors\n(on DQ[63..0] and DQS[7..0]) are avoided.
 Text Label 12700 9100 0    60   ~ 0
@@ -631,13 +822,11 @@ Text Label 3200 3300 0    60   ~ 0
 VREF
 Text Label 3200 4500 0    60   ~ 0
 VREF
-Text HLabel 11000 10000 2    60   Input ~ 0
-V1P8
 $Comp
-L GND #PWR038
+L GND #PWR039
 U 1 1 513E0563
 P 10700 10700
-F 0 "#PWR038" H 10700 10700 30  0001 C CNN
+F 0 "#PWR039" H 10700 10700 30  0001 C CNN
 F 1 "GND" H 10700 10630 30  0001 C CNN
 	1    10700 10700
 	1    0    0    -1  
@@ -858,14 +1047,6 @@ F 1 "C" H 1950 10200 50  0000 L CNN
 	1    1900 10300
 	1    0    0    -1  
 $EndComp
-Text HLabel 15200 2700 2    60   Input ~ 0
-V1P8
-Text HLabel 10500 2700 2    60   Input ~ 0
-V1P8
-Text HLabel 6600 6600 0    60   Input ~ 0
-V1P8
-Text HLabel 5700 2700 2    60   Input ~ 0
-V1P8
 Text Label 3000 3500 0    60   ~ 0
 DDR2_DQ63
 Text Label 3000 3100 0    60   ~ 0
@@ -1178,13 +1359,11 @@ Entry Wire Line
 	2600 6400 2700 6500
 Entry Wire Line
 	2600 3700 2700 3800
-Text HLabel 11300 2400 0    60   Input ~ 0
-V1P8
 $Comp
-L GND #PWR039
+L GND #PWR040
 U 1 1 511559B7
 P 11500 3900
-F 0 "#PWR039" H 11500 3900 30  0001 C CNN
+F 0 "#PWR040" H 11500 3900 30  0001 C CNN
 F 1 "GND" H 11500 3830 30  0001 C CNN
 	1    11500 3900
 	1    0    0    -1  
@@ -1210,10 +1389,10 @@ F 4 "1%" V 11400 2750 60  0000 C CNN "Tolerance"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR040
+L GND #PWR041
 U 1 1 5115592B
 P 6800 8100
-F 0 "#PWR040" H 6800 8100 30  0001 C CNN
+F 0 "#PWR041" H 6800 8100 30  0001 C CNN
 F 1 "GND" H 6800 8030 30  0001 C CNN
 	1    6800 8100
 	1    0    0    -1  
@@ -1250,20 +1429,14 @@ Entry Wire Line
 	2800 5300 2900 5400
 Entry Wire Line
 	2800 2900 2900 3000
-Text HLabel 1500 1800 0    60   BiDi ~ 0
+Text HLabel 1900 1800 0    60   BiDi ~ 0
 DDR2_DQ[63..0]
-Text HLabel 1500 1600 0    60   BiDi ~ 0
+Text HLabel 1900 1600 0    60   BiDi ~ 0
 DDR2_DQS[7..0]
-Text HLabel 1500 1400 0    60   Output ~ 0
+Text HLabel 1900 1400 0    60   Output ~ 0
 DDR2_DM[7..0]
-Text HLabel 2200 4100 0    60   Output ~ 0
-DDR2_CK#1
-Text HLabel 2200 4000 0    60   Output ~ 0
-DDR2_CK1
-Text HLabel 7000 8800 0    60   Output ~ 0
-DDR2_CK#0
-Text HLabel 7000 8700 0    60   Output ~ 0
-DDR2_CK0
+Text HLabel 1900 1000 0    60   Output ~ 0
+DDR2_CK[1..0]
 $Comp
 L EP4CE30F29 U1
 U 3 1 51009C9D

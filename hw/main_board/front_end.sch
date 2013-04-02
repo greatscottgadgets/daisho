@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tuesday, March 26, 2013 09:41:35 PM
+EESchema Schematic File Version 2  date Tue 02 Apr 2013 03:28:02 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -17,14 +17,16 @@ LIBS:gsg-microusb
 LIBS:pnp_sot23
 LIBS:si5351c-b
 LIBS:tps62410
+LIBS:usb3_micro_ab
+LIBS:usb3_esd_son50-10
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 9 16
+Sheet 6 15
 Title "Daisho Project Main Board"
-Date "26 mar 2013"
+Date "2 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -32,219 +34,12 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 8900 1250 0    60   Input ~ 0
-V_FE
-$Comp
-L MOSFET_P Q?
-U 1 1 5151E9B3
-P 9600 1650
-F 0 "Q?" H 9600 1840 60  0000 R CNN
-F 1 "MOSFET_P" H 9600 1470 60  0000 R CNN
-	1    9600 1650
-	0    1    -1   0   
-$EndComp
-Text HLabel 8900 1550 0    60   Input ~ 0
-V3P3
-Text HLabel 8900 2250 0    60   Input ~ 0
-VCCIO_DEFAULT_EN
-$Comp
-L R R?
-U 1 1 5151E9B2
-P 9200 1900
-F 0 "R?" V 9280 1900 50  0000 C CNN
-F 1 "10K" V 9200 1900 50  0000 C CNN
-	1    9200 1900
-	-1   0    0    -1  
-$EndComp
-$Comp
-L MOSFET_N Q?
-U 1 1 5151E9B1
-P 10950 3250
-F 0 "Q?" H 10960 3420 60  0000 R CNN
-F 1 "MOSFET_N" H 10960 3100 60  0000 R CNN
-	1    10950 3250
-	0    -1   -1   0   
-$EndComp
-Text HLabel 10250 3150 0    60   Input ~ 0
-VCCIO
-$Comp
-L R R?
-U 1 1 5151E9B0
-P 10950 3900
-F 0 "R?" V 11030 3900 50  0000 C CNN
-F 1 "R" V 10950 3900 50  0000 C CNN
-	1    10950 3900
-	-1   0    0    -1  
-$EndComp
-$Comp
-L R R?
-U 1 1 5151E9AF
-P 10250 1550
-F 0 "R?" V 10330 1550 50  0000 C CNN
-F 1 "10R" V 10250 1550 50  0000 C CNN
-	1    10250 1550
-	0    1    -1   0   
-$EndComp
-$Comp
-L C C?
-U 1 1 5151E9AE
-P 10700 1850
-F 0 "C?" H 10750 1950 50  0000 L CNN
-F 1 "C" H 10750 1750 50  0000 L CNN
-	1    10700 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 5151E9AD
-P 11100 1850
-F 0 "C?" H 11150 1950 50  0000 L CNN
-F 1 "C" H 11150 1750 50  0000 L CNN
-	1    11100 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 5151E9AC
-P 11500 1850
-F 0 "C?" H 11550 1950 50  0000 L CNN
-F 1 "C" H 11550 1750 50  0000 L CNN
-	1    11500 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 5151E9AB
-P 11900 1850
-F 0 "C?" H 11950 1950 50  0000 L CNN
-F 1 "C" H 11950 1750 50  0000 L CNN
-	1    11900 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 5151E9AA
-P 12300 1850
-F 0 "C?" H 12350 1950 50  0000 L CNN
-F 1 "C" H 12350 1750 50  0000 L CNN
-	1    12300 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 5151E9A9
-P 12700 1850
-F 0 "C?" H 12750 1950 50  0000 L CNN
-F 1 "C" H 12750 1750 50  0000 L CNN
-	1    12700 1850
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 5151E9A8
-P 10700 2250
-F 0 "#PWR?" H 10700 2250 30  0001 C CNN
-F 1 "GND" H 10700 2180 30  0001 C CNN
-	1    10700 2250
-	1    0    0    -1  
-$EndComp
-Connection ~ 12300 1550
-Wire Wire Line
-	12700 1550 12700 1650
-Connection ~ 11500 1550
-Wire Wire Line
-	11900 1550 11900 1650
-Connection ~ 11100 1550
-Wire Wire Line
-	11100 1550 11100 1650
-Connection ~ 12300 2150
-Wire Wire Line
-	11100 2150 10700 2150
-Wire Wire Line
-	11500 2150 11100 2150
-Wire Wire Line
-	11900 2150 11500 2150
-Wire Wire Line
-	12300 2150 11900 2150
-Wire Wire Line
-	12700 2150 12300 2150
-Wire Wire Line
-	12700 2050 12700 2150
-Connection ~ 11500 2150
-Wire Wire Line
-	11900 2150 11900 2050
-Connection ~ 10700 2150
-Wire Wire Line
-	11100 2150 11100 2050
-Wire Wire Line
-	9800 1550 10000 1550
-Wire Wire Line
-	10950 3450 10950 3650
-Connection ~ 10700 1550
-Connection ~ 9200 1550
-Wire Wire Line
-	9200 1650 9200 1550
-Wire Wire Line
-	10700 1250 8900 1250
-Wire Wire Line
-	9200 1550 9400 1550
-Wire Wire Line
-	8900 1550 9200 1550
-Wire Wire Line
-	9200 2250 8900 2250
-Wire Wire Line
-	9600 2250 9200 2250
-Wire Wire Line
-	9600 1850 9600 2250
-Wire Wire Line
-	9200 2150 9200 2250
-Connection ~ 9200 2250
-Wire Wire Line
-	10250 3150 10750 3150
-Wire Wire Line
-	10950 4250 10950 4150
-Wire Wire Line
-	10250 4250 10950 4250
-Wire Wire Line
-	10700 2150 10700 2050
-Wire Wire Line
-	10700 2250 10700 2150
-Wire Wire Line
-	11500 2150 11500 2050
-Connection ~ 11100 2150
-Wire Wire Line
-	12300 2150 12300 2050
-Connection ~ 11900 2150
-Wire Wire Line
-	10700 1550 10700 1250
-Wire Wire Line
-	10700 1650 10700 1550
-Wire Wire Line
-	11500 1550 11500 1650
-Wire Wire Line
-	12300 1550 12300 1650
-Connection ~ 11900 1550
-Wire Wire Line
-	10700 1550 10400 1550
-Wire Wire Line
-	11100 1550 10700 1550
-Wire Wire Line
-	11500 1550 11100 1550
-Wire Wire Line
-	11900 1550 11500 1550
-Wire Wire Line
-	12300 1550 11900 1550
-Wire Wire Line
-	12700 1550 12300 1550
-Wire Wire Line
-	13400 1550 12700 1550
-Connection ~ 12700 1550
-Text Label 12900 1550 0    60   ~ 0
-VCCIO
-Text Notes 10500 950  0    60   ~ 0
-TODO: I DO NOT LIKE THIS.
-Text HLabel 1600 6400 0    60   Input ~ 0
+Text Label 1800 2400 0    60   ~ 0
 FE_V1P8
+Text Label 1800 1700 0    60   ~ 0
+FE_V3P3
+Wire Wire Line
+	1600 2400 2400 2400
 Connection ~ 2600 6400
 Wire Wire Line
 	2600 6400 2600 7000
@@ -261,9 +56,9 @@ Wire Wire Line
 Wire Wire Line
 	2600 4800 2700 4800
 Wire Wire Line
-	5000 4700 3900 4700
+	4800 4700 3900 4700
 Wire Wire Line
-	3900 7600 5000 7600
+	3900 7600 4800 7600
 Connection ~ 9000 6400
 Wire Wire Line
 	9000 5200 9000 7000
@@ -276,25 +71,25 @@ Wire Wire Line
 	12600 7000 12700 7000
 Connection ~ 7600 5200
 Wire Wire Line
-	7700 5200 6600 5200
+	6800 5200 7700 5200
 Wire Wire Line
-	5000 7400 3900 7400
+	4700 7400 3900 7400
 Wire Wire Line
-	1600 7500 2700 7500
+	1900 7500 2700 7500
 Wire Wire Line
-	2700 4700 1600 4700
+	1800 4700 2700 4700
 Wire Wire Line
-	13900 5200 15000 5200
+	14800 5200 13900 5200
 Connection ~ 4000 5200
 Wire Wire Line
-	5000 5200 3900 5200
+	3900 5200 4800 5200
 Connection ~ 9000 5200
 Connection ~ 7600 5800
 Wire Wire Line
-	7700 5800 7600 5800
+	7600 5800 7700 5800
 Connection ~ 9000 5800
 Wire Wire Line
-	8900 5800 9000 5800
+	9000 5800 8900 5800
 Wire Wire Line
 	6900 5300 7700 5300
 Wire Wire Line
@@ -345,7 +140,7 @@ Wire Wire Line
 	2700 7200 1900 7200
 Connection ~ 4000 5800
 Wire Wire Line
-	3900 5800 4000 5800
+	4000 5800 3900 5800
 Wire Wire Line
 	6900 7600 7700 7600
 Wire Wire Line
@@ -371,7 +166,7 @@ Wire Wire Line
 Wire Wire Line
 	12700 4900 11900 4900
 Wire Wire Line
-	14000 6400 13900 6400
+	13900 6400 14000 6400
 Connection ~ 12600 5800
 Wire Wire Line
 	12600 5800 12700 5800
@@ -443,17 +238,17 @@ Connection ~ 13250 8100
 Wire Wire Line
 	13250 8100 13250 8000
 Wire Wire Line
-	13150 8000 13150 8200
+	13150 8200 13150 8000
 Connection ~ 8250 8100
 Wire Wire Line
 	8250 8100 8250 8000
 Wire Wire Line
-	8150 8000 8150 8200
+	8150 8200 8150 8000
 Connection ~ 3250 8100
 Wire Wire Line
 	3350 8000 3350 8100
 Wire Wire Line
-	3150 8000 3150 8200
+	3150 8200 3150 8000
 Wire Wire Line
 	3250 8100 3250 8000
 Connection ~ 3150 8100
@@ -559,9 +354,9 @@ Wire Wire Line
 Wire Wire Line
 	13900 7500 14700 7500
 Wire Wire Line
-	12600 6400 12700 6400
+	12700 6400 12600 6400
 Wire Wire Line
-	13900 5800 14000 5800
+	14000 5800 13900 5800
 Connection ~ 14000 5800
 Wire Wire Line
 	13900 4900 14700 4900
@@ -588,7 +383,7 @@ Wire Wire Line
 Wire Wire Line
 	9700 7600 8900 7600
 Wire Wire Line
-	4000 6400 3900 6400
+	3900 6400 4000 6400
 Wire Wire Line
 	2700 7300 1900 7300
 Wire Wire Line
@@ -610,7 +405,7 @@ Wire Wire Line
 Wire Wire Line
 	2700 5100 1900 5100
 Wire Wire Line
-	5000 4800 3900 4800
+	4800 4800 3900 4800
 Wire Wire Line
 	4700 5000 3900 5000
 Wire Wire Line
@@ -640,22 +435,22 @@ Wire Wire Line
 Wire Wire Line
 	6900 5900 7700 5900
 Wire Wire Line
-	9000 6400 8900 6400
+	8900 6400 9000 6400
 Wire Wire Line
-	7600 6400 7700 6400
+	7700 6400 7600 6400
 Connection ~ 14000 5200
 Wire Wire Line
-	8900 5200 10000 5200
+	9800 5200 8900 5200
 Wire Wire Line
-	2700 5200 1600 5200
+	1800 5200 2700 5200
 Wire Wire Line
-	1600 7400 2700 7400
+	1900 7400 2700 7400
 Wire Wire Line
-	1600 7600 2700 7600
+	1800 7600 2700 7600
 Wire Wire Line
-	5000 7500 3900 7500
+	4700 7500 3900 7500
 Wire Wire Line
-	12700 5200 11600 5200
+	11800 5200 12700 5200
 Connection ~ 12600 5200
 Wire Wire Line
 	7700 7000 7600 7000
@@ -677,16 +472,36 @@ Wire Wire Line
 Wire Wire Line
 	4700 4900 3900 4900
 Wire Wire Line
-	2700 6400 1600 6400
+	1800 6400 2700 6400
+Wire Wire Line
+	1600 1700 2400 1700
+Text Label 2100 6400 0    60   ~ 0
+FE_V1P8
+Text Label 2100 5200 0    60   ~ 0
+FE_V3P3
+Text Label 4100 7500 0    60   ~ 0
+FE_CLK_N1
+Text Label 4100 7400 0    60   ~ 0
+FE_CLK_P1
+Text Label 2100 7500 0    60   ~ 0
+FE_CLK_N0
+Text Label 2100 7400 0    60   ~ 0
+FE_CLK_P0
+Text GLabel 1800 4700 0    60   Output ~ 0
+VRAW_FE
+Text GLabel 1600 2400 0    60   Input ~ 0
+V1P8
+Text GLabel 1600 1700 0    60   Input ~ 0
+V3P3
 Text Notes 2000 8500 0    60   ~ 0
 Front end boards are expected to enable onboard regulators\nrunning from FE_VRAW using FE_V3P3 or FE_V1P8, to keep\nfront end supply sequencing orderly and predictable.
 Text Label 4200 7300 0    60   ~ 0
 FE_A41
 Text Label 2100 7300 0    60   ~ 0
 FE_A40
-Text HLabel 6600 5200 0    60   Output ~ 0
+Text HLabel 6800 5200 0    60   Output ~ 0
 FE_VCCIO_B
-Text HLabel 10000 5200 2    60   Output ~ 0
+Text HLabel 9800 5200 2    60   Output ~ 0
 FE_VCCIO_B
 Text Notes 6150 10300 0    60   ~ 0
 SPI or other interface for (re-)programming devices on front end board?
@@ -694,23 +509,17 @@ Text Notes 4250 7900 0    60   ~ 0
 Si5351C clock output voltage level configuration, somehow?
 Text Notes 700  10300 0    60   ~ 0
 VCCIO regulators enabled by microcontroller or by FPGA?
-Text HLabel 11600 5200 0    60   Output ~ 0
+Text HLabel 11800 5200 0    60   Output ~ 0
 FE_VCCIO_C
-Text HLabel 5000 7500 2    60   Input ~ 0
-FE_CLKB_N
-Text HLabel 5000 7400 2    60   Input ~ 0
-FE_CLKB_P
-Text HLabel 1600 7600 0    60   Output ~ 0
+Text HLabel 1800 7600 0    60   Output ~ 0
 FE_CLKSRC
-Text HLabel 1600 7500 0    60   Input ~ 0
-FE_CLKA_N
-Text HLabel 1600 7400 0    60   Input ~ 0
-FE_CLKA_P
-Text HLabel 1600 4700 0    60   BiDi ~ 0
-FE_VRAW
-Text HLabel 15000 5200 2    60   Output ~ 0
+Text HLabel 1600 1400 0    60   Input ~ 0
+FE_CLK_N[1..0]
+Text HLabel 1600 1300 0    60   Input ~ 0
+FE_CLK_P[1..0]
+Text HLabel 14800 5200 2    60   Output ~ 0
 FE_VCCIO_C
-Text HLabel 5000 5200 2    60   Output ~ 0
+Text HLabel 4800 5200 2    60   Output ~ 0
 FE_VCCIO_A
 Text Label 4200 7200 0    60   ~ 0
 FE_A39
@@ -792,21 +601,19 @@ Text Label 2100 5000 0    60   ~ 0
 FE_A2
 Text Label 2100 4900 0    60   ~ 0
 FE_A0
-Text HLabel 5000 4800 2    60   BiDi ~ 0
+Text HLabel 4800 4800 2    60   BiDi ~ 0
 FE_I2C_SDA
-Text HLabel 5000 4700 2    60   Input ~ 0
+Text HLabel 4800 4700 2    60   Input ~ 0
 FE_I2C_SCL
-Text HLabel 1600 5200 0    60   Input ~ 0
-FE_V3P3
 Text Notes 700  9800 0    60   ~ 0
 Ground unused pins at FPGA to ensure low impedance to ground?
 Text Notes 700  9600 0    60   ~ 0
 Ground unused pins at front-end side, assuming FPGA will be configured not to drive those pins?
 Text Notes 700  10000 0    60   ~ 0
 Presence detect pin forces FPGA to reset if front-end not present?\nNo presence detect required if all front ends implement EEPROM.
-Text HLabel 3450 3900 0    60   BiDi ~ 0
+Text HLabel 1600 900  0    60   BiDi ~ 0
 FE_A[41..0]
-Text HLabel 8400 3900 0    60   BiDi ~ 0
+Text HLabel 1600 1000 0    60   BiDi ~ 0
 FE_B[51..0]
 Text Label 7100 4700 0    60   ~ 0
 FE_B0
@@ -912,7 +719,7 @@ Text Label 9200 4800 0    60   ~ 0
 FE_B3
 Text Label 9200 4700 0    60   ~ 0
 FE_B1
-Text HLabel 13400 3900 0    60   BiDi ~ 0
+Text HLabel 1600 1100 0    60   BiDi ~ 0
 FE_C[51..0]
 Text Label 14200 7600 0    60   ~ 0
 FE_C51
@@ -1019,28 +826,28 @@ FE_C0
 Text Label 12100 4800 0    60   ~ 0
 FE_C2
 $Comp
-L GND #PWR027
+L GND #PWR028
 U 1 1 51392416
 P 8150 8200
-F 0 "#PWR027" H 8150 8200 30  0001 C CNN
+F 0 "#PWR028" H 8150 8200 30  0001 C CNN
 F 1 "GND" H 8150 8130 30  0001 C CNN
 	1    8150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR028
+L GND #PWR029
 U 1 1 51392411
 P 13150 8200
-F 0 "#PWR028" H 13150 8200 30  0001 C CNN
+F 0 "#PWR029" H 13150 8200 30  0001 C CNN
 F 1 "GND" H 13150 8130 30  0001 C CNN
 	1    13150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR029
+L GND #PWR030
 U 1 1 513923EB
 P 3150 8200
-F 0 "#PWR029" H 3150 8200 30  0001 C CNN
+F 0 "#PWR030" H 3150 8200 30  0001 C CNN
 F 1 "GND" H 3150 8130 30  0001 C CNN
 	1    3150 8200
 	1    0    0    -1  
