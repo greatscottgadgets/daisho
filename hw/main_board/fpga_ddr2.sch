@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 03:28:02 PM PDT
+EESchema Schematic File Version 2  date Tue 02 Apr 2013 05:37:28 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 9 15
 Title "Daisho Project Main Board"
-Date "2 apr 2013"
+Date "3 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -656,10 +656,10 @@ DDR2_CK1
 Text Label 10800 600  0    60   ~ 0
 VREF
 $Comp
-L GND #PWR038
+L GND #PWR039
 U 1 1 51562CDE
 P 15600 1300
-F 0 "#PWR038" H 15600 1300 30  0001 C CNN
+F 0 "#PWR039" H 15600 1300 30  0001 C CNN
 F 1 "GND" H 15600 1230 30  0001 C CNN
 	1    15600 1300
 	1    0    0    -1  
@@ -823,10 +823,10 @@ VREF
 Text Label 3200 4500 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR039
+L GND #PWR040
 U 1 1 513E0563
 P 10700 10700
-F 0 "#PWR039" H 10700 10700 30  0001 C CNN
+F 0 "#PWR040" H 10700 10700 30  0001 C CNN
 F 1 "GND" H 10700 10630 30  0001 C CNN
 	1    10700 10700
 	1    0    0    -1  
@@ -1360,10 +1360,10 @@ Entry Wire Line
 Entry Wire Line
 	2600 3700 2700 3800
 $Comp
-L GND #PWR040
+L GND #PWR041
 U 1 1 511559B7
 P 11500 3900
-F 0 "#PWR040" H 11500 3900 30  0001 C CNN
+F 0 "#PWR041" H 11500 3900 30  0001 C CNN
 F 1 "GND" H 11500 3830 30  0001 C CNN
 	1    11500 3900
 	1    0    0    -1  
@@ -1389,10 +1389,10 @@ F 4 "1%" V 11400 2750 60  0000 C CNN "Tolerance"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR041
+L GND #PWR042
 U 1 1 5115592B
 P 6800 8100
-F 0 "#PWR041" H 6800 8100 30  0001 C CNN
+F 0 "#PWR042" H 6800 8100 30  0001 C CNN
 F 1 "GND" H 6800 8030 30  0001 C CNN
 	1    6800 8100
 	1    0    0    -1  

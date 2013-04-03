@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 03:28:02 PM PDT
+EESchema Schematic File Version 2  date Tue 02 Apr 2013 05:37:28 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 2 15
 Title "Daisho Project Main Board"
-Date "2 apr 2013"
+Date "3 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,6 +34,20 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 7500 2600
+NoConn ~ 7500 4400
+NoConn ~ 7500 5200
+NoConn ~ 7500 5400
+NoConn ~ 7500 5700
+NoConn ~ 7500 6100
+NoConn ~ 7500 6200
+NoConn ~ 7500 6500
+NoConn ~ 7500 6700
+NoConn ~ 7500 7400
+NoConn ~ 7500 7500
+NoConn ~ 7500 7600
+NoConn ~ 7500 7700
+NoConn ~ 7500 9300
 Text Label 6300 8100 0    60   ~ 0
 PIPE_TX_DEEMPH0
 Text Label 6300 5800 0    60   ~ 0
@@ -59,29 +73,13 @@ PIPE_TX_DEEMPH[1..0]
 Wire Wire Line
 	6100 9500 7500 9500
 Wire Wire Line
-	6100 9300 7500 9300
-Wire Wire Line
 	6100 8300 7500 8300
 Wire Wire Line
-	7500 7700 6100 7700
-Wire Wire Line
-	7500 6100 6100 6100
-Wire Wire Line
 	7500 5800 6100 5800
-Wire Wire Line
-	7500 6500 6100 6500
-Wire Wire Line
-	7500 6200 6100 6200
-Wire Wire Line
-	7500 4400 6100 4400
 Wire Wire Line
 	7500 8700 5800 8700
 Wire Wire Line
 	7500 3400 6100 3400
-Wire Wire Line
-	7500 5200 6100 5200
-Wire Wire Line
-	7500 5700 6100 5700
 Wire Wire Line
 	7500 3200 6100 3200
 Wire Wire Line
@@ -109,8 +107,6 @@ Wire Wire Line
 	6100 9000 7500 9000
 Wire Wire Line
 	6100 8800 7500 8800
-Wire Wire Line
-	6100 7400 7500 7400
 Wire Wire Line
 	6100 7000 7500 7000
 Wire Wire Line
@@ -162,8 +158,6 @@ Connection ~ 9400 2700
 Wire Wire Line
 	9400 2900 9300 2900
 Connection ~ 9400 2900
-Wire Wire Line
-	7500 2600 6100 2600
 Wire Wire Line
 	7500 2800 6100 2800
 Wire Wire Line
@@ -229,21 +223,13 @@ Wire Wire Line
 Wire Wire Line
 	7500 5600 6100 5600
 Wire Wire Line
-	7500 5400 6100 5400
-Wire Wire Line
 	7500 8600 5800 8600
 Wire Wire Line
 	7500 6900 6100 6900
 Wire Wire Line
 	7500 5500 6100 5500
 Wire Wire Line
-	7500 6700 6100 6700
-Wire Wire Line
-	7500 7500 6100 7500
-Wire Wire Line
 	7500 5900 6100 5900
-Wire Wire Line
-	7500 7600 6100 7600
 Wire Wire Line
 	7500 8100 6100 8100
 Wire Wire Line
@@ -412,27 +398,27 @@ Text Label 6300 4600 0    60   ~ 0
 PIPE_TX_DATA11
 Text Label 6300 4500 0    60   ~ 0
 PIPE_TX_DATA10
-Text Label 6300 4800 0    60   ~ 0
+Text Label 6300 4900 0    60   ~ 0
 PIPE_TX_DATA9
-Text Label 6300 2600 0    60   ~ 0
+Text Label 6300 4800 0    60   ~ 0
 PIPE_TX_DATA8
-Text Label 6300 2800 0    60   ~ 0
+Text Label 6300 3100 0    60   ~ 0
 PIPE_TX_DATA0
 Text Label 6300 2500 0    60   ~ 0
 PIPE_PCLK
-Text Label 6300 4900 0    60   ~ 0
-PIPE_TX_DATA7
-Text Label 6300 4700 0    60   ~ 0
-PIPE_TX_DATA6
 Text Label 6300 4300 0    60   ~ 0
-PIPE_TX_DATA5
+PIPE_TX_DATA7
 Text Label 6300 3000 0    60   ~ 0
-PIPE_TX_DATA4
+PIPE_TX_DATA6
+Text Label 6300 4700 0    60   ~ 0
+PIPE_TX_DATA5
 Text Label 6300 4000 0    60   ~ 0
-PIPE_TX_DATA3
+PIPE_TX_DATA4
 Text Label 6300 3600 0    60   ~ 0
-PIPE_TX_DATA2
+PIPE_TX_DATA3
 Text Label 6300 2700 0    60   ~ 0
+PIPE_TX_DATA2
+Text Label 6300 2800 0    60   ~ 0
 PIPE_TX_DATA1
 Text HLabel 2400 5100 0    60   Input ~ 0
 PIPE_RX_VALID

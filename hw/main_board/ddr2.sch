@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 03:28:02 PM PDT
+EESchema Schematic File Version 2  date Tue 02 Apr 2013 05:37:28 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -24,9 +24,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 8 15
+Sheet 9 15
 Title "Daisho Project Main Board"
-Date "2 apr 2013"
+Date "3 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,57 +34,46 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 13100 2900 0    60   Input ~ 0
-V3P3
-Text GLabel 13100 1600 0    60   Input ~ 0
-V1P8
-$Comp
-L GND #PWR035
-U 1 1 514B69D6
-P 10500 4500
-F 0 "#PWR035" H 10500 4500 30  0001 C CNN
-F 1 "GND" H 10500 4430 30  0001 C CNN
-	1    10500 4500
-	1    0    0    -1  
-$EndComp
-$Comp
-L DDR2_SDRAM_SODIMM J?
-U 2 1 514B69D5
-P 11200 1300
-AR Path="/50FA0542/50FD8B9B" Ref="J?"  Part="2" 
-AR Path="/50FA0542/50FD899B/50FD8B9B" Ref="J?"  Part="2" 
-AR Path="/510239EE/50FD8B9B" Ref="J?"  Part="2" 
-AR Path="/50FA09AE/514B69D5" Ref="J1"  Part="2" 
-F 0 "J1" H 11200 1300 60  0000 C CNN
-F 1 "DDR2_SDRAM_SODIMM" H 11200 1200 60  0000 C CNN
-	2    11200 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR036
-U 1 1 514B69D4
-P 11900 4400
-F 0 "#PWR036" H 11900 4400 30  0001 C CNN
-F 1 "GND" H 11900 4330 30  0001 C CNN
-	1    11900 4400
-	-1   0    0    -1  
-$EndComp
-$Comp
-L DDR2_SDRAM_SODIMM J?
-U 1 1 514B69D3
-P 13900 1300
-AR Path="/50FD8AE5" Ref="J?"  Part="1" 
-AR Path="/50FA0542/50FD8AE5" Ref="J?"  Part="1" 
-AR Path="/50FA0542/50FD899B/50FD8AE5" Ref="J?"  Part="1" 
-AR Path="/510239EE/50FD8AE5" Ref="J?"  Part="1" 
-AR Path="/50FA09AE/514B69D3" Ref="J1"  Part="1" 
-F 0 "J1" H 13900 1300 60  0000 C CNN
-F 1 "DDR2_SDRAM_SODIMM" H 13900 1200 60  0000 C CNN
-	1    13900 1300
-	1    0    0    -1  
-$EndComp
-Text HLabel 13100 3100 0    60   Input ~ 0
-VREF
+Connection ~ 14500 5900
+Wire Wire Line
+	10500 5900 14900 5900
+Wire Wire Line
+	14900 5900 14900 5800
+Connection ~ 13700 5900
+Wire Wire Line
+	14100 5900 14100 5800
+Connection ~ 12900 5900
+Wire Wire Line
+	13300 5900 13300 5800
+Connection ~ 12100 5900
+Wire Wire Line
+	12500 5900 12500 5800
+Connection ~ 11300 5900
+Wire Wire Line
+	11700 5900 11700 5800
+Connection ~ 10500 5900
+Wire Wire Line
+	10900 5900 10900 5800
+Connection ~ 14500 5300
+Wire Wire Line
+	14900 5400 14900 5300
+Wire Wire Line
+	14900 5300 10200 5300
+Connection ~ 13700 5300
+Wire Wire Line
+	14100 5300 14100 5400
+Connection ~ 12900 5300
+Wire Wire Line
+	13300 5300 13300 5400
+Connection ~ 12100 5300
+Wire Wire Line
+	12500 5300 12500 5400
+Connection ~ 11300 5300
+Wire Wire Line
+	11700 5300 11700 5400
+Connection ~ 10500 5300
+Wire Wire Line
+	10900 5300 10900 5400
 Wire Wire Line
 	13300 2900 13100 2900
 Connection ~ 13200 2600
@@ -299,8 +288,6 @@ Wire Wire Line
 	13200 2700 13200 1600
 Wire Wire Line
 	13100 3100 13300 3100
-Text HLabel 7300 5800 0    60   Input ~ 0
-SA[1..0]
 Wire Bus Line
 	7300 5800 7500 5800
 Wire Bus Line
@@ -594,6 +581,212 @@ Wire Wire Line
 	8300 5800 7900 5800
 Wire Wire Line
 	8300 6000 7600 6000
+Wire Wire Line
+	10500 5300 10500 5400
+Wire Wire Line
+	11300 5300 11300 5400
+Connection ~ 10900 5300
+Wire Wire Line
+	12100 5300 12100 5400
+Connection ~ 11700 5300
+Wire Wire Line
+	12900 5300 12900 5400
+Connection ~ 12500 5300
+Wire Wire Line
+	13700 5300 13700 5400
+Connection ~ 13300 5300
+Wire Wire Line
+	14500 5300 14500 5400
+Connection ~ 14100 5300
+Wire Wire Line
+	10500 5800 10500 6000
+Wire Wire Line
+	11300 5900 11300 5800
+Connection ~ 10900 5900
+Wire Wire Line
+	12100 5900 12100 5800
+Connection ~ 11700 5900
+Wire Wire Line
+	12900 5900 12900 5800
+Connection ~ 12500 5900
+Wire Wire Line
+	13700 5900 13700 5800
+Connection ~ 13300 5900
+Wire Wire Line
+	14500 5900 14500 5800
+Connection ~ 14100 5900
+$Comp
+L GND #PWR035
+U 1 1 515B7843
+P 10500 6000
+F 0 "#PWR035" H 10500 6000 30  0001 C CNN
+F 1 "GND" H 10500 5930 30  0001 C CNN
+	1    10500 6000
+	1    0    0    -1  
+$EndComp
+Text GLabel 10200 5300 0    60   Input ~ 0
+V1P8
+$Comp
+L C C221
+U 1 1 515B781D
+P 14900 5600
+F 0 "C221" H 14950 5700 50  0000 L CNN
+F 1 "100N" H 14950 5500 50  0000 L CNN
+	1    14900 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C220
+U 1 1 515B781B
+P 14500 5600
+F 0 "C220" H 14550 5700 50  0000 L CNN
+F 1 "100N" H 14550 5500 50  0000 L CNN
+	1    14500 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C219
+U 1 1 515B781A
+P 14100 5600
+F 0 "C219" H 14150 5700 50  0000 L CNN
+F 1 "100N" H 14150 5500 50  0000 L CNN
+	1    14100 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C218
+U 1 1 515B7818
+P 13700 5600
+F 0 "C218" H 13750 5700 50  0000 L CNN
+F 1 "100N" H 13750 5500 50  0000 L CNN
+	1    13700 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C217
+U 1 1 515B7817
+P 13300 5600
+F 0 "C217" H 13350 5700 50  0000 L CNN
+F 1 "100N" H 13350 5500 50  0000 L CNN
+	1    13300 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C216
+U 1 1 515B7816
+P 12900 5600
+F 0 "C216" H 12950 5700 50  0000 L CNN
+F 1 "100N" H 12950 5500 50  0000 L CNN
+	1    12900 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C215
+U 1 1 515B7815
+P 12500 5600
+F 0 "C215" H 12550 5700 50  0000 L CNN
+F 1 "100N" H 12550 5500 50  0000 L CNN
+	1    12500 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C214
+U 1 1 515B7811
+P 12100 5600
+F 0 "C214" H 12150 5700 50  0000 L CNN
+F 1 "100N" H 12150 5500 50  0000 L CNN
+	1    12100 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C213
+U 1 1 515B7810
+P 11700 5600
+F 0 "C213" H 11750 5700 50  0000 L CNN
+F 1 "100N" H 11750 5500 50  0000 L CNN
+	1    11700 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C212
+U 1 1 515B780E
+P 11300 5600
+F 0 "C212" H 11350 5700 50  0000 L CNN
+F 1 "100N" H 11350 5500 50  0000 L CNN
+	1    11300 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C211
+U 1 1 515B780B
+P 10900 5600
+F 0 "C211" H 10950 5700 50  0000 L CNN
+F 1 "100N" H 10950 5500 50  0000 L CNN
+	1    10900 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C210
+U 1 1 515B77EF
+P 10500 5600
+F 0 "C210" H 10550 5700 50  0000 L CNN
+F 1 "100N" H 10550 5500 50  0000 L CNN
+	1    10500 5600
+	1    0    0    -1  
+$EndComp
+Text GLabel 13100 2900 0    60   Input ~ 0
+V3P3
+Text GLabel 13100 1600 0    60   Input ~ 0
+V1P8
+$Comp
+L GND #PWR036
+U 1 1 514B69D6
+P 10500 4500
+F 0 "#PWR036" H 10500 4500 30  0001 C CNN
+F 1 "GND" H 10500 4430 30  0001 C CNN
+	1    10500 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L DDR2_SDRAM_SODIMM J?
+U 2 1 514B69D5
+P 11200 1300
+AR Path="/50FA0542/50FD8B9B" Ref="J?"  Part="2" 
+AR Path="/50FA0542/50FD899B/50FD8B9B" Ref="J?"  Part="2" 
+AR Path="/510239EE/50FD8B9B" Ref="J?"  Part="2" 
+AR Path="/50FA09AE/514B69D5" Ref="J1"  Part="2" 
+F 0 "J1" H 11200 1300 60  0000 C CNN
+F 1 "DDR2_SDRAM_SODIMM" H 11200 1200 60  0000 C CNN
+	2    11200 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR037
+U 1 1 514B69D4
+P 11900 4400
+F 0 "#PWR037" H 11900 4400 30  0001 C CNN
+F 1 "GND" H 11900 4330 30  0001 C CNN
+	1    11900 4400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L DDR2_SDRAM_SODIMM J?
+U 1 1 514B69D3
+P 13900 1300
+AR Path="/50FD8AE5" Ref="J?"  Part="1" 
+AR Path="/50FA0542/50FD8AE5" Ref="J?"  Part="1" 
+AR Path="/50FA0542/50FD899B/50FD8AE5" Ref="J?"  Part="1" 
+AR Path="/510239EE/50FD8AE5" Ref="J?"  Part="1" 
+AR Path="/50FA09AE/514B69D3" Ref="J1"  Part="1" 
+F 0 "J1" H 13900 1300 60  0000 C CNN
+F 1 "DDR2_SDRAM_SODIMM" H 13900 1200 60  0000 C CNN
+	1    13900 1300
+	1    0    0    -1  
+$EndComp
+Text HLabel 13100 3100 0    60   Input ~ 0
+VREF
+Text HLabel 7300 5800 0    60   Input ~ 0
+SA[1..0]
 Text Label 8000 6000 0    60   ~ 0
 SA0
 Text Label 8000 5900 0    60   ~ 0
@@ -778,10 +971,10 @@ $EndComp
 Text Notes 3700 5000 0    60   ~ 0
 DDR2 operates in DQS single-ended mode. All DQS# == VSS
 $Comp
-L GND #PWR037
+L GND #PWR038
 U 1 1 50FAE476
 P 5200 4700
-F 0 "#PWR037" H 5200 4700 30  0001 C CNN
+F 0 "#PWR038" H 5200 4700 30  0001 C CNN
 F 1 "GND" H 5200 4630 30  0001 C CNN
 	1    5200 4700
 	1    0    0    -1  
