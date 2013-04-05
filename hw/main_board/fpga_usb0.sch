@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 05:37:28 PM PDT
+EESchema Schematic File Version 2  date Fri 05 Apr 2013 03:20:59 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 2 15
 Title "Daisho Project Main Board"
-Date "3 apr 2013"
+Date "5 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,6 +34,8 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 7500 8600
+NoConn ~ 7500 8700
 NoConn ~ 7500 2600
 NoConn ~ 7500 4400
 NoConn ~ 7500 5200
@@ -76,8 +78,6 @@ Wire Wire Line
 	6100 8300 7500 8300
 Wire Wire Line
 	7500 5800 6100 5800
-Wire Wire Line
-	7500 8700 5800 8700
 Wire Wire Line
 	7500 3400 6100 3400
 Wire Wire Line
@@ -222,8 +222,6 @@ Wire Wire Line
 	7500 5300 6100 5300
 Wire Wire Line
 	7500 5600 6100 5600
-Wire Wire Line
-	7500 8600 5800 8600
 Wire Wire Line
 	7500 6900 6100 6900
 Wire Wire Line
