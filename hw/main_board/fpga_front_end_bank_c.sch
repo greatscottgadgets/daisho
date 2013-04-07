@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Apr 2013 12:55:56 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -24,7 +24,7 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 12 15
+Sheet 3 15
 Title "Daisho Project Main Board"
 Date "7 apr 2013"
 Rev "0"
@@ -261,10 +261,10 @@ VCCIO
 Text Label 14400 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR060
+L GND #PWR05
 U 1 1 514BAB65
 P 14200 3900
-F 0 "#PWR060" H 14200 3900 30  0001 C CNN
+F 0 "#PWR05" H 14200 3900 30  0001 C CNN
 F 1 "GND" H 14200 3830 30  0001 C CNN
 	1    14200 3900
 	1    0    0    -1  
@@ -279,10 +279,10 @@ F 1 "C" H 14250 3400 50  0000 L CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR061
+L GND #PWR06
 U 1 1 514BAB5C
 P 13800 3900
-F 0 "#PWR061" H 13800 3900 30  0001 C CNN
+F 0 "#PWR06" H 13800 3900 30  0001 C CNN
 F 1 "GND" H 13800 3830 30  0001 C CNN
 	1    13800 3900
 	1    0    0    -1  
@@ -310,10 +310,10 @@ $EndComp
 Text HLabel 14800 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR062
+L GND #PWR07
 U 1 1 513E1F35
 P 13400 3200
-F 0 "#PWR062" H 13400 3200 30  0001 C CNN
+F 0 "#PWR07" H 13400 3200 30  0001 C CNN
 F 1 "GND" H 13400 3130 30  0001 C CNN
 	1    13400 3200
 	1    0    0    -1  

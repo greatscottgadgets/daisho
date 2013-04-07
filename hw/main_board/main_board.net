@@ -1,56 +1,92 @@
-# EESchema Netlist Version 1.1 created  Sun 07 Apr 2013 12:56:02 PM PDT
+# EESchema Netlist Version 1.1 created  Sun 07 Apr 2013 01:59:47 PM PDT
 (
- ( /5129BCC5/51588F51 $noname  C29 100N {Lib=C}
-  (    1 V1P8 )
+ ( /5138E160/5161C3DA $noname  C19 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
+  (    2 /fpga_front_end_bank_b/VREF )
+ )
+ ( /5138E160/514BAC16 $noname  C23 C {Lib=C}
+  (    1 /fpga_front_end_bank_b/VREF )
   (    2 GND )
  )
- ( /5129BCC5/51588F4E $noname  C28 100N {Lib=C}
-  (    1 V1P8 )
+ ( /5138E160/514BABF8 $noname  R13 1K0 {Lib=R}
+  (    1 GND )
+  (    2 /fpga_front_end_bank_b/VREF )
+ )
+ ( /5138E160/514BABD4 $noname  R12 1K0 {Lib=R}
+  (    1 /fpga_front_end_bank_b/VREF )
+  (    2 /front_end/FE_VCCIO_B )
+ )
+ ( /5138E160/513E1FD0 $noname  C89 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
   (    2 GND )
  )
- ( /5129BCC5/51588F4C $noname  C27 100N {Lib=C}
-  (    1 V1P8 )
+ ( /5138E160/513E1FCC $noname  C88 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
   (    2 GND )
  )
- ( /5129BCC5/51588F4A $noname  C26 100N {Lib=C}
-  (    1 V1P8 )
+ ( /5138E160/513E1FC9 $noname  C87 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
   (    2 GND )
  )
- ( /5129BCC5/51588F48 $noname  C25 100N {Lib=C}
-  (    1 V1P8 )
+ ( /5138E160/513E1FC4 $noname  C86 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
   (    2 GND )
  )
- ( /5129BCC5/51588F3B $noname  C24 100N {Lib=C}
-  (    1 V1P8 )
+ ( /5138E160/513E1FBE $noname  C85 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
   (    2 GND )
  )
- ( /5129BCC5/5129BD1C $noname  U1 EP4CE30F29 {Lib=EP4CE30F29}
-  (   A2 /front_end/FE_VCCIO_B )
-  (   A3 /fpga_front_end_bank_0/D18 )
-  (   A4 /fpga_front_end_bank_0/D22 )
-  (   A5 /front_end/FE_VCCIO_B )
-  (   A6 /fpga_front_end_bank_0/D26 )
-  (   A7 /fpga_front_end_bank_0/D30 )
-  (   A8 /fpga_front_end_bank_0/D34 )
-  (   A9 /front_end/FE_VCCIO_B )
-  (  A10 /fpga_front_end_bank_0/D38 )
-  (  A11 /fpga_front_end_bank_0/D42 )
-  (  A12 /fpga_front_end_bank_0/D44 )
-  (  A13 /front_end/FE_VCCIO_B )
-  (  A14 /fpga_front_end_bank_0/D48 )
-  (  A15 /fpga_front_end_bank_1/D0 )
-  (  A16 /front_end/FE_VCCIO_C )
-  (  A17 /fpga_front_end_bank_1/D4 )
-  (  A18 /fpga_front_end_bank_1/D8 )
-  (  A19 /fpga_front_end_bank_1/D12 )
-  (  A20 /front_end/FE_VCCIO_C )
-  (  A21 /fpga_front_end_bank_1/D16 )
-  (  A22 /fpga_front_end_bank_1/D20 )
-  (  A23 /fpga_front_end_bank_1/D24 )
-  (  A24 /front_end/FE_VCCIO_C )
-  (  A25 /fpga_front_end_bank_1/D28 )
-  (  A26 /fpga_front_end_bank_1/D32 )
-  (  A27 /front_end/FE_VCCIO_C )
+ ( /5138E160/513E1FBB $noname  C84 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
+  (    2 GND )
+ )
+ ( /5138E160/513E1FAE $noname  C83 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
+  (    2 GND )
+ )
+ ( /5138E160/513E1FAC $noname  C82 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
+  (    2 GND )
+ )
+ ( /5138E160/513E1FA3 $noname  C81 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_B )
+  (    2 GND )
+ )
+ ( /5138E160/51393D16 $noname  R11 50R {Lib=R}
+  (    1 GND )
+  (    2 N-000242 )
+ )
+ ( /5138E160/51393D12 $noname  R10 50R {Lib=R}
+  (    1 N-000241 )
+  (    2 /front_end/FE_VCCIO_B )
+ )
+ ( /5138E160/51393535 $noname  U1 EP4CE30F29 {Lib=EP4CE30F29}
+  (   A2 /front_end/FE_VCCIO_C )
+  (   A3 /fpga_front_end_bank_c/D18 )
+  (   A4 /fpga_front_end_bank_c/D22 )
+  (   A5 /front_end/FE_VCCIO_C )
+  (   A6 /fpga_front_end_bank_c/D26 )
+  (   A7 /fpga_front_end_bank_c/D30 )
+  (   A8 /fpga_front_end_bank_c/D34 )
+  (   A9 /front_end/FE_VCCIO_C )
+  (  A10 /fpga_front_end_bank_c/D38 )
+  (  A11 /fpga_front_end_bank_c/D42 )
+  (  A12 /fpga_front_end_bank_c/D44 )
+  (  A13 /front_end/FE_VCCIO_C )
+  (  A14 /fpga_front_end_bank_c/D48 )
+  (  A15 /fpga_front_end_bank_b/D0 )
+  (  A16 /front_end/FE_VCCIO_B )
+  (  A17 /fpga_front_end_bank_b/D4 )
+  (  A18 /fpga_front_end_bank_b/D8 )
+  (  A19 /fpga_front_end_bank_b/D12 )
+  (  A20 /front_end/FE_VCCIO_B )
+  (  A21 /fpga_front_end_bank_b/D16 )
+  (  A22 /fpga_front_end_bank_b/D20 )
+  (  A23 /fpga_front_end_bank_b/D24 )
+  (  A24 /front_end/FE_VCCIO_B )
+  (  A25 /fpga_front_end_bank_b/D28 )
+  (  A26 /fpga_front_end_bank_b/D32 )
+  (  A27 /front_end/FE_VCCIO_B )
   (  AA1 V1P8 )
   (  AA2 GND )
   (  AA3 /fpga_usb0/PIPE_RX_DATA11 )
@@ -67,12 +103,12 @@
   ( AA14 /ddr2/VREF )
   ( AA15 /ddr2/VREF )
   ( AA16 ? )
-  ( AA17 N-000051 )
+  ( AA17 N-000100 )
   ( AA18 V1P8 )
   ( AA19 ? )
   ( AA20 GND )
   ( AA21 ? )
-  ( AA22 N-000050 )
+  ( AA22 N-000099 )
   ( AA23 ? )
   ( AA24 /ddr2/VREF )
   ( AA25 ? )
@@ -95,13 +131,13 @@
   ( AB14 ? )
   ( AB15 /ddr2/A1 )
   ( AB16 /ddr2/DQ39 )
-  ( AB17 N-000077 )
+  ( AB17 N-000110 )
   ( AB18 ? )
   ( AB19 ? )
   ( AB20 /ddr2/VREF )
   ( AB21 ? )
   ( AB22 ? )
-  ( AB23 N-000049 )
+  ( AB23 N-000101 )
   ( AB24 /ddr2/DM1 )
   ( AB25 ? )
   ( AB26 /ddr2/DQ12 )
@@ -275,83 +311,83 @@
   ( AH27 V1P8 )
   (   B1 V1P8 )
   (   B2 GND )
-  (   B3 /fpga_front_end_bank_0/D16 )
-  (   B4 /fpga_front_end_bank_0/D20 )
+  (   B3 /fpga_front_end_bank_c/D16 )
+  (   B4 /fpga_front_end_bank_c/D20 )
   (   B5 GND )
-  (   B6 /fpga_front_end_bank_0/D24 )
-  (   B7 /fpga_front_end_bank_0/D28 )
-  (   B8 /fpga_front_end_bank_0/D32 )
+  (   B6 /fpga_front_end_bank_c/D24 )
+  (   B7 /fpga_front_end_bank_c/D28 )
+  (   B8 /fpga_front_end_bank_c/D32 )
   (   B9 GND )
-  (  B10 /fpga_front_end_bank_0/D36 )
-  (  B11 /fpga_front_end_bank_0/D40 )
+  (  B10 /fpga_front_end_bank_c/D36 )
+  (  B11 /fpga_front_end_bank_c/D40 )
   (  B12 GND )
   (  B13 GND )
-  (  B14 /fpga_front_end_bank_0/D50 )
-  (  B15 /fpga_front_end_bank_1/D2 )
+  (  B14 /fpga_front_end_bank_c/D50 )
+  (  B15 /fpga_front_end_bank_b/D2 )
   (  B16 GND )
-  (  B17 /fpga_front_end_bank_1/D6 )
-  (  B18 /fpga_front_end_bank_1/D10 )
-  (  B19 /fpga_front_end_bank_1/D14 )
+  (  B17 /fpga_front_end_bank_b/D6 )
+  (  B18 /fpga_front_end_bank_b/D10 )
+  (  B19 /fpga_front_end_bank_b/D14 )
   (  B20 GND )
-  (  B21 /fpga_front_end_bank_1/D18 )
-  (  B22 /fpga_front_end_bank_1/D22 )
-  (  B23 /fpga_front_end_bank_1/D26 )
+  (  B21 /fpga_front_end_bank_b/D18 )
+  (  B22 /fpga_front_end_bank_b/D22 )
+  (  B23 /fpga_front_end_bank_b/D26 )
   (  B24 GND )
-  (  B25 /fpga_front_end_bank_1/D30 )
-  (  B26 /fpga_front_end_bank_1/D34 )
+  (  B25 /fpga_front_end_bank_b/D30 )
+  (  B26 /fpga_front_end_bank_b/D34 )
   (  B27 GND )
   (  B28 /front_end/FE_VCCIO_A )
   (   C1 GND )
   (   C2 ? )
-  (   C3 /fpga_front_end_bank_0/D13 )
-  (   C4 /fpga_front_end_bank_0/D17 )
-  (   C5 /fpga_front_end_bank_0/D19 )
-  (   C6 /fpga_front_end_bank_0/D23 )
-  (   C7 /fpga_front_end_bank_0/D27 )
-  (   C8 /fpga_front_end_bank_0/D31 )
-  (   C9 /fpga_front_end_bank_0/D35 )
-  (  C10 /fpga_front_end_bank_0/D37 )
-  (  C11 /fpga_front_end_bank_0/D41 )
-  (  C12 /fpga_front_end_bank_0/D43 )
-  (  C13 /fpga_front_end_bank_0/D47 )
-  (  C14 /fpga_front_end_bank_0/D46 )
-  (  C15 /fpga_front_end_bank_1/D5 )
-  (  C16 /fpga_front_end_bank_1/D7 )
-  (  C17 /fpga_front_end_bank_1/D11 )
-  (  C18 /fpga_front_end_bank_1/D15 )
-  (  C19 /fpga_front_end_bank_1/D19 )
-  (  C20 /fpga_front_end_bank_1/D23 )
-  (  C21 /fpga_front_end_bank_1/D25 )
-  (  C22 /fpga_front_end_bank_1/D29 )
-  (  C23 /fpga_front_end_bank_1/D33 )
-  (  C24 /fpga_front_end_bank_1/D37 )
-  (  C25 /fpga_front_end_bank_1/D39 )
+  (   C3 /fpga_front_end_bank_c/D13 )
+  (   C4 /fpga_front_end_bank_c/D17 )
+  (   C5 /fpga_front_end_bank_c/D19 )
+  (   C6 /fpga_front_end_bank_c/D23 )
+  (   C7 /fpga_front_end_bank_c/D27 )
+  (   C8 /fpga_front_end_bank_c/D31 )
+  (   C9 /fpga_front_end_bank_c/D35 )
+  (  C10 /fpga_front_end_bank_c/D37 )
+  (  C11 /fpga_front_end_bank_c/D41 )
+  (  C12 /fpga_front_end_bank_c/D43 )
+  (  C13 /fpga_front_end_bank_c/D47 )
+  (  C14 /fpga_front_end_bank_c/D46 )
+  (  C15 /fpga_front_end_bank_b/D5 )
+  (  C16 /fpga_front_end_bank_b/D7 )
+  (  C17 /fpga_front_end_bank_b/D11 )
+  (  C18 /fpga_front_end_bank_b/D15 )
+  (  C19 /fpga_front_end_bank_b/D19 )
+  (  C20 /fpga_front_end_bank_b/D23 )
+  (  C21 /fpga_front_end_bank_b/D25 )
+  (  C22 /fpga_front_end_bank_b/D29 )
+  (  C23 /fpga_front_end_bank_b/D33 )
+  (  C24 /fpga_front_end_bank_b/D37 )
+  (  C25 /fpga_front_end_bank_b/D39 )
   (  C26 ? )
   (  C27 ? )
   (  C28 GND )
   (   D1 ? )
   (   D2 ? )
   (   D3 GND )
-  (   D4 /fpga_front_end_bank_0/D15 )
-  (   D5 /fpga_front_end_bank_0/D21 )
-  (   D6 /fpga_front_end_bank_0/D25 )
-  (   D7 /fpga_front_end_bank_0/D29 )
-  (   D8 /fpga_front_end_bank_0/D33 )
-  (   D9 /fpga_front_end_bank_0/D9 )
-  (  D10 /fpga_front_end_bank_0/D39 )
-  (  D11 /fpga_front_end_bank_0/D8 )
-  (  D12 /fpga_front_end_bank_0/D45 )
-  (  D13 /fpga_front_end_bank_0/D49 )
-  (  D14 /fpga_front_end_bank_0/D51 )
-  (  D15 /fpga_front_end_bank_1/D1 )
-  (  D16 /fpga_front_end_bank_1/D3 )
-  (  D17 /fpga_front_end_bank_1/D9 )
-  (  D18 /fpga_front_end_bank_1/D13 )
-  (  D19 /fpga_front_end_bank_1/D17 )
-  (  D20 /fpga_front_end_bank_1/D21 )
-  (  D21 /fpga_front_end_bank_1/D27 )
-  (  D22 /fpga_front_end_bank_1/D31 )
-  (  D23 /fpga_front_end_bank_1/D35 )
+  (   D4 /fpga_front_end_bank_c/D15 )
+  (   D5 /fpga_front_end_bank_c/D21 )
+  (   D6 /fpga_front_end_bank_c/D25 )
+  (   D7 /fpga_front_end_bank_c/D29 )
+  (   D8 /fpga_front_end_bank_c/D33 )
+  (   D9 /fpga_front_end_bank_c/D9 )
+  (  D10 /fpga_front_end_bank_c/D39 )
+  (  D11 /fpga_front_end_bank_c/D8 )
+  (  D12 /fpga_front_end_bank_c/D45 )
+  (  D13 /fpga_front_end_bank_c/D49 )
+  (  D14 /fpga_front_end_bank_c/D51 )
+  (  D15 /fpga_front_end_bank_b/D1 )
+  (  D16 /fpga_front_end_bank_b/D3 )
+  (  D17 /fpga_front_end_bank_b/D9 )
+  (  D18 /fpga_front_end_bank_b/D13 )
+  (  D19 /fpga_front_end_bank_b/D17 )
+  (  D20 /fpga_front_end_bank_b/D21 )
+  (  D21 /fpga_front_end_bank_b/D27 )
+  (  D22 /fpga_front_end_bank_b/D31 )
+  (  D23 /fpga_front_end_bank_b/D35 )
   (  D24 ? )
   (  D25 ? )
   (  D26 ? )
@@ -362,24 +398,24 @@
   (   E3 ? )
   (   E4 ? )
   (   E5 ? )
-  (   E6 /front_end/FE_VCCIO_B )
-  (   E7 /fpga_front_end_bank_0/D1 )
-  (   E8 /fpga_front_end_bank_0/D5 )
-  (   E9 /front_end/FE_VCCIO_B )
-  (  E10 /fpga_front_end_bank_0/D0 )
-  (  E11 /fpga_front_end_bank_0/D4 )
-  (  E12 /fpga_front_end_bank_0/D10 )
-  (  E13 /front_end/FE_VCCIO_B )
-  (  E14 /fpga_front_end_bank_0/D14 )
-  (  E15 /fpga_front_end_bank_1/D38 )
-  (  E16 /front_end/FE_VCCIO_C )
-  (  E17 /fpga_front_end_bank_1/D40 )
-  (  E18 /fpga_front_end_bank_1/D44 )
-  (  E19 N-000243 )
-  (  E20 /front_end/FE_VCCIO_C )
-  (  E21 /fpga_front_end_bank_1/D45 )
-  (  E22 /fpga_front_end_bank_1/D49 )
-  (  E23 /front_end/FE_VCCIO_C )
+  (   E6 /front_end/FE_VCCIO_C )
+  (   E7 /fpga_front_end_bank_c/D1 )
+  (   E8 /fpga_front_end_bank_c/D5 )
+  (   E9 /front_end/FE_VCCIO_C )
+  (  E10 /fpga_front_end_bank_c/D0 )
+  (  E11 /fpga_front_end_bank_c/D4 )
+  (  E12 /fpga_front_end_bank_c/D10 )
+  (  E13 /front_end/FE_VCCIO_C )
+  (  E14 /fpga_front_end_bank_c/D14 )
+  (  E15 /fpga_front_end_bank_b/D38 )
+  (  E16 /front_end/FE_VCCIO_B )
+  (  E17 /fpga_front_end_bank_b/D40 )
+  (  E18 /fpga_front_end_bank_b/D44 )
+  (  E19 N-000242 )
+  (  E20 /front_end/FE_VCCIO_B )
+  (  E21 /fpga_front_end_bank_b/D45 )
+  (  E22 /fpga_front_end_bank_b/D49 )
+  (  E23 /front_end/FE_VCCIO_B )
   (  E24 ? )
   (  E25 ? )
   (  E26 ? )
@@ -391,22 +427,22 @@
   (   F4 ? )
   (   F5 ? )
   (   F6 GND )
-  (   F7 /fpga_front_end_bank_0/D3 )
-  (   F8 /fpga_front_end_bank_0/D7 )
+  (   F7 /fpga_front_end_bank_c/D3 )
+  (   F8 /fpga_front_end_bank_c/D7 )
   (   F9 GND )
-  (  F10 /fpga_front_end_bank_0/D2 )
-  (  F11 /fpga_front_end_bank_0/VREF )
-  (  F12 /fpga_front_end_bank_0/D12 )
+  (  F10 /fpga_front_end_bank_c/D2 )
+  (  F11 /fpga_front_end_bank_c/VREF )
+  (  F12 /fpga_front_end_bank_c/D12 )
   (  F13 GND )
   (  F14 ? )
-  (  F15 /fpga_front_end_bank_1/D36 )
+  (  F15 /fpga_front_end_bank_b/D36 )
   (  F16 GND )
-  (  F17 /fpga_front_end_bank_1/D42 )
-  (  F18 /fpga_front_end_bank_1/VREF )
-  (  F19 N-000251 )
+  (  F17 /fpga_front_end_bank_b/D42 )
+  (  F18 /fpga_front_end_bank_b/VREF )
+  (  F19 N-000241 )
   (  F20 GND )
-  (  F21 /fpga_front_end_bank_1/D41 )
-  (  F22 /fpga_front_end_bank_1/VREF )
+  (  F21 /fpga_front_end_bank_b/D41 )
+  (  F22 /fpga_front_end_bank_b/VREF )
   (  F23 GND )
   (  F24 ? )
   (  F25 ? )
@@ -420,20 +456,20 @@
   (   G5 ? )
   (   G6 ? )
   (   G7 ? )
-  (   G8 /fpga_front_end_bank_0/D11 )
-  (   G9 /fpga_front_end_bank_0/VREF )
+  (   G8 /fpga_front_end_bank_c/D11 )
+  (   G9 /fpga_front_end_bank_c/VREF )
   (  G10 ? )
-  (  G11 /fpga_front_end_bank_0/D6 )
-  (  G12 /fpga_front_end_bank_0/VREF )
+  (  G11 /fpga_front_end_bank_c/D6 )
+  (  G12 /fpga_front_end_bank_c/VREF )
   (  G13 ? )
-  (  G14 /fpga_front_end_bank_0/VREF )
-  (  G15 /fpga_front_end_bank_1/VREF )
-  (  G16 /fpga_front_end_bank_1/D46 )
-  (  G17 /fpga_front_end_bank_1/VREF )
-  (  G18 /fpga_front_end_bank_1/D50 )
-  (  G19 /fpga_front_end_bank_1/D43 )
-  (  G20 /fpga_front_end_bank_1/D47 )
-  (  G21 /fpga_front_end_bank_1/D51 )
+  (  G14 /fpga_front_end_bank_c/VREF )
+  (  G15 /fpga_front_end_bank_b/VREF )
+  (  G16 /fpga_front_end_bank_b/D46 )
+  (  G17 /fpga_front_end_bank_b/VREF )
+  (  G18 /fpga_front_end_bank_b/D50 )
+  (  G19 /fpga_front_end_bank_b/D43 )
+  (  G20 /fpga_front_end_bank_b/D47 )
+  (  G21 /fpga_front_end_bank_b/D51 )
   (  G22 ? )
   (  G23 ? )
   (  G24 ? )
@@ -451,14 +487,14 @@
   (   H8 ? )
   (   H9 GND )
   (  H10 ? )
-  (  H11 /front_end/FE_VCCIO_B )
+  (  H11 /front_end/FE_VCCIO_C )
   (  H12 ? )
   (  H13 ? )
   (  H14 ? )
   (  H15 ? )
   (  H16 ? )
-  (  H17 /fpga_front_end_bank_1/D48 )
-  (  H18 /front_end/FE_VCCIO_C )
+  (  H17 /fpga_front_end_bank_b/D48 )
+  (  H18 /front_end/FE_VCCIO_B )
   (  H19 ? )
   (  H20 GND )
   (  H21 ? )
@@ -481,9 +517,9 @@
   (  J10 ? )
   (  J11 GND )
   (  J12 ? )
-  (  J13 /front_end/FE_VCCIO_B )
+  (  J13 /front_end/FE_VCCIO_C )
   (  J14 ? )
-  (  J15 /front_end/FE_VCCIO_C )
+  (  J15 /front_end/FE_VCCIO_B )
   (  J16 ? )
   (  J17 ? )
   (  J18 GND )
@@ -806,6 +842,82 @@
   (  Y27 /fpga_ddr2/CLK_P1 )
   (  Y28 /fpga_ddr2/CLK_N1 )
  )
+ ( /5138E12B/5161C39E $noname  C20 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 /fpga_front_end_bank_c/VREF )
+ )
+ ( /5138E12B/514BAB61 $noname  C22 C {Lib=C}
+  (    1 /fpga_front_end_bank_c/VREF )
+  (    2 GND )
+ )
+ ( /5138E12B/514BAB55 $noname  R42 1K0 {Lib=R}
+  (    1 /fpga_front_end_bank_c/VREF )
+  (    2 GND )
+ )
+ ( /5138E12B/514BAB23 $noname  R41 1K0 {Lib=R}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 /fpga_front_end_bank_c/VREF )
+ )
+ ( /5138E12B/513E1ED7 $noname  C79 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5138E12B/513E1ED5 $noname  C78 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5138E12B/513E1ED0 $noname  C77 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5138E12B/513E1ECA $noname  C76 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5138E12B/513E1EC8 $noname  C75 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5138E12B/513E1EC5 $noname  C74 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5138E12B/513E1EC1 $noname  C73 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5138E12B/513E1EB6 $noname  C72 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5138E12B/513E1EA6 $noname  C71 C {Lib=C}
+  (    1 /front_end/FE_VCCIO_C )
+  (    2 GND )
+ )
+ ( /5129BCC5/51588F51 $noname  C29 100N {Lib=C}
+  (    1 V1P8 )
+  (    2 GND )
+ )
+ ( /5129BCC5/51588F4E $noname  C28 100N {Lib=C}
+  (    1 V1P8 )
+  (    2 GND )
+ )
+ ( /5129BCC5/51588F4C $noname  C27 100N {Lib=C}
+  (    1 V1P8 )
+  (    2 GND )
+ )
+ ( /5129BCC5/51588F4A $noname  C26 100N {Lib=C}
+  (    1 V1P8 )
+  (    2 GND )
+ )
+ ( /5129BCC5/51588F48 $noname  C25 100N {Lib=C}
+  (    1 V1P8 )
+  (    2 GND )
+ )
+ ( /5129BCC5/51588F3B $noname  C24 100N {Lib=C}
+  (    1 V1P8 )
+  (    2 GND )
+ )
  ( /5129C23F/515A61C9 $noname  C156 100N {Lib=C}
   (    1 V1P8 )
   (    2 GND )
@@ -865,10 +977,10 @@
  ( /5148D8EF/514DF31C $noname  Q1 BC857 {Lib=PNP_SOT23}
   (    1 N-000328 )
   (    2 V3P3 )
-  (    3 N-000322 )
+  (    3 N-000343 )
  )
  ( /5148D8EF/514DEFD7 $noname  C205 10N {Lib=C}
-  (    1 N-000323 )
+  (    1 N-000349 )
   (    2 GND )
  )
  ( /5148D8EF/514DEF20 $noname  R65 24K {Lib=R}
@@ -876,7 +988,7 @@
   (    2 N-000328 )
  )
  ( /5148D8EF/514DEE8C $noname  R64 3K {Lib=R}
-  (    1 N-000348 )
+  (    1 N-000329 )
   (    2 N-000328 )
  )
  ( /5148D8EF/514DEB40 $noname  C204 10N {Lib=C}
@@ -888,28 +1000,28 @@
   (    2 GND )
  )
  ( /5148D8EF/514DD885 $noname  J3 GSG-USB-MICRO-B-SHIELD {Lib=GSG-USB-MICRO-B-SHIELD}
-  (    1 N-000323 )
-  (    2 N-000326 )
-  (    3 N-000320 )
+  (    1 N-000349 )
+  (    2 N-000330 )
+  (    3 N-000344 )
   (    4 ? )
   (    5 GND )
   (    6 /microcontroller/USB2_SHIELD )
  )
  ( /5148D8EF/514CFCEB $noname  R59 1K5 {Lib=R}
-  (    1 N-000322 )
-  (    2 N-000320 )
+  (    1 N-000343 )
+  (    2 N-000344 )
  )
  ( /5148D8EF/514CFADD $noname  R60 100R {Lib=R}
-  (    1 N-000327 )
-  (    2 N-000323 )
+  (    1 N-000326 )
+  (    2 N-000349 )
  )
  ( /5148D8EF/514CFA64 $noname  R62 33R {Lib=R}
-  (    1 N-000343 )
-  (    2 N-000320 )
+  (    1 N-000350 )
+  (    2 N-000344 )
  )
  ( /5148D8EF/514CFA50 $noname  R61 33R {Lib=R}
-  (    1 N-000324 )
-  (    2 N-000326 )
+  (    1 N-000331 )
+  (    2 N-000330 )
  )
  ( /5148D8EF/514CF814 $noname  R55 10K {Lib=R}
   (    1 /microcontroller/SWCLK )
@@ -945,16 +1057,16 @@
  )
  ( /5148D8EF/514CED59 $noname  C202 18P {Lib=C}
   (    1 GND )
-  (    2 N-000341 )
+  (    2 N-000345 )
  )
  ( /5148D8EF/514CED50 $noname  C203 18P {Lib=C}
-  (    1 N-000325 )
+  (    1 N-000351 )
   (    2 GND )
  )
  ( /5148D8EF/514CECAC $noname  X2 12M {Lib=QUARTZCMS4_GROUND}
-  (    1 N-000341 )
+  (    1 N-000345 )
   (    2 GND )
-  (    3 N-000325 )
+  (    3 N-000351 )
   (    4 GND )
  )
  ( /5148D8EF/514CE90F $noname  U3 LPC11U1X {Lib=LPC11U1X}
@@ -963,23 +1075,23 @@
   (    3 /microcontroller/RESET# )
   (    4 ? )
   (    5 GND )
-  (    6 N-000325 )
-  (    7 N-000341 )
+  (    6 N-000351 )
+  (    7 N-000345 )
   (    8 V3P3 )
   (    9 ? )
   (   10 ? )
   (   11 ? )
   (   12 ? )
   (   13 /microcontroller/SPI_SCK1 )
-  (   14 N-000327 )
+  (   14 N-000326 )
   (   15 /front_end/FE_I2C_SCL )
   (   16 /front_end/FE_I2C_SDA )
   (   17 /microcontroller/SPI_MOSI1 )
   (   18 /microcontroller/SPI_SSEL1 )
-  (   19 N-000324 )
-  (   20 N-000343 )
+  (   19 N-000331 )
+  (   20 N-000350 )
   (   21 ? )
-  (   22 N-000348 )
+  (   22 N-000329 )
   (   23 ? )
   (   24 ? )
   (   25 ? )
@@ -1151,8 +1263,8 @@
   (  L10 /usb0_interfaces/OUT_ENABLE )
   (  L11 /fpga_usb0/PIPE_TX_DEEMPH0 )
   (  L12 GND )
-  (  L13 N-000149 )
-  (  L14 N-000150 )
+  (  L13 N-000147 )
+  (  L14 N-000148 )
   (   M1 /fpga_usb0/PIPE_TX_DATA8 )
   (   M2 /fpga_usb0/PIPE_TX_DATA9 )
   (   M3 V1P8 )
@@ -1205,8 +1317,8 @@
   (    2 /usb0_interfaces/OUT_ENABLE )
  )
  ( /5109FB2D/5159AA94 $noname  R18 10K {Lib=R}
-  (    1 N-000149 )
-  (    2 N-000150 )
+  (    1 N-000147 )
+  (    2 N-000148 )
  )
  ( /5109FB2D/5159AA93 $noname  C170 C {Lib=C}
   (    1 /usb0_interfaces/XI )
@@ -1246,7 +1358,7 @@
   (    2 GND )
  )
  ( /5109FB2D/51533B85 $noname  J5 USB3_MICRO_AB {Lib=USB3_MICRO_AB}
-  (    1 N-000156 )
+  (    1 N-000154 )
   (    2 /usb0_interfaces/DM )
   (    3 /usb0_interfaces/DP )
   (    4 ? )
@@ -1264,7 +1376,7 @@
  )
  ( /5109FB2D/511488C6 $noname  R8 90K9 {Lib=R}
   (    1 /usb0_interfaces/VBUS )
-  (    2 N-000156 )
+  (    2 N-000154 )
  )
  ( /514BB3A7/514E57C7 $noname  R15 10K {Lib=R}
   (    1 V3P3 )
@@ -1295,22 +1407,22 @@
   (    2 /clock_generator/CLOCKGEN_INTR )
  )
  ( /514BB3A7/514E530B $noname  C11 C {Lib=C}
-  (    1 N-000364 )
+  (    1 N-000365 )
   (    2 GND )
  )
  ( /514BB3A7/514E5301 $noname  C10 C {Lib=C}
   (    1 GND )
-  (    2 N-000365 )
+  (    2 N-000364 )
  )
  ( /514BB3A7/514E52C4 $noname  X3 25M {Lib=QUARTZCMS4_GROUND}
-  (    1 N-000365 )
+  (    1 N-000364 )
   (    2 GND )
-  (    3 N-000364 )
+  (    3 N-000365 )
   (    4 GND )
  )
  ( /514BB3A7/514E5234 $noname  U4 SI5351C-B {Lib=SI5351C-B}
-  (    1 N-000364 )
-  (    2 N-000365 )
+  (    1 N-000365 )
+  (    2 N-000364 )
   (    3 /clock_generator/CLOCKGEN_INTR )
   (    4 /front_end/FE_I2C_SCL )
   (    5 /front_end/FE_I2C_SDA )
@@ -1342,8 +1454,8 @@
   (    8 ? )
   (    9 ? )
   (   10 ? )
-  (   11 /front_end/FE_VCCIO_A )
-  (   12 V3P3 )
+  (   11 V3P3 )
+  (   12 /front_end/FE_VCCIO_A )
   (   13 ? )
   (   14 ? )
   (   15 ? )
@@ -1354,8 +1466,8 @@
   (   20 ? )
   (   21 ? )
   (   22 ? )
-  (   23 /front_end/FE_VCCIO_A )
-  (   24 V3P3 )
+  (   23 V3P3 )
+  (   24 /front_end/FE_VCCIO_A )
   (   25 ? )
   (   26 ? )
   (   27 ? )
@@ -1366,8 +1478,8 @@
   (   32 ? )
   (   33 ? )
   (   34 ? )
-  (   35 /front_end/FE_VCCIO_A )
-  (   36 V1P8 )
+  (   35 V1P8 )
+  (   36 /front_end/FE_VCCIO_A )
   (   37 ? )
   (   38 ? )
   (   39 ? )
@@ -1378,8 +1490,8 @@
   (   44 ? )
   (   45 ? )
   (   46 ? )
-  (   47 /front_end/FE_VCCIO_A )
-  (   48 V1P8 )
+  (   47 V1P8 )
+  (   48 /front_end/FE_VCCIO_A )
   (   49 /fpga_front_end_misc/D37 )
   (   50 ? )
   (   51 /fpga_front_end_misc/D39 )
@@ -1392,126 +1504,126 @@
   (   58 /clock_generator/FE_CLK_N0 )
   (   59 ? )
   (   60 /clock_generator/FE_CLKSRC )
-  (   61 /fpga_front_end_bank_0/D1 )
-  (   62 /fpga_front_end_bank_0/D0 )
-  (   63 /fpga_front_end_bank_0/D3 )
-  (   64 /fpga_front_end_bank_0/D2 )
-  (   65 /fpga_front_end_bank_0/D5 )
-  (   66 /fpga_front_end_bank_0/D4 )
-  (   67 /fpga_front_end_bank_0/D7 )
-  (   68 /fpga_front_end_bank_0/D6 )
-  (   69 /fpga_front_end_bank_0/D9 )
-  (   70 /fpga_front_end_bank_0/D8 )
+  (   61 /fpga_front_end_bank_b/D1 )
+  (   62 /fpga_front_end_bank_b/D0 )
+  (   63 /fpga_front_end_bank_b/D3 )
+  (   64 /fpga_front_end_bank_b/D2 )
+  (   65 /fpga_front_end_bank_b/D5 )
+  (   66 /fpga_front_end_bank_b/D4 )
+  (   67 /fpga_front_end_bank_b/D7 )
+  (   68 /fpga_front_end_bank_b/D6 )
+  (   69 /fpga_front_end_bank_b/D9 )
+  (   70 /fpga_front_end_bank_b/D8 )
   (   71 /front_end/FE_VCCIO_B )
   (   72 /front_end/FE_VCCIO_B )
-  (   73 /fpga_front_end_bank_0/D11 )
-  (   74 /fpga_front_end_bank_0/D10 )
-  (   75 /fpga_front_end_bank_0/D13 )
-  (   76 /fpga_front_end_bank_0/D12 )
-  (   77 /fpga_front_end_bank_0/D15 )
-  (   78 /fpga_front_end_bank_0/D14 )
-  (   79 /fpga_front_end_bank_0/D17 )
-  (   80 /fpga_front_end_bank_0/D16 )
-  (   81 /fpga_front_end_bank_0/D19 )
-  (   82 /fpga_front_end_bank_0/D18 )
+  (   73 /fpga_front_end_bank_b/D11 )
+  (   74 /fpga_front_end_bank_b/D10 )
+  (   75 /fpga_front_end_bank_b/D13 )
+  (   76 /fpga_front_end_bank_b/D12 )
+  (   77 /fpga_front_end_bank_b/D15 )
+  (   78 /fpga_front_end_bank_b/D14 )
+  (   79 /fpga_front_end_bank_b/D17 )
+  (   80 /fpga_front_end_bank_b/D16 )
+  (   81 /fpga_front_end_bank_b/D19 )
+  (   82 /fpga_front_end_bank_b/D18 )
   (   83 /front_end/FE_VCCIO_B )
   (   84 /front_end/FE_VCCIO_B )
-  (   85 /fpga_front_end_bank_0/D21 )
-  (   86 /fpga_front_end_bank_0/D20 )
-  (   87 /fpga_front_end_bank_0/D23 )
-  (   88 /fpga_front_end_bank_0/D22 )
-  (   89 /fpga_front_end_bank_0/D25 )
-  (   90 /fpga_front_end_bank_0/D24 )
-  (   91 /fpga_front_end_bank_0/D27 )
-  (   92 /fpga_front_end_bank_0/D26 )
-  (   93 /fpga_front_end_bank_0/D29 )
-  (   94 /fpga_front_end_bank_0/D28 )
+  (   85 /fpga_front_end_bank_b/D21 )
+  (   86 /fpga_front_end_bank_b/D20 )
+  (   87 /fpga_front_end_bank_b/D23 )
+  (   88 /fpga_front_end_bank_b/D22 )
+  (   89 /fpga_front_end_bank_b/D25 )
+  (   90 /fpga_front_end_bank_b/D24 )
+  (   91 /fpga_front_end_bank_b/D27 )
+  (   92 /fpga_front_end_bank_b/D26 )
+  (   93 /fpga_front_end_bank_b/D29 )
+  (   94 /fpga_front_end_bank_b/D28 )
   (   95 /front_end/FE_VCCIO_B )
   (   96 /front_end/FE_VCCIO_B )
-  (   97 /fpga_front_end_bank_0/D31 )
-  (   98 /fpga_front_end_bank_0/D30 )
-  (   99 /fpga_front_end_bank_0/D33 )
-  (  100 /fpga_front_end_bank_0/D32 )
-  (  101 /fpga_front_end_bank_0/D35 )
-  (  102 /fpga_front_end_bank_0/D34 )
-  (  103 /fpga_front_end_bank_0/D37 )
-  (  104 /fpga_front_end_bank_0/D36 )
-  (  105 /fpga_front_end_bank_0/D39 )
-  (  106 /fpga_front_end_bank_0/D38 )
+  (   97 /fpga_front_end_bank_b/D31 )
+  (   98 /fpga_front_end_bank_b/D30 )
+  (   99 /fpga_front_end_bank_b/D33 )
+  (  100 /fpga_front_end_bank_b/D32 )
+  (  101 /fpga_front_end_bank_b/D35 )
+  (  102 /fpga_front_end_bank_b/D34 )
+  (  103 /fpga_front_end_bank_b/D37 )
+  (  104 /fpga_front_end_bank_b/D36 )
+  (  105 /fpga_front_end_bank_b/D39 )
+  (  106 /fpga_front_end_bank_b/D38 )
   (  107 /front_end/FE_VCCIO_B )
   (  108 /front_end/FE_VCCIO_B )
-  (  109 /fpga_front_end_bank_0/D41 )
-  (  110 /fpga_front_end_bank_0/D40 )
-  (  111 /fpga_front_end_bank_0/D43 )
-  (  112 /fpga_front_end_bank_0/D42 )
-  (  113 /fpga_front_end_bank_0/D45 )
-  (  114 /fpga_front_end_bank_0/D44 )
-  (  115 /fpga_front_end_bank_0/D47 )
-  (  116 /fpga_front_end_bank_0/D46 )
-  (  117 /fpga_front_end_bank_0/D49 )
-  (  118 /fpga_front_end_bank_0/D48 )
-  (  119 /fpga_front_end_bank_0/D51 )
-  (  120 /fpga_front_end_bank_0/D50 )
-  (  121 /fpga_front_end_bank_1/D1 )
-  (  122 /fpga_front_end_bank_1/D0 )
-  (  123 /fpga_front_end_bank_1/D3 )
-  (  124 /fpga_front_end_bank_1/D2 )
-  (  125 /fpga_front_end_bank_1/D5 )
-  (  126 /fpga_front_end_bank_1/D4 )
-  (  127 /fpga_front_end_bank_1/D7 )
-  (  128 /fpga_front_end_bank_1/D6 )
-  (  129 /fpga_front_end_bank_1/D9 )
-  (  130 /fpga_front_end_bank_1/D8 )
+  (  109 /fpga_front_end_bank_b/D41 )
+  (  110 /fpga_front_end_bank_b/D40 )
+  (  111 /fpga_front_end_bank_b/D43 )
+  (  112 /fpga_front_end_bank_b/D42 )
+  (  113 /fpga_front_end_bank_b/D45 )
+  (  114 /fpga_front_end_bank_b/D44 )
+  (  115 /fpga_front_end_bank_b/D47 )
+  (  116 /fpga_front_end_bank_b/D46 )
+  (  117 /fpga_front_end_bank_b/D49 )
+  (  118 /fpga_front_end_bank_b/D48 )
+  (  119 /fpga_front_end_bank_b/D51 )
+  (  120 /fpga_front_end_bank_b/D50 )
+  (  121 /fpga_front_end_bank_c/D1 )
+  (  122 /fpga_front_end_bank_c/D0 )
+  (  123 /fpga_front_end_bank_c/D3 )
+  (  124 /fpga_front_end_bank_c/D2 )
+  (  125 /fpga_front_end_bank_c/D5 )
+  (  126 /fpga_front_end_bank_c/D4 )
+  (  127 /fpga_front_end_bank_c/D7 )
+  (  128 /fpga_front_end_bank_c/D6 )
+  (  129 /fpga_front_end_bank_c/D9 )
+  (  130 /fpga_front_end_bank_c/D8 )
   (  131 /front_end/FE_VCCIO_C )
   (  132 /front_end/FE_VCCIO_C )
-  (  133 /fpga_front_end_bank_1/D11 )
-  (  134 /fpga_front_end_bank_1/D10 )
-  (  135 /fpga_front_end_bank_1/D13 )
-  (  136 /fpga_front_end_bank_1/D12 )
-  (  137 /fpga_front_end_bank_1/D15 )
-  (  138 /fpga_front_end_bank_1/D14 )
-  (  139 /fpga_front_end_bank_1/D17 )
-  (  140 /fpga_front_end_bank_1/D16 )
-  (  141 /fpga_front_end_bank_1/D19 )
-  (  142 /fpga_front_end_bank_1/D18 )
+  (  133 /fpga_front_end_bank_c/D11 )
+  (  134 /fpga_front_end_bank_c/D10 )
+  (  135 /fpga_front_end_bank_c/D13 )
+  (  136 /fpga_front_end_bank_c/D12 )
+  (  137 /fpga_front_end_bank_c/D15 )
+  (  138 /fpga_front_end_bank_c/D14 )
+  (  139 /fpga_front_end_bank_c/D17 )
+  (  140 /fpga_front_end_bank_c/D16 )
+  (  141 /fpga_front_end_bank_c/D19 )
+  (  142 /fpga_front_end_bank_c/D18 )
   (  143 /front_end/FE_VCCIO_C )
   (  144 /front_end/FE_VCCIO_C )
-  (  145 /fpga_front_end_bank_1/D21 )
-  (  146 /fpga_front_end_bank_1/D20 )
-  (  147 /fpga_front_end_bank_1/D23 )
-  (  148 /fpga_front_end_bank_1/D22 )
-  (  149 /fpga_front_end_bank_1/D25 )
-  (  150 /fpga_front_end_bank_1/D24 )
-  (  151 /fpga_front_end_bank_1/D27 )
-  (  152 /fpga_front_end_bank_1/D26 )
-  (  153 /fpga_front_end_bank_1/D29 )
-  (  154 /fpga_front_end_bank_1/D28 )
+  (  145 /fpga_front_end_bank_c/D21 )
+  (  146 /fpga_front_end_bank_c/D20 )
+  (  147 /fpga_front_end_bank_c/D23 )
+  (  148 /fpga_front_end_bank_c/D22 )
+  (  149 /fpga_front_end_bank_c/D25 )
+  (  150 /fpga_front_end_bank_c/D24 )
+  (  151 /fpga_front_end_bank_c/D27 )
+  (  152 /fpga_front_end_bank_c/D26 )
+  (  153 /fpga_front_end_bank_c/D29 )
+  (  154 /fpga_front_end_bank_c/D28 )
   (  155 /front_end/FE_VCCIO_C )
   (  156 /front_end/FE_VCCIO_C )
-  (  157 /fpga_front_end_bank_1/D31 )
-  (  158 /fpga_front_end_bank_1/D30 )
-  (  159 /fpga_front_end_bank_1/D33 )
-  (  160 /fpga_front_end_bank_1/D32 )
-  (  161 /fpga_front_end_bank_1/D35 )
-  (  162 /fpga_front_end_bank_1/D34 )
-  (  163 /fpga_front_end_bank_1/D37 )
-  (  164 /fpga_front_end_bank_1/D36 )
-  (  165 /fpga_front_end_bank_1/D39 )
-  (  166 /fpga_front_end_bank_1/D38 )
+  (  157 /fpga_front_end_bank_c/D31 )
+  (  158 /fpga_front_end_bank_c/D30 )
+  (  159 /fpga_front_end_bank_c/D33 )
+  (  160 /fpga_front_end_bank_c/D32 )
+  (  161 /fpga_front_end_bank_c/D35 )
+  (  162 /fpga_front_end_bank_c/D34 )
+  (  163 /fpga_front_end_bank_c/D37 )
+  (  164 /fpga_front_end_bank_c/D36 )
+  (  165 /fpga_front_end_bank_c/D39 )
+  (  166 /fpga_front_end_bank_c/D38 )
   (  167 /front_end/FE_VCCIO_C )
   (  168 /front_end/FE_VCCIO_C )
-  (  169 /fpga_front_end_bank_1/D41 )
-  (  170 /fpga_front_end_bank_1/D40 )
-  (  171 /fpga_front_end_bank_1/D43 )
-  (  172 /fpga_front_end_bank_1/D42 )
-  (  173 /fpga_front_end_bank_1/D45 )
-  (  174 /fpga_front_end_bank_1/D44 )
-  (  175 /fpga_front_end_bank_1/D47 )
-  (  176 /fpga_front_end_bank_1/D46 )
-  (  177 /fpga_front_end_bank_1/D49 )
-  (  178 /fpga_front_end_bank_1/D48 )
-  (  179 /fpga_front_end_bank_1/D51 )
-  (  180 /fpga_front_end_bank_1/D50 )
+  (  169 /fpga_front_end_bank_c/D41 )
+  (  170 /fpga_front_end_bank_c/D40 )
+  (  171 /fpga_front_end_bank_c/D43 )
+  (  172 /fpga_front_end_bank_c/D42 )
+  (  173 /fpga_front_end_bank_c/D45 )
+  (  174 /fpga_front_end_bank_c/D44 )
+  (  175 /fpga_front_end_bank_c/D47 )
+  (  176 /fpga_front_end_bank_c/D46 )
+  (  177 /fpga_front_end_bank_c/D49 )
+  (  178 /fpga_front_end_bank_c/D48 )
+  (  179 /fpga_front_end_bank_c/D51 )
+  (  180 /fpga_front_end_bank_c/D50 )
   (   A0 GND )
   (   A1 GND )
   (   A2 GND )
@@ -1952,18 +2064,18 @@
  )
  ( /5101C6D6/5115599E $noname  R4 50R {Lib=R}
   (    1 GND )
-  (    2 N-000049 )
+  (    2 N-000101 )
  )
  ( /5101C6D6/51155995 $noname  R3 50R {Lib=R}
-  (    1 N-000050 )
+  (    1 N-000099 )
   (    2 V1P8 )
  )
  ( /5101C6D6/51155899 $noname  R2 50R {Lib=R}
   (    1 GND )
-  (    2 N-000077 )
+  (    2 N-000110 )
  )
  ( /5101C6D6/51155893 $noname  R1 50R {Lib=R}
-  (    1 N-000051 )
+  (    1 N-000100 )
   (    2 V1P8 )
  )
  ( /510B2194/5151F99F $noname  R30 10K {Lib=R}
@@ -1971,15 +2083,15 @@
   (    2 /microcontroller/V2P5_ENABLE )
  )
  ( /510B2194/5151F64C $noname  C36 470P {Lib=C}
-  (    1 N-000166 )
+  (    1 N-000161 )
   (    2 GND )
  )
  ( /510B2194/5151F642 $noname  R32 R {Lib=R}
   (    1 V2P5 )
-  (    2 N-000166 )
+  (    2 N-000161 )
  )
  ( /510B2194/5151F62E $noname  R31 R {Lib=R}
-  (    1 N-000166 )
+  (    1 N-000161 )
   (    2 GND )
  )
  ( /510B2194/5151F508 $noname  C37 10U {Lib=C}
@@ -1994,15 +2106,15 @@
   (    1 V3P3 )
   (    2 GND )
   (    3 /microcontroller/V2P5_ENABLE )
-  (    4 N-000166 )
+  (    4 N-000161 )
   (    5 V2P5 )
  )
  ( /510B2194/5151F271 $noname  P1 CONN_2 {Lib=CONN_2}
-  (    1 N-000172 )
+  (    1 N-000162 )
   (    2 V1P8 )
  )
  ( /510B2194/5151F263 $noname  P2 CONN_2 {Lib=CONN_2}
-  (    1 N-000167 )
+  (    1 N-000163 )
   (    2 V3P3 )
  )
  ( /510B2194/5150DCD4 $noname  R33 10K {Lib=R}
@@ -2011,27 +2123,27 @@
  )
  ( /510B2194/5150D148 $noname  R36 162K {Lib=R}
   (    1 GND )
-  (    2 N-000171 )
+  (    2 N-000167 )
  )
  ( /510B2194/5150D142 $noname  R34 162K {Lib=R}
   (    1 GND )
-  (    2 N-000170 )
+  (    2 N-000165 )
  )
  ( /510B2194/5150D0D4 $noname  C30 10U {Lib=C}
   (    1 VRAW )
   (    2 GND )
  )
  ( /510B2194/5150D0C5 $noname  R35 330K {Lib=R}
-  (    1 N-000170 )
-  (    2 N-000172 )
+  (    1 N-000165 )
+  (    2 N-000162 )
  )
  ( /510B2194/5150D0BC $noname  C38 33P {Lib=C}
-  (    1 N-000171 )
-  (    2 N-000167 )
+  (    1 N-000167 )
+  (    2 N-000163 )
  )
  ( /510B2194/5150D0B0 $noname  R37 715K {Lib=R}
-  (    1 N-000171 )
-  (    2 N-000167 )
+  (    1 N-000167 )
+  (    2 N-000163 )
  )
  ( /510B2194/5150D073 $noname  R38 10K {Lib=R}
   (    1 GND )
@@ -2039,92 +2151,40 @@
  )
  ( /510B2194/5150D045 $noname  C34 10U {Lib=C}
   (    1 GND )
-  (    2 N-000172 )
+  (    2 N-000162 )
  )
  ( /510B2194/5150D040 $noname  C33 10U {Lib=C}
   (    1 GND )
-  (    2 N-000172 )
+  (    2 N-000162 )
  )
  ( /510B2194/5150D035 $noname  C32 10U {Lib=C}
-  (    1 N-000167 )
+  (    1 N-000163 )
   (    2 GND )
  )
  ( /510B2194/5150D032 $noname  C31 10U {Lib=C}
-  (    1 N-000167 )
+  (    1 N-000163 )
   (    2 GND )
  )
  ( /510B2194/5150CE03 $noname  L11 4U7 {Lib=INDUCTOR}
-  (    1 N-000172 )
-  (    2 N-000169 )
+  (    1 N-000162 )
+  (    2 N-000164 )
  )
  ( /510B2194/5150CDF9 $noname  L10 4U7 {Lib=INDUCTOR}
-  (    1 N-000168 )
-  (    2 N-000167 )
+  (    1 N-000166 )
+  (    2 N-000163 )
  )
  ( /510B2194/5150CCD6 $noname  U5 TPS62420 {Lib=TPS62410}
   (    0 GND )
-  (    1 N-000171 )
+  (    1 N-000167 )
   (    2 /power/SMPS_MODE )
   (    3 VRAW )
-  (    4 N-000172 )
-  (    5 N-000170 )
-  (    6 N-000169 )
+  (    4 N-000162 )
+  (    5 N-000165 )
+  (    6 N-000164 )
   (    7 /microcontroller/V1P8_ENABLE )
   (    8 GND )
   (    9 VRAW )
-  (   10 N-000168 )
- )
- ( /5138E12B/5161C39E $noname  C20 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 /fpga_front_end_bank_0/VREF )
- )
- ( /5138E12B/514BAB61 $noname  C22 C {Lib=C}
-  (    1 /fpga_front_end_bank_0/VREF )
-  (    2 GND )
- )
- ( /5138E12B/514BAB55 $noname  R42 1K0 {Lib=R}
-  (    1 /fpga_front_end_bank_0/VREF )
-  (    2 GND )
- )
- ( /5138E12B/514BAB23 $noname  R41 1K0 {Lib=R}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 /fpga_front_end_bank_0/VREF )
- )
- ( /5138E12B/513E1ED7 $noname  C79 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
- )
- ( /5138E12B/513E1ED5 $noname  C78 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
- )
- ( /5138E12B/513E1ED0 $noname  C77 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
- )
- ( /5138E12B/513E1ECA $noname  C76 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
- )
- ( /5138E12B/513E1EC8 $noname  C75 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
- )
- ( /5138E12B/513E1EC5 $noname  C74 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
- )
- ( /5138E12B/513E1EC1 $noname  C73 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
- )
- ( /5138E12B/513E1EB6 $noname  C72 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
- )
- ( /5138E12B/513E1EA6 $noname  C71 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_B )
-  (    2 GND )
+  (   10 N-000166 )
  )
  ( /510239FC/51560F12 $noname  C4048 100N {Lib=C}
   (    1 V1P2 )
@@ -2358,66 +2418,6 @@
   (    1 V1P2 )
   (    2 GND )
  )
- ( /5138E160/5161C3DA $noname  C19 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 /fpga_front_end_bank_1/VREF )
- )
- ( /5138E160/514BAC16 $noname  C23 C {Lib=C}
-  (    1 /fpga_front_end_bank_1/VREF )
-  (    2 GND )
- )
- ( /5138E160/514BABF8 $noname  R13 1K0 {Lib=R}
-  (    1 GND )
-  (    2 /fpga_front_end_bank_1/VREF )
- )
- ( /5138E160/514BABD4 $noname  R12 1K0 {Lib=R}
-  (    1 /fpga_front_end_bank_1/VREF )
-  (    2 /front_end/FE_VCCIO_C )
- )
- ( /5138E160/513E1FD0 $noname  C89 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/513E1FCC $noname  C88 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/513E1FC9 $noname  C87 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/513E1FC4 $noname  C86 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/513E1FBE $noname  C85 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/513E1FBB $noname  C84 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/513E1FAE $noname  C83 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/513E1FAC $noname  C82 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/513E1FA3 $noname  C81 C {Lib=C}
-  (    1 /front_end/FE_VCCIO_C )
-  (    2 GND )
- )
- ( /5138E160/51393D16 $noname  R11 50R {Lib=R}
-  (    1 GND )
-  (    2 N-000243 )
- )
- ( /5138E160/51393D12 $noname  R10 50R {Lib=R}
-  (    1 N-000251 )
-  (    2 /front_end/FE_VCCIO_C )
- )
  ( /5109F714/5144DC8D $noname  L3 INDUCTOR {Lib=INDUCTOR}
   (    1 V1P1 )
   (    2 /usb0_power/A1P1 )
@@ -2613,6 +2613,158 @@
 )
 *
 { Allowed footprints by component:
+$component C19
+ SM*
+ C?
+ C1-1
+$endlist
+$component C23
+ SM*
+ C?
+ C1-1
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C89
+ SM*
+ C?
+ C1-1
+$endlist
+$component C88
+ SM*
+ C?
+ C1-1
+$endlist
+$component C87
+ SM*
+ C?
+ C1-1
+$endlist
+$component C86
+ SM*
+ C?
+ C1-1
+$endlist
+$component C85
+ SM*
+ C?
+ C1-1
+$endlist
+$component C84
+ SM*
+ C?
+ C1-1
+$endlist
+$component C83
+ SM*
+ C?
+ C1-1
+$endlist
+$component C82
+ SM*
+ C?
+ C1-1
+$endlist
+$component C81
+ SM*
+ C?
+ C1-1
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C20
+ SM*
+ C?
+ C1-1
+$endlist
+$component C22
+ SM*
+ C?
+ C1-1
+$endlist
+$component R42
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R41
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component C79
+ SM*
+ C?
+ C1-1
+$endlist
+$component C78
+ SM*
+ C?
+ C1-1
+$endlist
+$component C77
+ SM*
+ C?
+ C1-1
+$endlist
+$component C76
+ SM*
+ C?
+ C1-1
+$endlist
+$component C75
+ SM*
+ C?
+ C1-1
+$endlist
+$component C74
+ SM*
+ C?
+ C1-1
+$endlist
+$component C73
+ SM*
+ C?
+ C1-1
+$endlist
+$component C72
+ SM*
+ C?
+ C1-1
+$endlist
+$component C71
+ SM*
+ C?
+ C1-1
+$endlist
 $component C29
  SM*
  C?
@@ -3397,75 +3549,6 @@ $component C31
  C?
  C1-1
 $endlist
-$component C20
- SM*
- C?
- C1-1
-$endlist
-$component C22
- SM*
- C?
- C1-1
-$endlist
-$component R42
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R41
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component C79
- SM*
- C?
- C1-1
-$endlist
-$component C78
- SM*
- C?
- C1-1
-$endlist
-$component C77
- SM*
- C?
- C1-1
-$endlist
-$component C76
- SM*
- C?
- C1-1
-$endlist
-$component C75
- SM*
- C?
- C1-1
-$endlist
-$component C74
- SM*
- C?
- C1-1
-$endlist
-$component C73
- SM*
- C?
- C1-1
-$endlist
-$component C72
- SM*
- C?
- C1-1
-$endlist
-$component C71
- SM*
- C?
- C1-1
-$endlist
 $component C4048
  SM*
  C?
@@ -3756,89 +3839,6 @@ $component C4003
  C?
  C1-1
 $endlist
-$component C19
- SM*
- C?
- C1-1
-$endlist
-$component C23
- SM*
- C?
- C1-1
-$endlist
-$component R13
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R12
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component C89
- SM*
- C?
- C1-1
-$endlist
-$component C88
- SM*
- C?
- C1-1
-$endlist
-$component C87
- SM*
- C?
- C1-1
-$endlist
-$component C86
- SM*
- C?
- C1-1
-$endlist
-$component C85
- SM*
- C?
- C1-1
-$endlist
-$component C84
- SM*
- C?
- C1-1
-$endlist
-$component C83
- SM*
- C?
- C1-1
-$endlist
-$component C82
- SM*
- C?
- C1-1
-$endlist
-$component C81
- SM*
- C?
- C1-1
-$endlist
-$component R11
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R10
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
 $component C162
  SM*
  C?
@@ -4067,414 +4067,344 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "/ddr2/VREF" "VREF"
- J1 1
- C181 1
- C185 1
- C182 2
- U1 AA12
- C183 1
- U1 Y17
- U1 Y10
- U1 AA24
- U1 U23
- C222 1
- C180 2
- C184 2
- U1 AB20
- U1 R24
- U1 U24
- R21 1
- U1 AA14
- U1 AA15
- R20 2
- U1 AB11
- U1 AC18
-Net 2 "/ddr2/WE#" "WE#"
- J1 109
- U1 AD11
-Net 3 "/front_end/FE_VCCIO_A" "FE_VCCIO_A"
- C93 1
- C92 1
- C95 1
- C94 1
- U1 K24
- U1 N28
- U1 H28
- U1 B28
- U1 L21
- U1 N24
- C90 1
- J2 23
- R23 2
- J2 35
- J2 47
- C18 1
- J2 11
- C91 1
-Net 4 "/ddr2/CAS#" "CAS#"
- J1 113
- U1 AC11
-Net 5 "/front_end/FE_VCCIO_B" "FE_VCCIO_B"
- C78 1
- C72 1
- U1 A2
- U1 A13
- C76 1
- U1 E13
- U1 J13
- U1 E9
- C77 1
- C79 1
- C73 1
- C75 1
- C71 1
- R41 1
- U1 A9
- U1 E6
- U1 A5
+Net 1 "/front_end/FE_VCCIO_B" "FE_VCCIO_B"
+ U1 E16
+ U1 A16
  J2 84
- J2 72
- J2 96
- J2 83
- J2 95
- J2 71
+ U1 H18
+ R10 2
+ C84 1
+ C85 1
+ C82 1
  J2 107
  J2 108
- C20 1
- U1 H11
+ R12 2
+ U1 A27
+ U1 A20
+ C81 1
+ J2 71
+ C19 1
+ C88 1
+ U1 A24
+ J2 72
+ J2 83
+ U1 E23
+ C89 1
+ J2 96
+ U1 E20
+ C86 1
+ C83 1
+ J2 95
+ C87 1
+ U1 J15
+Net 2 "/front_end/FE_VCCIO_A" "FE_VCCIO_A"
+ C91 1
+ C93 1
+ C92 1
+ C90 1
+ C18 1
+ R23 2
+ U1 H28
+ U1 B28
+ U1 N28
+ U1 K24
+ U1 N24
+ U1 L21
+ C94 1
+ J2 12
+ C95 1
+ J2 48
+ J2 24
+ J2 36
+Net 3 "/clock_generator/FE_CLKSRC" "FE_CLKSRC"
+ J2 60
+ U4 6
+Net 5 "/ddr2/CAS#" "CAS#"
+ J1 113
+ U1 AC11
+Net 6 "/microcontroller/V1P8_ENABLE" "V1P8_ENABLE"
+ U5 7
+ R38 2
+Net 7 "/ddr2/WE#" "WE#"
+ U1 AD11
+ J1 109
+Net 8 "/ddr2/RAS#" "RAS#"
+ J1 108
+ U1 AC14
+Net 9 "/ddr2/VREF" "VREF"
+ C222 1
+ C181 1
+ C184 2
+ U1 Y17
+ U1 AA12
+ U1 AA14
+ U1 AB20
+ U1 AB11
+ C183 1
+ J1 1
+ C185 1
+ C182 2
+ U1 AA24
+ U1 AC18
+ U1 Y10
+ U1 AA15
+ U1 U23
+ U1 R24
+ U1 U24
+ C180 2
+ R21 1
+ R20 2
+Net 10 "/power/SMPS_MODE" "SMPS_MODE"
+ U5 2
+ R33 2
+Net 11 "/microcontroller/V2P5_ENABLE" "V2P5_ENABLE"
+ R30 2
+ U6 3
+Net 13 "/clock_generator/CLOCKGEN_INTR" "CLOCKGEN_INTR"
+ R45 2
+ R49 1
+ U1 P5
+ U1 P6
+ R44 2
+ U1 M6
+ U1 P7
+ U4 7
+ R14 2
+ U4 3
+ R15 2
+ R50 2
+ R51 2
+ U1 P8
+ U1 P24
+Net 14 "/usb0_interfaces/ELAS_BUF_MODE" "ELAS_BUF_MODE"
+ U2 C9
+ U1 AD5
+Net 15 "/fpga_usb0/PIPE_PWRPRESENT" "PIPE_PWRPRESENT"
+ U1 AB5
+ U2 H11
+Net 16 "/usb0_interfaces/PHY_RESETN" "PHY_RESETN"
+ U1 N4
+ U2 J3
+Net 17 "/fpga_usb0/PIPE_RX_ELECIDLE" "PIPE_RX_ELECIDLE"
+ U2 F3
+ U1 R6
+Net 18 "/usb0_interfaces/PCLK" "PCLK"
+ U2 A6
+ U1 Y2
+Net 20 "/fpga_configuration/PIPE_TX_ONESZEROS" "PIPE_TX_ONESZEROS"
+ U1 M3
+ U2 M4
+Net 21 "/usb0_interfaces/PHY_STATUS" "PHY_STATUS"
+ U1 V5
+ U2 E3
+Net 22 "/fpga_configuration/PIPE_TX_SWING" "PIPE_TX_SWING"
+ U1 L4
+ U2 M5
+Net 24 "/fpga_configuration/ULPI_STP" "ULPI_STP"
+ U2 M8
+ U1 J3
+Net 25 "/fpga_configuration/ULPI_NXT" "ULPI_NXT"
+ U2 N11
+ U1 G1
+Net 26 "/usb0_interfaces/OUT_ENABLE" "OUT_ENABLE"
+ U2 L10
+ R17 2
+ U1 G3
+Net 27 "/fpga_usb0/PIPE_TX_CLK" "PIPE_TX_CLK"
+ U2 K1
+ U1 AC1
+Net 28 "/fpga_usb0/PIPE_RX_TERMINATION" "PIPE_RX_TERMINATION"
+ U2 D3
+ U1 U5
+Net 29 "/front_end/FE_VCCIO_C" "FE_VCCIO_C"
+ C75 1
  C74 1
-Net 6 "/front_end/FE_VCCIO_C" "FE_VCCIO_C"
- J2 168
- J2 144
+ C72 1
+ C71 1
+ C20 1
+ U1 A9
+ U1 J13
+ U1 E6
+ U1 E9
+ C78 1
+ C76 1
+ C77 1
+ C79 1
+ R41 1
+ U1 E13
+ U1 A13
+ C73 1
+ U1 H11
+ U1 A5
+ J2 156
  J2 143
  J2 132
  J2 131
- J2 167
- J2 156
  J2 155
- C89 1
- U1 E16
- C83 1
- C88 1
- U1 A16
- U1 J15
- U1 H18
- C82 1
- C84 1
- C85 1
- C87 1
- U1 A20
- U1 A27
- U1 A24
- U1 E23
- R10 2
- C19 1
- C81 1
- R12 2
- C86 1
- U1 E20
-Net 7 "/ddr2/RAS#" "RAS#"
- U1 AC14
- J1 108
-Net 8 "/power/SMPS_MODE" "SMPS_MODE"
- R33 2
- U5 2
-Net 9 "/fpga_usb0/PIPE_TX_CLK" "PIPE_TX_CLK"
- U2 K1
- U1 AC1
-Net 10 "/usb0_interfaces/ELAS_BUF_MODE" "ELAS_BUF_MODE"
- U1 AD5
- U2 C9
-Net 11 "/fpga_usb0/PIPE_RX_TERMINATION" "PIPE_RX_TERMINATION"
- U2 D3
- U1 U5
-Net 12 "/fpga_usb0/PIPE_RX_POLARITY" "PIPE_RX_POLARITY"
- U2 C8
+ J2 144
+ J2 168
+ J2 167
+ U1 A2
+Net 30 "/fpga_usb0/PIPE_RX_POLARITY" "PIPE_RX_POLARITY"
  U1 AC5
-Net 13 "/usb0_interfaces/PCLK" "PCLK"
- U2 A6
- U1 Y2
-Net 17 "/fpga_configuration/PIPE_RATE" "PIPE_RATE"
- U1 N3
- U2 L6
-Net 19 "/microcontroller/V1P8_ENABLE" "V1P8_ENABLE"
- U5 7
- R38 2
-Net 20 "/microcontroller/V2P5_ENABLE" "V2P5_ENABLE"
- R30 2
- U6 3
-Net 21 "/fpga_usb0/PIPE_RX_VALID" "PIPE_RX_VALID"
- U2 F1
- U1 R4
-Net 22 "/fpga_configuration/ULPI_NXT" "ULPI_NXT"
- U2 N11
- U1 G1
-Net 25 "/fpga_configuration/ULPI_DIR" "ULPI_DIR"
- U1 L3
- U2 M7
-Net 26 "/fpga_configuration/ULPI_STP" "ULPI_STP"
- U1 J3
- U2 M8
-Net 27 "/fpga_configuration/ULPI_CLK" "ULPI_CLK"
- U2 P11
- U1 J1
-Net 28 "/fpga_configuration/PIPE_TX_ELECIDLE" "PIPE_TX_ELECIDLE"
- U1 M4
- U2 K3
-Net 29 "/usb0_interfaces/PHY_RESETN" "PHY_RESETN"
- U2 J3
- U1 N4
-Net 30 "/fpga_configuration/PIPE_TX_DETRX_LPBK" "PIPE_TX_DETRX_LPBK"
- U1 K4
- U2 M6
-Net 31 "/usb0_interfaces/OUT_ENABLE" "OUT_ENABLE"
- U1 G3
- U2 L10
- R17 2
-Net 32 "/fpga_configuration/PIPE_TX_ONESZEROS" "PIPE_TX_ONESZEROS"
- U2 M4
- U1 M3
-Net 33 "/fpga_configuration/PIPE_TX_SWING" "PIPE_TX_SWING"
- U1 L4
- U2 M5
-Net 34 "/clock_generator/FE_CLKSRC" "FE_CLKSRC"
- J2 60
- U4 6
-Net 35 "/usb0_interfaces/PHY_STATUS" "PHY_STATUS"
- U1 V5
- U2 E3
-Net 36 "/fpga_usb0/PIPE_RESETN" "PIPE_RESETN"
+ U2 C8
+Net 31 "/fpga_usb0/PIPE_RESETN" "PIPE_RESETN"
+ U1 AB6
  R16 2
  U2 J11
- U1 AB6
-Net 37 "/fpga_usb0/PIPE_RX_ELECIDLE" "PIPE_RX_ELECIDLE"
- U1 R6
- U2 F3
-Net 38 "/front_end/FE_I2C_SDA" "FE_I2C_SDA"
- J1 195
+Net 32 "/fpga_configuration/PIPE_TX_ELECIDLE" "PIPE_TX_ELECIDLE"
+ U1 M4
+ U2 K3
+Net 34 "/fpga_configuration/ULPI_DIR" "ULPI_DIR"
+ U1 L3
+ U2 M7
+Net 35 "/fpga_configuration/ULPI_CLK" "ULPI_CLK"
+ U1 J1
+ U2 P11
+Net 37 "/front_end/FE_I2C_SDA" "FE_I2C_SDA"
  R58 2
- U4 5
  U3 16
+ J1 195
  J2 3
-Net 39 "/clock_generator/CLOCKGEN_INTR" "CLOCKGEN_INTR"
- U4 3
- R49 1
- R14 2
- R15 2
- R51 2
- U1 P24
- R45 2
- R44 2
- R50 2
- U1 P5
- U1 P8
- U4 7
- U1 P7
- U1 P6
- U1 M6
-Net 40 "/fpga_usb0/PIPE_PWRPRESENT" "PIPE_PWRPRESENT"
- U1 AB5
- U2 H11
-Net 41 "/front_end/FE_I2C_SCL" "FE_I2C_SCL"
- J2 1
+ U4 5
+Net 38 "/front_end/FE_I2C_SCL" "FE_I2C_SCL"
  U4 4
- U3 15
+ J2 1
  J1 197
+ U3 15
  R57 2
-Net 42 "V3P3" "V3P3"
- U3 44
- P2 2
- Q1 2
- U3 8
- R52 1
- R15 1
- R57 1
- J1 199
- R58 1
- R65 1
- J2 12
- J2 24
- U4 18
- C35 1
- U4 14
- U4 20
- L1 1
- C160 1
- U6 1
- C15 1
- C16 1
- R53 1
- J4 1
- R54 1
- C201 1
- C200 1
- R14 1
- C12 1
-Net 43 "GND" "GND"
- C4037 2
- C4031 2
- C4034 2
- C4028 2
- C4066 2
- C4067 2
- U1 W17
- U1 AC6
- U1 L17
- U1 N17
- U1 R17
- U1 U17
- U1 V16
- U1 B27
- U1 N27
- U1 AC23
- U1 AC9
- U1 AG9
- U1 AA20
- U1 AC20
- U1 C28
- U1 AC13
- U1 AG13
- U1 T27
- U1 AG24
- U1 AC16
- U1 AG16
- U1 AA27
- U1 AG27
- U1 AF28
- U1 H27
- U1 T16
- U1 V18
- U1 J18
- U1 K18
- U1 M18
- U1 P18
- U1 T18
- U1 Y18
- C4027 2
- C4019 2
- C4016 2
- C4010 2
- C4007 2
- C4024 2
- C4014 2
- C4011 2
- C4008 2
- C4004 2
- C4017 2
- C4001 2
- C4035 2
- C4064 2
- C4063 2
- C4029 2
+Net 39 "/fpga_configuration/PIPE_TX_DETRX_LPBK" "PIPE_TX_DETRX_LPBK"
+ U1 K4
+ U2 M6
+Net 40 "/fpga_configuration/PIPE_RATE" "PIPE_RATE"
+ U2 L6
+ U1 N3
+Net 41 "/fpga_usb0/PIPE_RX_VALID" "PIPE_RX_VALID"
+ U2 F1
+ U1 R4
+Net 46 "GND" "GND"
+ R4 1
+ R2 1
+ U7 3
+ C2 2
+ L4 2
+ C62 2
+ C63 2
+ C57 2
+ C50 2
+ C51 2
+ C52 2
+ C53 2
+ C54 2
+ C55 2
+ C56 2
+ C58 2
+ C59 2
+ C60 2
+ C61 2
+ C41 2
+ R38 1
+ R33 1
+ R36 1
+ R30 1
+ R34 1
+ C36 2
+ J5 5
+ J5 8
+ R9 1
+ R31 2
+ C35 2
+ U6 2
+ C30 2
+ U5 8
+ C64 2
+ C32 2
+ C37 2
+ C43 2
+ C34 1
+ C44 2
+ C45 2
+ C33 1
+ C46 2
+ C47 2
+ C48 2
+ C49 2
+ C42 2
+ C31 2
+ U5 0
+ C4045 2
  C4041 2
- C4038 2
- C4005 2
- C4032 2
- U1 P16
- C4049 2
- C4046 2
- C4043 2
- C4040 2
- C4013 2
- C4025 2
- C4022 2
- U1 AG20
- U1 L19
- U1 N19
- U1 R19
+ C4044 2
+ C4047 2
+ C4050 2
+ C4030 2
+ C4033 2
+ C4026 2
+ C4036 2
+ C4039 2
+ C4023 2
+ C4042 2
  C4020 2
- U1 U19
- U1 W19
- U1 AA9
+ C4048 2
+ C4017 2
+ R21 2
  C4002 2
  C4006 2
  C4003 2
- C4009 2
- C4021 2
- C4018 2
- C4015 2
- C4012 2
+ C4019 2
+ C4016 2
+ C4013 2
+ C4010 2
+ C4007 2
+ C4014 2
+ C4011 2
+ C4008 2
+ C4038 2
+ C4004 2
+ C4001 2
+ C4005 2
+ C4025 2
+ C4022 2
  C4065 2
- C4026 2
- C4023 2
- C181 2
- C185 2
- C183 2
- R21 2
- U1 L15
- U1 R11
- U1 T2
- U1 D3
- U1 B5
- U1 F6
- U1 K6
- U1 N6
- U1 T6
- U1 W6
- U1 B9
- U1 J2
- U1 K23
- U1 N23
- U1 T23
- U1 W23
- U1 K14
- U1 M14
- U1 P14
- U1 T14
- U1 V14
- U1 B24
- U1 T20
- U1 M10
- U1 P10
- U1 T10
- U1 V10
- U1 F9
- U1 F20
- U1 H20
- U1 K20
- U1 M20
- U1 P20
- U1 F23
- U1 J11
- U1 L11
- U1 N11
- U1 N2
+ C4066 2
+ C4067 2
+ U1 L9
+ C4028 2
  C4062 2
- C4061 2
- C4060 2
- U1 C1
- U1 B2
+ C4063 2
+ C4064 2
  U1 H2
- C4045 2
- U1 B13
- U1 F13
- U1 L13
- U1 N13
- U1 R13
- U1 U13
- U1 W13
- C4036 2
- C4048 2
- U1 AG2
- C4042 2
- C4039 2
- C4033 2
- C4030 2
- C4050 2
- C4047 2
+ C4061 2
+ C4035 2
+ U1 W6
+ C4031 2
+ C4034 2
+ C4037 2
+ C4040 2
+ C4043 2
+ C4046 2
+ C4049 2
+ C4029 2
+ C4032 2
+ U1 H9
+ U1 F9
+ U1 B9
+ U1 T6
+ U1 N6
+ U1 K6
+ U1 F6
+ U1 B5
+ U1 D3
+ U1 T2
+ U1 N2
+ U1 J2
+ U1 B2
+ U1 C1
+ C4060 2
+ U1 W19
+ U1 N11
+ U1 R11
  U1 U11
- U1 N15
- U1 R15
- U1 U15
- U1 W15
- U1 AG5
- U1 B16
- U1 F16
- U1 K16
- U1 M16
- U1 V12
- U1 K10
  U1 W11
  U1 Y11
  U1 AF1
@@ -4482,115 +4412,261 @@ Net 43 "GND" "GND"
  U1 K12
  U1 M12
  U1 P12
- U1 T12
- U1 AA2
+ U1 AG16
+ U1 U19
+ U1 L11
+ U1 AA9
+ U1 AC9
+ U1 AG9
+ U1 AA20
+ U1 AC20
+ U1 AG20
+ U1 AC13
+ U1 AG13
+ U1 AC23
+ U1 AG24
+ U1 AC16
+ U1 R19
  U1 B20
- U1 H9
- U1 L9
+ U1 U15
+ U1 W15
+ U1 AG5
+ U1 P20
  U1 N9
  U1 R9
  U1 U9
- C4044 2
- C23 2
- R13 1
- C73 2
- C74 2
- C75 2
- C71 2
- C76 2
- C77 2
- R42 2
- J2 B0
- C87 2
+ U1 K10
+ U1 M10
+ U1 P10
+ U1 T10
+ U1 V10
+ U1 AA27
+ U1 F20
+ U1 H20
+ U1 K20
+ U1 M20
+ U1 B16
+ U1 T20
+ U1 J11
+ U1 N19
+ U1 N27
+ U1 T27
+ U1 J18
+ U1 K18
+ U1 M18
+ U1 P18
+ U1 T18
+ U1 V18
+ U1 Y18
+ U1 C28
+ U1 L19
+ U1 B27
+ U1 T16
+ U1 AG27
+ U1 AF28
+ U1 H27
+ U1 F16
+ U1 K16
+ U1 M16
+ U1 P16
+ U1 R15
+ U1 V16
+ U1 AC6
+ R16 1
+ R17 1
+ U1 L17
+ U1 N17
+ U1 R17
+ U1 U17
+ U1 W17
+ C4009 2
+ C4012 2
+ C4027 2
+ C4024 2
+ C183 2
+ C185 2
+ C181 2
+ C4021 2
+ C4018 2
+ C4015 2
+ U1 T14
+ U1 K14
+ U1 M14
+ U1 P14
+ U1 V14
+ U1 B24
+ U1 L15
+ U1 N15
+ U1 T23
+ U1 V12
+ U1 AA2
+ U1 AG2
+ U1 B13
+ U1 F13
+ U1 L13
+ U1 N13
+ U1 R13
+ U1 U13
+ U1 W13
+ U1 F23
+ U1 K23
+ U1 N23
+ U1 T12
+ U1 W23
  R11 1
- C81 2
- C89 2
- C88 2
- C79 2
- C86 2
- C85 2
- C84 2
- C83 2
+ U2 B11
+ U2 F12
+ U2 L12
+ U2 G8
+ U2 F8
+ U2 J7
+ U2 H7
+ U2 G7
+ U2 F7
+ U2 J6
+ U2 H6
+ U2 G6
+ U2 F6
+ C113 2
+ C116 2
+ U2 M13
+ U2 N13
+ U2 B14
+ U2 J8
+ C23 2
+ U2 F9
+ U2 G9
+ U2 H9
+ U2 J9
+ U2 H8
+ C124 2
  C82 2
- R48 2
- C27 2
- C28 2
- C29 2
- R46 2
- R47 2
- R49 2
- C151 2
- C152 2
- C153 2
- R38 1
- C30 2
- C25 2
- C24 2
- C26 2
- C22 2
- C72 2
- C78 2
- C154 2
- C156 2
- C155 2
- J3 5
- C200 2
- C201 2
- R63 2
- C204 2
- R55 2
- U3 5
- C203 2
- X2 2
- X2 4
- U3 41
- J4 9
- J4 5
- J4 3
- C202 1
- C10 1
- X3 2
- X3 4
- C11 2
- C14 2
- C13 2
- C15 2
- C16 2
- C12 2
- U4 21
- C21 2
- U1 P23
- U1 M22
- U1 N22
- U1 P22
- C90 2
- R24 1
- J2 A1
- J2 C0
- J2 C1
- J2 C2
- J2 C3
+ C81 2
  J2 A0
+ J2 A1
  J2 A2
+ C111 2
+ C110 2
  J2 A3
- J2 B3
- J2 B1
- J2 B2
- C91 2
- C205 2
- C95 2
- C94 2
- C93 2
- C92 2
+ C128 2
+ C127 2
  C126 2
  C125 2
  C109 2
+ C83 2
  C123 2
  C122 2
  C121 2
  C1 2
- C127 2
+ R13 1
+ C115 2
+ C89 2
+ C88 2
+ C87 2
+ C86 2
+ C85 2
+ C84 2
+ U2 H13
+ C114 2
+ C112 2
+ C153 2
+ C152 2
+ C151 2
+ C29 2
+ C78 2
+ C77 2
+ C76 2
+ J1 149
+ J1 139
+ J1 178
+ C75 2
+ C74 2
+ C73 2
+ C72 2
+ C71 2
+ J1 168
+ U2 J13
+ J1 150
+ U2 M12
+ C22 2
+ U2 B13
+ R42 2
+ U2 E13
+ U2 F13
+ J1 172
+ J1 138
+ J1 128
+ J1 187
+ J1 177
+ J1 127
+ J1 196
+ J1 156
+ J1 165
+ J1 155
+ J1 145
+ J1 184
+ J1 193
+ J1 183
+ J1 133
+ J1 162
+ J1 132
+ J1 122
+ J1 171
+ J1 161
+ J1 121
+ J1 190
+ J1 144
+ C79 2
+ C203 2
+ C202 1
+ C200 2
+ U3 41
+ U3 5
+ C201 2
+ X2 4
+ X2 2
+ C12 2
+ C15 2
+ U4 21
+ C13 2
+ C14 2
+ C16 2
+ X3 4
+ X3 2
+ C10 1
+ C11 2
+ R24 1
+ J2 B0
+ C94 2
+ C95 2
  C101 2
+ J2 B1
+ C21 2
+ C90 2
+ C91 2
+ C92 2
+ C93 2
+ J2 C3
+ J2 C2
+ J2 C1
+ J2 C0
+ J2 B2
+ J2 B3
+ C205 2
+ C106 2
+ C107 2
+ J4 5
+ R55 2
+ C108 2
+ J4 3
+ J4 9
+ J3 5
+ C204 2
+ R63 2
+ U1 P23
+ U1 P22
+ U1 N22
+ U1 M22
  U2 D12
  U2 G12
  U2 K12
@@ -4598,291 +4674,515 @@ Net 43 "GND" "GND"
  C102 2
  C103 2
  C104 2
- C113 2
- U2 G6
- U2 H6
- U2 J6
- U2 F7
- U2 L12
- U2 H7
- U2 J7
- U2 F8
- U2 G8
- U2 H8
  C105 2
- C116 2
- C115 2
- C114 2
- C112 2
- C111 2
- C110 2
- C128 2
- C106 2
- C107 2
- C108 2
- U2 F6
- C150 2
- C135 2
- C134 2
- C132 2
- C131 2
- C130 2
- C149 2
- C148 2
- C147 2
- C146 2
- C145 2
- C144 2
- C143 2
- C142 2
- C161 2
- C160 2
+ C222 2
+ J1 59
  C162 2
  C133 2
  C141 2
- U2 N13
- U2 J13
- U2 M12
- U2 B13
- U2 E13
- U2 F13
- U2 H13
- U2 M13
- U2 B14
- U2 F9
- U2 G9
- U2 H9
- U2 J9
- U2 J8
- U2 B11
- U2 F12
- U2 G7
- J5 5
- J5 8
- R9 1
- U6 2
- C35 2
- C37 2
- R31 2
- C36 2
- R16 1
- R17 1
- U7 3
- C2 2
- L4 2
- C33 1
- R34 1
- R36 1
- R33 1
- C34 1
- R30 1
- C124 2
- U5 8
- U5 0
- C31 2
- C32 2
- J1 168
- C220 2
- C221 2
- J1 177
- J1 187
- J1 128
- J1 138
- J1 178
- J1 184
- C57 2
- C63 2
- C62 2
- J1 165
- J1 42
- J1 144
- J1 139
- J1 145
- J1 155
- C41 2
- J1 156
- J1 196
- J1 127
- C222 2
- C212 2
- C60 2
- J1 72
- C59 2
- C58 2
- J1 9
- R2 1
- C56 2
- C55 2
- C216 2
- C53 2
- J1 11
- C210 2
- J1 193
- C61 2
- R4 1
+ C160 2
  J1 2
  J1 3
- J1 8
+ C210 2
  C211 2
- J1 167
- J1 186
- J1 146
- J1 49
- J1 129
- J1 68
- J1 60
- J1 40
- C214 2
- C215 2
+ C212 2
  C213 2
- J1 29
- J1 122
- J1 71
- J1 12
- J1 190
- J1 121
- J1 161
- J1 171
- J1 132
- J1 162
- J1 172
- J1 133
- J1 183
- J1 150
- J1 21
- J1 149
- C54 2
- J1 41
- J1 28
- J1 18
- C46 2
- C45 2
- C44 2
+ C214 2
+ C28 2
+ C27 2
+ C26 2
+ C25 2
+ C24 2
+ C215 2
+ C219 2
+ J1 40
+ J1 9
+ J1 34
+ J1 60
+ C220 2
+ C161 2
+ C221 2
+ J1 65
+ C216 2
+ C217 2
+ C218 2
  J1 39
- C43 2
  J1 78
  J1 48
- J1 27
- J1 66
- J1 65
- J1 15
- C219 2
- J1 34
- J1 24
+ J1 28
+ J1 18
  J1 77
  J1 47
+ J1 27
+ J1 66
+ J1 15
  J1 54
- C50 2
- C217 2
- J1 59
- C51 2
- C52 2
- C48 2
- C42 2
- C49 2
- C218 2
+ J1 8
+ J1 24
  J1 53
- C47 2
  J1 33
- C64 2
-Net 48 "V1P8" "V1P8"
+ J1 72
+ J1 42
+ J1 12
+ J1 71
+ J1 41
+ J1 21
+ R46 2
+ R47 2
+ C142 2
+ R48 2
+ J1 29
+ J1 11
+ R49 2
+ C130 2
+ C131 2
+ J1 68
+ J1 49
+ C132 2
+ J1 146
+ J1 167
+ J1 186
+ C147 2
+ C143 2
+ C144 2
+ C145 2
+ C150 2
+ C146 2
+ J1 129
+ C148 2
+ C149 2
+ C154 2
+ C155 2
+ C156 2
+ C135 2
+ C134 2
+Net 99 "" ""
+ R3 1
+ U1 AA22
+Net 100 "" ""
+ U1 AA17
+ R1 1
+Net 101 "" ""
+ U1 AB23
+ R4 2
+Net 110 "" ""
+ R2 2
+ U1 AB17
+Net 122 "V2P5" "V2P5"
+ U1 Y8
+ C4061 1
+ C37 1
+ U6 5
+ C4060 1
+ C4063 1
+ U1 Y21
+ R32 1
+ C4062 1
+ U1 J8
+ U1 J21
+Net 123 "V1P2" "V1P2"
+ U1 V19
+ U1 P9
+ U1 K9
+ U1 V11
+ C4022 1
+ C4025 1
+ U1 T19
+ U1 P19
+ U1 W12
+ U1 M19
+ U1 L16
+ U1 R16
+ U1 N16
+ U1 V15
+ U1 T15
+ U1 L18
+ U1 M15
+ U1 P15
+ U1 R18
+ U1 K19
+ U1 W18
+ U1 U18
+ U1 N18
+ U1 W14
+ U1 V17
+ U1 T17
+ U1 P17
+ U1 M17
+ U1 K17
+ U1 U16
+ C4014 1
+ C4027 1
+ C4008 1
+ C4011 1
+ C4021 1
+ C4017 1
+ C4020 1
+ C4010 1
+ C4003 1
+ C4024 1
+ C4006 1
+ C4016 1
+ C4013 1
+ C4007 1
+ C4002 1
+ C4005 1
+ C4001 1
+ C4004 1
+ C4026 1
+ U1 R20
+ U1 T11
+ C4009 1
+ U1 P11
+ U1 M11
+ U1 K11
+ C4019 1
+ U1 N20
+ U1 U10
+ U1 R10
+ U1 N10
+ U1 L10
+ C4015 1
+ C4023 1
+ U1 J9
+ U1 Y9
+ U1 J20
+ U1 Y20
+ U1 U14
+ U1 R14
+ C4018 1
+ U1 N14
+ U1 L14
+ U1 V13
+ U1 T13
+ C4012 1
+ U1 P13
+ U1 M13
+ U1 U12
+ U1 R12
+ U1 N12
+ U1 L12
+ C4042 1
+ C4045 1
+ C4048 1
+ C4030 1
+ C4039 1
+ C4034 1
+ C4064 1
+ C4032 1
+ C4029 1
+ C4035 1
+ C4038 1
+ C4041 1
+ C4044 1
+ C4047 1
+ C4050 1
+ C4033 1
+ C4036 1
+ C4065 1
+ C4066 1
+ C4067 1
+ C4028 1
+ C4031 1
+ C4037 1
+ C4040 1
+ C4043 1
+ C4046 1
+ C4049 1
+Net 124 "/usb0_power/A1P8" "A1P8"
+ U2 C10
+ U2 A13
+ U2 N14
+ C143 1
+ C142 1
+ L2 2
+ C144 1
+Net 125 "V1P1" "V1P1"
+ C131 1
+ C132 1
+ C130 1
+ U2 P4
+ U2 K13
+ C122 1
+ C121 1
+ C125 1
+ C126 1
+ C127 1
+ C128 1
+ C124 1
+ U2 N5
+ U2 B6
+ C133 1
+ L3 1
+ C129 1
+ C162 1
+ C135 1
+ C123 1
+ U2 D13
+ C134 1
+ U2 K2
+ U2 C4
+ U2 F2
+ U2 P10
+ U2 A10
+ U2 A5
+ U2 B10
+ U2 N10
+ U2 E1
+ U2 L1
+Net 126 "/usb0_power/A3P3" "A3P3"
+ U2 P12
+ L1 2
+ C141 1
+Net 129 "/usb0_power/A1P1" "A1P1"
+ C1 1
+ C150 1
+ C146 1
+ C147 1
+ C148 1
+ C149 1
+ C145 1
+ L3 2
+ U2 C12
+ U2 G13
+ U2 D14
+ U2 G14
+ U2 K14
+ U2 M14
+ U2 C11
+Net 130 "/usb0_interfaces/VBUS" "VBUS"
+ R9 2
+ R8 1
+ U2 N12
+Net 131 "/usb0_interfaces/SSTXM_C" "SSTXM_C"
+ J5 10
+ U7 5
+ C4 2
+Net 132 "/usb0_interfaces/USB3_SHIELD" "USB3_SHIELD"
+ J5 11
+ L4 1
+ C2 1
+Net 147 "" ""
+ R18 1
+ U2 L13
+Net 148 "" ""
+ R18 2
+ U2 L14
+Net 149 "/usb0_interfaces/VSSOSC" "VSSOSC"
+ X1 4
+ U2 B12
+ C171 2
+ C170 2
+ X1 2
+Net 150 "/usb0_interfaces/XI" "XI"
+ U2 A12
+ C170 1
+ X1 3
+Net 151 "/usb0_interfaces/XO" "XO"
+ C171 1
+ U2 A11
+ X1 1
+Net 152 "/usb0_interfaces/SSTXP_C" "SSTXP_C"
+ J5 9
+ U7 4
+ C3 2
+Net 154 "" ""
+ R8 2
+ J5 1
+Net 155 "/usb0_interfaces/DP" "DP"
+ J5 3
+ U2 P14
+Net 156 "/usb0_interfaces/DM" "DM"
+ J5 2
+ U2 P13
+Net 157 "/usb0_interfaces/SSTXP" "SSTXP"
+ C3 1
+ U2 H14
+Net 158 "/usb0_interfaces/SSTXM" "SSTXM"
+ C4 1
+ U2 J14
+Net 159 "/usb0_interfaces/SSRXP" "SSRXP"
+ U7 1
+ J5 6
+ U2 E14
+Net 160 "/usb0_interfaces/SSRXM" "SSRXM"
+ U7 2
+ J5 7
+ U2 F14
+Net 161 "" ""
+ U6 4
+ C36 1
+ R32 2
+ R31 1
+Net 162 "" ""
+ P1 1
+ R35 2
+ U5 4
+ L11 1
+ C33 2
+ C34 2
+Net 163 "" ""
+ P2 1
+ R37 2
+ C38 2
+ C31 1
+ C32 1
+ L10 2
+Net 164 "" ""
+ L11 2
+ U5 6
+Net 165 "" ""
+ R35 1
+ R34 2
+ U5 5
+Net 166 "" ""
+ U5 10
+ L10 1
+Net 167 "" ""
+ R37 1
+ C38 1
+ U5 1
+ R36 2
+Net 169 "VRAW_FE" "VRAW_FE"
+ J2 4
+ J2 2
+Net 170 "VRAW" "VRAW"
+ C30 1
+ U5 9
+ U5 3
+Net 216 "/fpga_configuration/NCE" "NCE"
+ U1 R8
+ R48 1
+Net 217 "/fpga_configuration/DCLK" "DCLK"
+ U1 P3
+ R46 1
+Net 218 "/fpga_configuration/DATA0" "DATA0"
+ U1 N7
+ R47 1
+Net 219 "/fpga_configuration/NCONFIG" "NCONFIG"
+ R43 2
+ U1 P4
+Net 231 "/fpga_front_end_bank_c/VREF" "VREF"
+ R42 1
+ R41 2
+ U1 F11
+ C22 1
+ C20 2
+ U1 G9
+ U1 G14
+ U1 G12
+Net 241 "" ""
+ U1 F19
+ R10 1
+Net 242 "" ""
+ U1 E19
+ R11 2
+Net 243 "/fpga_front_end_bank_b/VREF" "VREF"
+ U1 F18
+ C19 2
+ U1 G17
+ R12 1
+ R13 2
+ C23 1
+ U1 G15
+ U1 F22
+Net 253 "V3P3" "V3P3"
+ U3 8
+ C201 1
+ R54 1
+ J1 199
+ C200 1
+ C12 1
+ R14 1
+ R15 1
+ C16 1
+ C15 1
+ U4 20
+ U4 14
+ U4 18
+ R52 1
+ R58 1
+ R57 1
+ U3 44
+ J2 23
+ J2 11
+ J4 1
+ R53 1
+ R65 1
+ Q1 2
+ C160 1
+ L1 1
+ C35 1
+ P2 2
+ U6 1
+Net 255 "V1P8" "V1P8"
+ C29 1
+ R51 1
+ C27 1
+ U1 T1
+ P1 2
+ U4 11
+ U4 10
+ C13 1
+ C14 1
+ U1 B1
+ U1 H1
+ U1 N1
+ R43 1
+ U1 K8
+ R50 1
+ C151 1
+ C152 1
+ C153 1
+ C155 1
+ C156 1
+ C154 1
+ J2 47
+ J2 35
+ C24 1
+ C25 1
+ C26 1
  R44 1
  R45 1
- C61 1
- R50 1
- C64 1
- C27 1
- C42 1
- C43 1
- C44 1
- C45 1
- C46 1
- C47 1
- C48 1
- C26 1
- C49 1
- C28 1
- C29 1
- C50 1
- C51 1
- C52 1
- C53 1
- U1 T1
- U1 AA18
- U1 AH27
- U1 T5
- U1 W5
- U1 AH16
+ U1 N5
+ U1 K5
  U1 W7
- U1 AD16
- C54 1
- U1 U21
- C25 1
+ U1 W5
+ U1 T5
  U1 AG1
- C41 1
- C55 1
- C56 1
- C63 1
- C57 1
- C58 1
- C59 1
- C60 1
- R43 1
- C62 1
+ U1 AA1
+ C28 1
+ U1 AA11
+ C212 1
+ C218 1
+ C217 1
  C221 1
  C220 1
  C219 1
- U1 K5
- U1 N5
- C154 1
- C155 1
- C156 1
- J1 87
- L2 1
+ J1 111
+ U1 AD13
+ U1 AH13
+ U1 AH5
+ U1 AD6
+ U1 AD9
+ U1 AH9
+ U1 AB10
  J1 81
  J1 82
  J1 95
  J1 96
+ J1 87
  J1 88
- J1 111
+ J1 112
  J1 103
+ U1 AH24
  J1 104
  J1 117
  J1 118
- J1 112
- R51 1
- C218 1
- C217 1
- C151 1
- C152 1
- C216 1
- C153 1
- R3 2
- R1 2
- C215 1
- C214 1
- C213 1
- C211 1
- J2 48
- J2 36
- C161 1
- U1 K8
- C110 1
- C109 1
- U1 B1
- C101 1
- U1 H1
- C102 1
- U1 N1
- C103 1
- C104 1
- C105 1
- C111 1
- C106 1
- C107 1
- C108 1
- U2 D9
  U2 D4
+ R20 1
+ C161 1
+ L2 1
  U2 B2
  U2 C3
  U2 M3
@@ -4891,1292 +5191,992 @@ Net 48 "V1P8" "V1P8"
  U2 G4
  U2 H4
  U2 L4
+ U1 AD23
+ C46 1
+ C45 1
+ C44 1
+ C43 1
+ C42 1
+ U1 AH16
+ U1 AH2
+ R1 2
+ R3 2
  U2 L5
+ U1 AH20
+ U1 AD20
+ U1 Y16
+ C216 1
+ C106 1
+ C107 1
+ C108 1
+ C105 1
+ C113 1
  U2 L8
+ U2 D9
  U2 L9
- U2 D7
- U2 L7
  U2 D8
- C210 1
+ U2 L7
+ U2 D7
  C116 1
  C115 1
  C114 1
- C113 1
  C112 1
- U1 AD9
- U1 AH9
- U1 AB10
- C180 1
- U1 AD13
- U1 AH13
- U1 T28
+ C111 1
+ C110 1
+ C109 1
+ C101 1
+ C102 1
+ C103 1
+ C104 1
+ C53 1
+ C60 1
+ C59 1
+ C58 1
+ C57 1
+ C63 1
+ C56 1
+ C55 1
+ C54 1
+ C61 1
+ C52 1
+ U1 AD16
+ U1 AG28
+ C215 1
  C182 1
  C184 1
- U4 11
- U4 10
- C14 1
- C13 1
- U1 AD23
- U1 AH24
- U1 AH20
- C212 1
- R20 1
- U1 AA11
- U1 Y16
- U1 AH2
- U1 AH5
- U1 AD6
- U1 AA1
- U1 AD20
+ C214 1
+ C213 1
+ C211 1
+ C210 1
+ U1 T28
  U1 AA28
- U1 AG28
- U1 T24
+ U1 U21
+ U1 AA18
+ U1 AH27
  U1 W24
- C24 1
- P1 2
-Net 49 "" ""
- U1 AB23
- R4 2
-Net 50 "" ""
- U1 AA22
- R3 1
-Net 51 "" ""
- U1 AA17
- R1 1
-Net 77 "" ""
- R2 2
- U1 AB17
-Net 124 "V2P5" "V2P5"
- U6 5
- U1 J8
- U1 Y8
- R32 1
- C4061 1
- C4060 1
- C37 1
- C4062 1
- U1 J21
- C4063 1
- U1 Y21
-Net 125 "V1P2" "V1P2"
- C4011 1
- C4008 1
- C4004 1
- C4064 1
- C4009 1
- U1 P15
- C4026 1
- C4023 1
- C4020 1
- C4017 1
- C4065 1
- C4005 1
- C4002 1
- C4006 1
- C4003 1
- C4021 1
- C4018 1
- C4015 1
- C4012 1
- U1 N16
- C4027 1
- C4046 1
- C4049 1
- C4029 1
- C4024 1
- U1 T17
- U1 T15
- U1 V15
- U1 L16
- C4032 1
- C4007 1
- U1 R16
- C4048 1
- U1 U16
- U1 K17
- U1 M17
- U1 P17
- U1 V17
- U1 L18
- U1 N18
- U1 R18
- U1 V19
- C4033 1
- C4036 1
- C4030 1
- C4039 1
- C4042 1
- C4040 1
- C4037 1
- C4043 1
- U1 U18
- C4025 1
- C4045 1
- C4022 1
- C4019 1
- C4016 1
- C4013 1
- U1 T19
- C4010 1
- U1 P19
- U1 W18
- U1 K19
- U1 M19
- C4047 1
- C4044 1
- C4050 1
- C4035 1
- C4038 1
- C4041 1
- C4001 1
- C4014 1
- U1 N20
- U1 R20
- C4034 1
- U1 P11
- U1 T11
- U1 V11
- U1 L12
- U1 N12
- U1 R12
- U1 U12
- U1 W12
- U1 K11
- U1 P13
- U1 T13
- U1 V13
- U1 L14
- U1 N14
- U1 R14
- U1 U14
- C4067 1
- U1 U10
- C4028 1
- C4031 1
- U1 M13
- U1 M11
- U1 Y9
- C4066 1
- U1 J20
- U1 Y20
- U1 K9
- U1 P9
- U1 L10
- U1 M15
- U1 W14
- U1 J9
- U1 N10
- U1 R10
-Net 126 "/usb0_power/A1P8" "A1P8"
- C143 1
- C144 1
- C142 1
- U2 C10
- L2 2
- U2 N14
- U2 A13
-Net 127 "V1P1" "V1P1"
- C124 1
- U2 B6
- U2 N5
- U2 K13
- U2 P10
- U2 N10
- U2 B10
- U2 C4
- U2 P4
- U2 F2
- U2 A5
- U2 L1
- U2 E1
- U2 K2
- C133 1
- C132 1
- C131 1
- C130 1
- C134 1
- C125 1
- L3 1
- U2 A10
- C162 1
- C121 1
- C122 1
- C135 1
- C123 1
- C129 1
- C127 1
- C126 1
- U2 D13
- C128 1
-Net 128 "/usb0_power/A3P3" "A3P3"
- L1 2
- U2 P12
- C141 1
-Net 131 "/usb0_power/A1P1" "A1P1"
- C1 1
- U2 C11
- U2 C12
- C150 1
- L3 2
- C146 1
- C147 1
- C148 1
- C149 1
- C145 1
- U2 M14
- U2 K14
- U2 G14
- U2 D14
- U2 G13
-Net 132 "/usb0_interfaces/VBUS" "VBUS"
- R9 2
- R8 1
- U2 N12
-Net 133 "/usb0_interfaces/SSTXM_C" "SSTXM_C"
- U7 5
- J5 10
- C4 2
-Net 134 "/usb0_interfaces/USB3_SHIELD" "USB3_SHIELD"
- C2 1
- L4 1
- J5 11
-Net 149 "" ""
- U2 L13
- R18 1
-Net 150 "" ""
- U2 L14
- R18 2
-Net 151 "/usb0_interfaces/VSSOSC" "VSSOSC"
- C171 2
- C170 2
- U2 B12
- X1 4
- X1 2
-Net 152 "/usb0_interfaces/XI" "XI"
- C170 1
- X1 3
- U2 A12
-Net 153 "/usb0_interfaces/XO" "XO"
- X1 1
- C171 1
- U2 A11
-Net 154 "/usb0_interfaces/SSTXP_C" "SSTXP_C"
- J5 9
- C3 2
- U7 4
-Net 156 "" ""
- R8 2
- J5 1
-Net 157 "/usb0_interfaces/DP" "DP"
- U2 P14
- J5 3
-Net 158 "/usb0_interfaces/DM" "DM"
- U2 P13
- J5 2
-Net 159 "/usb0_interfaces/SSTXP" "SSTXP"
- C3 1
- U2 H14
-Net 160 "/usb0_interfaces/SSTXM" "SSTXM"
- C4 1
- U2 J14
-Net 161 "/usb0_interfaces/SSRXP" "SSRXP"
- U2 E14
- U7 1
- J5 6
-Net 162 "/usb0_interfaces/SSRXM" "SSRXM"
- U2 F14
- U7 2
- J5 7
-Net 163 "VRAW" "VRAW"
- U5 3
- C30 1
- U5 9
-Net 164 "VRAW_FE" "VRAW_FE"
- J2 2
- J2 4
-Net 166 "" ""
- U6 4
- R32 2
- R31 1
- C36 1
-Net 167 "" ""
- P2 1
- R37 2
- C38 2
- C32 1
- C31 1
- L10 2
-Net 168 "" ""
- L10 1
- U5 10
-Net 169 "" ""
- L11 2
- U5 6
-Net 170 "" ""
- R34 2
- U5 5
- R35 1
-Net 171 "" ""
- R36 2
- C38 1
- U5 1
- R37 1
-Net 172 "" ""
- R35 2
- C33 2
- L11 1
- U5 4
- P1 1
- C34 2
-Net 193 "/fpga_configuration/NCE" "NCE"
- R48 1
- U1 R8
-Net 194 "/fpga_configuration/DATA0" "DATA0"
- U1 N7
- R47 1
-Net 201 "/fpga_configuration/DCLK" "DCLK"
- U1 P3
- R46 1
-Net 223 "/fpga_configuration/NCONFIG" "NCONFIG"
- R43 2
- U1 P4
-Net 242 "/fpga_front_end_bank_0/VREF" "VREF"
- R41 2
- C20 2
- R42 1
- C22 1
- U1 F11
- U1 G9
- U1 G12
- U1 G14
-Net 243 "" ""
- R11 2
- U1 E19
-Net 244 "/fpga_front_end_bank_1/VREF" "VREF"
- C23 1
- U1 F22
- U1 G17
- R13 2
- U1 F18
- R12 1
- C19 2
- U1 G15
-Net 251 "" ""
- U1 F19
- R10 1
-Net 315 "/fpga_front_end_misc/VREF" "VREF"
- U1 J22
- U1 M21
- U1 N21
+ U1 T24
+ C62 1
+ C41 1
+ C48 1
+ C47 1
+ C51 1
+ C50 1
+ C49 1
+ C64 1
+ C180 1
+Net 257 "/fpga_front_end_misc/VREF" "VREF"
  C18 2
- C21 1
  U1 M25
+ U1 M21
+ C21 1
  R24 2
+ U1 J22
+ U1 N21
  R23 1
-Net 320 "" ""
- R59 2
- J3 3
- R62 2
-Net 321 "/microcontroller/USB2_SHIELD" "USB2_SHIELD"
- R63 1
- J3 6
- C204 1
-Net 322 "" ""
- Q1 3
- R59 1
-Net 323 "" ""
- R60 2
- J3 1
- C205 1
-Net 324 "" ""
- R61 1
- U3 19
-Net 325 "" ""
- U3 6
- X2 3
- C203 1
 Net 326 "" ""
- R61 2
- J3 2
-Net 327 "" ""
  R60 1
  U3 14
 Net 328 "" ""
- Q1 1
  R64 2
  R65 2
-Net 341 "" ""
- X2 1
- C202 2
- U3 7
-Net 343 "" ""
- U3 20
- R62 1
-Net 348 "" ""
- U3 22
+ Q1 1
+Net 329 "" ""
  R64 1
-Net 350 "/microcontroller/SPI_MOSI1" "SPI_MOSI1"
- U3 38
+ U3 22
+Net 330 "" ""
+ R61 2
+ J3 2
+Net 331 "" ""
+ R61 1
+ U3 19
+Net 335 "/microcontroller/SPI_MISO1" "SPI_MISO1"
+ U3 26
+ U3 30
+Net 339 "/microcontroller/SPI_MOSI1" "SPI_MOSI1"
  U3 17
-Net 351 "/microcontroller/SPI_SCK1" "SPI_SCK1"
+ U3 38
+Net 340 "/microcontroller/SPI_SCK1" "SPI_SCK1"
  U3 43
  U3 13
-Net 353 "/microcontroller/SPI_SSEL1" "SPI_SSEL1"
- U3 2
- U3 18
-Net 355 "/microcontroller/SPI_MISO1" "SPI_MISO1"
- U3 30
- U3 26
-Net 360 "/microcontroller/SWDIO" "SWDIO"
- R53 2
- U3 39
- J4 2
-Net 361 "/microcontroller/SWCLK" "SWCLK"
+Net 342 "/microcontroller/USB2_SHIELD" "USB2_SHIELD"
+ J3 6
+ C204 1
+ R63 1
+Net 343 "" ""
+ R59 1
+ Q1 3
+Net 344 "" ""
+ R59 2
+ R62 2
+ J3 3
+Net 345 "" ""
+ U3 7
+ C202 2
+ X2 1
+Net 346 "/microcontroller/RESET#" "RESET#"
+ U3 3
+ R54 2
+ J4 10
+Net 347 "/microcontroller/SWCLK" "SWCLK"
  R55 1
  J4 4
  U3 29
-Net 362 "/microcontroller/RESET#" "RESET#"
- J4 10
- U3 3
- R54 2
+Net 348 "/microcontroller/SWDIO" "SWDIO"
+ J4 2
+ U3 39
+ R53 2
+Net 349 "" ""
+ C205 1
+ J3 1
+ R60 2
+Net 350 "" ""
+ U3 20
+ R62 1
+Net 351 "" ""
+ C203 1
+ X2 3
+ U3 6
+Net 352 "/microcontroller/SPI_SSEL1" "SPI_SSEL1"
+ U3 18
+ U3 2
 Net 364 "" ""
- U4 1
- X3 3
- C11 1
-Net 365 "" ""
- X3 1
- U4 2
  C10 2
-Net 366 "/ddr2/DQS0" "DQS0"
- U1 T25
- J1 13
-Net 367 "/ddr2/DQ59" "DQ59"
- J1 191
- U1 AH3
-Net 368 "/ddr2/DQ60" "DQ60"
- U1 AD8
- J1 180
-Net 369 "/ddr2/DQ61" "DQ61"
- J1 182
- U1 AF6
-Net 370 "/ddr2/DQ62" "DQ62"
- J1 192
- U1 AF4
-Net 371 "/ddr2/DQ63" "DQ63"
- J1 194
- U1 AG3
-Net 372 "/ddr2/DM0" "DM0"
- U1 AB28
- J1 10
-Net 373 "/ddr2/DM1" "DM1"
- U1 AB24
- J1 26
-Net 374 "/ddr2/DM2" "DM2"
- U1 AF25
- J1 52
-Net 375 "/ddr2/DM3" "DM3"
- U1 AH19
- J1 67
-Net 376 "/ddr2/DM4" "DM4"
- U1 AC15
- J1 130
-Net 377 "/ddr2/DM5" "DM5"
- J1 147
- U1 AF8
-Net 378 "/ddr2/DM6" "DM6"
- J1 170
- U1 AB9
-Net 379 "/ddr2/DM7" "DM7"
- J1 185
- U1 AE6
-Net 380 "/ddr2/DQ58" "DQ58"
- U1 AH4
- J1 189
-Net 381 "/ddr2/DQS1" "DQS1"
- U1 AF27
- J1 31
-Net 382 "/ddr2/DQS2" "DQS2"
- U1 AF26
- J1 51
-Net 383 "/ddr2/DQS3" "DQS3"
- J1 70
- U1 AE18
-Net 384 "/ddr2/DQS4" "DQS4"
- U1 AF17
- J1 131
-Net 385 "/ddr2/DQS5" "DQS5"
- J1 148
- U1 AF11
-Net 386 "/ddr2/DQS6" "DQS6"
- U1 AE10
- J1 169
-Net 387 "/ddr2/DQS7" "DQS7"
- J1 188
- U1 AD7
-Net 390 "/ddr2/ODT0" "ODT0"
- J1 114
- U1 AF12
-Net 391 "/ddr2/DQ45" "DQ45"
- U1 AE11
- J1 142
-Net 392 "/ddr2/DQ33" "DQ33"
- J1 125
- U1 AH18
-Net 393 "/ddr2/DQ34" "DQ34"
- U1 AG17
- J1 135
-Net 394 "/ddr2/DQ35" "DQ35"
- J1 137
- U1 AH17
-Net 395 "/ddr2/DQ36" "DQ36"
- J1 124
- U1 AE17
-Net 396 "/ddr2/DQ37" "DQ37"
- U1 AF16
- J1 126
-Net 397 "/ddr2/DQ38" "DQ38"
- J1 134
- U1 AF15
-Net 398 "/ddr2/DQ39" "DQ39"
- J1 136
- U1 AB16
-Net 399 "/ddr2/DQ40" "DQ40"
- J1 141
- U1 AG12
-Net 400 "/ddr2/DQ41" "DQ41"
- J1 143
- U1 AH11
-Net 401 "/ddr2/DQ42" "DQ42"
- U1 AG11
- J1 151
-Net 402 "/ddr2/DQ43" "DQ43"
- U1 AG10
- J1 153
-Net 403 "/ddr2/DQ44" "DQ44"
- J1 140
- U1 AE12
-Net 404 "/ddr2/ODT1" "ODT1"
- U1 AE5
- J1 119
-Net 405 "/ddr2/DQ46" "DQ46"
- J1 152
- U1 AE9
-Net 406 "/ddr2/DQ47" "DQ47"
- J1 154
- U1 AF10
-Net 407 "/ddr2/DQ48" "DQ48"
- U1 AH8
- J1 157
-Net 408 "/ddr2/DQ49" "DQ49"
- J1 159
- U1 AG8
-Net 409 "/ddr2/DQ50" "DQ50"
- U1 AH7
- J1 173
-Net 410 "/ddr2/DQ51" "DQ51"
- J1 175
- U1 AG7
-Net 411 "/ddr2/DQ52" "DQ52"
- J1 158
- U1 AF9
-Net 412 "/ddr2/DQ53" "DQ53"
- J1 160
- U1 AD10
-Net 413 "/ddr2/DQ54" "DQ54"
- U1 AC8
- J1 174
-Net 414 "/ddr2/DQ55" "DQ55"
- J1 176
- U1 AF7
-Net 415 "/ddr2/DQ56" "DQ56"
- J1 179
- U1 AH6
-Net 416 "/ddr2/DQ57" "DQ57"
- J1 181
- U1 AG6
-Net 417 "/ddr2/A7" "A7"
- U1 AE20
- J1 92
-Net 418 "/ddr2/CK0" "CK0"
- U1 AD22
- J1 30
-Net 419 "/ddr2/CK1" "CK1"
- U1 AE7
- J1 164
-Net 420 "/ddr2/S#0" "S#0"
- J1 110
- U1 AF13
-Net 421 "/ddr2/S#1" "S#1"
- U1 AC10
- J1 115
-Net 422 "/ddr2/A0" "A0"
- J1 102
- U1 AE13
-Net 423 "/ddr2/A1" "A1"
- J1 101
- U1 AB15
-Net 424 "/ddr2/A2" "A2"
- U1 AF18
- J1 100
-Net 425 "/ddr2/A3" "A3"
- J1 99
- U1 AD15
-Net 426 "/ddr2/A4" "A4"
- J1 98
- U1 AF14
-Net 427 "/ddr2/A5" "A5"
- U1 AE15
- J1 97
-Net 428 "/ddr2/A6" "A6"
- U1 AE14
- J1 94
-Net 429 "/ddr2/CK#1" "CK#1"
- U1 AE8
- J1 166
-Net 430 "/ddr2/A8" "A8"
- J1 93
- U1 AF19
-Net 431 "/ddr2/A9" "A9"
- J1 91
- U1 AG19
-Net 432 "/ddr2/A10" "A10"
- U1 AB13
- J1 105
-Net 433 "/ddr2/A11" "A11"
- U1 AD14
- J1 90
-Net 434 "/ddr2/A12" "A12"
- J1 89
- U1 AD19
-Net 435 "/ddr2/A13" "A13"
- U1 AH10
- J1 116
-Net 436 "/ddr2/A14" "A14"
- J1 86
- U1 AC17
-Net 437 "/ddr2/A15" "A15"
- J1 84
- U1 AE16
-Net 438 "/ddr2/BA0" "BA0"
- U1 AD12
- J1 107
-Net 439 "/ddr2/BA1" "BA1"
- J1 106
- U1 AH12
-Net 440 "/ddr2/BA2" "BA2"
- J1 85
- U1 AF21
-Net 441 "/ddr2/DQ32" "DQ32"
- J1 123
- U1 AG18
-Net 442 "/ddr2/CKE0" "CKE0"
- U1 AF23
- J1 79
-Net 443 "/ddr2/CKE1" "CKE1"
- U1 AG23
- J1 80
-Net 444 "/ddr2/CK#0" "CK#0"
- U1 AE22
- J1 32
-Net 446 "/clock_generator/FE_CLK_P1" "FE_CLK_P1"
- U4 16
- J2 55
-Net 457 "/clock_generator/FE_CLK_P0" "FE_CLK_P0"
- J2 56
- U4 19
-Net 483 "/fpga_front_end_misc/D37" "D37"
- U1 J28
- J2 49
-Net 485 "/fpga_front_end_misc/D39" "D39"
- U1 J27
- J2 51
-Net 488 "/clock_generator/FE_CLK_N0" "FE_CLK_N0"
- J2 58
- U4 17
-Net 489 "/clock_generator/FE_CLK_N1" "FE_CLK_N1"
- U4 15
- J2 57
-Net 490 "/ddr2/DQ19" "DQ19"
- J1 57
- U1 AE21
-Net 491 "/ddr2/DQ7" "DQ7"
- J1 16
- U1 AB27
-Net 492 "/ddr2/DQ8" "DQ8"
- J1 23
- U1 AC28
-Net 493 "/ddr2/DQ9" "DQ9"
- J1 25
- U1 AC27
-Net 494 "/ddr2/DQ10" "DQ10"
- U1 AD28
- J1 35
-Net 495 "/ddr2/DQ11" "DQ11"
- J1 37
+ U4 2
+ X3 1
+Net 365 "" ""
+ C11 1
+ X3 3
+ U4 1
+Net 367 "/ddr2/DQ11" "DQ11"
  U1 AD27
-Net 496 "/ddr2/DQ12" "DQ12"
- J1 20
- U1 AB26
-Net 497 "/ddr2/DQ13" "DQ13"
- U1 Y24
- J1 22
-Net 498 "/ddr2/DQ14" "DQ14"
- J1 36
- U1 AD26
-Net 499 "/ddr2/DQ15" "DQ15"
- J1 38
- U1 AE28
-Net 500 "/ddr2/DQ16" "DQ16"
- J1 43
- U1 AG26
-Net 501 "/ddr2/DQ17" "DQ17"
- U1 AH25
- J1 45
-Net 502 "/ddr2/DQ18" "DQ18"
- U1 AF22
- J1 55
-Net 503 "/ddr2/DQ6" "DQ6"
- U1 Y26
- J1 14
-Net 504 "/ddr2/DQ20" "DQ20"
- J1 44
- U1 AE25
-Net 505 "/ddr2/DQ21" "DQ21"
- U1 AE24
- J1 46
-Net 506 "/ddr2/DQ22" "DQ22"
- U1 AF20
- J1 56
-Net 507 "/ddr2/DQ23" "DQ23"
- U1 AD18
- J1 58
-Net 508 "/ddr2/DQ24" "DQ24"
- U1 AG22
- J1 61
-Net 509 "/ddr2/DQ25" "DQ25"
- J1 63
- U1 AH22
-Net 510 "/ddr2/DQ26" "DQ26"
- U1 AG21
- J1 73
-Net 511 "/ddr2/DQ27" "DQ27"
+ J1 37
+Net 369 "/fpga_front_end_bank_c/D47" "D47"
+ U1 C13
+ J2 175
+Net 371 "/fpga_front_end_bank_c/D15" "D15"
+ U1 D4
+ J2 137
+Net 372 "/ddr2/DQ27" "DQ27"
  U1 AH21
  J1 75
-Net 512 "/ddr2/DQ28" "DQ28"
- J1 62
- U1 AF24
-Net 513 "/ddr2/DQ29" "DQ29"
- J1 64
- U1 AH23
-Net 514 "/ddr2/DQ30" "DQ30"
- J1 74
- U1 AE19
-Net 515 "/ddr2/DQ31" "DQ31"
- U1 AD17
- J1 76
-Net 517 "/ddr2/DQ0" "DQ0"
- U1 U28
- J1 5
-Net 518 "/ddr2/DQ1" "DQ1"
- U1 V28
- J1 7
-Net 519 "/ddr2/DQ2" "DQ2"
- U1 W28
- J1 17
-Net 520 "/ddr2/DQ3" "DQ3"
+Net 373 "/fpga_front_end_bank_c/D23" "D23"
+ J2 147
+ U1 C6
+Net 374 "/clock_generator/FE_CLK_P1" "FE_CLK_P1"
+ U4 16
+ J2 55
+Net 376 "/fpga_front_end_bank_c/D39" "D39"
+ U1 D10
+ J2 165
+Net 378 "/fpga_front_end_bank_c/D7" "D7"
+ U1 F8
+ J2 127
+Net 379 "/ddr2/DQ3" "DQ3"
  U1 W27
  J1 19
-Net 521 "/ddr2/DQ4" "DQ4"
- U1 V25
- J1 4
-Net 522 "/ddr2/DQ5" "DQ5"
- J1 6
- U1 W26
-Net 523 "/fpga_front_end_bank_0/D42" "D42"
- U1 A11
- J2 112
-Net 524 "/fpga_front_end_bank_0/D29" "D29"
- U1 D7
- J2 93
-Net 525 "/fpga_front_end_bank_0/D30" "D30"
- U1 A7
- J2 98
-Net 526 "/fpga_front_end_bank_0/D31" "D31"
- J2 97
- U1 C8
-Net 527 "/fpga_front_end_bank_0/D32" "D32"
- J2 100
- U1 B8
-Net 528 "/fpga_front_end_bank_0/D33" "D33"
- U1 D8
- J2 99
-Net 529 "/fpga_front_end_bank_0/D34" "D34"
- J2 102
- U1 A8
-Net 530 "/fpga_front_end_bank_0/D35" "D35"
- J2 101
- U1 C9
-Net 531 "/fpga_front_end_bank_0/D36" "D36"
- U1 B10
- J2 104
-Net 532 "/fpga_front_end_bank_0/D37" "D37"
- U1 C10
- J2 103
-Net 533 "/fpga_front_end_bank_0/D38" "D38"
- U1 A10
- J2 106
-Net 534 "/fpga_front_end_bank_0/D39" "D39"
- J2 105
- U1 D10
-Net 535 "/fpga_front_end_bank_0/D40" "D40"
- U1 B11
- J2 110
-Net 536 "/fpga_front_end_bank_0/D41" "D41"
- J2 109
- U1 C11
-Net 537 "/fpga_front_end_bank_0/D28" "D28"
- J2 94
- U1 B7
-Net 538 "/fpga_front_end_bank_0/D43" "D43"
- J2 111
- U1 C12
-Net 539 "/fpga_front_end_bank_0/D44" "D44"
- J2 114
- U1 A12
-Net 540 "/fpga_front_end_bank_0/D45" "D45"
- J2 113
- U1 D12
-Net 541 "/fpga_front_end_bank_0/D46" "D46"
- J2 116
- U1 C14
-Net 542 "/fpga_front_end_bank_0/D47" "D47"
- J2 115
- U1 C13
-Net 543 "/fpga_front_end_bank_0/D48" "D48"
- J2 118
- U1 A14
-Net 544 "/fpga_front_end_bank_0/D49" "D49"
- J2 117
- U1 D13
-Net 545 "/fpga_front_end_bank_0/D50" "D50"
- J2 120
- U1 B14
-Net 546 "/fpga_front_end_bank_0/D51" "D51"
- J2 119
- U1 D14
-Net 547 "/fpga_front_end_bank_1/D0" "D0"
- J2 122
- U1 A15
-Net 548 "/fpga_front_end_bank_1/D1" "D1"
- J2 121
- U1 D15
-Net 549 "/fpga_front_end_bank_0/D15" "D15"
- U1 D4
- J2 77
-Net 550 "/fpga_front_end_bank_0/D3" "D3"
- J2 63
- U1 F7
-Net 551 "/fpga_front_end_bank_0/D4" "D4"
- J2 66
- U1 E11
-Net 552 "/fpga_front_end_bank_0/D5" "D5"
- J2 65
- U1 E8
-Net 553 "/fpga_front_end_bank_0/D6" "D6"
- U1 G11
- J2 68
-Net 554 "/fpga_front_end_bank_0/D7" "D7"
- J2 67
- U1 F8
-Net 555 "/fpga_front_end_bank_0/D8" "D8"
- U1 D11
- J2 70
-Net 556 "/fpga_front_end_bank_0/D9" "D9"
- U1 D9
- J2 69
-Net 557 "/fpga_front_end_bank_0/D10" "D10"
- J2 74
- U1 E12
-Net 558 "/fpga_front_end_bank_0/D11" "D11"
- U1 G8
- J2 73
-Net 559 "/fpga_front_end_bank_0/D12" "D12"
- J2 76
- U1 F12
-Net 560 "/fpga_front_end_bank_0/D13" "D13"
- J2 75
- U1 C3
-Net 561 "/fpga_front_end_bank_0/D14" "D14"
- J2 78
- U1 E14
-Net 562 "/fpga_front_end_bank_1/D2" "D2"
- U1 B15
- J2 124
-Net 563 "/fpga_front_end_bank_0/D16" "D16"
- J2 80
- U1 B3
-Net 564 "/fpga_front_end_bank_0/D17" "D17"
- U1 C4
- J2 79
-Net 565 "/fpga_front_end_bank_0/D18" "D18"
- U1 A3
- J2 82
-Net 566 "/fpga_front_end_bank_0/D19" "D19"
- U1 C5
- J2 81
-Net 567 "/fpga_front_end_bank_0/D20" "D20"
- U1 B4
- J2 86
-Net 568 "/fpga_front_end_bank_0/D21" "D21"
- J2 85
- U1 D5
-Net 569 "/fpga_front_end_bank_0/D22" "D22"
- U1 A4
- J2 88
-Net 570 "/fpga_front_end_bank_0/D23" "D23"
- J2 87
- U1 C6
-Net 571 "/fpga_front_end_bank_0/D24" "D24"
- J2 90
- U1 B6
-Net 572 "/fpga_front_end_bank_0/D25" "D25"
- U1 D6
- J2 89
-Net 573 "/fpga_front_end_bank_0/D26" "D26"
- U1 A6
- J2 92
-Net 574 "/fpga_front_end_bank_0/D27" "D27"
- U1 C7
- J2 91
-Net 575 "/fpga_front_end_bank_1/D41" "D41"
- U1 F21
- J2 169
-Net 576 "/fpga_front_end_bank_1/D29" "D29"
- J2 153
- U1 C22
-Net 577 "/fpga_front_end_bank_1/D30" "D30"
- J2 158
- U1 B25
-Net 578 "/fpga_front_end_bank_1/D31" "D31"
- J2 157
- U1 D22
-Net 579 "/fpga_front_end_bank_1/D32" "D32"
- U1 A26
- J2 160
-Net 580 "/fpga_front_end_bank_1/D33" "D33"
- U1 C23
- J2 159
-Net 581 "/fpga_front_end_bank_1/D34" "D34"
- J2 162
- U1 B26
-Net 582 "/fpga_front_end_bank_1/D35" "D35"
- J2 161
- U1 D23
-Net 583 "/fpga_front_end_bank_1/D36" "D36"
- U1 F15
- J2 164
-Net 584 "/fpga_front_end_bank_1/D37" "D37"
- U1 C24
- J2 163
-Net 585 "/fpga_front_end_bank_1/D38" "D38"
- J2 166
- U1 E15
-Net 586 "/fpga_front_end_bank_1/D39" "D39"
- U1 C25
- J2 165
-Net 587 "/fpga_front_end_bank_1/D40" "D40"
- U1 E17
- J2 170
-Net 588 "/fpga_front_end_bank_1/D28" "D28"
- J2 154
- U1 A25
-Net 589 "/fpga_front_end_bank_1/D42" "D42"
- U1 F17
- J2 172
-Net 590 "/fpga_front_end_bank_1/D43" "D43"
+Net 380 "/fpga_front_end_bank_b/D43" "D43"
  U1 G19
- J2 171
-Net 591 "/fpga_front_end_bank_1/D44" "D44"
- J2 174
- U1 E18
-Net 592 "/fpga_front_end_bank_1/D45" "D45"
- U1 E21
- J2 173
-Net 593 "/fpga_front_end_bank_1/D46" "D46"
- J2 176
- U1 G16
-Net 594 "/fpga_front_end_bank_1/D47" "D47"
- J2 175
+ J2 111
+Net 381 "/ddr2/DQ19" "DQ19"
+ J1 57
+ U1 AE21
+Net 383 "/fpga_front_end_bank_b/D47" "D47"
  U1 G20
-Net 595 "/fpga_front_end_bank_1/D48" "D48"
- U1 H17
- J2 178
-Net 596 "/fpga_front_end_bank_1/D49" "D49"
- U1 E22
- J2 177
-Net 597 "/fpga_front_end_bank_1/D50" "D50"
- J2 180
- U1 G18
-Net 598 "/fpga_front_end_bank_1/D51" "D51"
- U1 G21
- J2 179
-Net 599 "/fpga_front_end_bank_1/D15" "D15"
- U1 C18
- J2 137
-Net 600 "/fpga_front_end_bank_1/D3" "D3"
- U1 D16
- J2 123
-Net 601 "/fpga_front_end_bank_1/D4" "D4"
- U1 A17
- J2 126
-Net 602 "/fpga_front_end_bank_1/D5" "D5"
- U1 C15
- J2 125
-Net 603 "/fpga_front_end_bank_1/D6" "D6"
- U1 B17
- J2 128
-Net 604 "/fpga_front_end_bank_1/D7" "D7"
- J2 127
- U1 C16
-Net 605 "/fpga_front_end_bank_1/D8" "D8"
- U1 A18
- J2 130
-Net 606 "/fpga_front_end_bank_1/D9" "D9"
- U1 D17
- J2 129
-Net 607 "/fpga_front_end_bank_1/D10" "D10"
- U1 B18
- J2 134
-Net 608 "/fpga_front_end_bank_1/D11" "D11"
- J2 133
- U1 C17
-Net 609 "/fpga_front_end_bank_1/D12" "D12"
- J2 136
- U1 A19
-Net 610 "/fpga_front_end_bank_1/D13" "D13"
- J2 135
- U1 D18
-Net 611 "/fpga_front_end_bank_1/D14" "D14"
- J2 138
- U1 B19
-Net 612 "/fpga_front_end_bank_0/D2" "D2"
- J2 64
- U1 F10
-Net 613 "/fpga_front_end_bank_1/D16" "D16"
- J2 140
- U1 A21
-Net 614 "/fpga_front_end_bank_1/D17" "D17"
- J2 139
- U1 D19
-Net 615 "/fpga_front_end_bank_1/D18" "D18"
- J2 142
- U1 B21
-Net 616 "/fpga_front_end_bank_1/D19" "D19"
- J2 141
- U1 C19
-Net 617 "/fpga_front_end_bank_1/D20" "D20"
- U1 A22
- J2 146
-Net 618 "/fpga_front_end_bank_1/D21" "D21"
- U1 D20
- J2 145
-Net 619 "/fpga_front_end_bank_1/D22" "D22"
- J2 148
- U1 B22
-Net 620 "/fpga_front_end_bank_1/D23" "D23"
- J2 147
- U1 C20
-Net 621 "/fpga_front_end_bank_1/D24" "D24"
- J2 150
- U1 A23
-Net 622 "/fpga_front_end_bank_1/D25" "D25"
- J2 149
- U1 C21
-Net 623 "/fpga_front_end_bank_1/D26" "D26"
- J2 152
- U1 B23
-Net 624 "/fpga_front_end_bank_1/D27" "D27"
+ J2 115
+Net 385 "/fpga_front_end_bank_c/D27" "D27"
  J2 151
+ U1 C7
+Net 387 "/fpga_front_end_bank_c/D35" "D35"
+ U1 C9
+ J2 161
+Net 389 "/fpga_front_end_bank_c/D3" "D3"
+ J2 123
+ U1 F7
+Net 391 "/fpga_front_end_bank_c/D43" "D43"
+ J2 171
+ U1 C12
+Net 392 "/fpga_front_end_bank_b/D39" "D39"
+ J2 105
+ U1 C25
+Net 393 "/fpga_front_end_bank_c/D51" "D51"
+ U1 D14
+ J2 179
+Net 394 "/fpga_front_end_bank_c/D11" "D11"
+ J2 133
+ U1 G8
+Net 395 "/ddr2/DQ7" "DQ7"
+ J1 16
+ U1 AB27
+Net 396 "/fpga_front_end_bank_b/D31" "D31"
+ J2 97
+ U1 D22
+Net 397 "/ddr2/DQ15" "DQ15"
+ J1 38
+ U1 AE28
+Net 398 "/ddr2/DQ23" "DQ23"
+ J1 58
+ U1 AD18
+Net 399 "/fpga_front_end_bank_c/D19" "D19"
+ U1 C5
+ J2 141
+Net 400 "/ddr2/DQ30" "DQ30"
+ U1 AE19
+ J1 74
+Net 401 "/fpga_front_end_bank_c/D21" "D21"
+ U1 D5
+ J2 145
+Net 403 "/fpga_front_end_bank_b/D33" "D33"
+ U1 C23
+ J2 99
+Net 405 "/fpga_front_end_bank_c/D25" "D25"
+ U1 D6
+ J2 149
+Net 407 "/fpga_front_end_bank_b/D49" "D49"
+ J2 117
+ U1 E22
+Net 409 "/fpga_front_end_bank_c/D29" "D29"
+ U1 D7
+ J2 153
+Net 412 "/fpga_front_end_bank_c/D33" "D33"
+ J2 159
+ U1 D8
+Net 413 "/clock_generator/FE_CLK_N1" "FE_CLK_N1"
+ J2 57
+ U4 15
+Net 414 "/fpga_front_end_bank_c/D1" "D1"
+ U1 E7
+ J2 121
+Net 416 "/fpga_front_end_bank_c/D37" "D37"
+ J2 163
+ U1 C10
+Net 418 "/fpga_front_end_bank_b/D37" "D37"
+ J2 103
+ U1 C24
+Net 420 "/fpga_front_end_bank_c/D41" "D41"
+ U1 C11
+ J2 169
+Net 422 "/fpga_front_end_bank_c/D5" "D5"
+ U1 E8
+ J2 125
+Net 424 "/fpga_front_end_bank_c/D45" "D45"
+ J2 173
+ U1 D12
+Net 425 "/fpga_front_end_bank_b/D29" "D29"
+ J2 93
+ U1 C22
+Net 426 "/fpga_front_end_bank_c/D49" "D49"
+ U1 D13
+ J2 177
+Net 427 "/fpga_front_end_bank_c/D9" "D9"
+ J2 129
+ U1 D9
+Net 428 "/fpga_front_end_bank_b/D41" "D41"
+ U1 F21
+ J2 109
+Net 429 "/ddr2/DQ1" "DQ1"
+ U1 V28
+ J1 7
+Net 430 "/fpga_front_end_bank_c/D13" "D13"
+ J2 135
+ U1 C3
+Net 431 "/ddr2/DQ5" "DQ5"
+ U1 W26
+ J1 6
+Net 432 "/ddr2/DQ9" "DQ9"
+ U1 AC27
+ J1 25
+Net 433 "/fpga_front_end_bank_b/D25" "D25"
+ J2 89
+ U1 C21
+Net 434 "/ddr2/DQ13" "DQ13"
+ J1 22
+ U1 Y24
+Net 435 "/ddr2/DQ17" "DQ17"
+ U1 AH25
+ J1 45
+Net 436 "/fpga_front_end_bank_c/D17" "D17"
+ J2 139
+ U1 C4
+Net 437 "/ddr2/DQ21" "DQ21"
+ J1 46
+ U1 AE24
+Net 438 "/ddr2/DQ25" "DQ25"
+ J1 63
+ U1 AH22
+Net 439 "/fpga_front_end_bank_b/D45" "D45"
+ J2 113
+ U1 E21
+Net 440 "/ddr2/DQ29" "DQ29"
+ U1 AH23
+ J1 64
+Net 442 "/fpga_front_end_bank_b/D46" "D46"
+ J2 116
+ U1 G16
+Net 444 "/fpga_front_end_bank_c/D22" "D22"
+ J2 148
+ U1 A4
+Net 446 "/fpga_front_end_bank_b/D26" "D26"
+ J2 92
+ U1 B23
+Net 448 "/fpga_front_end_bank_c/D24" "D24"
+ U1 B6
+ J2 150
+Net 450 "/fpga_front_end_bank_b/D48" "D48"
+ J2 118
+ U1 H17
+Net 452 "/fpga_front_end_bank_c/D26" "D26"
+ J2 152
+ U1 A6
+Net 454 "/fpga_front_end_bank_b/D34" "D34"
+ U1 B26
+ J2 102
+Net 456 "/fpga_front_end_bank_c/D28" "D28"
+ J2 154
+ U1 B7
+Net 458 "/fpga_front_end_bank_b/D50" "D50"
+ J2 120
+ U1 G18
+Net 460 "/fpga_front_end_bank_c/D30" "D30"
+ J2 158
+ U1 A7
+Net 461 "/fpga_front_end_misc/D39" "D39"
+ U1 J27
+ J2 51
+Net 462 "/fpga_front_end_misc/D37" "D37"
+ U1 J28
+ J2 49
+Net 463 "/fpga_front_end_bank_c/D32" "D32"
+ U1 B8
+ J2 160
+Net 465 "/fpga_front_end_bank_c/D0" "D0"
+ U1 E10
+ J2 122
+Net 466 "/clock_generator/FE_CLK_N0" "FE_CLK_N0"
+ U4 17
+ J2 58
+Net 467 "/fpga_front_end_bank_c/D34" "D34"
+ U1 A8
+ J2 162
+Net 468 "/clock_generator/FE_CLK_P0" "FE_CLK_P0"
+ J2 56
+ U4 19
+Net 469 "/fpga_front_end_bank_b/D36" "D36"
+ U1 F15
+ J2 104
+Net 470 "/fpga_front_end_bank_c/D36" "D36"
+ J2 164
+ U1 B10
+Net 472 "/fpga_front_end_bank_c/D2" "D2"
+ J2 124
+ U1 F10
+Net 474 "/fpga_front_end_bank_c/D38" "D38"
+ J2 166
+ U1 A10
+Net 476 "/fpga_front_end_bank_b/D28" "D28"
+ J2 94
+ U1 A25
+Net 478 "/fpga_front_end_bank_c/D40" "D40"
+ J2 170
+ U1 B11
+Net 480 "/fpga_front_end_bank_c/D4" "D4"
+ U1 E11
+ J2 126
+Net 482 "/fpga_front_end_bank_c/D42" "D42"
+ U1 A11
+ J2 172
+Net 484 "/fpga_front_end_bank_b/D38" "D38"
+ U1 E15
+ J2 106
+Net 486 "/fpga_front_end_bank_c/D44" "D44"
+ U1 A12
+ J2 174
+Net 487 "/fpga_front_end_bank_c/D6" "D6"
+ U1 G11
+ J2 128
+Net 488 "/fpga_front_end_bank_c/D46" "D46"
+ U1 C14
+ J2 176
+Net 489 "/fpga_front_end_bank_b/D24" "D24"
+ U1 A23
+ J2 90
+Net 490 "/fpga_front_end_bank_c/D48" "D48"
+ U1 A14
+ J2 178
+Net 491 "/fpga_front_end_bank_c/D8" "D8"
+ U1 D11
+ J2 130
+Net 492 "/fpga_front_end_bank_c/D50" "D50"
+ J2 180
+ U1 B14
+Net 493 "/fpga_front_end_bank_b/D40" "D40"
+ J2 110
+ U1 E17
+Net 494 "/fpga_front_end_bank_c/D10" "D10"
+ J2 134
+ U1 E12
+Net 495 "/fpga_front_end_bank_b/D30" "D30"
+ J2 98
+ U1 B25
+Net 496 "/fpga_front_end_bank_c/D12" "D12"
+ J2 136
+ U1 F12
+Net 497 "/ddr2/DQ0" "DQ0"
+ J1 5
+ U1 U28
+Net 498 "/ddr2/DQ2" "DQ2"
+ J1 17
+ U1 W28
+Net 499 "/fpga_front_end_bank_b/D42" "D42"
+ U1 F17
+ J2 112
+Net 500 "/ddr2/DQ4" "DQ4"
+ J1 4
+ U1 V25
+Net 501 "/ddr2/DQ6" "DQ6"
+ U1 Y26
+ J1 14
+Net 502 "/fpga_front_end_bank_c/D14" "D14"
+ U1 E14
+ J2 138
+Net 503 "/ddr2/DQ8" "DQ8"
+ U1 AC28
+ J1 23
+Net 504 "/ddr2/DQ10" "DQ10"
+ J1 35
+ U1 AD28
+Net 505 "/fpga_front_end_bank_b/D22" "D22"
+ U1 B22
+ J2 88
+Net 506 "/ddr2/DQ12" "DQ12"
+ U1 AB26
+ J1 20
+Net 507 "/ddr2/DQ14" "DQ14"
+ J1 36
+ U1 AD26
+Net 508 "/fpga_front_end_bank_c/D16" "D16"
+ J2 140
+ U1 B3
+Net 509 "/ddr2/DQ16" "DQ16"
+ J1 43
+ U1 AG26
+Net 510 "/ddr2/DQ18" "DQ18"
+ U1 AF22
+ J1 55
+Net 511 "/fpga_front_end_bank_b/D44" "D44"
+ U1 E18
+ J2 114
+Net 512 "/ddr2/DQ20" "DQ20"
+ J1 44
+ U1 AE25
+Net 513 "/ddr2/DQ22" "DQ22"
+ U1 AF20
+ J1 56
+Net 514 "/fpga_front_end_bank_c/D18" "D18"
+ U1 A3
+ J2 142
+Net 515 "/ddr2/DQ24" "DQ24"
+ J1 61
+ U1 AG22
+Net 516 "/ddr2/DQ26" "DQ26"
+ J1 73
+ U1 AG21
+Net 517 "/fpga_front_end_bank_b/D32" "D32"
+ U1 A26
+ J2 100
+Net 518 "/ddr2/DQ28" "DQ28"
+ J1 62
+ U1 AF24
+Net 519 "/fpga_front_end_bank_c/D20" "D20"
+ J2 146
+ U1 B4
+Net 520 "/ddr2/DQ31" "DQ31"
+ J1 76
+ U1 AD17
+Net 521 "/fpga_front_end_bank_b/D23" "D23"
+ U1 C20
+ J2 87
+Net 522 "/fpga_front_end_bank_b/D27" "D27"
+ J2 91
  U1 D21
-Net 625 "/fpga_ddr2/CLK_N1" "CLK_N1"
- U4 8
- U1 Y28
-Net 626 "/fpga_ddr2/CLK_N0" "CLK_N0"
+Net 523 "/fpga_front_end_bank_b/D35" "D35"
+ U1 D23
+ J2 101
+Net 524 "/fpga_front_end_bank_b/D51" "D51"
+ U1 G21
+ J2 119
+Net 525 "/fpga_front_end_bank_c/D31" "D31"
+ U1 C8
+ J2 157
+Net 526 "/ddr2/DQ44" "DQ44"
+ J1 140
+ U1 AE12
+Net 527 "/ddr2/DM4" "DM4"
+ U1 AC15
+ J1 130
+Net 528 "/ddr2/A8" "A8"
+ J1 93
+ U1 AF19
+Net 529 "/ddr2/CK#0" "CK#0"
+ U1 AE22
+ J1 32
+Net 530 "/ddr2/CKE1" "CKE1"
+ U1 AG23
+ J1 80
+Net 531 "/ddr2/DQ60" "DQ60"
+ J1 180
+ U1 AD8
+Net 532 "/ddr2/DQS5" "DQS5"
+ U1 AF11
+ J1 148
+Net 533 "/ddr2/ODT1" "ODT1"
+ J1 119
+ U1 AE5
+Net 534 "/ddr2/A12" "A12"
+ U1 AD19
+ J1 89
+Net 535 "/ddr2/DQ36" "DQ36"
+ U1 AE17
+ J1 124
+Net 536 "/ddr2/DM5" "DM5"
+ U1 AF8
+ J1 147
+Net 537 "/ddr2/DQ52" "DQ52"
+ U1 AF9
+ J1 158
+Net 538 "/ddr2/A0" "A0"
+ U1 AE13
+ J1 102
+Net 539 "/ddr2/DQS4" "DQS4"
+ J1 131
+ U1 AF17
+Net 540 "/ddr2/DQ53" "DQ53"
+ U1 AD10
+ J1 160
+Net 541 "/fpga_ddr2/CLK_P0" "CLK_P0"
+ U1 AG14
+ U4 13
+Net 542 "/ddr2/BA0" "BA0"
+ J1 107
+ U1 AD12
+Net 543 "/ddr2/DQ57" "DQ57"
+ U1 AG6
+ J1 181
+Net 544 "/ddr2/DM1" "DM1"
+ U1 AB24
+ J1 26
+Net 545 "/ddr2/DQ32" "DQ32"
+ U1 AG18
+ J1 123
+Net 546 "/ddr2/DQ40" "DQ40"
+ U1 AG12
+ J1 141
+Net 547 "/ddr2/DQ49" "DQ49"
+ U1 AG8
+ J1 159
+Net 548 "/ddr2/DQ48" "DQ48"
+ U1 AH8
+ J1 157
+Net 549 "/ddr2/CK1" "CK1"
+ U1 AE7
+ J1 164
+Net 550 "/ddr2/DQ56" "DQ56"
+ U1 AH6
+ J1 179
+Net 551 "/ddr2/DQS1" "DQS1"
+ U1 AF27
+ J1 31
+Net 552 "/ddr2/DQS0" "DQS0"
+ J1 13
+ U1 T25
+Net 553 "/ddr2/A4" "A4"
+ U1 AF14
+ J1 98
+Net 554 "/ddr2/DM0" "DM0"
+ J1 10
+ U1 AB28
+Net 555 "/ddr2/DQ41" "DQ41"
+ U1 AH11
+ J1 143
+Net 556 "/ddr2/CK0" "CK0"
+ J1 30
+ U1 AD22
+Net 558 "/ddr2/BA2" "BA2"
+ J1 85
+ U1 AF21
+Net 559 "/ddr2/ODT0" "ODT0"
+ J1 114
+ U1 AF12
+Net 560 "/ddr2/DQ43" "DQ43"
+ U1 AG10
+ J1 153
+Net 561 "/ddr2/CKE0" "CKE0"
+ U1 AF23
+ J1 79
+Net 562 "/ddr2/DQ59" "DQ59"
+ J1 191
+ U1 AH3
+Net 563 "/ddr2/A2" "A2"
+ U1 AF18
+ J1 100
+Net 564 "/ddr2/A6" "A6"
+ J1 94
+ U1 AE14
+Net 565 "/ddr2/DQ63" "DQ63"
+ J1 194
+ U1 AG3
+Net 566 "/ddr2/A10" "A10"
+ J1 105
+ U1 AB13
+Net 567 "/ddr2/DQ47" "DQ47"
+ J1 154
+ U1 AF10
+Net 568 "/ddr2/A14" "A14"
+ J1 86
+ U1 AC17
+Net 569 "/ddr2/DQ34" "DQ34"
+ J1 135
+ U1 AG17
+Net 570 "/ddr2/DM3" "DM3"
+ J1 67
+ U1 AH19
+Net 571 "/ddr2/DQ38" "DQ38"
+ U1 AF15
+ J1 134
+Net 572 "/ddr2/DQ42" "DQ42"
+ U1 AG11
+ J1 151
+Net 573 "/ddr2/DQ39" "DQ39"
+ U1 AB16
+ J1 136
+Net 574 "/ddr2/DQ46" "DQ46"
+ J1 152
+ U1 AE9
+Net 575 "/ddr2/CK#1" "CK#1"
+ J1 166
+ U1 AE8
+Net 576 "/ddr2/DQ50" "DQ50"
+ U1 AH7
+ J1 173
+Net 577 "/ddr2/DM7" "DM7"
+ J1 185
+ U1 AE6
+Net 578 "/ddr2/DQ54" "DQ54"
+ J1 174
+ U1 AC8
+Net 579 "/ddr2/S#1" "S#1"
+ U1 AC10
+ J1 115
+Net 580 "/ddr2/DQ58" "DQ58"
+ J1 189
+ U1 AH4
+Net 581 "/ddr2/DQ51" "DQ51"
+ J1 175
+ U1 AG7
+Net 582 "/ddr2/DQ62" "DQ62"
+ J1 192
+ U1 AF4
+Net 583 "/ddr2/DQS2" "DQS2"
+ J1 51
+ U1 AF26
+Net 584 "/ddr2/DQS3" "DQS3"
+ U1 AE18
+ J1 70
+Net 585 "/ddr2/DQS6" "DQS6"
+ U1 AE10
+ J1 169
+Net 586 "/ddr2/DM2" "DM2"
+ U1 AF25
+ J1 52
+Net 587 "/ddr2/DQ35" "DQ35"
+ U1 AH17
+ J1 137
+Net 588 "/ddr2/DM6" "DM6"
+ J1 170
+ U1 AB9
+Net 589 "/fpga_ddr2/CLK_N0" "CLK_N0"
  U1 AH14
  U4 12
-Net 627 "/fpga_ddr2/CLK_P0" "CLK_P0"
- U4 13
- U1 AG14
-Net 628 "/fpga_ddr2/CLK_P1" "CLK_P1"
- U4 9
- U1 Y27
-Net 629 "/fpga_front_end_bank_0/D0" "D0"
+Net 590 "/ddr2/DQS7" "DQS7"
+ U1 AD7
+ J1 188
+Net 591 "/ddr2/S#0" "S#0"
+ U1 AF13
+ J1 110
+Net 592 "/ddr2/DQ55" "DQ55"
+ J1 176
+ U1 AF7
+Net 593 "/fpga_front_end_bank_b/D0" "D0"
+ U1 A15
  J2 62
- U1 E10
-Net 630 "/fpga_front_end_bank_0/D1" "D1"
+Net 594 "/ddr2/A1" "A1"
+ U1 AB15
+ J1 101
+Net 595 "/ddr2/A3" "A3"
+ U1 AD15
+ J1 99
+Net 596 "/ddr2/A5" "A5"
+ U1 AE15
+ J1 97
+Net 597 "/ddr2/A7" "A7"
+ J1 92
+ U1 AE20
+Net 598 "/ddr2/A9" "A9"
+ J1 91
+ U1 AG19
+Net 599 "/ddr2/A11" "A11"
+ U1 AD14
+ J1 90
+Net 600 "/ddr2/A13" "A13"
+ J1 116
+ U1 AH10
+Net 601 "/ddr2/DQ33" "DQ33"
+ J1 125
+ U1 AH18
+Net 602 "/ddr2/A15" "A15"
+ J1 84
+ U1 AE16
+Net 603 "/ddr2/DQ37" "DQ37"
+ U1 AF16
+ J1 126
+Net 604 "/ddr2/BA1" "BA1"
+ U1 AH12
+ J1 106
+Net 605 "/ddr2/DQ45" "DQ45"
+ J1 142
+ U1 AE11
+Net 606 "/ddr2/DQ61" "DQ61"
+ U1 AF6
+ J1 182
+Net 607 "/fpga_ddr2/CLK_N1" "CLK_N1"
+ U4 8
+ U1 Y28
+Net 608 "/fpga_ddr2/CLK_P1" "CLK_P1"
+ U1 Y27
+ U4 9
+Net 610 "/fpga_front_end_bank_b/D21" "D21"
+ U1 D20
+ J2 85
+Net 611 "/fpga_front_end_bank_b/D18" "D18"
+ U1 B21
+ J2 82
+Net 612 "/fpga_front_end_bank_b/D10" "D10"
+ U1 B18
+ J2 74
+Net 613 "/fpga_front_end_bank_b/D12" "D12"
+ U1 A19
+ J2 76
+Net 614 "/fpga_front_end_bank_b/D16" "D16"
+ U1 A21
+ J2 80
+Net 615 "/fpga_front_end_bank_b/D8" "D8"
+ U1 A18
+ J2 70
+Net 616 "/fpga_front_end_bank_b/D20" "D20"
+ J2 86
+ U1 A22
+Net 617 "/fpga_front_end_bank_b/D4" "D4"
+ U1 A17
+ J2 66
+Net 618 "/fpga_usb0/PIPE_POWERDOWN0" "PIPE_POWERDOWN0"
+ U2 H3
+ U1 R7
+Net 619 "/fpga_front_end_bank_b/D5" "D5"
+ U1 C15
+ J2 65
+Net 620 "/fpga_front_end_bank_b/D13" "D13"
+ J2 75
+ U1 D18
+Net 621 "/fpga_front_end_bank_b/D15" "D15"
+ J2 77
+ U1 C18
+Net 622 "/fpga_front_end_bank_b/D7" "D7"
+ U1 C16
+ J2 67
+Net 623 "/fpga_front_end_bank_b/D17" "D17"
+ U1 D19
+ J2 79
+Net 624 "/fpga_front_end_bank_b/D3" "D3"
+ U1 D16
+ J2 63
+Net 625 "/fpga_front_end_bank_b/D19" "D19"
+ U1 C19
+ J2 81
+Net 626 "/fpga_front_end_bank_b/D9" "D9"
+ J2 69
+ U1 D17
+Net 627 "/fpga_front_end_bank_b/D1" "D1"
  J2 61
- U1 E7
-Net 631 "/fpga_usb0/PIPE_TX_DATA15" "PIPE_TX_DATA15"
- U2 G2
- U1 AF2
-Net 632 "/fpga_usb0/PIPE_TX_DATA2" "PIPE_TX_DATA2"
- U1 R2
- U2 P3
-Net 633 "/fpga_usb0/PIPE_TX_DATA3" "PIPE_TX_DATA3"
- U2 N3
- U1 T3
-Net 634 "/fpga_usb0/PIPE_TX_DATA4" "PIPE_TX_DATA4"
- U2 P2
- U1 U1
-Net 635 "/fpga_usb0/PIPE_TX_DATA5" "PIPE_TX_DATA5"
- U1 V1
- U2 N2
-Net 636 "/fpga_usb0/PIPE_TX_DATA6" "PIPE_TX_DATA6"
- U2 P1
- U1 U2
-Net 637 "/fpga_usb0/PIPE_TX_DATA7" "PIPE_TX_DATA7"
- U2 N1
- U1 V2
-Net 638 "/fpga_usb0/PIPE_TX_DATA8" "PIPE_TX_DATA8"
- U2 M1
- U1 W2
-Net 639 "/fpga_usb0/PIPE_TX_DATA9" "PIPE_TX_DATA9"
- U2 M2
- U1 W1
-Net 640 "/fpga_usb0/PIPE_TX_DATA10" "PIPE_TX_DATA10"
- U1 AB2
- U2 L2
-Net 641 "/fpga_usb0/PIPE_TX_DATA11" "PIPE_TX_DATA11"
- U1 AB1
- U2 L3
-Net 642 "/fpga_usb0/PIPE_TX_DATA12" "PIPE_TX_DATA12"
- U2 J2
- U1 AD1
-Net 643 "/fpga_usb0/PIPE_TX_DATA13" "PIPE_TX_DATA13"
- U2 H1
- U1 AD2
-Net 644 "/fpga_usb0/PIPE_TX_DATA14" "PIPE_TX_DATA14"
- U2 H2
- U1 AE1
-Net 645 "/fpga_usb0/PIPE_TX_DATA1" "PIPE_TX_DATA1"
- U1 R1
- U2 N4
-Net 646 "/fpga_usb0/PIPE_TX_DEEMPH0" "PIPE_TX_DEEMPH0"
- U2 L11
- U1 AA5
-Net 647 "/fpga_usb0/PIPE_TX_DEEMPH1" "PIPE_TX_DEEMPH1"
- U2 K11
- U1 AA7
-Net 648 "/fpga_usb0/PIPE_RX_DATA7" "PIPE_RX_DATA7"
+ U1 D15
+Net 628 "/fpga_front_end_bank_b/D11" "D11"
+ J2 73
+ U1 C17
+Net 629 "/fpga_usb0/PIPE_POWERDOWN1" "PIPE_POWERDOWN1"
+ U2 G3
+ U1 R5
+Net 630 "/fpga_front_end_bank_b/D2" "D2"
+ U1 B15
+ J2 64
+Net 631 "/fpga_front_end_bank_b/D6" "D6"
+ U1 B17
+ J2 68
+Net 632 "/fpga_front_end_bank_b/D14" "D14"
+ U1 B19
+ J2 78
+Net 633 "/fpga_usb0/PIPE_RX_STATUS1" "PIPE_RX_STATUS1"
+ U1 Y6
+ U2 C6
+Net 634 "/fpga_usb0/PIPE_RX_DATA7" "PIPE_RX_DATA7"
  U1 Y4
  U2 A3
-Net 649 "/fpga_usb0/PIPE_RX_STATUS1" "PIPE_RX_STATUS1"
- U2 C6
- U1 Y6
-Net 650 "/fpga_usb0/PIPE_RX_STATUS2" "PIPE_RX_STATUS2"
- U1 AA6
- U2 C7
-Net 651 "/fpga_usb0/PIPE_RX_DATAK0" "PIPE_RX_DATAK0"
- U1 AD4
- U2 A7
-Net 652 "/fpga_usb0/PIPE_RX_DATAK1" "PIPE_RX_DATAK1"
- U1 AC3
+Net 635 "/fpga_configuration/PIPE_TX_MARGIN1" "PIPE_TX_MARGIN1"
+ U1 H3
+ U2 M10
+Net 636 "/fpga_usb0/PIPE_TX_DATA13" "PIPE_TX_DATA13"
+ U2 H1
+ U1 AD2
+Net 637 "/fpga_usb0/PIPE_RX_DATA15" "PIPE_RX_DATA15"
+ U2 B9
+ U1 AE3
+Net 638 "/fpga_configuration/ULPI_DATA7" "ULPI_DATA7"
+ U2 N6
+ U1 P1
+Net 639 "/fpga_usb0/PIPE_TX_DATA11" "PIPE_TX_DATA11"
+ U2 L3
+ U1 AB1
+Net 640 "/fpga_usb0/PIPE_TX_DEEMPH1" "PIPE_TX_DEEMPH1"
+ U1 AA7
+ U2 K11
+Net 641 "/fpga_usb0/PIPE_RX_DATA14" "PIPE_RX_DATA14"
+ U1 AF3
+ U2 A9
+Net 642 "/fpga_usb0/PIPE_RX_DATAK1" "PIPE_RX_DATAK1"
  U2 B7
-Net 653 "/fpga_usb0/PIPE_RX_DATA0" "PIPE_RX_DATA0"
- U1 T4
- U2 E2
+ U1 AC3
+Net 643 "/fpga_usb0/PIPE_RX_DATA3" "PIPE_RX_DATA3"
+ U2 C1
+ U1 V4
+Net 644 "/fpga_usb0/PIPE_TX_DATAK1" "PIPE_TX_DATAK1"
+ U1 AE2
+ U2 G1
+Net 645 "/fpga_usb0/PIPE_RX_DATA11" "PIPE_RX_DATA11"
+ U2 B5
+ U1 AA3
+Net 646 "/fpga_usb0/PIPE_TX_DATA9" "PIPE_TX_DATA9"
+ U2 M2
+ U1 W1
+Net 647 "/fpga_usb0/PIPE_TX_DATA1" "PIPE_TX_DATA1"
+ U1 R1
+ U2 N4
+Net 648 "/fpga_configuration/ULPI_DATA6" "ULPI_DATA6"
+ U2 P6
+ U1 P2
+Net 649 "/fpga_usb0/PIPE_TX_DATA7" "PIPE_TX_DATA7"
+ U1 V2
+ U2 N1
+Net 650 "/fpga_configuration/ULPI_DATA3" "ULPI_DATA3"
+ U2 N8
+ U1 L1
+Net 651 "/fpga_usb0/PIPE_RX_DATA10" "PIPE_RX_DATA10"
+ U2 B4
+ U1 AC4
+Net 652 "/fpga_usb0/PIPE_TX_DATA15" "PIPE_TX_DATA15"
+ U2 G2
+ U1 AF2
+Net 653 "/fpga_usb0/PIPE_RX_DATA2" "PIPE_RX_DATA2"
+ U1 U4
+ U2 D1
 Net 654 "/fpga_usb0/PIPE_RX_DATA1" "PIPE_RX_DATA1"
  U1 U3
  U2 D2
-Net 655 "/fpga_usb0/PIPE_RX_DATA2" "PIPE_RX_DATA2"
- U2 D1
- U1 U4
-Net 656 "/fpga_usb0/PIPE_RX_DATA3" "PIPE_RX_DATA3"
- U2 C1
- U1 V4
-Net 657 "/fpga_usb0/PIPE_RX_DATA4" "PIPE_RX_DATA4"
- U1 V3
- U2 C2
-Net 658 "/fpga_usb0/PIPE_RX_DATA5" "PIPE_RX_DATA5"
+Net 655 "/fpga_usb0/PIPE_RX_DATA5" "PIPE_RX_DATA5"
  U1 W4
  U2 B1
-Net 659 "/fpga_usb0/PIPE_RX_DATA6" "PIPE_RX_DATA6"
- U2 A2
- U1 W3
-Net 660 "/fpga_usb0/PIPE_RX_DATA8" "PIPE_RX_DATA8"
- U1 Y3
- U2 B3
-Net 661 "/fpga_usb0/PIPE_RX_DATA9" "PIPE_RX_DATA9"
+Net 656 "/fpga_usb0/PIPE_RX_DATA4" "PIPE_RX_DATA4"
+ U1 V3
+ U2 C2
+Net 657 "/fpga_usb0/PIPE_RX_DATA9" "PIPE_RX_DATA9"
  U2 A4
  U1 AB3
-Net 662 "/fpga_usb0/PIPE_RX_DATA10" "PIPE_RX_DATA10"
- U2 B4
- U1 AC4
-Net 663 "/fpga_usb0/PIPE_RX_DATA11" "PIPE_RX_DATA11"
- U1 AA3
- U2 B5
-Net 664 "/fpga_usb0/PIPE_RX_DATA12" "PIPE_RX_DATA12"
- U2 B8
- U1 AD3
-Net 665 "/fpga_usb0/PIPE_RX_DATA13" "PIPE_RX_DATA13"
+Net 658 "/fpga_usb0/PIPE_RX_DATA13" "PIPE_RX_DATA13"
  U1 AE4
  U2 A8
-Net 666 "/fpga_usb0/PIPE_RX_DATA14" "PIPE_RX_DATA14"
- U1 AF3
- U2 A9
-Net 667 "/fpga_usb0/PIPE_RX_DATA15" "PIPE_RX_DATA15"
- U1 AE3
- U2 B9
-Net 668 "/fpga_usb0/PIPE_TX_DATAK0" "PIPE_TX_DATAK0"
- U1 AC2
- U2 J1
-Net 669 "/fpga_usb0/PIPE_TX_DATAK1" "PIPE_TX_DATAK1"
- U2 G1
- U1 AE2
-Net 670 "/fpga_usb0/PIPE_TX_DATA0" "PIPE_TX_DATA0"
- U1 R3
- U2 P5
-Net 671 "/fpga_configuration/ULPI_DATA0" "ULPI_DATA0"
- U2 N9
+Net 659 "/fpga_configuration/ULPI_DATA0" "ULPI_DATA0"
  U1 K1
-Net 672 "/fpga_configuration/ULPI_DATA1" "ULPI_DATA1"
- U2 P9
- U1 K2
-Net 673 "/fpga_configuration/ULPI_DATA2" "ULPI_DATA2"
- U2 P8
- U1 L2
-Net 674 "/fpga_configuration/ULPI_DATA3" "ULPI_DATA3"
- U1 L1
- U2 N8
-Net 675 "/fpga_configuration/ULPI_DATA4" "ULPI_DATA4"
+ U2 N9
+Net 660 "/fpga_usb0/PIPE_TX_DATA3" "PIPE_TX_DATA3"
+ U1 T3
+ U2 N3
+Net 661 "/fpga_configuration/ULPI_DATA4" "ULPI_DATA4"
  U2 P7
  U1 M2
-Net 676 "/fpga_configuration/ULPI_DATA5" "ULPI_DATA5"
- U2 N7
+Net 662 "/fpga_usb0/PIPE_TX_DATA5" "PIPE_TX_DATA5"
+ U1 V1
+ U2 N2
+Net 663 "/fpga_usb0/PIPE_RX_DATA8" "PIPE_RX_DATA8"
+ U1 Y3
+ U2 B3
+Net 664 "/fpga_configuration/ULPI_DATA1" "ULPI_DATA1"
+ U2 P9
+ U1 K2
+Net 665 "/fpga_configuration/ULPI_DATA5" "ULPI_DATA5"
  U1 M1
-Net 677 "/fpga_configuration/ULPI_DATA6" "ULPI_DATA6"
- U1 P2
- U2 P6
-Net 678 "/fpga_configuration/ULPI_DATA7" "ULPI_DATA7"
- U1 P1
- U2 N6
-Net 679 "/fpga_usb0/PIPE_RX_STATUS0" "PIPE_RX_STATUS0"
- U1 V7
- U2 C5
+ U2 N7
+Net 666 "/fpga_usb0/PIPE_RX_DATA0" "PIPE_RX_DATA0"
+ U1 T4
+ U2 E2
+Net 667 "/fpga_usb0/PIPE_RX_DATA12" "PIPE_RX_DATA12"
+ U1 AD3
+ U2 B8
+Net 668 "/fpga_usb0/PIPE_RX_STATUS2" "PIPE_RX_STATUS2"
+ U2 C7
+ U1 AA6
+Net 669 "/fpga_usb0/PIPE_TX_DATAK0" "PIPE_TX_DATAK0"
+ U2 J1
+ U1 AC2
+Net 670 "/fpga_usb0/PIPE_RX_DATA6" "PIPE_RX_DATA6"
+ U2 A2
+ U1 W3
+Net 671 "/fpga_usb0/PIPE_TX_DATA0" "PIPE_TX_DATA0"
+ U2 P5
+ U1 R3
+Net 672 "/fpga_usb0/PIPE_TX_DATA2" "PIPE_TX_DATA2"
+ U2 P3
+ U1 R2
+Net 673 "/fpga_usb0/PIPE_TX_DATA6" "PIPE_TX_DATA6"
+ U2 P1
+ U1 U2
+Net 674 "/fpga_usb0/PIPE_TX_DATA4" "PIPE_TX_DATA4"
+ U1 U1
+ U2 P2
+Net 675 "/fpga_usb0/PIPE_TX_DATA8" "PIPE_TX_DATA8"
+ U1 W2
+ U2 M1
+Net 676 "/fpga_usb0/PIPE_TX_DATA10" "PIPE_TX_DATA10"
+ U1 AB2
+ U2 L2
+Net 677 "/fpga_usb0/PIPE_TX_DATA12" "PIPE_TX_DATA12"
+ U1 AD1
+ U2 J2
+Net 678 "/fpga_usb0/PIPE_TX_DATA14" "PIPE_TX_DATA14"
+ U1 AE1
+ U2 H2
+Net 679 "/fpga_configuration/ULPI_DATA2" "ULPI_DATA2"
+ U2 P8
+ U1 L2
 Net 680 "/fpga_configuration/PIPE_TX_MARGIN0" "PIPE_TX_MARGIN0"
- U1 K3
  U2 M9
-Net 681 "/fpga_configuration/PIPE_TX_MARGIN1" "PIPE_TX_MARGIN1"
- U1 H3
- U2 M10
+ U1 K3
+Net 681 "/fpga_usb0/PIPE_RX_STATUS0" "PIPE_RX_STATUS0"
+ U2 C5
+ U1 V7
 Net 682 "/fpga_configuration/PIPE_TX_MARGIN2" "PIPE_TX_MARGIN2"
- U2 M11
  U1 G4
-Net 683 "/fpga_usb0/PIPE_POWERDOWN0" "PIPE_POWERDOWN0"
- U1 R7
- U2 H3
-Net 684 "/fpga_usb0/PIPE_POWERDOWN1" "PIPE_POWERDOWN1"
- U2 G3
- U1 R5
+ U2 M11
+Net 683 "/fpga_usb0/PIPE_TX_DEEMPH0" "PIPE_TX_DEEMPH0"
+ U1 AA5
+ U2 L11
+Net 684 "/fpga_usb0/PIPE_RX_DATAK0" "PIPE_RX_DATAK0"
+ U1 AD4
+ U2 A7
 }
 #End

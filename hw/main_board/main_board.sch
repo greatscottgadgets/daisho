@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Apr 2013 12:55:56 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:51:50 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,6 +34,22 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Sheet
+S 10700 1800 1500 300 
+U 5138E160
+F0 "fpga_front_end_bank_b" 60
+F1 "fpga_front_end_bank_b.sch" 60
+F2 "D[51..0]" B R 12200 1900 60 
+F3 "VCCIO" I R 12200 2000 60 
+$EndSheet
+$Sheet
+S 10700 2400 1500 300 
+U 5138E12B
+F0 "fpga_front_end_bank_c" 60
+F1 "fpga_front_end_bank_c.sch" 60
+F2 "D[51..0]" B R 12200 2500 60 
+F3 "VCCIO" I R 12200 2600 60 
+$EndSheet
 Wire Wire Line
 	14000 4700 14400 4700
 Wire Bus Line
@@ -437,26 +453,10 @@ F5 "V1P1_ENABLE" I R 2100 1800 60
 F6 "V1P2_ENABLE" I R 2100 1700 60 
 $EndSheet
 $Sheet
-S 10700 1800 1500 300 
-U 5138E12B
-F0 "fpga_front_end_bank_0" 60
-F1 "fpga_front_end_bank_0.sch" 60
-F2 "D[51..0]" B R 12200 1900 60 
-F3 "VCCIO" I R 12200 2000 60 
-$EndSheet
-$Sheet
 S 1300 2400 800  300 
 U 510239FC
 F0 "fpga_power" 60
 F1 "fpga_power.sch" 60
-$EndSheet
-$Sheet
-S 10700 2400 1500 300 
-U 5138E160
-F0 "fpga_front_end_bank_1" 60
-F1 "fpga_front_end_bank_1.sch" 60
-F2 "D[51..0]" B R 12200 2500 60 
-F3 "VCCIO" I R 12200 2600 60 
 $EndSheet
 $Sheet
 S 1300 3000 800  300 

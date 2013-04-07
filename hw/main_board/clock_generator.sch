@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 05 Apr 2013 03:20:59 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 6 15
 Title "Daisho Project Main Board"
-Date "5 apr 2013"
+Date "7 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -215,10 +215,10 @@ $EndComp
 Text HLabel 7600 6800 0    60   Input ~ 0
 CLOCKGEN_OEB#
 $Comp
-L GND #PWR022
+L GND #PWR029
 U 1 1 514E55D6
 P 9600 8600
-F 0 "#PWR022" H 9600 8600 30  0001 C CNN
+F 0 "#PWR029" H 9600 8600 30  0001 C CNN
 F 1 "GND" H 9600 8530 30  0001 C CNN
 	1    9600 8600
 	1    0    0    -1  
@@ -260,10 +260,10 @@ F 1 "C" H 9650 8100 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR023
+L GND #PWR030
 U 1 1 514E5583
 P 7700 8600
-F 0 "#PWR023" H 7700 8600 30  0001 C CNN
+F 0 "#PWR030" H 7700 8600 30  0001 C CNN
 F 1 "GND" H 7700 8530 30  0001 C CNN
 	1    7700 8600
 	1    0    0    -1  
@@ -289,28 +289,28 @@ F 1 "4K7" V 7800 4950 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR024
+L GND #PWR031
 U 1 1 514E535A
 P 6350 5250
-F 0 "#PWR024" H 6350 5250 30  0001 C CNN
+F 0 "#PWR031" H 6350 5250 30  0001 C CNN
 F 1 "GND" H 6350 5180 30  0001 C CNN
 	1    6350 5250
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR025
+L GND #PWR032
 U 1 1 514E5341
 P 5400 4800
-F 0 "#PWR025" H 5400 4800 30  0001 C CNN
+F 0 "#PWR032" H 5400 4800 30  0001 C CNN
 F 1 "GND" H 5400 4730 30  0001 C CNN
 	1    5400 4800
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR026
+L GND #PWR033
 U 1 1 514E533C
 P 7400 4800
-F 0 "#PWR026" H 7400 4800 30  0001 C CNN
+F 0 "#PWR033" H 7400 4800 30  0001 C CNN
 F 1 "GND" H 7400 4730 30  0001 C CNN
 	1    7400 4800
 	0    -1   -1   0   
@@ -343,10 +343,10 @@ F 1 "25M" H 6400 5000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR027
+L GND #PWR034
 U 1 1 514E5271
 P 9200 6400
-F 0 "#PWR027" H 9200 6400 30  0001 C CNN
+F 0 "#PWR034" H 9200 6400 30  0001 C CNN
 F 1 "GND" H 9200 6330 30  0001 C CNN
 	1    9200 6400
 	1    0    0    -1  

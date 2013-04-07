@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 05 Apr 2013 03:20:59 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -24,9 +24,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 7 15
+Sheet 9 15
 Title "Daisho Project Main Board"
-Date "5 apr 2013"
+Date "7 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,20 +34,21 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 1800 2400 0    60   ~ 0
-FE_V1P8
-Text Label 1800 1700 0    60   ~ 0
-FE_V3P3
+Connection ~ 4000 5200
 Wire Wire Line
-	1600 2400 2400 2400
+	4000 5200 4000 5800
+Wire Wire Line
+	4000 5800 3900 5800
+Wire Wire Line
+	3900 5200 4800 5200
 Connection ~ 2600 6400
 Wire Wire Line
-	2600 6400 2600 7000
+	2600 5200 2600 7000
 Wire Wire Line
 	2600 7000 2700 7000
-Connection ~ 2600 5200
 Wire Wire Line
-	2600 5200 2600 5800
+	1600 2400 2400 2400
+Connection ~ 2600 5200
 Wire Wire Line
 	2600 5800 2700 5800
 Connection ~ 2600 4700
@@ -80,9 +81,6 @@ Wire Wire Line
 	1800 4700 2700 4700
 Wire Wire Line
 	14800 5200 13900 5200
-Connection ~ 4000 5200
-Wire Wire Line
-	3900 5200 4800 5200
 Connection ~ 9000 5200
 Connection ~ 7600 5800
 Wire Wire Line
@@ -138,9 +136,6 @@ Wire Wire Line
 	2700 6900 1900 6900
 Wire Wire Line
 	2700 7200 1900 7200
-Connection ~ 4000 5800
-Wire Wire Line
-	4000 5800 3900 5800
 Wire Wire Line
 	6900 7600 7700 7600
 Wire Wire Line
@@ -383,8 +378,6 @@ Wire Wire Line
 Wire Wire Line
 	9700 7600 8900 7600
 Wire Wire Line
-	3900 6400 4000 6400
-Wire Wire Line
 	2700 7300 1900 7300
 Wire Wire Line
 	2700 7100 1900 7100
@@ -463,21 +456,28 @@ Wire Wire Line
 	14000 7000 14000 5200
 Connection ~ 14000 6400
 Wire Wire Line
-	3900 7000 4000 7000
-Wire Wire Line
-	4000 7000 4000 5200
-Connection ~ 4000 6400
-Wire Wire Line
 	2700 4900 1900 4900
 Wire Wire Line
 	4700 4900 3900 4900
 Wire Wire Line
-	1800 6400 2700 6400
-Wire Wire Line
 	1600 1700 2400 1700
-Text Label 2100 6400 0    60   ~ 0
+Wire Wire Line
+	2600 6400 2700 6400
+Connection ~ 2600 5800
+Wire Wire Line
+	3900 6400 4800 6400
+Wire Wire Line
+	3900 7000 4000 7000
+Wire Wire Line
+	4000 7000 4000 6400
+Connection ~ 4000 6400
+Text Label 1800 2400 0    60   ~ 0
 FE_V1P8
-Text Label 2100 5200 0    60   ~ 0
+Text Label 1800 1700 0    60   ~ 0
+FE_V3P3
+Text Label 4100 6400 0    60   ~ 0
+FE_V1P8
+Text Label 4100 5200 0    60   ~ 0
 FE_V3P3
 Text Label 4100 7500 0    60   ~ 0
 FE_CLK_N1
@@ -519,7 +519,7 @@ Text HLabel 1600 1300 0    60   Input ~ 0
 FE_CLK_P[1..0]
 Text HLabel 14800 5200 2    60   Output ~ 0
 FE_VCCIO_C
-Text HLabel 4800 5200 2    60   Output ~ 0
+Text HLabel 1800 5200 0    60   Output ~ 0
 FE_VCCIO_A
 Text Label 4200 7200 0    60   ~ 0
 FE_A39
@@ -826,28 +826,28 @@ FE_C0
 Text Label 12100 4800 0    60   ~ 0
 FE_C2
 $Comp
-L GND #PWR028
+L GND #PWR035
 U 1 1 51392416
 P 8150 8200
-F 0 "#PWR028" H 8150 8200 30  0001 C CNN
+F 0 "#PWR035" H 8150 8200 30  0001 C CNN
 F 1 "GND" H 8150 8130 30  0001 C CNN
 	1    8150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR029
+L GND #PWR036
 U 1 1 51392411
 P 13150 8200
-F 0 "#PWR029" H 13150 8200 30  0001 C CNN
+F 0 "#PWR036" H 13150 8200 30  0001 C CNN
 F 1 "GND" H 13150 8130 30  0001 C CNN
 	1    13150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR030
+L GND #PWR037
 U 1 1 513923EB
 P 3150 8200
-F 0 "#PWR030" H 3150 8200 30  0001 C CNN
+F 0 "#PWR037" H 3150 8200 30  0001 C CNN
 F 1 "GND" H 3150 8130 30  0001 C CNN
 	1    3150 8200
 	1    0    0    -1  

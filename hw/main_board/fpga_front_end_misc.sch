@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Apr 2013 12:55:56 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -183,10 +183,10 @@ FPGA_MSEL2
 Text Label 4700 3100 0    60   ~ 0
 FPGA_MSEL3
 $Comp
-L GND #PWR031
+L GND #PWR038
 U 1 1 51576C91
 P 4400 3200
-F 0 "#PWR031" H 4400 3200 30  0001 C CNN
+F 0 "#PWR038" H 4400 3200 30  0001 C CNN
 F 1 "GND" H 4400 3130 30  0001 C CNN
 	1    4400 3200
 	1    0    0    -1  
@@ -196,10 +196,10 @@ Only PS and JTAG programming modes supported.\nPS uses standard power-on reset (
 Text HLabel 11850 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR032
+L GND #PWR039
 U 1 1 514F7BF4
 P 8400 3200
-F 0 "#PWR032" H 8400 3200 30  0001 C CNN
+F 0 "#PWR039" H 8400 3200 30  0001 C CNN
 F 1 "GND" H 8400 3130 30  0001 C CNN
 	1    8400 3200
 	1    0    0    -1  
@@ -263,10 +263,10 @@ D39
 Text Label 5300 2500 0    60   ~ 0
 D37
 $Comp
-L GND #PWR033
+L GND #PWR040
 U 1 1 514BA518
 P 11200 3900
-F 0 "#PWR033" H 11200 3900 30  0001 C CNN
+F 0 "#PWR040" H 11200 3900 30  0001 C CNN
 F 1 "GND" H 11200 3830 30  0001 C CNN
 	1    11200 3900
 	1    0    0    -1  
@@ -285,10 +285,10 @@ AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sin
 Text Label 11350 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR034
+L GND #PWR041
 U 1 1 514BA28E
 P 10800 3900
-F 0 "#PWR034" H 10800 3900 30  0001 C CNN
+F 0 "#PWR041" H 10800 3900 30  0001 C CNN
 F 1 "GND" H 10800 3830 30  0001 C CNN
 	1    10800 3900
 	1    0    0    -1  

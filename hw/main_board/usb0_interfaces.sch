@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 05:37:28 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 5 15
 Title "Daisho Project Main Board"
-Date "3 apr 2013"
+Date "7 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -59,10 +59,10 @@ $EndComp
 Text HLabel 1700 9100 0    60   Input ~ 0
 RESETN
 $Comp
-L GND #PWR016
+L GND #PWR023
 U 1 1 5159AA97
 P 1800 9900
-F 0 "#PWR016" H 1800 9900 30  0001 C CNN
+F 0 "#PWR023" H 1800 9900 30  0001 C CNN
 F 1 "GND" H 1800 9830 30  0001 C CNN
 	1    1800 9900
 	1    0    0    -1  
@@ -79,10 +79,10 @@ F 1 "10K" V 2000 9550 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR017
+L GND #PWR024
 U 1 1 5159AA95
 P 2000 9900
-F 0 "#PWR017" H 2000 9900 30  0001 C CNN
+F 0 "#PWR024" H 2000 9900 30  0001 C CNN
 F 1 "GND" H 2000 9830 30  0001 C CNN
 	1    2000 9900
 	1    0    0    -1  
@@ -628,10 +628,10 @@ F 1 "100N" H 12750 8100 50  0000 L CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR018
+L GND #PWR025
 U 1 1 5153B8F4
 P 14050 9200
-F 0 "#PWR018" H 14050 9200 30  0001 C CNN
+F 0 "#PWR025" H 14050 9200 30  0001 C CNN
 F 1 "GND" H 14050 9130 30  0001 C CNN
 	1    14050 9200
 	1    0    0    -1  
@@ -666,10 +666,10 @@ SSRXM
 Text Notes 12050 6300 0    60   ~ 0
 TODO: Where to send ID for OTG support?
 $Comp
-L GND #PWR019
+L GND #PWR026
 U 1 1 5153875E
 P 15400 9700
-F 0 "#PWR019" H 15400 9700 30  0001 C CNN
+F 0 "#PWR026" H 15400 9700 30  0001 C CNN
 F 1 "GND" H 15400 9630 30  0001 C CNN
 	1    15400 9700
 	1    0    0    -1  
@@ -694,10 +694,10 @@ F 1 "INDUCTOR" V 15500 9200 40  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR020
+L GND #PWR027
 U 1 1 51533ECB
 P 14500 8400
-F 0 "#PWR020" H 14500 8400 30  0001 C CNN
+F 0 "#PWR027" H 14500 8400 30  0001 C CNN
 F 1 "GND" H 14500 8330 30  0001 C CNN
 	1    14500 8400
 	1    0    0    -1  
@@ -712,10 +712,10 @@ F 1 "USB3_MICRO_AB" H 14700 8350 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR021
+L GND #PWR028
 U 1 1 5114892E
 P 11700 6700
-F 0 "#PWR021" H 11700 6700 30  0001 C CNN
+F 0 "#PWR028" H 11700 6700 30  0001 C CNN
 F 1 "GND" H 11700 6630 30  0001 C CNN
 	1    11700 6700
 	0    1    1    0   
