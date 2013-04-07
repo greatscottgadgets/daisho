@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 05:37:28 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 12:55:56 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 12 15
 Title "Daisho Project Main Board"
-Date "3 apr 2013"
+Date "7 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,14 +34,14 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 9700 2500 0    60   ~ 0
-VCCIO
+Wire Wire Line
+	14200 3000 14200 3300
 Connection ~ 13800 2500
 Wire Wire Line
-	14100 2500 9400 2500
+	9400 2500 14800 2500
 Connection ~ 14200 3200
 Wire Wire Line
-	14800 3200 13800 3200
+	13800 3200 14800 3200
 Wire Wire Line
 	14200 3700 14200 3900
 Connection ~ 12600 2500
@@ -59,7 +59,7 @@ Wire Wire Line
 Wire Wire Line
 	13800 3800 13800 3900
 Wire Wire Line
-	13800 3100 13800 3300
+	13800 3300 13800 3100
 Connection ~ 10600 3100
 Wire Wire Line
 	10600 3100 10600 3000
@@ -214,7 +214,7 @@ Wire Wire Line
 	9500 3100 9400 3100
 Connection ~ 9500 3100
 Wire Wire Line
-	13400 3200 13400 3000
+	13400 3000 13400 3200
 Connection ~ 13400 3100
 Wire Wire Line
 	12600 3100 12600 3000
@@ -242,17 +242,29 @@ Connection ~ 12200 2500
 Wire Wire Line
 	13400 2500 13400 2600
 Connection ~ 13000 2500
-Wire Wire Line
-	14200 3200 14200 3300
 Connection ~ 13800 3200
 Connection ~ 13400 2500
+Wire Wire Line
+	14200 2500 14200 2600
+Connection ~ 14200 2500
+$Comp
+L C C20
+U 1 1 5161C39E
+P 14200 2800
+F 0 "C20" H 14250 2900 50  0000 L CNN
+F 1 "C" H 14250 2700 50  0000 L CNN
+	1    14200 2800
+	-1   0    0    -1  
+$EndComp
+Text Label 9700 2500 0    60   ~ 0
+VCCIO
 Text Label 14400 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR059
+L GND #PWR060
 U 1 1 514BAB65
 P 14200 3900
-F 0 "#PWR059" H 14200 3900 30  0001 C CNN
+F 0 "#PWR060" H 14200 3900 30  0001 C CNN
 F 1 "GND" H 14200 3830 30  0001 C CNN
 	1    14200 3900
 	1    0    0    -1  
@@ -264,13 +276,13 @@ P 14200 3500
 F 0 "C22" H 14250 3600 50  0000 L CNN
 F 1 "C" H 14250 3400 50  0000 L CNN
 	1    14200 3500
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR060
+L GND #PWR061
 U 1 1 514BAB5C
 P 13800 3900
-F 0 "#PWR060" H 13800 3900 30  0001 C CNN
+F 0 "#PWR061" H 13800 3900 30  0001 C CNN
 F 1 "GND" H 13800 3830 30  0001 C CNN
 	1    13800 3900
 	1    0    0    -1  
@@ -295,13 +307,13 @@ F 4 "1%" V 13700 2850 60  0000 C CNN "Tolerance"
 	1    13800 2850
 	-1   0    0    -1  
 $EndComp
-Text HLabel 14100 2500 2    60   Input ~ 0
+Text HLabel 14800 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR061
+L GND #PWR062
 U 1 1 513E1F35
 P 13400 3200
-F 0 "#PWR061" H 13400 3200 30  0001 C CNN
+F 0 "#PWR062" H 13400 3200 30  0001 C CNN
 F 1 "GND" H 13400 3130 30  0001 C CNN
 	1    13400 3200
 	1    0    0    -1  

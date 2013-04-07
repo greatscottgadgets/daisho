@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 06 Apr 2013 06:29:34 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 12:55:56 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,63 +34,28 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 13100 9500
-NoConn ~ 13100 9400
-NoConn ~ 13100 9300
-NoConn ~ 13100 9200
-NoConn ~ 13100 9000
-NoConn ~ 13100 8900
-NoConn ~ 13100 8800
-NoConn ~ 13100 8700
-NoConn ~ 13100 8600
-NoConn ~ 13100 8500
-NoConn ~ 13100 8300
-NoConn ~ 13100 8200
-NoConn ~ 13100 8100
-NoConn ~ 13100 8000
-NoConn ~ 13100 7900
-NoConn ~ 13100 7700
-NoConn ~ 13100 7600
-NoConn ~ 13100 7500
-NoConn ~ 13100 7400
-NoConn ~ 13100 7200
-NoConn ~ 13100 7000
-NoConn ~ 13100 6900
-NoConn ~ 13100 6700
-NoConn ~ 13100 6300
-NoConn ~ 13100 6100
-NoConn ~ 13100 5800
-NoConn ~ 13100 5700
-NoConn ~ 13100 5600
-NoConn ~ 13100 5400
-NoConn ~ 13100 5100
-NoConn ~ 13100 4900
-NoConn ~ 13100 4700
-NoConn ~ 13100 4500
-NoConn ~ 13100 4300
-NoConn ~ 13100 4000
-NoConn ~ 13100 3800
-NoConn ~ 13100 3700
-NoConn ~ 13100 3600
-NoConn ~ 13100 3500
-NoConn ~ 13100 3300
-NoConn ~ 13100 3000
-NoConn ~ 13100 2800
-NoConn ~ 13100 2700
-NoConn ~ 8400 8700
-NoConn ~ 8400 9100
-NoConn ~ 8400 9200
-NoConn ~ 8400 9300
-NoConn ~ 8400 8000
-NoConn ~ 8400 7800
-NoConn ~ 8400 7500
-NoConn ~ 8400 7200
-NoConn ~ 8400 7100
-NoConn ~ 8400 6800
-NoConn ~ 8400 6700
-NoConn ~ 8400 6400
-NoConn ~ 8400 3800
-NoConn ~ 8400 3300
+Connection ~ 14600 2000
+Wire Wire Line
+	15000 2000 13800 2000
+Wire Wire Line
+	13200 1400 15000 1400
+Connection ~ 14200 2000
+Wire Wire Line
+	14600 2000 14600 1900
+Wire Wire Line
+	13800 1900 13800 2100
+Connection ~ 13800 800 
+Wire Wire Line
+	14200 800  14200 900 
+Connection ~ 14600 1400
+Wire Wire Line
+	14600 1300 14600 1500
+Connection ~ 14200 1400
+Wire Wire Line
+	14200 1300 14200 1500
+Connection ~ 13800 1400
+Wire Wire Line
+	13800 1300 13800 1500
 Wire Wire Line
 	7800 6000 8400 6000
 Wire Wire Line
@@ -123,44 +88,6 @@ Wire Wire Line
 	3600 3600 3000 3600
 Wire Wire Line
 	3600 9000 3000 9000
-Connection ~ 14800 600 
-Wire Wire Line
-	14800 600  14800 700 
-Connection ~ 14000 600 
-Wire Wire Line
-	14000 600  14000 700 
-Connection ~ 13200 600 
-Wire Wire Line
-	13200 600  13200 700 
-Connection ~ 12400 600 
-Wire Wire Line
-	12400 600  12400 700 
-Connection ~ 11600 600 
-Wire Wire Line
-	11600 600  11600 700 
-Wire Wire Line
-	10600 600  15600 600 
-Wire Wire Line
-	15600 600  15600 700 
-Connection ~ 12000 1200
-Wire Wire Line
-	12000 1200 12000 1100
-Connection ~ 12800 1200
-Wire Wire Line
-	12800 1200 12800 1100
-Connection ~ 13600 1200
-Wire Wire Line
-	13600 1200 13600 1100
-Connection ~ 14400 1200
-Wire Wire Line
-	14400 1200 14400 1100
-Connection ~ 15200 1200
-Wire Wire Line
-	15200 1100 15200 1200
-Wire Wire Line
-	15600 1200 11200 1200
-Wire Wire Line
-	11200 1200 11200 1100
 Wire Wire Line
 	13100 9600 12500 9600
 Wire Wire Line
@@ -247,7 +174,7 @@ Wire Wire Line
 	1900 10500 1900 10600
 Connection ~ 10700 10600
 Wire Wire Line
-	10700 10700 10700 10500
+	10700 10500 10700 10700
 Wire Wire Line
 	11000 10000 1500 10000
 Wire Wire Line
@@ -266,9 +193,9 @@ Wire Wire Line
 Wire Wire Line
 	15000 3200 14900 3200
 Wire Bus Line
-	7600 1400 7600 6000
+	7600 6000 7600 1400
 Wire Bus Line
-	7200 1800 7200 8500
+	7200 8500 7200 1800
 Connection ~ 10300 3300
 Wire Wire Line
 	10300 3300 10200 3300
@@ -296,7 +223,7 @@ Connection ~ 5500 2800
 Wire Wire Line
 	5500 2800 5400 2800
 Wire Wire Line
-	5400 2700 5700 2700
+	5700 2700 5400 2700
 Wire Wire Line
 	3600 3100 2500 3100
 Wire Wire Line
@@ -314,7 +241,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 6900 2500 6900
 Wire Wire Line
-	3600 7500 2500 7500
+	2500 7500 3600 7500
 Wire Wire Line
 	3600 7900 2500 7900
 Wire Wire Line
@@ -392,9 +319,9 @@ Wire Wire Line
 Wire Wire Line
 	3600 3000 2900 3000
 Wire Bus Line
-	2600 1600 2600 7500
+	2600 7500 2600 1600
 Wire Bus Line
-	2800 7000 2800 1400
+	2800 1400 2800 7000
 Wire Wire Line
 	3600 5400 2900 5400
 Wire Wire Line
@@ -460,11 +387,11 @@ Wire Wire Line
 Wire Wire Line
 	8400 5100 7300 5100
 Wire Wire Line
-	7300 4500 8400 4500
+	8400 4500 7300 4500
 Wire Wire Line
 	8400 4300 7300 4300
 Wire Wire Line
-	7300 3900 8400 3900
+	8400 3900 7300 3900
 Wire Wire Line
 	8400 3600 7300 3600
 Wire Wire Line
@@ -494,7 +421,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 3500 2500 3500
 Wire Bus Line
-	2400 8500 2400 1800
+	2400 1800 2400 8500
 Wire Wire Line
 	5400 3500 5500 3500
 Wire Wire Line
@@ -510,7 +437,7 @@ Wire Wire Line
 	5500 3300 5400 3300
 Connection ~ 5500 3300
 Wire Wire Line
-	10500 2700 10200 2700
+	10200 2700 10500 2700
 Wire Wire Line
 	10300 2800 10200 2800
 Connection ~ 10300 2800
@@ -524,9 +451,9 @@ Wire Wire Line
 	10200 3400 10300 3400
 Connection ~ 10300 3400
 Wire Bus Line
-	7400 1600 7400 7800
+	7400 7800 7400 1600
 Wire Wire Line
-	14900 2700 15200 2700
+	15200 2700 14900 2700
 Wire Wire Line
 	14900 3100 15000 3100
 Connection ~ 15000 3100
@@ -627,44 +554,6 @@ Wire Wire Line
 Wire Bus Line
 	11900 1800 11900 7700
 Wire Wire Line
-	1900 800  3100 800 
-Wire Wire Line
-	15600 1100 15600 1300
-Connection ~ 15600 1200
-Wire Wire Line
-	14800 1200 14800 1100
-Connection ~ 14800 1200
-Wire Wire Line
-	14000 1200 14000 1100
-Connection ~ 14000 1200
-Wire Wire Line
-	13200 1200 13200 1100
-Connection ~ 13200 1200
-Wire Wire Line
-	12400 1200 12400 1100
-Connection ~ 12400 1200
-Wire Wire Line
-	11600 1100 11600 1200
-Connection ~ 11600 1200
-Wire Wire Line
-	11200 600  11200 700 
-Connection ~ 11200 600 
-Wire Wire Line
-	12000 600  12000 700 
-Connection ~ 12000 600 
-Wire Wire Line
-	12800 600  12800 700 
-Connection ~ 12800 600 
-Wire Wire Line
-	13600 600  13600 700 
-Connection ~ 13600 600 
-Wire Wire Line
-	14400 600  14400 700 
-Connection ~ 14400 600 
-Wire Wire Line
-	15200 700  15200 600 
-Connection ~ 15200 600 
-Wire Wire Line
 	3000 9100 3600 9100
 Wire Wire Line
 	3600 3700 3000 3700
@@ -696,6 +585,108 @@ Wire Wire Line
 	3000 2900 3600 2900
 Wire Wire Line
 	7800 2900 8400 2900
+Wire Wire Line
+	13800 800  13800 900 
+Wire Wire Line
+	14600 900  14600 800 
+Connection ~ 14200 800 
+Wire Wire Line
+	14200 2000 14200 1900
+Connection ~ 13800 2000
+Wire Wire Line
+	15000 800  13500 800 
+Connection ~ 14600 800 
+Wire Wire Line
+	15000 1500 15000 1300
+Connection ~ 15000 1400
+$Comp
+L R R21
+U 1 1 51610B51
+P 15000 1750
+F 0 "R21" V 15080 1750 50  0000 C CNN
+F 1 "1K" V 15000 1750 50  0000 C CNN
+F 4 "1%" V 14900 1750 60  0000 C CNN "Tolerance"
+	1    15000 1750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R R20
+U 1 1 51610B4A
+P 15000 1050
+F 0 "R20" V 15080 1050 50  0000 C CNN
+F 1 "1K" V 15000 1050 50  0000 C CNN
+F 4 "1%" V 14900 1050 60  0000 C CNN "Tolerance"
+	1    15000 1050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR040
+U 1 1 51610B0A
+P 13800 2100
+F 0 "#PWR040" H 13800 2100 30  0001 C CNN
+F 1 "GND" H 13800 2030 30  0001 C CNN
+	1    13800 2100
+	1    0    0    -1  
+$EndComp
+Text GLabel 13500 800  0    60   Input ~ 0
+V1P8
+NoConn ~ 13100 9500
+NoConn ~ 13100 9400
+NoConn ~ 13100 9300
+NoConn ~ 13100 9200
+NoConn ~ 13100 9000
+NoConn ~ 13100 8900
+NoConn ~ 13100 8800
+NoConn ~ 13100 8700
+NoConn ~ 13100 8600
+NoConn ~ 13100 8500
+NoConn ~ 13100 8300
+NoConn ~ 13100 8200
+NoConn ~ 13100 8100
+NoConn ~ 13100 8000
+NoConn ~ 13100 7900
+NoConn ~ 13100 7700
+NoConn ~ 13100 7600
+NoConn ~ 13100 7500
+NoConn ~ 13100 7400
+NoConn ~ 13100 7200
+NoConn ~ 13100 7000
+NoConn ~ 13100 6900
+NoConn ~ 13100 6700
+NoConn ~ 13100 6300
+NoConn ~ 13100 6100
+NoConn ~ 13100 5800
+NoConn ~ 13100 5700
+NoConn ~ 13100 5600
+NoConn ~ 13100 5400
+NoConn ~ 13100 5100
+NoConn ~ 13100 4900
+NoConn ~ 13100 4700
+NoConn ~ 13100 4500
+NoConn ~ 13100 4300
+NoConn ~ 13100 4000
+NoConn ~ 13100 3800
+NoConn ~ 13100 3700
+NoConn ~ 13100 3600
+NoConn ~ 13100 3500
+NoConn ~ 13100 3300
+NoConn ~ 13100 3000
+NoConn ~ 13100 2800
+NoConn ~ 13100 2700
+NoConn ~ 8400 8700
+NoConn ~ 8400 9100
+NoConn ~ 8400 9200
+NoConn ~ 8400 9300
+NoConn ~ 8400 8000
+NoConn ~ 8400 7800
+NoConn ~ 8400 7500
+NoConn ~ 8400 7200
+NoConn ~ 8400 7100
+NoConn ~ 8400 6800
+NoConn ~ 8400 6700
+NoConn ~ 8400 6400
+NoConn ~ 8400 3800
+NoConn ~ 8400 3300
 NoConn ~ 3600 4100
 NoConn ~ 3600 8300
 NoConn ~ 3600 6300
@@ -774,8 +765,6 @@ Text Label 3200 9100 0    60   ~ 0
 CLK_N0
 Text Label 3200 9000 0    60   ~ 0
 CLK_P0
-Text Notes 4650 850  2    60   ~ 0
-TODO: VREF supply or voltage!
 Text GLabel 6600 6600 0    60   Input ~ 0
 V1P8
 Text GLabel 5700 2700 2    60   Input ~ 0
@@ -798,123 +787,60 @@ Text Label 3200 3700 0    60   ~ 0
 CK#1
 Text Label 3200 3600 0    60   ~ 0
 CK1
-Text Label 10800 600  0    60   ~ 0
+Text Label 13400 1400 0    60   ~ 0
 VREF
-$Comp
-L GND #PWR039
-U 1 1 51562CDE
-P 15600 1300
-F 0 "#PWR039" H 15600 1300 30  0001 C CNN
-F 1 "GND" H 15600 1230 30  0001 C CNN
-	1    15600 1300
-	1    0    0    -1  
-$EndComp
 $Comp
 L C C180
 U 1 1 51562CD5
-P 11200 900
-F 0 "C180" H 11250 1000 50  0000 L CNN
-F 1 "C" H 11250 800 50  0000 L CNN
-	1    11200 900 
+P 13800 1100
+F 0 "C180" H 13850 1200 50  0000 L CNN
+F 1 "C" H 13850 1000 50  0000 L CNN
+	1    13800 1100
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C181
 U 1 1 51562CD3
-P 11600 900
-F 0 "C181" H 11650 1000 50  0000 L CNN
-F 1 "C" H 11650 800 50  0000 L CNN
-	1    11600 900 
+P 13800 1700
+F 0 "C181" H 13850 1800 50  0000 L CNN
+F 1 "C" H 13850 1600 50  0000 L CNN
+	1    13800 1700
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C182
 U 1 1 51562CD1
-P 12000 900
-F 0 "C182" H 12050 1000 50  0000 L CNN
-F 1 "C" H 12050 800 50  0000 L CNN
-	1    12000 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C191
-U 1 1 51562CCD
-P 15600 900
-F 0 "C191" H 15650 1000 50  0000 L CNN
-F 1 "C" H 15650 800 50  0000 L CNN
-	1    15600 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C190
-U 1 1 51562CCB
-P 15200 900
-F 0 "C190" H 15250 1000 50  0000 L CNN
-F 1 "C" H 15250 800 50  0000 L CNN
-	1    15200 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C189
-U 1 1 51562CC9
-P 14800 900
-F 0 "C189" H 14850 1000 50  0000 L CNN
-F 1 "C" H 14850 800 50  0000 L CNN
-	1    14800 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C188
-U 1 1 51562CC6
-P 14400 900
-F 0 "C188" H 14450 1000 50  0000 L CNN
-F 1 "C" H 14450 800 50  0000 L CNN
-	1    14400 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C187
-U 1 1 51562CC3
-P 14000 900
-F 0 "C187" H 14050 1000 50  0000 L CNN
-F 1 "C" H 14050 800 50  0000 L CNN
-	1    14000 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C186
-U 1 1 51562CBF
-P 13600 900
-F 0 "C186" H 13650 1000 50  0000 L CNN
-F 1 "C" H 13650 800 50  0000 L CNN
-	1    13600 900 
+P 14200 1100
+F 0 "C182" H 14250 1200 50  0000 L CNN
+F 1 "C" H 14250 1000 50  0000 L CNN
+	1    14200 1100
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C185
 U 1 1 51562CBC
-P 13200 900
-F 0 "C185" H 13250 1000 50  0000 L CNN
-F 1 "C" H 13250 800 50  0000 L CNN
-	1    13200 900 
+P 14600 1700
+F 0 "C185" H 14650 1800 50  0000 L CNN
+F 1 "C" H 14650 1600 50  0000 L CNN
+	1    14600 1700
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C183
 U 1 1 51562CB7
-P 12400 900
-F 0 "C183" H 12450 1000 50  0000 L CNN
-F 1 "C" H 12450 800 50  0000 L CNN
-	1    12400 900 
+P 14200 1700
+F 0 "C183" H 14250 1800 50  0000 L CNN
+F 1 "C" H 14250 1600 50  0000 L CNN
+	1    14200 1700
 	1    0    0    -1  
 $EndComp
 $Comp
 L C C184
 U 1 1 51562C84
-P 12800 900
-F 0 "C184" H 12850 1000 50  0000 L CNN
-F 1 "C" H 12850 800 50  0000 L CNN
-	1    12800 900 
+P 14600 1100
+F 0 "C184" H 14650 1200 50  0000 L CNN
+F 1 "C" H 14650 1000 50  0000 L CNN
+	1    14600 1100
 	1    0    0    -1  
 $EndComp
 Text HLabel 1900 2800 0    60   Output ~ 0
@@ -937,9 +863,7 @@ Text HLabel 1900 3100 0    60   Input ~ 0
 CLK_N[1..0]
 Text HLabel 1900 3000 0    60   Input ~ 0
 CLK_P[1..0]
-Text Label 2400 800  0    60   ~ 0
-VREF
-Text HLabel 1900 800  0    60   Input ~ 0
+Text HLabel 13200 1400 0    60   Output ~ 0
 VREF
 Text Notes 1450 9400 0    60   ~ 0
 ODT is used for memory writes.\nODT is not effective for reads, so scenario is "no-parallel" termination,\nwhich isn't ideal from a signal quality perspective.\nBut a VTT supply and parallel termination resistors\n(on DQ[63..0] and DQS[7..0]) are avoided.
@@ -968,10 +892,10 @@ VREF
 Text Label 3200 4500 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR040
+L GND #PWR041
 U 1 1 513E0563
 P 10700 10700
-F 0 "#PWR040" H 10700 10700 30  0001 C CNN
+F 0 "#PWR041" H 10700 10700 30  0001 C CNN
 F 1 "GND" H 10700 10630 30  0001 C CNN
 	1    10700 10700
 	1    0    0    -1  
@@ -1501,10 +1425,10 @@ Entry Wire Line
 Entry Wire Line
 	2600 3700 2700 3800
 $Comp
-L GND #PWR041
+L GND #PWR042
 U 1 1 511559B7
 P 11500 3900
-F 0 "#PWR041" H 11500 3900 30  0001 C CNN
+F 0 "#PWR042" H 11500 3900 30  0001 C CNN
 F 1 "GND" H 11500 3830 30  0001 C CNN
 	1    11500 3900
 	1    0    0    -1  
@@ -1530,10 +1454,10 @@ F 4 "1%" V 11400 2750 60  0000 C CNN "Tolerance"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR042
+L GND #PWR043
 U 1 1 5115592B
 P 6800 8100
-F 0 "#PWR042" H 6800 8100 30  0001 C CNN
+F 0 "#PWR043" H 6800 8100 30  0001 C CNN
 F 1 "GND" H 6800 8030 30  0001 C CNN
 	1    6800 8100
 	1    0    0    -1  

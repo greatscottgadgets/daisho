@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 03:28:02 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 12:55:56 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -24,9 +24,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 7 15
+Sheet 8 15
 Title "Daisho Project Main Board"
-Date "2 apr 2013"
+Date "7 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,111 +34,123 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 8400 2500
+Connection ~ 9200 2500
+Connection ~ 10000 2500
+Connection ~ 10800 2500
 Wire Wire Line
-	4400 2100 4400 2000
+	11200 2500 11200 2600
+Connection ~ 4400 2700
 Wire Wire Line
-	4400 2000 4100 2000
-Connection ~ 11200 3200
+	4400 2600 4400 2700
+Connection ~ 10800 3200
 Wire Wire Line
-	10800 3200 11850 3200
-Connection ~ 7800 2500
+	8800 2500 8800 2600
 Wire Wire Line
-	7700 2500 11100 2500
-Connection ~ 8800 2500
+	9600 2500 9600 2600
 Wire Wire Line
-	8400 2500 8400 2600
-Connection ~ 9600 2500
+	10400 2500 10400 2600
 Wire Wire Line
-	9200 2500 9200 2600
-Connection ~ 10400 2500
+	4200 2700 5900 2700
+Connection ~ 4400 3100
 Wire Wire Line
-	10000 2500 10000 2600
-Connection ~ 9600 3100
+	4400 3100 5900 3100
+Connection ~ 4400 2900
 Wire Wire Line
-	10000 3000 10000 3100
-Connection ~ 8800 3100
+	5900 2900 4400 2900
 Wire Wire Line
-	9200 3100 9200 3000
+	5900 2800 4400 2800
 Wire Wire Line
-	8400 3200 8400 3000
+	4400 2800 4400 3200
 Wire Wire Line
-	5900 2500 5100 2500
+	4400 3000 5900 3000
+Connection ~ 4400 3000
+Connection ~ 10000 3100
 Wire Wire Line
-	10800 2500 10800 2600
+	8400 3100 10400 3100
 Wire Wire Line
-	10800 3800 10800 3900
-Connection ~ 7800 2800
+	10400 3100 10400 3000
+Connection ~ 9200 3100
 Wire Wire Line
-	7800 2800 7700 2800
-Connection ~ 7800 2600
+	9600 3100 9600 3000
+Connection ~ 8400 3100
 Wire Wire Line
-	7800 2600 7700 2600
-Wire Wire Line
-	5100 7200 5900 7200
-Wire Wire Line
-	5900 3800 5100 3800
-Wire Wire Line
-	5100 5500 5900 5500
-Wire Wire Line
-	5100 8800 5900 8800
-Wire Wire Line
-	7700 3000 7800 3000
-Wire Wire Line
-	7800 3000 7800 2500
-Wire Wire Line
-	7800 2700 7700 2700
-Connection ~ 7800 2700
-Wire Wire Line
-	7800 2900 7700 2900
-Connection ~ 7800 2900
-Wire Wire Line
-	10800 3300 10800 3100
-Wire Wire Line
-	11200 3750 11200 3900
+	8800 3100 8800 3000
 Wire Wire Line
 	5900 2600 5100 2600
 Wire Wire Line
-	8800 3100 8800 3000
-Connection ~ 8400 3100
+	11200 3750 11200 3900
 Wire Wire Line
-	9600 3100 9600 3000
-Connection ~ 9200 3100
+	10800 3100 10800 3300
+Connection ~ 7800 2900
 Wire Wire Line
-	10400 3000 10400 3100
+	7800 2900 7700 2900
+Connection ~ 7800 2700
 Wire Wire Line
-	10400 3100 8400 3100
-Connection ~ 10000 3100
-Connection ~ 4400 3000
+	7800 2700 7700 2700
 Wire Wire Line
-	4400 3000 5900 3000
+	7800 2500 7800 3000
 Wire Wire Line
-	4400 3200 4400 2800
+	7800 3000 7700 3000
 Wire Wire Line
-	4400 2800 5900 2800
+	5100 8800 5900 8800
 Wire Wire Line
-	5900 2900 4400 2900
-Connection ~ 4400 2900
+	5100 5500 5900 5500
 Wire Wire Line
-	4400 3100 5900 3100
-Connection ~ 4400 3100
+	5900 3800 5100 3800
 Wire Wire Line
-	5900 2700 4200 2700
+	5100 7200 5900 7200
 Wire Wire Line
-	10400 2500 10400 2600
-Connection ~ 10800 2500
+	7800 2600 7700 2600
+Connection ~ 7800 2600
 Wire Wire Line
-	9600 2500 9600 2600
-Connection ~ 10000 2500
+	7800 2800 7700 2800
+Connection ~ 7800 2800
 Wire Wire Line
-	8800 2500 8800 2600
-Connection ~ 9200 2500
-Connection ~ 8400 2500
+	10800 3800 10800 3900
 Wire Wire Line
-	11200 3350 11200 3200
-Connection ~ 10800 3200
+	10800 2500 10800 2600
 Wire Wire Line
-	4400 2600 4400 2700
-Connection ~ 4400 2700
+	5900 2500 5100 2500
+Wire Wire Line
+	8400 3000 8400 3200
+Wire Wire Line
+	9200 3100 9200 3000
+Connection ~ 8800 3100
+Wire Wire Line
+	10000 3000 10000 3100
+Connection ~ 9600 3100
+Wire Wire Line
+	10000 2500 10000 2600
+Wire Wire Line
+	9200 2500 9200 2600
+Wire Wire Line
+	8400 2500 8400 2600
+Wire Wire Line
+	11850 3200 10800 3200
+Connection ~ 11200 3200
+Wire Wire Line
+	4100 2000 4400 2000
+Wire Wire Line
+	4400 2000 4400 2100
+Wire Wire Line
+	11200 3000 11200 3350
+Connection ~ 11200 2500
+Connection ~ 10400 2500
+Connection ~ 9600 2500
+Connection ~ 8800 2500
+Wire Wire Line
+	7700 2500 11850 2500
+Connection ~ 7800 2500
+$Comp
+L C C18
+U 1 1 5161CD48
+P 11200 2800
+F 0 "C18" H 11250 2900 50  0000 L CNN
+F 1 "C" H 11250 2700 50  0000 L CNN
+	1    11200 2800
+	-1   0    0    -1  
+$EndComp
 Text GLabel 4100 2000 0    60   Input ~ 0
 V1P8
 $Comp
@@ -181,7 +193,7 @@ F 1 "GND" H 4400 3130 30  0001 C CNN
 $EndComp
 Text Notes 4300 2950 2    60   ~ 0
 Only PS and JTAG programming modes supported.\nPS uses standard power-on reset (POR) delay of 50 to 200 ms.\nPS interface voltage determined by Bank 1 VCCIO.
-Text HLabel 11100 2500 2    60   Input ~ 0
+Text HLabel 11850 2500 2    60   Input ~ 0
 VCCIO
 $Comp
 L GND #PWR032

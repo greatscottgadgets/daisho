@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 06 Apr 2013 06:29:34 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 12:55:56 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,10 +34,9 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-NoConn ~ 8300 6300
-NoConn ~ 8300 6200
-NoConn ~ 8300 4600
-NoConn ~ 8300 4500
+Connection ~ 13200 3100
+Wire Wire Line
+	13200 3200 13200 3100
 Connection ~ 14500 5900
 Wire Wire Line
 	10500 5900 14900 5900
@@ -290,8 +289,6 @@ Wire Wire Line
 	13100 1600 13300 1600
 Wire Wire Line
 	13200 2700 13200 1600
-Wire Wire Line
-	13100 3100 13300 3100
 Wire Bus Line
 	7300 5800 7500 5800
 Wire Bus Line
@@ -615,11 +612,37 @@ Connection ~ 13300 5900
 Wire Wire Line
 	14500 5900 14500 5800
 Connection ~ 14100 5900
+Wire Wire Line
+	13200 3700 13200 3600
+Wire Wire Line
+	13100 3100 13300 3100
 $Comp
 L GND #PWR035
+U 1 1 51610BE0
+P 13200 3700
+F 0 "#PWR035" H 13200 3700 30  0001 C CNN
+F 1 "GND" H 13200 3630 30  0001 C CNN
+	1    13200 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C222
+U 1 1 51610BD8
+P 13200 3400
+F 0 "C222" H 13250 3500 50  0000 L CNN
+F 1 "100N" H 13250 3300 50  0000 L CNN
+	1    13200 3400
+	1    0    0    -1  
+$EndComp
+NoConn ~ 8300 6300
+NoConn ~ 8300 6200
+NoConn ~ 8300 4600
+NoConn ~ 8300 4500
+$Comp
+L GND #PWR036
 U 1 1 515B7843
 P 10500 6000
-F 0 "#PWR035" H 10500 6000 30  0001 C CNN
+F 0 "#PWR036" H 10500 6000 30  0001 C CNN
 F 1 "GND" H 10500 5930 30  0001 C CNN
 	1    10500 6000
 	1    0    0    -1  
@@ -739,10 +762,10 @@ V3P3
 Text GLabel 13100 1600 0    60   Input ~ 0
 V1P8
 $Comp
-L GND #PWR036
+L GND #PWR037
 U 1 1 514B69D6
 P 10500 4500
-F 0 "#PWR036" H 10500 4500 30  0001 C CNN
+F 0 "#PWR037" H 10500 4500 30  0001 C CNN
 F 1 "GND" H 10500 4430 30  0001 C CNN
 	1    10500 4500
 	1    0    0    -1  
@@ -761,10 +784,10 @@ F 1 "DDR2_SDRAM_SODIMM" H 11200 1200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR037
+L GND #PWR038
 U 1 1 514B69D4
 P 11900 4400
-F 0 "#PWR037" H 11900 4400 30  0001 C CNN
+F 0 "#PWR038" H 11900 4400 30  0001 C CNN
 F 1 "GND" H 11900 4330 30  0001 C CNN
 	1    11900 4400
 	-1   0    0    -1  
@@ -963,10 +986,10 @@ $EndComp
 Text Notes 3700 5000 0    60   ~ 0
 DDR2 operates in DQS single-ended mode. All DQS# == VSS
 $Comp
-L GND #PWR038
+L GND #PWR039
 U 1 1 50FAE476
 P 5200 4700
-F 0 "#PWR038" H 5200 4700 30  0001 C CNN
+F 0 "#PWR039" H 5200 4700 30  0001 C CNN
 F 1 "GND" H 5200 4630 30  0001 C CNN
 	1    5200 4700
 	1    0    0    -1  

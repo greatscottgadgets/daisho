@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Tue 02 Apr 2013 05:36:02 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Sun 07 Apr 2013 12:48:46 PM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -73,6 +73,27 @@ EndCmp
 BeginCmp
 TimeStamp = /514BB3A7/514E55CD;
 Reference = C16;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /51394328/5161CD48;
+Reference = C18;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E160/5161C3DA;
+Reference = C19;
+ValeurCmp = C;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5138E12B/5161C39E;
+Reference = C20;
 ValeurCmp = C;
 IdModule  = IPC_CAPC1005X55N;
 EndCmp
@@ -946,48 +967,6 @@ IdModule  = IPC_CAPC1005X55N;
 EndCmp
 
 BeginCmp
-TimeStamp = /5101C6D6/51562CBF;
-Reference = C186;
-ValeurCmp = C;
-IdModule  = IPC_CAPC1005X55N;
-EndCmp
-
-BeginCmp
-TimeStamp = /5101C6D6/51562CC3;
-Reference = C187;
-ValeurCmp = C;
-IdModule  = IPC_CAPC1005X55N;
-EndCmp
-
-BeginCmp
-TimeStamp = /5101C6D6/51562CC6;
-Reference = C188;
-ValeurCmp = C;
-IdModule  = IPC_CAPC1005X55N;
-EndCmp
-
-BeginCmp
-TimeStamp = /5101C6D6/51562CC9;
-Reference = C189;
-ValeurCmp = C;
-IdModule  = IPC_CAPC1005X55N;
-EndCmp
-
-BeginCmp
-TimeStamp = /5101C6D6/51562CCB;
-Reference = C190;
-ValeurCmp = C;
-IdModule  = IPC_CAPC1005X55N;
-EndCmp
-
-BeginCmp
-TimeStamp = /5101C6D6/51562CCD;
-Reference = C191;
-ValeurCmp = C;
-IdModule  = IPC_CAPC1005X55N;
-EndCmp
-
-BeginCmp
 TimeStamp = /5148D8EF/514CEE59;
 Reference = C200;
 ValeurCmp = C;
@@ -1109,6 +1088,13 @@ EndCmp
 BeginCmp
 TimeStamp = /50FA09AE/515B781D;
 Reference = C221;
+ValeurCmp = 100N;
+IdModule  = IPC_CAPC1005X55N;
+EndCmp
+
+BeginCmp
+TimeStamp = /50FA09AE/51610BD8;
+Reference = C222;
 ValeurCmp = 100N;
 IdModule  = IPC_CAPC1005X55N;
 EndCmp
@@ -1719,6 +1705,20 @@ BeginCmp
 TimeStamp = /5109FB2D/5159AA94;
 Reference = R18;
 ValeurCmp = 10K;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5101C6D6/51610B4A;
+Reference = R20;
+ValeurCmp = 1K;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5101C6D6/51610B51;
+Reference = R21;
+ValeurCmp = 1K;
 IdModule  = IPC_RESC1005X40N;
 EndCmp
 

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 05:37:28 PM PDT
+EESchema Schematic File Version 2  date Sun 07 Apr 2013 12:55:56 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 14 15
 Title "Daisho Project Main Board"
-Date "3 apr 2013"
+Date "7 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,18 +34,16 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 9100 2500 0    60   ~ 0
-VCCIO
+Wire Wire Line
+	13600 3000 13600 3300
 Connection ~ 13200 2500
 Wire Wire Line
 	13200 2500 13200 2600
 Connection ~ 13200 3200
 Wire Wire Line
-	13600 3300 13600 3200
-Wire Wire Line
 	13600 3700 13600 3800
 Wire Wire Line
-	13200 3100 13200 3300
+	13200 3300 13200 3100
 Connection ~ 10000 3100
 Wire Wire Line
 	10000 3100 10000 3000
@@ -241,7 +239,7 @@ Wire Wire Line
 	10000 2500 10000 2600
 Connection ~ 10000 2500
 Wire Wire Line
-	12800 3000 12800 3200
+	12800 3200 12800 3000
 Connection ~ 12800 3100
 Wire Wire Line
 	12000 3100 12000 3000
@@ -256,17 +254,31 @@ Wire Wire Line
 	13200 3800 13200 3900
 Connection ~ 9600 2500
 Wire Wire Line
-	8800 2500 13500 2500
+	14200 2500 8800 2500
 Wire Wire Line
 	14200 3200 13200 3200
 Connection ~ 13600 3200
+Wire Wire Line
+	13600 2500 13600 2600
+Connection ~ 13600 2500
+$Comp
+L C C19
+U 1 1 5161C3DA
+P 13600 2800
+F 0 "C19" H 13650 2900 50  0000 L CNN
+F 1 "C" H 13650 2700 50  0000 L CNN
+	1    13600 2800
+	-1   0    0    -1  
+$EndComp
+Text Label 9100 2500 0    60   ~ 0
+VCCIO
 Text Label 13800 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR069
+L GND #PWR070
 U 1 1 514BAC1B
 P 13600 3800
-F 0 "#PWR069" H 13600 3800 30  0001 C CNN
+F 0 "#PWR070" H 13600 3800 30  0001 C CNN
 F 1 "GND" H 13600 3730 30  0001 C CNN
 	1    13600 3800
 	1    0    0    -1  
@@ -281,10 +293,10 @@ F 1 "C" H 13650 3400 50  0000 L CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR070
+L GND #PWR071
 U 1 1 514BAC0D
 P 13200 3900
-F 0 "#PWR070" H 13200 3900 30  0001 C CNN
+F 0 "#PWR071" H 13200 3900 30  0001 C CNN
 F 1 "GND" H 13200 3830 30  0001 C CNN
 	1    13200 3900
 	1    0    0    -1  
@@ -309,13 +321,13 @@ F 4 "1%" V 13100 2850 60  0000 C CNN "Tolerance"
 	1    13200 2850
 	-1   0    0    1   
 $EndComp
-Text HLabel 13500 2500 2    60   Input ~ 0
+Text HLabel 14200 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR071
+L GND #PWR072
 U 1 1 513E203A
 P 12800 3200
-F 0 "#PWR071" H 12800 3200 30  0001 C CNN
+F 0 "#PWR072" H 12800 3200 30  0001 C CNN
 F 1 "GND" H 12800 3130 30  0001 C CNN
 	1    12800 3200
 	1    0    0    -1  
@@ -474,10 +486,10 @@ VREF
 Text Label 5600 3800 0    60   ~ 0
 VCCIO
 $Comp
-L GND #PWR072
+L GND #PWR073
 U 1 1 51393F4B
 P 6000 5300
-F 0 "#PWR072" H 6000 5300 30  0001 C CNN
+F 0 "#PWR073" H 6000 5300 30  0001 C CNN
 F 1 "GND" H 6000 5230 30  0001 C CNN
 	1    6000 5300
 	1    0    0    -1  
