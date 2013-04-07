@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 02 Apr 2013 05:37:28 PM PDT
+EESchema Schematic File Version 2  date Sat 06 Apr 2013 06:29:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 9 15
 Title "Daisho Project Main Board"
-Date "3 apr 2013"
+Date "7 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,6 +34,10 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 8300 6300
+NoConn ~ 8300 6200
+NoConn ~ 8300 4600
+NoConn ~ 8300 4500
 Connection ~ 14500 5900
 Wire Wire Line
 	10500 5900 14900 5900
@@ -305,8 +309,6 @@ Wire Bus Line
 Wire Wire Line
 	8300 4700 7600 4700
 Wire Wire Line
-	8300 4500 7600 4500
-Wire Wire Line
 	8300 5100 7900 5100
 Wire Wire Line
 	8300 1800 7900 1800
@@ -568,8 +570,6 @@ Wire Wire Line
 Wire Wire Line
 	8300 5200 7900 5200
 Wire Wire Line
-	8300 4600 7600 4600
-Wire Wire Line
 	8300 4800 7600 4800
 Wire Wire Line
 	8300 5400 7600 5400
@@ -824,23 +824,15 @@ CAS#
 Text Label 8000 5000 0    60   ~ 0
 RAS#
 Text HLabel 7300 4400 0    60   Input ~ 0
-S#[3..0]
+S#[1..0]
 Text Label 8000 4800 0    60   ~ 0
 S#0
 Text Label 8000 4700 0    60   ~ 0
 S#1
-Text Label 8000 4600 0    60   ~ 0
-S#2
-Text Label 8000 4500 0    60   ~ 0
-S#3
 Entry Wire Line
 	7500 4700 7600 4800
 Entry Wire Line
 	7500 4600 7600 4700
-Entry Wire Line
-	7500 4500 7600 4600
-Entry Wire Line
-	7500 4400 7600 4500
 Text HLabel 7900 5200 0    60   Input ~ 0
 WE#
 Text HLabel 7900 5100 0    60   Input ~ 0
