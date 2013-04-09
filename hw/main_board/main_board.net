@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Mon 08 Apr 2013 05:09:57 PM PDT
+# EESchema Netlist Version 1.1 created  Mon 08 Apr 2013 09:53:24 PM PDT
 (
  ( /5138E160/5161C3DA $noname  C19 C {Lib=C}
   (    1 /front_end/FE_VCCIO_B )
@@ -63,9 +63,9 @@
  ( /5138E160/51393535 $noname  U1 EP4CE30F29 {Lib=EP4CE30F29}
   (   A2 /front_end/FE_VCCIO_C )
   (   A3 /fpga_front_end_bank_c/D50 )
-  (   A4 /fpga_front_end_bank_c/D47 )
+  (   A4 /fpga_front_end_bank_c/D49 )
   (   A5 /front_end/FE_VCCIO_C )
-  (   A6 /fpga_front_end_bank_c/D41 )
+  (   A6 /fpga_front_end_bank_c/D43 )
   (   A7 /fpga_front_end_bank_c/D39 )
   (   A8 /fpga_front_end_bank_c/D35 )
   (   A9 /front_end/FE_VCCIO_C )
@@ -312,9 +312,9 @@
   (   B1 V1P8 )
   (   B2 GND )
   (   B3 /fpga_front_end_bank_c/D51 )
-  (   B4 /fpga_front_end_bank_c/D49 )
+  (   B4 /fpga_front_end_bank_c/D47 )
   (   B5 GND )
-  (   B6 /fpga_front_end_bank_c/D43 )
+  (   B6 /fpga_front_end_bank_c/D41 )
   (   B7 /fpga_front_end_bank_c/D45 )
   (   B8 /fpga_front_end_bank_c/D37 )
   (   B9 GND )
@@ -5351,8 +5351,8 @@ Net 367 "/ddr2/DQ11" "DQ11"
  J1 37
  U1 AD27
 Net 369 "/fpga_front_end_bank_c/D47" "D47"
+ U1 B4
  J2 175
- U1 A4
 Net 371 "/fpga_front_end_bank_c/D15" "D15"
  J2 137
  U1 D8
@@ -5390,11 +5390,11 @@ Net 387 "/fpga_front_end_bank_c/D35" "D35"
  J2 161
  U1 A8
 Net 389 "/fpga_front_end_bank_c/D3" "D3"
- U1 E12
  J2 123
+ U1 E12
 Net 391 "/fpga_front_end_bank_c/D43" "D43"
  J2 171
- U1 B6
+ U1 A6
 Net 392 "/fpga_front_end_bank_b/D39" "D39"
  U1 C25
  J2 105
@@ -5402,11 +5402,11 @@ Net 393 "/fpga_front_end_bank_c/D51" "D51"
  J2 179
  U1 B3
 Net 394 "/fpga_front_end_bank_c/D11" "D11"
- J2 133
  U1 F10
+ J2 133
 Net 395 "/ddr2/DQ7" "DQ7"
- J1 16
  U1 AB27
+ J1 16
 Net 396 "/fpga_front_end_bank_b/D31" "D31"
  U1 D22
  J2 97
@@ -5414,8 +5414,8 @@ Net 397 "/ddr2/DQ15" "DQ15"
  J1 38
  U1 AE28
 Net 398 "/ddr2/DQ23" "DQ23"
- J1 58
  U1 AD18
+ J1 58
 Net 399 "/fpga_front_end_bank_c/D19" "D19"
  J2 141
  U1 F8
@@ -5429,32 +5429,32 @@ Net 403 "/fpga_front_end_bank_b/D33" "D33"
  J2 99
  U1 C23
 Net 405 "/fpga_front_end_bank_c/D25" "D25"
- U1 A12
  J2 149
+ U1 A12
 Net 407 "/fpga_front_end_bank_b/D49" "D49"
  U1 E22
  J2 117
 Net 409 "/fpga_front_end_bank_c/D29" "D29"
- U1 A11
  J2 153
+ U1 A11
 Net 412 "/fpga_front_end_bank_c/D33" "D33"
- J2 159
  U1 A10
+ J2 159
 Net 413 "/clock_generator/FE_CLK_N1" "FE_CLK_N1"
- J2 57
  U4 15
+ J2 57
 Net 414 "/fpga_front_end_bank_c/D1" "D1"
- J2 121
  U1 F12
+ J2 121
 Net 416 "/fpga_front_end_bank_c/D37" "D37"
- J2 163
  U1 B8
+ J2 163
 Net 418 "/fpga_front_end_bank_b/D37" "D37"
- J2 103
  U1 C24
+ J2 103
 Net 420 "/fpga_front_end_bank_c/D41" "D41"
  J2 169
- U1 A6
+ U1 B6
 Net 422 "/fpga_front_end_bank_c/D5" "D5"
  J2 125
  U1 C8
@@ -5462,11 +5462,11 @@ Net 424 "/fpga_front_end_bank_c/D45" "D45"
  J2 173
  U1 B7
 Net 425 "/fpga_front_end_bank_b/D29" "D29"
- U1 C22
  J2 93
+ U1 C22
 Net 426 "/fpga_front_end_bank_c/D49" "D49"
- U1 B4
  J2 177
+ U1 A4
 Net 427 "/fpga_front_end_bank_c/D9" "D9"
  U1 C14
  J2 129
@@ -5474,8 +5474,8 @@ Net 428 "/fpga_front_end_bank_b/D41" "D41"
  J2 109
  U1 F21
 Net 429 "/ddr2/DQ1" "DQ1"
- J1 7
  U1 V28
+ J1 7
 Net 430 "/fpga_front_end_bank_c/D13" "D13"
  J2 135
  U1 D10
@@ -5483,8 +5483,8 @@ Net 431 "/ddr2/DQ5" "DQ5"
  J1 6
  U1 W26
 Net 432 "/ddr2/DQ9" "DQ9"
- U1 AC27
  J1 25
+ U1 AC27
 Net 433 "/fpga_front_end_bank_b/D25" "D25"
  J2 89
  U1 C21
