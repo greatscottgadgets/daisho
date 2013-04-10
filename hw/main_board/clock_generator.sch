@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
+EESchema Schematic File Version 2  date Tue 09 Apr 2013 10:57:15 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -24,9 +24,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 6 15
+Sheet 8 15
 Title "Daisho Project Main Board"
-Date "7 apr 2013"
+Date "10 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,40 +34,25 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 9900 6800 0    60   ~ 0
-FPGA_CLK_N1
-Text Label 9900 6700 0    60   ~ 0
-FPGA_CLK_P1
-Text Label 9900 5600 0    60   ~ 0
-FPGA_CLK_N0
-Text Label 9900 5500 0    60   ~ 0
-FPGA_CLK_P0
-Text Label 9900 4400 0    60   ~ 0
-FE_CLK_N1
-Text Label 9900 4300 0    60   ~ 0
-FE_CLK_P1
-Text Label 9900 4200 0    60   ~ 0
-FE_CLK_N0
-Text Label 9900 4100 0    60   ~ 0
-FE_CLK_P0
-Text GLabel 7600 6100 0    60   Input ~ 0
-V3P3
-Text GLabel 7600 4600 0    60   Input ~ 0
-V3P3
-Text GLabel 10100 7000 2    60   Input ~ 0
-V1P8
-Text GLabel 9300 7900 0    60   Input ~ 0
-V1P8
-Text GLabel 7400 7900 0    60   Input ~ 0
-V3P3
+Connection ~ 9600 8500
+Wire Wire Line
+	9600 8500 10000 8500
+Connection ~ 7700 8500
+Wire Wire Line
+	8100 8400 8100 8500
 Connection ~ 7700 7900
 Wire Wire Line
-	7400 7900 8500 7900
-Connection ~ 8700 4600
+	8100 7900 8100 8000
+Connection ~ 9700 4600
+Wire Wire Line
+	10100 4600 8700 4600
+Connection ~ 7800 4600
+Wire Wire Line
+	7600 4600 8500 4600
+Wire Wire Line
+	7800 7000 7600 7000
 Wire Wire Line
 	9700 4600 9700 5400
-Wire Wire Line
-	9700 4600 7600 4600
 Connection ~ 9600 7000
 Wire Wire Line
 	10100 7000 8900 7000
@@ -95,17 +80,13 @@ Wire Wire Line
 Wire Wire Line
 	8900 7000 8900 6300
 Wire Wire Line
-	8100 8400 8100 8500
+	9600 8400 9600 8600
 Wire Wire Line
-	8100 7900 8100 8000
+	9600 7900 9600 8000
 Wire Wire Line
-	9600 8600 9600 8400
+	7700 8000 7700 7900
 Wire Wire Line
-	9600 8000 9600 7900
-Wire Wire Line
-	7700 7900 7700 8000
-Wire Wire Line
-	7800 4600 7800 4700
+	7800 4700 7800 4600
 Wire Wire Line
 	7800 5200 7800 5500
 Wire Wire Line
@@ -140,33 +121,18 @@ Wire Wire Line
 Wire Wire Line
 	7600 5600 7900 5600
 Wire Wire Line
-	7600 7000 8500 7000
-Wire Wire Line
-	8500 7000 8500 6300
+	8500 6300 8500 7000
 Wire Wire Line
 	7900 5500 7600 5500
 Connection ~ 7800 5500
 Wire Wire Line
 	8500 4600 8500 4700
-Connection ~ 7800 4600
 Wire Wire Line
-	7700 8400 7700 8600
+	7700 8600 7700 8400
 Wire Wire Line
-	9300 7900 10000 7900
-Wire Wire Line
-	10000 7900 10000 8000
-Connection ~ 9600 7900
-Wire Wire Line
-	9600 8500 10000 8500
+	10000 8000 10000 7900
 Wire Wire Line
 	10000 8500 10000 8400
-Connection ~ 9600 8500
-Wire Wire Line
-	8500 7900 8500 8000
-Connection ~ 8100 7900
-Wire Wire Line
-	8500 8400 8500 8500
-Connection ~ 8100 8500
 Wire Wire Line
 	9700 5400 9500 5400
 Wire Wire Line
@@ -194,14 +160,62 @@ Wire Wire Line
 Wire Wire Line
 	9600 4400 10600 4400
 Wire Wire Line
-	8700 4700 8700 4600
-Connection ~ 8500 4600
+	8700 4600 8700 4700
 Wire Wire Line
-	8500 8500 7700 8500
-Connection ~ 7700 8500
-Text HLabel 11900 5600 2    60   Output ~ 0
+	8500 7000 8300 7000
+Wire Wire Line
+	7400 7900 8500 7900
+Wire Wire Line
+	8500 7900 8500 8000
+Connection ~ 8100 7900
+Wire Wire Line
+	7700 8500 8500 8500
+Wire Wire Line
+	8500 8500 8500 8400
+Connection ~ 8100 8500
+Wire Wire Line
+	10000 7900 9300 7900
+Connection ~ 9600 7900
+Text GLabel 10100 7000 2    60   Input ~ 0
+V3P3
+Text GLabel 10100 4600 2    60   Input ~ 0
+V1P8
+$Comp
+L R R5
+U 1 1 5164F071
+P 8050 7000
+F 0 "R5" V 8130 7000 50  0000 C CNN
+F 1 "10R" V 8050 7000 50  0000 C CNN
+	1    8050 7000
+	0    -1   -1   0   
+$EndComp
+Text Label 9900 4400 0    60   ~ 0
+FPGA_CLK_N1
+Text Label 9900 4300 0    60   ~ 0
+FPGA_CLK_P1
+Text Label 9900 4200 0    60   ~ 0
+FPGA_CLK_N0
+Text Label 9900 4100 0    60   ~ 0
+FPGA_CLK_P0
+Text Label 9900 6700 0    60   ~ 0
+FE_CLK_N1
+Text Label 9900 6800 0    60   ~ 0
+FE_CLK_P1
+Text Label 9900 5500 0    60   ~ 0
+FE_CLK_N0
+Text Label 9900 5600 0    60   ~ 0
+FE_CLK_P0
+Text GLabel 7600 6100 0    60   Input ~ 0
+V3P3
+Text GLabel 7600 4600 0    60   Input ~ 0
+V3P3
+Text GLabel 9300 7900 0    60   Input ~ 0
+V1P8
+Text GLabel 7400 7900 0    60   Input ~ 0
+V3P3
+Text HLabel 11900 4200 2    60   Output ~ 0
 FPGA_CLK_N[1..0]
-Text HLabel 11900 5500 2    60   Output ~ 0
+Text HLabel 11900 4100 2    60   Output ~ 0
 FPGA_CLK_P[1..0]
 $Comp
 L R R15
@@ -235,10 +249,10 @@ $EndComp
 $Comp
 L C C15
 U 1 1 514E55CA
-P 8100 8200
-F 0 "C15" H 8150 8300 50  0000 L CNN
-F 1 "C" H 8150 8100 50  0000 L CNN
-	1    8100 8200
+P 9600 8200
+F 0 "C15" H 9650 8300 50  0000 L CNN
+F 1 "C" H 9650 8100 50  0000 L CNN
+	1    9600 8200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -253,10 +267,10 @@ $EndComp
 $Comp
 L C C13
 U 1 1 514E558C
-P 9600 8200
-F 0 "C13" H 9650 8300 50  0000 L CNN
-F 1 "C" H 9650 8100 50  0000 L CNN
-	1    9600 8200
+P 8100 8200
+F 0 "C13" H 8150 8300 50  0000 L CNN
+F 1 "C" H 8150 8100 50  0000 L CNN
+	1    8100 8200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -366,8 +380,8 @@ Text HLabel 7600 5600 0    60   Input ~ 0
 I2C_SCL
 Text HLabel 7600 7000 0    60   Input ~ 0
 FE_CLKSRC
-Text HLabel 11900 4200 2    60   Output ~ 0
+Text HLabel 11900 4400 2    60   Output ~ 0
 FE_CLK_N[1..0]
-Text HLabel 11900 4100 2    60   Output ~ 0
+Text HLabel 11900 4300 2    60   Output ~ 0
 FE_CLK_P[1..0]
 $EndSCHEMATC

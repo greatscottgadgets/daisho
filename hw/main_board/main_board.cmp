@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Sun 07 Apr 2013 12:48:46 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Tue 09 Apr 2013 09:55:36 PM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1632,6 +1632,13 @@ IdModule  = IPC_RESC1005X40N;
 EndCmp
 
 BeginCmp
+TimeStamp = /514BB3A7/5164F071;
+Reference = R5;
+ValeurCmp = 10R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
 TimeStamp = /5109FB2D/511488C6;
 Reference = R8;
 ValeurCmp = 90K9;
@@ -1968,7 +1975,7 @@ IdModule  = IPC_RESC1005X40N;
 EndCmp
 
 BeginCmp
-TimeStamp = /5129BCC5/5129BD1C;
+TimeStamp = /5138E160/51393535;
 Reference = U1;
 ValeurCmp = EP4CE30F29;
 IdModule  = IPC_BGA780C100P28X28_2900X2900X350;

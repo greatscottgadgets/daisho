@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
+EESchema Schematic File Version 2  date Tue 09 Apr 2013 10:57:15 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,7 +26,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 9 15
 Title "Daisho Project Main Board"
-Date "7 apr 2013"
+Date "10 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,6 +34,10 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text GLabel 1800 4900 0    60   Input ~ 0
+V3P3
+Text Label 2000 4900 0    60   ~ 0
+FE_I2C_V3P3
 Connection ~ 4000 5200
 Wire Wire Line
 	4000 5200 4000 5800
@@ -59,7 +63,7 @@ Wire Wire Line
 Wire Wire Line
 	4800 4700 3900 4700
 Wire Wire Line
-	3900 7600 4800 7600
+	3900 7600 4700 7600
 Connection ~ 9000 6400
 Wire Wire Line
 	9000 5200 9000 7000
@@ -439,7 +443,7 @@ Wire Wire Line
 Wire Wire Line
 	1900 7400 2700 7400
 Wire Wire Line
-	1800 7600 2700 7600
+	1900 7600 2700 7600
 Wire Wire Line
 	4700 7500 3900 7500
 Wire Wire Line
@@ -456,9 +460,9 @@ Wire Wire Line
 	14000 7000 14000 5200
 Connection ~ 14000 6400
 Wire Wire Line
-	2700 4900 1900 4900
+	2700 4900 1800 4900
 Wire Wire Line
-	4700 4900 3900 4900
+	4800 4900 3900 4900
 Wire Wire Line
 	1600 1700 2400 1700
 Wire Wire Line
@@ -479,13 +483,13 @@ Text Label 4100 6400 0    60   ~ 0
 FE_V1P8
 Text Label 4100 5200 0    60   ~ 0
 FE_V3P3
-Text Label 4100 7500 0    60   ~ 0
+Text Label 4100 5100 0    60   ~ 0
 FE_CLK_N1
-Text Label 4100 7400 0    60   ~ 0
+Text Label 4100 5000 0    60   ~ 0
 FE_CLK_P1
-Text Label 2100 7500 0    60   ~ 0
+Text Label 2000 5100 0    60   ~ 0
 FE_CLK_N0
-Text Label 2100 7400 0    60   ~ 0
+Text Label 2000 5000 0    60   ~ 0
 FE_CLK_P0
 Text GLabel 1800 4700 0    60   Output ~ 0
 VRAW_FE
@@ -495,9 +499,9 @@ Text GLabel 1600 1700 0    60   Input ~ 0
 V3P3
 Text Notes 2000 8500 0    60   ~ 0
 Front end boards are expected to enable onboard regulators\nrunning from FE_VRAW using FE_V3P3 or FE_V1P8, to keep\nfront end supply sequencing orderly and predictable.
-Text Label 4200 7300 0    60   ~ 0
+Text Label 4200 7600 0    60   ~ 0
 FE_A41
-Text Label 2100 7300 0    60   ~ 0
+Text Label 2100 7600 0    60   ~ 0
 FE_A40
 Text HLabel 6800 5200 0    60   Output ~ 0
 FE_VCCIO_B
@@ -511,7 +515,7 @@ Text Notes 700  10300 0    60   ~ 0
 VCCIO regulators enabled by microcontroller or by FPGA?
 Text HLabel 11800 5200 0    60   Output ~ 0
 FE_VCCIO_C
-Text HLabel 1800 7600 0    60   Output ~ 0
+Text HLabel 4800 4900 2    60   Output ~ 0
 FE_CLKSRC
 Text HLabel 1600 1400 0    60   Input ~ 0
 FE_CLK_N[1..0]
@@ -521,85 +525,85 @@ Text HLabel 14800 5200 2    60   Output ~ 0
 FE_VCCIO_C
 Text HLabel 1800 5200 0    60   Output ~ 0
 FE_VCCIO_A
-Text Label 4200 7200 0    60   ~ 0
+Text Label 4200 7500 0    60   ~ 0
 FE_A39
-Text Label 4200 7100 0    60   ~ 0
+Text Label 4200 7400 0    60   ~ 0
 FE_A37
-Text Label 4200 6900 0    60   ~ 0
+Text Label 4200 7300 0    60   ~ 0
 FE_A35
-Text Label 4200 6800 0    60   ~ 0
+Text Label 4200 7200 0    60   ~ 0
 FE_A33
-Text Label 4200 6700 0    60   ~ 0
+Text Label 4200 7100 0    60   ~ 0
 FE_A31
-Text Label 4200 6600 0    60   ~ 0
+Text Label 4200 6900 0    60   ~ 0
 FE_A29
-Text Label 4200 6500 0    60   ~ 0
+Text Label 4200 6800 0    60   ~ 0
 FE_A27
-Text Label 4200 6300 0    60   ~ 0
+Text Label 4200 6700 0    60   ~ 0
 FE_A25
-Text Label 4200 6200 0    60   ~ 0
+Text Label 4200 6600 0    60   ~ 0
 FE_A23
-Text Label 4200 6100 0    60   ~ 0
+Text Label 4200 6500 0    60   ~ 0
 FE_A21
-Text Label 4200 6000 0    60   ~ 0
+Text Label 4200 6300 0    60   ~ 0
 FE_A19
-Text Label 4200 5900 0    60   ~ 0
+Text Label 4200 6200 0    60   ~ 0
 FE_A17
-Text Label 4200 5700 0    60   ~ 0
+Text Label 4200 6100 0    60   ~ 0
 FE_A15
-Text Label 4200 5600 0    60   ~ 0
+Text Label 4200 6000 0    60   ~ 0
 FE_A13
-Text Label 4200 5500 0    60   ~ 0
+Text Label 4200 5900 0    60   ~ 0
 FE_A11
-Text Label 4200 5400 0    60   ~ 0
+Text Label 4200 5700 0    60   ~ 0
 FE_A9
-Text Label 4200 5300 0    60   ~ 0
+Text Label 4200 5600 0    60   ~ 0
 FE_A7
-Text Label 4200 5100 0    60   ~ 0
+Text Label 4200 5500 0    60   ~ 0
 FE_A5
-Text Label 4200 5000 0    60   ~ 0
+Text Label 4200 5400 0    60   ~ 0
 FE_A3
-Text Label 4200 4900 0    60   ~ 0
+Text Label 4200 5300 0    60   ~ 0
 FE_A1
-Text Label 2100 7200 0    60   ~ 0
+Text Label 2100 7500 0    60   ~ 0
 FE_A38
-Text Label 2100 7100 0    60   ~ 0
+Text Label 2100 7400 0    60   ~ 0
 FE_A36
-Text Label 2100 6900 0    60   ~ 0
+Text Label 2100 7300 0    60   ~ 0
 FE_A34
-Text Label 2100 6800 0    60   ~ 0
+Text Label 2100 7200 0    60   ~ 0
 FE_A32
-Text Label 2100 6700 0    60   ~ 0
+Text Label 2100 7100 0    60   ~ 0
 FE_A30
-Text Label 2100 6600 0    60   ~ 0
+Text Label 2100 6900 0    60   ~ 0
 FE_A28
-Text Label 2100 6500 0    60   ~ 0
+Text Label 2100 6800 0    60   ~ 0
 FE_A26
-Text Label 2100 6300 0    60   ~ 0
+Text Label 2100 6700 0    60   ~ 0
 FE_A24
-Text Label 2100 6200 0    60   ~ 0
+Text Label 2100 6600 0    60   ~ 0
 FE_A22
-Text Label 2100 6100 0    60   ~ 0
+Text Label 2100 6500 0    60   ~ 0
 FE_A20
-Text Label 2100 6000 0    60   ~ 0
+Text Label 2100 6300 0    60   ~ 0
 FE_A18
-Text Label 2100 5900 0    60   ~ 0
+Text Label 2100 6200 0    60   ~ 0
 FE_A16
-Text Label 2100 5700 0    60   ~ 0
+Text Label 2100 6100 0    60   ~ 0
 FE_A14
-Text Label 2100 5600 0    60   ~ 0
+Text Label 2100 6000 0    60   ~ 0
 FE_A12
-Text Label 2100 5500 0    60   ~ 0
+Text Label 2100 5900 0    60   ~ 0
 FE_A10
-Text Label 2100 5400 0    60   ~ 0
+Text Label 2100 5700 0    60   ~ 0
 FE_A8
-Text Label 2100 5300 0    60   ~ 0
+Text Label 2100 5600 0    60   ~ 0
 FE_A6
-Text Label 2100 5100 0    60   ~ 0
+Text Label 2100 5500 0    60   ~ 0
 FE_A4
-Text Label 2100 5000 0    60   ~ 0
+Text Label 2100 5400 0    60   ~ 0
 FE_A2
-Text Label 2100 4900 0    60   ~ 0
+Text Label 2100 5300 0    60   ~ 0
 FE_A0
 Text HLabel 4800 4800 2    60   BiDi ~ 0
 FE_I2C_SDA
