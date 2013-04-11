@@ -123,6 +123,7 @@ always @(posedge clk) begin
 	end
 	21: begin
 		buf_in_data <= input_buffer[active_buffer][15:8];
+		byte_count <= byte_count + 1'b1;
 		state <= 22;
 	end
 	22: begin
@@ -136,6 +137,7 @@ always @(posedge clk) begin
 	27: begin
 		buf_in_data <= input_buffer[active_buffer][7:0];
 		buf_in_addr <= buf_in_addr + 1'b1;
+		byte_count <= byte_count + 1'b1;
 		state <= 24;
 	end
 	24: begin
@@ -145,14 +147,14 @@ always @(posedge clk) begin
 	25: begin	
 		buf_in_wren <= 0;
 		buf_in_addr <= buf_in_addr + 1'b1;
-		byte_count <= byte_count + 1'b1;
 		state <= 20;
 		
-		if(byte_count == 255) begin
+		if(byte_count == 512) begin
 			state <= ST_IDLE;
 			buf_in_commit <= 1;
-			buf_in_commit_len <= byte_count;
+			buf_in_commit_len <= 9'b1;
 			idle_full <= 0;
+			byte_count <= 0;
 		end
 	end
 	endcase

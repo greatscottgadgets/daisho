@@ -4,4 +4,4 @@
 # Host
 libdaisho.so*
 *.o
-daisho-rx
+daisho-rs232

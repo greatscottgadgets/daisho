@@ -1,0 +1,7 @@
+This is the RS232 tapping module for the Daisho development board.
+
+In order to use the USB core you must add the common/usb3 directory to the
+"Project Libraries" section of the project settings dialog in Quartus II.
+(This should work by default if this is checked out from github)
+
+This is *VERY* early in the development phase - it doesn't even tap the lines.
