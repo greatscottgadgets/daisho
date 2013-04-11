@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Tue 09 Apr 2013 09:55:36 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Wed 10 Apr 2013 12:07:47 PM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1971,6 +1971,62 @@ BeginCmp
 TimeStamp = /5148D8EF/514DEF20;
 Reference = R65;
 ValeurCmp = 24K;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/5165B656;
+Reference = R70;
+ValeurCmp = 10R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/5165B658;
+Reference = R71;
+ValeurCmp = 10R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/5165B655;
+Reference = R72;
+ValeurCmp = 10R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/5165B657;
+Reference = R73;
+ValeurCmp = 10R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/5165B73E;
+Reference = R74;
+ValeurCmp = 10R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/5165B738;
+Reference = R75;
+ValeurCmp = 10R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/5165B742;
+Reference = R76;
+ValeurCmp = 10R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /514BB3A7/5165B745;
+Reference = R77;
+ValeurCmp = 10R;
 IdModule  = IPC_RESC1005X40N;
 EndCmp
 

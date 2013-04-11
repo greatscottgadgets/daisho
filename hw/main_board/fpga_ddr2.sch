@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
+EESchema Schematic File Version 2  date Wed 10 Apr 2013 05:53:07 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -24,9 +24,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 10 15
+Sheet 12 15
 Title "Daisho Project Main Board"
-Date "7 apr 2013"
+Date "11 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,6 +34,8 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	3000 9100 3600 9100
 Connection ~ 14600 2000
 Wire Wire Line
 	15000 2000 13800 2000
@@ -43,19 +45,19 @@ Connection ~ 14200 2000
 Wire Wire Line
 	14600 2000 14600 1900
 Wire Wire Line
-	13800 1900 13800 2100
+	13800 2100 13800 1900
 Connection ~ 13800 800 
 Wire Wire Line
 	14200 800  14200 900 
 Connection ~ 14600 1400
 Wire Wire Line
-	14600 1300 14600 1500
+	14600 1500 14600 1300
 Connection ~ 14200 1400
 Wire Wire Line
-	14200 1300 14200 1500
+	14200 1500 14200 1300
 Connection ~ 13800 1400
 Wire Wire Line
-	13800 1300 13800 1500
+	13800 1500 13800 1300
 Wire Wire Line
 	7800 6000 8400 6000
 Wire Wire Line
@@ -87,11 +89,9 @@ Wire Wire Line
 Wire Wire Line
 	3600 3600 3000 3600
 Wire Wire Line
-	3600 9000 3000 9000
+	13100 9600 12400 9600
 Wire Wire Line
-	13100 9600 12500 9600
-Wire Wire Line
-	12500 9700 13100 9700
+	12400 9700 13100 9700
 Wire Wire Line
 	3600 4000 3000 4000
 Wire Wire Line
@@ -174,7 +174,7 @@ Wire Wire Line
 	1900 10500 1900 10600
 Connection ~ 10700 10600
 Wire Wire Line
-	10700 10500 10700 10700
+	10700 10700 10700 10500
 Wire Wire Line
 	11000 10000 1500 10000
 Wire Wire Line
@@ -193,9 +193,9 @@ Wire Wire Line
 Wire Wire Line
 	15000 3200 14900 3200
 Wire Bus Line
-	7600 6000 7600 1400
+	7600 1400 7600 6000
 Wire Bus Line
-	7200 8500 7200 1800
+	7200 1800 7200 8500
 Connection ~ 10300 3300
 Wire Wire Line
 	10300 3300 10200 3300
@@ -223,7 +223,7 @@ Connection ~ 5500 2800
 Wire Wire Line
 	5500 2800 5400 2800
 Wire Wire Line
-	5700 2700 5400 2700
+	5400 2700 5700 2700
 Wire Wire Line
 	3600 3100 2500 3100
 Wire Wire Line
@@ -241,7 +241,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 6900 2500 6900
 Wire Wire Line
-	2500 7500 3600 7500
+	3600 7500 2500 7500
 Wire Wire Line
 	3600 7900 2500 7900
 Wire Wire Line
@@ -319,9 +319,9 @@ Wire Wire Line
 Wire Wire Line
 	3600 3000 2900 3000
 Wire Bus Line
-	2600 7500 2600 1600
+	2600 1600 2600 7500
 Wire Bus Line
-	2800 1400 2800 7000
+	2800 7000 2800 1400
 Wire Wire Line
 	3600 5400 2900 5400
 Wire Wire Line
@@ -387,11 +387,11 @@ Wire Wire Line
 Wire Wire Line
 	8400 5100 7300 5100
 Wire Wire Line
-	8400 4500 7300 4500
+	7300 4500 8400 4500
 Wire Wire Line
 	8400 4300 7300 4300
 Wire Wire Line
-	8400 3900 7300 3900
+	7300 3900 8400 3900
 Wire Wire Line
 	8400 3600 7300 3600
 Wire Wire Line
@@ -421,7 +421,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 3500 2500 3500
 Wire Bus Line
-	2400 1800 2400 8500
+	2400 8500 2400 1800
 Wire Wire Line
 	5400 3500 5500 3500
 Wire Wire Line
@@ -437,7 +437,7 @@ Wire Wire Line
 	5500 3300 5400 3300
 Connection ~ 5500 3300
 Wire Wire Line
-	10200 2700 10500 2700
+	10500 2700 10200 2700
 Wire Wire Line
 	10300 2800 10200 2800
 Connection ~ 10300 2800
@@ -451,9 +451,9 @@ Wire Wire Line
 	10200 3400 10300 3400
 Connection ~ 10300 3400
 Wire Bus Line
-	7400 7800 7400 1600
+	7400 1600 7400 7800
 Wire Wire Line
-	15200 2700 14900 2700
+	14900 2700 15200 2700
 Wire Wire Line
 	14900 3100 15000 3100
 Connection ~ 15000 3100
@@ -554,8 +554,6 @@ Wire Wire Line
 Wire Bus Line
 	11900 1800 11900 7700
 Wire Wire Line
-	3000 9100 3600 9100
-Wire Wire Line
 	3600 3700 3000 3700
 Wire Wire Line
 	3600 2700 3000 2700
@@ -586,19 +584,21 @@ Wire Wire Line
 Wire Wire Line
 	7800 2900 8400 2900
 Wire Wire Line
-	13800 800  13800 900 
+	13800 900  13800 800 
 Wire Wire Line
-	14600 900  14600 800 
+	14600 800  14600 900 
 Connection ~ 14200 800 
 Wire Wire Line
-	14200 2000 14200 1900
+	14200 1900 14200 2000
 Connection ~ 13800 2000
 Wire Wire Line
-	15000 800  13500 800 
+	13500 800  15000 800 
 Connection ~ 14600 800 
 Wire Wire Line
-	15000 1500 15000 1300
+	15000 1300 15000 1500
 Connection ~ 15000 1400
+Wire Wire Line
+	3600 9000 3000 9000
 $Comp
 L R R21
 U 1 1 51610B51
@@ -757,13 +757,13 @@ ODT1
 NoConn ~ 3600 6000
 NoConn ~ 8400 2800
 NoConn ~ 8400 2700
-Text Label 12700 9600 0    60   ~ 0
+Text Label 12600 9600 0    60   ~ 0
 CLK_N1
-Text Label 12700 9700 0    60   ~ 0
+Text Label 12600 9700 0    60   ~ 0
 CLK_P1
-Text Label 3200 9100 0    60   ~ 0
+Text Label 3100 9100 0    60   ~ 0
 CLK_N0
-Text Label 3200 9000 0    60   ~ 0
+Text Label 3100 9000 0    60   ~ 0
 CLK_P0
 Text GLabel 6600 6600 0    60   Input ~ 0
 V1P8

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 07 Apr 2013 01:58:41 PM PDT
+EESchema Schematic File Version 2  date Wed 10 Apr 2013 05:53:07 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -24,9 +24,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 5 15
+Sheet 7 15
 Title "Daisho Project Main Board"
-Date "7 apr 2013"
+Date "11 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,6 +34,11 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 2900 8800
+NoConn ~ 2900 8700
+NoConn ~ 2900 8600
+NoConn ~ 2900 8500
+NoConn ~ 2900 8400
 Text GLabel 12600 5800 2    60   Output ~ 0
 VRAW_USB
 $Comp
@@ -97,8 +102,8 @@ F 4 "1%" V 2450 9400 60  0000 C CNN "Tolerance"
 	1    2550 9400
 	0    -1   -1   0   
 $EndComp
-Text Notes 2750 8500 2    60   ~ 0
-Test points here?\nOr just wire to FPGA?\nA small waste of FPGA pins and routing,\nand an extra routing challenge.
+Text Notes 2600 8650 2    60   ~ 0
+TODO: Test points here?
 NoConn ~ 2900 8000
 NoConn ~ 4700 8900
 NoConn ~ 4700 9000
