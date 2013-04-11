@@ -1,1 +1,7 @@
+# OS X
 .DS_Store
+
+# Host
+libdaisho.so*
+*.o
+daisho-rx
