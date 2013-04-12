@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 11 Apr 2013 08:59:31 PM PDT
+EESchema Schematic File Version 2  date Fri 12 Apr 2013 12:59:57 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -22,6 +22,7 @@ LIBS:usb3_esd_son50-10
 LIBS:tps2065c-2
 LIBS:tps2113a
 LIBS:tps54218
+LIBS:hirose_dm3d
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -37,30 +38,28 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 1800 4900 0    60   Input ~ 0
-V3P3
-Text Label 2000 4900 0    60   ~ 0
-FE_I2C_VCC
-Connection ~ 4000 5200
+Text GLabel 5850 5200 2    60   Input ~ 0
+VRAW
+Connection ~ 4000 6400
+Connection ~ 4000 5800
 Wire Wire Line
-	4000 5200 4000 5800
+	4000 5200 4000 7000
+Connection ~ 4000 5200
 Wire Wire Line
 	4000 5800 3900 5800
 Wire Wire Line
-	3900 5200 4800 5200
+	3900 5200 5850 5200
 Connection ~ 2600 6400
 Wire Wire Line
-	2600 5200 2600 7000
+	2600 7000 2600 5200
 Wire Wire Line
 	2600 7000 2700 7000
-Wire Wire Line
-	1600 2400 2400 2400
 Connection ~ 2600 5200
 Wire Wire Line
 	2600 5800 2700 5800
 Connection ~ 2600 4700
 Wire Wire Line
-	2600 4700 2600 4800
+	2600 4800 2600 4700
 Wire Wire Line
 	2600 4800 2700 4800
 Wire Wire Line
@@ -69,12 +68,12 @@ Wire Wire Line
 	3900 7600 4700 7600
 Connection ~ 9000 6400
 Wire Wire Line
-	9000 5200 9000 7000
+	9000 7000 9000 5200
 Wire Wire Line
 	9000 7000 8900 7000
 Connection ~ 12600 6400
 Wire Wire Line
-	12600 5200 12600 7000
+	12600 7000 12600 5200
 Wire Wire Line
 	12600 7000 12700 7000
 Connection ~ 7600 5200
@@ -255,22 +254,22 @@ Wire Wire Line
 	3250 8100 3250 8000
 Connection ~ 3150 8100
 Wire Wire Line
-	3450 8000 3450 8100
+	3450 8100 3450 8000
 Wire Wire Line
-	3450 8100 3150 8100
+	3150 8100 3450 8100
 Connection ~ 3350 8100
 Wire Wire Line
-	8450 8000 8450 8100
+	8450 8100 8450 8000
 Wire Wire Line
-	8450 8100 8150 8100
+	8150 8100 8450 8100
 Connection ~ 8150 8100
 Wire Wire Line
 	8350 8100 8350 8000
 Connection ~ 8350 8100
 Wire Wire Line
-	13450 8000 13450 8100
+	13450 8100 13450 8000
 Wire Wire Line
-	13450 8100 13150 8100
+	13150 8100 13450 8100
 Connection ~ 13150 8100
 Wire Wire Line
 	13350 8100 13350 8000
@@ -453,39 +452,30 @@ Wire Wire Line
 	11800 5200 12700 5200
 Connection ~ 12600 5200
 Wire Wire Line
-	7700 7000 7600 7000
+	7600 7000 7700 7000
 Wire Wire Line
-	7600 7000 7600 5200
+	7600 5200 7600 7000
 Connection ~ 7600 6400
 Wire Wire Line
-	13900 7000 14000 7000
+	14000 7000 13900 7000
 Wire Wire Line
-	14000 7000 14000 5200
+	14000 5200 14000 7000
 Connection ~ 14000 6400
 Wire Wire Line
 	2700 4900 1800 4900
 Wire Wire Line
 	4800 4900 3900 4900
 Wire Wire Line
-	1600 1700 2400 1700
-Wire Wire Line
 	2600 6400 2700 6400
 Connection ~ 2600 5800
 Wire Wire Line
-	3900 6400 4800 6400
+	4000 7000 3900 7000
 Wire Wire Line
-	3900 7000 4000 7000
-Wire Wire Line
-	4000 7000 4000 6400
-Connection ~ 4000 6400
-Text Label 1800 2400 0    60   ~ 0
-FE_V1P8
-Text Label 1800 1700 0    60   ~ 0
-FE_V3P3
-Text Label 4100 6400 0    60   ~ 0
-FE_V1P8
-Text Label 4100 5200 0    60   ~ 0
-FE_V3P3
+	4000 6400 3900 6400
+Text GLabel 1800 4900 0    60   Input ~ 0
+V3P3
+Text Label 2000 4900 0    60   ~ 0
+FE_I2C_VCC
 Text Label 4100 5100 0    60   ~ 0
 FE_CLK_N1
 Text Label 4100 5000 0    60   ~ 0
@@ -496,10 +486,6 @@ Text Label 2000 5000 0    60   ~ 0
 FE_CLK_P0
 Text GLabel 1800 4700 0    60   Output ~ 0
 VALT_FE
-Text GLabel 1600 2400 0    60   Input ~ 0
-V1P8
-Text GLabel 1600 1700 0    60   Input ~ 0
-V3P3
 Text Notes 2000 8500 0    60   ~ 0
 Front end boards are expected to enable onboard regulators\nrunning from FE_VRAW using FE_V3P3 or FE_V1P8, to keep\nfront end supply sequencing orderly and predictable.
 Text Label 4200 7600 0    60   ~ 0
@@ -833,28 +819,28 @@ FE_C0
 Text Label 12100 4800 0    60   ~ 0
 FE_C2
 $Comp
-L GND #PWR098
+L GND #PWR0102
 U 1 1 51392416
 P 8150 8200
-F 0 "#PWR098" H 8150 8200 30  0001 C CNN
+F 0 "#PWR0102" H 8150 8200 30  0001 C CNN
 F 1 "GND" H 8150 8130 30  0001 C CNN
 	1    8150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR099
+L GND #PWR0103
 U 1 1 51392411
 P 13150 8200
-F 0 "#PWR099" H 13150 8200 30  0001 C CNN
+F 0 "#PWR0103" H 13150 8200 30  0001 C CNN
 F 1 "GND" H 13150 8130 30  0001 C CNN
 	1    13150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0100
+L GND #PWR0104
 U 1 1 513923EB
 P 3150 8200
-F 0 "#PWR0100" H 3150 8200 30  0001 C CNN
+F 0 "#PWR0104" H 3150 8200 30  0001 C CNN
 F 1 "GND" H 3150 8130 30  0001 C CNN
 	1    3150 8200
 	1    0    0    -1  

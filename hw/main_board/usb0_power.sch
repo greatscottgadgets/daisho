@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 11 Apr 2013 08:59:31 PM PDT
+EESchema Schematic File Version 2  date Fri 12 Apr 2013 12:59:57 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -22,6 +22,7 @@ LIBS:usb3_esd_son50-10
 LIBS:tps2065c-2
 LIBS:tps2113a
 LIBS:tps54218
+LIBS:hirose_dm3d
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
