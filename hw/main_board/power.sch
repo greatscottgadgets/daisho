@@ -975,7 +975,7 @@ $EndComp
 Text Notes 2800 5250 0    60   ~ 0
 ALT/USB Priority Power MUX\nALT power preferred over USB.
 Text Notes 12000 2050 0    60   ~ 0
-EN divider set to turn on at ~4.0V.
+EN divider set to turn on at 4.0V.
 Text Label 14700 2900 0    60   ~ 0
 V3P3
 $Comp
