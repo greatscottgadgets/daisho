@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 08 Apr 2013 09:53:15 PM PDT
+EESchema Schematic File Version 2  date Thu 11 Apr 2013 08:59:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -19,14 +19,17 @@ LIBS:si5351c-b
 LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
+LIBS:tps2065c-2
+LIBS:tps2113a
+LIBS:tps54218
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 3 15
+Sheet 6 15
 Title "Daisho Project Main Board"
-Date "9 apr 2013"
+Date "12 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -271,10 +274,10 @@ VCCIO
 Text Label 14400 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR05
+L GND #PWR068
 U 1 1 514BAB65
 P 14200 3900
-F 0 "#PWR05" H 14200 3900 30  0001 C CNN
+F 0 "#PWR068" H 14200 3900 30  0001 C CNN
 F 1 "GND" H 14200 3830 30  0001 C CNN
 	1    14200 3900
 	1    0    0    -1  
@@ -289,10 +292,10 @@ F 1 "C" H 14250 3400 50  0000 L CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR06
+L GND #PWR069
 U 1 1 514BAB5C
 P 13800 3900
-F 0 "#PWR06" H 13800 3900 30  0001 C CNN
+F 0 "#PWR069" H 13800 3900 30  0001 C CNN
 F 1 "GND" H 13800 3830 30  0001 C CNN
 	1    13800 3900
 	1    0    0    -1  
@@ -320,10 +323,10 @@ $EndComp
 Text HLabel 14800 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR07
+L GND #PWR070
 U 1 1 513E1F35
 P 13400 3200
-F 0 "#PWR07" H 13400 3200 30  0001 C CNN
+F 0 "#PWR070" H 13400 3200 30  0001 C CNN
 F 1 "GND" H 13400 3130 30  0001 C CNN
 	1    13400 3200
 	1    0    0    -1  

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 10 Apr 2013 05:53:07 PM PDT
+EESchema Schematic File Version 2  date Thu 11 Apr 2013 08:59:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -19,14 +19,17 @@ LIBS:si5351c-b
 LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
+LIBS:tps2065c-2
+LIBS:tps2113a
+LIBS:tps54218
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 10 15
+Sheet 13 15
 Title "Daisho Project Main Board"
-Date "11 apr 2013"
+Date "12 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -366,10 +369,10 @@ FPGA_MSEL2
 Text Label 5200 3100 0    60   ~ 0
 FPGA_MSEL3
 $Comp
-L GND #PWR038
+L GND #PWR0101
 U 1 1 51576C91
 P 4900 3200
-F 0 "#PWR038" H 4900 3200 30  0001 C CNN
+F 0 "#PWR0101" H 4900 3200 30  0001 C CNN
 F 1 "GND" H 4900 3130 30  0001 C CNN
 	1    4900 3200
 	1    0    0    -1  
@@ -379,10 +382,10 @@ Only JTAG programming mode is supported.\nPS (passive serial) is not supported d
 Text HLabel 11850 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR039
+L GND #PWR0102
 U 1 1 514F7BF4
 P 8400 3200
-F 0 "#PWR039" H 8400 3200 30  0001 C CNN
+F 0 "#PWR0102" H 8400 3200 30  0001 C CNN
 F 1 "GND" H 8400 3130 30  0001 C CNN
 	1    8400 3200
 	1    0    0    -1  
@@ -442,10 +445,10 @@ F 1 "C" H 8450 2700 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR040
+L GND #PWR0103
 U 1 1 514BA518
 P 11200 3900
-F 0 "#PWR040" H 11200 3900 30  0001 C CNN
+F 0 "#PWR0103" H 11200 3900 30  0001 C CNN
 F 1 "GND" H 11200 3830 30  0001 C CNN
 	1    11200 3900
 	1    0    0    -1  
@@ -464,10 +467,10 @@ AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sin
 Text Label 11350 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR041
+L GND #PWR0104
 U 1 1 514BA28E
 P 10800 3900
-F 0 "#PWR041" H 10800 3900 30  0001 C CNN
+F 0 "#PWR0104" H 10800 3900 30  0001 C CNN
 F 1 "GND" H 10800 3830 30  0001 C CNN
 	1    10800 3900
 	1    0    0    -1  

@@ -1,4 +1,4 @@
-update=Sat 06 Apr 2013 06:31:58 PM PDT
+update=Thu 11 Apr 2013 02:49:25 PM PDT
 version=1
 last_client=eeschema
 [general]
@@ -99,3 +99,6 @@ LibName17=si5351c-b
 LibName18=tps62410
 LibName19=usb3_micro_ab
 LibName20=usb3_esd_son50-10
+LibName21=tps2065c-2
+LibName22=tps2113a
+LibName23=tps54218

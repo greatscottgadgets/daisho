@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 10 Apr 2013 05:53:07 PM PDT
+EESchema Schematic File Version 2  date Thu 11 Apr 2013 08:59:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -19,14 +19,17 @@ LIBS:si5351c-b
 LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
+LIBS:tps2065c-2
+LIBS:tps2113a
+LIBS:tps54218
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 11 15
+Sheet 14 15
 Title "Daisho Project Main Board"
-Date "11 apr 2013"
+Date "12 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -617,10 +620,10 @@ Wire Wire Line
 Wire Wire Line
 	13100 3100 13300 3100
 $Comp
-L GND #PWR042
+L GND #PWR0105
 U 1 1 51610BE0
 P 13200 3700
-F 0 "#PWR042" H 13200 3700 30  0001 C CNN
+F 0 "#PWR0105" H 13200 3700 30  0001 C CNN
 F 1 "GND" H 13200 3630 30  0001 C CNN
 	1    13200 3700
 	1    0    0    -1  
@@ -639,10 +642,10 @@ NoConn ~ 8300 6200
 NoConn ~ 8300 4600
 NoConn ~ 8300 4500
 $Comp
-L GND #PWR043
+L GND #PWR0106
 U 1 1 515B7843
 P 10500 6000
-F 0 "#PWR043" H 10500 6000 30  0001 C CNN
+F 0 "#PWR0106" H 10500 6000 30  0001 C CNN
 F 1 "GND" H 10500 5930 30  0001 C CNN
 	1    10500 6000
 	1    0    0    -1  
@@ -762,10 +765,10 @@ V3P3
 Text GLabel 13100 1600 0    60   Input ~ 0
 V1P8
 $Comp
-L GND #PWR044
+L GND #PWR0107
 U 1 1 514B69D6
 P 10500 4500
-F 0 "#PWR044" H 10500 4500 30  0001 C CNN
+F 0 "#PWR0107" H 10500 4500 30  0001 C CNN
 F 1 "GND" H 10500 4430 30  0001 C CNN
 	1    10500 4500
 	1    0    0    -1  
@@ -784,10 +787,10 @@ F 1 "DDR2_SDRAM_SODIMM" H 11200 1200 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR045
+L GND #PWR0108
 U 1 1 514B69D4
 P 11900 4400
-F 0 "#PWR045" H 11900 4400 30  0001 C CNN
+F 0 "#PWR0108" H 11900 4400 30  0001 C CNN
 F 1 "GND" H 11900 4330 30  0001 C CNN
 	1    11900 4400
 	-1   0    0    -1  
@@ -986,10 +989,10 @@ $EndComp
 Text Notes 3700 5000 0    60   ~ 0
 DDR2 operates in DQS single-ended mode. All DQS# == VSS
 $Comp
-L GND #PWR046
+L GND #PWR0109
 U 1 1 50FAE476
 P 5200 4700
-F 0 "#PWR046" H 5200 4700 30  0001 C CNN
+F 0 "#PWR0109" H 5200 4700 30  0001 C CNN
 F 1 "GND" H 5200 4630 30  0001 C CNN
 	1    5200 4700
 	1    0    0    -1  

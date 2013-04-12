@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 10 Apr 2013 05:53:07 PM PDT
+EESchema Schematic File Version 2  date Thu 11 Apr 2013 08:59:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -19,14 +19,17 @@ LIBS:si5351c-b
 LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
+LIBS:tps2065c-2
+LIBS:tps2113a
+LIBS:tps54218
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 7 15
+Sheet 10 15
 Title "Daisho Project Main Board"
-Date "11 apr 2013"
+Date "12 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -34,13 +37,349 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 14300 6700
+Wire Wire Line
+	14800 6700 13200 6700
+Connection ~ 14100 8100
+Wire Wire Line
+	14100 8500 14100 8100
+Wire Wire Line
+	12500 8500 12300 8500
+Wire Wire Line
+	12300 8500 12300 8200
+Wire Wire Line
+	12300 8200 11700 8200
+Wire Wire Line
+	12500 8200 12400 8200
+Wire Wire Line
+	12400 8200 12400 8100
+Wire Wire Line
+	12400 8100 11700 8100
+Wire Wire Line
+	14600 7300 11700 7300
+Wire Wire Line
+	11700 7900 14600 7900
+Wire Wire Line
+	14600 7200 14300 7200
+Wire Wire Line
+	14300 7200 14300 6700
+Wire Wire Line
+	14500 6500 14500 7500
+Wire Wire Line
+	14500 7500 14600 7500
+Wire Wire Line
+	11800 6700 11700 6700
+Wire Wire Line
+	15400 9700 15400 9500
+Wire Wire Line
+	15400 8900 15400 8500
+Wire Wire Line
+	14500 8400 14500 7600
+Wire Wire Line
+	14500 7600 14600 7600
+Wire Wire Line
+	5750 3400 5150 3400
+Wire Wire Line
+	5150 3400 5150 3300
+Wire Wire Line
+	4550 1300 5450 1300
+Wire Wire Line
+	4550 1500 5450 1500
+Wire Wire Line
+	4550 1700 5450 1700
+Wire Wire Line
+	4550 1900 5450 1900
+Wire Wire Line
+	4550 2100 5450 2100
+Wire Wire Line
+	4550 2300 5450 2300
+Wire Wire Line
+	4550 2500 5450 2500
+Wire Wire Line
+	4550 2700 5450 2700
+Wire Bus Line
+	5750 3200 5350 3200
+Wire Bus Line
+	5350 3200 5350 3100
+Wire Wire Line
+	4550 3000 5250 3000
+Wire Wire Line
+	4550 1100 5750 1100
+Wire Bus Line
+	1550 3200 1950 3200
+Wire Bus Line
+	1950 3200 1950 3100
+Wire Wire Line
+	2750 1100 1550 1100
+Wire Wire Line
+	2750 1400 1850 1400
+Wire Wire Line
+	2750 1600 1850 1600
+Wire Wire Line
+	2750 1800 1850 1800
+Wire Wire Line
+	2750 2000 1850 2000
+Wire Wire Line
+	2750 2200 1850 2200
+Wire Wire Line
+	2750 2400 1850 2400
+Wire Wire Line
+	2750 2600 1850 2600
+Wire Wire Line
+	2750 2800 1850 2800
+Wire Wire Line
+	2750 3100 2050 3100
+Wire Wire Line
+	4550 5000 5250 5000
+Wire Bus Line
+	1750 4200 1950 4200
+Wire Bus Line
+	1950 4200 1950 4900
+Wire Wire Line
+	2750 5000 2050 5000
+Wire Wire Line
+	2750 4800 2050 4800
+Wire Wire Line
+	2750 4600 2050 4600
+Wire Wire Line
+	2750 4400 2050 4400
+Wire Wire Line
+	2750 4300 2050 4300
+Wire Wire Line
+	2750 4500 2050 4500
+Wire Wire Line
+	2750 4700 2050 4700
+Wire Wire Line
+	2750 4900 2050 4900
+Wire Wire Line
+	2750 5200 1750 5200
+Wire Wire Line
+	4550 4300 5250 4300
+Wire Wire Line
+	4550 5200 5250 5200
+Wire Wire Line
+	2750 3000 2050 3000
+Wire Wire Line
+	2750 2700 1850 2700
+Wire Wire Line
+	2750 2500 1850 2500
+Wire Wire Line
+	2750 2300 1850 2300
+Wire Wire Line
+	2750 2100 1850 2100
+Wire Wire Line
+	2750 1900 1850 1900
+Wire Wire Line
+	2750 1700 1850 1700
+Wire Wire Line
+	2750 1500 1850 1500
+Wire Wire Line
+	2750 1300 1850 1300
+Wire Bus Line
+	1750 1400 1750 2900
+Wire Bus Line
+	1750 2900 1550 2900
+Wire Wire Line
+	5150 3300 4550 3300
+Wire Wire Line
+	4550 3100 5250 3100
+Wire Wire Line
+	4550 2800 5450 2800
+Wire Wire Line
+	4550 2600 5450 2600
+Wire Wire Line
+	4550 2400 5450 2400
+Wire Wire Line
+	4550 2200 5450 2200
+Wire Wire Line
+	4550 2000 5450 2000
+Wire Wire Line
+	4550 1800 5450 1800
+Wire Wire Line
+	4550 1600 5450 1600
+Wire Wire Line
+	4550 1400 5450 1400
+Wire Bus Line
+	5550 1400 5550 2900
+Wire Bus Line
+	5550 2900 5750 2900
+Wire Wire Line
+	14600 8000 14500 8000
+Connection ~ 14500 8000
+Wire Wire Line
+	15400 8800 15100 8800
+Wire Wire Line
+	15100 8800 15100 9000
+Connection ~ 15400 8800
+Wire Wire Line
+	15400 9600 15100 9600
+Wire Wire Line
+	15100 9600 15100 9400
+Connection ~ 15400 9600
+Wire Wire Line
+	12300 6700 12700 6700
+Wire Wire Line
+	11700 7100 12500 7100
+Wire Wire Line
+	12500 7100 12500 6700
+Connection ~ 12500 6700
+Wire Wire Line
+	14050 9100 14050 9200
+Wire Wire Line
+	13900 7800 13900 8500
+Wire Wire Line
+	11700 7800 14600 7800
+Connection ~ 13900 7800
+Wire Wire Line
+	14000 8500 14000 7900
+Connection ~ 14000 7900
+Wire Wire Line
+	14600 7400 11700 7400
+Wire Wire Line
+	12900 8200 13000 8200
+Wire Wire Line
+	13000 8200 13000 8100
+Wire Wire Line
+	13000 8100 14600 8100
+Wire Wire Line
+	14600 8200 13100 8200
+Wire Wire Line
+	13100 8200 13100 8500
+Wire Wire Line
+	13100 8500 12900 8500
+Wire Wire Line
+	14200 8500 14200 8200
+Connection ~ 14200 8200
+Wire Bus Line
+	12900 1900 12900 1700
+Wire Bus Line
+	12900 1700 12700 1700
+Wire Wire Line
+	12700 1300 14000 1300
+Wire Wire Line
+	12700 1600 14000 1600
+Wire Wire Line
+	12700 2700 14000 2700
+Wire Wire Line
+	12700 4700 14000 4700
+Wire Wire Line
+	12700 4400 14000 4400
+Wire Wire Line
+	12700 3300 14000 3300
+Wire Bus Line
+	12900 3500 12900 3400
+Wire Bus Line
+	12900 3400 12700 3400
+Wire Wire Line
+	14000 4000 13000 4000
+Wire Wire Line
+	14000 3800 13000 3800
+Wire Wire Line
+	14000 3500 13000 3500
+Wire Wire Line
+	14000 2300 13000 2300
+Wire Wire Line
+	14000 2000 13000 2000
+Wire Wire Line
+	14000 1800 13000 1800
+Wire Wire Line
+	14000 1900 13000 1900
+Wire Wire Line
+	14000 2200 13000 2200
+Wire Wire Line
+	14000 3600 13000 3600
+Wire Wire Line
+	14000 3900 13000 3900
+Wire Bus Line
+	12700 3700 12900 3700
+Wire Bus Line
+	12900 3700 12900 3900
+Wire Wire Line
+	12700 4200 14000 4200
+Wire Wire Line
+	12700 4500 14000 4500
+Wire Wire Line
+	12700 4900 14000 4900
+Wire Wire Line
+	12700 2500 14000 2500
+Wire Wire Line
+	12700 1400 14000 1400
+Wire Wire Line
+	12700 1100 14000 1100
+Wire Bus Line
+	12700 2100 12900 2100
+Wire Bus Line
+	12900 2100 12900 2200
+Connection ~ 2250 8200
+Wire Wire Line
+	2250 8200 2250 7250
+Wire Wire Line
+	2250 7250 2050 7250
+Wire Wire Line
+	1800 7500 1800 7700
+Wire Wire Line
+	1800 6900 1800 6800
+Wire Wire Line
+	1300 7700 1300 6800
+Wire Wire Line
+	1800 8100 1800 8200
+Wire Wire Line
+	2900 9400 2800 9400
+Connection ~ 2000 9200
+Wire Wire Line
+	2000 9300 2000 9200
+Connection ~ 1800 9100
+Wire Wire Line
+	1700 9100 2900 9100
+Wire Wire Line
+	1800 9300 1800 9100
+Wire Wire Line
+	1800 9900 1800 9800
+Wire Wire Line
+	2900 9200 1700 9200
+Wire Wire Line
+	2000 9800 2000 9900
+Wire Wire Line
+	2300 9400 2200 9400
+Wire Wire Line
+	2200 9400 2200 9600
+Wire Wire Line
+	2200 9600 2800 9600
+Wire Wire Line
+	2800 9600 2800 9500
+Wire Wire Line
+	2800 9500 2900 9500
+Wire Wire Line
+	2900 8200 1300 8200
+Wire Wire Line
+	1300 8200 1300 8100
+Connection ~ 1800 8200
+Wire Wire Line
+	1300 6800 2500 6800
+Wire Wire Line
+	2500 6800 2500 7800
+Wire Wire Line
+	2500 7800 2900 7800
+Connection ~ 1800 6800
+Wire Wire Line
+	2900 7900 2100 7900
+Wire Wire Line
+	2100 7900 2100 7600
+Wire Wire Line
+	2100 7600 1800 7600
+Connection ~ 1800 7600
+Wire Wire Line
+	2050 7150 2150 7150
+Wire Wire Line
+	2150 7150 2150 7250
+Connection ~ 2150 7250
 NoConn ~ 2900 8800
 NoConn ~ 2900 8700
 NoConn ~ 2900 8600
 NoConn ~ 2900 8500
 NoConn ~ 2900 8400
-Text GLabel 12600 5800 2    60   Output ~ 0
-VRAW_USB
+Text GLabel 14800 6700 2    60   Output ~ 0
+VUSB
 $Comp
 L TUSB1310A U?
 U 5 1 5159AA99
@@ -64,10 +403,10 @@ $EndComp
 Text HLabel 1700 9100 0    60   Input ~ 0
 RESETN
 $Comp
-L GND #PWR023
+L GND #PWR086
 U 1 1 5159AA97
 P 1800 9900
-F 0 "#PWR023" H 1800 9900 30  0001 C CNN
+F 0 "#PWR086" H 1800 9900 30  0001 C CNN
 F 1 "GND" H 1800 9830 30  0001 C CNN
 	1    1800 9900
 	1    0    0    -1  
@@ -84,10 +423,10 @@ F 1 "10K" V 2000 9550 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR024
+L GND #PWR087
 U 1 1 5159AA95
 P 2000 9900
-F 0 "#PWR024" H 2000 9900 30  0001 C CNN
+F 0 "#PWR087" H 2000 9900 30  0001 C CNN
 F 1 "GND" H 2000 9830 30  0001 C CNN
 	1    2000 9900
 	1    0    0    -1  
@@ -147,69 +486,6 @@ F 5 "20pF" H 1800 7200 60  0001 C CNN "Cload"
 	1    1800 7200
 	0    -1   -1   0   
 $EndComp
-Connection ~ 2150 7250
-Wire Wire Line
-	2150 7250 2150 7150
-Wire Wire Line
-	2150 7150 2050 7150
-Connection ~ 1800 7600
-Wire Wire Line
-	1800 7600 2100 7600
-Wire Wire Line
-	2100 7600 2100 7900
-Wire Wire Line
-	2100 7900 2900 7900
-Connection ~ 1800 6800
-Wire Wire Line
-	2900 7800 2500 7800
-Wire Wire Line
-	2500 7800 2500 6800
-Wire Wire Line
-	2500 6800 1300 6800
-Connection ~ 1800 8200
-Wire Wire Line
-	1300 8100 1300 8200
-Wire Wire Line
-	1300 8200 2900 8200
-Wire Wire Line
-	2900 9500 2800 9500
-Wire Wire Line
-	2800 9500 2800 9600
-Wire Wire Line
-	2800 9600 2200 9600
-Wire Wire Line
-	2200 9600 2200 9400
-Wire Wire Line
-	2200 9400 2300 9400
-Wire Wire Line
-	2000 9800 2000 9900
-Wire Wire Line
-	2900 9200 1700 9200
-Wire Wire Line
-	1800 9900 1800 9800
-Wire Wire Line
-	1800 9300 1800 9100
-Wire Wire Line
-	1700 9100 2900 9100
-Connection ~ 1800 9100
-Wire Wire Line
-	2000 9300 2000 9200
-Connection ~ 2000 9200
-Wire Wire Line
-	2900 9400 2800 9400
-Wire Wire Line
-	1800 8100 1800 8200
-Wire Wire Line
-	1300 6800 1300 7700
-Wire Wire Line
-	1800 6900 1800 6800
-Wire Wire Line
-	1800 7500 1800 7700
-Wire Wire Line
-	2050 7250 2250 7250
-Wire Wire Line
-	2250 7250 2250 8200
-Connection ~ 2250 8200
 Text Label 2350 8200 0    60   ~ 0
 VSSOSC
 Text Label 2600 7800 0    60   ~ 0
@@ -334,66 +610,6 @@ Entry Wire Line
 	12900 2100 13000 2200
 Entry Wire Line
 	12900 2200 13000 2300
-Wire Bus Line
-	12900 2200 12900 2100
-Wire Bus Line
-	12900 2100 12700 2100
-Wire Wire Line
-	12700 1100 14000 1100
-Wire Wire Line
-	12700 1400 14000 1400
-Wire Wire Line
-	12700 2500 14000 2500
-Wire Wire Line
-	12700 4900 14000 4900
-Wire Wire Line
-	12700 4500 14000 4500
-Wire Wire Line
-	12700 4200 14000 4200
-Wire Bus Line
-	12900 3900 12900 3700
-Wire Bus Line
-	12900 3700 12700 3700
-Wire Wire Line
-	14000 3900 13000 3900
-Wire Wire Line
-	14000 3600 13000 3600
-Wire Wire Line
-	14000 2200 13000 2200
-Wire Wire Line
-	14000 1900 13000 1900
-Wire Wire Line
-	14000 1800 13000 1800
-Wire Wire Line
-	14000 2000 13000 2000
-Wire Wire Line
-	14000 2300 13000 2300
-Wire Wire Line
-	14000 3500 13000 3500
-Wire Wire Line
-	14000 3800 13000 3800
-Wire Wire Line
-	14000 4000 13000 4000
-Wire Bus Line
-	12700 3400 12900 3400
-Wire Bus Line
-	12900 3400 12900 3500
-Wire Wire Line
-	12700 3300 14000 3300
-Wire Wire Line
-	12700 4400 14000 4400
-Wire Wire Line
-	12700 4700 14000 4700
-Wire Wire Line
-	12700 2700 14000 2700
-Wire Wire Line
-	12700 1600 14000 1600
-Wire Wire Line
-	12700 1300 14000 1300
-Wire Bus Line
-	12700 1700 12900 1700
-Wire Bus Line
-	12900 1700 12900 1900
 Text Label 15300 8800 2    60   ~ 0
 USB3_SHIELD
 Text Label 13300 8200 0    60   ~ 0
@@ -402,218 +618,6 @@ Text Label 13300 8100 0    60   ~ 0
 SSTXP_C
 Text Label 11900 7100 0    60   ~ 0
 VBUS
-Connection ~ 14200 8200
-Wire Wire Line
-	14200 8500 14200 8200
-Wire Wire Line
-	12900 8500 13100 8500
-Wire Wire Line
-	13100 8500 13100 8200
-Wire Wire Line
-	13100 8200 14600 8200
-Wire Wire Line
-	14600 8100 13000 8100
-Wire Wire Line
-	13000 8100 13000 8200
-Wire Wire Line
-	13000 8200 12900 8200
-Wire Wire Line
-	14600 7400 11700 7400
-Connection ~ 14000 7900
-Wire Wire Line
-	14000 8500 14000 7900
-Connection ~ 13900 7800
-Wire Wire Line
-	11700 7800 14600 7800
-Wire Wire Line
-	13900 7800 13900 8500
-Wire Wire Line
-	14050 9100 14050 9200
-Connection ~ 12500 6700
-Wire Wire Line
-	12500 6700 12500 7100
-Wire Wire Line
-	12500 7100 11700 7100
-Wire Wire Line
-	12300 6700 12700 6700
-Connection ~ 15400 9600
-Wire Wire Line
-	15100 9400 15100 9600
-Wire Wire Line
-	15100 9600 15400 9600
-Connection ~ 15400 8800
-Wire Wire Line
-	15100 9000 15100 8800
-Wire Wire Line
-	15100 8800 15400 8800
-Connection ~ 14500 8000
-Wire Wire Line
-	14600 8000 14500 8000
-Wire Bus Line
-	5750 2900 5550 2900
-Wire Bus Line
-	5550 2900 5550 1400
-Wire Wire Line
-	4550 1400 5450 1400
-Wire Wire Line
-	4550 1600 5450 1600
-Wire Wire Line
-	4550 1800 5450 1800
-Wire Wire Line
-	4550 2000 5450 2000
-Wire Wire Line
-	4550 2200 5450 2200
-Wire Wire Line
-	4550 2400 5450 2400
-Wire Wire Line
-	4550 2600 5450 2600
-Wire Wire Line
-	4550 2800 5450 2800
-Wire Wire Line
-	4550 3100 5250 3100
-Wire Wire Line
-	4550 3300 5150 3300
-Wire Bus Line
-	1550 2900 1750 2900
-Wire Bus Line
-	1750 2900 1750 1400
-Wire Wire Line
-	2750 1300 1850 1300
-Wire Wire Line
-	2750 1500 1850 1500
-Wire Wire Line
-	2750 1700 1850 1700
-Wire Wire Line
-	2750 1900 1850 1900
-Wire Wire Line
-	2750 2100 1850 2100
-Wire Wire Line
-	2750 2300 1850 2300
-Wire Wire Line
-	2750 2500 1850 2500
-Wire Wire Line
-	2750 2700 1850 2700
-Wire Wire Line
-	2750 3000 2050 3000
-Wire Wire Line
-	4550 5200 5250 5200
-Wire Wire Line
-	4550 4300 5250 4300
-Wire Wire Line
-	2750 5200 1750 5200
-Wire Wire Line
-	2750 4900 2050 4900
-Wire Wire Line
-	2750 4700 2050 4700
-Wire Wire Line
-	2750 4500 2050 4500
-Wire Wire Line
-	2750 4300 2050 4300
-Wire Wire Line
-	2750 4400 2050 4400
-Wire Wire Line
-	2750 4600 2050 4600
-Wire Wire Line
-	2750 4800 2050 4800
-Wire Wire Line
-	2750 5000 2050 5000
-Wire Bus Line
-	1950 4900 1950 4200
-Wire Bus Line
-	1950 4200 1750 4200
-Wire Wire Line
-	4550 5000 5250 5000
-Wire Wire Line
-	2750 3100 2050 3100
-Wire Wire Line
-	2750 2800 1850 2800
-Wire Wire Line
-	2750 2600 1850 2600
-Wire Wire Line
-	2750 2400 1850 2400
-Wire Wire Line
-	2750 2200 1850 2200
-Wire Wire Line
-	2750 2000 1850 2000
-Wire Wire Line
-	2750 1800 1850 1800
-Wire Wire Line
-	2750 1600 1850 1600
-Wire Wire Line
-	2750 1400 1850 1400
-Wire Wire Line
-	2750 1100 1550 1100
-Wire Bus Line
-	1950 3100 1950 3200
-Wire Bus Line
-	1950 3200 1550 3200
-Wire Wire Line
-	4550 1100 5750 1100
-Wire Wire Line
-	4550 3000 5250 3000
-Wire Bus Line
-	5350 3100 5350 3200
-Wire Bus Line
-	5350 3200 5750 3200
-Wire Wire Line
-	4550 2700 5450 2700
-Wire Wire Line
-	4550 2500 5450 2500
-Wire Wire Line
-	4550 2300 5450 2300
-Wire Wire Line
-	4550 2100 5450 2100
-Wire Wire Line
-	4550 1900 5450 1900
-Wire Wire Line
-	4550 1700 5450 1700
-Wire Wire Line
-	4550 1500 5450 1500
-Wire Wire Line
-	4550 1300 5450 1300
-Wire Wire Line
-	5150 3300 5150 3400
-Wire Wire Line
-	5150 3400 5750 3400
-Wire Wire Line
-	14600 7600 14500 7600
-Wire Wire Line
-	14500 7600 14500 8400
-Wire Wire Line
-	15400 8900 15400 8500
-Wire Wire Line
-	15400 9700 15400 9500
-Wire Wire Line
-	11800 6700 11700 6700
-Wire Wire Line
-	14600 7500 14500 7500
-Wire Wire Line
-	14500 7500 14500 6500
-Wire Wire Line
-	13200 6700 14300 6700
-Wire Wire Line
-	14300 6700 14300 7200
-Wire Wire Line
-	14300 7200 14600 7200
-Wire Wire Line
-	11700 7900 14600 7900
-Wire Wire Line
-	14600 7300 11700 7300
-Wire Wire Line
-	11700 8100 12400 8100
-Wire Wire Line
-	12400 8100 12400 8200
-Wire Wire Line
-	12400 8200 12500 8200
-Wire Wire Line
-	11700 8200 12300 8200
-Wire Wire Line
-	12300 8200 12300 8500
-Wire Wire Line
-	12300 8500 12500 8500
-Wire Wire Line
-	14100 8500 14100 8100
-Connection ~ 14100 8100
 $Comp
 L C C4
 U 1 1 5153BA75
@@ -633,10 +637,10 @@ F 1 "100N" H 12750 8100 50  0000 L CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR025
+L GND #PWR088
 U 1 1 5153B8F4
 P 14050 9200
-F 0 "#PWR025" H 14050 9200 30  0001 C CNN
+F 0 "#PWR088" H 14050 9200 30  0001 C CNN
 F 1 "GND" H 14050 9130 30  0001 C CNN
 	1    14050 9200
 	1    0    0    -1  
@@ -650,8 +654,6 @@ F 1 "USB3_ESD_SON50-10" H 13350 8600 60  0000 C CNN
 	1    14050 8800
 	1    0    0    -1  
 $EndComp
-Text Notes 11550 9650 0    60   ~ 0
-TODO: Add OTG/Host power switching.
 Text Notes 11550 9450 0    60   ~ 0
 TODO: Add ESD protection to SS and 2.0 pairs.
 Text Notes 10250 8900 0    60   ~ 0
@@ -671,10 +673,10 @@ SSRXM
 Text Notes 12050 6300 0    60   ~ 0
 TODO: Where to send ID for OTG support?
 $Comp
-L GND #PWR026
+L GND #PWR089
 U 1 1 5153875E
 P 15400 9700
-F 0 "#PWR026" H 15400 9700 30  0001 C CNN
+F 0 "#PWR089" H 15400 9700 30  0001 C CNN
 F 1 "GND" H 15400 9630 30  0001 C CNN
 	1    15400 9700
 	1    0    0    -1  
@@ -699,10 +701,10 @@ F 1 "INDUCTOR" V 15500 9200 40  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR027
+L GND #PWR090
 U 1 1 51533ECB
 P 14500 8400
-F 0 "#PWR027" H 14500 8400 30  0001 C CNN
+F 0 "#PWR090" H 14500 8400 30  0001 C CNN
 F 1 "GND" H 14500 8330 30  0001 C CNN
 	1    14500 8400
 	1    0    0    -1  
@@ -717,10 +719,10 @@ F 1 "USB3_MICRO_AB" H 14700 8350 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR028
+L GND #PWR091
 U 1 1 5114892E
 P 11700 6700
-F 0 "#PWR028" H 11700 6700 30  0001 C CNN
+F 0 "#PWR091" H 11700 6700 30  0001 C CNN
 F 1 "GND" H 11700 6630 30  0001 C CNN
 	1    11700 6700
 	0    1    1    0   

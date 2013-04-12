@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 10 Apr 2013 05:53:07 PM PDT
+EESchema Schematic File Version 2  date Thu 11 Apr 2013 08:59:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -19,14 +19,17 @@ LIBS:si5351c-b
 LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
+LIBS:tps2065c-2
+LIBS:tps2113a
+LIBS:tps54218
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 9 15
+Sheet 12 15
 Title "Daisho Project Main Board"
-Date "11 apr 2013"
+Date "12 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -492,7 +495,7 @@ FE_CLK_N0
 Text Label 2000 5000 0    60   ~ 0
 FE_CLK_P0
 Text GLabel 1800 4700 0    60   Output ~ 0
-VRAW_FE
+VALT_FE
 Text GLabel 1600 2400 0    60   Input ~ 0
 V1P8
 Text GLabel 1600 1700 0    60   Input ~ 0
@@ -830,28 +833,28 @@ FE_C0
 Text Label 12100 4800 0    60   ~ 0
 FE_C2
 $Comp
-L GND #PWR035
+L GND #PWR098
 U 1 1 51392416
 P 8150 8200
-F 0 "#PWR035" H 8150 8200 30  0001 C CNN
+F 0 "#PWR098" H 8150 8200 30  0001 C CNN
 F 1 "GND" H 8150 8130 30  0001 C CNN
 	1    8150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR036
+L GND #PWR099
 U 1 1 51392411
 P 13150 8200
-F 0 "#PWR036" H 13150 8200 30  0001 C CNN
+F 0 "#PWR099" H 13150 8200 30  0001 C CNN
 F 1 "GND" H 13150 8130 30  0001 C CNN
 	1    13150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR037
+L GND #PWR0100
 U 1 1 513923EB
 P 3150 8200
-F 0 "#PWR037" H 3150 8200 30  0001 C CNN
+F 0 "#PWR0100" H 3150 8200 30  0001 C CNN
 F 1 "GND" H 3150 8130 30  0001 C CNN
 	1    3150 8200
 	1    0    0    -1  

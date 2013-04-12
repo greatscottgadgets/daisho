@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 10 Apr 2013 05:53:07 PM PDT
+EESchema Schematic File Version 2  date Thu 11 Apr 2013 08:59:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -19,14 +19,17 @@ LIBS:si5351c-b
 LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
+LIBS:tps2065c-2
+LIBS:tps2113a
+LIBS:tps54218
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 8 15
+Sheet 11 15
 Title "Daisho Project Main Board"
-Date "11 apr 2013"
+Date "12 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -338,10 +341,10 @@ $EndComp
 Text HLabel 7600 6800 0    60   Input ~ 0
 CLOCKGEN_OEB#
 $Comp
-L GND #PWR029
+L GND #PWR092
 U 1 1 514E55D6
 P 9600 8600
-F 0 "#PWR029" H 9600 8600 30  0001 C CNN
+F 0 "#PWR092" H 9600 8600 30  0001 C CNN
 F 1 "GND" H 9600 8530 30  0001 C CNN
 	1    9600 8600
 	1    0    0    -1  
@@ -383,10 +386,10 @@ F 1 "C" H 8150 8100 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR030
+L GND #PWR093
 U 1 1 514E5583
 P 7700 8600
-F 0 "#PWR030" H 7700 8600 30  0001 C CNN
+F 0 "#PWR093" H 7700 8600 30  0001 C CNN
 F 1 "GND" H 7700 8530 30  0001 C CNN
 	1    7700 8600
 	1    0    0    -1  
@@ -412,28 +415,28 @@ F 1 "4K7" V 7800 4950 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR031
+L GND #PWR094
 U 1 1 514E535A
 P 6350 5250
-F 0 "#PWR031" H 6350 5250 30  0001 C CNN
+F 0 "#PWR094" H 6350 5250 30  0001 C CNN
 F 1 "GND" H 6350 5180 30  0001 C CNN
 	1    6350 5250
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR032
+L GND #PWR095
 U 1 1 514E5341
 P 5400 4800
-F 0 "#PWR032" H 5400 4800 30  0001 C CNN
+F 0 "#PWR095" H 5400 4800 30  0001 C CNN
 F 1 "GND" H 5400 4730 30  0001 C CNN
 	1    5400 4800
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR033
+L GND #PWR096
 U 1 1 514E533C
 P 7400 4800
-F 0 "#PWR033" H 7400 4800 30  0001 C CNN
+F 0 "#PWR096" H 7400 4800 30  0001 C CNN
 F 1 "GND" H 7400 4730 30  0001 C CNN
 	1    7400 4800
 	0    -1   -1   0   
@@ -466,10 +469,10 @@ F 1 "25M" H 6400 5000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR034
+L GND #PWR097
 U 1 1 514E5271
 P 9200 6400
-F 0 "#PWR034" H 9200 6400 30  0001 C CNN
+F 0 "#PWR097" H 9200 6400 30  0001 C CNN
 F 1 "GND" H 9200 6330 30  0001 C CNN
 	1    9200 6400
 	1    0    0    -1  
