@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 12 Apr 2013 12:59:57 PM PDT
+EESchema Schematic File Version 2  date Fri 12 Apr 2013 07:03:59 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -23,14 +23,16 @@ LIBS:tps2065c-2
 LIBS:tps2113a
 LIBS:tps54218
 LIBS:hirose_dm3d
+LIBS:gsg-ip4220cz6
+LIBS:tps27081a
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 8 15
+Sheet 9 15
 Title "Daisho Project Main Board"
-Date "12 apr 2013"
+Date "13 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -210,10 +212,10 @@ Wire Wire Line
 	11800 3300 11800 3200
 Connection ~ 11400 3300
 $Comp
-L GND #PWR072
+L GND #PWR093
 U 1 1 515A61E5
 P 10200 3400
-F 0 "#PWR072" H 10200 3400 30  0001 C CNN
+F 0 "#PWR093" H 10200 3400 30  0001 C CNN
 F 1 "GND" H 10200 3330 30  0001 C CNN
 	1    10200 3400
 	1    0    0    -1  
@@ -377,10 +379,10 @@ $EndComp
 Text GLabel 5000 7700 0    60   Input ~ 0
 V1P8
 $Comp
-L GND #PWR073
+L GND #PWR094
 U 1 1 5159EEDD
 P 4700 10200
-F 0 "#PWR073" H 4700 10200 30  0001 C CNN
+F 0 "#PWR094" H 4700 10200 30  0001 C CNN
 F 1 "GND" H 4700 10130 30  0001 C CNN
 	1    4700 10200
 	1    0    0    -1  

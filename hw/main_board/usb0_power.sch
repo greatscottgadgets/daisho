@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 12 Apr 2013 12:59:57 PM PDT
+EESchema Schematic File Version 2  date Fri 12 Apr 2013 07:03:59 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -23,14 +23,16 @@ LIBS:tps2065c-2
 LIBS:tps2113a
 LIBS:tps54218
 LIBS:hirose_dm3d
+LIBS:gsg-ip4220cz6
+LIBS:tps27081a
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 15 15
+Sheet 3 15
 Title "Daisho Project Main Board"
-Date "12 apr 2013"
+Date "13 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -38,20 +40,14 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 10300 8900 0    60   Input ~ 0
-V1P1
-Text GLabel 10300 7900 0    60   Input ~ 0
-V1P8
-Text GLabel 10300 6900 0    60   Input ~ 0
-V3P3
-Text GLabel 2000 9700 0    60   Input ~ 0
-V1P1
-Text GLabel 2000 8700 0    60   Input ~ 0
-V1P8
-Text Label 4400 6200 0    60   ~ 0
-D1P1
-Text Label 4400 4500 0    60   ~ 0
-D1P8
+Text Label 8900 5800 0    60   ~ 0
+A1P1
+Wire Wire Line
+	9300 5800 8700 5800
+Wire Wire Line
+	9900 5900 9900 5800
+Connection ~ 9900 5400
+Connection ~ 9900 5200
 Wire Wire Line
 	4300 6200 5000 6200
 Connection ~ 7900 9700
@@ -192,9 +188,6 @@ Wire Wire Line
 	2700 8700 2700 8800
 Wire Wire Line
 	8300 8700 8300 8800
-Connection ~ 9900 5800
-Wire Wire Line
-	9900 5900 9900 5100
 Wire Wire Line
 	6900 7700 6900 5900
 Connection ~ 4900 6200
@@ -272,14 +265,12 @@ Connection ~ 4900 4600
 Wire Wire Line
 	4900 4700 5000 4700
 Connection ~ 9900 4800
-Connection ~ 9900 5500
 Wire Wire Line
-	9900 5600 10000 5600
-Connection ~ 9900 5300
+	10000 5600 9900 5600
 Wire Wire Line
 	9900 5400 10000 5400
 Wire Wire Line
-	10000 5200 9900 5200
+	9900 5200 10000 5200
 Connection ~ 11900 5500
 Wire Wire Line
 	11900 5600 11800 5600
@@ -317,10 +308,8 @@ Connection ~ 11900 5400
 Connection ~ 11900 5600
 Wire Wire Line
 	9900 5300 10000 5300
-Connection ~ 9900 5200
 Wire Wire Line
-	9900 5500 10000 5500
-Connection ~ 9900 5400
+	10000 5500 9900 5500
 Wire Wire Line
 	9900 4900 10000 4900
 Wire Wire Line
@@ -403,10 +392,6 @@ Connection ~ 6900 7600
 Wire Wire Line
 	11900 4500 11900 6000
 Connection ~ 11900 5900
-Connection ~ 9900 5100
-Wire Wire Line
-	9900 5800 10000 5800
-Connection ~ 9900 5600
 Wire Wire Line
 	9900 6400 9900 6300
 Wire Wire Line
@@ -562,6 +547,37 @@ Wire Wire Line
 Connection ~ 8300 8700
 Wire Wire Line
 	4300 4500 5000 4500
+Connection ~ 9900 5100
+Connection ~ 9900 5300
+Wire Wire Line
+	9900 5600 9900 5100
+Connection ~ 9900 5500
+Wire Wire Line
+	9800 5800 10000 5800
+Connection ~ 9900 5800
+$Comp
+L R R5
+U 1 1 51688734
+P 9550 5800
+F 0 "R5" V 9630 5800 50  0000 C CNN
+F 1 "0R" V 9550 5800 50  0000 C CNN
+	1    9550 5800
+	0    -1   -1   0   
+$EndComp
+Text GLabel 10300 8900 0    60   Input ~ 0
+V1P1
+Text GLabel 10300 7900 0    60   Input ~ 0
+V1P8
+Text GLabel 10300 6900 0    60   Input ~ 0
+V3P3D
+Text GLabel 2000 9700 0    60   Input ~ 0
+V1P1
+Text GLabel 2000 8700 0    60   Input ~ 0
+V1P8
+Text Label 4400 6200 0    60   ~ 0
+D1P1
+Text Label 4400 4500 0    60   ~ 0
+D1P8
 Text Label 8100 9700 0    60   ~ 0
 D1P1
 Text Label 8500 8700 0    60   ~ 0
@@ -588,10 +604,10 @@ F 1 "INDUCTOR" V 11200 8900 40  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR01
+L GND #PWR017
 U 1 1 5144DC6E
 P 10600 9600
-F 0 "#PWR01" H 10600 9600 30  0001 C CNN
+F 0 "#PWR017" H 10600 9600 30  0001 C CNN
 F 1 "GND" H 10600 9530 30  0001 C CNN
 	1    10600 9600
 	1    0    0    -1  
@@ -606,10 +622,10 @@ F 1 "C" H 10650 9100 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L GND #PWR018
 U 1 1 5144DC5C
 P 10600 8600
-F 0 "#PWR02" H 10600 8600 30  0001 C CNN
+F 0 "#PWR018" H 10600 8600 30  0001 C CNN
 F 1 "GND" H 10600 8530 30  0001 C CNN
 	1    10600 8600
 	1    0    0    -1  
@@ -633,10 +649,10 @@ F 1 "C" H 10650 8100 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR03
+L GND #PWR019
 U 1 1 5144DC31
 P 10600 7600
-F 0 "#PWR03" H 10600 7600 30  0001 C CNN
+F 0 "#PWR019" H 10600 7600 30  0001 C CNN
 F 1 "GND" H 10600 7530 30  0001 C CNN
 	1    10600 7600
 	1    0    0    -1  
@@ -660,28 +676,28 @@ F 1 "C" H 10650 7100 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR04
+L GND #PWR020
 U 1 1 51429E1A
 P 11600 7600
-F 0 "#PWR04" H 11600 7600 30  0001 C CNN
+F 0 "#PWR020" H 11600 7600 30  0001 C CNN
 F 1 "GND" H 11600 7530 30  0001 C CNN
 	1    11600 7600
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR05
+L GND #PWR021
 U 1 1 51429E18
 P 11600 8600
-F 0 "#PWR05" H 11600 8600 30  0001 C CNN
+F 0 "#PWR021" H 11600 8600 30  0001 C CNN
 F 1 "GND" H 11600 8530 30  0001 C CNN
 	1    11600 8600
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR06
+L GND #PWR022
 U 1 1 51429E15
 P 11600 9600
-F 0 "#PWR06" H 11600 9600 30  0001 C CNN
+F 0 "#PWR022" H 11600 9600 30  0001 C CNN
 F 1 "GND" H 11600 9530 30  0001 C CNN
 	1    11600 9600
 	1    0    0    -1  
@@ -777,10 +793,10 @@ F 1 "C" H 11650 7100 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR07
+L GND #PWR023
 U 1 1 51429D92
 P 2300 10400
-F 0 "#PWR07" H 2300 10400 30  0001 C CNN
+F 0 "#PWR023" H 2300 10400 30  0001 C CNN
 F 1 "GND" H 2300 10330 30  0001 C CNN
 	1    2300 10400
 	1    0    0    -1  
@@ -921,10 +937,10 @@ F 1 "C" H 2350 9900 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR08
+L GND #PWR024
 U 1 1 51429CB2
 P 2300 9400
-F 0 "#PWR08" H 2300 9400 30  0001 C CNN
+F 0 "#PWR024" H 2300 9400 30  0001 C CNN
 F 1 "GND" H 2300 9330 30  0001 C CNN
 	1    2300 9400
 	1    0    0    -1  
@@ -1074,10 +1090,10 @@ F 1 "C" H 2350 8900 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L GND #PWR025
 U 1 1 5136A7E7
 P 9900 6400
-F 0 "#PWR09" H 9900 6400 30  0001 C CNN
+F 0 "#PWR025" H 9900 6400 30  0001 C CNN
 F 1 "GND" H 9900 6330 30  0001 C CNN
 	1    9900 6400
 	1    0    0    -1  
@@ -1096,19 +1112,19 @@ NoConn ~ 6800 4500
 Text Notes 6600 4750 0    60   ~ 0
 Internal resistors pull to USB 3.0 transceiver mode.
 $Comp
-L GND #PWR010
+L GND #PWR026
 U 1 1 5109F898
 P 6900 7700
-F 0 "#PWR010" H 6900 7700 30  0001 C CNN
+F 0 "#PWR026" H 6900 7700 30  0001 C CNN
 F 1 "GND" H 6900 7630 30  0001 C CNN
 	1    6900 7700
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR011
+L GND #PWR027
 U 1 1 5109F87B
 P 11900 6000
-F 0 "#PWR011" H 11900 6000 30  0001 C CNN
+F 0 "#PWR027" H 11900 6000 30  0001 C CNN
 F 1 "GND" H 11900 5930 30  0001 C CNN
 	1    11900 6000
 	1    0    0    -1  

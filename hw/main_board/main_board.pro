@@ -1,4 +1,4 @@
-update=Fri 12 Apr 2013 12:05:53 PM PDT
+update=Fri 12 Apr 2013 06:14:18 PM PDT
 version=1
 last_client=pcbnew
 [general]
@@ -64,11 +64,13 @@ LibName21=tps2065c-2
 LibName22=tps2113a
 LibName23=tps54218
 LibName24=hirose_dm3d
+LibName25=gsg-ip4220cz6
+LibName26=tps27081a
 [pcbnew]
 version=1
-PadDrlX=0
-PadDimH=591
-PadDimV=591
+PadDrlX=80
+PadDimH=177
+PadDimV=177
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -107,3 +109,5 @@ LibName21=ti_dgn_s-pdso-g8
 LibName22=ti_rte_s-pwqfn-n16
 LibName23=ti_drc_s-pvson-n10
 LibName24=hirose_dm3d
+LibName25=ti_drb_s-pvson-n8
+LibName26=gsg-sot457

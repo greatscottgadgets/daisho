@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 12 Apr 2013 12:59:57 PM PDT
+EESchema Schematic File Version 2  date Fri 12 Apr 2013 07:03:59 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -23,6 +23,8 @@ LIBS:tps2065c-2
 LIBS:tps2113a
 LIBS:tps54218
 LIBS:hirose_dm3d
+LIBS:gsg-ip4220cz6
+LIBS:tps27081a
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -30,7 +32,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 12 15
 Title "Daisho Project Main Board"
-Date "12 apr 2013"
+Date "13 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -38,8 +40,19 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 5850 5200 2    60   Input ~ 0
-VRAW
+Connection ~ 2400 2700
+Wire Wire Line
+	2400 2600 2400 2700
+Wire Wire Line
+	2700 2000 2700 2800
+Wire Wire Line
+	2700 2800 2800 2800
+Wire Wire Line
+	2700 3500 2700 3600
+Wire Wire Line
+	3900 3500 3900 3600
+Wire Wire Line
+	4700 2700 3800 2700
 Connection ~ 4000 6400
 Connection ~ 4000 5800
 Wire Wire Line
@@ -48,10 +61,10 @@ Connection ~ 4000 5200
 Wire Wire Line
 	4000 5800 3900 5800
 Wire Wire Line
-	3900 5200 5850 5200
+	3900 5200 4700 5200
 Connection ~ 2600 6400
 Wire Wire Line
-	2600 7000 2600 5200
+	2600 5200 2600 7000
 Wire Wire Line
 	2600 7000 2700 7000
 Connection ~ 2600 5200
@@ -59,7 +72,7 @@ Wire Wire Line
 	2600 5800 2700 5800
 Connection ~ 2600 4700
 Wire Wire Line
-	2600 4800 2600 4700
+	2600 4700 2600 4800
 Wire Wire Line
 	2600 4800 2700 4800
 Wire Wire Line
@@ -68,12 +81,12 @@ Wire Wire Line
 	3900 7600 4700 7600
 Connection ~ 9000 6400
 Wire Wire Line
-	9000 7000 9000 5200
+	9000 5200 9000 7000
 Wire Wire Line
 	9000 7000 8900 7000
 Connection ~ 12600 6400
 Wire Wire Line
-	12600 7000 12600 5200
+	12600 5200 12600 7000
 Wire Wire Line
 	12600 7000 12700 7000
 Connection ~ 7600 5200
@@ -254,22 +267,22 @@ Wire Wire Line
 	3250 8100 3250 8000
 Connection ~ 3150 8100
 Wire Wire Line
-	3450 8100 3450 8000
+	3450 8000 3450 8100
 Wire Wire Line
-	3150 8100 3450 8100
+	3450 8100 3150 8100
 Connection ~ 3350 8100
 Wire Wire Line
-	8450 8100 8450 8000
+	8450 8000 8450 8100
 Wire Wire Line
-	8150 8100 8450 8100
+	8450 8100 8150 8100
 Connection ~ 8150 8100
 Wire Wire Line
 	8350 8100 8350 8000
 Connection ~ 8350 8100
 Wire Wire Line
-	13450 8100 13450 8000
+	13450 8000 13450 8100
 Wire Wire Line
-	13150 8100 13450 8100
+	13450 8100 13150 8100
 Connection ~ 13150 8100
 Wire Wire Line
 	13350 8100 13350 8000
@@ -452,28 +465,120 @@ Wire Wire Line
 	11800 5200 12700 5200
 Connection ~ 12600 5200
 Wire Wire Line
-	7600 7000 7700 7000
+	7700 7000 7600 7000
 Wire Wire Line
-	7600 5200 7600 7000
+	7600 7000 7600 5200
 Connection ~ 7600 6400
 Wire Wire Line
-	14000 7000 13900 7000
+	13900 7000 14000 7000
 Wire Wire Line
-	14000 5200 14000 7000
+	14000 7000 14000 5200
 Connection ~ 14000 6400
 Wire Wire Line
 	2700 4900 1800 4900
 Wire Wire Line
 	4800 4900 3900 4900
 Wire Wire Line
-	2600 6400 2700 6400
+	2700 6400 2600 6400
 Connection ~ 2600 5800
 Wire Wire Line
 	4000 7000 3900 7000
 Wire Wire Line
-	4000 6400 3900 6400
+	3900 6400 4000 6400
+Wire Wire Line
+	2100 2700 2800 2700
+Wire Wire Line
+	2800 2900 2100 2900
+Wire Wire Line
+	3800 2900 3900 2900
+Wire Wire Line
+	3900 2900 3900 3000
+Wire Wire Line
+	2700 3000 2700 2900
+Connection ~ 2700 2900
+Wire Wire Line
+	3900 2700 3900 2000
+Wire Wire Line
+	3900 2000 3500 2000
+Connection ~ 3900 2700
+Wire Wire Line
+	3100 2000 2400 2000
+Wire Wire Line
+	2400 2000 2400 2100
+Connection ~ 2700 2000
+$Comp
+L R R33
+U 1 1 51688FC5
+P 2400 2350
+F 0 "R33" V 2480 2350 50  0000 C CNN
+F 1 "10K" V 2400 2350 50  0000 C CNN
+	1    2400 2350
+	-1   0    0    -1  
+$EndComp
+$Comp
+L C C33
+U 1 1 51688F63
+P 3300 2000
+F 0 "C33" H 3350 2100 50  0000 L CNN
+F 1 "C" H 3350 1900 50  0000 L CNN
+	1    3300 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR0108
+U 1 1 51688F21
+P 2700 3600
+F 0 "#PWR0108" H 2700 3600 30  0001 C CNN
+F 1 "GND" H 2700 3530 30  0001 C CNN
+	1    2700 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R34
+U 1 1 51688F1D
+P 2700 3250
+F 0 "R34" V 2780 3250 50  0000 C CNN
+F 1 "10K" V 2700 3250 50  0000 C CNN
+	1    2700 3250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR0109
+U 1 1 51688E76
+P 3900 3600
+F 0 "#PWR0109" H 3900 3600 30  0001 C CNN
+F 1 "GND" H 3900 3530 30  0001 C CNN
+	1    3900 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R35
+U 1 1 51688E6F
+P 3900 3250
+F 0 "R35" V 3980 3250 50  0000 C CNN
+F 1 "R" V 3900 3250 50  0000 C CNN
+	1    3900 3250
+	-1   0    0    -1  
+$EndComp
+Text HLabel 2100 2900 0    60   Input ~ 0
+FE_EN
+Text Label 4100 2700 0    60   ~ 0
+VRAW_SW
+Text Label 4100 5200 0    60   ~ 0
+VRAW_SW
+$Comp
+L TPS27081A U13
+U 1 1 51688D41
+P 3300 2800
+F 0 "U13" H 3300 3150 60  0000 C CNN
+F 1 "TPS27081A" H 3300 3050 60  0000 C CNN
+	1    3300 2800
+	1    0    0    -1  
+$EndComp
+Text GLabel 2100 2700 0    60   Input ~ 0
+VRAW
 Text GLabel 1800 4900 0    60   Input ~ 0
-V3P3
+V3P3D
 Text Label 2000 4900 0    60   ~ 0
 FE_I2C_VCC
 Text Label 4100 5100 0    60   ~ 0
@@ -486,8 +591,6 @@ Text Label 2000 5000 0    60   ~ 0
 FE_CLK_P0
 Text GLabel 1800 4700 0    60   Output ~ 0
 VALT_FE
-Text Notes 2000 8500 0    60   ~ 0
-Front end boards are expected to enable onboard regulators\nrunning from FE_VRAW using FE_V3P3 or FE_V1P8, to keep\nfront end supply sequencing orderly and predictable.
 Text Label 4200 7600 0    60   ~ 0
 FE_A41
 Text Label 2100 7600 0    60   ~ 0
@@ -496,12 +599,6 @@ Text HLabel 6800 5200 0    60   Output ~ 0
 FE_VCCIO_B
 Text HLabel 9800 5200 2    60   Output ~ 0
 FE_VCCIO_B
-Text Notes 6150 10300 0    60   ~ 0
-SPI or other interface for (re-)programming devices on front end board?
-Text Notes 4250 7900 0    60   ~ 0
-Si5351C clock output voltage level configuration, somehow?
-Text Notes 700  10300 0    60   ~ 0
-VCCIO regulators enabled by microcontroller or by FPGA?
 Text HLabel 11800 5200 0    60   Output ~ 0
 FE_VCCIO_C
 Text HLabel 4800 4900 2    60   Output ~ 0
@@ -602,8 +699,6 @@ Text Notes 700  9800 0    60   ~ 0
 Ground unused pins at FPGA to ensure low impedance to ground?
 Text Notes 700  9600 0    60   ~ 0
 Ground unused pins at front-end side, assuming FPGA will be configured not to drive those pins?
-Text Notes 700  10000 0    60   ~ 0
-Presence detect pin forces FPGA to reset if front-end not present?\nNo presence detect required if all front ends implement EEPROM.
 Text HLabel 1600 900  0    60   BiDi ~ 0
 FE_A[41..0]
 Text HLabel 1600 1000 0    60   BiDi ~ 0
@@ -819,28 +914,28 @@ FE_C0
 Text Label 12100 4800 0    60   ~ 0
 FE_C2
 $Comp
-L GND #PWR0102
+L GND #PWR0110
 U 1 1 51392416
 P 8150 8200
-F 0 "#PWR0102" H 8150 8200 30  0001 C CNN
+F 0 "#PWR0110" H 8150 8200 30  0001 C CNN
 F 1 "GND" H 8150 8130 30  0001 C CNN
 	1    8150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0103
+L GND #PWR0111
 U 1 1 51392411
 P 13150 8200
-F 0 "#PWR0103" H 13150 8200 30  0001 C CNN
+F 0 "#PWR0111" H 13150 8200 30  0001 C CNN
 F 1 "GND" H 13150 8130 30  0001 C CNN
 	1    13150 8200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0104
+L GND #PWR0112
 U 1 1 513923EB
 P 3150 8200
-F 0 "#PWR0104" H 3150 8200 30  0001 C CNN
+F 0 "#PWR0112" H 3150 8200 30  0001 C CNN
 F 1 "GND" H 3150 8130 30  0001 C CNN
 	1    3150 8200
 	1    0    0    -1  
