@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 12 Apr 2013 07:03:59 PM PDT
+EESchema Schematic File Version 2  date Sat 13 Apr 2013 02:02:06 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -25,6 +25,7 @@ LIBS:tps54218
 LIBS:hirose_dm3d
 LIBS:gsg-ip4220cz6
 LIBS:tps27081a
+LIBS:74lvc2t45
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -40,6 +41,8 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 4600 2000 0    60   Input ~ 0
+VCCIO
 Text GLabel 9400 5000 0    60   Input ~ 0
 V3P3D
 Connection ~ 12000 2500
@@ -98,7 +101,7 @@ Wire Wire Line
 Wire Wire Line
 	10400 2500 10400 2600
 Wire Wire Line
-	5900 2700 4700 2700
+	5900 2700 4600 2700
 Connection ~ 4900 3100
 Wire Wire Line
 	4900 3100 5900 3100
@@ -288,10 +291,10 @@ F 1 "R" V 11200 5550 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0113
+L GND #PWR0119
 U 1 1 51689F80
 P 11200 5900
-F 0 "#PWR0113" H 11200 5900 30  0001 C CNN
+F 0 "#PWR0119" H 11200 5900 30  0001 C CNN
 F 1 "GND" H 11200 5830 30  0001 C CNN
 	1    11200 5900
 	1    0    0    -1  
@@ -306,10 +309,10 @@ F 1 "10K" V 10000 5550 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0114
+L GND #PWR0120
 U 1 1 51689F7E
 P 10000 5900
-F 0 "#PWR0114" H 10000 5900 30  0001 C CNN
+F 0 "#PWR0120" H 10000 5900 30  0001 C CNN
 F 1 "GND" H 10000 5830 30  0001 C CNN
 	1    10000 5900
 	1    0    0    -1  
@@ -444,8 +447,6 @@ F 1 "C" H 11250 2700 50  0000 L CNN
 	1    11200 2800
 	-1   0    0    -1  
 $EndComp
-Text GLabel 4600 2000 0    60   Input ~ 0
-V1P8
 $Comp
 L R R51
 U 1 1 5159FA13
@@ -465,7 +466,7 @@ Text Notes 8750 7150 0    60   ~ 0
 CRC_ERROR is open-drain during configuration, only if bitstream CRC error detection is enabled.
 Text Notes 8750 8050 0    60   ~ 0
 Avoid use of VREF pins as I/O, as they have higher pin capacitance,\nand therefore are slow down both input and output signals.
-Text HLabel 4700 2700 0    60   Output ~ 0
+Text HLabel 4600 2700 0    60   Output ~ 0
 FPGA_CONF_DONE
 Text Label 5200 2800 0    60   ~ 0
 FPGA_MSEL0
@@ -476,10 +477,10 @@ FPGA_MSEL2
 Text Label 5200 3100 0    60   ~ 0
 FPGA_MSEL3
 $Comp
-L GND #PWR0115
+L GND #PWR0121
 U 1 1 51576C91
 P 4900 3200
-F 0 "#PWR0115" H 4900 3200 30  0001 C CNN
+F 0 "#PWR0121" H 4900 3200 30  0001 C CNN
 F 1 "GND" H 4900 3130 30  0001 C CNN
 	1    4900 3200
 	1    0    0    -1  
@@ -489,10 +490,10 @@ Only JTAG programming mode is supported.\nPS (passive serial) is not supported d
 Text HLabel 12300 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR0116
+L GND #PWR0122
 U 1 1 514F7BF4
 P 8400 3200
-F 0 "#PWR0116" H 8400 3200 30  0001 C CNN
+F 0 "#PWR0122" H 8400 3200 30  0001 C CNN
 F 1 "GND" H 8400 3130 30  0001 C CNN
 	1    8400 3200
 	1    0    0    -1  
@@ -552,10 +553,10 @@ F 1 "C" H 8450 2700 50  0000 L CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0117
+L GND #PWR0123
 U 1 1 514BA518
 P 11200 3900
-F 0 "#PWR0117" H 11200 3900 30  0001 C CNN
+F 0 "#PWR0123" H 11200 3900 30  0001 C CNN
 F 1 "GND" H 11200 3830 30  0001 C CNN
 	1    11200 3900
 	1    0    0    -1  
@@ -574,10 +575,10 @@ AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sin
 Text Label 11400 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR0118
+L GND #PWR0124
 U 1 1 514BA28E
 P 10800 3900
-F 0 "#PWR0118" H 10800 3900 30  0001 C CNN
+F 0 "#PWR0124" H 10800 3900 30  0001 C CNN
 F 1 "GND" H 10800 3830 30  0001 C CNN
 	1    10800 3900
 	1    0    0    -1  

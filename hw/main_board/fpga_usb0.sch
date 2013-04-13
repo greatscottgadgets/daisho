@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 12 Apr 2013 07:03:59 PM PDT
+EESchema Schematic File Version 2  date Sat 13 Apr 2013 02:02:06 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -25,6 +25,7 @@ LIBS:tps54218
 LIBS:hirose_dm3d
 LIBS:gsg-ip4220cz6
 LIBS:tps27081a
+LIBS:74lvc2t45
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -259,10 +260,10 @@ PIPE_RX_ELECIDLE
 Text Label 6300 8300 0    60   ~ 0
 PIPE_RESETN
 $Comp
-L GND #PWR092
+L GND #PWR094
 U 1 1 51588F5F
 P 12100 3200
-F 0 "#PWR092" H 12100 3200 30  0001 C CNN
+F 0 "#PWR094" H 12100 3200 30  0001 C CNN
 F 1 "GND" H 12100 3130 30  0001 C CNN
 	1    12100 3200
 	1    0    0    -1  

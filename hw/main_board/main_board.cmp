@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Fri 12 Apr 2013 07:09:00 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Fri 12 Apr 2013 10:57:35 PM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1723,6 +1723,13 @@ IdModule  = HIROSE_DM3D;
 EndCmp
 
 BeginCmp
+TimeStamp = /510B2194/5168EAD7;
+Reference = J7;
+ValeurCmp = BARREL_JACK;
+IdModule  = ;
+EndCmp
+
+BeginCmp
 TimeStamp = /5109F714/5144DC0C;
 Reference = L1;
 ValeurCmp = INDUCTOR;
@@ -2601,7 +2608,7 @@ BeginCmp
 TimeStamp = /510B2194/5168AA07;
 Reference = U10;
 ValeurCmp = MIC5207-BM5;
-IdModule  = TI_RTE_S-PWQFN-N16;
+IdModule  = ;
 EndCmp
 
 BeginCmp
