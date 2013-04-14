@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 13 Apr 2013 02:02:06 PM PDT
+EESchema Schematic File Version 2  date Sat 13 Apr 2013 11:05:53 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -16,7 +16,6 @@ LIBS:lpc11u1x
 LIBS:gsg-microusb
 LIBS:pnp_sot23
 LIBS:si5351c-b
-LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
 LIBS:tps2065c-2
@@ -26,6 +25,7 @@ LIBS:hirose_dm3d
 LIBS:gsg-ip4220cz6
 LIBS:tps27081a
 LIBS:74lvc2t45
+LIBS:tps62420
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -33,7 +33,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 10 15
 Title "Daisho Project Main Board"
-Date "13 apr 2013"
+Date "14 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -411,10 +411,10 @@ $EndComp
 NoConn ~ 14000 6600
 NoConn ~ 14000 6800
 $Comp
-L GND #PWR0101
+L GND #PWR101
 U 1 1 5168771E
 P 12800 6700
-F 0 "#PWR0101" H 12800 6700 30  0001 C CNN
+F 0 "#PWR101" H 12800 6700 30  0001 C CNN
 F 1 "GND" H 12800 6630 30  0001 C CNN
 	1    12800 6700
 	0    1    1    0   
@@ -458,10 +458,10 @@ $EndComp
 Text HLabel 1700 9100 0    60   Input ~ 0
 RESETN
 $Comp
-L GND #PWR0102
+L GND #PWR98
 U 1 1 5159AA97
 P 1800 9900
-F 0 "#PWR0102" H 1800 9900 30  0001 C CNN
+F 0 "#PWR98" H 1800 9900 30  0001 C CNN
 F 1 "GND" H 1800 9830 30  0001 C CNN
 	1    1800 9900
 	1    0    0    -1  
@@ -478,10 +478,10 @@ F 1 "10K" V 2000 9550 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0103
+L GND #PWR99
 U 1 1 5159AA95
 P 2000 9900
-F 0 "#PWR0103" H 2000 9900 30  0001 C CNN
+F 0 "#PWR99" H 2000 9900 30  0001 C CNN
 F 1 "GND" H 2000 9830 30  0001 C CNN
 	1    2000 9900
 	1    0    0    -1  
@@ -692,10 +692,10 @@ F 1 "100N" H 11150 8100 50  0000 L CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR0104
+L GND #PWR102
 U 1 1 5153B8F4
 P 14050 9200
-F 0 "#PWR0104" H 14050 9200 30  0001 C CNN
+F 0 "#PWR102" H 14050 9200 30  0001 C CNN
 F 1 "GND" H 14050 9130 30  0001 C CNN
 	1    14050 9200
 	1    0    0    -1  
@@ -726,10 +726,10 @@ SSRXM
 Text Notes 12300 5900 0    60   ~ 0
 TODO: Where to send ID for OTG support?
 $Comp
-L GND #PWR0105
+L GND #PWR104
 U 1 1 5153875E
 P 15400 9700
-F 0 "#PWR0105" H 15400 9700 30  0001 C CNN
+F 0 "#PWR104" H 15400 9700 30  0001 C CNN
 F 1 "GND" H 15400 9630 30  0001 C CNN
 	1    15400 9700
 	1    0    0    -1  
@@ -754,10 +754,10 @@ F 1 "INDUCTOR" V 15500 9200 40  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0106
+L GND #PWR103
 U 1 1 51533ECB
 P 14500 8400
-F 0 "#PWR0106" H 14500 8400 30  0001 C CNN
+F 0 "#PWR103" H 14500 8400 30  0001 C CNN
 F 1 "GND" H 14500 8330 30  0001 C CNN
 	1    14500 8400
 	1    0    0    -1  
@@ -772,10 +772,10 @@ F 1 "USB3_MICRO_AB" H 14700 8350 60  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0107
+L GND #PWR100
 U 1 1 5114892E
 P 10100 6300
-F 0 "#PWR0107" H 10100 6300 30  0001 C CNN
+F 0 "#PWR100" H 10100 6300 30  0001 C CNN
 F 1 "GND" H 10100 6230 30  0001 C CNN
 	1    10100 6300
 	0    1    1    0   

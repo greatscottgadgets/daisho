@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 13 Apr 2013 02:02:06 PM PDT
+EESchema Schematic File Version 2  date Sat 13 Apr 2013 11:05:53 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -16,7 +16,6 @@ LIBS:lpc11u1x
 LIBS:gsg-microusb
 LIBS:pnp_sot23
 LIBS:si5351c-b
-LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
 LIBS:tps2065c-2
@@ -26,6 +25,7 @@ LIBS:hirose_dm3d
 LIBS:gsg-ip4220cz6
 LIBS:tps27081a
 LIBS:74lvc2t45
+LIBS:tps62420
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -33,7 +33,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 8 15
 Title "Daisho Project Main Board"
-Date "13 apr 2013"
+Date "14 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -260,10 +260,10 @@ PIPE_RX_ELECIDLE
 Text Label 6300 8300 0    60   ~ 0
 PIPE_RESETN
 $Comp
-L GND #PWR094
+L GND #PWR91
 U 1 1 51588F5F
 P 12100 3200
-F 0 "#PWR094" H 12100 3200 30  0001 C CNN
+F 0 "#PWR91" H 12100 3200 30  0001 C CNN
 F 1 "GND" H 12100 3130 30  0001 C CNN
 	1    12100 3200
 	1    0    0    -1  

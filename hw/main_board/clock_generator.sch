@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 13 Apr 2013 02:02:06 PM PDT
+EESchema Schematic File Version 2  date Sat 13 Apr 2013 11:05:53 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -16,7 +16,6 @@ LIBS:lpc11u1x
 LIBS:gsg-microusb
 LIBS:pnp_sot23
 LIBS:si5351c-b
-LIBS:tps62410
 LIBS:usb3_micro_ab
 LIBS:usb3_esd_son50-10
 LIBS:tps2065c-2
@@ -26,6 +25,7 @@ LIBS:hirose_dm3d
 LIBS:gsg-ip4220cz6
 LIBS:tps27081a
 LIBS:74lvc2t45
+LIBS:tps62420
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -33,7 +33,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 11 15
 Title "Daisho Project Main Board"
-Date "13 apr 2013"
+Date "14 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -363,10 +363,10 @@ $EndComp
 Text HLabel 6500 6300 0    60   Input ~ 0
 CLOCKGEN_OEB#
 $Comp
-L GND #PWR0108
+L GND #PWR110
 U 1 1 514E55D6
 P 9700 8100
-F 0 "#PWR0108" H 9700 8100 30  0001 C CNN
+F 0 "#PWR110" H 9700 8100 30  0001 C CNN
 F 1 "GND" H 9700 8030 30  0001 C CNN
 	1    9700 8100
 	1    0    0    -1  
@@ -408,10 +408,10 @@ F 1 "100N" H 7050 7600 50  0000 L CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0109
+L GND #PWR108
 U 1 1 514E5583
 P 6600 8100
-F 0 "#PWR0109" H 6600 8100 30  0001 C CNN
+F 0 "#PWR108" H 6600 8100 30  0001 C CNN
 F 1 "GND" H 6600 8030 30  0001 C CNN
 	1    6600 8100
 	1    0    0    -1  
@@ -437,28 +437,28 @@ F 1 "4K7" V 6700 4450 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0110
+L GND #PWR106
 U 1 1 514E535A
 P 5250 4750
-F 0 "#PWR0110" H 5250 4750 30  0001 C CNN
+F 0 "#PWR106" H 5250 4750 30  0001 C CNN
 F 1 "GND" H 5250 4680 30  0001 C CNN
 	1    5250 4750
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0111
+L GND #PWR105
 U 1 1 514E5341
 P 4300 4300
-F 0 "#PWR0111" H 4300 4300 30  0001 C CNN
+F 0 "#PWR105" H 4300 4300 30  0001 C CNN
 F 1 "GND" H 4300 4230 30  0001 C CNN
 	1    4300 4300
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR0112
+L GND #PWR107
 U 1 1 514E533C
 P 6300 4300
-F 0 "#PWR0112" H 6300 4300 30  0001 C CNN
+F 0 "#PWR107" H 6300 4300 30  0001 C CNN
 F 1 "GND" H 6300 4230 30  0001 C CNN
 	1    6300 4300
 	0    -1   -1   0   
@@ -491,10 +491,10 @@ F 1 "25M" H 5300 4500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0113
+L GND #PWR109
 U 1 1 514E5271
 P 8100 5900
-F 0 "#PWR0113" H 8100 5900 30  0001 C CNN
+F 0 "#PWR109" H 8100 5900 30  0001 C CNN
 F 1 "GND" H 8100 5830 30  0001 C CNN
 	1    8100 5900
 	1    0    0    -1  
