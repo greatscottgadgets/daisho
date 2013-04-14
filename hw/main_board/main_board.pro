@@ -1,4 +1,4 @@
-update=Sat 13 Apr 2013 11:01:50 PM PDT
+update=Sun 14 Apr 2013 12:29:57 PM PDT
 version=1
 last_client=pcbnew
 [general]
@@ -67,11 +67,12 @@ LibName24=gsg-ip4220cz6
 LibName25=tps27081a
 LibName26=74lvc2t45
 LibName27=tps62420
+LibName28=hole
 [pcbnew]
 version=1
 PadDrlX=0
-PadDimH=453
-PadDimV=709
+PadDimH=472
+PadDimV=571
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -120,3 +121,8 @@ LibName31=tdk_vlpP8040
 LibName32=ipc_capc3225x270n
 LibName33=ipc_capc3216x180n
 LibName34=gsg-nrg4026
+LibName35=cui_pj-102bh
+LibName36=gsg-header-1x2
+LibName37=gsg-50mil-header-2x5-th
+LibName38=gsg-hole126mil
+LibName39=ipc_indc2012x130n

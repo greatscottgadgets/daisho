@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 13 Apr 2013 11:05:53 PM PDT
+EESchema Schematic File Version 2  date Sun 14 Apr 2013 12:37:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,6 +26,7 @@ LIBS:gsg-ip4220cz6
 LIBS:tps27081a
 LIBS:74lvc2t45
 LIBS:tps62420
+LIBS:hole
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -41,6 +42,78 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L HOLE H8
+U 1 1 516AFA7B
+P 2000 9500
+F 0 "H8" H 2000 9650 60  0000 C CNN
+F 1 "HOLE" H 2000 9350 60  0000 C CNN
+	1    2000 9500
+	1    0    0    -1  
+$EndComp
+$Comp
+L HOLE H6
+U 1 1 516AFA79
+P 1700 9500
+F 0 "H6" H 1700 9650 60  0000 C CNN
+F 1 "HOLE" H 1700 9350 60  0000 C CNN
+	1    1700 9500
+	1    0    0    -1  
+$EndComp
+$Comp
+L HOLE H4
+U 1 1 516AFA77
+P 1400 9500
+F 0 "H4" H 1400 9650 60  0000 C CNN
+F 1 "HOLE" H 1400 9350 60  0000 C CNN
+	1    1400 9500
+	1    0    0    -1  
+$EndComp
+$Comp
+L HOLE H2
+U 1 1 516AFA74
+P 1100 9500
+F 0 "H2" H 1100 9650 60  0000 C CNN
+F 1 "HOLE" H 1100 9350 60  0000 C CNN
+	1    1100 9500
+	1    0    0    -1  
+$EndComp
+$Comp
+L HOLE H7
+U 1 1 516AFA60
+P 2000 9000
+F 0 "H7" H 2000 9150 60  0000 C CNN
+F 1 "HOLE" H 2000 8850 60  0000 C CNN
+	1    2000 9000
+	1    0    0    -1  
+$EndComp
+$Comp
+L HOLE H5
+U 1 1 516AFA57
+P 1700 9000
+F 0 "H5" H 1700 9150 60  0000 C CNN
+F 1 "HOLE" H 1700 8850 60  0000 C CNN
+	1    1700 9000
+	1    0    0    -1  
+$EndComp
+$Comp
+L HOLE H1
+U 1 1 516AFA50
+P 1100 9000
+F 0 "H1" H 1100 9150 60  0000 C CNN
+F 1 "HOLE" H 1100 8850 60  0000 C CNN
+	1    1100 9000
+	1    0    0    -1  
+$EndComp
+$Comp
+L HOLE H3
+U 1 1 516AFA49
+P 1400 9000
+F 0 "H3" H 1400 9150 60  0000 C CNN
+F 1 "HOLE" H 1400 8850 60  0000 C CNN
+	1    1400 9000
+	1    0    0    -1  
+$EndComp
 Connection ~ 6500 1900
 Wire Wire Line
 	6500 1900 6500 2700

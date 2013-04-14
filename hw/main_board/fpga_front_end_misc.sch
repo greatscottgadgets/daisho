@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 13 Apr 2013 11:05:53 PM PDT
+EESchema Schematic File Version 2  date Sun 14 Apr 2013 12:37:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -26,6 +26,7 @@ LIBS:gsg-ip4220cz6
 LIBS:tps27081a
 LIBS:74lvc2t45
 LIBS:tps62420
+LIBS:hole
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -41,6 +42,8 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text GLabel 4600 2000 0    60   Input ~ 0
+V3P3D
 Wire Wire Line
 	11200 5100 11200 4300
 Wire Wire Line
@@ -268,8 +271,6 @@ Wire Wire Line
 Wire Wire Line
 	12000 5000 12000 2500
 Connection ~ 12000 2500
-Text HLabel 4600 2000 0    60   Input ~ 0
-VCCIO
 Text GLabel 9400 5000 0    60   Input ~ 0
 V3P3D
 Text HLabel 9400 5200 0    60   Input ~ 0
@@ -288,15 +289,15 @@ L R R38
 U 1 1 51689F81
 P 11200 5550
 F 0 "R38" V 11280 5550 50  0000 C CNN
-F 1 "R" V 11200 5550 50  0000 C CNN
+F 1 "1K" V 11200 5550 50  0000 C CNN
 	1    11200 5550
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR121
+L GND #PWR0117
 U 1 1 51689F80
 P 11200 5900
-F 0 "#PWR121" H 11200 5900 30  0001 C CNN
+F 0 "#PWR0117" H 11200 5900 30  0001 C CNN
 F 1 "GND" H 11200 5830 30  0001 C CNN
 	1    11200 5900
 	1    0    0    -1  
@@ -311,10 +312,10 @@ F 1 "10K" V 10000 5550 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR118
+L GND #PWR0118
 U 1 1 51689F7E
 P 10000 5900
-F 0 "#PWR118" H 10000 5900 30  0001 C CNN
+F 0 "#PWR0118" H 10000 5900 30  0001 C CNN
 F 1 "GND" H 10000 5830 30  0001 C CNN
 	1    10000 5900
 	1    0    0    -1  
@@ -324,7 +325,7 @@ L C C34
 U 1 1 51689F7D
 P 10600 4300
 F 0 "C34" H 10650 4400 50  0000 L CNN
-F 1 "C" H 10650 4200 50  0000 L CNN
+F 1 "100N" H 10650 4200 50  0000 L CNN
 	1    10600 4300
 	0    -1   -1   0   
 $EndComp
@@ -445,9 +446,9 @@ L C C18
 U 1 1 5161CD48
 P 11200 2800
 F 0 "C18" H 11250 2900 50  0000 L CNN
-F 1 "C" H 11250 2700 50  0000 L CNN
+F 1 "100N" H 11250 2700 50  0000 L CNN
 	1    11200 2800
-	-1   0    0    -1  
+	1    0    0    -1  
 $EndComp
 $Comp
 L R R51
@@ -479,10 +480,10 @@ FPGA_MSEL2
 Text Label 5200 3100 0    60   ~ 0
 FPGA_MSEL3
 $Comp
-L GND #PWR116
+L GND #PWR0119
 U 1 1 51576C91
 P 4900 3200
-F 0 "#PWR116" H 4900 3200 30  0001 C CNN
+F 0 "#PWR0119" H 4900 3200 30  0001 C CNN
 F 1 "GND" H 4900 3130 30  0001 C CNN
 	1    4900 3200
 	1    0    0    -1  
@@ -492,10 +493,10 @@ Only JTAG programming mode is supported.\nPS (passive serial) is not supported d
 Text HLabel 12300 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR117
+L GND #PWR0120
 U 1 1 514F7BF4
 P 8400 3200
-F 0 "#PWR117" H 8400 3200 30  0001 C CNN
+F 0 "#PWR0120" H 8400 3200 30  0001 C CNN
 F 1 "GND" H 8400 3130 30  0001 C CNN
 	1    8400 3200
 	1    0    0    -1  
@@ -505,7 +506,7 @@ L C C95
 U 1 1 514F7BE2
 P 10400 2800
 F 0 "C95" H 10450 2900 50  0000 L CNN
-F 1 "C" H 10450 2700 50  0000 L CNN
+F 1 "100N" H 10450 2700 50  0000 L CNN
 	1    10400 2800
 	1    0    0    -1  
 $EndComp
@@ -514,7 +515,7 @@ L C C94
 U 1 1 514F7BDC
 P 10000 2800
 F 0 "C94" H 10050 2900 50  0000 L CNN
-F 1 "C" H 10050 2700 50  0000 L CNN
+F 1 "100N" H 10050 2700 50  0000 L CNN
 	1    10000 2800
 	1    0    0    -1  
 $EndComp
@@ -523,7 +524,7 @@ L C C93
 U 1 1 514F7BD9
 P 9600 2800
 F 0 "C93" H 9650 2900 50  0000 L CNN
-F 1 "C" H 9650 2700 50  0000 L CNN
+F 1 "100N" H 9650 2700 50  0000 L CNN
 	1    9600 2800
 	1    0    0    -1  
 $EndComp
@@ -532,7 +533,7 @@ L C C92
 U 1 1 514F7BD8
 P 9200 2800
 F 0 "C92" H 9250 2900 50  0000 L CNN
-F 1 "C" H 9250 2700 50  0000 L CNN
+F 1 "100N" H 9250 2700 50  0000 L CNN
 	1    9200 2800
 	1    0    0    -1  
 $EndComp
@@ -541,7 +542,7 @@ L C C91
 U 1 1 514F7BD5
 P 8800 2800
 F 0 "C91" H 8850 2900 50  0000 L CNN
-F 1 "C" H 8850 2700 50  0000 L CNN
+F 1 "100N" H 8850 2700 50  0000 L CNN
 	1    8800 2800
 	1    0    0    -1  
 $EndComp
@@ -550,15 +551,15 @@ L C C90
 U 1 1 514F7BCB
 P 8400 2800
 F 0 "C90" H 8450 2900 50  0000 L CNN
-F 1 "C" H 8450 2700 50  0000 L CNN
+F 1 "100N" H 8450 2700 50  0000 L CNN
 	1    8400 2800
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR120
+L GND #PWR0121
 U 1 1 514BA518
 P 11200 3900
-F 0 "#PWR120" H 11200 3900 30  0001 C CNN
+F 0 "#PWR0121" H 11200 3900 30  0001 C CNN
 F 1 "GND" H 11200 3830 30  0001 C CNN
 	1    11200 3900
 	1    0    0    -1  
@@ -568,19 +569,19 @@ L C C21
 U 1 1 514BA511
 P 11200 3550
 F 0 "C21" H 11250 3650 50  0000 L CNN
-F 1 "C" H 11250 3450 50  0000 L CNN
+F 1 "100N" H 11250 3450 50  0000 L CNN
 	1    11200 3550
-	-1   0    0    -1  
+	1    0    0    -1  
 $EndComp
 Text Notes 8450 1900 0    60   ~ 0
 AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sink much current. You can create the\nvoltage with a regulator or resistor divider network."
 Text Label 11400 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR119
+L GND #PWR0122
 U 1 1 514BA28E
 P 10800 3900
-F 0 "#PWR119" H 10800 3900 30  0001 C CNN
+F 0 "#PWR0122" H 10800 3900 30  0001 C CNN
 F 1 "GND" H 10800 3830 30  0001 C CNN
 	1    10800 3900
 	1    0    0    -1  
