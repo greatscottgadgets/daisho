@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 14 Apr 2013 11:34:54 PM PDT
+EESchema Schematic File Version 2  date Mon 15 Apr 2013 02:21:23 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -56,9 +56,6 @@ Wire Wire Line
 Connection ~ 11200 5000
 Wire Wire Line
 	11200 4300 10800 4300
-Connection ~ 10000 5200
-Wire Wire Line
-	10000 5200 10000 5300
 Wire Wire Line
 	11200 5300 11200 5200
 Wire Wire Line
@@ -71,8 +68,6 @@ Wire Wire Line
 	11100 5000 12000 5000
 Wire Wire Line
 	11200 5800 11200 5900
-Wire Wire Line
-	10000 5800 10000 5900
 Wire Wire Line
 	10100 5100 10000 5100
 Wire Wire Line
@@ -298,32 +293,12 @@ F 5 "RMCF0402JT1K00" V 11200 5550 60  0001 C CNN "Part Number"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0118
+L GND #PWR121
 U 1 1 51689F80
 P 11200 5900
-F 0 "#PWR0118" H 11200 5900 30  0001 C CNN
+F 0 "#PWR121" H 11200 5900 30  0001 C CNN
 F 1 "GND" H 11200 5830 30  0001 C CNN
 	1    11200 5900
-	1    0    0    -1  
-$EndComp
-$Comp
-L R R37
-U 1 1 51689F7F
-P 10000 5550
-F 0 "R37" V 10080 5550 50  0000 C CNN
-F 1 "10K" V 10000 5550 50  0000 C CNN
-F 4 "Stackpole" V 10000 5550 60  0001 C CNN "Manufacturer"
-F 5 "RMCF0402JT10K0" V 10000 5550 60  0001 C CNN "Part Number"
-	1    10000 5550
-	-1   0    0    -1  
-$EndComp
-$Comp
-L GND #PWR0119
-U 1 1 51689F7E
-P 10000 5900
-F 0 "#PWR0119" H 10000 5900 30  0001 C CNN
-F 1 "GND" H 10000 5830 30  0001 C CNN
-	1    10000 5900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -494,10 +469,10 @@ FPGA_MSEL2
 Text Label 5200 3100 0    60   ~ 0
 FPGA_MSEL3
 $Comp
-L GND #PWR0120
+L GND #PWR117
 U 1 1 51576C91
 P 4900 3200
-F 0 "#PWR0120" H 4900 3200 30  0001 C CNN
+F 0 "#PWR117" H 4900 3200 30  0001 C CNN
 F 1 "GND" H 4900 3130 30  0001 C CNN
 	1    4900 3200
 	1    0    0    -1  
@@ -507,10 +482,10 @@ Only JTAG programming mode is supported.\nPS (passive serial) is not supported d
 Text HLabel 12300 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR0121
+L GND #PWR118
 U 1 1 514F7BF4
 P 8400 3200
-F 0 "#PWR0121" H 8400 3200 30  0001 C CNN
+F 0 "#PWR118" H 8400 3200 30  0001 C CNN
 F 1 "GND" H 8400 3130 30  0001 C CNN
 	1    8400 3200
 	1    0    0    -1  
@@ -582,10 +557,10 @@ F 5 "GRM155R61A104KA01D" H 8400 2800 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0122
+L GND #PWR120
 U 1 1 514BA518
 P 11200 3900
-F 0 "#PWR0122" H 11200 3900 30  0001 C CNN
+F 0 "#PWR120" H 11200 3900 30  0001 C CNN
 F 1 "GND" H 11200 3830 30  0001 C CNN
 	1    11200 3900
 	1    0    0    -1  
@@ -606,10 +581,10 @@ AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sin
 Text Label 11400 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR0123
+L GND #PWR119
 U 1 1 514BA28E
 P 10800 3900
-F 0 "#PWR0123" H 10800 3900 30  0001 C CNN
+F 0 "#PWR119" H 10800 3900 30  0001 C CNN
 F 1 "GND" H 10800 3830 30  0001 C CNN
 	1    10800 3900
 	1    0    0    -1  
