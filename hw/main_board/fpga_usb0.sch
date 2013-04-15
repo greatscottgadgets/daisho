@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 14 Apr 2013 12:37:34 PM PDT
+EESchema Schematic File Version 2  date Sun 14 Apr 2013 05:30:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 8 15
 Title "Daisho Project Main Board"
-Date "14 apr 2013"
+Date "15 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -275,6 +275,8 @@ U 1 1 51588F51
 P 12100 2800
 F 0 "C29" H 12150 2900 50  0000 L CNN
 F 1 "100N" H 12150 2700 50  0000 L CNN
+F 4 "Murata" H 12100 2800 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 12100 2800 60  0001 C CNN "Part Number"
 	1    12100 2800
 	1    0    0    -1  
 $EndComp
@@ -284,6 +286,8 @@ U 1 1 51588F4E
 P 11700 2800
 F 0 "C28" H 11750 2900 50  0000 L CNN
 F 1 "100N" H 11750 2700 50  0000 L CNN
+F 4 "Murata" H 11700 2800 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 11700 2800 60  0001 C CNN "Part Number"
 	1    11700 2800
 	1    0    0    -1  
 $EndComp
@@ -293,6 +297,8 @@ U 1 1 51588F4C
 P 11300 2800
 F 0 "C27" H 11350 2900 50  0000 L CNN
 F 1 "100N" H 11350 2700 50  0000 L CNN
+F 4 "Murata" H 11300 2800 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 11300 2800 60  0001 C CNN "Part Number"
 	1    11300 2800
 	1    0    0    -1  
 $EndComp
@@ -302,6 +308,8 @@ U 1 1 51588F4A
 P 10900 2800
 F 0 "C26" H 10950 2900 50  0000 L CNN
 F 1 "100N" H 10950 2700 50  0000 L CNN
+F 4 "Murata" H 10900 2800 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 10900 2800 60  0001 C CNN "Part Number"
 	1    10900 2800
 	1    0    0    -1  
 $EndComp
@@ -311,6 +319,8 @@ U 1 1 51588F48
 P 10500 2800
 F 0 "C25" H 10550 2900 50  0000 L CNN
 F 1 "100N" H 10550 2700 50  0000 L CNN
+F 4 "Murata" H 10500 2800 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 10500 2800 60  0001 C CNN "Part Number"
 	1    10500 2800
 	1    0    0    -1  
 $EndComp
@@ -320,6 +330,8 @@ U 1 1 51588F3B
 P 10100 2800
 F 0 "C24" H 10150 2900 50  0000 L CNN
 F 1 "100N" H 10150 2700 50  0000 L CNN
+F 4 "Murata" H 10100 2800 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 10100 2800 60  0001 C CNN "Part Number"
 	1    10100 2800
 	1    0    0    -1  
 $EndComp

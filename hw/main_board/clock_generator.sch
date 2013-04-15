@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 14 Apr 2013 12:37:34 PM PDT
+EESchema Schematic File Version 2  date Sun 14 Apr 2013 05:30:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 11 15
 Title "Daisho Project Main Board"
-Date "14 apr 2013"
+Date "15 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -50,7 +50,7 @@ Wire Wire Line
 Wire Wire Line
 	8200 7400 8700 7400
 Wire Wire Line
-	6500 4100 6700 4100
+	6500 3900 6700 3900
 Wire Wire Line
 	10300 6400 11300 6400
 Wire Wire Line
@@ -122,7 +122,7 @@ Wire Wire Line
 Wire Wire Line
 	6600 7400 6600 7500
 Wire Wire Line
-	6700 4100 6700 4200
+	6700 3900 6700 4200
 Wire Wire Line
 	6700 4700 6700 5000
 Wire Wire Line
@@ -233,7 +233,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 4200 7400 3600
 Wire Wire Line
-	7400 3600 6700 3600
+	7400 3600 6500 3600
 Wire Wire Line
 	10400 7400 9300 7400
 Wire Wire Line
@@ -253,10 +253,12 @@ U 1 1 516B045F
 P 8500 7700
 F 0 "C65" H 8550 7800 50  0000 L CNN
 F 1 "100N" H 8550 7600 50  0000 L CNN
+F 4 "Murata" H 8500 7700 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 8500 7700 60  0001 C CNN "Part Number"
 	1    8500 7700
 	-1   0    0    -1  
 $EndComp
-Text GLabel 6700 3600 0    60   Input ~ 0
+Text GLabel 6500 3600 0    60   Input ~ 0
 V3P3A
 Text GLabel 8800 6500 2    60   Input ~ 0
 V3P3A
@@ -365,7 +367,7 @@ Text Label 10500 5200 0    60   ~ 0
 FE_CLK_P0
 Text GLabel 6500 5600 0    60   Input ~ 0
 V3P3A
-Text GLabel 6500 4100 0    60   Input ~ 0
+Text GLabel 6500 3900 0    60   Input ~ 0
 V3P3A
 Text GLabel 8200 7400 0    60   Input ~ 0
 V1P8
@@ -401,6 +403,8 @@ U 1 1 514E55CD
 P 7400 7700
 F 0 "C16" H 7450 7800 50  0000 L CNN
 F 1 "100N" H 7450 7600 50  0000 L CNN
+F 4 "Murata" H 7400 7700 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 7400 7700 60  0001 C CNN "Part Number"
 	1    7400 7700
 	-1   0    0    -1  
 $EndComp
@@ -410,6 +414,8 @@ U 1 1 514E55CA
 P 10000 7700
 F 0 "C15" H 10050 7800 50  0000 L CNN
 F 1 "100N" H 10050 7600 50  0000 L CNN
+F 4 "Murata" H 10000 7700 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 10000 7700 60  0001 C CNN "Part Number"
 	1    10000 7700
 	-1   0    0    -1  
 $EndComp
@@ -419,6 +425,8 @@ U 1 1 514E55C7
 P 10400 7700
 F 0 "C14" H 10450 7800 50  0000 L CNN
 F 1 "100N" H 10450 7600 50  0000 L CNN
+F 4 "Murata" H 10400 7700 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 10400 7700 60  0001 C CNN "Part Number"
 	1    10400 7700
 	-1   0    0    -1  
 $EndComp
@@ -428,6 +436,8 @@ U 1 1 514E558C
 P 7000 7700
 F 0 "C13" H 7050 7800 50  0000 L CNN
 F 1 "100N" H 7050 7600 50  0000 L CNN
+F 4 "Murata" H 7000 7700 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 7000 7700 60  0001 C CNN "Part Number"
 	1    7000 7700
 	-1   0    0    -1  
 $EndComp
@@ -446,6 +456,8 @@ U 1 1 514E5578
 P 6600 7700
 F 0 "C12" H 6650 7800 50  0000 L CNN
 F 1 "100N" H 6650 7600 50  0000 L CNN
+F 4 "Murata" H 6600 7700 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 6600 7700 60  0001 C CNN "Part Number"
 	1    6600 7700
 	-1   0    0    -1  
 $EndComp
@@ -492,7 +504,7 @@ L C C11
 U 1 1 514E530B
 P 6000 4300
 F 0 "C11" H 6050 4400 50  0000 L CNN
-F 1 "C" H 6050 4200 50  0000 L CNN
+F 1 "DNP" H 6050 4200 50  0000 L CNN
 	1    6000 4300
 	0    -1   -1   0   
 $EndComp
@@ -501,7 +513,7 @@ L C C10
 U 1 1 514E5301
 P 4600 4300
 F 0 "C10" H 4650 4400 50  0000 L CNN
-F 1 "C" H 4650 4200 50  0000 L CNN
+F 1 "DNP" H 4650 4200 50  0000 L CNN
 	1    4600 4300
 	0    -1   -1   0   
 $EndComp
@@ -509,8 +521,11 @@ $Comp
 L QUARTZCMS4_GROUND X3
 U 1 1 514E52C4
 P 5300 4300
-F 0 "X3" H 5300 4600 60  0000 C CNN
-F 1 "25M" H 5300 4500 60  0000 C CNN
+F 0 "X3" H 5300 4700 60  0000 C CNN
+F 1 "25M" H 5300 4600 60  0000 C CNN
+F 4 "ECS" H 5300 4300 60  0001 C CNN "Manufacturer"
+F 5 "ECS-250-8-30B-CKM" H 5300 4300 60  0001 C CNN "Part Number"
+F 6 "<=10pF" H 5300 4500 50  0000 C CNN "CL"
 	1    5300 4300
 	1    0    0    -1  
 $EndComp
@@ -529,6 +544,8 @@ U 1 1 514E5234
 P 7600 5000
 F 0 "U4" H 7600 5050 60  0000 C CNN
 F 1 "SI5351C-B" H 7600 4950 60  0000 C CNN
+F 4 "Silicon Labs" H 7600 5000 60  0001 C CNN "Manufacturer"
+F 5 "SI5351C-B-GM" H 7600 5000 60  0001 C CNN "Part Number"
 	1    7600 5000
 	1    0    0    -1  
 $EndComp

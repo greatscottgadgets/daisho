@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 14 Apr 2013 12:37:34 PM PDT
+EESchema Schematic File Version 2  date Sun 14 Apr 2013 05:30:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 12 15
 Title "Daisho Project Main Board"
-Date "14 apr 2013"
+Date "15 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -525,6 +525,8 @@ U 1 1 51688F63
 P 3300 2000
 F 0 "C33" H 3350 2100 50  0000 L CNN
 F 1 "100N" H 3350 1900 50  0000 L CNN
+F 4 "Murata" H 3300 2000 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 3300 2000 60  0001 C CNN "Part Number"
 	1    3300 2000
 	0    -1   -1   0   
 $EndComp
@@ -576,6 +578,8 @@ U 1 1 51688D41
 P 3300 2800
 F 0 "U13" H 3300 3150 60  0000 C CNN
 F 1 "TPS27081A" H 3300 3050 60  0000 C CNN
+F 4 "TI" H 3300 2800 60  0001 C CNN "Manufacturer"
+F 5 "TPS27081ADDC" H 3300 2800 60  0001 C CNN "Part Number"
 	1    3300 2800
 	1    0    0    -1  
 $EndComp
@@ -968,6 +972,8 @@ U 1 1 513914A5
 P 3300 4400
 F 0 "J2" H 3300 4450 60  0000 C CNN
 F 1 "SAMTEC_QTH-090-D" H 3350 4350 60  0000 C CNN
+F 4 "Samtec" H 3300 4400 60  0001 C CNN "Manufacturer"
+F 5 "QTH-090-01-L-D-A" H 3300 4400 60  0001 C CNN "Part Number"
 	1    3300 4400
 	1    0    0    -1  
 $EndComp

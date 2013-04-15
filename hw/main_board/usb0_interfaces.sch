@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 14 Apr 2013 12:37:34 PM PDT
+EESchema Schematic File Version 2  date Sun 14 Apr 2013 05:30:34 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 10 15
 Title "Daisho Project Main Board"
-Date "14 apr 2013"
+Date "15 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -42,18 +42,6 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L FILTER FB2
-U 1 1 516B027A
-P 15400 9250
-F 0 "FB2" H 15400 9400 60  0000 C CNN
-F 1 "FILTER" H 15400 9150 60  0000 C CNN
-F 4 "Murata" H 15400 9250 60  0001 C CNN "Manufacturer"
-F 5 "BLM21PG221SN1D" H 15400 9250 60  0001 C CNN "Part Number"
-F 6 "FERRITE CHIP 220 OHM 2000MA 0805" H 15400 9250 60  0001 C CNN "Description"
-	1    15400 9250
-	0    -1   -1   0   
-$EndComp
 Connection ~ 11800 6300
 Wire Wire Line
 	11800 6400 11800 6300
@@ -410,6 +398,18 @@ Wire Wire Line
 	12600 6600 12600 7300
 Connection ~ 12600 7300
 $Comp
+L FILTER FB2
+U 1 1 516B027A
+P 15400 9250
+F 0 "FB2" H 15400 9400 60  0000 C CNN
+F 1 "FILTER" H 15400 9150 60  0000 C CNN
+F 4 "Murata" H 15400 9250 60  0001 C CNN "Manufacturer"
+F 5 "BLM21PG221SN1D" H 15400 9250 60  0001 C CNN "Part Number"
+F 6 "FERRITE CHIP 220 OHM 2000MA 0805" H 15400 9250 60  0001 C CNN "Description"
+	1    15400 9250
+	0    -1   -1   0   
+$EndComp
+$Comp
 L FILTER FB1
 U 1 1 51687BFC
 P 11800 6750
@@ -438,6 +438,8 @@ U 1 1 516876EA
 P 13450 6700
 F 0 "U5" H 13450 6950 60  0000 C CNN
 F 1 "GSG-IP4220CZ6" H 13450 6450 60  0000 C CNN
+F 4 "NXP" H 13450 6700 60  0001 C CNN "Manufacturer"
+F 5 "IP4220CZ6,125" H 13450 6700 60  0001 C CNN "Part Number"
 	1    13450 6700
 	1    0    0    -1  
 $EndComp
@@ -524,7 +526,9 @@ L C C170
 U 1 1 5159AA93
 P 1300 7900
 F 0 "C170" H 1350 8000 50  0000 L CNN
-F 1 "C" H 1350 7800 50  0000 L CNN
+F 1 "27P" H 1350 7800 50  0000 L CNN
+F 4 "Murata" H 1300 7900 60  0001 C CNN "Manufacturer"
+F 5 "GRM1555C1H270JA01D" H 1300 7900 60  0001 C CNN "Part Number"
 	1    1300 7900
 	1    0    0    -1  
 $EndComp
@@ -533,7 +537,9 @@ L C C171
 U 1 1 5159AA92
 P 1800 7900
 F 0 "C171" H 1850 8000 50  0000 L CNN
-F 1 "C" H 1850 7800 50  0000 L CNN
+F 1 "27P" H 1850 7800 50  0000 L CNN
+F 4 "Murata" H 1800 7900 60  0001 C CNN "Manufacturer"
+F 5 "GRM1555C1H270JA01D" H 1800 7900 60  0001 C CNN "Part Number"
 	1    1800 7900
 	1    0    0    -1  
 $EndComp
@@ -541,16 +547,16 @@ Text Notes 2700 7150 0    60   ~ 0
 Errata claims SSC and non-40MHz crystals are not compatible.\nUse 40MHz crystal if SSC is required.
 Text Notes 3900 6300 2    60   ~ 0
 18pF CL is OK, according to datasheet max/min specs.
-Text Notes 3900 6450 2    60   ~ 0
-Also support reference clock from Si535x with jumper?
 $Comp
 L QUARTZCMS4_GROUND X1
 U 1 1 5159AA91
 P 1800 7200
 F 0 "X1" H 1800 7400 60  0000 C CNN
 F 1 "40M" H 1800 7500 60  0000 C CNN
-F 4 "50ppm" H 1800 7200 60  0001 C CNN "Tolerance"
-F 5 "20pF" H 1800 7200 60  0001 C CNN "Cload"
+F 4 "Abracon" H 1800 7200 60  0001 C CNN "Manufacturer"
+F 5 "ABM3C-40.000MHZ-D4Y-T" H 1800 7200 60  0001 C CNN "Part Number"
+F 6 "50ppm" H 1800 7200 60  0001 C CNN "Tolerance"
+F 7 "12pF to 24pF" V 2050 6850 60  0000 C CNN "CL"
 	1    1800 7200
 	0    -1   -1   0   
 $EndComp
@@ -692,6 +698,8 @@ U 1 1 5153BA75
 P 11100 8500
 F 0 "C4" H 11150 8600 50  0000 L CNN
 F 1 "100N" H 11150 8400 50  0000 L CNN
+F 4 "Murata" H 11100 8500 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 11100 8500 60  0001 C CNN "Part Number"
 	1    11100 8500
 	0    -1   -1   0   
 $EndComp
@@ -701,6 +709,8 @@ U 1 1 5153BA3F
 P 11100 8200
 F 0 "C3" H 11150 8300 50  0000 L CNN
 F 1 "100N" H 11150 8100 50  0000 L CNN
+F 4 "Murata" H 11100 8200 60  0001 C CNN "Manufacturer"
+F 5 "GRM155R61A104KA01D" H 11100 8200 60  0001 C CNN "Part Number"
 	1    11100 8200
 	0    -1   -1   0   
 $EndComp
@@ -719,6 +729,8 @@ U 1 1 5153B8D1
 P 14050 8800
 F 0 "U7" H 14050 8800 60  0000 C CNN
 F 1 "USB3_ESD_SON50-10" H 13350 8600 60  0000 C CNN
+F 4 "Littelfuse" H 14050 8800 60  0001 C CNN "Manufacturer"
+F 5 "SP3010-04UTG" H 14050 8800 60  0001 C CNN "Part Number"
 	1    14050 8800
 	1    0    0    -1  
 $EndComp
@@ -753,7 +765,9 @@ U 1 1 51538740
 P 15000 9300
 F 0 "C2" H 15050 9400 50  0000 L CNN
 F 1 "10N" H 15050 9200 50  0000 L CNN
-F 4 ">=250V" H 15250 9100 60  0000 C CNN "Vdc"
+F 4 "Murata" H 15000 9300 60  0001 C CNN "Manufacturer"
+F 5 "GRM21BR72E103KW03L" H 15000 9300 60  0001 C CNN "Part Number"
+F 6 ">=250V" H 15200 9100 50  0000 C CNN "Vdc"
 	1    15000 9300
 	-1   0    0    -1  
 $EndComp
@@ -772,6 +786,8 @@ U 1 1 51533B85
 P 14800 7700
 F 0 "J5" H 14150 8350 60  0000 C CNN
 F 1 "USB3_MICRO_AB" H 14700 8350 60  0000 C CNN
+F 4 "Global Connector Technology" H 14800 7700 60  0001 C CNN "Manufacturer"
+F 5 "USB3120-30" H 14800 7700 60  0001 C CNN "Part Number"
 	1    14800 7700
 	-1   0    0    -1  
 $EndComp
@@ -1042,6 +1058,8 @@ U 1 1 5109FB59
 P 3650 900
 F 0 "U2" H 3150 850 60  0000 C CNN
 F 1 "TUSB1310A" H 4000 850 60  0000 C CNN
+F 4 "TI" H 3650 900 60  0001 C CNN "Manufacturer"
+F 5 "TUSB1310AZAY" H 3650 900 60  0001 C CNN "Part Number"
 	1    3650 900 
 	1    0    0    -1  
 $EndComp

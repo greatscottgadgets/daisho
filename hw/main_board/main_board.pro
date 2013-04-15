@@ -1,4 +1,4 @@
-update=Sun 14 Apr 2013 12:29:57 PM PDT
+update=Sun 14 Apr 2013 02:11:37 PM PDT
 version=1
 last_client=pcbnew
 [general]
@@ -71,8 +71,8 @@ LibName28=hole
 [pcbnew]
 version=1
 PadDrlX=0
-PadDimH=472
-PadDimV=571
+PadDimH=374
+PadDimV=394
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -126,3 +126,4 @@ LibName36=gsg-header-1x2
 LibName37=gsg-50mil-header-2x5-th
 LibName38=gsg-hole126mil
 LibName39=ipc_indc2012x130n
+LibName40=ipc_capc1608x90n
