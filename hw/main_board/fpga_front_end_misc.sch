@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 15 Apr 2013 02:21:23 PM PDT
+EESchema Schematic File Version 2  date Tue 16 Apr 2013 11:34:43 AM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 13 15
 Title "Daisho Project Main Board"
-Date "15 apr 2013"
+Date "16 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -293,10 +293,10 @@ F 5 "RMCF0402JT1K00" V 11200 5550 60  0001 C CNN "Part Number"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR121
+L GND #PWR0117
 U 1 1 51689F80
 P 11200 5900
-F 0 "#PWR121" H 11200 5900 30  0001 C CNN
+F 0 "#PWR0117" H 11200 5900 30  0001 C CNN
 F 1 "GND" H 11200 5830 30  0001 C CNN
 	1    11200 5900
 	1    0    0    -1  
@@ -469,10 +469,10 @@ FPGA_MSEL2
 Text Label 5200 3100 0    60   ~ 0
 FPGA_MSEL3
 $Comp
-L GND #PWR117
+L GND #PWR0118
 U 1 1 51576C91
 P 4900 3200
-F 0 "#PWR117" H 4900 3200 30  0001 C CNN
+F 0 "#PWR0118" H 4900 3200 30  0001 C CNN
 F 1 "GND" H 4900 3130 30  0001 C CNN
 	1    4900 3200
 	1    0    0    -1  
@@ -482,10 +482,10 @@ Only JTAG programming mode is supported.\nPS (passive serial) is not supported d
 Text HLabel 12300 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR118
+L GND #PWR0119
 U 1 1 514F7BF4
 P 8400 3200
-F 0 "#PWR118" H 8400 3200 30  0001 C CNN
+F 0 "#PWR0119" H 8400 3200 30  0001 C CNN
 F 1 "GND" H 8400 3130 30  0001 C CNN
 	1    8400 3200
 	1    0    0    -1  
@@ -557,10 +557,10 @@ F 5 "GRM155R61A104KA01D" H 8400 2800 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR120
+L GND #PWR0120
 U 1 1 514BA518
 P 11200 3900
-F 0 "#PWR120" H 11200 3900 30  0001 C CNN
+F 0 "#PWR0120" H 11200 3900 30  0001 C CNN
 F 1 "GND" H 11200 3830 30  0001 C CNN
 	1    11200 3900
 	1    0    0    -1  
@@ -581,10 +581,10 @@ AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sin
 Text Label 11400 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR119
+L GND #PWR0121
 U 1 1 514BA28E
 P 10800 3900
-F 0 "#PWR119" H 10800 3900 30  0001 C CNN
+F 0 "#PWR0121" H 10800 3900 30  0001 C CNN
 F 1 "GND" H 10800 3830 30  0001 C CNN
 	1    10800 3900
 	1    0    0    -1  

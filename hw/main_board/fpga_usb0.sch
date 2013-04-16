@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 15 Apr 2013 02:21:23 PM PDT
+EESchema Schematic File Version 2  date Tue 16 Apr 2013 11:34:43 AM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 8 15
 Title "Daisho Project Main Board"
-Date "15 apr 2013"
+Date "16 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -261,10 +261,10 @@ PIPE_RX_ELECIDLE
 Text Label 6300 8300 0    60   ~ 0
 PIPE_RESETN
 $Comp
-L GND #PWR92
+L GND #PWR092
 U 1 1 51588F5F
 P 12100 3200
-F 0 "#PWR92" H 12100 3200 30  0001 C CNN
+F 0 "#PWR092" H 12100 3200 30  0001 C CNN
 F 1 "GND" H 12100 3130 30  0001 C CNN
 	1    12100 3200
 	1    0    0    -1  

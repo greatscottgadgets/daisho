@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 15 Apr 2013 02:21:23 PM PDT
+EESchema Schematic File Version 2  date Tue 16 Apr 2013 11:34:43 AM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 7 15
 Title "Daisho Project Main Board"
-Date "15 apr 2013"
+Date "16 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -312,10 +312,10 @@ F 5 "GRM155R61A104KA01D" H 11100 4300 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR91
+L GND #PWR088
 U 1 1 5168A5B6
 P 11700 5900
-F 0 "#PWR91" H 11700 5900 30  0001 C CNN
+F 0 "#PWR088" H 11700 5900 30  0001 C CNN
 F 1 "GND" H 11700 5830 30  0001 C CNN
 	1    11700 5900
 	1    0    0    -1  
@@ -372,10 +372,10 @@ VCCIO
 Text Label 11800 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR90
+L GND #PWR089
 U 1 1 514BAB65
 P 11600 3900
-F 0 "#PWR90" H 11600 3900 30  0001 C CNN
+F 0 "#PWR089" H 11600 3900 30  0001 C CNN
 F 1 "GND" H 11600 3830 30  0001 C CNN
 	1    11600 3900
 	1    0    0    -1  
@@ -392,10 +392,10 @@ F 5 "GRM155R61A104KA01D" H 11600 3500 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR89
+L GND #PWR090
 U 1 1 514BAB5C
 P 11200 3900
-F 0 "#PWR89" H 11200 3900 30  0001 C CNN
+F 0 "#PWR090" H 11200 3900 30  0001 C CNN
 F 1 "GND" H 11200 3830 30  0001 C CNN
 	1    11200 3900
 	1    0    0    -1  
@@ -427,10 +427,10 @@ $EndComp
 Text HLabel 12800 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR88
+L GND #PWR091
 U 1 1 513E1F35
 P 10800 3200
-F 0 "#PWR88" H 10800 3200 30  0001 C CNN
+F 0 "#PWR091" H 10800 3200 30  0001 C CNN
 F 1 "GND" H 10800 3130 30  0001 C CNN
 	1    10800 3200
 	1    0    0    -1  
