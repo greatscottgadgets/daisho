@@ -58,7 +58,27 @@ output	wire	DAISHO_RS232_B_RI,
 output	wire	DAISHO_RS232_B_DSR,
 input	wire	DAISHO_RS232_B_RTS,
 input	wire	DAISHO_RS232_B_TXD,
-input	wire	DAISHO_RS232_B_DTR
+input	wire	DAISHO_RS232_B_DTR,
+
+// DCE
+output	wire	DAISHO_RS232_C_RTS,
+output	wire	DAISHO_RS232_C_TXD,
+output	wire	DAISHO_RS232_C_DTR,
+input	wire	DAISHO_RS232_C_RXD,
+input	wire	DAISHO_RS232_C_CTS,
+input	wire	DAISHO_RS232_C_CD,
+input	wire	DAISHO_RS232_C_RI,
+input	wire	DAISHO_RS232_C_DSR,
+
+// DTE
+output	wire	DAISHO_RS232_D_RXD,
+output	wire	DAISHO_RS232_D_CTS,
+output	wire	DAISHO_RS232_D_CD,
+output	wire	DAISHO_RS232_D_RI,
+output	wire	DAISHO_RS232_D_DSR,
+input	wire	DAISHO_RS232_D_RTS,
+input	wire	DAISHO_RS232_D_TXD,
+input	wire	DAISHO_RS232_D_DTR
 );
 
 	parameter [5:0]	ST_RST_0		= 6'd0,
@@ -70,18 +90,16 @@ input	wire	DAISHO_RS232_B_DTR
 	reg				vend_req_act_1, vend_req_act_2;
 	reg				buf_in_ready_1, buf_in_ready_2;
 
-	reg		[10:0]	byte_count;
+	reg		[10:0]	in_byte_count;
+	reg		[15:0]	in_bit_count;
+	reg		[10:0]	out_byte_count;
 	reg		[15:0]	clock_divider;
-	reg				active_buffer;
+	reg				idle_buffer;
 	reg				idle_full;
 	reg		[4095:0] input_buffer[0:1];
 
 always @(posedge clk) begin
 	clock_divider <= clock_divider + 1;
-	if(clock_divider[15]) begin
-		clock_divider <= 0;
-		active_buffer <= ~active_buffer;
-	end
 	
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	{vend_req_act_2, vend_req_act_1} <= {vend_req_act_1, vend_req_act};
@@ -92,11 +110,11 @@ always @(posedge clk) begin
 	case(state)
 	ST_RST_0: begin
 		// Setup
-		byte_count <= 0;
+		out_byte_count <= 0;
 		idle_full <= 0;
-		active_buffer <= 0;
-		input_buffer[0][4095:0] <= 4096'b0;
-		input_buffer[1][4095:0] <= 4096'b1;
+		idle_buffer <= 0;
+		//input_buffer[0][4095:0] <= 4096'b0;
+		//input_buffer[1][4095:0] <= 4096'b0;
 
 		state <= ST_RST_1;
 	end
@@ -109,7 +127,9 @@ always @(posedge clk) begin
 			// vendor request!
 			// wants to read from SRAM
 			if(vend_req_request == 8'h01) begin
+				idle_buffer <= ~idle_buffer;
 				idle_full <= 1;
+				//in_bit_count <= 0;
 			end
 		end
 		if(idle_full) begin
@@ -122,8 +142,8 @@ always @(posedge clk) begin
 		if(buf_in_ready_2) state <= 21;
 	end
 	21: begin
-		buf_in_data <= input_buffer[active_buffer][15:8];
-		byte_count <= byte_count + 1'b1;
+		buf_in_data <= input_buffer[idle_buffer][15:8];
+		out_byte_count <= out_byte_count + 1'b1;
 		state <= 22;
 	end
 	22: begin
@@ -135,9 +155,9 @@ always @(posedge clk) begin
 		state  <= 27;
 	end
 	27: begin
-		buf_in_data <= input_buffer[active_buffer][7:0];
+		buf_in_data <= input_buffer[idle_buffer][7:0];
 		buf_in_addr <= buf_in_addr + 1'b1;
-		byte_count <= byte_count + 1'b1;
+		out_byte_count <= out_byte_count + 1'b1;
 		state <= 24;
 	end
 	24: begin
@@ -149,12 +169,12 @@ always @(posedge clk) begin
 		buf_in_addr <= buf_in_addr + 1'b1;
 		state <= 20;
 		
-		if(byte_count == 512) begin
+		if(out_byte_count == 512) begin
 			state <= ST_IDLE;
 			buf_in_commit <= 1;
 			buf_in_commit_len <= 9'b1;
 			idle_full <= 0;
-			byte_count <= 0;
+			out_byte_count <= 0;
 		end
 	end
 	endcase
@@ -162,6 +182,21 @@ always @(posedge clk) begin
 	if(~reset_2) begin
 		// reset
 		state <= 0;
+	end
+end
+
+always @(DAISHO_RS232_B_TXD, DAISHO_RS232_B_RTS, DAISHO_RS232_B_DTR,
+			DAISHO_RS232_A_RXD, DAISHO_RS232_A_CTS, DAISHO_RS232_A_DSR,
+			DAISHO_RS232_A_CD, DAISHO_RS232_A_RI) begin
+	in_bit_count <= in_bit_count + 8;
+	input_buffer[~idle_buffer][in_bit_count -:8] = {
+		DAISHO_RS232_B_TXD, DAISHO_RS232_B_RTS, DAISHO_RS232_B_DTR,
+		DAISHO_RS232_A_RXD, DAISHO_RS232_A_CTS, DAISHO_RS232_A_DSR,
+		DAISHO_RS232_A_CD, DAISHO_RS232_A_RI};
+	in_bit_count <= in_bit_count + 16;
+	input_buffer[~idle_buffer][in_bit_count -:16] = clock_divider;
+	if(~idle_full) begin
+		input_buffer[idle_buffer][4095:0] <= 4096'b0;
 	end
 end
 
@@ -173,5 +208,14 @@ assign DAISHO_RS232_B_CTS = DAISHO_RS232_A_CTS;
 assign DAISHO_RS232_B_DSR = DAISHO_RS232_A_DSR;
 assign DAISHO_RS232_B_CD = DAISHO_RS232_A_CD;
 assign DAISHO_RS232_B_RI = DAISHO_RS232_A_RI;
+
+assign DAISHO_RS232_C_TXD = DAISHO_RS232_D_TXD;
+assign DAISHO_RS232_C_RTS = DAISHO_RS232_D_RTS;
+assign DAISHO_RS232_C_DTR = DAISHO_RS232_D_DTR;
+assign DAISHO_RS232_D_RXD = DAISHO_RS232_C_RXD;
+assign DAISHO_RS232_D_CTS = DAISHO_RS232_C_CTS;
+assign DAISHO_RS232_D_DSR = DAISHO_RS232_C_DSR;
+assign DAISHO_RS232_D_CD = DAISHO_RS232_C_CD;
+assign DAISHO_RS232_D_RI = DAISHO_RS232_C_RI;
 
 endmodule
