@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Apr 2013 11:34:43 AM PDT
+EESchema Schematic File Version 2  date Tue 16 Apr 2013 01:52:59 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -261,10 +261,10 @@ PIPE_RX_ELECIDLE
 Text Label 6300 8300 0    60   ~ 0
 PIPE_RESETN
 $Comp
-L GND #PWR092
+L GND #PWR098
 U 1 1 51588F5F
 P 12100 3200
-F 0 "#PWR092" H 12100 3200 30  0001 C CNN
+F 0 "#PWR098" H 12100 3200 30  0001 C CNN
 F 1 "GND" H 12100 3130 30  0001 C CNN
 	1    12100 3200
 	1    0    0    -1  

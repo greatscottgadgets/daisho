@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Tue 16 Apr 2013 11:34:58 AM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Tue 16 Apr 2013 01:53:27 PM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -239,14 +239,14 @@ IdModule  = IPC_CAPC1005X55N;
 EndCmp
 
 BeginCmp
-TimeStamp = /5129C23F/5169C4FF;
+TimeStamp = /5148D8EF/516DB2D4;
 Reference = C35;
 ValeurCmp = 100N;
 IdModule  = IPC_CAPC1005X55N;
 EndCmp
 
 BeginCmp
-TimeStamp = /5129C23F/5169C4F5;
+TimeStamp = /5148D8EF/516DB2D5;
 Reference = C36;
 ValeurCmp = 100N;
 IdModule  = IPC_CAPC1005X55N;
@@ -2563,7 +2563,7 @@ IdModule  = IPC_RESC1005X40N;
 EndCmp
 
 BeginCmp
-TimeStamp = /510239FC/50FE20C7;
+TimeStamp = /5129C23F/5129C259;
 Reference = U1;
 ValeurCmp = EP4CE30F29;
 IdModule  = IPC_BGA780C100P28X28_2900X2900X350;
@@ -2682,7 +2682,7 @@ IdModule  = IPC_SOT95P280X110-6N;
 EndCmp
 
 BeginCmp
-TimeStamp = /5129C23F/5169C36B;
+TimeStamp = /5148D8EF/516DB2D8;
 Reference = U18;
 ValeurCmp = 74LVC2T45;
 IdModule  = IPC_SOP50P310X100-8N;
