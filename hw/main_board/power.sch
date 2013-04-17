@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Apr 2013 01:52:59 PM PDT
+EESchema Schematic File Version 2  date Wed 17 Apr 2013 01:27:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -32,9 +32,9 @@ EELAYER 25  0
 EELAYER END
 $Descr A3 16535 11700
 encoding utf-8
-Sheet 5 15
+Sheet 6 15
 Title "Daisho Project Main Board"
-Date "16 apr 2013"
+Date "17 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -42,6 +42,12 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	3700 4500 5800 4500
+Wire Wire Line
+	6600 9500 8800 9500
+Wire Wire Line
+	15150 7200 13900 7200
 Wire Wire Line
 	9050 5800 7150 5800
 Wire Wire Line
@@ -67,8 +73,6 @@ Wire Wire Line
 Connection ~ 6250 6000
 Wire Wire Line
 	6350 6000 5700 6000
-Wire Wire Line
-	8300 9600 8300 9500
 Wire Wire Line
 	6250 6100 6250 6000
 Wire Wire Line
@@ -104,10 +108,6 @@ Connection ~ 5500 4500
 Wire Wire Line
 	5100 9000 5100 9100
 Wire Wire Line
-	8800 7500 8500 7500
-Wire Wire Line
-	8500 7500 8500 7600
-Wire Wire Line
 	4700 9500 4800 9500
 Connection ~ 5600 7500
 Wire Wire Line
@@ -124,13 +124,9 @@ Wire Wire Line
 	6700 7800 6550 7800
 Connection ~ 7100 9500
 Wire Wire Line
-	8300 9500 6600 9500
-Wire Wire Line
 	7000 8500 7100 8500
 Wire Wire Line
 	7700 8000 7700 8100
-Wire Wire Line
-	8300 7600 8300 7500
 Wire Wire Line
 	7700 7600 7700 7500
 Wire Wire Line
@@ -144,8 +140,6 @@ Wire Wire Line
 Wire Wire Line
 	7100 8300 7000 8300
 Connection ~ 8750 5800
-Wire Wire Line
-	14400 7300 14400 7200
 Connection ~ 8100 1700
 Wire Wire Line
 	8100 1900 8100 1300
@@ -170,7 +164,7 @@ Wire Wire Line
 Wire Wire Line
 	11700 8150 11700 8050
 Wire Wire Line
-	12550 7200 12750 7200
+	12550 7200 13300 7200
 Wire Wire Line
 	12650 6650 12650 6550
 Wire Wire Line
@@ -186,10 +180,10 @@ Wire Wire Line
 	12650 7400 12650 7050
 Connection ~ 12650 7300
 Wire Wire Line
-	13850 7300 13850 7200
-Connection ~ 13850 7200
+	14300 7300 14300 7200
+Connection ~ 14300 7200
 Wire Wire Line
-	13850 7700 13850 7800
+	14300 7700 14300 7800
 Wire Wire Line
 	11450 8150 11450 8050
 Wire Wire Line
@@ -209,10 +203,6 @@ Wire Wire Line
 Wire Wire Line
 	11900 9600 11900 9400
 Wire Wire Line
-	15150 7200 14600 7200
-Wire Wire Line
-	14400 7200 13350 7200
-Wire Wire Line
 	11050 7300 11050 6550
 Wire Wire Line
 	11900 8800 11900 8900
@@ -226,18 +216,10 @@ Wire Wire Line
 	11400 8600 11550 8600
 Connection ~ 11550 8600
 Wire Wire Line
-	13450 7200 13450 9800
+	14000 7200 14000 9800
 Wire Wire Line
-	13450 9800 10800 9800
-Connection ~ 13450 7200
-Wire Wire Line
-	3700 4500 5000 4500
-Wire Wire Line
-	5200 4600 5200 4500
-Wire Wire Line
-	4200 2600 3500 2600
-Wire Wire Line
-	1800 2600 3300 2600
+	14000 9800 10800 9800
+Connection ~ 14000 7200
 Wire Wire Line
 	8100 1700 8000 1700
 Connection ~ 4600 1800
@@ -245,10 +227,6 @@ Wire Wire Line
 	3700 4400 4600 4400
 Wire Wire Line
 	4600 4700 4600 1800
-Wire Wire Line
-	3500 2600 3500 2700
-Wire Wire Line
-	3300 1900 3300 1800
 Connection ~ 6100 1800
 Wire Wire Line
 	6100 1800 6100 2200
@@ -364,16 +342,6 @@ Wire Wire Line
 Wire Wire Line
 	6100 2600 6100 2700
 Wire Wire Line
-	3500 1900 3500 1800
-Wire Wire Line
-	3300 2600 3300 2700
-Wire Wire Line
-	3300 1800 2700 1800
-Wire Wire Line
-	3500 1800 6800 1800
-Wire Wire Line
-	5000 4500 5000 4600
-Wire Wire Line
 	8400 1700 8300 1700
 Wire Wire Line
 	8300 1700 8300 2000
@@ -389,8 +357,6 @@ Connection ~ 8100 1800
 Wire Wire Line
 	11150 7200 10300 7200
 Connection ~ 11900 9500
-Wire Wire Line
-	14600 7200 14600 7300
 Connection ~ 8450 5800
 Wire Wire Line
 	7000 8700 7100 8700
@@ -400,8 +366,6 @@ Connection ~ 7700 9500
 Connection ~ 7700 7500
 Wire Wire Line
 	6350 9150 6350 9250
-Wire Wire Line
-	8300 7500 6600 7500
 Connection ~ 7100 7500
 Wire Wire Line
 	6150 7800 6000 7800
@@ -416,8 +380,6 @@ Wire Wire Line
 Wire Wire Line
 	6100 9500 5300 9500
 Connection ~ 5600 9500
-Wire Wire Line
-	8800 9500 8500 9500
 Wire Wire Line
 	5100 8600 5100 8500
 Wire Wire Line
@@ -451,10 +413,6 @@ Wire Wire Line
 Connection ~ 4800 8400
 Wire Wire Line
 	6250 6600 6250 6700
-Wire Wire Line
-	8500 9500 8500 9600
-Wire Wire Line
-	5200 4500 5800 4500
 Connection ~ 13800 3000
 Wire Wire Line
 	11000 3700 11000 3800
@@ -543,6 +501,28 @@ Wire Wire Line
 Connection ~ 10700 7200
 Wire Wire Line
 	12500 4700 15300 4700
+Wire Wire Line
+	6800 1800 2700 1800
+Wire Wire Line
+	6600 7500 8800 7500
+Wire Wire Line
+	1800 2600 4200 2600
+Text Label 5600 9000 3    60   ~ 0
+V1P1_FB
+Text Label 5600 8200 1    60   ~ 0
+V1P2_FB
+Text Label 7200 9500 0    60   ~ 0
+V1P1_OUT
+Text Label 7200 7500 0    60   ~ 0
+V1P2_OUT
+Text Label 7100 8800 0    60   ~ 0
+V1P1_SW
+Text Label 7100 8300 0    60   ~ 0
+V1P2_SW
+Text Label 14500 7200 0    60   ~ 0
+V1P8_VOUT
+Text Label 12800 7200 0    60   ~ 0
+V1P8_PH
 $Comp
 L C C37
 U 1 1 516A4030
@@ -1087,15 +1067,6 @@ F 1 "GND" H 7100 8430 30  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_2 P8
-U 1 1 516775BE
-P 8400 9950
-F 0 "P8" V 8350 9950 40  0000 C CNN
-F 1 "CONN_2" V 8450 9950 40  0000 C CNN
-	1    8400 9950
-	0    -1   1    0   
-$EndComp
-$Comp
 L C C251
 U 1 1 51677572
 P 6350 7800
@@ -1158,15 +1129,6 @@ F 1 "GND" H 7700 8030 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_2 P7
-U 1 1 51677507
-P 8400 7950
-F 0 "P7" V 8350 7950 40  0000 C CNN
-F 1 "CONN_2" V 8450 7950 40  0000 C CNN
-	1    8400 7950
-	0    -1   1    0   
-$EndComp
-$Comp
 L INDUCTOR L8
 U 1 1 516774F5
 P 7100 9100
@@ -1189,15 +1151,6 @@ F 5 "NRG4026T4R7M" V 7100 7900 60  0001 C CNN "Part Number"
 F 6 "> 1.1A" V 7300 7900 50  0000 C CNN "Max Current"
 	1    7100 7900
 	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_2 P6
-U 1 1 51674651
-P 14500 7650
-F 0 "P6" V 14450 7650 40  0000 C CNN
-F 1 "CONN_2" V 14550 7650 40  0000 C CNN
-	1    14500 7650
-	0    -1   1    0   
 $EndComp
 Text Notes 2700 5450 0    60   ~ 0
 ALT/USB Priority Power MUX\nALT power preferred over USB.\nALT selected when ALT voltage >= 4.5V.\nCurrent limit is 2A.
@@ -1229,25 +1182,25 @@ $EndComp
 $Comp
 L INDUCTOR L6
 U 1 1 5167371F
-P 13050 7200
-F 0 "L6" V 13000 7200 40  0000 C CNN
-F 1 "2N2" V 13150 7200 40  0000 C CNN
-F 4 "TDK" V 13050 7200 60  0001 C CNN "Manufacturer"
-F 5 "VLP8040T-2R2N" V 13050 7200 60  0001 C CNN "Part Number"
-F 6 "<= 45mOhm" V 12900 7200 50  0000 C CNN "DCR"
-	1    13050 7200
+P 13600 7200
+F 0 "L6" V 13550 7200 40  0000 C CNN
+F 1 "2N2" V 13700 7200 40  0000 C CNN
+F 4 "TDK" V 13600 7200 60  0001 C CNN "Manufacturer"
+F 5 "VLP8040T-2R2N" V 13600 7200 60  0001 C CNN "Part Number"
+F 6 "<= 45mOhm" V 13450 7200 50  0000 C CNN "DCR"
+	1    13600 7200
 	0    -1   -1   0   
 $EndComp
 $Comp
 L C C245
 U 1 1 5167371E
-P 13850 7500
-F 0 "C245" H 13900 7600 50  0000 L CNN
-F 1 "22U" H 13900 7400 50  0000 L CNN
-F 4 "TDK" H 13850 7500 60  0001 C CNN "Manufacturer"
-F 5 "C3216X5R0J226K" H 13850 7500 60  0001 C CNN "Part Number"
-F 6 "<5mOhm" H 13650 7400 50  0000 C CNN "ESR"
-	1    13850 7500
+P 14300 7500
+F 0 "C245" H 14350 7600 50  0000 L CNN
+F 1 "22U" H 14350 7400 50  0000 L CNN
+F 4 "TDK" H 14300 7500 60  0001 C CNN "Manufacturer"
+F 5 "C3216X5R0J226K" H 14300 7500 60  0001 C CNN "Part Number"
+F 6 "<5mOhm" H 14100 7400 50  0000 C CNN "ESR"
+	1    14300 7500
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -1265,10 +1218,10 @@ $EndComp
 $Comp
 L GND #PWR068
 U 1 1 5167371C
-P 13850 7800
-F 0 "#PWR068" H 13850 7800 30  0001 C CNN
-F 1 "GND" H 13850 7730 30  0001 C CNN
-	1    13850 7800
+P 14300 7800
+F 0 "#PWR068" H 14300 7800 30  0001 C CNN
+F 1 "GND" H 14300 7730 30  0001 C CNN
+	1    14300 7800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1374,23 +1327,6 @@ F 6 "1%" V 11450 9050 60  0000 C CNN "Tolerance"
 	1    11550 9050
 	-1   0    0    -1  
 $EndComp
-$Comp
-L CONN_2 P3
-U 1 1 51672B04
-P 5100 4950
-F 0 "P3" V 5050 4950 40  0000 C CNN
-F 1 "CONN_2" V 5150 4950 40  0000 C CNN
-	1    5100 4950
-	0    -1   1    0   
-$EndComp
-Text Label 3900 4400 0    60   ~ 0
-VALT
-Text Label 3900 4600 0    60   ~ 0
-VUSB
-Text Label 3700 2600 0    60   ~ 0
-VUSB
-Text Label 3700 1800 0    60   ~ 0
-VALT
 Text Notes 7700 2400 0    60   ~ 0
 USB OTG Power Switch
 $Comp
@@ -1478,6 +1414,8 @@ U 1 1 5167242A
 P 2500 2200
 F 0 "D2" H 2500 2300 40  0000 C CNN
 F 1 "DIODESCH" H 2500 2100 40  0000 C CNN
+F 4 "Diodes Inc" H 2500 2200 60  0001 C CNN "Manufacturer"
+F 5 "B340A-13-F" H 2500 2200 60  0001 C CNN "Part Number"
 	1    2500 2200
 	1    0    0    -1  
 $EndComp
@@ -1487,6 +1425,8 @@ U 1 1 51672425
 P 2500 1800
 F 0 "D1" H 2500 1900 40  0000 C CNN
 F 1 "DIODESCH" H 2500 1700 40  0000 C CNN
+F 4 "Diodes Inc." H 2500 1800 60  0001 C CNN "Manufacturer"
+F 5 "B340A-13-F" H 2500 1800 60  0001 C CNN "Part Number"
 	1    2500 1800
 	1    0    0    -1  
 $EndComp
@@ -1650,8 +1590,6 @@ Text GLabel 1800 2600 0    60   Input ~ 0
 VUSB
 Text GLabel 1800 2200 0    60   Input ~ 0
 VALT_FE
-Text Label 3900 4500 0    60   ~ 0
-VRAW
 Text GLabel 9050 5800 2    60   Output ~ 0
 V2P5
 $Comp
@@ -1757,23 +1695,5 @@ F 4 "Micrel" H 6750 5900 60  0001 C CNN "Manufacturer"
 F 5 "MIC5207YM5" H 6750 5900 60  0001 C CNN "Part Number"
 	1    6750 5900
 	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_2 P1
-U 1 1 5151F271
-P 3400 3050
-F 0 "P1" V 3350 3050 40  0000 C CNN
-F 1 "CONN_2" V 3450 3050 40  0000 C CNN
-	1    3400 3050
-	0    -1   1    0   
-$EndComp
-$Comp
-L CONN_2 P2
-U 1 1 5151F263
-P 3400 2250
-F 0 "P2" V 3350 2250 40  0000 C CNN
-F 1 "CONN_2" V 3450 2250 40  0000 C CNN
-	1    3400 2250
-	0    -1   1    0   
 $EndComp
 $EndSCHEMATC

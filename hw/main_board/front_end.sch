@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Apr 2013 11:34:43 AM PDT
+EESchema Schematic File Version 2  date Wed 17 Apr 2013 01:27:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 12 15
 Title "Daisho Project Main Board"
-Date "16 apr 2013"
+Date "17 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -42,6 +42,8 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	1800 4800 2700 4800
 Wire Wire Line
 	3900 2800 3900 2000
 Wire Wire Line
@@ -61,7 +63,7 @@ Wire Wire Line
 Wire Wire Line
 	2800 2900 2100 2900
 Wire Wire Line
-	2100 2700 2800 2700
+	2800 2700 2100 2700
 Wire Wire Line
 	3900 6400 4000 6400
 Wire Wire Line
@@ -85,7 +87,7 @@ Wire Wire Line
 	7600 7000 7700 7000
 Connection ~ 12600 5200
 Wire Wire Line
-	11800 5200 12700 5200
+	12700 5200 11800 5200
 Wire Wire Line
 	4700 7500 3900 7500
 Wire Wire Line
@@ -93,9 +95,9 @@ Wire Wire Line
 Wire Wire Line
 	1900 7400 2700 7400
 Wire Wire Line
-	1800 5200 2700 5200
+	2700 5200 1800 5200
 Wire Wire Line
-	9800 5200 8900 5200
+	8900 5200 9800 5200
 Connection ~ 14000 5200
 Wire Wire Line
 	7700 6400 7600 6400
@@ -129,8 +131,6 @@ Wire Wire Line
 	4700 5300 3900 5300
 Wire Wire Line
 	4700 5000 3900 5000
-Wire Wire Line
-	4800 4800 3900 4800
 Wire Wire Line
 	2700 5100 1900 5100
 Wire Wire Line
@@ -285,17 +285,17 @@ Connection ~ 3150 8100
 Wire Wire Line
 	3250 8100 3250 8000
 Wire Wire Line
-	3150 8200 3150 8000
+	3150 8000 3150 8200
 Wire Wire Line
 	3350 8000 3350 8100
 Connection ~ 3250 8100
 Wire Wire Line
-	8150 8200 8150 8000
+	8150 8000 8150 8200
 Wire Wire Line
 	8250 8100 8250 8000
 Connection ~ 8250 8100
 Wire Wire Line
-	13150 8200 13150 8000
+	13150 8000 13150 8200
 Wire Wire Line
 	13250 8100 13250 8000
 Connection ~ 13250 8100
@@ -448,7 +448,7 @@ Wire Wire Line
 Connection ~ 7600 5800
 Connection ~ 9000 5200
 Wire Wire Line
-	14800 5200 13900 5200
+	13900 5200 14800 5200
 Wire Wire Line
 	1800 4700 2700 4700
 Wire Wire Line
@@ -456,7 +456,7 @@ Wire Wire Line
 Wire Wire Line
 	4700 7400 3900 7400
 Wire Wire Line
-	6800 5200 7700 5200
+	7700 5200 6800 5200
 Connection ~ 7600 5200
 Wire Wire Line
 	12700 7000 12600 7000
@@ -471,12 +471,7 @@ Connection ~ 9000 6400
 Wire Wire Line
 	3900 7600 4700 7600
 Wire Wire Line
-	4800 4700 3900 4700
-Wire Wire Line
-	2700 4800 2600 4800
-Wire Wire Line
-	2600 4800 2600 4700
-Connection ~ 2600 4700
+	3900 4700 4800 4700
 Wire Wire Line
 	2600 5800 2700 5800
 Connection ~ 2600 5200
@@ -486,7 +481,7 @@ Wire Wire Line
 	2600 7000 2600 5200
 Connection ~ 2600 6400
 Wire Wire Line
-	3900 5200 4700 5200
+	4700 5200 3900 5200
 Wire Wire Line
 	4000 5800 3900 5800
 Connection ~ 4000 5200
@@ -495,7 +490,7 @@ Wire Wire Line
 Connection ~ 4000 5800
 Connection ~ 4000 6400
 Wire Wire Line
-	4700 2700 3800 2700
+	3800 2700 4700 2700
 Wire Wire Line
 	3900 3500 3900 3600
 Wire Wire Line
@@ -505,6 +500,11 @@ Wire Wire Line
 Wire Wire Line
 	2400 2600 2400 2700
 Connection ~ 2400 2700
+Wire Wire Line
+	3900 4800 4000 4800
+Wire Wire Line
+	4000 4800 4000 4700
+Connection ~ 4000 4700
 $Comp
 L R R33
 U 1 1 51688FC5
@@ -578,7 +578,7 @@ Text Label 2000 5100 0    60   ~ 0
 FE_CLK_N0
 Text Label 2000 5000 0    60   ~ 0
 FE_CLK_P0
-Text GLabel 1800 4700 0    60   Output ~ 0
+Text GLabel 4800 4700 2    60   Output ~ 0
 VALT_FE
 Text Label 4200 7600 0    60   ~ 0
 FE_A41
@@ -680,9 +680,9 @@ Text Label 2100 5400 0    60   ~ 0
 FE_A2
 Text Label 2100 5300 0    60   ~ 0
 FE_A0
-Text HLabel 4800 4800 2    60   BiDi ~ 0
+Text HLabel 1800 4700 0    60   BiDi ~ 0
 FE_I2C_SDA
-Text HLabel 4800 4700 2    60   Input ~ 0
+Text HLabel 1800 4800 0    60   Input ~ 0
 FE_I2C_SCL
 Text Notes 700  9800 0    60   ~ 0
 Ground unused pins at FPGA to ensure low impedance to ground?

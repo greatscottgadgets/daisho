@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Tue 16 Apr 2013 01:53:27 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Wed 17 Apr 2013 01:28:08 PM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1656,14 +1656,14 @@ BeginCmp
 TimeStamp = /510B2194/51672425;
 Reference = D1;
 ValeurCmp = DIODESCH;
-IdModule  = ;
+IdModule  = IPC_DIOM5226X203N;
 EndCmp
 
 BeginCmp
 TimeStamp = /510B2194/5167242A;
 Reference = D2;
 ValeurCmp = DIODESCH;
-IdModule  = ;
+IdModule  = IPC_DIOM5226X203N;
 EndCmp
 
 BeginCmp
@@ -1846,48 +1846,6 @@ TimeStamp = /510B2194/516774F5;
 Reference = L8;
 ValeurCmp = 4U7;
 IdModule  = GSG-NRG4026;
-EndCmp
-
-BeginCmp
-TimeStamp = /510B2194/5151F271;
-Reference = P1;
-ValeurCmp = CONN_2;
-IdModule  = GSG-HEADER-1x2;
-EndCmp
-
-BeginCmp
-TimeStamp = /510B2194/5151F263;
-Reference = P2;
-ValeurCmp = CONN_2;
-IdModule  = GSG-HEADER-1x2;
-EndCmp
-
-BeginCmp
-TimeStamp = /510B2194/51672B04;
-Reference = P3;
-ValeurCmp = CONN_2;
-IdModule  = GSG-HEADER-1x2;
-EndCmp
-
-BeginCmp
-TimeStamp = /510B2194/51674651;
-Reference = P6;
-ValeurCmp = CONN_2;
-IdModule  = GSG-HEADER-1x2;
-EndCmp
-
-BeginCmp
-TimeStamp = /510B2194/51677507;
-Reference = P7;
-ValeurCmp = CONN_2;
-IdModule  = GSG-HEADER-1x2;
-EndCmp
-
-BeginCmp
-TimeStamp = /510B2194/516775BE;
-Reference = P8;
-ValeurCmp = CONN_2;
-IdModule  = GSG-HEADER-1x2;
 EndCmp
 
 BeginCmp

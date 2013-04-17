@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Apr 2013 01:52:59 PM PDT
+EESchema Schematic File Version 2  date Wed 17 Apr 2013 01:27:31 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -34,7 +34,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 3 15
 Title "Daisho Project Main Board"
-Date "16 apr 2013"
+Date "17 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -42,6 +42,10 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Wire Wire Line
+	5800 6500 6200 6500
+Wire Wire Line
+	6200 6200 5500 6200
 Connection ~ 5800 4300
 Wire Wire Line
 	5800 4200 5800 4300
@@ -418,6 +422,12 @@ Wire Wire Line
 	5500 3600 5800 3600
 Wire Wire Line
 	5800 3600 5800 3700
+Wire Wire Line
+	5500 6400 6200 6400
+Text Label 5600 6400 0    60   ~ 0
+DDR2_SA1
+Text Label 5600 6200 0    60   ~ 0
+DDR2_SA0
 Text HLabel 8100 1800 2    60   Input ~ 0
 SPI_MISO_V1P8
 Text HLabel 8100 1700 2    60   Input ~ 0
@@ -615,7 +625,7 @@ F 1 "CONN_6" V 15300 5550 60  0000 C CNN
 	1    15250 5550
 	1    0    0    -1  
 $EndComp
-Text HLabel 2800 2200 0    60   Output ~ 0
+Text HLabel 5200 7300 0    60   Output ~ 0
 DDR2_SA[1..0]
 Text Label 11000 6400 0    60   ~ 0
 FPGA_TDO_V3P3
@@ -788,7 +798,7 @@ Text HLabel 2800 1600 0    60   Input ~ 0
 USB_POWER_FLT#
 Text HLabel 2800 1500 0    60   Output ~ 0
 USB_POWER_EN
-Text HLabel 2800 1300 0    60   Input ~ 0
+Text HLabel 11900 6500 2    60   Input ~ 0
 V1P8_PWRGD
 Text HLabel 11700 5300 2    60   Output ~ 0
 CLOCKGEN_OEB#
@@ -798,7 +808,7 @@ Text HLabel 6600 8500 2    60   Output ~ 0
 V1P1_ENABLE
 Text HLabel 6600 8300 2    60   Output ~ 0
 V1P2_ENABLE
-Text HLabel 6600 8100 2    60   Output ~ 0
+Text HLabel 5800 6500 0    60   Output ~ 0
 V1P8_ENABLE
 Text HLabel 11700 5000 2    60   Output ~ 0
 V2P5_ENABLE
