@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Apr 2013 11:34:43 AM PDT
+EESchema Schematic File Version 2  date Thu 18 Apr 2013 10:27:16 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -27,6 +27,7 @@ LIBS:tps27081a
 LIBS:74lvc2t45
 LIBS:tps62420
 LIBS:hole
+LIBS:inv1
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -34,7 +35,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 15 15
 Title "Daisho Project Main Board"
-Date "16 apr 2013"
+Date "19 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -42,6 +43,14 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 13100 8000
+NoConn ~ 13100 5400
+Wire Wire Line
+	2200 4100 3600 4100
+Wire Wire Line
+	11700 9200 13100 9200
+Wire Wire Line
+	11700 8800 13100 8800
 Wire Wire Line
 	3000 9100 3600 9100
 Connection ~ 14600 2000
@@ -53,19 +62,19 @@ Connection ~ 14200 2000
 Wire Wire Line
 	14600 2000 14600 1900
 Wire Wire Line
-	13800 2100 13800 1900
+	13800 1900 13800 2100
 Connection ~ 13800 800 
 Wire Wire Line
 	14200 800  14200 900 
 Connection ~ 14600 1400
 Wire Wire Line
-	14600 1500 14600 1300
+	14600 1300 14600 1500
 Connection ~ 14200 1400
 Wire Wire Line
-	14200 1500 14200 1300
+	14200 1300 14200 1500
 Connection ~ 13800 1400
 Wire Wire Line
-	13800 1500 13800 1300
+	13800 1300 13800 1500
 Wire Wire Line
 	7800 6000 8400 6000
 Wire Wire Line
@@ -182,7 +191,7 @@ Wire Wire Line
 	1900 10500 1900 10600
 Connection ~ 10700 10600
 Wire Wire Line
-	10700 10700 10700 10500
+	10700 10500 10700 10700
 Wire Wire Line
 	11000 10000 1500 10000
 Wire Wire Line
@@ -201,9 +210,9 @@ Wire Wire Line
 Wire Wire Line
 	15000 3200 14900 3200
 Wire Bus Line
-	7600 1400 7600 6000
+	7600 6000 7600 1400
 Wire Bus Line
-	7200 1800 7200 8500
+	7200 8500 7200 1800
 Connection ~ 10300 3300
 Wire Wire Line
 	10300 3300 10200 3300
@@ -231,7 +240,7 @@ Connection ~ 5500 2800
 Wire Wire Line
 	5500 2800 5400 2800
 Wire Wire Line
-	5400 2700 5700 2700
+	5700 2700 5400 2700
 Wire Wire Line
 	3600 3100 2500 3100
 Wire Wire Line
@@ -249,7 +258,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 6900 2500 6900
 Wire Wire Line
-	3600 7500 2500 7500
+	2500 7500 3600 7500
 Wire Wire Line
 	3600 7900 2500 7900
 Wire Wire Line
@@ -327,9 +336,9 @@ Wire Wire Line
 Wire Wire Line
 	3600 3000 2900 3000
 Wire Bus Line
-	2600 1600 2600 7500
+	2600 7500 2600 1600
 Wire Bus Line
-	2800 7000 2800 1400
+	2800 1400 2800 7000
 Wire Wire Line
 	3600 5400 2900 5400
 Wire Wire Line
@@ -395,11 +404,11 @@ Wire Wire Line
 Wire Wire Line
 	8400 5100 7300 5100
 Wire Wire Line
-	7300 4500 8400 4500
+	8400 4500 7300 4500
 Wire Wire Line
 	8400 4300 7300 4300
 Wire Wire Line
-	7300 3900 8400 3900
+	8400 3900 7300 3900
 Wire Wire Line
 	8400 3600 7300 3600
 Wire Wire Line
@@ -429,7 +438,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 3500 2500 3500
 Wire Bus Line
-	2400 8500 2400 1800
+	2400 1800 2400 8500
 Wire Wire Line
 	5400 3500 5500 3500
 Wire Wire Line
@@ -445,7 +454,7 @@ Wire Wire Line
 	5500 3300 5400 3300
 Connection ~ 5500 3300
 Wire Wire Line
-	10500 2700 10200 2700
+	10200 2700 10500 2700
 Wire Wire Line
 	10300 2800 10200 2800
 Connection ~ 10300 2800
@@ -459,9 +468,9 @@ Wire Wire Line
 	10200 3400 10300 3400
 Connection ~ 10300 3400
 Wire Bus Line
-	7400 1600 7400 7800
+	7400 7800 7400 1600
 Wire Wire Line
-	14900 2700 15200 2700
+	15200 2700 14900 2700
 Wire Wire Line
 	14900 3100 15000 3100
 Connection ~ 15000 3100
@@ -592,21 +601,39 @@ Wire Wire Line
 Wire Wire Line
 	7800 2900 8400 2900
 Wire Wire Line
-	13800 900  13800 800 
+	13800 800  13800 900 
 Wire Wire Line
-	14600 800  14600 900 
+	14600 900  14600 800 
 Connection ~ 14200 800 
 Wire Wire Line
 	14200 1900 14200 2000
 Connection ~ 13800 2000
 Wire Wire Line
-	13500 800  15000 800 
+	15000 800  13500 800 
 Connection ~ 14600 800 
 Wire Wire Line
-	15000 1300 15000 1500
+	15000 1500 15000 1300
 Connection ~ 15000 1400
 Wire Wire Line
 	3600 9000 3000 9000
+Wire Wire Line
+	11700 8700 13100 8700
+Wire Wire Line
+	11700 8900 13100 8900
+Wire Wire Line
+	2200 3400 3600 3400
+Text HLabel 2200 4100 0    60   Output ~ 0
+I2C_SCL
+Text HLabel 2200 3400 0    60   BiDi ~ 0
+I2C_SDA
+Text HLabel 11700 8700 0    60   Input ~ 0
+SPI_SCK
+Text HLabel 11700 8800 0    60   Input ~ 0
+SPI_SS
+Text HLabel 11700 8900 0    60   Input ~ 0
+SPI_MOSI
+Text HLabel 11700 9200 0    60   Output ~ 0
+SPI_MISO_V1P8
 $Comp
 L R R21
 U 1 1 51610B51
@@ -632,10 +659,10 @@ F 6 "1%" V 14900 1050 60  0000 C CNN "Tolerance"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0127
+L GND #PWR0132
 U 1 1 51610B0A
 P 13800 2100
-F 0 "#PWR0127" H 13800 2100 30  0001 C CNN
+F 0 "#PWR0132" H 13800 2100 30  0001 C CNN
 F 1 "GND" H 13800 2030 30  0001 C CNN
 	1    13800 2100
 	1    0    0    -1  
@@ -645,17 +672,12 @@ V1P8
 NoConn ~ 13100 9500
 NoConn ~ 13100 9400
 NoConn ~ 13100 9300
-NoConn ~ 13100 9200
 NoConn ~ 13100 9000
-NoConn ~ 13100 8900
-NoConn ~ 13100 8800
-NoConn ~ 13100 8700
 NoConn ~ 13100 8600
 NoConn ~ 13100 8500
 NoConn ~ 13100 8300
 NoConn ~ 13100 8200
 NoConn ~ 13100 8100
-NoConn ~ 13100 8000
 NoConn ~ 13100 7900
 NoConn ~ 13100 7700
 NoConn ~ 13100 7600
@@ -670,7 +692,6 @@ NoConn ~ 13100 6100
 NoConn ~ 13100 5800
 NoConn ~ 13100 5700
 NoConn ~ 13100 5600
-NoConn ~ 13100 5400
 NoConn ~ 13100 5100
 NoConn ~ 13100 4900
 NoConn ~ 13100 4700
@@ -699,7 +720,6 @@ NoConn ~ 8400 6700
 NoConn ~ 8400 6400
 NoConn ~ 8400 3800
 NoConn ~ 8400 3300
-NoConn ~ 3600 4100
 NoConn ~ 3600 8300
 NoConn ~ 3600 6300
 NoConn ~ 3600 6100
@@ -708,7 +728,6 @@ NoConn ~ 3600 5300
 NoConn ~ 3600 4600
 NoConn ~ 3600 4300
 NoConn ~ 3600 3900
-NoConn ~ 3600 3400
 NoConn ~ 3600 3200
 Text Label 3200 7400 0    60   ~ 0
 S#0
@@ -916,10 +935,10 @@ VREF
 Text Label 3200 4500 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR0128
+L GND #PWR0133
 U 1 1 513E0563
 P 10700 10700
-F 0 "#PWR0128" H 10700 10700 30  0001 C CNN
+F 0 "#PWR0133" H 10700 10700 30  0001 C CNN
 F 1 "GND" H 10700 10630 30  0001 C CNN
 	1    10700 10700
 	1    0    0    -1  
@@ -1497,10 +1516,10 @@ Entry Wire Line
 Entry Wire Line
 	2600 3700 2700 3800
 $Comp
-L GND #PWR0129
+L GND #PWR0134
 U 1 1 511559B7
 P 11500 3900
-F 0 "#PWR0129" H 11500 3900 30  0001 C CNN
+F 0 "#PWR0134" H 11500 3900 30  0001 C CNN
 F 1 "GND" H 11500 3830 30  0001 C CNN
 	1    11500 3900
 	1    0    0    -1  
@@ -1530,10 +1549,10 @@ F 6 "1%" V 11400 2750 60  0000 C CNN "Tolerance"
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR0130
+L GND #PWR0135
 U 1 1 5115592B
 P 6800 8100
-F 0 "#PWR0130" H 6800 8100 30  0001 C CNN
+F 0 "#PWR0135" H 6800 8100 30  0001 C CNN
 F 1 "GND" H 6800 8030 30  0001 C CNN
 	1    6800 8100
 	1    0    0    -1  

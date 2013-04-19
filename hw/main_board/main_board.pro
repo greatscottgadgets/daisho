@@ -1,4 +1,4 @@
-update=Tue 16 Apr 2013 07:07:54 PM PDT
+update=Thu 18 Apr 2013 10:27:50 PM PDT
 version=1
 last_client=pcbnew
 [general]
@@ -68,11 +68,12 @@ LibName25=tps27081a
 LibName26=74lvc2t45
 LibName27=tps62420
 LibName28=hole
+LibName29=inv1
 [pcbnew]
 version=1
 PadDrlX=0
-PadDimH=472
-PadDimV=571
+PadDimH=291
+PadDimV=728
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -128,3 +129,8 @@ LibName38=gsg-hole126mil
 LibName39=ipc_indc2012x130n
 LibName40=ipc_capc1608x90n
 LibName41=ipc_diom5226x203n
+LibName42=ipc_sot65p210x110-5n
+LibName43=gsg-header-1x4
+LibName44=gsg-header-1x6
+LibName45=ipc_ledc1608x60n
+LibName46=sullins_grpb052vwqs

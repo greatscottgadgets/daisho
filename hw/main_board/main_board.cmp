@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Wed 17 Apr 2013 01:28:08 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Thu 18 Apr 2013 10:28:19 PM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1667,6 +1667,20 @@ IdModule  = IPC_DIOM5226X203N;
 EndCmp
 
 BeginCmp
+TimeStamp = /5148D8EF/5170B2EE;
+Reference = D3;
+ValeurCmp = LED;
+IdModule  = IPC_LEDC1608X60N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5148D8EF/5170B1E6;
+Reference = D4;
+ValeurCmp = LED;
+IdModule  = IPC_LEDC1608X60N;
+EndCmp
+
+BeginCmp
 TimeStamp = /5109FB2D/51687BFC;
 Reference = FB1;
 ValeurCmp = FILTER;
@@ -1803,7 +1817,7 @@ BeginCmp
 TimeStamp = /5148D8EF/514CF69B;
 Reference = J4;
 ValeurCmp = CONN_5X2;
-IdModule  = GSG-50MIL-HEADER-2x5-TH;
+IdModule  = SULLINS_GRPB052VWQS;
 EndCmp
 
 BeginCmp
@@ -1849,10 +1863,17 @@ IdModule  = GSG-NRG4026;
 EndCmp
 
 BeginCmp
+TimeStamp = /5148D8EF/5170A64B;
+Reference = P1;
+ValeurCmp = CONN_4;
+IdModule  = GSG-HEADER-1x4;
+EndCmp
+
+BeginCmp
 TimeStamp = /5148D8EF/5169B203;
 Reference = P10;
 ValeurCmp = CONN_6;
-IdModule  = ;
+IdModule  = GSG-HEADER-1x6;
 EndCmp
 
 BeginCmp
@@ -2073,6 +2094,13 @@ IdModule  = IPC_RESC1005X40N;
 EndCmp
 
 BeginCmp
+TimeStamp = /5148D8EF/5170B37A;
+Reference = R31;
+ValeurCmp = 470R;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
 TimeStamp = /5138E12B/5168A5B5;
 Reference = R32;
 ValeurCmp = 1K;
@@ -2083,6 +2111,13 @@ BeginCmp
 TimeStamp = /5138E240/51688FC5;
 Reference = R33;
 ValeurCmp = 10K;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5148D8EF/5170B235;
+Reference = R34;
+ValeurCmp = 470R;
 IdModule  = IPC_RESC1005X40N;
 EndCmp
 
@@ -2651,6 +2686,13 @@ TimeStamp = /5148D8EF/516B7265;
 Reference = U19;
 ValeurCmp = GSG-IP4220CZ6;
 IdModule  = GSG-SOT457;
+EndCmp
+
+BeginCmp
+TimeStamp = /5148D8EF/51705207;
+Reference = U20;
+ValeurCmp = INV1;
+IdModule  = IPC_SOT65P210X110-5N;
 EndCmp
 
 BeginCmp

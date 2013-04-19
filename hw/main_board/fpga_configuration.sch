@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Apr 2013 01:52:59 PM PDT
+EESchema Schematic File Version 2  date Thu 18 Apr 2013 10:27:16 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -27,6 +27,7 @@ LIBS:tps27081a
 LIBS:74lvc2t45
 LIBS:tps62420
 LIBS:hole
+LIBS:inv1
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -34,7 +35,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 2 15
 Title "Daisho Project Main Board"
-Date "16 apr 2013"
+Date "19 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -42,6 +43,12 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+NoConn ~ 7600 6400
+NoConn ~ 7600 6300
+NoConn ~ 7600 4200
+NoConn ~ 7600 3500
+NoConn ~ 7600 3400
+NoConn ~ 7600 3200
 NoConn ~ 7600 6900
 NoConn ~ 7600 6500
 NoConn ~ 7600 6000
@@ -69,14 +76,6 @@ NoConn ~ 7600 2800
 NoConn ~ 7600 2700
 Wire Wire Line
 	4400 9000 7600 9000
-Wire Wire Line
-	6300 6300 7600 6300
-Wire Wire Line
-	6300 4200 7600 4200
-Wire Wire Line
-	6300 3500 7600 3500
-Wire Wire Line
-	6300 3200 7600 3200
 Connection ~ 11800 3300
 Wire Wire Line
 	10200 3300 12200 3300
@@ -239,15 +238,9 @@ Wire Wire Line
 	11800 3200 11800 3300
 Connection ~ 11400 3300
 Wire Wire Line
-	6300 3400 7600 3400
-Wire Wire Line
-	6300 6400 7600 6400
-Wire Wire Line
 	5300 6000 5000 6000
 Text HLabel 4400 9000 0    60   Output ~ 0
 FPGA_TDO_V1P8
-Text HLabel 6300 6400 0    60   Output ~ 0
-SPI_MISO_V1P8
 Text GLabel 5000 6000 0    60   Input ~ 0
 V3P3D
 Text Notes 6700 10200 0    60   ~ 0
@@ -516,16 +509,6 @@ Text HLabel 3400 1800 0    60   Output ~ 0
 ULPI_STP
 Text HLabel 3400 1500 0    60   Input ~ 0
 ULPI_CLK
-Text HLabel 6300 3500 0    60   Input ~ 0
-SPI_MOSI
-Text HLabel 6300 4200 0    60   Input ~ 0
-SPI_SS
-Text HLabel 6300 3200 0    60   Input ~ 0
-SPI_SCK
-Text HLabel 6300 6300 0    60   BiDi ~ 0
-I2C_SDA
-Text HLabel 6300 3400 0    60   Output ~ 0
-I2C_SCL
 Text HLabel 4400 8900 0    60   Input ~ 0
 FPGA_TMS
 Text HLabel 4400 8800 0    60   Input ~ 0

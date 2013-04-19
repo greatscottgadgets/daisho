@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 16 Apr 2013 01:52:59 PM PDT
+EESchema Schematic File Version 2  date Thu 18 Apr 2013 10:27:16 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -27,6 +27,7 @@ LIBS:tps27081a
 LIBS:74lvc2t45
 LIBS:tps62420
 LIBS:hole
+LIBS:inv1
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
@@ -34,7 +35,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 6 15
 Title "Daisho Project Main Board"
-Date "16 apr 2013"
+Date "19 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -326,10 +327,10 @@ F 5 "GRM155R61A104KA01D" H 11400 4300 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR089
+L GND #PWR094
 U 1 1 5168A590
 P 12000 5900
-F 0 "#PWR089" H 12000 5900 30  0001 C CNN
+F 0 "#PWR094" H 12000 5900 30  0001 C CNN
 F 1 "GND" H 12000 5830 30  0001 C CNN
 	1    12000 5900
 	1    0    0    -1  
@@ -385,10 +386,10 @@ VCCIO
 Text Label 12100 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR090
+L GND #PWR095
 U 1 1 514BAC1B
 P 11900 3800
-F 0 "#PWR090" H 11900 3800 30  0001 C CNN
+F 0 "#PWR095" H 11900 3800 30  0001 C CNN
 F 1 "GND" H 11900 3730 30  0001 C CNN
 	1    11900 3800
 	1    0    0    -1  
@@ -405,10 +406,10 @@ F 5 "GRM155R61A104KA01D" H 11900 3500 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR091
+L GND #PWR096
 U 1 1 514BAC0D
 P 11500 3900
-F 0 "#PWR091" H 11500 3900 30  0001 C CNN
+F 0 "#PWR096" H 11500 3900 30  0001 C CNN
 F 1 "GND" H 11500 3830 30  0001 C CNN
 	1    11500 3900
 	1    0    0    -1  
@@ -440,10 +441,10 @@ $EndComp
 Text HLabel 13100 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR092
+L GND #PWR097
 U 1 1 513E203A
 P 11100 3200
-F 0 "#PWR092" H 11100 3200 30  0001 C CNN
+F 0 "#PWR097" H 11100 3200 30  0001 C CNN
 F 1 "GND" H 11100 3130 30  0001 C CNN
 	1    11100 3200
 	1    0    0    -1  
@@ -620,10 +621,10 @@ VREF
 Text Label 3900 3800 0    60   ~ 0
 VCCIO
 $Comp
-L GND #PWR093
+L GND #PWR098
 U 1 1 51393F4B
 P 4300 5300
-F 0 "#PWR093" H 4300 5300 30  0001 C CNN
+F 0 "#PWR098" H 4300 5300 30  0001 C CNN
 F 1 "GND" H 4300 5230 30  0001 C CNN
 	1    4300 5300
 	1    0    0    -1  
