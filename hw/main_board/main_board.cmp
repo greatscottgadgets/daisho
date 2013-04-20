@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Thu 18 Apr 2013 10:28:19 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Sat 20 Apr 2013 09:15:25 AM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1863,17 +1863,10 @@ IdModule  = GSG-NRG4026;
 EndCmp
 
 BeginCmp
-TimeStamp = /5148D8EF/5170A64B;
+TimeStamp = /5148D8EF/5171C18B;
 Reference = P1;
-ValeurCmp = CONN_4;
-IdModule  = GSG-HEADER-1x4;
-EndCmp
-
-BeginCmp
-TimeStamp = /5148D8EF/5169B203;
-Reference = P10;
-ValeurCmp = CONN_6;
-IdModule  = GSG-HEADER-1x6;
+ValeurCmp = CONN_4X2;
+IdModule  = SULLINS_GRPB042VWQS;
 EndCmp
 
 BeginCmp
@@ -2132,6 +2125,13 @@ BeginCmp
 TimeStamp = /51394328/51689F7C;
 Reference = R36;
 ValeurCmp = 10K;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5148D8EF/5170CDD2;
+Reference = R37;
+ValeurCmp = 1K;
 IdModule  = IPC_RESC1005X40N;
 EndCmp
 
@@ -2553,6 +2553,13 @@ TimeStamp = /5148D8EF/516854DE;
 Reference = R112;
 ValeurCmp = 47K;
 IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5148D8EF/5170CDEE;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = PANASONIC_EVQP7_A_C_J_L;
 EndCmp
 
 BeginCmp

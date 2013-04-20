@@ -1,4 +1,4 @@
-update=Thu 18 Apr 2013 10:27:50 PM PDT
+update=Fri 19 Apr 2013 03:31:50 PM PDT
 version=1
 last_client=pcbnew
 [general]
@@ -134,3 +134,6 @@ LibName43=gsg-header-1x4
 LibName44=gsg-header-1x6
 LibName45=ipc_ledc1608x60n
 LibName46=sullins_grpb052vwqs
+LibName47=panasonic_evqp7_a_c_j_l
+LibName48=sullins_grpb041vwtc
+LibName49=sullins_grpb042vwqs

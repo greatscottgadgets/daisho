@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Thu 18 Apr 2013 10:27:16 PM PDT
+EESchema Schematic File Version 2  date Sat 20 Apr 2013 09:14:55 AM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -294,10 +294,10 @@ F 5 "RMCF0402JT1K00" V 11200 5550 60  0001 C CNN "Part Number"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0122
+L GND #PWR0121
 U 1 1 51689F80
 P 11200 5900
-F 0 "#PWR0122" H 11200 5900 30  0001 C CNN
+F 0 "#PWR0121" H 11200 5900 30  0001 C CNN
 F 1 "GND" H 11200 5830 30  0001 C CNN
 	1    11200 5900
 	1    0    0    -1  
@@ -470,10 +470,10 @@ FPGA_MSEL2
 Text Label 5200 3100 0    60   ~ 0
 FPGA_MSEL3
 $Comp
-L GND #PWR0123
+L GND #PWR0122
 U 1 1 51576C91
 P 4900 3200
-F 0 "#PWR0123" H 4900 3200 30  0001 C CNN
+F 0 "#PWR0122" H 4900 3200 30  0001 C CNN
 F 1 "GND" H 4900 3130 30  0001 C CNN
 	1    4900 3200
 	1    0    0    -1  
@@ -483,10 +483,10 @@ Only JTAG programming mode is supported.\nPS (passive serial) is not supported d
 Text HLabel 12300 2500 2    60   Input ~ 0
 VCCIO
 $Comp
-L GND #PWR0124
+L GND #PWR0123
 U 1 1 514F7BF4
 P 8400 3200
-F 0 "#PWR0124" H 8400 3200 30  0001 C CNN
+F 0 "#PWR0123" H 8400 3200 30  0001 C CNN
 F 1 "GND" H 8400 3130 30  0001 C CNN
 	1    8400 3200
 	1    0    0    -1  
@@ -558,10 +558,10 @@ F 5 "GRM155R61A104KA01D" H 8400 2800 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR0125
+L GND #PWR0124
 U 1 1 514BA518
 P 11200 3900
-F 0 "#PWR0125" H 11200 3900 30  0001 C CNN
+F 0 "#PWR0124" H 11200 3900 30  0001 C CNN
 F 1 "GND" H 11200 3830 30  0001 C CNN
 	1    11200 3900
 	1    0    0    -1  
@@ -582,10 +582,10 @@ AN592: "The VREF pin is used mainly for voltage bias and\ndoes not source or sin
 Text Label 11400 3200 0    60   ~ 0
 VREF
 $Comp
-L GND #PWR0126
+L GND #PWR0125
 U 1 1 514BA28E
 P 10800 3900
-F 0 "#PWR0126" H 10800 3900 30  0001 C CNN
+F 0 "#PWR0125" H 10800 3900 30  0001 C CNN
 F 1 "GND" H 10800 3830 30  0001 C CNN
 	1    10800 3900
 	1    0    0    -1  
