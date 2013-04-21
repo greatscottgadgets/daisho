@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date Sun 21 Apr 2013 03:38:19 PM PDT
+PCBNEW-BOARD Version 1 date Sun 21 Apr 2013 03:43:28 PM PDT
 
 # Created by Pcbnew(2012-05-21 BZR 3261)-stable
 
@@ -33,14 +33,14 @@ $EndSHEETDESCR
 $SETUP
 InternalUnit 0.000100 INCH
 Layers 8
-Layer[0] s4 signal
-Layer[1] b_gnd power
-Layer[2] b_pwr power
-Layer[3] s3 signal
-Layer[4] s2 signal
-Layer[5] t_pwr power
-Layer[6] t_gnd power
-Layer[15] s1 signal
+Layer[0] 8_bot signal
+Layer[1] 7_gnd power
+Layer[2] 6_pwr power
+Layer[3] 5_inner signal
+Layer[4] 4_inner signal
+Layer[5] 3_pwr power
+Layer[6] 2_gnd power
+Layer[15] 1_top signal
 TrackWidth 57
 TrackWidthList 80
 TrackWidthList 104
