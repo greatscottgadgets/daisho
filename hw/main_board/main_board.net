@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sat 20 Apr 2013 09:15:25 AM PDT
+# EESchema Netlist Version 1.1 created  Sat 20 Apr 2013 11:16:45 PM PDT
 (
  ( /5109F714/5136A7E6 IPC_CAPC1005X55N C1 1U
   ( 1 /usb0_power/A1P1 )
@@ -995,8 +995,6 @@
  ( /516AFA50 GSG-HOLE126MIL H1 HOLE
  )
  ( /516AFA74 GSG-HOLE126MIL H2 HOLE
- )
- ( /516AFA49 GSG-HOLE126MIL H3 HOLE
  )
  ( /516AFA77 GSG-HOLE126MIL H4 HOLE
  )
@@ -4282,9 +4280,6 @@ $component H1
  *HOLE*
 $endlist
 $component H2
- *HOLE*
-$endlist
-$component H3
  *HOLE*
 $endlist
 $component H4
