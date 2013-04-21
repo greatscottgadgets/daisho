@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Sat 20 Apr 2013 11:16:45 PM PDT
+Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Sun 21 Apr 2013 12:58:33 PM PDT
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -2132,6 +2132,20 @@ BeginCmp
 TimeStamp = /51394328/51689F81;
 Reference = R38;
 ValeurCmp = 1K;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5129BCC5/51743912;
+Reference = R39;
+ValeurCmp = 1K00;
+IdModule  = IPC_RESC1005X40N;
+EndCmp
+
+BeginCmp
+TimeStamp = /5129BCC5/51743969;
+Reference = R40;
+ValeurCmp = 10K;
 IdModule  = IPC_RESC1005X40N;
 EndCmp
 

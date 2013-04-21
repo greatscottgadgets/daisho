@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 20 Apr 2013 09:14:55 AM PDT
+EESchema Schematic File Version 2  date Sun 21 Apr 2013 12:58:36 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,7 +35,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 10 15
 Title "Daisho Project Main Board"
-Date "19 apr 2013"
+Date "21 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -43,6 +43,9 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 14500 6800
+Wire Wire Line
+	14800 6800 14000 6800
 Connection ~ 11800 6300
 Wire Wire Line
 	11800 6400 11800 6300
@@ -364,8 +367,6 @@ Wire Wire Line
 Wire Wire Line
 	14600 7500 14500 7500
 Wire Wire Line
-	14500 7500 14500 6600
-Wire Wire Line
 	11800 7200 14600 7200
 Wire Wire Line
 	10100 7900 14600 7900
@@ -398,6 +399,10 @@ Wire Wire Line
 Wire Wire Line
 	12600 6600 12600 7300
 Connection ~ 12600 7300
+Wire Wire Line
+	14500 7500 14500 6800
+Text HLabel 14800 6800 2    60   Output ~ 0
+USB3_ID
 $Comp
 L FILTER FB2
 U 1 1 516B027A
@@ -423,7 +428,6 @@ F 6 "FERRITE CHIP 220 OHM 2000MA 0805" H 11800 6750 60  0001 C CNN "Description"
 	0    -1   -1   0   
 $EndComp
 NoConn ~ 14000 6600
-NoConn ~ 14000 6800
 $Comp
 L GND #PWR0103
 U 1 1 5168771E
