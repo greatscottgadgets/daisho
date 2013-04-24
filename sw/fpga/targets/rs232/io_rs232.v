@@ -91,12 +91,12 @@ input	wire	DAISHO_RS232_D_DTR
 	reg				buf_in_ready_1, buf_in_ready_2;
 
 	reg		[10:0]	in_byte_count;
-	reg		[15:0]	in_bit_count;
+	reg		[11:0]	in_bit_count;
 	reg		[10:0]	out_byte_count;
 	reg		[15:0]	clock_divider;
 	reg				idle_buffer;
 	reg				idle_full;
-	reg		[4095:0] input_buffer[0:1];
+	reg		[64:0] input_buffer[0:1];
 	reg		[7:0]	line_state_ab;
 	reg		[7:0]	line_state_ab_1;
 	reg		[7:0]	line_state_cd;
@@ -115,8 +115,6 @@ always @(posedge clk) begin
 		out_byte_count <= 0;
 		idle_full <= 0;
 		idle_buffer <= 0;
-		input_buffer[0][4095:0] <= 4096'b1;
-		//input_buffer[1][4095:0] <= 4096'b0;
 
 		state <= ST_RST_1;
 	end
@@ -154,19 +152,19 @@ always @(posedge clk) begin
 	end
 	23: begin
 		buf_in_wren <= 0;
-		state  <= 24;
+		state  <= 27;
 	end
-	24: begin
+	27: begin
 		buf_in_data <= input_buffer[idle_buffer][7:0];
 		buf_in_addr <= buf_in_addr + 1'b1;
 		out_byte_count <= out_byte_count + 1'b1;
+		state <= 24;
+	end
+	24: begin
+		buf_in_wren <= 1;
 		state <= 25;
 	end
-	25: begin
-		buf_in_wren <= 1;
-		state <= 26;
-	end
-	26: begin	
+	25: begin	
 		buf_in_wren <= 0;
 		buf_in_addr <= buf_in_addr + 1'b1;
 		state <= 20;
@@ -174,7 +172,7 @@ always @(posedge clk) begin
 		if(out_byte_count == 512) begin
 			state <= ST_IDLE;
 			buf_in_commit <= 1;
-			buf_in_commit_len <= 9'b000001111;
+			buf_in_commit_len <= 9'd7;
 			idle_full <= 0;
 			out_byte_count <= 0;
 		end
@@ -185,9 +183,7 @@ always @(posedge clk) begin
 		// reset
 		state <= 0;
 	end
-end
 
-always @(posedge clk) begin
 	clock_divider <= clock_divider + 16'b1;
 	// Copy RS-232 lines in to buffer
 	{ line_state_ab_1, line_state_ab } <= {line_state_ab, {
@@ -200,15 +196,12 @@ always @(posedge clk) begin
 		DAISHO_RS232_C_RXD, DAISHO_RS232_C_CTS, DAISHO_RS232_C_DSR,
 		DAISHO_RS232_C_CD, DAISHO_RS232_C_RI}};
 
-	if (line_state_ab_1 & ~line_state_ab) begin
+	if (line_state_ab_1 != line_state_ab) begin
 		in_bit_count <= in_bit_count + 11'd24;
 		input_buffer[~idle_buffer][in_bit_count -:8] <= line_state_ab;
 		input_buffer[~idle_buffer][in_bit_count-16 -:24] <= clock_divider;
 	end
 	
-	//if(~idle_full) begin
-	//	input_buffer[idle_buffer][4095:0] <= 4096'b1;
-	//end
 end
 
 assign {DAISHO_RS232_A_TXD, DAISHO_RS232_A_RTS, DAISHO_RS232_A_DTR,
@@ -220,3 +213,4 @@ assign {DAISHO_RS232_C_TXD, DAISHO_RS232_C_RTS, DAISHO_RS232_C_DTR,
 		DAISHO_RS232_D_CD, DAISHO_RS232_D_RI} = line_state_cd;
 
 endmodule
+

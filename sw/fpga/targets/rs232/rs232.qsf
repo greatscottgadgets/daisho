@@ -365,6 +365,17 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name SMART_RECOMPILE ON
 
 
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ulpi.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_top.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_protocol.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_packet.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ep0.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ep.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_crc16.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_crc5.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep0in.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_descrip.v
 set_global_assignment -name VERILOG_FILE io_rs232.v
 set_global_assignment -name VERILOG_FILE rs232_top.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

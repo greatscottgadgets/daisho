@@ -49,7 +49,6 @@ libusb_device_handle *open_daisho_device()
 
 void vend_req(libusb_device_handle *devh, int request, int value)
 {
-	printf("Sending vendor request (%d, %d)\n", request, value);
 	int ret;
 	ret = libusb_control_transfer(devh,
 		LIBUSB_ENDPOINT_OUT | LIBUSB_REQUEST_TYPE_VENDOR | LIBUSB_RECIPIENT_DEVICE,
@@ -57,5 +56,4 @@ void vend_req(libusb_device_handle *devh, int request, int value)
 	if(ret < 0)
 		printf("* Error sending vendor request\n");
 	
-	printf("Done sending vendor request\n");
 }
