@@ -44,18 +44,15 @@ int main(void)
     }
 
 	while(1) {
-		printf("Calling bulk_transfer (read)\n");
 		vend_req(dev, 1, 1);
 		ret = libusb_bulk_transfer(dev, 0x81, readback, BUF_LEN, &transferred, 2000);
 		if (ret < 0){
 			printf("* Couldn't read: %s\n", libusb_error_name(ret));
 			break;
-		} else {
-			printf("Working (%d)\n", transferred);
+		} else if (transferred) {
 			for(i=0;i<transferred;i++)
 				printf("%02x ", readback[i]);
 			printf("\n");
-			//break;
 		}
 	}
 
