@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date Wed 24 Apr 2013 10:20:11 PM PDT
+PCBNEW-BOARD Version 1 date Wed 24 Apr 2013 10:34:37 PM PDT
 
 # Created by Pcbnew(2012-05-21 BZR 3261)-stable
 
@@ -25614,7 +25614,7 @@ De 24 1 0 Normal L
 $EndTEXTPCB
 $TEXTPCB
 Te "8_bot: 1.4mil Cu"
-nl "    Microstrip: 50 Ohms +/- 10% @ 0.15mm"
+nl "    Microstrip: 50 Ohms +/- 10% @ 0.14mm"
 Po 77953 57480 600 800 120 0
 De 24 1 0 Normal L
 $EndTEXTPCB
@@ -25625,7 +25625,7 @@ De 24 1 0 Normal L
 $EndTEXTPCB
 $TEXTPCB
 Te "6_inner: 1.4mil Cu"
-nl "    Embedded microstrip: 50 Ohms +/- 10% @ 0.15mm"
+nl "    Embedded microstrip: 50 Ohms +/- 10% @ 0.127mm"
 Po 77953 46850 600 800 120 0
 De 24 1 0 Normal L
 $EndTEXTPCB
@@ -25641,7 +25641,7 @@ De 24 1 0 Normal L
 $EndTEXTPCB
 $TEXTPCB
 Te "3_inner: 1.4mil Cu"
-nl "    Embedded microstrip: 50 Ohms +/- 10% @ 0.15mm"
+nl "    Embedded microstrip: 50 Ohms +/- 10% @ 0.127mm"
 Po 77953 31496 600 800 120 0
 De 24 1 0 Normal L
 $EndTEXTPCB
@@ -25652,7 +25652,7 @@ De 24 1 0 Normal L
 $EndTEXTPCB
 $TEXTPCB
 Te "1_top: 1.4mil Cu"
-nl "    Microstrip: 50 Ohms +/- 10% @ 0.15mm"
+nl "    Microstrip: 50 Ohms +/- 10% @ 0.14mm"
 Po 77953 20866 600 800 120 0
 De 24 1 0 Normal L
 $EndTEXTPCB
