@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 20 Apr 2013 09:14:55 AM PDT
+EESchema Schematic File Version 2  date Thu 25 Apr 2013 04:46:44 PM PDT
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -35,7 +35,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 15 15
 Title "Daisho Project Main Board"
-Date "19 apr 2013"
+Date "25 apr 2013"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -743,7 +743,7 @@ Text Label 8000 5200 0    60   ~ 0
 A14
 Text Label 3200 8700 0    60   ~ 0
 A11
-Text Label 8000 7000 0    60   ~ 0
+Text Label 8000 5600 0    60   ~ 0
 A7
 Text Label 3200 8800 0    60   ~ 0
 A6
@@ -765,7 +765,7 @@ Text Label 3200 6800 0    60   ~ 0
 A13
 Text Label 8000 6900 0    60   ~ 0
 A12
-Text Label 8000 5600 0    60   ~ 0
+Text Label 8000 7000 0    60   ~ 0
 A9
 Text Label 8000 6000 0    60   ~ 0
 A8
