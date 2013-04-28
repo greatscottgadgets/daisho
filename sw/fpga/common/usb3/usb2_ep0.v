@@ -42,6 +42,7 @@ input	wire			data_toggle_act,
 output	reg		[1:0]	data_toggle,
 
 output	reg		[6:0]	dev_addr,
+output	reg				configured,
 
 output	reg				err_setup_pkt
 
@@ -148,6 +149,8 @@ always @(posedge phy_clk) begin
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	{buf_in_commit_2, buf_in_commit_1} <= {buf_in_commit_1, buf_in_commit};
 	{buf_out_arm_2, buf_out_arm_1} <= {buf_out_arm_1, buf_out_arm};
+	
+	configured <= dev_config ? 1 : 0;
 	
 	dc <= dc + 1'b1;
 	
