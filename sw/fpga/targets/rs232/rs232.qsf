@@ -16,44 +16,6 @@
 #
 # -------------------------------------------------------------------------- #
 #
-# Quartus II 32-bit
-# Version 12.1 Build 177 11/07/2012 SJ Web Edition
-# Date created = 10:02:55  April 11, 2013
-#
-# -------------------------------------------------------------------------- #
-#
-# Notes:
-#
-# 1) The default values for assignments are stored in the file:
-#		rs232_assignment_defaults.qdf
-#    If this file doesn't exist, see file:
-#		assignment_defaults.qdf
-#
-# 2) Altera recommends that you do not modify this file. This
-#    file is updated automatically by the Quartus II software
-#    and any changes you make may be lost or overwritten.
-#
-# -------------------------------------------------------------------------- #
-
-
-# -------------------------------------------------------------------------- #
-#
-# Copyright (C) 1991-2012 Altera Corporation
-# Your use of Altera Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Altera Program License 
-# Subscription Agreement, Altera MegaCore Function License 
-# Agreement, or other applicable license agreement, including, 
-# without limitation, that your use is for the sole purpose of 
-# programming logic devices manufactured by Altera and sold by 
-# Altera or its authorized distributors.  Please refer to the 
-# applicable agreement for further details.
-#
-# -------------------------------------------------------------------------- #
-#
 # Quartus II 64-Bit
 # Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 # Date created = 23:57:13  February 28, 2013
@@ -63,7 +25,7 @@
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		rs232_assignment_defaults.qdf
+#		usb3_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -79,29 +41,11 @@
 # ========================
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "12.0 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:44:15  DECEMBER 28, 2012"
-set_global_assignment -name LAST_QUARTUS_VERSION 12.1
+set_global_assignment -name LAST_QUARTUS_VERSION "12.1 SP1"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output
 
 # Pin & Location Assignments
 # ==========================
-set_location_assignment PIN_G19 -to dbg_led[0]
-set_location_assignment PIN_F19 -to dbg_led[1]
-set_location_assignment PIN_E19 -to dbg_led[2]
-set_location_assignment PIN_F21 -to dbg_led[3]
-set_location_assignment PIN_F18 -to dbg_led[4]
-set_location_assignment PIN_E18 -to dbg_led[5]
-set_location_assignment PIN_J19 -to dbg_led[6]
-set_location_assignment PIN_H19 -to dbg_led[7]
-set_location_assignment PIN_J17 -to dbg_led[8]
-set_location_assignment PIN_G17 -to dbg_led[9]
-set_location_assignment PIN_J15 -to dbg_led[10]
-set_location_assignment PIN_H16 -to dbg_led[11]
-set_location_assignment PIN_J16 -to dbg_led[12]
-set_location_assignment PIN_H17 -to dbg_led[13]
-set_location_assignment PIN_F15 -to dbg_led[14]
-set_location_assignment PIN_G15 -to dbg_led[15]
-set_location_assignment PIN_G16 -to dbg_led[16]
-set_location_assignment PIN_H15 -to dbg_led[17]
 set_location_assignment PIN_Y2 -to clk_50
 set_location_assignment PIN_AE28 -to usb_ulpi_clk
 set_location_assignment PIN_AD28 -to usb_ulpi_stp
@@ -115,10 +59,47 @@ set_location_assignment PIN_E26 -to usb_ulpi_d[4]
 set_location_assignment PIN_G27 -to usb_ulpi_d[5]
 set_location_assignment PIN_K28 -to usb_ulpi_d[6]
 set_location_assignment PIN_M27 -to usb_ulpi_d[7]
-set_location_assignment PIN_M23 -to dbg_button[0]
-set_location_assignment PIN_M21 -to dbg_button[1]
-set_location_assignment PIN_N21 -to dbg_button[2]
-set_location_assignment PIN_R24 -to dbg_button[3]
+set_location_assignment PIN_AB7 -to sram_addr[0]
+set_location_assignment PIN_AD7 -to sram_addr[1]
+set_location_assignment PIN_AE7 -to sram_addr[2]
+set_location_assignment PIN_AC7 -to sram_addr[3]
+set_location_assignment PIN_AB6 -to sram_addr[4]
+set_location_assignment PIN_AE6 -to sram_addr[5]
+set_location_assignment PIN_AB5 -to sram_addr[6]
+set_location_assignment PIN_AC5 -to sram_addr[7]
+set_location_assignment PIN_AF5 -to sram_addr[8]
+set_location_assignment PIN_T7 -to sram_addr[9]
+set_location_assignment PIN_AF2 -to sram_addr[10]
+set_location_assignment PIN_AD3 -to sram_addr[11]
+set_location_assignment PIN_AB4 -to sram_addr[12]
+set_location_assignment PIN_AC3 -to sram_addr[13]
+set_location_assignment PIN_AA4 -to sram_addr[14]
+set_location_assignment PIN_AB11 -to sram_addr[15]
+set_location_assignment PIN_AC11 -to sram_addr[16]
+set_location_assignment PIN_AB9 -to sram_addr[17]
+set_location_assignment PIN_AB8 -to sram_addr[18]
+set_location_assignment PIN_T8 -to sram_addr[19]
+set_location_assignment PIN_AF8 -to sram_ce_n
+set_location_assignment PIN_AH3 -to sram_dq[0]
+set_location_assignment PIN_AF4 -to sram_dq[1]
+set_location_assignment PIN_AG4 -to sram_dq[2]
+set_location_assignment PIN_AH4 -to sram_dq[3]
+set_location_assignment PIN_AF6 -to sram_dq[4]
+set_location_assignment PIN_AG6 -to sram_dq[5]
+set_location_assignment PIN_AH6 -to sram_dq[6]
+set_location_assignment PIN_AF7 -to sram_dq[7]
+set_location_assignment PIN_AD1 -to sram_dq[8]
+set_location_assignment PIN_AD2 -to sram_dq[9]
+set_location_assignment PIN_AE2 -to sram_dq[10]
+set_location_assignment PIN_AE1 -to sram_dq[11]
+set_location_assignment PIN_AE3 -to sram_dq[12]
+set_location_assignment PIN_AE4 -to sram_dq[13]
+set_location_assignment PIN_AF3 -to sram_dq[14]
+set_location_assignment PIN_AG3 -to sram_dq[15]
+set_location_assignment PIN_AD4 -to sram_lb_n
+set_location_assignment PIN_AD5 -to sram_oe_n
+set_location_assignment PIN_AC4 -to sram_ub_n
+set_location_assignment PIN_AE8 -to sram_we_n
 
 set_location_assignment PIN_E17 -to HEX0[2]
 set_location_assignment PIN_G18 -to HEX0[0]
@@ -211,73 +192,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX7[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX7[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to HEX7[0]
 
-set_location_assignment PIN_AB22 -to DAISHO_RS232_A_DTR
-set_location_assignment PIN_AC15 -to DAISHO_RS232_A_CD
-set_location_assignment PIN_AB21 -to DAISHO_RS232_A_RTS
-set_location_assignment PIN_Y17 -to DAISHO_RS232_A_TXD
-set_location_assignment PIN_AC21 -to DAISHO_RS232_A_CTS
-set_location_assignment PIN_Y16 -to DAISHO_RS232_A_RI
-set_location_assignment PIN_AD21 -to DAISHO_RS232_A_DSR
-set_location_assignment PIN_AE16 -to DAISHO_RS232_A_RXD
-set_location_assignment PIN_AD15 -to DAISHO_RS232_B_RXD
-set_location_assignment PIN_AC22 -to DAISHO_RS232_SD_ALL
-set_location_assignment PIN_AE15 -to DAISHO_RS232_B_DSR
-set_location_assignment PIN_AC19 -to DAISHO_RS232_B_RI
-set_location_assignment PIN_AF16 -to DAISHO_RS232_B_CTS
-set_location_assignment PIN_AD19 -to DAISHO_RS232_B_TXD
-set_location_assignment PIN_AF15 -to DAISHO_RS232_B_RTS
-set_location_assignment PIN_AF24 -to DAISHO_RS232_B_CD
-set_location_assignment PIN_AE21 -to DAISHO_RS232_B_DTR
-set_location_assignment PIN_AF22 -to DAISHO_RS232_D_DSR
-set_location_assignment PIN_AD22 -to DAISHO_RS232_D_RXD
-set_location_assignment PIN_AG25 -to DAISHO_RS232_D_CTS
-set_location_assignment PIN_AD25 -to DAISHO_RS232_D_RI
-set_location_assignment PIN_AH25 -to DAISHO_RS232_D_RTS
-set_location_assignment PIN_AE25 -to DAISHO_RS232_D_TXD
-set_location_assignment PIN_AG22 -to DAISHO_RS232_D_DTR
-set_location_assignment PIN_AE24 -to DAISHO_RS232_D_CD
-set_location_assignment PIN_AH22 -to DAISHO_RS232_C_CD
-set_location_assignment PIN_AF26 -to DAISHO_RS232_C_DTR
-set_location_assignment PIN_AE20 -to DAISHO_RS232_C_TXD
-set_location_assignment PIN_AG23 -to DAISHO_RS232_C_RTS
-set_location_assignment PIN_AF20 -to DAISHO_RS232_C_RI
-set_location_assignment PIN_AH26 -to DAISHO_RS232_C_CTS
-set_location_assignment PIN_AH23 -to DAISHO_RS232_C_RXD
-set_location_assignment PIN_AG26 -to DAISHO_RS232_C_DSR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_DTR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_CD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RTS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_DSR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_TXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RI
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_DTR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_DTR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RI
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_DSR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_TXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_CTS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RTS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_CD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_CD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_TXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RTS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_CTS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_DTR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_CD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RTS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_TXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_CTS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RI
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_DSR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_SD_ALL
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RXD
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_DSR
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_CTS
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RI
-
 # Classic Timing Assignments
 # ==========================
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -322,6 +236,11 @@ set_global_assignment -name ECO_OPTIMIZE_TIMING ON
 # =====================
 set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
 
+# SignalTap II Assignments
+# ========================
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp2.stp
+
 # Advanced I/O Timing Assignments
 # ===============================
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
@@ -339,7 +258,7 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 # -------------------------------------------------
 
 # -----------------
-# start ENTITY(top)
+# start ENTITY(rs232_top)
 
 	# start DESIGN_PARTITION(Top)
 	# ---------------------------
@@ -348,34 +267,224 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 		# ===================================
 
 	# end DESIGN_PARTITION(Top)
+	# -------------------------
 
+# end ENTITY(rs232_top)
+# ---------------
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_ce_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_lb_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_oe_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_ub_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_we_n
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 2
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 1
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 3
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 4
+set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 8
+set_global_assignment -name IOBANK_VCCIO 2.5V -section_id 7
+
+set_location_assignment PIN_G21 -to LEDG[7]
+set_location_assignment PIN_G22 -to LEDG[6]
+set_location_assignment PIN_G20 -to LEDG[5]
+set_location_assignment PIN_H21 -to LEDG[4]
+set_location_assignment PIN_E24 -to LEDG[3]
+set_location_assignment PIN_E25 -to LEDG[2]
+set_location_assignment PIN_E22 -to LEDG[1]
+set_location_assignment PIN_E21 -to LEDG[0]
+set_location_assignment PIN_F17 -to LEDG[8]
+set_location_assignment PIN_H15 -to LEDR[17]
+set_location_assignment PIN_G16 -to LEDR[16]
+set_location_assignment PIN_G15 -to LEDR[15]
+set_location_assignment PIN_F15 -to LEDR[14]
+set_location_assignment PIN_H17 -to LEDR[13]
+set_location_assignment PIN_J16 -to LEDR[12]
+set_location_assignment PIN_H16 -to LEDR[11]
+set_location_assignment PIN_J15 -to LEDR[10]
+set_location_assignment PIN_G17 -to LEDR[9]
+set_location_assignment PIN_J17 -to LEDR[8]
+set_location_assignment PIN_H19 -to LEDR[7]
+set_location_assignment PIN_J19 -to LEDR[6]
+set_location_assignment PIN_E18 -to LEDR[5]
+set_location_assignment PIN_F18 -to LEDR[4]
+set_location_assignment PIN_F21 -to LEDR[3]
+set_location_assignment PIN_E19 -to LEDR[2]
+set_location_assignment PIN_F19 -to LEDR[1]
+set_location_assignment PIN_G19 -to LEDR[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[17]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[16]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[11]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[0]
+set_location_assignment PIN_Y23 -to SW[17]
+set_location_assignment PIN_Y24 -to SW[16]
+set_location_assignment PIN_AA22 -to SW[15]
+set_location_assignment PIN_AA23 -to SW[14]
+set_location_assignment PIN_AA24 -to SW[13]
+set_location_assignment PIN_AB23 -to SW[12]
+set_location_assignment PIN_AB24 -to SW[11]
+set_location_assignment PIN_AC24 -to SW[10]
+set_location_assignment PIN_AB25 -to SW[9]
+set_location_assignment PIN_AC25 -to SW[8]
+set_location_assignment PIN_AB26 -to SW[7]
+set_location_assignment PIN_AD26 -to SW[6]
+set_location_assignment PIN_AC26 -to SW[5]
+set_location_assignment PIN_AB27 -to SW[4]
+set_location_assignment PIN_AD27 -to SW[3]
+set_location_assignment PIN_AC27 -to SW[2]
+set_location_assignment PIN_AC28 -to SW[1]
+set_location_assignment PIN_AB28 -to SW[0]
+
+set_location_assignment PIN_R24 -to KEY[3]
+set_location_assignment PIN_N21 -to KEY[2]
+set_location_assignment PIN_M21 -to KEY[1]
+set_location_assignment PIN_M23 -to KEY[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to HEX0[0]
+
+set_location_assignment PIN_AB22 -to DAISHO_RS232_A_DTR
+set_location_assignment PIN_AC15 -to DAISHO_RS232_A_CD
+set_location_assignment PIN_AB21 -to DAISHO_RS232_A_RTS
+set_location_assignment PIN_Y17 -to DAISHO_RS232_A_TXD
+set_location_assignment PIN_AC21 -to DAISHO_RS232_A_CTS
+set_location_assignment PIN_Y16 -to DAISHO_RS232_A_RI
+set_location_assignment PIN_AD21 -to DAISHO_RS232_A_DSR
+set_location_assignment PIN_AE16 -to DAISHO_RS232_A_RXD
+set_location_assignment PIN_AD15 -to DAISHO_RS232_B_RXD
+set_location_assignment PIN_AC22 -to DAISHO_RS232_SD_ALL
+set_location_assignment PIN_AE15 -to DAISHO_RS232_B_DSR
+set_location_assignment PIN_AC19 -to DAISHO_RS232_B_RI
+set_location_assignment PIN_AF16 -to DAISHO_RS232_B_CTS
+set_location_assignment PIN_AD19 -to DAISHO_RS232_B_TXD
+set_location_assignment PIN_AF15 -to DAISHO_RS232_B_RTS
+set_location_assignment PIN_AF24 -to DAISHO_RS232_B_CD
+set_location_assignment PIN_AE21 -to DAISHO_RS232_B_DTR
+set_location_assignment PIN_AF22 -to DAISHO_RS232_D_DSR
+set_location_assignment PIN_AD22 -to DAISHO_RS232_D_RXD
+set_location_assignment PIN_AG25 -to DAISHO_RS232_D_CTS
+set_location_assignment PIN_AD25 -to DAISHO_RS232_D_RI
+set_location_assignment PIN_AH25 -to DAISHO_RS232_D_RTS
+set_location_assignment PIN_AE25 -to DAISHO_RS232_D_TXD
+set_location_assignment PIN_AG22 -to DAISHO_RS232_D_DTR
+set_location_assignment PIN_AE24 -to DAISHO_RS232_D_CD
+set_location_assignment PIN_AH22 -to DAISHO_RS232_C_CD
+set_location_assignment PIN_AF26 -to DAISHO_RS232_C_DTR
+set_location_assignment PIN_AE20 -to DAISHO_RS232_C_TXD
+set_location_assignment PIN_AG23 -to DAISHO_RS232_C_RTS
+set_location_assignment PIN_AF20 -to DAISHO_RS232_C_RI
+set_location_assignment PIN_AH26 -to DAISHO_RS232_C_CTS
+set_location_assignment PIN_AH23 -to DAISHO_RS232_C_RXD
+set_location_assignment PIN_AG26 -to DAISHO_RS232_C_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_DTR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_CD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_DSR
 
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-
-set_global_assignment -name SEARCH_PATH ../../common/usb3
-#set_global_assignment -name QIP_FILE mf_usb2_ep0in.qip
-#set_global_assignment -name QIP_FILE mf_usb2_descrip.qip
-#set_global_assignment -name QIP_FILE mf_usb2_ep.qip
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-
-
-set_global_assignment -name SMART_RECOMPILE ON
-
-
-set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ulpi.v
+set_global_assignment -name VERILOG_FILE rs232_top.v
+set_global_assignment -name SDC_FILE constraints.sdc
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_top.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_protocol.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_packet.v
-set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ep0.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ep.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ep0.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_crc16.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_crc5.v
-set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep0in.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep0in.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_descrip.v
-set_global_assignment -name VERILOG_FILE io_rs232.v
-set_global_assignment -name VERILOG_FILE rs232_top.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ulpi.v
+set_global_assignment -name VERILOG_FILE io_seg7.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_CD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_DTR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_CD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_DTR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_CD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_DTR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_SD_ALL
+set_global_assignment -name QIP_FILE mf_rs232_status.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

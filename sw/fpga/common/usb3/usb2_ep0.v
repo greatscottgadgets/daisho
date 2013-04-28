@@ -42,6 +42,7 @@ input	wire			data_toggle_act,
 output	reg		[1:0]	data_toggle,
 
 output	reg		[6:0]	dev_addr,
+output	reg				configured,
 
 output	reg				err_setup_pkt
 
@@ -101,7 +102,7 @@ output	reg				err_setup_pkt
 	
 	reg		[5:0]	desired_out_len;
 	reg		[15:0]	packet_out_len;
-	reg		[3:0]	dev_config;
+	reg		[7:0]	dev_config;
 	
 	reg				ptr_in;
 	reg				ptr_out;
@@ -148,6 +149,8 @@ always @(posedge phy_clk) begin
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	{buf_in_commit_2, buf_in_commit_1} <= {buf_in_commit_1, buf_in_commit};
 	{buf_out_arm_2, buf_out_arm_1} <= {buf_out_arm_1, buf_out_arm};
+	
+	configured <= dev_config ? 1 : 0;
 	
 	dc <= dc + 1'b1;
 	
@@ -315,7 +318,7 @@ always @(posedge phy_clk) begin
 	end
 	ST_REQ_SETCONFIG: begin
 		// SET DEVICE CONFIGURATION
-		dev_config <= packet_setup_wval[6:0];
+		dev_config <= packet_setup_wval[7:0];
 	
 		// send 0byte response (DATA1)
 		len_out <= 0;

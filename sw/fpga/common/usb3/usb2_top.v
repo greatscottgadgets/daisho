@@ -24,6 +24,7 @@ input	wire			opt_enable_hs,
 output	wire			stat_connected,
 output	wire			stat_fs,
 output	wire			stat_hs,
+output	wire			stat_configured,
 
 input	wire	[8:0]	buf_in_addr,
 input	wire	[7:0]	buf_in_data,
@@ -258,7 +259,8 @@ usb2_protocol ipr (
 	
 	// tell the rest of the USB controller about what
 	// our current device address is, assigned by host
-	.dev_addr			( prot_dev_addr )
+	.dev_addr			( prot_dev_addr ),
+	.configured			( stat_configured )
 );
 
 

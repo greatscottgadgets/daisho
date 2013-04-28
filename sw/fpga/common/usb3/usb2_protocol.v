@@ -58,6 +58,7 @@ output	wire	[7:0]	vend_req_request,
 output	wire	[15:0]	vend_req_val,
 
 output	wire	[6:0]	dev_addr,
+output	wire			configured,
 
 output	wire			err_setup_pkt
 
@@ -211,6 +212,7 @@ usb2_ep0 iep0 (
 	.data_toggle		( ep0_data_toggle ),
 	
 	.dev_addr		( dev_addr ),
+	.configured		( configured ),
 	
 	.err_setup_pkt	( err_setup_pkt )
 );
