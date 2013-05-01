@@ -222,6 +222,7 @@ set_location_assignment PIN_L28 -to phy0_gm_txd[7]
 set_location_assignment PIN_L21 -to phy0_gm_tx_en
 set_location_assignment PIN_U26 -to phy0_gm_tx_er
 set_location_assignment PIN_T22 -to phy0_gm_tx_clk
+set_location_assignment PIN_V25 -to phy0_gm_gtx_clk
 set_location_assignment PIN_R22 -to phy0_gm_rxd[0]
 set_location_assignment PIN_R21 -to phy0_gm_rxd[1]
 set_location_assignment PIN_P21 -to phy0_gm_rxd[2]
@@ -233,7 +234,6 @@ set_location_assignment PIN_L22 -to phy0_gm_rxd[7]
 set_location_assignment PIN_V26 -to phy0_gm_rx_err
 set_location_assignment PIN_T21 -to phy0_gm_rx_dv
 set_location_assignment PIN_R27 -to phy0_gm_rx_clk
-set_location_assignment PIN_V25 -to phy0_gm_gtk_clk
 set_location_assignment PIN_R28 -to phy0_gm_mdc
 set_location_assignment PIN_U27 -to phy0_gm_mio
 set_location_assignment PIN_U25 -to phy0_addr[0]
@@ -258,6 +258,7 @@ set_location_assignment PIN_F28 -to phy1_gm_txd[7]
 set_location_assignment PIN_M26 -to phy1_gm_tx_en
 set_location_assignment PIN_C27 -to phy1_gm_tx_er
 set_location_assignment PIN_K22 -to phy1_gm_tx_clk
+set_location_assignment PIN_M25 -to phy1_gm_gtx_clk
 set_location_assignment PIN_K26 -to phy1_gm_rxd[0]
 set_location_assignment PIN_K25 -to phy1_gm_rxd[1]
 set_location_assignment PIN_H26 -to phy1_gm_rxd[2]
@@ -269,7 +270,6 @@ set_location_assignment PIN_F26 -to phy1_gm_rxd[7]
 set_location_assignment PIN_G28 -to phy1_gm_rx_err
 set_location_assignment PIN_G27 -to phy1_gm_rx_dv
 set_location_assignment PIN_K27 -to phy1_gm_rx_clk
-set_location_assignment PIN_M25 -to phy1_gm_gtk_clk
 set_location_assignment PIN_M27 -to phy1_gm_mdc
 set_location_assignment PIN_M28 -to phy1_gm_mio
 set_location_assignment PIN_D26 -to phy1_addr[0]
@@ -294,6 +294,7 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_txd[7]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_tx_en
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_tx_er
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_tx_clk
+set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_gtx_clk
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_rxd[0]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_rxd[1]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_rxd[2]
@@ -305,7 +306,6 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_rxd[7]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_rx_err
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_rx_dv
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_rx_clk
-set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_gtk_clk
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_mdc
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_gm_mio
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy0_addr[0]
@@ -330,6 +330,7 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_txd[7]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_tx_en
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_tx_er
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_tx_clk
+set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_gtx_clk
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_rxd[0]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_rxd[1]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_rxd[2]
@@ -341,7 +342,6 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_rxd[7]
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_rx_err
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_rx_dv
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_rx_clk
-set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_gtk_clk
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_mdc
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_gm_mio
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_addr[0]
@@ -354,6 +354,84 @@ set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_int_n
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_clk125_ndo
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_col
 set_instance_assignment -name IO_STANDARD "2.5 V" -to phy1_crs
+
+set_location_assignment PIN_G21 -to LEDG[7]
+set_location_assignment PIN_G22 -to LEDG[6]
+set_location_assignment PIN_G20 -to LEDG[5]
+set_location_assignment PIN_H21 -to LEDG[4]
+set_location_assignment PIN_E24 -to LEDG[3]
+set_location_assignment PIN_E25 -to LEDG[2]
+set_location_assignment PIN_E22 -to LEDG[1]
+set_location_assignment PIN_E21 -to LEDG[0]
+set_location_assignment PIN_F17 -to LEDG[8]
+set_location_assignment PIN_H15 -to LEDR[17]
+set_location_assignment PIN_G16 -to LEDR[16]
+set_location_assignment PIN_G15 -to LEDR[15]
+set_location_assignment PIN_F15 -to LEDR[14]
+set_location_assignment PIN_H17 -to LEDR[13]
+set_location_assignment PIN_J16 -to LEDR[12]
+set_location_assignment PIN_H16 -to LEDR[11]
+set_location_assignment PIN_J15 -to LEDR[10]
+set_location_assignment PIN_G17 -to LEDR[9]
+set_location_assignment PIN_J17 -to LEDR[8]
+set_location_assignment PIN_H19 -to LEDR[7]
+set_location_assignment PIN_J19 -to LEDR[6]
+set_location_assignment PIN_E18 -to LEDR[5]
+set_location_assignment PIN_F18 -to LEDR[4]
+set_location_assignment PIN_F21 -to LEDR[3]
+set_location_assignment PIN_E19 -to LEDR[2]
+set_location_assignment PIN_F19 -to LEDR[1]
+set_location_assignment PIN_G19 -to LEDR[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDG[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[17]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[16]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[11]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[0]
+set_location_assignment PIN_Y23 -to SW[17]
+set_location_assignment PIN_Y24 -to SW[16]
+set_location_assignment PIN_AA22 -to SW[15]
+set_location_assignment PIN_AA23 -to SW[14]
+set_location_assignment PIN_AA24 -to SW[13]
+set_location_assignment PIN_AB23 -to SW[12]
+set_location_assignment PIN_AB24 -to SW[11]
+set_location_assignment PIN_AC24 -to SW[10]
+set_location_assignment PIN_AB25 -to SW[9]
+set_location_assignment PIN_AC25 -to SW[8]
+set_location_assignment PIN_AB26 -to SW[7]
+set_location_assignment PIN_AD26 -to SW[6]
+set_location_assignment PIN_AC26 -to SW[5]
+set_location_assignment PIN_AB27 -to SW[4]
+set_location_assignment PIN_AD27 -to SW[3]
+set_location_assignment PIN_AC27 -to SW[2]
+set_location_assignment PIN_AC28 -to SW[1]
+set_location_assignment PIN_AB28 -to SW[0]
+
+set_location_assignment PIN_R24 -to KEY[3]
+set_location_assignment PIN_N21 -to KEY[2]
+set_location_assignment PIN_M21 -to KEY[1]
+set_location_assignment PIN_M23 -to KEY[0]
 
 # Classic Timing Assignments
 # ==========================
