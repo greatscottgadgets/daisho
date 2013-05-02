@@ -271,47 +271,6 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 
 # end ENTITY(rs232_top)
 # ---------------
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[19]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[18]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[17]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[16]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_addr[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_ce_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_dq[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_lb_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_oe_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_ub_n
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sram_we_n
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 2
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 1
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 3
