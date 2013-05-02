@@ -80,4 +80,8 @@ Vias
 8 mil (0.2032 mm) min via drill
 17.7 mil (0.45 mm) min via pad
     4.85 mil min annular ring
+
 Via-in-pad used in many places
+
+Vias in pads need to be filled for assembly
+    Most vias in pads are in capacitor footprints near the 780-BGA and 175-BGA
