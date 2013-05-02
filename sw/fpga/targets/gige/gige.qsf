@@ -399,6 +399,10 @@ set_location_assignment PIN_N21 -to KEY[2]
 set_location_assignment PIN_M21 -to KEY[1]
 set_location_assignment PIN_M23 -to KEY[0]
 
+# Included Common Files
+# =====================
+set_global_assignment -name VERILOG_FILE ../../common/io_seg7.v
+
 # Classic Timing Assignments
 # ==========================
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0

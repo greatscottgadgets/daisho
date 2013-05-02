@@ -402,6 +402,7 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE rs232_top.v
 set_global_assignment -name SDC_FILE constraints.sdc
+set_global_assignment -name VERILOG_FILE ../../common/io_seg7.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_top.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_protocol.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_packet.v
