@@ -57,7 +57,7 @@ Impedance goals:
     50 Ohm +/- 10% microstrip, layers 1:2 at 5.5 mil (0.14 mm) width
     50 Ohm +/- 10% asym stripline, layers 3:2 at 5.0 mil (0.127 mm) width
     50 Ohm +/- 10% asym stripline, layers 6:7 at 5.0 mil (0.127 mm) width
-    50 Ohm +/- 10% microstrip, layers 8:7 at 5.0 mil (0.14 mm) width
+    50 Ohm +/- 10% microstrip, layers 8:7 at 5.5 mil (0.14 mm) width
 
 Soldermask
 ==========
