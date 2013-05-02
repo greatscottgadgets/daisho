@@ -85,3 +85,9 @@ Via-in-pad used in many places
 
 Vias in pads need to be filled for assembly
     Most vias in pads are in capacitor footprints near the 780-BGA and 175-BGA
+
+Drills
+======
+Drills are specified in two files:
+    main_board.drl contains plated drills.
+    main_board-NPTH.drl contains non-plated drills.
