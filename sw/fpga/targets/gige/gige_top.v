@@ -100,83 +100,35 @@ module gige_top (
 	assign LEDG = led_g;
 
 	reg  reset_1;
-	reg  reset;
-
-	reg	      [5:0] state;
-	parameter [5:0] ST_RST          = 6'h00,
-                    ST_CONFIG       = 6'h01,
-                    ST_CONFIG_DELAY = 6'h02,
-                    ST_IDLE         = 6'h03,
-                    ST_ACTIVE       = 6'h04;
-
-	reg hold_config;
-	reg [4:0] phy0_phyad;
-	reg [3:0] phy0_mode;
-	reg phy0_clk_125_en;
-	assign phy0_addr = (hold_config) ? phy0_phyad : 5'bz;
-	assign phy0_gm_rxd[7:4] = 4'bz;
-	assign phy0_gm_rxd[3:0] = (hold_config) ? phy0_mode : 4'bz;
-	assign phy0_gm_rx_dv = (hold_config) ? phy0_clk_125_en : 1'bz;
-
-	reg [4:0] phy1_phyad;
-	reg [3:0] phy1_mode;
-	reg phy1_clk_125_en;
-	assign phy1_addr = (hold_config) ? phy1_phyad : 5'bz;
-	assign phy1_gm_rxd[7:4] = 4'bz;
-	assign phy1_gm_rxd[3:0] = (hold_config) ? phy1_mode : 4'bz;
-	assign phy1_gm_rx_dv = (hold_config) ? phy1_clk_125_en : 1'bz;
-
-	reg phy0_hw_reset;
-	assign phy0_hw_rst = phy0_hw_reset;
-	reg phy1_hw_reset;
-	assign phy1_hw_rst = phy1_hw_reset;
-
-	reg [12:0] config_delay;
+	reg  reset_2;
 
 always @(posedge clk_50) begin
-	{reset_1, reset} <= {reset, ~KEY[0]};
-	if (reset_1) begin
-		state <= ST_RST;
-	end
-	
-	case(state)
-	ST_RST: begin
-		{phy0_hw_reset, phy1_hw_reset} <= {2'b00};
-		hold_config <= 1;
-		state <= ST_CONFIG;
-	end
-	
-	ST_CONFIG: begin
-		// Assign config params, then wait for next state to de-assert reset
-		phy0_mode[3:0] <= {4'b0001};   // GMII/MII mode
-		phy0_clk_125_en <= 1'b1;       // enable 125MHz clock output
-		phy0_phyad[4:0] <= {5'b00001}; // Set MIIM address to '1'
-
-		phy1_mode[3:0] <= {4'b0001};   // GMII/MII mode
-		phy1_clk_125_en <= 1'b1;       // enable 125MHz clock output
-		phy1_phyad[4:0] <= {5'b00001}; // Set MIIM address to '1'
-
-		{phy0_hw_reset, phy1_hw_reset} <= {2'b11};
-		state <= ST_CONFIG_DELAY;
-	end
-
-	ST_CONFIG_DELAY: begin
-		// Need to hold pins for a while (not sure how long), guessing at
-		// 100us due to that being the delay befor using MIIM interface.
-		// 100us is 5000 clk_50 ticks.
-		config_delay <= config_delay + 1;
-		if (config_delay == 13'd5000) begin
-			state <= ST_IDLE;
-			hold_config <= 0;
-		end
-	end
-	
-	ST_IDLE: begin
-		led_g[6] <= 1;
-	end
-	endcase
-	
+	{reset_2, reset_1} <= {reset_1, ~KEY[0]};
 end
+
+phy_init phy0_init (
+	.clk_50 ( clk_50 ),
+	.reset_n ( reset_2 ),
+
+	.phy_gm_rxd ( phy0_gm_rxd ),
+	.phy_gm_rx_dv ( phy0_gm_rx_dv ),
+	.phy_addr ( phy0_addr ),
+	.phy_hw_rst ( phy0_hw_rst ),
+
+	.phy_ready ( phy0_ready )
+);
+
+phy_init phy1_init (
+	.clk_50 ( clk_50 ),
+	.reset_n ( reset_2 ),
+
+	.phy_gm_rxd ( phy1_gm_rxd ),
+	.phy_gm_rx_dv ( phy1_gm_rx_dv ),
+	.phy_addr ( phy1_addr ),
+	.phy_hw_rst ( phy1_hw_rst ),
+
+	.phy_ready ( phy1_ready )
+);
 
 // 0-3 -> Register address
 io_seg7 is0 (
