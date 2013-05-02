@@ -84,41 +84,7 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output
 
 # Pin & Location Assignments
 # ==========================
-set_location_assignment PIN_G19 -to dbg_led[0]
-set_location_assignment PIN_F19 -to dbg_led[1]
-set_location_assignment PIN_E19 -to dbg_led[2]
-set_location_assignment PIN_F21 -to dbg_led[3]
-set_location_assignment PIN_F18 -to dbg_led[4]
-set_location_assignment PIN_E18 -to dbg_led[5]
-set_location_assignment PIN_J19 -to dbg_led[6]
-set_location_assignment PIN_H19 -to dbg_led[7]
-set_location_assignment PIN_J17 -to dbg_led[8]
-set_location_assignment PIN_G17 -to dbg_led[9]
-set_location_assignment PIN_J15 -to dbg_led[10]
-set_location_assignment PIN_H16 -to dbg_led[11]
-set_location_assignment PIN_J16 -to dbg_led[12]
-set_location_assignment PIN_H17 -to dbg_led[13]
-set_location_assignment PIN_F15 -to dbg_led[14]
-set_location_assignment PIN_G15 -to dbg_led[15]
-set_location_assignment PIN_G16 -to dbg_led[16]
-set_location_assignment PIN_H15 -to dbg_led[17]
 set_location_assignment PIN_Y2 -to clk_50
-#set_location_assignment PIN_AE28 -to usb_ulpi_clk
-#set_location_assignment PIN_AD28 -to usb_ulpi_stp
-#set_location_assignment PIN_P28 -to usb_ulpi_nxt
-#set_location_assignment PIN_F26 -to usb_ulpi_dir
-#set_location_assignment PIN_AE27 -to usb_ulpi_d[0]
-#set_location_assignment PIN_D28 -to usb_ulpi_d[1]
-#set_location_assignment PIN_H25 -to usb_ulpi_d[2]
-#set_location_assignment PIN_G25 -to usb_ulpi_d[3]
-#set_location_assignment PIN_E26 -to usb_ulpi_d[4]
-#set_location_assignment PIN_G27 -to usb_ulpi_d[5]
-#set_location_assignment PIN_K28 -to usb_ulpi_d[6]
-#set_location_assignment PIN_M27 -to usb_ulpi_d[7]
-set_location_assignment PIN_M23 -to dbg_button[0]
-set_location_assignment PIN_M21 -to dbg_button[1]
-set_location_assignment PIN_N21 -to dbg_button[2]
-set_location_assignment PIN_R24 -to dbg_button[3]
 
 set_location_assignment PIN_E17 -to HEX0[2]
 set_location_assignment PIN_G18 -to HEX0[0]
@@ -243,7 +209,7 @@ set_location_assignment PIN_R26 -to phy0_addr[3]
 set_location_assignment PIN_R25 -to phy0_addr[4]
 set_location_assignment PIN_V22 -to phy0_hw_rst
 set_location_assignment PIN_U22 -to phy0_int_n
-set_location_assignment PIN_U26 -to phy0_clk125_ndo
+set_location_assignment PIN_U28 -to phy0_clk125_ndo
 set_location_assignment PIN_V28 -to phy0_col
 set_location_assignment PIN_R23 -to phy0_crs
 
