@@ -27,37 +27,41 @@ Schematic and layout files were designed in KiCad (release 2012-05-21
 bzr 3261 -stable), an open source electronic design automation package.
 
 Order and type of copper layers:
-    1_top: Front ("component" side, where most components are mounted)
+    1_top: signal, front ("component" side, where most components are mounted)
     2_gnd: ground plane
     3_inner: signal
     4_gnd: ground plane
     5_pwr: power plane
     6_inner: signal
     7_gnd: ground plane
-    8_bot: Back
+    8_bot: signal, back
 
-PCB description: 8 layer PCB, approximately 60 mil thickness
-    Copper      1     1.4 mil
-    Dielectric  1-2   4.4 mil (2 x 1080)
-    Copper      2     1.4 mil
-    Dielectric  2-3   8.0 mil core
-    Copper      3     1.4 mil
-    Dielectric  3-4   8.4 mil (2 x 2116)
-    Copper      4     1.4 mil
-    Dielectric  4-5   8.0 mil core
-    Copper      5     1.4 mil
-    Dielectric  5-6   8.4 mil (2 x 2116)
-    Copper      6     1.4 mil
-    Dielectric  6-7   8.0 mil core
-    Copper      7     1.4 mil
-    Dielectric  7-8   4.4 mil (2 x 1080)
-    Copper      8     1.4 mil
+PCB description: 8 layer PCB, 60 mil +/- 5% thickness
+    LPI mask          0.4 mil
+    Plating           1.2 mil   1.0 oz
+    Copper      1     0.7 mil   0.5 oz
+    Dielectric  1-2   4.4 mil   prepreg, 2 x 106-FR4 370
+    Copper      2     1.2 mil   1.0 oz
+    Dielectric  2-3   8.0 mil   core, FR4 370
+    Copper      3     1.2 mil   1.0 oz
+    Dielectric  3-4   7.8 mil   prepreg, 3 x 1080-FR4 370
+    Copper      4     1.2 mil   1.0 oz
+    Dielectric  4-5   8.0 mil   core, FR4 370
+    Copper      5     1.2 mil   1.0 oz
+    Dielectric  5-6   7.8 mil   prepreg, 3 x 1080-FR4 370
+    Copper      6     1.2 mil   1.0 oz
+    Dielectric  6-7   8.0 mil   core, FR4 370
+    Copper      7     1.2 mil   1.0 oz
+    Dielectric  7-8   4.4 mil   prepreg, 2 x 106-FR4 370
+    Copper      8     0.7 mil   0.5 oz
+    Plating           1.2 mil   1.0 oz
+    LPI mask          0.4 mil
 
 Impedance goals:
-    50 Ohm +/- 10% microstrip, layers 1:2 at 5.5 mil (0.14 mm) width
-    50 Ohm +/- 10% asym stripline, layers 3:2 at 5.0 mil (0.127 mm) width
-    50 Ohm +/- 10% asym stripline, layers 6:7 at 5.0 mil (0.127 mm) width
-    50 Ohm +/- 10% microstrip, layers 8:7 at 5.5 mil (0.14 mm) width
+    50 Ohm +/- 10% microstrip, layers 1:2 at 7.0 mil (0.178 mm) width
+    50 Ohm +/- 10% offset stripline, layers 3:2 at 6.5 mil (0.165 mm) width
+    50 Ohm +/- 10% offset stripline, layers 6:7 at 6.5 mil (0.165 mm) width
+    50 Ohm +/- 10% microstrip, layers 8:7 at 7.0 mil (0.178 mm) width
 
 Soldermask
 ==========
