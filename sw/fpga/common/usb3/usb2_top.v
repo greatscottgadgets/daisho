@@ -15,7 +15,9 @@ input	wire			reset_n,
 output	wire			reset_n_out,
 
 input	wire			phy_ulpi_clk,
-inout	wire	[7:0]	phy_ulpi_d,
+input	wire	[7:0]	phy_ulpi_d_in,
+output	wire	[7:0]	phy_ulpi_d_out,
+output	wire			phy_ulpi_d_oe,
 input	wire			phy_ulpi_dir,
 output	wire			phy_ulpi_stp,
 input	wire			phy_ulpi_nxt,
@@ -90,7 +92,9 @@ usb2_ulpi 	ia (
 
 	// external PHY interface
 	.phy_clk		( phy_ulpi_clk ),
-	.phy_d			( phy_ulpi_d ),
+	.phy_d_in	( phy_ulpi_d_in ),
+	.phy_d_out_mux	( phy_ulpi_d_out ),
+	.phy_d_oe	( phy_ulpi_d_oe ),
 	.phy_dir		( phy_ulpi_dir ),
 	.phy_stp		( phy_ulpi_stp ),
 	.phy_nxt		( phy_ulpi_nxt ),

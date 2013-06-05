@@ -20,7 +20,9 @@ output	reg				stat_hs,
 
 // ulpi usb phy connection
 input	wire			phy_clk,
-inout	wire	[7:0]	phy_d,
+input	wire	[7:0]	phy_d_in,
+output	wire	[7:0]	phy_d_out_mux,
+output	wire			phy_d_oe,
 input	wire			phy_dir,
 output	wire			phy_stp,
 input	wire			phy_nxt,
@@ -58,8 +60,8 @@ output	wire	[1:0]	dbg_linestate
 	reg		[7:0]	phy_d_out;
 	reg		[7:0]	phy_d_next;
 	reg				phy_d_sel;
-	wire	[7:0]	phy_d_out_mux 	= phy_d_sel ? pkt_in_byte : phy_d_out;
-	assign 			phy_d 			= phy_dir_1 ? 8'bZZZZZZZZ : phy_d_out_mux;
+	assign	phy_d_out_mux 	= phy_d_sel ? pkt_in_byte : phy_d_out;
+	assign	phy_d_oe = !phy_dir_1;
 	reg				phy_stp_out;
 	assign			phy_stp			= phy_stp_out ^ pkt_in_stp;
 	reg		[7:0]	in_rx_cmd;
@@ -99,7 +101,7 @@ output	wire	[1:0]	dbg_linestate
 	
 	// mux local ULPI control with packet layer
 	assign	pkt_out_latch 	= pkt_out_act & phy_dir & phy_nxt;
-	assign	pkt_out_byte 	= pkt_out_latch ? phy_d : 8'h0;
+	assign	pkt_out_byte 	= pkt_out_latch ? phy_d_in : 8'h0;
 	assign	pkt_out_act 	= (rx_active | know_recv_packet) & phy_dir;
 	
 	assign	pkt_in_cts		= ~phy_dir & can_send;
@@ -272,7 +274,7 @@ always @(posedge phy_clk) begin
 	ST_RX_0: begin
 		// data is passed up to the packet layer
 		// see combinational logic near the top
-		if(~phy_nxt) in_rx_cmd <= phy_d;
+		if(~phy_nxt) in_rx_cmd <= phy_d_in;
 		// wait for end of transmission
 		if(~phy_dir) begin
 			state <= state_next;
@@ -331,7 +333,7 @@ always @(posedge phy_clk) begin
 	end 
 	ST_TXCMD_3: begin
 		// read value from PHY
-		tx_reg_data_rd <= phy_d;
+		tx_reg_data_rd <= phy_d_in;
 		state <= state_next;
 	end
 	
@@ -415,7 +417,7 @@ always @(posedge phy_clk) begin
 							1'b0,		// TermSelect [enable]
 							2'b00		// XcvrSel [high speed]
 		};
-		if(~phy_dir && phy_d == 8'h0) state <= ST_TXCMD_0;	
+		if(~phy_dir && phy_d_in == 8'h0) state <= ST_TXCMD_0;	
 		state_next <= ST_CHIRP_5;
 	end
 	ST_CHIRP_5: begin
