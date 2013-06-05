@@ -183,6 +183,14 @@ void write_v1px_smps_mode(const uint_fast8_t value) {
 	GPIO_PORT.write(1, 25, value);
 }
 
+bool read_fpga_status() {
+	return GPIO_PORT.read(1, 16) == 0;
+}
+
+bool read_fpga_conf_done() {
+	return GPIO_PORT.read(0, 19) == 1;
+}
+
 void configure_pins() {
 	// Configure port 0 pin directions
 	GPIO_PORT.DIR0 |=
