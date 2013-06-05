@@ -41,7 +41,7 @@
 # ========================
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "12.0 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:44:15  DECEMBER 28, 2012"
-set_global_assignment -name LAST_QUARTUS_VERSION 12.1
+set_global_assignment -name LAST_QUARTUS_VERSION "12.1 SP1"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output
 
 # Pin & Location Assignments
@@ -415,7 +415,6 @@ set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep0in.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_descrip.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ulpi.v
-set_global_assignment -name VERILOG_FILE io_seg7.v
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_CTS
@@ -448,4 +447,5 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_TXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_SD_ALL
 set_global_assignment -name QIP_FILE mf_rs232_status.qip
+
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
