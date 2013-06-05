@@ -377,6 +377,8 @@ private:
 	}
 };
 
+static SCB_t& SCB = *reinterpret_cast<SCB_t*>(0x40048000);
+
 struct FCB_t {
 	FCB_t() = delete;
 	FCB_t(FCB_t&) = delete;
@@ -821,7 +823,6 @@ static FCB_t& FCB = *reinterpret_cast<FCB_t*>(0x4003c000);
 static SSP_t& SSP0 = *reinterpret_cast<SSP_t*>(0x40040000);
 static SSP_t& SSP1 = *reinterpret_cast<SSP_t*>(0x40058000);
 static IOCON_t& IOCON = *reinterpret_cast<IOCON_t*>(0x40044000);
-static SCB_t& SCB = *reinterpret_cast<SCB_t*>(0x40048000);
 static GPIO_PORT_BYTE_PIN_t& GPIO_BYTE = *reinterpret_cast<GPIO_PORT_BYTE_PIN_t*>(0x50000000);
 static GPIO_PORT_WORD_PIN_t& GPIO_WORD = *reinterpret_cast<GPIO_PORT_WORD_PIN_t*>(0x50001000);
 static GPIO_PORT_t& GPIO_PORT = *reinterpret_cast<GPIO_PORT_t*>(0x50002000);
