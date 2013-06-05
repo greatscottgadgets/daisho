@@ -24,6 +24,9 @@
 #include "lpc11u.h"
 #include "serial.h"
 
+#include "i2c.h"
+#include "si5351c.h"
+
 #include <cstdint>
 
 void turn_on_crystal_oscillator() {
@@ -71,6 +74,7 @@ void enable_peripheral_clocks() {
 		//| SCB.SYSAHBCLKCTRL_CT16B1
 		//| SCB.SYSAHBCLKCTRL_CT32B0
 		//| SCB.SYSAHBCLKCTRL_CT32B1
+		| SCB.SYSAHBCLKCTRL_I2C
 		| SCB.SYSAHBCLKCTRL_USART
 		//| SCB.SYSAHBCLKCTRL_SSP1
 		//| SCB.SYSAHBCLKCTRL_USB
@@ -291,6 +295,7 @@ extern "C" int main() {
 	serial_init();
 
 	configure_pins();
+	delay(1000000);
 	
 	//enable_clock_output();
 	
@@ -299,7 +304,42 @@ extern "C" int main() {
 	//serial_write_string("main():loop");
 	//serial_write_line();
 	
+	// Power for FPGA
+	v1p2_enable();	// FPGA VCCINT
+	v2p5_enable();	// FPGA PLLs?
+	v1p8_enable();	// FPGA VCCIOs, DDR2.
+	v1p1_enable();	// USB internal voltage
+	delay(1000000);
+
+	// Power for the clock generator.
+	// V3P3A must be turned on *after* V1P8 to satisfy
+	// Si5351C requirement.
+	v3p3a_enable();
+	delay(1000000);
+	
+	// I2C configuration
+	i2c0_init(500);
+	
+	// Give Si5351C time to power up?
+	delay(100000);
+	si5351c_disable_all_outputs();
+	//si5351c_disable_oeb_pin_control();
+	si5351c_power_down_all_clocks();
+	si5351c_set_crystal_configuration();
+	si5351c_enable_xo_and_ms_fanout();
+	si5351c_configure_pll_sources_for_xtal();
+	si5351c_configure_pll1_multisynth();
+	
+	si5351c_configure_multisynth(4, 1536, 0, 1, 0); // 50MHz
+	si5351c_configure_multisynth(5, 1536, 0, 1, 0); // 50MHz
+	si5351c_configure_multisynths_6_and_7();
+	
+	si5351c_configure_clock_control();
+	si5351c_enable_clock_outputs();
+	clockgen_output_enable();
+	
 	while(true) {
+		//write_led_status(read_fpga_conf_done());
 		write_led_status(1);
 		delay(1000000);
 		write_led_status(0);

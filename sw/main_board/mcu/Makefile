@@ -28,7 +28,9 @@ C =
 
 CPP = $(BINARY).cpp \
 	serial.cpp \
-	lpc11u.cpp
+	lpc11u.cpp \
+	i2c.cpp \
+	si5351c.c
 
 ASM = startup_lpc11u.S
 
