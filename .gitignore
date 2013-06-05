@@ -3,3 +3,12 @@
 *.bak
 *-cache.lib
 *.000
+*.o
+*.elf
+*.hex
+*.d
+*.bin
+*.list
+*.map
+*.srec
+.gdbinit
