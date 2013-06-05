@@ -216,6 +216,8 @@ void configure_pins() {
 	clockgen_output_disable();
 	write_v1px_smps_mode(0);
 	
+	bool enable_fpga_jtag_interface = false;
+	
 	// Set pin multiplexers and behaviors
 	IOCON.PIO0_1 = 0;		// PIO0_1: LED_STATUS (out), TODO: PWM control.
 	IOCON.PIO0_2 = 1;		// SSEL0: SD_CS#
@@ -235,7 +237,11 @@ void configure_pins() {
 	IOCON.PIO0_18 = 0;		// PIO0_18: V1P2_ENABLE (out)
 	IOCON.PIO0_19 = 0;		// PIO0_19: FPGA_CONF_DONE (in)
 	IOCON.PIO0_20 = 0;		// PIO0_20: FE_EN (out)
-	IOCON.PIO0_21 = 2;		// MOSI1: FPGA_TDI, TODO: Overloaded with SPI_MOSI
+	if( enable_fpga_jtag_interface ) {
+		IOCON.PIO0_21 = 2;		// MOSI1: FPGA_TDI, TODO: Overloaded with SPI_MOSI
+	} else {
+		IOCON.PIO0_21 = 0;
+	}
 	IOCON.PIO0_22 = 3;		// MISO1: FPGA_MISO_V3P3, TODO: Overloaded with FPGA_TDO_V3P3
 	IOCON.PIO0_23 = 0;		// PIO0_23: SD_DET (in)
 	
@@ -244,10 +250,19 @@ void configure_pins() {
 	IOCON.PIO1_15 = 3;		// SCK1: SPI_SCK, TODO: Overloaded with FPGA_TCK
 	IOCON.PIO1_16 = 0;		// PIO1_16: FPGA_NSTATUS (in)
 	IOCON.PIO1_19 = 2;		// SSEL1: SPI_SS, TODO: Overloaded with FPGA_TMS
-	IOCON.PIO1_20 = 2;		// SCK1: FPGA_TCK, TODO: Overloaded with SPI_SCK
-	IOCON.PIO1_21 = 2;		// MISO1: FPGA_TDO_V3P3, TODO: Overloaded with FPGA_MISO_V3P3
+	if( enable_fpga_jtag_interface ) {
+		IOCON.PIO1_20 = 2;		// SCK1: FPGA_TCK, TODO: Overloaded with SPI_SCK
+		IOCON.PIO1_21 = 2;		// MISO1: FPGA_TDO_V3P3, TODO: Overloaded with FPGA_MISO_V3P3
+	} else {
+		IOCON.PIO1_20 = 0;
+		IOCON.PIO1_21 = 0;
+	}
 	IOCON.PIO1_22 = 2;		// MOSI1: SPI_MOSI, TODO: Overloaded with FPGA_TDI
-	IOCON.PIO1_23 = 2;		// SSEL1: FPGA_TMS, TODO: Overloaded with SPI_SS
+	if( enable_fpga_jtag_interface ) {
+		IOCON.PIO1_23 = 2;		// SSEL1: FPGA_TMS, TODO: Overloaded with SPI_SS
+	} else {
+		IOCON.PIO1_23 = 0;
+	}
 	IOCON.PIO1_24 = 0;		// PIO1_24: DDR2_SA0 (out)
 	IOCON.PIO1_25 = 0;		// PIO1_25: V1PX_SMPS_MODE (out)
 	IOCON.PIO1_26 = 2;		// RXD: RXD
