@@ -836,6 +836,10 @@ struct GPIO_PORT_t {
 			clear(port_ordinal, bit_ordinal);
 		}
 	}
+	
+	bool read(const uint_fast8_t port_ordinal, const uint_fast8_t bit_ordinal) {
+		return (((port_ordinal ? PIN1 : PIN0) >> bit_ordinal) & 1) != 0;
+	}
 
 private:
 	static void _assert_struct() {
