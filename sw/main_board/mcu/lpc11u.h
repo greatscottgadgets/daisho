@@ -129,6 +129,11 @@ struct SCB_t {
 	SCB_t() = delete;
 	SCB_t(SCB_t&) = delete;
 	
+	void reset_i2c0_peripheral() {
+		PRESETCTRL &= ~(1 << 1);
+		PRESETCTRL |= (1 << 1);
+	}
+	
 	void reset_ssp1_peripheral() {
 		PRESETCTRL &= ~(1 << 2);
 		PRESETCTRL |= (1 << 2);
@@ -536,6 +541,116 @@ private:
 	}
 };
 
+struct I2C_t {
+	I2C_t() = delete;
+	I2C_t(I2C_t&) = delete;
+	
+	enum CONSET_t {
+		CONSET_AA = (1 << 2),
+		CONSET_SI = (1 << 3),
+		CONSET_STO = (1 << 4),
+		CONSET_STA = (1 << 5),
+		CONSET_I2EN = (1 << 6)
+	};
+	
+	enum CONCLR_t {
+		CONCLR_AAC = (1 << 2),
+		CONCLR_SIC = (1 << 3),
+		CONCLR_STAC = (1 << 5),
+		CONCLR_I2ENC = (1 << 6)
+	};
+	
+	reg_readwrite_t		CONSET;					// 0x000
+	reg_readonly_t		STAT;					// 0x004
+	reg_readwrite_t		DAT;					// 0x008
+	reg_readwrite_t		ADR0;					// 0x00c
+	reg_readwrite_t		SCLH;					// 0x010
+	reg_readwrite_t		SCLL;					// 0x014
+	reg_writeonly_t		CONCLR;					// 0x018
+	reg_readwrite_t		MMCTRL;					// 0x01c
+	reg_readwrite_t		ADR1;					// 0x020
+	reg_readwrite_t		ADR2;					// 0x024
+	reg_readwrite_t		ADR3;					// 0x028
+	reg_readonly_t		DATA_BUFFER;			// 0x02c
+	reg_readwrite_t		MASK0;					// 0x030
+	reg_readwrite_t		MASK1;					// 0x034
+	reg_readwrite_t		MASK2;					// 0x038
+	reg_readwrite_t		MASK3;					// 0x03c
+	
+	void init(const uint_fast16_t half_cycle_period) {
+		SCB.reset_i2c0_peripheral();
+		SCLL = half_cycle_period;
+		SCLH = half_cycle_period;
+		CONSET = CONSET_I2EN;
+	}
+	
+	void tx_start() {
+		clear_si();
+		set_sta();
+		wait_for_si();
+		clear_sta();
+	}
+	
+	void tx_byte(const uint_fast8_t data) {
+		clear_sta_if_set();
+		write_data(data);
+		clear_si();
+		wait_for_si();
+	}
+	
+	uint_fast8_t rx_byte() {
+		clear_sta_if_set();
+		clear_si();
+		wait_for_si();
+		return DAT;
+	}
+	
+	void stop() {
+		clear_sta_if_set();
+		set_sto();
+		clear_si();
+	}
+	
+private:
+	static void _assert_struct() {
+		static_assert(sizeof(I2C_t) == 0x040, "I2C_t size is wrong");
+	}
+	
+	void write_data(const uint_fast8_t data) {
+		DAT = data;
+	}
+	
+	void set_sta() {
+		CONSET = CONSET_STA;
+	}
+	
+	void clear_sta() {
+		CONCLR = CONCLR_STAC;
+	}
+	
+	bool is_sta() {
+		return CONSET & CONSET_STA;
+	}
+	
+	void clear_sta_if_set() {
+		if( is_sta() ) {
+			clear_sta();
+		}
+	}
+
+	void set_sto() {
+		CONSET = CONSET_STO;
+	}
+	
+	void clear_si() {
+		CONCLR = CONCLR_SIC;
+	}
+	
+	void wait_for_si() {
+		while( !(CONSET & CONSET_SI) );
+	}
+};
+
 struct USART_t {
 	USART_t() = delete;
 	USART_t(USART_t&) = delete;
@@ -811,6 +926,8 @@ private:
 		static_assert(sizeof(USB_t) == 0x038, "USB_t size is wrong");
 	}
 };
+
+static I2C_t& I2C0 = *reinterpret_cast<I2C_t*>(0x40000000);
 
 static USART_t& USART = *reinterpret_cast<USART_t*>(0x40008000);
 
