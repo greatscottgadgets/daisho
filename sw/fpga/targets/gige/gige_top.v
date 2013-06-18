@@ -5,7 +5,7 @@
 //
 // Copyright (c) 2013 Dominic Spill
 //
-// This file is part of Project Daisho.
+// This file is part of Daisho.
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -27,19 +27,6 @@ module gige_top (
 
 	input   wire          clk_50,	
 
-	// Hex LEDs
-	output  wire  [6:0]   HEX0,
-	output  wire  [6:0]   HEX1,
-	output  wire  [6:0]   HEX2,
-	output  wire  [6:0]   HEX3,
-	output  wire  [6:0]   HEX4,
-	output  wire  [6:0]   HEX5,
-	output  wire  [6:0]   HEX6,
-	output  wire  [6:0]   HEX7,
-
-	input	wire  [3:0]   KEY,
-	input	wire  [17:0]  SW,
-	output	wire  [17:0]  LEDR,
 	output  wire  [8:0]   LEDG,
 
 	// Ethernet PHY 0
@@ -96,15 +83,18 @@ module gige_top (
 	input   wire          phy1_col,
 	input   wire          phy1_crs
 );
-	reg [8:0] led_g;
-	assign LEDG = led_g;
 
-	reg  reset_1;
-	reg  reset_2;
+	reg phy0_ready, phy1_ready;
+	assign LEDG[0] = phy0_ready;
+	assign LEDG[1] = phy1_ready;
 
-always @(posedge clk_50) begin
-	{reset_2, reset_1} <= {reset_1, ~KEY[0]};
-end
+	wire [4:0] miim_reg;
+	wire [7:0] miim_value_out;
+	wire [7:0] miim_value_in;
+	reg        reset_1, reset_2, read_1, read_2, write_1, write_2, complete;
+	reg        addr_1, addr_2;
+	wire       read_trigger0, write_trigger0, read_trigger1, write_trigger1;
+	wire       addr_trigger1, addr_trigger2, phy_select;
 
 phy_init phy0_init (
 	.clk_50 ( clk_50 ),
@@ -130,46 +120,4 @@ phy_init phy1_init (
 	.phy_ready ( phy1_ready )
 );
 
-// 0-3 -> Register address
-io_seg7 is0 (
-	.disp_in	( 0 ),
-	.disp_out	( HEX0 )
-);
-
-io_seg7 is1 (
-	.disp_in	( 0 ),
-	.disp_out	( HEX1 )
-);
-
-io_seg7 is2 (
-	.disp_in	( 0 ),
-	.disp_out	( HEX2 )
-);
-
-io_seg7 is3 (
-	.disp_in	( 0 ),
-	.disp_out	( HEX3 )
-);
-
-// 4-5 -> Read value
-io_seg7 is4 (
-	.disp_in	( 0 ),
-	.disp_out	( HEX4 )
-);
-
-io_seg7 is5 (
-	.disp_in	( 0 ),
-	.disp_out	( HEX5 )
-);
-
-// 6-7 -> value to assign
-io_seg7 is6 (
-	.disp_in	( SW[11:8] ),
-	.disp_out	( HEX6 )
-);
-
-io_seg7 is7 (
-	.disp_in	( SW[15:12] ),
-	.disp_out	( HEX7 )
-);
 endmodule

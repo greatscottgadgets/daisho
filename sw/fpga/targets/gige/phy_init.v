@@ -4,7 +4,7 @@
 //
 // Copyright (c) 2013 Dominic Spill
 //
-// This file is part of Project Daisho.
+// This file is part of Daisho.
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -30,21 +30,19 @@ module phy_init (
 	// Inputs (outputs in configuration mode)
 	inout   wire  [7:0]   phy_gm_rxd,
 	inout   wire          phy_gm_rx_dv,
-	inout   wire  [0:4]   phy_addr,
+	inout   wire  [4:0]   phy_addr,
 	output  wire          phy_hw_rst,
 
-	output  wire          phy_ready
+	output  reg           phy_ready
 );
 
-	reg  ready;
-	assign phy_ready = ready;
 
-	reg	      [5:0] state;
-	parameter [5:0] ST_RST          = 6'h00,
-                    ST_CONFIG       = 6'h01,
-                    ST_CONFIG_DELAY = 6'h02,
-                    ST_IDLE         = 6'h03,
-                    ST_ACTIVE       = 6'h04;
+	reg       [2:0] state;
+	parameter [2:0] ST_RST          = 3'h0,
+                    ST_CONFIG       = 3'h1,
+                    ST_CONFIG_DELAY = 3'h2,
+                    ST_IDLE         = 3'h3,
+                    ST_ACTIVE       = 3'h4;
 
 	reg hold_config;
 	reg [4:0] phy_phyad;
@@ -63,6 +61,7 @@ module phy_init (
 always @(posedge clk_50) begin
 	if (reset_n) begin
 		state <= ST_RST;
+		phy_ready <= 0;
 	end
 	
 	case(state)
@@ -95,7 +94,7 @@ always @(posedge clk_50) begin
 	end
 	
 	ST_IDLE: begin
-		ready <= 1;
+		phy_ready <= 1;
 	end
 	endcase
 	
