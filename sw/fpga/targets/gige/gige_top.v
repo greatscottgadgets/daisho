@@ -28,6 +28,8 @@ module gige_top (
 	input   wire          clk_50,	
 
 	output  wire  [8:0]   LEDG,
+	output  wire  [17:0]  LEDR,
+	input	wire  [3:0]   KEY,
 
 	// Ethernet PHY 0
 	output  wire  [7:0]   phy0_gm_txd,
@@ -37,8 +39,9 @@ module gige_top (
 	output  wire          phy0_gm_gtx_clk,
 
 	// Inputs (outputs in configuration mode)
-	inout   wire  [7:0]   phy0_gm_rxd,
 	inout   wire          phy0_gm_rx_dv,
+	inout   wire  [3:0]   phy0_gm_rxd_lower,
+	input   wire  [7:4]   phy0_gm_rxd_upper,
 
 	input   wire          phy0_gm_rx_err,
 	input   wire          phy0_gm_rx_clk,
@@ -64,8 +67,9 @@ module gige_top (
 	output  wire          phy1_gm_gtx_clk,
 
 	// Inputs (outputs in configuration mode)
-	inout   wire  [7:0]   phy1_gm_rxd,
 	inout   wire          phy1_gm_rx_dv,
+	inout   wire  [3:0]   phy1_gm_rxd_lower,
+	input   wire  [7:4]   phy1_gm_rxd_upper,
 
 	input   wire          phy1_gm_rx_err,
 	input   wire          phy1_gm_rx_clk,
@@ -91,16 +95,22 @@ module gige_top (
 	wire [4:0] miim_reg;
 	wire [7:0] miim_value_out;
 	wire [7:0] miim_value_in;
-	reg        reset_1, reset_2, read_1, read_2, write_1, write_2, complete;
-	reg        addr_1, addr_2;
-	wire       read_trigger0, write_trigger0, read_trigger1, write_trigger1;
-	wire       addr_trigger1, addr_trigger2, phy_select;
+	reg        reset_1, reset_2;
+
+	wire [7:0] phy0_gm_rxd;
+	wire [7:0] phy1_gm_rxd;
+	assign phy0_gm_rxd = {phy0_gm_rxd_upper, phy0_gm_rxd_lower};
+	assign phy1_gm_rxd = {phy1_gm_rxd_upper, phy1_gm_rxd_lower};
+
+always @(posedge clk_50) begin
+	{reset_2, reset_1} <= {reset_1, ~KEY[0]};
+end
 
 phy_init phy0_init (
 	.clk_50 ( clk_50 ),
 	.reset_n ( reset_2 ),
 
-	.phy_gm_rxd ( phy0_gm_rxd ),
+	.phy_mode ( phy0_gm_rxd_lower ),
 	.phy_gm_rx_dv ( phy0_gm_rx_dv ),
 	.phy_addr ( phy0_addr ),
 	.phy_hw_rst ( phy0_hw_rst ),
@@ -112,12 +122,27 @@ phy_init phy1_init (
 	.clk_50 ( clk_50 ),
 	.reset_n ( reset_2 ),
 
-	.phy_gm_rxd ( phy1_gm_rxd ),
+	.phy_mode ( phy1_gm_rxd_lower ),
 	.phy_gm_rx_dv ( phy1_gm_rx_dv ),
 	.phy_addr ( phy1_addr ),
 	.phy_hw_rst ( phy1_hw_rst ),
 
 	.phy_ready ( phy1_ready )
 );
+
+assign phy0_gm_txd = phy1_gm_rxd;
+assign phy0_gm_tx_en = phy1_gm_rx_dv;
+assign phy0_gm_tx_er = phy1_gm_rx_err;
+assign phy0_gm_tx_clk = phy1_gm_rx_clk;
+assign phy0_gm_gtx_clk = phy0_gm_rx_clk;
+
+assign phy1_gm_txd = phy0_gm_rxd;
+assign phy1_gm_tx_en = phy0_gm_rx_dv;
+assign phy1_gm_tx_er = phy0_gm_rx_err;
+assign phy1_gm_tx_clk = phy0_gm_rx_clk;
+assign phy1_gm_gtx_clk = phy0_gm_rx_clk;
+
+assign LEDR[7:0] = ~phy0_gm_rxd;
+assign LEDR[15:8] = ~phy1_gm_rxd;
 
 endmodule

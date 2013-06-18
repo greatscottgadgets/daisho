@@ -28,7 +28,7 @@ module phy_init (
 	input   wire          reset_n,
 
 	// Inputs (outputs in configuration mode)
-	inout   wire  [7:0]   phy_gm_rxd,
+	inout   wire  [3:0]   phy_mode,
 	inout   wire          phy_gm_rx_dv,
 	inout   wire  [4:0]   phy_addr,
 	output  wire          phy_hw_rst,
@@ -46,11 +46,10 @@ module phy_init (
 
 	reg hold_config;
 	reg [4:0] phy_phyad;
-	reg [3:0] phy_mode;
+	reg [3:0] mode;
 	reg phy_clk_125_en;
 	assign phy_addr = (hold_config) ? phy_phyad : 5'bz;
-	assign phy_gm_rxd[7:4] = 4'bz;
-	assign phy_gm_rxd[3:0] = (hold_config) ? phy_mode : 4'bz;
+	assign phy_mode[3:0] = (hold_config) ? mode : 4'bz;
 	assign phy_gm_rx_dv = (hold_config) ? phy_clk_125_en : 1'bz;
 
 	reg phy_hw_reset;
@@ -73,7 +72,7 @@ always @(posedge clk_50) begin
 	
 	ST_CONFIG: begin
 		// Assign config params, then wait for next state to de-assert reset
-		phy_mode[3:0] <= {4'b0001};   // GMII/MII mode
+		mode[3:0] <= {4'b0001};   // GMII/MII mode
 		phy_clk_125_en <= 1'b1;       // enable 125MHz clock output
 		phy_phyad[4:0] <= {5'b00001}; // Set MIIM address to '1'
 
