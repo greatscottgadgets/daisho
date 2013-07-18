@@ -401,7 +401,6 @@ set_location_assignment PIN_M23 -to KEY[0]
 
 # Included Common Files
 # =====================
-set_global_assignment -name VERILOG_FILE ../../common/io_seg7.v
 
 # Classic Timing Assignments
 # ==========================
@@ -485,6 +484,9 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 
 set_global_assignment -name SMART_RECOMPILE ON
 
-set_global_assignment -name VERILOG_FILE gige_top.v
 
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+
+set_global_assignment -name VERILOG_FILE phy_init.v
+set_global_assignment -name VERILOG_FILE ../../common/io_seg7.v
+set_global_assignment -name VERILOG_FILE gige_top.v
