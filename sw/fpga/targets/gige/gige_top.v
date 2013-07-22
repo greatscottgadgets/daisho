@@ -46,7 +46,7 @@ module gige_top (
 	output  wire  [7:0]   phy0_gm_txd,
 	output  wire          phy0_gm_tx_en,
 	output  wire          phy0_gm_tx_er,
-	output  wire          phy0_gm_tx_clk,
+	input   wire          phy0_gm_tx_clk,
 	output  wire          phy0_gm_gtx_clk,
 
 	// Inputs (outputs in configuration mode)
@@ -73,7 +73,7 @@ module gige_top (
 	output  wire  [7:0]   phy1_gm_txd,
 	output  wire          phy1_gm_tx_en,
 	output  wire          phy1_gm_tx_er,
-	output  wire          phy1_gm_tx_clk,
+	input   wire          phy1_gm_tx_clk,
 	output  wire          phy1_gm_gtx_clk,
 
 	// Inputs (outputs in configuration mode)
