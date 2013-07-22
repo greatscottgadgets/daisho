@@ -124,28 +124,34 @@ always @(posedge clk_50) begin
 	{reset_2, reset_1} <= {reset_1, reset_raw};
 end
 
+wire phy0_reset = reset;
+wire phy0_ready;
+
 phy_init phy0_init (
 	.clk_50 ( clk_50 ),
-	.reset_n ( reset_2 ),
+	.reset_i ( phy0_reset ),
+	.ready_o ( phy0_ready ),
 
-	.phy_gm_rxd ( phy0_gm_rxd ),
-	.phy_gm_rx_dv ( phy0_gm_rx_dv ),
+	.phy_rxd ( phy0_gm_rxd ),
+	.phy_rx_dv ( phy0_gm_rx_dv ),
 	.phy_addr ( phy0_addr ),
-	.phy_hw_rst ( phy0_hw_rst ),
-
-	.phy_ready ( phy0_ready )
+	.phy_reset_n_o ( phy0_hw_rst )
 );
+
+wire phy1_reset = reset;
+wire phy1_ready;
 
 phy_init phy1_init (
 	.clk_50 ( clk_50 ),
-	.reset_n ( reset_2 ),
+	.reset_i ( phy1_reset ),
+	.ready_o ( phy1_ready ),
 
-	.phy_gm_rxd ( phy1_gm_rxd ),
-	.phy_gm_rx_dv ( phy1_gm_rx_dv ),
+	.phy_rxd ( phy1_gm_rxd ),
+	.phy_rx_dv ( phy1_gm_rx_dv ),
 	.phy_addr ( phy1_addr ),
-	.phy_hw_rst ( phy1_hw_rst ),
+	.phy_reset_n_o ( phy1_hw_rst )
+);
 
-	.phy_ready ( phy1_ready )
 );
 
 // 0-3 -> Register address
