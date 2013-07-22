@@ -495,6 +495,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_CTS
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_RTS
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk_50
 set_global_assignment -name VERILOG_FILE phy_init.v
 set_global_assignment -name VERILOG_FILE ../../common/io_seg7.v
 set_global_assignment -name VERILOG_FILE gige_top.v
