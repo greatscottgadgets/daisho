@@ -28,8 +28,8 @@ module phy_init (
 	input   wire          reset_n,
 
 	// Inputs (outputs in configuration mode)
-	output  wire  [7:0]   phy_gm_rxd,
-	output  wire          phy_gm_rx_dv,
+	output  wire  [7:0]   phy_rxd,
+	output  wire          phy_rx_dv,
 	output  wire  [4:0]   phy_addr,
 	output  wire          phy_hw_rst,
 
@@ -51,9 +51,9 @@ module phy_init (
 	reg [3:0] phy_mode;
 	reg phy_clk_125_en;
 	assign phy_addr = (hold_config) ? phy_phyad : 5'bz;
-	assign phy_gm_rxd[7:4] = 4'bz;
-	assign phy_gm_rxd[3:0] = (hold_config) ? phy_mode : 4'bz;
-	assign phy_gm_rx_dv = (hold_config) ? phy_clk_125_en : 1'bz;
+	assign phy_rxd[7:4] = 4'bz;
+	assign phy_rxd[3:0] = (hold_config) ? phy_mode : 4'bz;
+	assign phy_rx_dv = (hold_config) ? phy_clk_125_en : 1'bz;
 
 	reg phy_hw_reset;
 	assign phy_hw_rst = phy_hw_reset;
