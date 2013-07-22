@@ -177,7 +177,6 @@ mii_passthrough mii_pt_0to1 (
 	.rx_total_nibble_count(phy0_rx_total_nibble_count)
 );
 
-// 0-3 -> Register address
 wire mii_pt_1to0_reset = phys_not_ready;
 wire phy1_rx_full_error;
 wire [15:0] phy1_rx_frame_count;
@@ -200,45 +199,47 @@ mii_passthrough mii_pt_1to0 (
 	.rx_frame_count(phy1_rx_frame_count),
 	.rx_total_nibble_count(phy1_rx_total_nibble_count)
 );
+
+wire	[15:0]	is3_0 = SW[0] ? phy0_rx_total_nibble_count : phy0_rx_frame_count;
+wire	[15:0]	is7_4 = SW[1] ? phy1_rx_total_nibble_count : phy1_rx_frame_count;
+
 io_seg7 is0 (
-	.disp_in	( 0 ),
+	.disp_in	( is3_0[3:0] ),
 	.disp_out	( HEX0 )
 );
 
 io_seg7 is1 (
-	.disp_in	( 0 ),
+	.disp_in	( is3_0[7:4] ),
 	.disp_out	( HEX1 )
 );
 
 io_seg7 is2 (
-	.disp_in	( 0 ),
+	.disp_in	( is3_0[11:8] ),
 	.disp_out	( HEX2 )
 );
 
 io_seg7 is3 (
-	.disp_in	( 0 ),
+	.disp_in	( is3_0[15:12] ),
 	.disp_out	( HEX3 )
 );
 
-// 4-5 -> Read value
 io_seg7 is4 (
-	.disp_in	( 0 ),
+	.disp_in	( is7_4[3:0] ),
 	.disp_out	( HEX4 )
 );
 
 io_seg7 is5 (
-	.disp_in	( 0 ),
+	.disp_in	( is7_4[7:4] ),
 	.disp_out	( HEX5 )
 );
 
-// 6-7 -> value to assign
 io_seg7 is6 (
-	.disp_in	( SW[11:8] ),
+	.disp_in	( is7_4[11:8] ),
 	.disp_out	( HEX6 )
 );
 
 io_seg7 is7 (
-	.disp_in	( SW[15:12] ),
+	.disp_in	( is7_4[15:12] ),
 	.disp_out	( HEX7 )
 );
 endmodule
