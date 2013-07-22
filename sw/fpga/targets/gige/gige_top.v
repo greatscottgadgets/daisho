@@ -27,6 +27,12 @@ module gige_top (
 
 	input   wire          clk_50,	
 
+	// UART
+	input   wire          UART_RXD,
+	input   wire          UART_RTS,
+	output  wire          UART_TXD,
+	output  wire          UART_CTS,
+
 	// Hex LEDs
 	output  wire  [6:0]   HEX0,
 	output  wire  [6:0]   HEX1,
