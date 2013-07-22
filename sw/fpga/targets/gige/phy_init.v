@@ -25,7 +25,7 @@
 module phy_init (
 
 	input   wire          clk_50,	
-	input   wire          reset_n,
+	input   wire          reset_i,
 
 	// Inputs (outputs in configuration mode)
 	output  wire  [7:0]   phy_rxd,
@@ -61,7 +61,7 @@ module phy_init (
 	reg [12:0] config_delay;
 
 always @(posedge clk_50) begin
-	if (reset_n) begin
+	if (reset_i) begin
 		state <= ST_RST;
 	end
 	
