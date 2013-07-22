@@ -102,11 +102,20 @@ module gige_top (
 	input   wire          phy1_col,
 	input   wire          phy1_crs
 );
-	reg [8:0] led_g;
-	assign LEDG = led_g;
 
 	reg  reset_1;
 	reg  reset_2;
+assign LEDR = 18'b0;
+assign LEDG[8:2] = 6'b0;
+
+assign phy0_gm_gtx_clk = 0;
+assign phy1_gm_gtx_clk = 0;
+
+assign phy0_gm_mdc = 0;
+assign phy1_gm_mdc = 0;
+
+assign phy0_gm_mio = 1'bz;
+assign phy1_gm_mio = 1'bz;
 
 always @(posedge clk_50) begin
 	{reset_2, reset_1} <= {reset_1, ~KEY[0]};
