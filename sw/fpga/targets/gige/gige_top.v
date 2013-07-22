@@ -4,6 +4,7 @@
 // top-level
 //
 // Copyright (c) 2013 Dominic Spill
+// Copyright (c) 2013 Jared Boone, ShareBrained Technology, Inc.
 //
 // This file is part of Project Daisho.
 //
