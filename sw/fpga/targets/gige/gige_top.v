@@ -152,9 +152,54 @@ phy_init phy1_init (
 	.phy_reset_n_o ( phy1_hw_rst )
 );
 
+wire phys_not_ready = (!phy0_ready) || (!phy1_ready);
+
+wire mii_pt_0to1_reset = phys_not_ready;
+wire phy0_rx_full_error;
+wire [15:0] phy0_rx_frame_count;
+wire [15:0] phy0_rx_total_nibble_count;
+assign LEDG[0] = phy0_rx_full_error;
+
+mii_passthrough mii_pt_0to1 (
+	.reset(mii_pt_0to1_reset),
+	.rx_clk(phy0_gm_rx_clk),
+	.rx_dv(phy0_gm_rx_dv),
+	.rxd(phy0_gm_rxd),
+	.rx_er(phy0_gm_rx_err),
+	.crs(phy0_crs),
+	.col(phy0_col),
+	.tx_clk(phy1_gm_tx_clk),
+	.tx_en(phy1_gm_tx_en),
+	.txd(phy1_gm_txd),
+	.tx_er(phy1_gm_tx_er),
+	.rx_full_error(phy0_rx_full_error),
+	.rx_frame_count(phy0_rx_frame_count),
+	.rx_total_nibble_count(phy0_rx_total_nibble_count)
 );
 
 // 0-3 -> Register address
+wire mii_pt_1to0_reset = phys_not_ready;
+wire phy1_rx_full_error;
+wire [15:0] phy1_rx_frame_count;
+wire [15:0] phy1_rx_total_nibble_count;
+assign LEDG[1] = phy1_rx_full_error;
+
+mii_passthrough mii_pt_1to0 (
+	.reset(mii_pt_1to0_reset),
+	.rx_clk(phy1_gm_rx_clk),
+	.rx_dv(phy1_gm_rx_dv),
+	.rxd(phy1_gm_rxd),
+	.rx_er(phy1_gm_rx_err),
+	.crs(phy1_crs),
+	.col(phy1_col),
+	.tx_clk(phy0_gm_tx_clk),
+	.tx_en(phy0_gm_tx_en),
+	.txd(phy0_gm_txd),
+	.tx_er(phy0_gm_tx_er),
+	.rx_full_error(phy1_rx_full_error),
+	.rx_frame_count(phy1_rx_frame_count),
+	.rx_total_nibble_count(phy1_rx_total_nibble_count)
+);
 io_seg7 is0 (
 	.disp_in	( 0 ),
 	.disp_out	( HEX0 )
