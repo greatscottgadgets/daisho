@@ -30,7 +30,7 @@ module phy_init (
 	// Inputs (outputs in configuration mode)
 	inout   wire  [7:0]   phy_gm_rxd,
 	inout   wire          phy_gm_rx_dv,
-	inout   wire  [0:4]   phy_addr,
+	inout   wire  [4:0]   phy_addr,
 	output  wire          phy_hw_rst,
 
 	output  wire          phy_ready

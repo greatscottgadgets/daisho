@@ -62,7 +62,7 @@ module gige_top (
 	output  wire          phy0_hw_rst,
 
 	// Used for configuration mode (LED states in all other modes)
-	inout   wire  [0:4]   phy0_addr,
+	inout   wire  [4:0]   phy0_addr,
 
 	input   wire          phy0_int_n,
 	input   wire          phy0_clk125_ndo,
@@ -89,7 +89,7 @@ module gige_top (
 	output  wire          phy1_hw_rst,
 
 	// Used for configuration mode (LED states in all other modes)
-	inout   wire  [0:4]   phy1_addr,
+	inout   wire  [4:0]   phy1_addr,
 
 	input   wire          phy1_int_n,
 	input   wire          phy1_clk125_ndo,
