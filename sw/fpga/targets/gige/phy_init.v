@@ -28,9 +28,9 @@ module phy_init (
 	input   wire          reset_n,
 
 	// Inputs (outputs in configuration mode)
-	inout   wire  [7:0]   phy_gm_rxd,
-	inout   wire          phy_gm_rx_dv,
-	inout   wire  [4:0]   phy_addr,
+	output  wire  [7:0]   phy_gm_rxd,
+	output  wire          phy_gm_rx_dv,
+	output  wire  [4:0]   phy_addr,
 	output  wire          phy_hw_rst,
 
 	output  wire          phy_ready
