@@ -485,7 +485,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name SMART_RECOMPILE ON
 
 
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 
 set_location_assignment PIN_G14 -to UART_CTS
 set_location_assignment PIN_J13 -to UART_RTS
@@ -501,6 +500,8 @@ set_global_assignment -name SDC_FILE gige.sdc
 set_global_assignment -name VERILOG_FILE mii_passthrough.v
 set_global_assignment -name VERILOG_FILE phy_init.v
 set_global_assignment -name VERILOG_FILE ../../common/io_seg7.v
-set_global_assignment -name VERILOG_FILE gige_top.vset_global_assignment -name VERILOG_FILE gige_top.vset_global_assignment -name VERILOG_FILE gige_top.v
+set_global_assignment -name VERILOG_FILE gige_top.v
+
 set_global_assignment -name QIP_FILE fifo_packet.qip
 set_global_assignment -name QIP_FILE fifo_uart.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

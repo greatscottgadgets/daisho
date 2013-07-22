@@ -128,7 +128,7 @@ wire phy0_reset = reset;
 wire phy0_ready;
 
 phy_init phy0_init (
-	.clk_50 ( clk_50 ),
+	.clk_i ( clk_50 ),
 	.reset_i ( phy0_reset ),
 	.ready_o ( phy0_ready ),
 
@@ -142,7 +142,7 @@ wire phy1_reset = reset;
 wire phy1_ready;
 
 phy_init phy1_init (
-	.clk_50 ( clk_50 ),
+	.clk_i ( clk_50 ),
 	.reset_i ( phy1_reset ),
 	.ready_o ( phy1_ready ),
 
