@@ -3,8 +3,9 @@
 // Set initial settings for Micrel PHYs
 //
 // Copyright (c) 2013 Dominic Spill
+// Copyright (c) 2013 Jared Boone, ShareBrained Technology, Inc.
 //
-// This file is part of Daisho.
+// This file is part of Project Daisho.
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -23,80 +24,84 @@
 //
 
 module phy_init (
+	input   wire            clk_i,
 
-	input   wire          clk_50,	
-	input   wire          reset_n,
+	input   wire            reset_i,
+	output  wire            ready_o,
 
 	// Inputs (outputs in configuration mode)
-	inout   wire  [3:0]   phy_mode,
-	inout   wire          phy_gm_rx_dv,
-	inout   wire  [4:0]   phy_addr,
-	output  wire          phy_hw_rst,
-
-	output  reg           phy_ready
+	output  wire    [7:0]   phy_rxd,
+	output  wire            phy_rx_dv,
+	output  wire    [4:0]   phy_addr,
+	output  wire            phy_reset_n_o
 );
 
+wire    [4:0]   phy_phyad = 5'b00001;   // Set MIIM address to '1'
+wire    [3:0]   phy_mode = 4'b0001;     // GMII/MII mode
+wire            phy_clk_125_en = 1;     // Enable 125MHz clock output
 
-	reg       [2:0] state;
-	parameter [2:0] ST_RST          = 3'h0,
-                    ST_CONFIG       = 3'h1,
-                    ST_CONFIG_DELAY = 3'h2,
-                    ST_IDLE         = 3'h3,
-                    ST_ACTIVE       = 3'h4;
+parameter [3:0] ST_RESET        = 4'h00,
+				ST_STRAP        = 4'h01,
+				ST_WAIT         = 4'h02,
+				ST_IDLE         = 4'h03
+				;
+reg     [3:0]   state = ST_RESET;
 
-	reg hold_config;
-	reg [4:0] phy_phyad;
-	reg [3:0] mode;
-	reg phy_clk_125_en;
-	assign phy_addr = (hold_config) ? phy_phyad : 5'bz;
-	assign phy_mode[3:0] = (hold_config) ? mode : 4'bz;
-	assign phy_gm_rx_dv = (hold_config) ? phy_clk_125_en : 1'bz;
+wire            state_reset = (state == ST_RESET);
+wire            state_strap = (state == ST_STRAP);
+assign          phy_reset_n_o = !state_reset;
 
-	reg phy_hw_reset;
-	assign phy_hw_rst = phy_hw_reset;
+wire            bootstrap = state_reset || state_strap;
+assign          phy_addr = bootstrap ? phy_phyad : 5'bzzzzz;
+assign          phy_rxd = bootstrap ? { 4'bzzzz, phy_mode } : 8'bzzzzzzzz;
+assign          phy_rx_dv = bootstrap ? phy_clk_125_en : 1'bz;
 
-	reg [12:0] config_delay;
+reg             ready = 0;
+assign          ready_o = ready;
 
-always @(posedge clk_50) begin
-	if (reset_n) begin
-		state <= ST_RST;
-		phy_ready <= 0;
+reg     [23:0]  count = 0;
+
+always @(posedge clk_i) begin
+	ready <= 0;
+	count <= count + 24'h1;
+
+	if (reset_i) begin
+		state <= ST_RESET;
+		count <= 0;
 	end
-	
-	case(state)
-	ST_RST: begin
-		phy_hw_reset <= 1'b0;
-		hold_config <= 1;
-		state <= ST_CONFIG;
-	end
-	
-	ST_CONFIG: begin
-		// Assign config params, then wait for next state to de-assert reset
-		mode[3:0] <= {4'b0001};   // GMII/MII mode
-		phy_clk_125_en <= 1'b1;       // enable 125MHz clock output
-		phy_phyad[4:0] <= {5'b00001}; // Set MIIM address to '1'
-
-
-		phy_hw_reset <= 1'b1;
-		state <= ST_CONFIG_DELAY;
-	end
-
-	ST_CONFIG_DELAY: begin
-		// Need to hold pins for a while (not sure how long), guessing at
-		// 100us due to that being the delay befor using MIIM interface.
-		// 100us is 5000 clk_50 ticks.
-		config_delay <= config_delay + 1;
-		if (config_delay == 13'd5000) begin
-			state <= ST_IDLE;
-			hold_config <= 0;
+	else
+	begin
+		case(state)
+		ST_RESET: begin
+			state <= ST_RESET;
+			if (count == 500000) begin    // Wait 10 msec.
+				state <= ST_STRAP;
+				count <= 0;
+			end
 		end
-	end
-	
-	ST_IDLE: begin
-		phy_ready <= 1;
-	end
-	endcase
-	
+
+		ST_STRAP: begin
+			state <= ST_STRAP;
+			if (count == 50) begin      // Wait 1 usec.
+				state <= ST_WAIT;
+				count <= 0;
+			end
+		end
+		
+		ST_WAIT: begin
+			state <= ST_WAIT;
+			if (count == 5000) begin    // Wait 100 usec for MIIM ready.
+				state <= ST_IDLE;
+				count <= 0;
+			end
+		end
+
+		ST_IDLE: begin
+			state <= ST_IDLE;
+			ready <= 1;
+		end
+		endcase
+	end 
 end
 
 endmodule

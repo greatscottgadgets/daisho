@@ -79,7 +79,7 @@
 # ========================
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "12.0 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:44:15  DECEMBER 28, 2012"
-set_global_assignment -name LAST_QUARTUS_VERSION 12.1
+set_global_assignment -name LAST_QUARTUS_VERSION "12.1 SP1"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output
 
 # Pin & Location Assignments
@@ -341,7 +341,6 @@ set_location_assignment PIN_M23 -to KEY[0]
 
 # Included Common Files
 # =====================
-set_global_assignment -name VERILOG_FILE ../../common/io_seg7.v
 
 # Classic Timing Assignments
 # ==========================
@@ -425,6 +424,24 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 
 set_global_assignment -name SMART_RECOMPILE ON
 
+
+
+set_location_assignment PIN_G14 -to UART_CTS
+set_location_assignment PIN_J13 -to UART_RTS
+set_location_assignment PIN_G12 -to UART_RXD
+set_location_assignment PIN_G9 -to UART_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk_50
+set_global_assignment -name VERILOG_FILE nibble_ascii.v
+set_global_assignment -name SDC_FILE gige.sdc
+set_global_assignment -name VERILOG_FILE mii_passthrough.v
+set_global_assignment -name VERILOG_FILE phy_init.v
+set_global_assignment -name VERILOG_FILE ../../common/io_seg7.v
 set_global_assignment -name VERILOG_FILE gige_top.v
 
+set_global_assignment -name QIP_FILE fifo_packet.qip
+set_global_assignment -name QIP_FILE fifo_uart.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
