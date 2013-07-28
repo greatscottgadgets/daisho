@@ -25,9 +25,9 @@ LDCONFIG ?= /sbin/ldconfig
 OPTFLAGS   = -O3 -Wall
 CFLAGS    += $(OPTFLAGS)
 
-LIB_DIR ?= /usr/lib
-INCLUDE_DIR ?= /usr/include
-INSTALL_DIR ?= /usr/bin
+LIB_DIR ?= /usr/local/lib
+INCLUDE_DIR ?= /usr/local/include
+INSTALL_DIR ?= /usr/local/bin
 
 OS = $(shell uname)
 ifeq ($(OS), FreeBSD)
@@ -54,11 +54,15 @@ LIB_HEADER_FILES = $(LIB_SOURCE_FILES:%.c=%.h)
 
 TOOLS_SOURCE = $(TOOLS:%=%.c)
 
-all: $(LIB_FILE) $(TOOLS)
+all: $(LIB_FILE) $(TOOLS) daisho-en-uart
 
 $(LIB_FILE): $(LIB_SOURCE_FILES) $(LIB_HEADER_FILES)
 	$(CC) $(CFLAGS) -fPIC -c $(LIB_SOURCE_FILES)
 	$(CC) $(LIB_CFLAGS) -o $(LIB_FILE) $(LIB_OBJECT_FILES) $(LDFLAGS)
+
+# Temporary
+daisho-en-uart:
+	$(CC) $(CFLAGS) -o $@ $@.c -lpcap
 
 $(TOOLS): $(LIB_FILE) $(TOOLS_SOURCE)
 		$(CC) $(CFLAGS) -o $@ $@.c $(LIB_FILE) $(LDFLAGS)
@@ -75,6 +79,6 @@ install: $(LIB_FILE) $(TOOLS)
 	$(INSTALL) -m 0755 $(TOOLS) $(INSTALL_DIR)
 
 clean:
-	rm -f $(LIB_NAME).* $(TOOLS) $(LIB_OBJECT_FILES)
+	rm -f $(LIB_NAME).* $(TOOLS) $(LIB_OBJECT_FILES) daisho-en-uart
 
 .PHONY: all clean install
