@@ -15,14 +15,16 @@ input	wire			reset_n,
 output	wire			reset_n_out,
 
 input	wire			phy_ulpi_clk,
-input	wire	[7:0]	phy_ulpi_d_in,
-output	wire	[7:0]	phy_ulpi_d_out,
-output	wire			phy_ulpi_d_oe,
+inout	wire	[7:0]	phy_ulpi_d,
+//input	wire	[7:0]	phy_ulpi_d_in,
+//output	wire	[7:0]	phy_ulpi_d_out,
+//output	wire			phy_ulpi_d_oe,
 input	wire			phy_ulpi_dir,
 output	wire			phy_ulpi_stp,
 input	wire			phy_ulpi_nxt,
 
 input	wire			opt_enable_hs,
+input	wire			opt_ignore_vbus,
 output	wire			stat_connected,
 output	wire			stat_fs,
 output	wire			stat_hs,
@@ -57,7 +59,28 @@ output	wire	[1:0]	dbg_linestate
 
 );
 
-
+	reg 			reset_1, reset_2;				// local reset
+	
+	// allow reset-time pin strapping for the usb 3.0 phy. 
+	// this should not affect regular usb 2.0 PHYs
+	//
+	assign			phy_ulpi_d = (reset_2 ? (phy_ulpi_d_oe ? phy_ulpi_d_out : 8'bZZZZZZZZ) : 
+					{
+						1'b0,	// ISO_START	PIPE Isolate Mode
+						1'b0,	// ULPI_8BIT	Bus Width ULPI
+						2'b11,	// REFCLKSEL	Reference clock freq
+						4'b0
+					});
+	
+	wire	[7:0]	phy_ulpi_d_in = phy_ulpi_d;
+	wire	[7:0]	phy_ulpi_d_out;
+	wire			phy_ulpi_d_oe;
+									
+always @(posedge ext_clk) begin
+	// synchronize external reset to local domain
+	{reset_2, reset_1} <= {reset_1, reset_n};
+end
+									
 ////////////////////////////////////////////////////////////
 //
 // USB 2.0 ULPI interface
@@ -85,6 +108,10 @@ usb2_ulpi 	ia (
 	// is not guaranteed
 	.opt_enable_hs	( opt_enable_hs ),
 	
+	// normally a change in Vbus signals that the device has been disconnected.
+	// on some PHYs this may be unreliable (such as TUSB1310A)
+	.opt_ignore_vbus (opt_ignore_vbus),
+	
 	// status signals
 	.stat_connected	( stat_connected ),
 	.stat_fs		( stat_fs ),
@@ -92,9 +119,9 @@ usb2_ulpi 	ia (
 
 	// external PHY interface
 	.phy_clk		( phy_ulpi_clk ),
-	.phy_d_in	( phy_ulpi_d_in ),
+	.phy_d_in		( phy_ulpi_d_in ),
 	.phy_d_out_mux	( phy_ulpi_d_out ),
-	.phy_d_oe	( phy_ulpi_d_oe ),
+	.phy_d_oe		( phy_ulpi_d_oe ),
 	.phy_dir		( phy_ulpi_dir ),
 	.phy_stp		( phy_ulpi_stp ),
 	.phy_nxt		( phy_ulpi_nxt ),

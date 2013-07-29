@@ -14,6 +14,7 @@ module usb2_ulpi (
 input	wire			reset_n,
 output	wire			reset_local,
 input	wire			opt_enable_hs,
+input	wire			opt_ignore_vbus,
 output	wire			stat_connected,
 output	reg				stat_fs,
 output	reg				stat_hs,
@@ -56,6 +57,7 @@ output	wire	[1:0]	dbg_linestate
 	reg				reset_ulpi;
 	assign			reset_local = reset_n & reset_ulpi;
 	reg				opt_enable_hs_1, opt_enable_hs_2;
+	reg				opt_ignore_vbus_1, opt_ignore_vbus_2;
 	reg				phy_dir_1;
 	reg		[7:0]	phy_d_out;
 	reg		[7:0]	phy_d_next;
@@ -149,6 +151,8 @@ always @(posedge phy_clk) begin
 	// edge detection / synchronize
 	{reset_2, reset_1} <= {reset_1, reset_n};
 	{opt_enable_hs_2, opt_enable_hs_1} <= {opt_enable_hs_1, opt_enable_hs};
+	{opt_ignore_vbus_2, opt_ignore_vbus_1} <= {opt_ignore_vbus_1, opt_ignore_vbus};
+	
 	vbus_valid_1 <= vbus_valid;
 	phy_dir_1 <= phy_dir;
 
@@ -186,7 +190,11 @@ always @(posedge phy_clk) begin
 		dc_wrap <= 0;
 		pkt_in_latch_defer <= 0;
 		
-		state <= ST_RST_1;
+		//////////////////////////////////////////////////
+		// REMOVEME DISABLE USB2 COMPLETELY
+		// FOR TESTING USB3 ONLY
+		//////////////////////////////////////////////////
+		state <= ST_RST_0;
 	end
 	ST_RST_1: begin
 		// take other modules out of reset, whether initial or caused by 
@@ -429,10 +437,18 @@ always @(posedge phy_clk) begin
 
 	if(~reset_2) state <= ST_RST_0;
 	
-	// disconnected
-	if(~vbus_valid & vbus_valid_1) begin
-		reset_ulpi <= 0;
-		state <= ST_RST_0;
+	// detect a change in Vbus
+	//
+	// this works fine with regular USB 2.0 PHYs, however
+	// the TUSB1310A has a silicon bug where the ULPI Vbus 
+	// status is incorrectly reported, causing erratic 
+	// disconnects.
+	//
+	if(~opt_ignore_vbus_2) begin
+		if(~vbus_valid & vbus_valid_1) begin
+			reset_ulpi <= 0;
+			state <= ST_RST_0;
+		end
 	end
 end
 	
