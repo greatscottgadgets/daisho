@@ -54,15 +54,18 @@ LIB_HEADER_FILES = $(LIB_SOURCE_FILES:%.c=%.h)
 
 TOOLS_SOURCE = $(TOOLS:%=%.c)
 
-all: $(LIB_FILE) $(TOOLS) daisho-en-uart
+all: $(LIB_FILE) $(TOOLS) daisho-en-uart daisho_extcap
 
 $(LIB_FILE): $(LIB_SOURCE_FILES) $(LIB_HEADER_FILES)
 	$(CC) $(CFLAGS) -fPIC -c $(LIB_SOURCE_FILES)
 	$(CC) $(LIB_CFLAGS) -o $(LIB_FILE) $(LIB_OBJECT_FILES) $(LDFLAGS)
 
 # Temporary
-daisho-en-uart:
+daisho-en-uart: daisho-en-uart.c
 	$(CC) $(CFLAGS) -o $@ $@.c -lpcap
+
+daisho_extcap: daisho_extcap.c
+	$(CC) $(CFLAGS) -o $@ $@.c
 
 $(TOOLS): $(LIB_FILE) $(TOOLS_SOURCE)
 		$(CC) $(CFLAGS) -o $@ $@.c $(LIB_FILE) $(LDFLAGS)
@@ -79,6 +82,6 @@ install: $(LIB_FILE) $(TOOLS)
 	$(INSTALL) -m 0755 $(TOOLS) $(INSTALL_DIR)
 
 clean:
-	rm -f $(LIB_NAME).* $(TOOLS) $(LIB_OBJECT_FILES) daisho-en-uart
+	rm -f $(LIB_NAME).* $(TOOLS) $(LIB_OBJECT_FILES) daisho-en-uart daisho_extcap
 
 .PHONY: all clean install

@@ -81,26 +81,16 @@ void usage() {
 	fprintf(stderr, "\t-h this help\n");
 	fprintf(stderr, "\t-p <filename> PCAP file to write\n");
 	fprintf(stderr, "\t-s <filename> file to read (may be a serial device)\n");
-
 }
 
 int main(int argc, char **argv) {
 	int opt;
-	FILE *input;
+	FILE *input = NULL, *output = NULL;
 
 	while ((opt=getopt(argc,argv,"p:hs:")) != EOF) {
 		switch(opt) {
 		case 'p':
-			pcap_dumpfile = pcap_open_dead(DLT_EN10MB, SNAP_LEN);
-			if (pcap_dumpfile == NULL)
-				fprintf(stderr, "Unable to open pcap file for output\n");
-			dumper = pcap_dump_open(pcap_dumpfile, optarg);
-			pcap_dump_flush(dumper);
-			if (dumper == NULL) {
-				fprintf(stderr, "Unable to open pcap dumper for output\n");
-				pcap_close(pcap_dumpfile);
-				return 1;
-			}
+			output = fopen(optarg, "w");
 			break;
 		case 's':
 			input = fopen(optarg, "r");
@@ -116,7 +106,24 @@ int main(int argc, char **argv) {
 		fprintf(stderr, "No input file given, using stdin\n");
 		input = stdin;
 	}
-	
+
+	if(output==NULL) {
+		fprintf(stderr, "No output file given, using stdout\n");
+		output = stdout;
+	}
+
+	pcap_dumpfile = pcap_open_dead(DLT_EN10MB, SNAP_LEN);
+	if (pcap_dumpfile == NULL)
+		fprintf(stderr, "Unable to open pcap file for output\n");
+	dumper = pcap_dump_fopen(pcap_dumpfile, output);
+	pcap_dump_flush(dumper);
+
+	if (dumper == NULL) {
+		fprintf(stderr, "Unable to open pcap dumper for output\n");
+		pcap_close(pcap_dumpfile);
+		return 1;
+	}
+
 	sniff_packets(input);
 	return 0;
 }
