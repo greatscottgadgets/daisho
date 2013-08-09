@@ -13,6 +13,7 @@ module usb2_ulpi (
 // top-level interface
 input	wire			reset_n,
 output	wire			reset_local,
+input	wire			opt_disable_all,
 input	wire			opt_enable_hs,
 input	wire			opt_ignore_vbus,
 output	wire			stat_connected,
@@ -190,11 +191,9 @@ always @(posedge phy_clk) begin
 		dc_wrap <= 0;
 		pkt_in_latch_defer <= 0;
 		
-		//////////////////////////////////////////////////
-		// REMOVEME DISABLE USB2 COMPLETELY
-		// FOR TESTING USB3 ONLY
-		//////////////////////////////////////////////////
-		state <= ST_RST_0;
+		// stay stuck in reset, if
+		// disable is specified
+		if(opt_disable_all) state <= ST_RST_0;
 	end
 	ST_RST_1: begin
 		// take other modules out of reset, whether initial or caused by 
@@ -432,7 +431,7 @@ always @(posedge phy_clk) begin
 		stat_hs <= 1'b1;
 		state <= ST_IDLE;
 	end
-	
+	default: state <= ST_RST_0;
 	endcase
 
 	if(~reset_2) state <= ST_RST_0;

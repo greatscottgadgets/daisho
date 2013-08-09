@@ -167,7 +167,7 @@ always @(posedge phy_clk) begin
 	ST_IDLE: begin
 		
 	end
-	
+	default: state <= ST_RST_0;
 	endcase
 	
 	if(~reset_2) begin

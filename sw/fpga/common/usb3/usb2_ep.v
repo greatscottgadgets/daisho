@@ -160,7 +160,7 @@ always @(posedge phy_clk) begin
 		
 		state_in <= ST_IDLE;
 	end
-	
+	default: state_in <= ST_RST_0;
 	endcase
 	
 	//////////////////////////////////////////////////////
@@ -213,7 +213,7 @@ always @(posedge phy_clk) begin
 		
 		state_out <= ST_IDLE;
 	end
-	
+	default: state_out <= ST_RST_0;
 	endcase
 		
 	if(~reset_2) begin

@@ -68,14 +68,15 @@ input	wire			lfps_recv_u3,
 
 input	wire			partner_detect,
 output	reg				partner_looking,
-output	reg				partner_detected
+output	reg				partner_detected,
 
+output	reg				last
 
 );
 
 	assign phy_pipe_tx_clk = local_tx_clk;
 	
-	// mux TX_ELECIDLE with both local PIPE and external LTSSM control
+	// mux these phy signals with both local PIPE and external LTSSM control
 	//
 	assign phy_tx_elecidle = phy_tx_elecidle_local & ltssm_tx_elecidle;
 	assign phy_tx_detrx_lpbk = phy_tx_detrx_lpbk_local | ltssm_tx_detrx_lpbk;
@@ -84,7 +85,7 @@ output	reg				partner_detected
 	reg				partner_detect_1;
 	reg				ltssm_power_go_1;
 	
-	reg		[23:0]	dc /* synthesis noprune */;		// delay count
+	reg		[23:0]	dc;								// delay count
 	reg		[7:0]	swc;							// small word count
 	reg		[4:0]	rdc;							// rxdet delay count
 	reg		[7:0]	sc;								// 
@@ -171,9 +172,15 @@ parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
 	reg				set_ts2_found, set_ts2_found_1;
 	
 	reg		[31:0]	sync_a /* synthesis noprune */;
+	reg		[3:0]	sync_ak /* synthesis noprune */;
 	reg		[31:0]	sync_b /* synthesis noprune */;
+	reg		[3:0]	sync_bk /* synthesis noprune */;
 	reg		[31:0]	sync_out /* synthesis noprune */;
+	reg		[3:0]	sync_outk /* synthesis noprune */;
+	reg				sync_out_valid /* synthesis noprune */;
 	
+	// combinational detection of valid packet framing
+	// k-symbols within a received word.
 	wire			sync_byte_3 = pipe_rx_datak[3] && (	pipe_rx_data[31:24] == 8'h5C || pipe_rx_data[31:24] == 8'hBC ||
 														pipe_rx_data[31:24] == 8'hFB || pipe_rx_data[31:24] == 8'hFE ||
 														pipe_rx_data[31:24] == 8'hF7 );
@@ -186,11 +193,18 @@ parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
 	wire			sync_byte_0 = pipe_rx_datak[0] && (	pipe_rx_data[7:0] == 8'h5C || pipe_rx_data[7:0] == 8'hBC ||
 														pipe_rx_data[7:0] == 8'hFB || pipe_rx_data[7:0] == 8'hFE ||
 														pipe_rx_data[7:0] == 8'hF7 );
+	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0};
+	
+	wire			sync_byte_3_end = pipe_rx_datak[3] && (	pipe_rx_data[31:24] == 8'h7C || pipe_rx_data[31:24] == 8'hFD );
+	wire			sync_byte_2_end = pipe_rx_datak[2] && (	pipe_rx_data[23:16] == 8'h7C || pipe_rx_data[23:16] == 8'hFD );
+	wire			sync_byte_1_end = pipe_rx_datak[1] && (	pipe_rx_data[15:8] == 8'h7C || pipe_rx_data[15:8] == 8'hFD );
+	wire			sync_byte_0_end = pipe_rx_datak[0] && (	pipe_rx_data[7:0] == 8'h7C || pipe_rx_data[7:0] == 8'hFD );
+	wire	[3:0]	sync_end	= {sync_byte_3_end, sync_byte_2_end, sync_byte_1_end, sync_byte_0_end};
 														
 always @(posedge local_clk) begin
 
 	// synchronizers
-	lfps_recv_active_1 <= lfps_recv_active; //(just rising edge detection)
+	lfps_recv_active_1 <= lfps_recv_active; // (just rising edge detection)
 	partner_detect_1 <= partner_detect;
 	ltssm_power_go_1 <= ltssm_power_go;
 	
@@ -219,9 +233,7 @@ always @(posedge local_clk) begin
 	set_ts1_found_1 <= set_ts1_found;
 	set_ts2_found_1 <= set_ts2_found;
 	
-	scr_rx_enable <= 0;
-	scr_rx_reset <= 0;
-	
+	sync_out_valid <= 0;
 	
 	///////////////////////////////////////
 	// PIPE FSM
@@ -394,14 +406,41 @@ always @(posedge local_clk) begin
 			state <= ST_IDLE;
 		end
 	end
+	default: state <= ST_RST_0;
 	endcase
 	
 	
-	scr_rx_enable <= 1;
 	
 	///////////////////////////////////////
 	// ORDERED SET ALIGNMENT FSM
 	///////////////////////////////////////
+	
+	case(word_rx_align)
+	0: begin
+		sync_a <= {pipe_rx_data[31:0]};
+		sync_ak <= pipe_rx_datak;
+		sync_b <= sync_a;
+		sync_bk <= sync_ak;
+	end
+	1: begin
+		sync_a <= {pipe_rx_data[24:0], 8'h0};
+		sync_ak <= {pipe_rx_datak[2:0], 1'h0};
+		sync_b <= {sync_a[31:8], pipe_rx_data[31:24]};
+		sync_bk <= {sync_ak[3:1], pipe_rx_datak[3]};
+	end
+	2: begin
+		sync_a <= {pipe_rx_data[15:0], 16'h0};
+		sync_ak <= {pipe_rx_datak[1:0], 2'h0};
+		sync_b <= {sync_a[31:16], pipe_rx_data[31:16]};
+		sync_bk <= {sync_ak[3:2], pipe_rx_datak[3:2]};
+	end
+	3: begin
+		sync_a <= {pipe_rx_data[7:0], 24'h0};
+		sync_ak <= {pipe_rx_datak[0], 3'h0};
+		sync_b <= {sync_a[31:24], pipe_rx_data[31:8]};
+		sync_bk <= {sync_ak[3:3], pipe_rx_datak[3:1]};
+	end
+	endcase
 	
 	case(align_state)
 	ALIGN_RESET: begin
@@ -411,28 +450,26 @@ always @(posedge local_clk) begin
 		set_sr_data <= 0;
 		set_sr_datak <= 0;
 		
-		if( sync_byte_0 ) begin
-			// COM k-symbol detected
-			// alignment could be:
-			// -- -- -- BC | BC BC BC ** |
-			// -- -- BC BC | BC BC ** ** |
-			// -- BC BC BC | BC ** ** ** |
-			// BC BC BC BC | ** ** ** ** |
-			// either way, next cycle data immediately follows.
-			
-			scr_rx_reset <= 1;
-			if( sync_byte_3 && sync_byte_2 && sync_byte_1 ) begin
+		// packet framing detected
+		// determine bit alignment
+		if( sync_start[0] ) begin
+			//scr_rx_reset <= 1;
+			if( sync_start[3:1] ) begin
 				word_rx_align <= 0; 
 				sync_a <= pipe_rx_data;
-			end else if( sync_byte_2 && sync_byte_1 ) begin
+				sync_ak <= pipe_rx_datak;
+			end else if( sync_start[2:1] ) begin
 				word_rx_align <= 1; 
 				sync_a <= {pipe_rx_data[24:0], 8'h0};
-			end else if( sync_byte_1 ) begin
+				sync_ak <= {pipe_rx_datak[2:0], 1'h0};
+			end else if( sync_start[1] ) begin
 				word_rx_align <= 2; 
 				sync_a <= {pipe_rx_data[15:0], 16'h0};
+				sync_ak <= {pipe_rx_datak[1:0], 2'h0};
 			end else begin
 				word_rx_align <= 3;
 				sync_a <= {pipe_rx_data[7:0], 24'h0};
+				sync_ak <= {pipe_rx_datak[0], 3'h0};
 			end
 			
 			set_sr_data <= pipe_rx_data;
@@ -468,21 +505,26 @@ always @(posedge local_clk) begin
 		set_sr_data <= {set_sr_data[63:0], pipe_rx_data};
 		set_sr_datak <= {set_sr_datak[7:0], pipe_rx_datak};
 		
+		/*
 		case(word_rx_align)
 		0: begin
 			sync_a <= {pipe_rx_data[31:0]};
+			sync_ak <= pipe_rx_datak;
 		end
 		1: begin
 			sync_a <= {pipe_rx_data[24:0], 8'h0};
+			sync_ak <= {pipe_rx_datak[2:0], 1'h0};
 		end
 		2: begin
 			sync_a <= {pipe_rx_data[15:0], 16'h0};
+			sync_ak <= {pipe_rx_datak[1:0], 2'h0};
 		end
 		3: begin
 			sync_a <= {pipe_rx_data[7:0], 24'h0};
+			sync_ak <= {pipe_rx_datak[0], 3'h0};
 		end
 		endcase
-		
+		*/
 		if(ac == 2) begin
 			set_reading <= 1;
 			align_state <= ALIGN_IDLE;
@@ -491,27 +533,16 @@ always @(posedge local_clk) begin
 	ALIGN_1: begin
 		
 	end
+	default: align_state <= ALIGN_RESET;
 	endcase
 	
-	case(word_rx_align)
-	0: begin
-		//sync_a <= {pipe_rx_data[31:0]};
-		sync_b <= sync_a;
-	end
-	1: begin
-		//sync_a <= {pipe_rx_data[24:0], 8'h0};
-		sync_b <= {sync_a[31:8], pipe_rx_data[31:24]};
-	end
-	2: begin
-		//sync_a <= {pipe_rx_data[15:0], 16'h0};
-		sync_b <= {sync_a[31:16], pipe_rx_data[31:16]};
-	end
-	3: begin
-		//sync_a <= {pipe_rx_data[7:0], 24'h0};
-		sync_b <= {sync_a[31:24], pipe_rx_data[31:8]};
-	end
-	endcase
+
+	
+	// pass on the descrambled data, bypassing k-symbols which
+	// are not scrambled
+	
 	sync_out <= sync_b;
+	sync_outk <= sync_bk;
 	
 	
 	
@@ -594,7 +625,7 @@ always @(posedge local_clk) begin
 			partner_detected <= 1;
 		if(rdc == 10) rxdet_state <= RXDET_IDLE;
 	end
-	
+	default: rxdet_state <= RXDET_RESET;
 	endcase	
 	
 	
@@ -644,7 +675,7 @@ always @(posedge local_clk) begin
 		ltssm_power_ack <= 1;
 		pd_state <= PD_IDLE;
 	end
-	
+	default: pd_state <= PD_RESET;
 	endcase	
 	
 	
@@ -660,44 +691,20 @@ always @(posedge local_clk) begin
 end
 
 
-
-
 //
-// data de-scrambling for RX
+// RX descramble and filtering
 //
-	reg				scr_rx_enable;
-	reg				scr_rx_reset;
-	wire	[31:0]	scr_rx_data_out /* synthesis keep */;
-usb3_scramble iu3srx(
-
-	.clock		( local_clk ),
-	.reset_n	( reset_n ),
+usb3_descramble iu3rds (
+	.local_clk		( local_clk ),
+	.reset_n		( reset_n ),
 	
-	.data_in	( 32'h0 ),
-	.scram_en	( scr_rx_enable ),
-	.scram_rst	( scr_rx_reset ),
-	.data_out	( scr_rx_data_out )
-	
+	.raw_valid		( pipe_rx_valid ),
+	.raw_status		( pipe_rx_status ),
+	.raw_phy_status	( pipe_phy_status ),
+	.raw_datak		( pipe_rx_datak ),
+	.raw_data		( pipe_rx_data )
 );
 
-//
-// data scrambling for TX
-//
-	reg				scr_tx_enable;
-	reg				scr_tx_reset;
-	wire	[31:0]	scr_tx_data_in /* synthesis keep */;
-	wire	[31:0]	scr_tx_data_out /* synthesis keep */;
-usb3_scramble iu3stx(
-
-	.clock		( local_clk ),
-	.reset_n	( reset_n ),
-	
-	.data_in	( scr_tx_data_in ),
-	.scram_en	( scr_tx_enable ),
-	.scram_rst	( scr_tx_reset ),
-	.data_out	( scr_tx_data_out )
-	
-);
 
 
 
@@ -747,16 +754,16 @@ usb3_scramble iu3stx(
 						phy_pipe_rx_data		// 16
 					} /* synthesis keep */ ;
 
-	wire	[1:0]	pipe_rx_valid		= {pipe_rx_h[18],    pipe_rx_l[18]} /* synthesis keep */ ;
-	wire	[5:0]	pipe_rx_status		= {pipe_rx_h[21:19], pipe_rx_l[21:19]} /* synthesis keep */ ;
-	wire	[1:0]	pipe_phy_status		= {pipe_rx_h[22],    pipe_rx_l[22]} /* synthesis keep */ ;   
+	wire	[1:0]	pipe_rx_valid		= {pipe_rx_h[18],    pipe_rx_l[18]};
+	wire	[5:0]	pipe_rx_status		= {pipe_rx_h[21:19], pipe_rx_l[21:19]};
+	wire	[1:0]	pipe_phy_status		= {pipe_rx_h[22],    pipe_rx_l[22]};   
 	wire	[3:0]	pipe_rx_datak_swap	= {pipe_rx_h[17:16], pipe_rx_l[17:16]};
 	wire	[31:0]	pipe_rx_data_swap	= {pipe_rx_h[15:0],  pipe_rx_l[15:0]};
 
 	wire	[3:0]	pipe_rx_datak = {	pipe_rx_datak_swap[0], pipe_rx_datak_swap[1], 
-										pipe_rx_datak_swap[2], pipe_rx_datak_swap[3] }  /* synthesis keep */;
+										pipe_rx_datak_swap[2], pipe_rx_datak_swap[3] };
 	wire	[31:0]	pipe_rx_data = {	pipe_rx_data_swap[7:0], pipe_rx_data_swap[15:8], 
-										pipe_rx_data_swap[23:16], pipe_rx_data_swap[31:24] }  /* synthesis keep */;
+										pipe_rx_data_swap[23:16], pipe_rx_data_swap[31:24] };
 
 mf_usb3_rx	iu3prx (
 	.datain		( pipe_rx_phy ),

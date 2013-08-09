@@ -345,7 +345,7 @@ always @(posedge slow_clk) begin
 		if(train_ts1 | train_ts2) tc <= tc + 1'b1;
 		
 		if(tc == 8) begin
-			// received 8 consecutive(TODO) TS1/TS2
+			// received 8 consecutive(TODO?) TS1/TS2
 			// reset timeout count and proceed
 			dc <= 0;
 			tc <= 0;
@@ -372,6 +372,7 @@ always @(posedge slow_clk) begin
 		end
 		
 		// exit criteria
+		// received 8 and sent 24
 		if(tc == 8 && tsc == 24) begin
 			// reset timeout count and proceed
 			dc <= 0;
@@ -418,6 +419,7 @@ always @(posedge slow_clk) begin
 		has_trained <= 0;
 		state <= LT_RX_DETECT_RESET;
 	end
+	default: state <= LT_RESET;
 	endcase
 	
 	
@@ -498,6 +500,7 @@ always @(posedge slow_clk) begin
 	LFPS_SEND_3: begin
 		// keep
 	end
+	default: lfps_send_state <= LFPS_RESET;
 	endcase
 	
 	
@@ -587,6 +590,7 @@ always @(posedge slow_clk) begin
 	end
 	LFPS_RECV_3: begin
 	end
+	default: lfps_recv_state <= LFPS_RESET;
 	endcase
 	
 	

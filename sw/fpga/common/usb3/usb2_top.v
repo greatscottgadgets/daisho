@@ -16,13 +16,11 @@ output	wire			reset_n_out,
 
 input	wire			phy_ulpi_clk,
 inout	wire	[7:0]	phy_ulpi_d,
-//input	wire	[7:0]	phy_ulpi_d_in,
-//output	wire	[7:0]	phy_ulpi_d_out,
-//output	wire			phy_ulpi_d_oe,
 input	wire			phy_ulpi_dir,
 output	wire			phy_ulpi_stp,
 input	wire			phy_ulpi_nxt,
 
+input	wire			opt_disable_all,
 input	wire			opt_enable_hs,
 input	wire			opt_ignore_vbus,
 output	wire			stat_connected,
@@ -103,6 +101,10 @@ usb2_ulpi 	ia (
 	// locally generated reset, triggers local USB reset when cable is 
 	// unplugged, OR'd with external reset above
 	.reset_local	( reset_n_out ),
+	
+	// easy flag that will cause all modules to stay in reset and be optimized out
+	// useful for testing 3.0 only
+	.opt_disable_all ( opt_disable_all ),
 	
 	// high-speed enable, full speed enumeration works but data transmission
 	// is not guaranteed

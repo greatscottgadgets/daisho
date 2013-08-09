@@ -538,7 +538,7 @@ always @(posedge phy_clk) begin
 			out_byte_buf <= 0;
 		end
 	end
-	
+	default: state <= ST_RST_0;
 	endcase
 	
 	if(~reset_2) begin
