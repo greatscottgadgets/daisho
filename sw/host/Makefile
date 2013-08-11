@@ -80,6 +80,7 @@ install: $(LIB_FILE) $(TOOLS)
 	ln -fs $(LIB_FILE) $(LIB_DIR)/$(SONAME)
 	$(LDCONFIG)
 	$(INSTALL) -m 0755 $(TOOLS) $(INSTALL_DIR)
+	$(INSTALL) -m 0755 daisho-en-uart $(INSTALL_DIR)
 
 clean:
 	rm -f $(LIB_NAME).* $(TOOLS) $(LIB_OBJECT_FILES) daisho-en-uart daisho_extcap

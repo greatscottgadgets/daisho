@@ -69,7 +69,8 @@ int main(void)
 		if (ret < 0){
 			printf("* Couldn't read: %s\n", libusb_error_name(ret));
 			break;
-		} else if (transferred) {
+		/* Ignore case where we have an incomplete state */
+		} else if (transferred == 8) {
 			for(i=0;i<transferred;i++)
 				printf("%02x ", readback[i]);
 			printf("\n");

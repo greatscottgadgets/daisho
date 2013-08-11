@@ -4,6 +4,10 @@
 #include <getopt.h>
 #include <pcap.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <termios.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 static pcap_t *pcap_dumpfile;
 static pcap_dumper_t *dumper;
@@ -59,7 +63,7 @@ int sniff_packets(FILE *input) {
 			if(corrected == 0xff) {
 				fprintf(stderr, "Dropping unknown nibble: 0x%x\n", in);
 				first_half = 1;
-				return 0;
+				//return 0;
 			}
 			else if(first_half) {
 				byte = corrected;
@@ -75,6 +79,34 @@ int sniff_packets(FILE *input) {
 	return 0;
 }
 
+FILE *setup_serial(char *path) {
+	// Reset the device options
+	struct termios options;
+
+	FILE *input = fopen(path, "r");
+	if(input==NULL) {
+		fprintf(stderr, "Cannot open serial device\n");
+	}
+	int fd = fileno(input);
+	
+	tcgetattr(fd, &options);
+
+	options.c_oflag = 0;
+	options.c_iflag = 0;
+	options.c_iflag &= (IXON | IXOFF | IXANY);
+	options.c_cflag |= CLOCAL | CREAD;
+	options.c_cflag &= ~HUPCL;
+
+	cfsetispeed(&options, B230400);
+	cfsetospeed(&options, B230400);
+
+	if (tcsetattr(fd, TCSANOW, &options) < 0) {
+		fprintf(stderr, "SerialClient::SetOptions() failed to set serial device attributes");
+		return NULL;
+	}
+	return input;
+}
+
 void usage() {
 	fprintf(stderr, "daisho-en-uart - Daisho ethernet tap over serial\n");
 	fprintf(stderr, "Usage:\n");
@@ -85,6 +117,7 @@ void usage() {
 
 int main(int argc, char **argv) {
 	int opt;
+	struct stat buf;
 	FILE *input = NULL, *output = NULL;
 
 	while ((opt=getopt(argc,argv,"p:hs:")) != EOF) {
@@ -93,7 +126,12 @@ int main(int argc, char **argv) {
 			output = fopen(optarg, "w");
 			break;
 		case 's':
-			input = fopen(optarg, "r");
+			stat(optarg, &buf);
+			if(S_ISCHR(buf.st_mode)) {
+				input = setup_serial(optarg);
+			} else {
+				input = fopen(optarg, "r");
+			}
 			break;
 		case 'h':
 		default:
