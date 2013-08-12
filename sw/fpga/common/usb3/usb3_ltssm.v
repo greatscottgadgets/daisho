@@ -61,6 +61,8 @@ output	reg				warm_reset
 );
 
 	reg				vbus_present_1, vbus_present_2;
+	reg				port_rx_elecidle_1, port_rx_elecidle_2;
+	reg				port_rx_valid_1, port_rx_valid_2;
 	
 parameter	[4:0]	LT_SS_DISABLED			= 5'd01,
 					LT_SS_INACTIVE_DETECT	= 5'd02,
@@ -188,6 +190,8 @@ always @(posedge slow_clk) begin
 	
 	// synchronizers
 	{vbus_present_2, vbus_present_1} <= {vbus_present_1, vbus_present};
+	{port_rx_elecidle_2, port_rx_elecidle_1} <= {port_rx_elecidle_1, port_rx_elecidle};
+	{port_rx_valid_2, port_rx_valid_1} <= {port_rx_valid_1, port_rx_valid};
 	
 	// default levels for outputs
 	port_rx_term <= 1;
@@ -432,7 +436,7 @@ always @(posedge slow_clk) begin
 		lfps_send_state <= LFPS_IDLE;
 	end
 	LFPS_IDLE: begin
-		if(port_rx_elecidle && !training) begin
+		if(port_rx_elecidle_2 && !training) begin
 			// clear to go
 			if(lfps_send_poll | lfps_send_poll_local) begin
 				// Polling.LFPS
@@ -484,7 +488,7 @@ always @(posedge slow_clk) begin
 			// and in response send LFPS until it's deasserted by host
 			lfps_send_state <= lfps_send_state;
 			// catch the rising edge
-			if(port_rx_elecidle) begin
+			if(port_rx_elecidle_2) begin
 				lfps_send_state <= LFPS_IDLE;
 			end
 		end
@@ -516,7 +520,7 @@ always @(posedge slow_clk) begin
 	end
 	LFPS_IDLE: begin
 		// lfps burst begin
-		if(~port_rx_elecidle & ~port_rx_valid) begin
+		if(~port_rx_elecidle_2 & ~port_rx_valid_2) begin
 			rc <= 0;
 			lfps_recv_state <= LFPS_RECV_1;
 		end
@@ -528,12 +532,12 @@ always @(posedge slow_clk) begin
 		
 		// detect WarmReset by seeing if LFPS continues past tResetDelay
 		if(rc > LFPS_RESET_DELAY) begin
-			// want to send LFPS to signal we acknkowledge the WarmReset
+			// want to send LFPS to signal we acknowledge the WarmReset
 			// N.B. per spec this is not acceptable during SS.Disabled
-			if(~port_rx_elecidle) lfps_send_reset_local <= 1;
+			if(~port_rx_elecidle_2) lfps_send_reset_local <= 1;
 		end
 		// wait for rising edge
-		if(port_rx_elecidle) begin
+		if(port_rx_elecidle_2) begin
 			lfps_recv_state <= LFPS_IDLE;
 			lfps_recv_active <= 1;
 			

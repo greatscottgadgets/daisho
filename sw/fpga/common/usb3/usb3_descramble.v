@@ -13,7 +13,9 @@ module usb3_descramble (
 input	wire			clock,
 input	wire			local_clk,
 input	wire			reset_n,
-								
+
+input	wire			enable,
+
 input	wire	[1:0]	raw_valid,
 input	wire	[5:0]	raw_status,
 input	wire	[1:0]	raw_phy_status,
@@ -29,37 +31,6 @@ output	reg				proc_active,
 
 output	reg				err_skp_unexpected
 );
-
-
-	reg		[31:0]	sync_a /* synthesis noprune */;
-	reg		[3:0]	sync_ak /* synthesis noprune */;
-	reg		[31:0]	sync_b /* synthesis noprune */;
-	reg		[3:0]	sync_bk /* synthesis noprune */;
-	reg		[31:0]	sync_out /* synthesis noprune */;
-	reg		[3:0]	sync_outk /* synthesis noprune */;
-	reg				sync_out_valid /* synthesis noprune */;
-	
-	// combinational detection of valid packet framing
-	// k-symbols within a received word.
-	wire			sync_byte_3 = raw_datak[3] && (	raw_data[31:24] == 8'h5C || raw_data[31:24] == 8'hBC ||
-													raw_data[31:24] == 8'hFB || raw_data[31:24] == 8'hFE ||
-													raw_data[31:24] == 8'hF7 );
-	wire			sync_byte_2 = raw_datak[2] && (	raw_data[23:16] == 8'h5C || raw_data[23:16] == 8'hBC ||
-													raw_data[23:16] == 8'hFB || raw_data[23:16] == 8'hFE ||
-													raw_data[23:16] == 8'hF7 );
-	wire			sync_byte_1 = raw_datak[1] && (	raw_data[15:8] == 8'h5C || raw_data[15:8] == 8'hBC ||
-													raw_data[15:8] == 8'hFB || raw_data[15:8] == 8'hFE ||
-													raw_data[15:8] == 8'hF7 );
-	wire			sync_byte_0 = raw_datak[0] && (	raw_data[7:0] == 8'h5C || raw_data[7:0] == 8'hBC ||
-													raw_data[7:0] == 8'hFB || raw_data[7:0] == 8'hFE ||
-													raw_data[7:0] == 8'hF7 );
-	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0};
-	
-	wire			sync_byte_3_end = raw_datak[3] && (	raw_data[31:24] == 8'h7C || raw_data[31:24] == 8'hFD );
-	wire			sync_byte_2_end = raw_datak[2] && (	raw_data[23:16] == 8'h7C || raw_data[23:16] == 8'hFD );
-	wire			sync_byte_1_end = raw_datak[1] && (	raw_data[15:8] == 8'h7C || raw_data[15:8] == 8'hFD );
-	wire			sync_byte_0_end = raw_datak[0] && (	raw_data[7:0] == 8'h7C || raw_data[7:0] == 8'hFD );
-	wire	[3:0]	sync_end	= {sync_byte_3_end, sync_byte_2_end, sync_byte_1_end, sync_byte_0_end};
 	
 	
 	// indicates presence of SKP at any symbol position
@@ -73,10 +44,10 @@ output	reg				err_skp_unexpected
 // collapse incoming stream to remove all SKP symbols.
 // these may be sent as 0x3C, 0x3C3C, 0x3C3C3C and so on.
 	
-	reg		[5:0]	skr_status /* synthesis noprune */;
-	reg		[31:0]	skr_data /* synthesis noprune */;
-	reg		[3:0]	skr_datak /* synthesis noprune */; 
-	reg		[2:0]	skr_num /* synthesis noprune */; 
+	reg		[5:0]	skr_status;
+	reg		[31:0]	skr_data;
+	reg		[3:0]	skr_datak; 
+	reg		[2:0]	skr_num; 
 	reg		[1:0]	skr_valid;
 
 always @(posedge local_clk) begin
@@ -123,7 +94,7 @@ always @(posedge local_clk) begin
 	endcase
 
 	// count valid symbols
-	skr_num <= 4-(skip[3] + skip[2] + skip[1] + skip[0]);
+	skr_num <= 4 - (skip[3] + skip[2] + skip[1] + skip[0]);
 	skr_status <= raw_status;
 	skr_valid <= raw_valid;
 	
@@ -138,14 +109,15 @@ end
 // accumulate these fragments and then squeeze them out
 // 32bits at a time.
 
-	reg		[5:0]	acc_status /* synthesis noprune */;
-	reg		[63:0]	acc_data /* synthesis noprune */;
-	reg		[7:0]	acc_datak /* synthesis noprune */; 
+	reg		[5:0]	acc_status;
+	reg		[63:0]	acc_data;
+	reg		[7:0]	acc_datak; 
 	
-	reg		[2:0]	acc_depth /* synthesis noprune */; 
+	reg		[2:0]	acc_depth; 
 	
 always @(posedge local_clk) begin
 
+	// take in either 8, 16, 24, or 32 bits of data from the prior stage
 	case(skr_num)
 	0: begin end
 	1: begin
@@ -170,6 +142,7 @@ always @(posedge local_clk) begin
 	end
 	endcase
 	
+	// pick off 32bits and decrement the accumulator
 	coll_valid <= skr_valid;
 	coll_active <= (acc_depth > 3);
 	case(acc_depth)
@@ -201,10 +174,10 @@ end
 // handle descrambling LFSR, resetting upon COM with
 // proper symbol alignment.
 
-	reg		[31:0]	coll_data /* synthesis noprune */;
-	reg		[3:0]	coll_datak /* synthesis noprune */;
-	reg				coll_active /* synthesis noprune */;
-	reg		[1:0]	coll_valid /* synthesis noprune */;
+	reg		[31:0]	coll_data ;
+	reg		[3:0]	coll_datak;
+	reg				coll_active;
+	reg		[1:0]	coll_valid;
 	
 	reg		[2:0]	ds_align;
 	reg		[2:0]	scr_defer;
@@ -231,10 +204,10 @@ always @(posedge local_clk) begin
 	
 	if(coll_active) begin
 		// only apply descrambling to data, not K-symbols
-		proc_data[31:24] <= coll_data[31:24] ^ (coll_datak[3] ? 0 : ds_delay[31:24]);
-		proc_data[23:16] <= coll_data[23:16] ^ (coll_datak[2] ? 0 : ds_delay[23:16]);
-		proc_data[15:8] <= coll_data[15:8] ^ (coll_datak[1] ? 0 : ds_delay[15:8]);
-		proc_data[7:0] <= coll_data[7:0] ^ (coll_datak[0] ? 0 : ds_delay[7:0]);
+		proc_data[31:24] <= coll_data[31:24] ^ (coll_datak[3] ? 8'h0 : ds_delay[31:24]);
+		proc_data[23:16] <= coll_data[23:16] ^ (coll_datak[2] ? 8'h0 : ds_delay[23:16]);
+		proc_data[15:8] <= coll_data[15:8] ^ (coll_datak[1] ? 8'h0 : ds_delay[15:8]);
+		proc_data[7:0] <= coll_data[7:0] ^ (coll_datak[0] ? 8'h0 : ds_delay[7:0]);
 		proc_datak <= coll_datak;
 		
 		// match incoming alignment
@@ -262,11 +235,13 @@ end
 //
 // data de-scrambling for RX
 //
-	reg				ds_enable;
 	reg		[31:0]	ds_delay;
 	reg		[31:0]	ds_last;
-	wire	[31:0]	ds_out = 	(|comma | (scr_defer < 1)) ? 0 : 
-								{ds_out_swap[7:0], ds_out_swap[15:8], ds_out_swap[23:16], ds_out_swap[31:24]};
+	wire			ds_suppress = |comma | (scr_defer < 1);
+	wire			ds_enable = enable && !ds_suppress;
+	wire	[31:0]	ds_out = ds_enable ? 
+							{ds_out_swap[7:0], ds_out_swap[15:8], ds_out_swap[23:16], ds_out_swap[31:24]} 
+							: 0;
 	wire	[31:0]	ds_out_swap;
 	
 usb3_lfsr iu3srx(

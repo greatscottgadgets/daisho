@@ -89,8 +89,7 @@ output	reg				last
 	reg		[7:0]	swc;							// small word count
 	reg		[4:0]	rdc;							// rxdet delay count
 	reg		[7:0]	sc;								// 
-	reg		[4:0]	ac;
-	
+
 	reg		[5:0]	state;
 parameter	[5:0]	ST_RST_0			= 6'd0,
 					ST_RST_1			= 6'd1,
@@ -115,6 +114,14 @@ parameter	[5:0]	ALIGN_RESET			= 6'd0,
 					ALIGN_2				= 6'd4,
 					ALIGN_3				= 6'd5,
 					ALIGN_4				= 6'd6;
+					
+	reg		[5:0]	tsdet_state;
+parameter	[5:0]	TSDET_RESET			= 6'd0,
+					TSDET_IDLE			= 6'd1,
+					TSDET_0				= 6'd2,
+					TSDET_1				= 6'd3,
+					TSDET_2				= 6'd4,
+					TSDET_3				= 6'd5;
 					
 	reg		[5:0]	rxdet_state;	
 parameter	[5:0]	RXDET_RESET			= 6'd0,
@@ -164,9 +171,8 @@ parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
 	
 	reg		[1:0]	word_rx_align;
 	reg				set_ts;
-	reg				set_reading;
-	reg		[95:0]	set_sr_data;
-	reg		[11:0]	set_sr_datak;
+	
+	reg				ds_enable;
 	
 	reg				set_ts1_found, set_ts1_found_1;
 	reg				set_ts2_found, set_ts2_found_1;
@@ -181,24 +187,24 @@ parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
 	
 	// combinational detection of valid packet framing
 	// k-symbols within a received word.
-	wire			sync_byte_3 = pipe_rx_datak[3] && (	pipe_rx_data[31:24] == 8'h5C || pipe_rx_data[31:24] == 8'hBC ||
-														pipe_rx_data[31:24] == 8'hFB || pipe_rx_data[31:24] == 8'hFE ||
-														pipe_rx_data[31:24] == 8'hF7 );
-	wire			sync_byte_2 = pipe_rx_datak[2] && (	pipe_rx_data[23:16] == 8'h5C || pipe_rx_data[23:16] == 8'hBC ||
-														pipe_rx_data[23:16] == 8'hFB || pipe_rx_data[23:16] == 8'hFE ||
-														pipe_rx_data[23:16] == 8'hF7 );
-	wire			sync_byte_1 = pipe_rx_datak[1] && (	pipe_rx_data[15:8] == 8'h5C || pipe_rx_data[15:8] == 8'hBC ||
-														pipe_rx_data[15:8] == 8'hFB || pipe_rx_data[15:8] == 8'hFE ||
-														pipe_rx_data[15:8] == 8'hF7 );
-	wire			sync_byte_0 = pipe_rx_datak[0] && (	pipe_rx_data[7:0] == 8'h5C || pipe_rx_data[7:0] == 8'hBC ||
-														pipe_rx_data[7:0] == 8'hFB || pipe_rx_data[7:0] == 8'hFE ||
-														pipe_rx_data[7:0] == 8'hF7 );
-	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0};
+	wire			sync_byte_3 = proc_datak[3] && (	proc_data[31:24] == 8'h5C || proc_data[31:24] == 8'hBC ||
+														proc_data[31:24] == 8'hFB || proc_data[31:24] == 8'hFE ||
+														proc_data[31:24] == 8'hF7 );
+	wire			sync_byte_2 = proc_datak[2] && (	proc_data[23:16] == 8'h5C || proc_data[23:16] == 8'hBC ||
+														proc_data[23:16] == 8'hFB || proc_data[23:16] == 8'hFE ||
+														proc_data[23:16] == 8'hF7 );
+	wire			sync_byte_1 = proc_datak[1] && (	proc_data[15:8] == 8'h5C || proc_data[15:8] == 8'hBC ||
+														proc_data[15:8] == 8'hFB || proc_data[15:8] == 8'hFE ||
+														proc_data[15:8] == 8'hF7 );
+	wire			sync_byte_0 = proc_datak[0] && (	proc_data[7:0] == 8'h5C || proc_data[7:0] == 8'hBC ||
+														proc_data[7:0] == 8'hFB || proc_data[7:0] == 8'hFE ||
+														proc_data[7:0] == 8'hF7 );
+	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0} /* synthesis keep */;
 	
-	wire			sync_byte_3_end = pipe_rx_datak[3] && (	pipe_rx_data[31:24] == 8'h7C || pipe_rx_data[31:24] == 8'hFD );
-	wire			sync_byte_2_end = pipe_rx_datak[2] && (	pipe_rx_data[23:16] == 8'h7C || pipe_rx_data[23:16] == 8'hFD );
-	wire			sync_byte_1_end = pipe_rx_datak[1] && (	pipe_rx_data[15:8] == 8'h7C || pipe_rx_data[15:8] == 8'hFD );
-	wire			sync_byte_0_end = pipe_rx_datak[0] && (	pipe_rx_data[7:0] == 8'h7C || pipe_rx_data[7:0] == 8'hFD );
+	wire			sync_byte_3_end = proc_datak[3] && (	proc_data[31:24] == 8'h7C || proc_data[31:24] == 8'hFD );
+	wire			sync_byte_2_end = proc_datak[2] && (	proc_data[23:16] == 8'h7C || proc_data[23:16] == 8'hFD );
+	wire			sync_byte_1_end = proc_datak[1] && (	proc_data[15:8] == 8'h7C || proc_data[15:8] == 8'hFD );
+	wire			sync_byte_0_end = proc_datak[0] && (	proc_data[7:0] == 8'h7C || proc_data[7:0] == 8'hFD );
 	wire	[3:0]	sync_end	= {sync_byte_3_end, sync_byte_2_end, sync_byte_1_end, sync_byte_0_end};
 														
 always @(posedge local_clk) begin
@@ -212,7 +218,6 @@ always @(posedge local_clk) begin
 	dc <= dc + 1'b1;
 	rdc <= rdc + 1'b1;
 	swc <= swc + 1'b1;
-	ac <= ac + 1'b1;
 	rxdet_timeout <= rxdet_timeout + 1'b1;
 	
 	phy_tx_elecidle_local <= 1'b1;
@@ -223,7 +228,6 @@ always @(posedge local_clk) begin
 	pipe_tx_data <= 32'h0;
 	pipe_tx_datak <= 4'b0000;
 	
-	set_reading <= 0;
 	set_ts1_found <= 0;
 	set_ts2_found <= 0;
 	
@@ -255,6 +259,8 @@ always @(posedge local_clk) begin
 		phy_rx_termination <= 	1'b1;			// enable rx termination
 		phy_elas_buf_mode <= 	ELASBUF_HALF;	// elastic buffer nominally half full
 				
+		ds_enable <= 0;							// disable descrambling
+		
 		state <= ST_RST_1;
 		dc <= 0;
 	end
@@ -295,6 +301,8 @@ always @(posedge local_clk) begin
 			// Polling.Idle
 			if(ltssm_train_idle) begin
 				swc <= 0;
+				// enable descrambling
+				ds_enable <= 1;
 				state <= ST_TRAIN_IDLE_0;
 			end
 		end
@@ -344,6 +352,7 @@ always @(posedge local_clk) begin
 	
 		// transmitting TS1
 		phy_tx_elecidle_local <= 1'b0;
+		ds_enable <= 0;
 		
 		// NOTE: once LTSSM switches, mixed-up set could be sent.
 		// this will be discarded by the other port, so no big deal.
@@ -386,6 +395,7 @@ always @(posedge local_clk) begin
 		// to most recent sent COM
 		phy_tx_elecidle_local <= 1'b0;
 		{pipe_tx_data, pipe_tx_datak} <= {32'h3C3CBE6D, 4'b1100};
+		//{pipe_tx_data, pipe_tx_datak} <= {32'h3C3C3C3C, 4'b1111};
 		// decrement overflow counter, account for the two D0.0 symbols sent as well
 		train_sym_skp <= train_sym_skp - 13'd352;
 		// reset sequence index
@@ -417,28 +427,28 @@ always @(posedge local_clk) begin
 	
 	case(word_rx_align)
 	0: begin
-		sync_a <= {pipe_rx_data[31:0]};
-		sync_ak <= pipe_rx_datak;
+		sync_a <= {proc_data[31:0]};
+		sync_ak <= proc_datak;
 		sync_b <= sync_a;
 		sync_bk <= sync_ak;
 	end
 	1: begin
-		sync_a <= {pipe_rx_data[24:0], 8'h0};
-		sync_ak <= {pipe_rx_datak[2:0], 1'h0};
-		sync_b <= {sync_a[31:8], pipe_rx_data[31:24]};
-		sync_bk <= {sync_ak[3:1], pipe_rx_datak[3]};
+		sync_a <= {proc_data[23:0], 8'h0};
+		sync_ak <= {proc_datak[2:0], 1'h0};
+		sync_b <= {sync_a[31:8], proc_data[31:24]};
+		sync_bk <= {sync_ak[3:1], proc_datak[3]};
 	end
 	2: begin
-		sync_a <= {pipe_rx_data[15:0], 16'h0};
-		sync_ak <= {pipe_rx_datak[1:0], 2'h0};
-		sync_b <= {sync_a[31:16], pipe_rx_data[31:16]};
-		sync_bk <= {sync_ak[3:2], pipe_rx_datak[3:2]};
+		sync_a <= {proc_data[15:0], 16'h0};
+		sync_ak <= {proc_datak[1:0], 2'h0};
+		sync_b <= {sync_a[31:16], proc_data[31:16]};
+		sync_bk <= {sync_ak[3:2], proc_datak[3:2]};
 	end
 	3: begin
-		sync_a <= {pipe_rx_data[7:0], 24'h0};
-		sync_ak <= {pipe_rx_datak[0], 3'h0};
-		sync_b <= {sync_a[31:24], pipe_rx_data[31:8]};
-		sync_bk <= {sync_ak[3:3], pipe_rx_datak[3:1]};
+		sync_a <= {proc_data[7:0], 24'h0};
+		sync_ak <= {proc_datak[0], 3'h0};
+		sync_b <= {sync_a[31:24], proc_data[31:8]};
+		sync_bk <= {sync_ak[3:3], proc_datak[3:1]};
 	end
 	endcase
 	
@@ -447,88 +457,31 @@ always @(posedge local_clk) begin
 		align_state <= ALIGN_IDLE;
 	end
 	ALIGN_IDLE: begin
-		set_sr_data <= 0;
-		set_sr_datak <= 0;
-		
+
 		// packet framing detected
 		// determine bit alignment
 		if( sync_start[0] ) begin
-			//scr_rx_reset <= 1;
-			if( sync_start[3:1] ) begin
+			if( &sync_start[3:1] ) begin
 				word_rx_align <= 0; 
-				sync_a <= pipe_rx_data;
-				sync_ak <= pipe_rx_datak;
-			end else if( sync_start[2:1] ) begin
+				sync_a <= proc_data;
+				sync_ak <= proc_datak;
+			end else if( &sync_start[2:1] ) begin
 				word_rx_align <= 1; 
-				sync_a <= {pipe_rx_data[24:0], 8'h0};
-				sync_ak <= {pipe_rx_datak[2:0], 1'h0};
-			end else if( sync_start[1] ) begin
+				sync_a <= {proc_data[23:0], 8'h0};
+				sync_ak <= {proc_datak[2:0], 1'h0};
+			end else if( &sync_start[1] ) begin
 				word_rx_align <= 2; 
-				sync_a <= {pipe_rx_data[15:0], 16'h0};
-				sync_ak <= {pipe_rx_datak[1:0], 2'h0};
+				sync_a <= {proc_data[15:0], 16'h0};
+				sync_ak <= {proc_datak[1:0], 2'h0};
 			end else begin
 				word_rx_align <= 3;
-				sync_a <= {pipe_rx_data[7:0], 24'h0};
-				sync_ak <= {pipe_rx_datak[0], 3'h0};
+				sync_a <= {proc_data[7:0], 24'h0};
+				sync_ak <= {proc_datak[0], 3'h0};
 			end
-			
-			set_sr_data <= pipe_rx_data;
-			set_sr_datak <= pipe_rx_datak;
-			ac <= 0;
-			
-			align_state <= ALIGN_0;
-		end
-		
-		// TODO replace with per-word detection and tokenization
-		if(set_reading) begin
-			// COM prefixed ordered set was shifted in
-			case(word_rx_align)
-			0: if({set_sr_data[95:0]} == 96'h00004A4A_4A4A4A4A_4A4A4A4A) set_ts1_found <= 1;
-			1: if({set_sr_data[87:0], pipe_rx_data[31:24]} == 96'h00004A4A_4A4A4A4A_4A4A4A4A) set_ts1_found <= 1;
-			2: if({set_sr_data[79:0], pipe_rx_data[31:16]} == 96'h00004A4A_4A4A4A4A_4A4A4A4A) set_ts1_found <= 1;
-			3: if({set_sr_data[71:0], pipe_rx_data[31:8]} == 96'h00004A4A_4A4A4A4A_4A4A4A4A) set_ts1_found <= 1;
-			endcase
-			case(word_rx_align)
-			0: if({set_sr_data[95:0]} == 96'h00004545_45454545_45454545) set_ts2_found <= 1;
-			1: if({set_sr_data[87:0], pipe_rx_data[31:24]} == 96'h00004545_45454545_45454545) set_ts2_found <= 1;
-			2: if({set_sr_data[79:0], pipe_rx_data[31:16]} == 96'h00004545_45454545_45454545) set_ts2_found <= 1;
-			3: if({set_sr_data[71:0], pipe_rx_data[31:8]} == 96'h00004545_45454545_45454545) set_ts2_found <= 1;
-			endcase
 		end
 	end
 	ALIGN_0: begin
-		// BC BC BC ** |
-		// BC BC ** ** |
-		// BC ** ** ** |
-		// ** ** ** ** |
-		
-		set_sr_data <= {set_sr_data[63:0], pipe_rx_data};
-		set_sr_datak <= {set_sr_datak[7:0], pipe_rx_datak};
-		
-		/*
-		case(word_rx_align)
-		0: begin
-			sync_a <= {pipe_rx_data[31:0]};
-			sync_ak <= pipe_rx_datak;
-		end
-		1: begin
-			sync_a <= {pipe_rx_data[24:0], 8'h0};
-			sync_ak <= {pipe_rx_datak[2:0], 1'h0};
-		end
-		2: begin
-			sync_a <= {pipe_rx_data[15:0], 16'h0};
-			sync_ak <= {pipe_rx_datak[1:0], 2'h0};
-		end
-		3: begin
-			sync_a <= {pipe_rx_data[7:0], 24'h0};
-			sync_ak <= {pipe_rx_datak[0], 3'h0};
-		end
-		endcase
-		*/
-		if(ac == 2) begin
-			set_reading <= 1;
-			align_state <= ALIGN_IDLE;
-		end
+
 	end
 	ALIGN_1: begin
 		
@@ -543,6 +496,46 @@ always @(posedge local_clk) begin
 	
 	sync_out <= sync_b;
 	sync_outk <= sync_bk;
+	
+	
+	
+	///////////////////////////////////////
+	// TRAINING SEQUENCE DETECTION
+	///////////////////////////////////////
+	
+	case(tsdet_state)
+	TSDET_RESET: begin
+		tsdet_state <= TSDET_IDLE;
+	end
+	TSDET_IDLE: begin
+		if({sync_out, sync_outk} == {32'hBCBCBCBC, 4'b1111})
+			tsdet_state <= TSDET_0;	
+	end
+	TSDET_0: begin
+		if({sync_out, sync_outk} == {32'h00004545, 4'b0000})
+			tsdet_state <= TSDET_1;	
+		else if({sync_out, sync_outk} == {32'h00004A4A, 4'b0000})
+			tsdet_state <= TSDET_1;
+		else
+			tsdet_state <= TSDET_IDLE;
+	end
+	TSDET_1: begin
+		if({sync_out, sync_outk} == {32'h45454545, 4'b0000})
+			tsdet_state <= TSDET_2;	
+		else if({sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000})
+			tsdet_state <= TSDET_2;
+		else
+			tsdet_state <= TSDET_IDLE;
+	end
+	TSDET_2: begin
+		if({sync_out, sync_outk} == {32'h45454545, 4'b0000})
+			set_ts2_found <= 1;	
+		else if({sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000})
+			set_ts1_found <= 1;	
+		
+		tsdet_state <= TSDET_IDLE;
+	end
+	endcase
 	
 	
 	
@@ -694,15 +687,24 @@ end
 //
 // RX descramble and filtering
 //
+
+	wire	[3:0]	proc_datak  /* synthesis keep */;
+	wire	[31:0]	proc_data /* synthesis keep */;
+	wire			proc_active /* synthesis keep */;
 usb3_descramble iu3rds (
 	.local_clk		( local_clk ),
 	.reset_n		( reset_n ),
+	.enable			( ds_enable ),
 	
 	.raw_valid		( pipe_rx_valid ),
 	.raw_status		( pipe_rx_status ),
 	.raw_phy_status	( pipe_phy_status ),
 	.raw_datak		( pipe_rx_datak ),
-	.raw_data		( pipe_rx_data )
+	.raw_data		( pipe_rx_data ),
+	
+	.proc_data		( proc_data ),
+	.proc_datak		( proc_datak ),
+	.proc_active	( proc_active )
 );
 
 
@@ -761,9 +763,9 @@ usb3_descramble iu3rds (
 	wire	[31:0]	pipe_rx_data_swap	= {pipe_rx_h[15:0],  pipe_rx_l[15:0]};
 
 	wire	[3:0]	pipe_rx_datak = {	pipe_rx_datak_swap[0], pipe_rx_datak_swap[1], 
-										pipe_rx_datak_swap[2], pipe_rx_datak_swap[3] };
+										pipe_rx_datak_swap[2], pipe_rx_datak_swap[3] } /* synthesis keep */;
 	wire	[31:0]	pipe_rx_data = {	pipe_rx_data_swap[7:0], pipe_rx_data_swap[15:8], 
-										pipe_rx_data_swap[23:16], pipe_rx_data_swap[31:24] };
+										pipe_rx_data_swap[23:16], pipe_rx_data_swap[31:24] } /* synthesis keep */;
 
 mf_usb3_rx	iu3prx (
 	.datain		( pipe_rx_phy ),
