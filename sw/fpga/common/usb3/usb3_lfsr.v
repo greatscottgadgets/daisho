@@ -21,6 +21,7 @@ input	wire			reset_n,
 input 	wire	[31:0] 	data_in,
 input 	wire			scram_en,
 input 	wire			scram_rst,
+input	wire	[15:0]	scram_init,
 output	reg		[31:0]	data_out
 
 );
@@ -80,14 +81,12 @@ always @(*) begin
 	data_c[31] = data_in[31] ^ lfsr_q[0] ^ lfsr_q[6] ^ lfsr_q[8] ^ lfsr_q[10];
 end
 
-wire	[15:0]	reset_val = 16'h7DBD; // reset to FFFF + 3 cycles
-
 always @(posedge clock, negedge reset_n) begin
 	if(~reset_n) begin
-		lfsr_q <= reset_val;
+		lfsr_q <= scram_init;
 		data_out <= 32'h0;
 	end	else begin
-		lfsr_q <= scram_rst ? reset_val : scram_en ? lfsr_c : lfsr_q;
+		lfsr_q <= scram_rst ? scram_init : scram_en ? lfsr_c : lfsr_q;
 		data_out <= scram_en ? data_c : data_out;
 	end
 end

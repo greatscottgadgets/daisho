@@ -44,6 +44,17 @@ output	reg				phy_rx_termination,
 output	reg				phy_rate,
 output	reg				phy_elas_buf_mode,
 
+output	wire	[31:0]	link_in_data,
+output	wire	[3:0]	link_in_datak,
+output	wire			link_in_active,
+
+input	wire	[31:0]	link_out_data,
+input	wire	[3:0]	link_out_datak,
+input	wire			link_out_active,
+input	wire			link_out_skp_inhibit,
+input	wire			link_out_skp_defer,
+output	wire			link_out_stall,
+
 input	wire			ltssm_tx_detrx_lpbk,
 input	wire			ltssm_tx_elecidle,
 input	wire	[1:0]	ltssm_power_down,
@@ -56,6 +67,7 @@ output	reg				ltssm_train_rxeq_pass,
 input	wire			ltssm_train_active,
 input	wire			ltssm_train_config,
 input	wire			ltssm_train_idle,
+output	reg				ltssm_train_idle_pass,
 output	reg				ltssm_train_ts1,
 output	reg				ltssm_train_ts2,
 
@@ -68,9 +80,7 @@ input	wire			lfps_recv_u3,
 
 input	wire			partner_detect,
 output	reg				partner_looking,
-output	reg				partner_detected,
-
-output	reg				last
+output	reg				partner_detected
 
 );
 
@@ -102,9 +112,7 @@ parameter	[5:0]	ST_RST_0			= 6'd0,
 					ST_TRAIN_ACTIVECONFIG_0	= 6'd42,
 					ST_TRAIN_ACTIVECONFIG_1	= 6'd43,
 					ST_TRAIN_IDLE_0		= 6'd44,
-					ST_TRAIN_IDLE_1		= 6'd45,
-					ST_TRAIN_IDLE_2		= 6'd46,
-					ST_TRAIN_IDLE_3		= 6'd47;
+					ST_U0				= 6'd45;
 					
 	reg		[5:0]	align_state;
 parameter	[5:0]	ALIGN_RESET			= 6'd0,
@@ -120,8 +128,7 @@ parameter	[5:0]	TSDET_RESET			= 6'd0,
 					TSDET_IDLE			= 6'd1,
 					TSDET_0				= 6'd2,
 					TSDET_1				= 6'd3,
-					TSDET_2				= 6'd4,
-					TSDET_3				= 6'd5;
+					TSDET_2				= 6'd4;
 					
 	reg		[5:0]	rxdet_state;	
 parameter	[5:0]	RXDET_RESET			= 6'd0,
@@ -172,18 +179,24 @@ parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
 	reg		[1:0]	word_rx_align;
 	reg				set_ts;
 	
+	reg				s_enable;
 	reg				ds_enable;
+	
+	reg		[3:0]	idle_symbol_send;
+	reg		[3:0]	idle_symbol_recv;
 	
 	reg				set_ts1_found, set_ts1_found_1;
 	reg				set_ts2_found, set_ts2_found_1;
 	
 	reg		[31:0]	sync_a /* synthesis noprune */;
 	reg		[3:0]	sync_ak /* synthesis noprune */;
+	reg				sync_a_active /* synthesis noprune */;
 	reg		[31:0]	sync_b /* synthesis noprune */;
 	reg		[3:0]	sync_bk /* synthesis noprune */;
+	reg				sync_b_active /* synthesis noprune */;
 	reg		[31:0]	sync_out /* synthesis noprune */;
 	reg		[3:0]	sync_outk /* synthesis noprune */;
-	reg				sync_out_valid /* synthesis noprune */;
+	reg				sync_out_active /* synthesis noprune */;
 	
 	// combinational detection of valid packet framing
 	// k-symbols within a received word.
@@ -206,7 +219,11 @@ parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
 	wire			sync_byte_1_end = proc_datak[1] && (	proc_data[15:8] == 8'h7C || proc_data[15:8] == 8'hFD );
 	wire			sync_byte_0_end = proc_datak[0] && (	proc_data[7:0] == 8'h7C || proc_data[7:0] == 8'hFD );
 	wire	[3:0]	sync_end	= {sync_byte_3_end, sync_byte_2_end, sync_byte_1_end, sync_byte_0_end};
-														
+							
+	assign			link_in_data	= sync_out;
+	assign			link_in_datak	= sync_outk;
+	assign			link_in_active	= sync_out_active;
+	
 always @(posedge local_clk) begin
 
 	// synchronizers
@@ -224,9 +241,10 @@ always @(posedge local_clk) begin
 	phy_tx_detrx_lpbk_local <= 1'b0;
 	
 	ltssm_train_rxeq_pass <= 0;
+	ltssm_train_idle_pass <= 0;
 	
-	pipe_tx_data <= 32'h0;
-	pipe_tx_datak <= 4'b0000;
+	local_tx_data <= 32'h0;
+	local_tx_datak <= 4'b0000;
 	
 	set_ts1_found <= 0;
 	set_ts2_found <= 0;
@@ -236,8 +254,6 @@ always @(posedge local_clk) begin
 	
 	set_ts1_found_1 <= set_ts1_found;
 	set_ts2_found_1 <= set_ts2_found;
-	
-	sync_out_valid <= 0;
 	
 	///////////////////////////////////////
 	// PIPE FSM
@@ -260,6 +276,8 @@ always @(posedge local_clk) begin
 		phy_elas_buf_mode <= 	ELASBUF_HALF;	// elastic buffer nominally half full
 				
 		ds_enable <= 0;							// disable descrambling
+		s_enable <= 0;							// disable scrambling
+		scr_mux <= 0;							// switch TX mux to local PIPE layer 
 		
 		state <= ST_RST_1;
 		dc <= 0;
@@ -281,7 +299,8 @@ always @(posedge local_clk) begin
 	ST_IDLE: begin
 		// LTSSM wants to initiate link training!
 		if(ltssm_training) begin
-		
+			phy_tx_elecidle_local <= 1'b0;
+			
 			// Polling.RxEq
 			if(ltssm_train_rxeq) begin
 				swc <= 0;
@@ -303,6 +322,9 @@ always @(posedge local_clk) begin
 				swc <= 0;
 				// enable descrambling
 				ds_enable <= 1;
+				s_enable <= 1;
+				idle_symbol_send <= 0;
+				idle_symbol_recv <= 0;
 				state <= ST_TRAIN_IDLE_0;
 			end
 		end
@@ -315,14 +337,14 @@ always @(posedge local_clk) begin
 		// TODO remove LUT and utilize scrambler
 		phy_tx_elecidle_local <= 1'b0;
 		case(swc)
-		0: {pipe_tx_data, pipe_tx_datak} <= {32'hBCFF17C0, 4'b1000};
-		1: {pipe_tx_data, pipe_tx_datak} <= {32'h14B2E702, 4'b0000};
-		2: {pipe_tx_data, pipe_tx_datak} <= {32'h82726E28, 4'b0000};
-		3: {pipe_tx_data, pipe_tx_datak} <= {32'hA6BE6DBF, 4'b0000};
-		4: {pipe_tx_data, pipe_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
-		5: {pipe_tx_data, pipe_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
-		6: {pipe_tx_data, pipe_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
-		7: {pipe_tx_data, pipe_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
+		0: {local_tx_data, local_tx_datak} <= {32'hBCFF17C0, 4'b1000};
+		1: {local_tx_data, local_tx_datak} <= {32'h14B2E702, 4'b0000};
+		2: {local_tx_data, local_tx_datak} <= {32'h82726E28, 4'b0000};
+		3: {local_tx_data, local_tx_datak} <= {32'hA6BE6DBF, 4'b0000};
+		4: {local_tx_data, local_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
+		5: {local_tx_data, local_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
+		6: {local_tx_data, local_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
+		7: {local_tx_data, local_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
 		endcase
 		
 		if(swc == 7) begin
@@ -349,29 +371,26 @@ always @(posedge local_clk) begin
 	end
 	
 	ST_TRAIN_ACTIVECONFIG_0: begin
-	
 		// transmitting TS1
 		phy_tx_elecidle_local <= 1'b0;
 		ds_enable <= 0;
 		
-		// NOTE: once LTSSM switches, mixed-up set could be sent.
-		// this will be discarded by the other port, so no big deal.
 		if(~set_ts) begin
 			case(swc)
-			0: {pipe_tx_data, pipe_tx_datak} <= {32'hBCBCBCBC, 4'b1111};
-			1: {pipe_tx_data, pipe_tx_datak} <= {32'h00004A4A, 4'b0000};
-			2: {pipe_tx_data, pipe_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
-			3: {pipe_tx_data, pipe_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
+			0: {local_tx_data, local_tx_datak} <= {32'hBCBCBCBC, 4'b1111};
+			1: {local_tx_data, local_tx_datak} <= {32'h00004A4A, 4'b0000};
+			2: {local_tx_data, local_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
+			3: {local_tx_data, local_tx_datak} <= {32'h4A4A4A4A, 4'b0000};
 			endcase
 		end else begin
 			case(swc)
-			0: {pipe_tx_data, pipe_tx_datak} <= {32'hBCBCBCBC, 4'b1111};
-			1: {pipe_tx_data, pipe_tx_datak} <= {32'h00004545, 4'b0000};
-			2: {pipe_tx_data, pipe_tx_datak} <= {32'h45454545, 4'b0000};
-			3: {pipe_tx_data, pipe_tx_datak} <= {32'h45454545, 4'b0000};
+			0: {local_tx_data, local_tx_datak} <= {32'hBCBCBCBC, 4'b1111};
+			1: {local_tx_data, local_tx_datak} <= {32'h00004545, 4'b0000};
+			2: {local_tx_data, local_tx_datak} <= {32'h45454545, 4'b0000};
+			3: {local_tx_data, local_tx_datak} <= {32'h45454545, 4'b0000};
 			endcase
 		end
-		
+
 		if(swc == 3) begin
 			swc <= 0;
 			// increment symbols sent for SKP compensation
@@ -394,7 +413,7 @@ always @(posedge local_clk) begin
 		// send 00 00 in the other halfword, but scrambled with offset relative
 		// to most recent sent COM
 		phy_tx_elecidle_local <= 1'b0;
-		{pipe_tx_data, pipe_tx_datak} <= {32'h3C3CBE6D, 4'b1100};
+		{local_tx_data, local_tx_datak} <= {32'h3C3CBE6D, 4'b1100};
 		//{pipe_tx_data, pipe_tx_datak} <= {32'h3C3C3C3C, 4'b1111};
 		// decrement overflow counter, account for the two D0.0 symbols sent as well
 		train_sym_skp <= train_sym_skp - 13'd352;
@@ -405,17 +424,34 @@ always @(posedge local_clk) begin
 
 	ST_TRAIN_IDLE_0: begin
 		phy_tx_elecidle_local <= 1'b0;
-		//case(swc[0])
-		//0: 
-		{pipe_tx_data, pipe_tx_datak} <= {32'hFF17C014, 4'b0000};
-		//1: {pipe_tx_data, pipe_tx_datak} <= {32'hB2E70282, 4'b0000};
-		//endcase
+		{local_tx_data, local_tx_datak} <= {32'h00000000, 4'b0000};
 		
+		if(idle_symbol_send < 4) idle_symbol_send <= idle_symbol_send + 1'b1;
+		if(sync_out != 32'h00000000) begin
+			// non-IDLE symbol received
+			idle_symbol_send <= 0;
+		end else begin
+			if(idle_symbol_recv < 2) idle_symbol_recv <= idle_symbol_recv + 1'b1;
+		end
+		if(idle_symbol_send == 4 && idle_symbol_recv == 2) begin
+			// exit conditions matching those of LTSSM
+			ltssm_train_idle_pass <= 1;
+			state <= ST_U0;
+		end
+			
 		if(!ltssm_training) begin
 			// LTSSM has aborted or timed out
 			state <= ST_IDLE;
 		end
 	end
+	
+	ST_U0: begin
+		phy_tx_elecidle_local <= 1'b0;
+		
+		// pass tx mux to link layer
+		scr_mux <= 1;
+	end
+	
 	default: state <= ST_RST_0;
 	endcase
 	
@@ -425,32 +461,34 @@ always @(posedge local_clk) begin
 	// ORDERED SET ALIGNMENT FSM
 	///////////////////////////////////////
 	
-	case(word_rx_align)
-	0: begin
-		sync_a <= {proc_data[31:0]};
-		sync_ak <= proc_datak;
-		sync_b <= sync_a;
-		sync_bk <= sync_ak;
+	if(proc_active) begin
+		case(word_rx_align)
+		0: begin
+			sync_a <= {proc_data[31:0]};
+			sync_ak <= proc_datak;
+			sync_b <= sync_a;
+			sync_bk <= sync_ak;
+		end
+		1: begin
+			sync_a <= {proc_data[23:0], 8'h0};
+			sync_ak <= {proc_datak[2:0], 1'h0};
+			sync_b <= {sync_a[31:8], proc_data[31:24]};
+			sync_bk <= {sync_ak[3:1], proc_datak[3]};
+		end
+		2: begin
+			sync_a <= {proc_data[15:0], 16'h0};
+			sync_ak <= {proc_datak[1:0], 2'h0};
+			sync_b <= {sync_a[31:16], proc_data[31:16]};
+			sync_bk <= {sync_ak[3:2], proc_datak[3:2]};
+		end
+		3: begin
+			sync_a <= {proc_data[7:0], 24'h0};
+			sync_ak <= {proc_datak[0], 3'h0};
+			sync_b <= {sync_a[31:24], proc_data[31:8]};
+			sync_bk <= {sync_ak[3:3], proc_datak[3:1]};
+		end
+		endcase
 	end
-	1: begin
-		sync_a <= {proc_data[23:0], 8'h0};
-		sync_ak <= {proc_datak[2:0], 1'h0};
-		sync_b <= {sync_a[31:8], proc_data[31:24]};
-		sync_bk <= {sync_ak[3:1], proc_datak[3]};
-	end
-	2: begin
-		sync_a <= {proc_data[15:0], 16'h0};
-		sync_ak <= {proc_datak[1:0], 2'h0};
-		sync_b <= {sync_a[31:16], proc_data[31:16]};
-		sync_bk <= {sync_ak[3:2], proc_datak[3:2]};
-	end
-	3: begin
-		sync_a <= {proc_data[7:0], 24'h0};
-		sync_ak <= {proc_datak[0], 3'h0};
-		sync_b <= {sync_a[31:24], proc_data[31:8]};
-		sync_bk <= {sync_ak[3:3], proc_datak[3:1]};
-	end
-	endcase
 	
 	case(align_state)
 	ALIGN_RESET: begin
@@ -489,11 +527,9 @@ always @(posedge local_clk) begin
 	default: align_state <= ALIGN_RESET;
 	endcase
 	
-
-	
-	// pass on the descrambled data, bypassing k-symbols which
-	// are not scrambled
-	
+	sync_a_active <= proc_active;
+	sync_b_active <= sync_a_active;
+	sync_out_active <= sync_a_active;
 	sync_out <= sync_b;
 	sync_outk <= sync_bk;
 	
@@ -508,32 +544,38 @@ always @(posedge local_clk) begin
 		tsdet_state <= TSDET_IDLE;
 	end
 	TSDET_IDLE: begin
-		if({sync_out, sync_outk} == {32'hBCBCBCBC, 4'b1111})
-			tsdet_state <= TSDET_0;	
+		case({sync_out, sync_outk})
+		{32'hBCBCBCBC, 4'b1111}: tsdet_state <= TSDET_0;	
+		default: tsdet_state <= TSDET_IDLE;
+		endcase
 	end
 	TSDET_0: begin
-		if({sync_out, sync_outk} == {32'h00004545, 4'b0000})
-			tsdet_state <= TSDET_1;	
-		else if({sync_out, sync_outk} == {32'h00004A4A, 4'b0000})
-			tsdet_state <= TSDET_1;
-		else
-			tsdet_state <= TSDET_IDLE;
+		if(sync_out_active) begin
+			case({sync_out, sync_outk})
+			{32'h00004A4A, 4'b0000}: tsdet_state <= TSDET_1;
+			{32'h00004545, 4'b0000}: tsdet_state <= TSDET_1;	
+			default: tsdet_state <= TSDET_IDLE;
+			endcase
+		end
 	end
 	TSDET_1: begin
-		if({sync_out, sync_outk} == {32'h45454545, 4'b0000})
-			tsdet_state <= TSDET_2;	
-		else if({sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000})
-			tsdet_state <= TSDET_2;
-		else
-			tsdet_state <= TSDET_IDLE;
+		if(sync_out_active) begin
+			case({sync_out, sync_outk})
+			{32'h4A4A4A4A, 4'b0000}: tsdet_state <= TSDET_2;
+			{32'h45454545, 4'b0000}: tsdet_state <= TSDET_2;	
+			default: tsdet_state <= TSDET_IDLE;
+			endcase
+		end
 	end
 	TSDET_2: begin
-		if({sync_out, sync_outk} == {32'h45454545, 4'b0000})
-			set_ts2_found <= 1;	
-		else if({sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000})
-			set_ts1_found <= 1;	
-		
-		tsdet_state <= TSDET_IDLE;
+		if(sync_out_active) begin
+			case({sync_out, sync_outk})
+			{32'h4A4A4A4A, 4'b0000}: set_ts1_found <= 1;	
+			{32'h45454545, 4'b0000}: set_ts2_found <= 1;
+			default: tsdet_state <= TSDET_IDLE;
+			endcase
+			tsdet_state <= TSDET_IDLE;
+		end
 	end
 	endcase
 	
@@ -551,8 +593,7 @@ always @(posedge local_clk) begin
 		rxdet_state <= RXDET_IDLE;
 	end
 	RXDET_IDLE: begin
-		//if(lfps_recv_active & ~lfps_recv_active_1)
-		
+
 		if(partner_detect & ~partner_detect_1) begin
 			// new rising edge from LTSSM
 			// it wants us to perform a receiver check
@@ -687,7 +728,6 @@ end
 //
 // RX descramble and filtering
 //
-
 	wire	[3:0]	proc_datak  /* synthesis keep */;
 	wire	[31:0]	proc_data /* synthesis keep */;
 	wire			proc_active /* synthesis keep */;
@@ -708,6 +748,42 @@ usb3_descramble iu3rds (
 );
 
 
+//
+// TX scramble and padding
+//
+	wire	[3:0]	send_datak  /* synthesis keep */;
+	wire	[31:0]	send_data /* synthesis keep */;
+	
+	reg		[3:0]	local_tx_datak;
+	reg		[31:0]	local_tx_data;
+	reg				local_tx_active;
+	reg				local_tx_skp_inhibit;
+	reg				local_tx_skp_defer;
+	
+	reg				scr_mux;
+	
+	wire	[3:0]	scr_mux_datak 	= scr_mux ? link_out_datak : local_tx_datak;
+	wire	[31:0]	scr_mux_data 	= scr_mux ? link_out_data : local_tx_data;
+	wire			scr_mux_active 	= scr_mux ? link_out_active : local_tx_active;
+	wire			scr_mux_inhibit = scr_mux ? link_out_skp_inhibit : local_tx_skp_inhibit;
+	wire			scr_mux_defer 	= scr_mux ? link_out_skp_defer : local_tx_skp_defer;
+	
+usb3_scramble iu3ss (
+	.local_clk		( local_clk ),
+	.reset_n		( reset_n ),
+	.enable			( s_enable ),
+	
+	.raw_datak		( scr_mux_datak  ),
+	.raw_data		( scr_mux_data ),
+	.raw_active		( scr_mux_active ),
+	.raw_stall		( link_out_stall ),
+	
+	.skp_inhibit	( scr_mux_inhibit ),
+	.skp_defer		( scr_mux_defer ),
+	
+	.proc_data		( send_data ),
+	.proc_datak		( send_datak )
+);
 
 
 //
@@ -734,8 +810,9 @@ usb3_descramble iu3rds (
 											pipe_tx_data[23:16], pipe_tx_data[31:24]};
 	wire	[3:0]	pipe_tx_datak_swap	= { pipe_tx_datak[0], pipe_tx_datak[1], 
 											pipe_tx_datak[2], pipe_tx_datak[3] };
-	reg		[31:0]	pipe_tx_data;
-	reg		[3:0]	pipe_tx_datak;
+	// send processed data from tx scrambler module
+	wire	[31:0]	pipe_tx_data	= send_data;
+	wire	[3:0]	pipe_tx_datak	= send_datak;
 	
 	// map DDIO outputs onto wires going to proper IO pins
 	wire	[23:0]	pipe_tx_phy;	
@@ -757,8 +834,8 @@ usb3_descramble iu3rds (
 					} /* synthesis keep */ ;
 
 	wire	[1:0]	pipe_rx_valid		= {pipe_rx_h[18],    pipe_rx_l[18]};
-	wire	[5:0]	pipe_rx_status		= {pipe_rx_h[21:19], pipe_rx_l[21:19]};
-	wire	[1:0]	pipe_phy_status		= {pipe_rx_h[22],    pipe_rx_l[22]};   
+	wire	[5:0]	pipe_rx_status		= {pipe_rx_h[21:19], pipe_rx_l[21:19]} /* synthesis keep */;
+	wire	[1:0]	pipe_phy_status		= {pipe_rx_h[22],    pipe_rx_l[22]} /* synthesis keep */;   
 	wire	[3:0]	pipe_rx_datak_swap	= {pipe_rx_h[17:16], pipe_rx_l[17:16]};
 	wire	[31:0]	pipe_rx_data_swap	= {pipe_rx_h[15:0],  pipe_rx_l[15:0]};
 

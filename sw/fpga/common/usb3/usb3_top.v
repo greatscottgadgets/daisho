@@ -120,6 +120,16 @@ usb3_pipe	iu3p (
 	.phy_rate				( phy_rate ),
 	.phy_elas_buf_mode		( phy_elas_buf_mode ),
 	
+	.link_in_data			( link_in_data ),
+	.link_in_datak			( link_in_datak ),
+	.link_in_active			( link_in_active ),
+	.link_out_data			( link_out_data ),
+	.link_out_datak			( link_out_datak ),
+	.link_out_active		( link_out_active ),
+	.link_out_skp_inhibit	( link_out_skp_inhibit ),
+	.link_out_skp_defer		( link_out_skp_defer ),
+	.link_out_stall			( link_out_stall ),
+	
 	.partner_detect			( partner_detect ),
 	.partner_looking		( partner_looking ),	
 	.partner_detected		( partner_detected ),
@@ -138,6 +148,7 @@ usb3_pipe	iu3p (
 	.ltssm_train_ts2			( ltssm_train_ts2 ),
 	.ltssm_train_config			( ltssm_train_config ),
 	.ltssm_train_idle			( ltssm_train_idle ),
+	.ltssm_train_idle_pass		( ltssm_train_idle_pass ),
 	
 	.lfps_recv_active		( lfps_recv_active ),
 	.lfps_recv_poll_u1		( lfps_recv_poll_u1 ),
@@ -172,6 +183,7 @@ usb3_pipe	iu3p (
 	wire			ltssm_train_ts2;
 	wire			ltssm_train_config;
 	wire			ltssm_train_idle;
+	wire			ltssm_train_idle_pass;
 
 	wire			partner_detect;
 	wire			partner_looking;
@@ -204,6 +216,7 @@ usb3_ltssm	iu3lt (
 	.port_power_err			( port_power_err ),
 	
 	.train_rxeq_pass		( ltssm_train_rxeq_pass ),
+	.train_idle_pass		( ltssm_train_idle_pass ),
 	.train_ts1				( ltssm_train_ts1 ),
 	.train_ts2				( ltssm_train_ts2 ),
 	
@@ -229,10 +242,50 @@ usb3_ltssm	iu3lt (
 	.lfps_recv_u2lb			( lfps_recv_u2lb ),
 	.lfps_recv_u3			( lfps_recv_u3 ),	
 	
-	.warm_reset				( ltssm_warm_reset ),
+	.warm_reset				( ltssm_warm_reset )
 );
 
 
+////////////////////////////////////////////////////////////
+//
+// USB 3.0 Link layer interface
+//
+////////////////////////////////////////////////////////////
+
+	wire		[31:0]	link_in_data;
+	wire		[3:0]	link_in_datak;
+	wire				link_in_active;
+	wire		[31:0]	link_out_data;
+	wire		[3:0]	link_out_datak;
+	wire				link_out_active;
+	wire				link_out_skp_inhibit;
+	wire				link_out_skp_defer;
+	wire				link_out_stall;
+	
+usb3_link iu3l (
+
+	.local_clk				( local_pclk_half ),
+	.reset_n				( reset_2 ),
+	
+	.in_data				( link_in_data ),
+	.in_datak				( link_in_datak ),
+	.in_active				( link_in_active ),
+
+	.out_data				( link_out_data ),
+	.out_datak				( link_out_datak ),
+	.out_active				( link_out_active ),
+	.out_skp_inhibit		( link_out_skp_inhibit ),
+	.out_skp_defer			( link_out_skp_defer ),
+	.out_stall				( link_out_stall ),
+);
+
+
+
+////////////////////////////////////////////////////////////
+//
+// PLL
+//
+////////////////////////////////////////////////////////////
 
 mf_usb3_pll	 iu3pll (
 	.inclk0 	( phy_pipe_pclk ),			// 250mhz

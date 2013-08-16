@@ -33,6 +33,20 @@ output	reg				err_skp_unexpected
 );
 	
 	
+// what this module does is filtering of the input symbol stream 
+// to remove everything that >PHY layer is not interested in.
+//
+// example: scrambled stream with skip padding
+// BE40A73C3C3CE62CD3E2B20702772A
+// >
+// 000000000000000000000000
+//
+// this would be fairly trivial if we could clock this module at 500mhz
+// and only process 1 symbol at a time. however, due to timing constraints
+// it's working at 125mhz instead, and on 4 symbols at once. this is where
+// symbol alignment gets sticky, and why there are so many cases.
+
+
 	// indicates presence of SKP at any symbol position
 	wire	[3:0]	skip	= {	(raw_data[31:24] == 8'h3C) & raw_datak[3], (raw_data[23:16] == 8'h3C) & raw_datak[2], 
 								(raw_data[15:8] == 8'h3C) & raw_datak[1],  (raw_data[7:0] == 8'h3C) & raw_datak[0] };
@@ -53,7 +67,6 @@ output	reg				err_skp_unexpected
 always @(posedge local_clk) begin
 	
 	case(skip)
-	// no SKP symbols to remove
 	4'b0000: begin
 		skr_data 	<= raw_data;
 		skr_datak	<= raw_datak; end
@@ -252,6 +265,7 @@ usb3_lfsr iu3srx(
 	.data_in	( 32'h0 ),
 	.scram_en	( coll_active ),
 	.scram_rst	( |comma ),
+	.scram_init ( 16'h7DBD ),	// reset to FFFF + 3 cycles
 	.data_out	( ds_out_swap )
 	
 );

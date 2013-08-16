@@ -41,6 +41,7 @@ input	wire			train_ts1,
 input	wire			train_ts2,
 output	reg				train_config,
 output	reg				train_idle,
+input	wire			train_idle_pass,
 
 output	reg				lfps_send_ack,
 input	wire			lfps_send_poll,
@@ -343,6 +344,7 @@ always @(posedge slow_clk) begin
 	end
 	LT_POLLING_ACTIVE: begin
 		// send TS1 until 8 consecutive TS are received
+		// N.B. my test root hub only sends 6
 		training <= 1;
 		train_active <= 1;
 		
@@ -372,12 +374,12 @@ always @(posedge slow_clk) begin
 			
 			// assume that TS2 was sent by us on each receive
 			// increment TS2 send count up to 18
-			if(tc > 0) if(tsc < 24) tsc <= tsc + 1'b1;
+			if(tc > 0) if(tsc < 20) tsc <= tsc + 1'b1;
 		end
 		
 		// exit criteria
-		// received 8 and sent 24
-		if(tc == 8 && tsc == 24) begin
+		// received 8 and sent 20
+		if(tc == 8 && tsc == 20) begin
 			// reset timeout count and proceed
 			dc <= 0;
 			tc <= 0;
@@ -394,12 +396,21 @@ always @(posedge slow_clk) begin
 		training <= 1;
 		train_idle <= 1;
 		
+		if(train_idle_pass) begin
+			// exit conditions:
+			// 16 IDLE symbol sent after receiving
+			// first of at least 8 symbols.
+			state <= LT_U0;
+		end
+		
 		if(dc == T_POLLING_IDLE) begin
 			// timed out
 			state <= LT_SS_DISABLED;
 		end
 	end
 	LT_U0: begin
+	
+	
 	end
 	LT_U1: begin
 	end
