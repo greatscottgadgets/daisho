@@ -339,6 +339,73 @@ set_location_assignment PIN_N21 -to KEY[2]
 set_location_assignment PIN_M21 -to KEY[1]
 set_location_assignment PIN_M23 -to KEY[0]
 
+set_location_assignment PIN_AB22 -to DAISHO_RS232_A_DTR
+set_location_assignment PIN_AC15 -to DAISHO_RS232_A_CD
+set_location_assignment PIN_AB21 -to DAISHO_RS232_A_RTS
+set_location_assignment PIN_Y17 -to DAISHO_RS232_A_TXD
+set_location_assignment PIN_AC21 -to DAISHO_RS232_A_CTS
+set_location_assignment PIN_Y16 -to DAISHO_RS232_A_RI
+set_location_assignment PIN_AD21 -to DAISHO_RS232_A_DSR
+set_location_assignment PIN_AE16 -to DAISHO_RS232_A_RXD
+set_location_assignment PIN_AD15 -to DAISHO_RS232_B_RXD
+set_location_assignment PIN_AC22 -to DAISHO_RS232_SD_ALL
+set_location_assignment PIN_AE15 -to DAISHO_RS232_B_DSR
+set_location_assignment PIN_AC19 -to DAISHO_RS232_B_RI
+set_location_assignment PIN_AF16 -to DAISHO_RS232_B_CTS
+set_location_assignment PIN_AD19 -to DAISHO_RS232_B_TXD
+set_location_assignment PIN_AF15 -to DAISHO_RS232_B_RTS
+set_location_assignment PIN_AF24 -to DAISHO_RS232_B_CD
+set_location_assignment PIN_AE21 -to DAISHO_RS232_B_DTR
+set_location_assignment PIN_AF22 -to DAISHO_RS232_D_DSR
+set_location_assignment PIN_AD22 -to DAISHO_RS232_D_RXD
+set_location_assignment PIN_AG25 -to DAISHO_RS232_D_CTS
+set_location_assignment PIN_AD25 -to DAISHO_RS232_D_RI
+set_location_assignment PIN_AH25 -to DAISHO_RS232_D_RTS
+set_location_assignment PIN_AE25 -to DAISHO_RS232_D_TXD
+set_location_assignment PIN_AG22 -to DAISHO_RS232_D_DTR
+set_location_assignment PIN_AE24 -to DAISHO_RS232_D_CD
+set_location_assignment PIN_AH22 -to DAISHO_RS232_C_CD
+set_location_assignment PIN_AF26 -to DAISHO_RS232_C_DTR
+set_location_assignment PIN_AE20 -to DAISHO_RS232_C_TXD
+set_location_assignment PIN_AG23 -to DAISHO_RS232_C_RTS
+set_location_assignment PIN_AF20 -to DAISHO_RS232_C_RI
+set_location_assignment PIN_AH26 -to DAISHO_RS232_C_CTS
+set_location_assignment PIN_AH23 -to DAISHO_RS232_C_RXD
+set_location_assignment PIN_AG26 -to DAISHO_RS232_C_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_DTR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_CD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_A_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_CD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_DTR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_B_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_CD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_DTR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_C_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_CD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_CTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_DSR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_DTR
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RI
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RTS
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_RXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_D_TXD
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DAISHO_RS232_SD_ALL
+
 # Included Common Files
 # =====================
 
@@ -435,6 +502,8 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_RTS
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to UART_TXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk_50
+
+set_global_assignment -name VERILOG_FILE uart_debug.v
 set_global_assignment -name VERILOG_FILE nibble_ascii.v
 set_global_assignment -name SDC_FILE gige.sdc
 set_global_assignment -name VERILOG_FILE mii_passthrough.v
