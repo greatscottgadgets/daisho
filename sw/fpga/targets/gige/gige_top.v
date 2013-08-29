@@ -101,8 +101,52 @@ module gige_top (
 	input   wire          phy1_int_n,
 	input   wire          phy1_clk125_ndo,
 	input   wire          phy1_col,
-	input   wire          phy1_crs
+	input   wire          phy1_crs,
+
+	// DCE
+	output	wire	DAISHO_RS232_A_RTS,
+	output	wire	DAISHO_RS232_A_TXD,
+	output	wire	DAISHO_RS232_A_DTR,
+	input	wire	DAISHO_RS232_A_RXD,
+	input	wire	DAISHO_RS232_A_CTS,
+	input	wire	DAISHO_RS232_A_CD,
+	input	wire	DAISHO_RS232_A_RI,
+	input	wire	DAISHO_RS232_A_DSR,
+	
+	// DTE
+	output	wire	DAISHO_RS232_B_RXD,
+	output	wire	DAISHO_RS232_B_CTS,
+	output	wire	DAISHO_RS232_B_CD,
+	output	wire	DAISHO_RS232_B_RI,
+	output	wire	DAISHO_RS232_B_DSR,
+	input	wire	DAISHO_RS232_B_RTS,
+	input	wire	DAISHO_RS232_B_TXD,
+	input	wire	DAISHO_RS232_B_DTR,
+	
+	// DCE
+	output	wire	DAISHO_RS232_C_RTS,
+	output	wire	DAISHO_RS232_C_TXD,
+	output	wire	DAISHO_RS232_C_DTR,
+	input	wire	DAISHO_RS232_C_RXD,
+	input	wire	DAISHO_RS232_C_CTS,
+	input	wire	DAISHO_RS232_C_CD,
+	input	wire	DAISHO_RS232_C_RI,
+	input	wire	DAISHO_RS232_C_DSR,
+	
+	// DTE
+	output	wire	DAISHO_RS232_D_RXD,
+	output	wire	DAISHO_RS232_D_CTS,
+	output	wire	DAISHO_RS232_D_CD,
+	output	wire	DAISHO_RS232_D_RI,
+	output	wire	DAISHO_RS232_D_DSR,
+	input	wire	DAISHO_RS232_D_RTS,
+	input	wire	DAISHO_RS232_D_TXD,
+	input	wire	DAISHO_RS232_D_DTR,
+
+	output	wire	DAISHO_RS232_SD_ALL
 );
+
+assign DAISHO_RS232_SD_ALL = 0;
 
 assign LEDR = 18'b0;
 assign LEDG[8:2] = 6'b0;
@@ -244,151 +288,34 @@ io_seg7 is7 (
 	.disp_out	( HEX7 )
 );
 
-reg		[9:0]	baud_counter;
-reg				uart_shift_en;
+wire uart_reset = reset;
 
-always @(posedge clk_50) begin
-	uart_shift_en <= 0;
+assign DAISHO_RS232_B_CTS = 0;
+assign DAISHO_RS232_B_CD = 0;
+assign DAISHO_RS232_B_RI = 0;
+assign DAISHO_RS232_B_DSR = 0;
 
-	if (reset) begin
-		baud_counter <= 0;
-	end
-	else
-	begin
-		baud_counter <= baud_counter + 10'b1;
-		if (baud_counter == 434) begin
-			baud_counter <= 0;
-			uart_shift_en <= 1;
-		end
-	end
-end
-
-wire [7:0] nibble_ascii;
-
-nibble_ascii nibble_ascii_rxd (
-	//.nibble(phy0_gm_rxd[3:0]),
-	.nibble(phy1_gm_txd[3:0]),
-	.ascii(nibble_ascii)
+uart_debug uart_debug_0 (
+	.clk_50		( clk_50 ),
+	.reset      ( uart_reset ),
+	.mii_clk	( phy0_gm_rx_clk ),
+	.mii_in		( phy0_gm_rxd ), 
+	.mii_en		( phy0_gm_rx_dv ),
+	.uart_tx	( DAISHO_RS232_B_RXD )
 );
 
-parameter	[3:0]	ST_UART_IDLE	= 0,
-					ST_UART_START	= 1,
-					ST_UART_D0		= 2,
-					ST_UART_D1		= 3,
-					ST_UART_D2		= 4,
-					ST_UART_D3		= 5,
-					ST_UART_D4		= 6,
-					ST_UART_D5		= 7,
-					ST_UART_D6		= 8,
-					ST_UART_D7		= 9,
-					ST_UART_STOP	= 10
-					;
-reg		[3:0]	state_uart;
-reg				uart_tx;
+assign DAISHO_RS232_D_CTS = 0;
+assign DAISHO_RS232_D_CD = 0;
+assign DAISHO_RS232_D_RI = 0;
+assign DAISHO_RS232_D_DSR = 0;
 
-wire fifo_uart_reset = reset;
-
-//wire fifo_uart_i_clk = phy0_gm_rx_clk;
-wire fifo_uart_i_clk = phy1_gm_tx_clk;
-wire fifo_uart_i_full;
-//wire fifo_uart_i_req = phy0_gm_rx_dv;
-wire fifo_uart_i_req = phy1_gm_tx_en;
-wire [7:0] fifo_uart_i_data = nibble_ascii;
-
-wire fifo_uart_o_clk = clk_50;
-wire fifo_uart_o_empty;
-wire fifo_uart_o_not_empty = !fifo_uart_o_empty;
-reg fifo_uart_o_req;
-wire [7:0] fifo_uart_o_data;
-
-fifo_uart	fifo_uart_inst (
-	.aclr ( fifo_uart_reset ),
-
-	.wrclk ( fifo_uart_i_clk ),
-	.wrfull ( fifo_uart_i_full ),
-	.wrreq ( fifo_uart_i_req ),
-	.data ( fifo_uart_i_data ),
-
-	.rdclk ( fifo_uart_o_clk ),
-	.rdempty ( fifo_uart_o_empty ),
-	.rdreq ( fifo_uart_o_req ),
-	.q ( fifo_uart_o_data )
+uart_debug uart_debug_1 (
+	.clk_50		( clk_50 ),
+	.reset      ( uart_reset ),
+	.mii_clk	( phy1_gm_rx_clk ),
+	.mii_in		( phy1_gm_rxd ), 
+	.mii_en		( phy1_gm_rx_dv ),
+	.uart_tx	( DAISHO_RS232_D_RXD )
 );
-
-assign UART_TXD = uart_tx;
-assign UART_CTS = 0;
-
-always @(posedge clk_50) begin
-	fifo_uart_o_req <= 0;
-
-	if (reset) begin
-		state_uart <= ST_UART_IDLE;
-		uart_tx <= 1;
-	end
-	else
-	begin
-		if (uart_shift_en) begin
-			case(state_uart)
-			ST_UART_IDLE: begin
-				if (fifo_uart_o_not_empty) begin
-					fifo_uart_o_req <= 1;
-					state_uart <= ST_UART_START;
-				end
-			end
-
-			ST_UART_START: begin
-				uart_tx <= 0;
-				state_uart <= ST_UART_D0;
-			end
-
-			ST_UART_D0: begin
-				uart_tx <= fifo_uart_o_data[0];
-				state_uart <= ST_UART_D1;
-			end
-
-			ST_UART_D1: begin
-				uart_tx <= fifo_uart_o_data[1];
-				state_uart <= ST_UART_D2;
-			end
-
-			ST_UART_D2: begin
-				uart_tx <= fifo_uart_o_data[2];
-				state_uart <= ST_UART_D3;
-			end
-
-			ST_UART_D3: begin
-				uart_tx <= fifo_uart_o_data[3];
-				state_uart <= ST_UART_D4;
-			end
-
-			ST_UART_D4: begin
-				uart_tx <= fifo_uart_o_data[4];
-				state_uart <= ST_UART_D5;
-			end
-
-			ST_UART_D5: begin
-				uart_tx <= fifo_uart_o_data[5];
-				state_uart <= ST_UART_D6;
-			end
-
-			ST_UART_D6: begin
-				uart_tx <= fifo_uart_o_data[6];
-				state_uart <= ST_UART_D7;
-			end
-
-			ST_UART_D7: begin
-				uart_tx <= fifo_uart_o_data[7];
-				state_uart <= ST_UART_STOP;
-			end
-
-			ST_UART_STOP: begin
-				uart_tx <= 1;
-				state_uart <= ST_UART_IDLE;
-			end
-
-			endcase
-		end
-	end
-end
 
 endmodule
