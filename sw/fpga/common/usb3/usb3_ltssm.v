@@ -61,108 +61,19 @@ output	reg				warm_reset
 
 );
 
+`include "usb3_const.vh"
+
 	reg				vbus_present_1, vbus_present_2;
 	reg				port_rx_elecidle_1, port_rx_elecidle_2;
 	reg				port_rx_valid_1, port_rx_valid_2;
-	
-parameter	[4:0]	LT_SS_DISABLED			= 5'd01,
-					LT_SS_INACTIVE_DETECT	= 5'd02,
-					LT_SS_INACTIVE_QUIET 	= 5'd03,
-					LT_RX_DETECT_RESET		= 5'd04,
-					LT_RX_DETECT_ACTIVE_0	= 5'd05,
-					LT_RX_DETECT_ACTIVE_1	= 5'd06,
-					LT_RX_DETECT_QUIET		= 5'd07,
-					LT_POLLING_LFPS			= 5'd08,
-					LT_POLLING_RXEQ_0		= 5'd09,
-					LT_POLLING_RXEQ_1		= 5'd10,
-					LT_POLLING_ACTIVE		= 5'd11,
-					LT_POLLING_CONFIG		= 5'd12,
-					LT_POLLING_IDLE			= 5'd13,
-					LT_U0					= 5'd14,
-					LT_U1					= 5'd15,
-					LT_U2					= 5'd16,
-					LT_U3					= 5'd17,
-					LT_COMPLIANCE			= 5'd18,
-					LT_LOOPBACK				= 5'd19,
-					LT_HOTRESET				= 5'd20,
-					LT_RESET				= 5'd30,
-					LT_LAST					= 5'b11111;
+
 	reg		[4:0]	state;
-	
-parameter	[4:0]	LFPS_RESET			= 5'h00,
-					LFPS_IDLE			= 5'h01,
-					LFPS_RECV_1			= 5'h02,
-					LFPS_RECV_2			= 5'h03,
-					LFPS_RECV_3			= 5'h04,
-					LFPS_SEND_1			= 5'h05,
-					LFPS_SEND_2			= 5'h06,
-					LFPS_SEND_3			= 5'h07,
-					LFPS_0				= 5'h08,
-					LFPS_LAST			= 5'b11111;
 	reg		[4:0]	lfps_send_state;
 	reg		[4:0]	lfps_recv_state;
-	
-	
-	// timing parameters
-	// all are calculated for local clock of 62.5 MHz (1/4 PIPE CLK)
-	//
-parameter	[23:0]	LFPS_POLLING_MIN	= 24'd37;		// 0.6 uS (nom 1.0 us)
-parameter	[23:0]	LFPS_POLLING_NOM	= 24'd62;		// 1.0 uS
-parameter	[23:0]	LFPS_POLLING_MAX	= 24'd87;		// 1.4 uS
-parameter	[23:0]	LFPS_PING_MIN		= 24'd1;		// 40 ns
-parameter	[23:0]	LFPS_PING_NOM		= 24'd6;		// 96 ns
-parameter	[23:0]	LFPS_PING_MAX		= 24'd12;		// 200 ns
-parameter	[23:0]	LFPS_RESET_MIN		= 24'd5000000;	// 80 ms (nom 100 ms)
-parameter	[23:0]	LFPS_RESET_DELAY	= 24'd1875000;	// 30 ms
-parameter	[23:0]	LFPS_RESET_MAX		= 24'd7500000;	// 120 ms
-parameter	[23:0]	LFPS_U1EXIT_MIN		= 24'd37;		// 600 ns
-parameter	[23:0]	LFPS_U1EXIT_NOM		= 24'd62500;	// 1 ms
-parameter	[23:0]	LFPS_U1EXIT_MAX		= 24'd125000;	// 2 ms
-parameter	[23:0]	LFPS_U2LBEXIT_MIN	= 24'd5000;		// 80 us
-parameter	[23:0]	LFPS_U2LBEXIT_NOM	= 24'd625000;	// 1 ms
-parameter	[23:0]	LFPS_U2LBEXIT_MAX	= 24'd125000;	// 2 ms
-parameter	[23:0]	LFPS_U3WAKEUP_MIN	= 24'd5000;		// 80 us
-parameter	[23:0]	LFPS_U3WAKEUP_NOM	= 24'd62500;	// 1 ms
-parameter	[23:0]	LFPS_U3WAKEUP_MAX	= 24'd625000;	// 10 ms
-
-parameter	[23:0]	LFPS_BURST_POLL_MIN	= 24'd375;		// 6 us (nom 10 uS)
-parameter	[23:0]	LFPS_BURST_POLL_NOM	= 24'd625;		// 10 uS
-parameter	[23:0]	LFPS_BURST_POLL_MAX	= 24'd875;		// 14 us
-parameter	[23:0]	LFPS_BURST_PING_MIN	= 24'd10000000;	// 160 ms (nom 200 ms)
-parameter	[23:0]	LFPS_BURST_PING_NOM	= 24'd12500000;	// 200 ms
-parameter	[23:0]	LFPS_BURST_PING_MAX	= 24'd15000000;	// 240 ms
-
-parameter	[24:0]	T_SS_INACTIVE_QUIET	= 24'd750000;	// 12 ms
-parameter	[24:0]	T_RX_DETECT_QUIET	= 24'd7500000;	// 120 ms
-parameter	[24:0]	T_POLLING_LFPS		= 25'd22500000;	// 360 ms
-parameter	[24:0]	T_POLLING_ACTIVE	= 24'd750000;	// 12 ms
-parameter	[24:0]	T_POLLING_CONFIG	= 24'd750000;	// 12 ms
-parameter	[24:0]	T_POLLING_IDLE		= 24'd125000;	// 2 ms
-parameter	[24:0]	T_U0_RECOVERY		= 24'd62500;	// 1 ms
-parameter	[24:0]	T_U0L_TIMEOUT		= 24'd625;		// 10 us
-parameter	[24:0]	T_NOLFPS_U1			= 24'd125000;	// 2 ms
-	reg		[24:0]	T_PORT_U2_TIMEOUT;
-parameter	[24:0]	T_U1_PING			= 25'd18750000;	// 300 ms
-parameter	[24:0]	T_NOLFPS_U2			= 24'd125000;	// 2 ms
-parameter	[24:0]	T_NOLFPS_U3			= 24'd625000;	// 10 ms
-parameter	[24:0]	T_RECOV_ACTIVE		= 24'd750000;	// 12 ms
-parameter	[24:0]	T_RECOV_CONFIG		= 24'd375000;	// 6 ms
-parameter	[24:0]	T_RECOV_IDLE		= 24'd125000;	// 2 ms
-parameter	[24:0]	T_LOOPBACK_EXIT		= 24'd125000;	// 2 ms
-parameter	[24:0]	T_HOTRESET_ACTIVE	= 24'd750000;	// 12 ms
-parameter	[24:0]	T_HOTRESET_EXIT		= 24'd125000;	// 2 ms
-parameter	[24:0]	T_U3_WAKEUP_RETRY	= 24'd6250000;	// 100 ms
-parameter	[24:0]	T_U2_RXDET_DELAY	= 24'd6250000;	// 100 ms
-parameter	[24:0]	T_U3_RXDET_DELAY	= 24'd6250000;	// 100 ms
-
-parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
-					POWERDOWN_1			= 2'd1,		// slight powerdown	
-					POWERDOWN_2			= 2'd2,		// slowest
-					POWERDOWN_3			= 2'd3;		// deep sleep, clock stopped
 					
 	reg		[24:0]	dc;							// delay count
 	reg		[4:0]	tc;							// train count
-	reg		[4:0]	tsc;							// train send count
+	reg		[7:0]	tsc;							// train send count
 	//reg		[24:0]	ic;							// interval count
 	reg		[24:0]	sc;							// send FSM count
 	reg		[24:0]	sic;						// send internal count
@@ -241,6 +152,9 @@ always @(posedge slow_clk) begin
 		
 		//if(lfps_recv_reset) state <= LT_RX_DETECT_RESET;
 	end
+	LT_SS_INACTIVE: begin
+		state <= LT_SS_INACTIVE_DETECT;
+	end
 	LT_SS_INACTIVE_DETECT: begin
 	end
 	LT_SS_INACTIVE_QUIET: begin
@@ -270,7 +184,6 @@ always @(posedge slow_clk) begin
 				rx_detect_attempts <= rx_detect_attempts + 1'b1;
 				if(rx_detect_attempts == 7) begin
 					state <= LT_SS_DISABLED;
-					//state <= LT_RX_DETECT_QUIET;	// TODO HACK TO WORK WITH BEAGLE
 				end else begin
 					state <= LT_RX_DETECT_QUIET;
 				end
@@ -400,6 +313,7 @@ always @(posedge slow_clk) begin
 			// exit conditions:
 			// 16 IDLE symbol sent after receiving
 			// first of at least 8 symbols.
+			dc <= 0;
 			state <= LT_U0;
 		end
 		
@@ -410,7 +324,16 @@ always @(posedge slow_clk) begin
 	end
 	LT_U0: begin
 	
-	
+		if(dc == T_U0_RECOVERY) begin
+			// 1ms passed without receiving any link command.
+			// transition to recovery state and re-train
+			state <= LT_RECOVERY;
+		end	
+		
+		if(train_ts1) begin
+			// TS1 detected, go to Recovery
+			state <= LT_RECOVERY;
+		end
 	end
 	LT_U1: begin
 	end
@@ -418,6 +341,70 @@ always @(posedge slow_clk) begin
 	end
 	LT_U3: begin
 	end
+	
+	LT_RECOVERY: begin
+		dc <= 0;
+		tc <= 0;
+		tsc <= 0;
+		state <= LT_RECOVERY_ACTIVE;
+	end
+	LT_RECOVERY_ACTIVE: begin
+		// send TS1 until 8 consecutive TS are received
+		training <= 1;
+		train_active <= 1;
+		
+		if(train_ts1 | train_ts2) tc <= tc + 1'b1;
+		
+		if(tc == 8) begin
+			// received 8 consecutive(TODO?) TS1/TS2
+			// reset timeout count and proceed
+			dc <= 0;
+			tc <= 0;
+			tsc <= 0;
+			state <= LT_RECOVERY_CONFIG;
+		end
+		
+		if(dc == T_RECOV_ACTIVE) state <= LT_SS_INACTIVE;
+	end
+	LT_RECOVERY_CONFIG: begin
+		training <= 1;
+		train_config <= 1;
+	
+		// increment TS2 receive count up to 8
+		if(train_ts2) begin
+			if(tc < 8) tc <= tc + 1'b1;			
+		end
+		// increment TS2 send count, sequence is 4 cycles long
+		if(tc > 0) if(tsc < 18*4) tsc <= tsc + 1'b1;
+		
+		// exit criteria
+		// received 8 and sent 18
+		if(tc == 8 && tsc == 18*4) begin
+			// reset timeout count and proceed
+			dc <= 0;
+			tc <= 0;
+			tsc <= 0;
+			state <= LT_RECOVERY_IDLE;
+		end
+		
+		if(dc == T_RECOV_CONFIG) state <= LT_SS_INACTIVE;
+	end
+	LT_RECOVERY_IDLE: begin
+		training <= 1;
+		train_idle <= 1;
+		
+		if(train_idle_pass) begin
+			// exit conditions:
+			// 16 IDLE symbol sent after receiving
+			// first of at least 8 symbols.
+			dc <= 0;
+			state <= LT_U0;
+		end
+		
+		if(dc == T_RECOV_IDLE) state <= LT_SS_INACTIVE;
+	end
+	
+	
 	LT_COMPLIANCE: begin
 	end
 	LT_LOOPBACK: begin

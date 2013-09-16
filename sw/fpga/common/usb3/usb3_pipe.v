@@ -55,6 +55,7 @@ input	wire			link_out_skp_inhibit,
 input	wire			link_out_skp_defer,
 output	wire			link_out_stall,
 
+input	wire	[4:0]	ltssm_state,
 input	wire			ltssm_tx_detrx_lpbk,
 input	wire			ltssm_tx_elecidle,
 input	wire	[1:0]	ltssm_power_down,
@@ -84,6 +85,8 @@ output	reg				partner_detected
 
 );
 
+`include "usb3_const.vh"
+
 	assign phy_pipe_tx_clk = local_tx_clk;
 	
 	// mux these phy signals with both local PIPE and external LTSSM control
@@ -112,7 +115,11 @@ parameter	[5:0]	ST_RST_0			= 6'd0,
 					ST_TRAIN_ACTIVECONFIG_0	= 6'd42,
 					ST_TRAIN_ACTIVECONFIG_1	= 6'd43,
 					ST_TRAIN_IDLE_0		= 6'd44,
-					ST_U0				= 6'd45;
+					ST_TRAIN_IDLE_1		= 6'd49,
+					ST_U0				= 6'd45,
+					ST_U1				= 6'd46,
+					ST_U2				= 6'd47,
+					ST_U3				= 6'd48;
 					
 	reg		[5:0]	align_state;
 parameter	[5:0]	ALIGN_RESET			= 6'd0,
@@ -145,27 +152,6 @@ parameter	[5:0]	PD_RESET			= 6'd0,
 					PD_1				= 6'd3,
 					PD_2				= 6'd4,
 					PD_3				= 6'd5;
-
-parameter			SWING_FULL			= 1'b0,		// transmitter voltage swing
-					SWING_HALF			= 1'b1;
-parameter			ELASBUF_HALF		= 1'b0,		// elastic buffer mode
-					ELASBUF_EMPTY		= 1'b1;
-					
-parameter	[2:0]	MARGIN_A			= 3'b000,	// Normal range
-					MARGIN_B			= 3'b001,	// Decreasing voltage levels
-					MARGIN_C			= 3'b010,	// See PHY datasheet
-					MARGIN_D			= 3'b011,
-					MARGIN_E			= 3'b100;
-					
-parameter	[1:0]	DEEMPH_6_0_DB		= 2'b00,	// -6.0dB TX de-emphasis
-					DEEMPH_3_5_DB		= 2'b01,	// -3.5dB TX de-emphasis
-					DEEMPH_NONE			= 2'b10,	// no TX de-emphasis
-					DEEMPH_RESVD		= 2'b11;	
-					
-parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
-					POWERDOWN_1			= 2'd1,		// slight powerdown	
-					POWERDOWN_2			= 2'd2,		// slowest
-					POWERDOWN_3			= 2'd3;		// deep sleep, clock stopped
 					
 	reg				phy_tx_elecidle_local;
 	reg				phy_tx_detrx_lpbk_local;
@@ -299,6 +285,10 @@ always @(posedge local_clk) begin
 	ST_IDLE: begin
 		// LTSSM wants to initiate link training!
 		if(ltssm_training) begin
+			// grab tx mux from link layer
+			scr_mux <= 0;
+			// disable scrambling
+			s_enable <= 0;							
 			phy_tx_elecidle_local <= 1'b0;
 			
 			// Polling.RxEq
@@ -414,7 +404,6 @@ always @(posedge local_clk) begin
 		// to most recent sent COM
 		phy_tx_elecidle_local <= 1'b0;
 		{local_tx_data, local_tx_datak} <= {32'h3C3CBE6D, 4'b1100};
-		//{pipe_tx_data, pipe_tx_datak} <= {32'h3C3C3C3C, 4'b1111};
 		// decrement overflow counter, account for the two D0.0 symbols sent as well
 		train_sym_skp <= train_sym_skp - 13'd352;
 		// reset sequence index
@@ -435,8 +424,7 @@ always @(posedge local_clk) begin
 		end
 		if(idle_symbol_send == 4 && idle_symbol_recv == 2) begin
 			// exit conditions matching those of LTSSM
-			ltssm_train_idle_pass <= 1;
-			state <= ST_U0;
+			state <= ST_TRAIN_IDLE_1;
 		end
 			
 		if(!ltssm_training) begin
@@ -444,13 +432,42 @@ always @(posedge local_clk) begin
 			state <= ST_IDLE;
 		end
 	end
+	ST_TRAIN_IDLE_1: begin
+		phy_tx_elecidle_local <= 1'b0;
+		ltssm_train_idle_pass <= 1;
+		if(!ltssm_train_idle) state <= ST_U0;
+	end
 	
 	ST_U0: begin
 		phy_tx_elecidle_local <= 1'b0;
 		
 		// pass tx mux to link layer
 		scr_mux <= 1;
+		
+		case(ltssm_state) 
+		LT_U0: state <= ST_U0;
+		LT_U1: state <= ST_U1;
+		LT_U2: state <= ST_U2;
+		LT_U3: state <= ST_U3;
+		default: state <= ST_IDLE;
+		endcase
 	end
+	ST_U1: begin
+		case(ltssm_state) 
+		default: state <= ST_IDLE;
+		endcase
+	end
+	ST_U2: begin
+		case(ltssm_state) 
+		default: state <= ST_IDLE;
+		endcase
+	end
+	ST_U3: begin
+		case(ltssm_state) 
+		default: state <= ST_IDLE;
+		endcase
+	end
+		
 	
 	default: state <= ST_RST_0;
 	endcase
@@ -682,7 +699,7 @@ always @(posedge local_clk) begin
 			pd_state <= PD_0;
 			
 			if(ltssm_power_down == phy_power_down) begin
-				// aready in the requested state
+				// already in the requested state
 				pd_state <= PD_2;
 			end
 		end

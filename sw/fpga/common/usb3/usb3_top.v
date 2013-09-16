@@ -140,6 +140,7 @@ usb3_pipe	iu3p (
 	.ltssm_power_go			( port_power_go ),
 	.ltssm_power_ack		( port_power_ack ),
 	
+	.ltssm_state				( ltssm_state ),
 	.ltssm_training				( ltssm_training ),
 	.ltssm_train_rxeq			( ltssm_train_rxeq ),
 	.ltssm_train_rxeq_pass		( ltssm_train_rxeq_pass ),
@@ -266,6 +267,8 @@ usb3_link iu3l (
 
 	.local_clk				( local_pclk_half ),
 	.reset_n				( reset_2 ),
+	
+	.ltssm_state			( ltssm_state ),
 	
 	.in_data				( link_in_data ),
 	.in_datak				( link_in_datak ),

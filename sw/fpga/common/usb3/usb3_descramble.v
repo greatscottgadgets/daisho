@@ -250,7 +250,7 @@ end
 //
 	reg		[31:0]	ds_delay;
 	reg		[31:0]	ds_last;
-	wire			ds_suppress = |comma | (scr_defer < 1);
+	wire			ds_suppress = |comma | (scr_defer < 2);
 	wire			ds_enable = enable && !ds_suppress;
 	wire	[31:0]	ds_out = ds_enable ? 
 							{ds_out_swap[7:0], ds_out_swap[15:8], ds_out_swap[23:16], ds_out_swap[31:24]} 
