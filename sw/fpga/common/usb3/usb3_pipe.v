@@ -400,12 +400,13 @@ always @(posedge local_clk) begin
 	end
 	ST_TRAIN_ACTIVECONFIG_1: begin
 		// transmitting SKP ordered set
-		// send 00 00 in the other halfword, but scrambled with offset relative
-		// to most recent sent COM
+		// transmit two ordered sets so that we stay 32bit aligned.
+		// this will throw off the remote elastic buffer normally but isn't a 
+		// problem during training
 		phy_tx_elecidle_local <= 1'b0;
-		{local_tx_data, local_tx_datak} <= {32'h3C3CBE6D, 4'b1100};
-		// decrement overflow counter, account for the two D0.0 symbols sent as well
-		train_sym_skp <= train_sym_skp - 13'd352;
+		{local_tx_data, local_tx_datak} <= {32'h3C3C3C3C, 4'b1111};
+		// decrement overflow counter
+		train_sym_skp <= train_sym_skp - 13'd354;
 		// reset sequence index
 		swc <= 0;
 		state <= ST_TRAIN_ACTIVECONFIG_0;

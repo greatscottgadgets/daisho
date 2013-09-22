@@ -272,10 +272,8 @@ always @(posedge slow_clk) begin
 			state <= LT_POLLING_CONFIG;
 		end
 		
-		if(dc == T_POLLING_ACTIVE) begin
-			// timed out
-			state <= LT_SS_DISABLED;
-		end
+		// timeout
+		if(dc == T_POLLING_ACTIVE) state <= LT_SS_DISABLED;
 	end
 	LT_POLLING_CONFIG: begin
 		training <= 1;
@@ -283,16 +281,14 @@ always @(posedge slow_clk) begin
 	
 		// increment TS2 receive count up to 8
 		if(train_ts2) begin
-			if(tc < 8) tc <= tc + 1'b1;
-			
-			// assume that TS2 was sent by us on each receive
-			// increment TS2 send count up to 18
-			if(tc > 0) if(tsc < 20) tsc <= tsc + 1'b1;
+			if(tc < 8) tc <= tc + 1'b1;			
 		end
+		// increment TS2 send count, sequence is 4 cycles long
+		if(tc > 0) if(tsc < 16*4) tsc <= tsc + 1'b1;
 		
 		// exit criteria
-		// received 8 and sent 20
-		if(tc == 8 && tsc == 20) begin
+		// received 8 and sent 16
+		if(tc == 8 && tsc == 16*4) begin
 			// reset timeout count and proceed
 			dc <= 0;
 			tc <= 0;
@@ -300,10 +296,8 @@ always @(posedge slow_clk) begin
 			state <= LT_POLLING_IDLE;
 		end
 		
-		if(dc == T_POLLING_CONFIG) begin
-			// timed out
-			state <= LT_SS_DISABLED;
-		end
+		// timeout
+		if(dc == T_POLLING_CONFIG) state <= LT_SS_DISABLED;
 	end
 	LT_POLLING_IDLE: begin
 		training <= 1;
@@ -317,10 +311,8 @@ always @(posedge slow_clk) begin
 			state <= LT_U0;
 		end
 		
-		if(dc == T_POLLING_IDLE) begin
-			// timed out
-			state <= LT_SS_DISABLED;
-		end
+		// timeout
+		if(dc == T_POLLING_IDLE)  state <= LT_SS_DISABLED;
 	end
 	LT_U0: begin
 	
@@ -375,11 +367,11 @@ always @(posedge slow_clk) begin
 			if(tc < 8) tc <= tc + 1'b1;			
 		end
 		// increment TS2 send count, sequence is 4 cycles long
-		if(tc > 0) if(tsc < 18*4) tsc <= tsc + 1'b1;
+		if(tc > 0) if(tsc < 16*4) tsc <= tsc + 1'b1;
 		
 		// exit criteria
-		// received 8 and sent 18
-		if(tc == 8 && tsc == 18*4) begin
+		// received 8 and sent 16
+		if(tc == 8 && tsc == 16*4) begin
 			// reset timeout count and proceed
 			dc <= 0;
 			tc <= 0;

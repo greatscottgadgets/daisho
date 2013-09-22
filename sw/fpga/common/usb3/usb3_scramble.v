@@ -56,7 +56,16 @@ always @(posedge local_clk) begin
 	end
 end
 
+
+// step 2.
+// accept incoming data, but insert SKP sets to allow remote elastic buffer
+// to catch up and compensate for spread spectrum clocking.
+
+	reg		[15:0]	symbols_since_skp;
+	
 always @(posedge local_clk) begin
+
+
 
 	proc_datak <= sc_datak;
 	proc_data  <= sc_data;
