@@ -156,7 +156,7 @@ usb3_pipe	iu3p (
 	.lfps_recv_ping			( lfps_recv_ping ),
 	.lfps_recv_reset		( lfps_recv_reset ),
 	.lfps_recv_u2lb			( lfps_recv_u2lb ),
-	.lfps_recv_u3			( lfps_recv_u3 ),	
+	.lfps_recv_u3			( lfps_recv_u3 )	
 
 );
 
@@ -220,6 +220,7 @@ usb3_ltssm	iu3lt (
 	.train_idle_pass		( ltssm_train_idle_pass ),
 	.train_ts1				( ltssm_train_ts1 ),
 	.train_ts2				( ltssm_train_ts2 ),
+	.go_recovery			( ltssm_go_recovery ),
 	
 	// outputs
 	.ltssm_state			( ltssm_state ),
@@ -262,6 +263,7 @@ usb3_ltssm	iu3lt (
 	wire				link_out_skp_inhibit;
 	wire				link_out_skp_defer;
 	wire				link_out_stall;
+	wire				ltssm_go_recovery;
 	
 usb3_link iu3l (
 
@@ -269,7 +271,7 @@ usb3_link iu3l (
 	.reset_n				( reset_2 ),
 	
 	.ltssm_state			( ltssm_state ),
-	
+	.ltssm_go_recovery		( ltssm_go_recovery ),
 	.in_data				( link_in_data ),
 	.in_datak				( link_in_datak ),
 	.in_active				( link_in_active ),
@@ -279,7 +281,7 @@ usb3_link iu3l (
 	.out_active				( link_out_active ),
 	.out_skp_inhibit		( link_out_skp_inhibit ),
 	.out_skp_defer			( link_out_skp_defer ),
-	.out_stall				( link_out_stall ),
+	.out_stall				( link_out_stall )
 );
 
 

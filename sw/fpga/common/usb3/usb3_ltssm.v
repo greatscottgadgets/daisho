@@ -43,6 +43,8 @@ output	reg				train_config,
 output	reg				train_idle,
 input	wire			train_idle_pass,
 
+input	wire			go_recovery,
+
 output	reg				lfps_send_ack,
 input	wire			lfps_send_poll,
 input	wire			lfps_send_ping,
@@ -324,6 +326,11 @@ always @(posedge slow_clk) begin
 		
 		if(train_ts1) begin
 			// TS1 detected, go to Recovery
+			state <= LT_RECOVERY;
+		end
+		
+		if(go_recovery) begin
+			// link layer had a problem, Recovery
 			state <= LT_RECOVERY;
 		end
 	end

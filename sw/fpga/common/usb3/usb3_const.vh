@@ -53,6 +53,7 @@ parameter	[4:0]	LFPS_RESET			= 'h00,
 					
 // timing parameters
 // all are calculated for local clock of 62.5 MHz (1/4 PIPE CLK)
+// except those denoted by *2 which compensates for 125 MHz Link clock domain.
 //
 parameter	[23:0]	LFPS_POLLING_MIN	= 'd37;			// 0.6 uS (nom 1.0 us)
 parameter	[23:0]	LFPS_POLLING_NOM	= 'd62;			// 1.0 uS
@@ -86,10 +87,11 @@ parameter	[24:0]	T_POLLING_LFPS		= 'd22500000;	// 360 ms
 parameter	[24:0]	T_POLLING_ACTIVE	= 'd750000;		// 12 ms
 parameter	[24:0]	T_POLLING_CONFIG	= 'd750000;		// 12 ms
 parameter	[24:0]	T_POLLING_IDLE		= 'd125000;		// 2 ms
-parameter	[24:0]	T_U0_RECOVERY		= 'd62500;		// 1 ms
-parameter	[24:0]	T_U0L_TIMEOUT		= 'd625;		// 10 us
+parameter	[24:0]	T_U0_RECOVERY		= 'd62500*2;	// 1 ms
+parameter	[24:0]	T_U0L_TIMEOUT		= 'd625*2;		// 10 us
+parameter	[24:0]	T_PENDING_HP		= 'd188*2;		// 3 us
+parameter	[24:0]	T_CREDIT_HP			= 'd312500*2;	// 5000 us
 parameter	[24:0]	T_NOLFPS_U1			= 'd125000;		// 2 ms
-	reg		[24:0]	T_PORT_U2_TIMEOUT;
 parameter	[24:0]	T_U1_PING			= 'd18750000;	// 300 ms
 parameter	[24:0]	T_NOLFPS_U2			= 'd125000;		// 2 ms
 parameter	[24:0]	T_NOLFPS_U3			= 'd625000;		// 10 ms
@@ -97,12 +99,10 @@ parameter	[24:0]	T_RECOV_ACTIVE		= 'd750000;		// 12 ms
 parameter	[24:0]	T_RECOV_CONFIG		= 'd375000;		// 6 ms
 parameter	[24:0]	T_RECOV_IDLE		= 'd125000;		// 2 ms
 parameter	[24:0]	T_LOOPBACK_EXIT		= 'd125000;		// 2 ms
-parameter	[24:0]	T_HOTRESET_ACTIVE	= 'd750000;		// 12 ms
-parameter	[24:0]	T_HOTRESET_EXIT		= 'd125000;		// 2 ms
-parameter	[24:0]	T_U3_WAKEUP_RETRY	= 'd6250000;	// 100 ms
-parameter	[24:0]	T_U2_RXDET_DELAY	= 'd6250000;	// 100 ms
-parameter	[24:0]	T_U3_RXDET_DELAY	= 'd6250000;	// 100 ms
 
+parameter	[24:0]	T_PM_LC				= 'd188*2;		// 3 us
+parameter	[24:0]	T_PM_ENTRY			= 'd376*2;		// 6 us
+parameter	[24:0]	T_UX_EXIT			= 'd375000*2;	// 6 ms
 
 parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
 					POWERDOWN_1			= 2'd1,		// slight powerdown	
@@ -157,6 +157,18 @@ parameter	[10:0]	LCMD_LAU			= 'b01_01_000_0000,
 parameter	[10:0]	LCMD_LDN			= 'b10_00_000_0000,
 					LCMD_LUP			= 'b10_11_000_0000;
 					
+parameter	[5:0]	LP_TYPE_LMP			= 'b00000,				
+					LP_TYPE_TP			= 'b00100,
+					LP_TYPE_DP			= 'b01000,
+					LP_TYPE_ITP			= 'b01100;
+
+parameter	[4:0]	LP_SUB_RSVD			= 'b0000,
+					LP_SUB_SETLINK		= 'b0001,
+					LP_SUB_U2INACT		= 'b0010,
+					LP_SUB_VENDTEST		= 'b0011,
+					LP_SUB_PORTCAP		= 'b0100,
+					LP_SUB_PORTCFG		= 'b0101,
+					LP_SUB_PORTCFGRSP	= 'b0110;
 					
 //
 // end usb3_const.vh

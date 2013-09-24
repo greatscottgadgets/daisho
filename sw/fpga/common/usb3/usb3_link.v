@@ -15,6 +15,7 @@ input	wire			local_clk,
 input	wire			reset_n,
 
 input	wire	[4:0]	ltssm_state,
+output	reg				ltssm_go_recovery,
 
 input	wire	[31:0]	in_data,
 input	wire	[3:0]	in_datak,
@@ -27,7 +28,11 @@ output	reg				out_skp_inhibit,
 output	reg				out_skp_defer,
 input	wire			out_stall,
 
-output	reg				err_lcmd_undefined
+output	reg				err_lcmd_undefined,
+output	reg				err_hp_crc,
+output	reg				err_hp_seq,
+output	reg				err_hp_type
+
 
 );
 
@@ -47,6 +52,7 @@ parameter	[5:0]	LINK_SEND_RESET		= 'd0,
 	reg		[5:0]	recv_state;
 parameter	[5:0]	LINK_RECV_RESET		= 'd0,
 					LINK_RECV_IDLE		= 'd2,
+					LINK_RECV_HP_BAD	= 'd3,
 					LINK_RECV_HP_0		= 'd4,
 					LINK_RECV_HP_1		= 'd5,
 					LINK_RECV_HP_2		= 'd6,
@@ -79,11 +85,29 @@ parameter	[5:0]	LINK_QUEUE_RESET		= 'd0,
 					LINK_QUEUE_HP_1			= 'd6,
 					LINK_QUEUE_HP_2			= 'd8,
 					LINK_QUEUE_HP_3		= 'd10;
+						
+	reg		[4:0]	rd_hp_state;
+parameter	[4:0]	RD_HP_RESET			= 'd0,
+					RD_HP_IDLE			= 'd1,
+					RD_HP_LMP_0			= 'd4,
+					RD_HP_LMP_1			= 'd5,
+					RD_HP_LMP_2			= 'd6,
+					RD_HP_LMP_3			= 'd7,
+					RD_HP_LMP_4			= 'd8,
+					RD_HP_TP_0			= 'd10,
+					RD_HP_TP_1			= 'd11,
+					RD_HP_TP_2			= 'd12,
+					RD_HP_TP_3			= 'd13,
+					RD_HP_TP_4			= 'd14,
+					RD_HP_DP_0			= 'd16,
+					RD_HP_DP_1			= 'd17,
+					RD_HP_DP_2			= 'd18,
+					RD_HP_DP_3			= 'd19,
+					RD_HP_0				= 'd20,
+					RD_HP_1				= 'd21,
+					RD_HP_2				= 'd22,
+					RD_HP_3				= 'd22;
 					
-	reg		[3:0]	rd_lctr_state;
-parameter	[3:0]	RD_LCTR_RESET		= 'd0,
-					RD_LCTR_IDLE		= 'd1,
-					RD_LCTR_0			= 'd2;
 					
 	reg		[3:0]	rd_lcmd_state;
 parameter	[3:0]	RD_LCMD_RESET		= 'd0,
@@ -99,6 +123,7 @@ parameter	[3:0]	WR_LCMD_RESET		= 'd0,
 	reg		[4:0]	ltssm_last;
 	reg		[4:0]	ltssm_stored /* synthesis noprune */;
 	reg				ltssm_changed /* synthesis noprune */;
+	reg				ltssm_go_recovery_1;
 	
 	reg		[24:0]	dc;
 	
@@ -106,6 +131,9 @@ parameter	[3:0]	WR_LCMD_RESET		= 'd0,
 	reg		[24:0]	u0_recovery_timeout;
 	reg		[24:0]	pending_hp_timer;
 	reg		[24:0]	credit_hp_timer;
+	reg		[7:0]	link_error_count;
+	reg				force_linkpm_accept;
+	reg		[24:0]	T_PORT_U2_TIMEOUT;
 	
 	reg		[2:0]	tx_hdr_seq_num /* synthesis noprune */;			// Header Sequence Number (0-7)
 	reg		[2:0]	ack_tx_hdr_seq_num /* synthesis noprune */;		// ACK Header Seq Num
@@ -116,6 +144,9 @@ parameter	[3:0]	WR_LCMD_RESET		= 'd0,
 	reg		[1:0]	tx_cred_idx /* synthesis noprune */;			
 	reg		[1:0]	rx_cred_idx /* synthesis noprune */;
 	
+	reg		[3:0]	in_header_pkt_queued;
+	reg		[1:0]	in_header_pkt_pick;
+	reg		[95:0]	in_header_pkt_work /* synthesis noprune */;
 	reg		[95:0]	in_header_pkt_a /* synthesis noprune */;
 	reg		[95:0]	in_header_pkt_b;
 	reg		[95:0]	in_header_pkt_c;
@@ -133,17 +164,17 @@ parameter	[3:0]	WR_LCMD_RESET		= 'd0,
 	reg		[15:0]	in_header_cw_b;
 	reg		[15:0]	in_header_cw_c;
 	reg		[15:0]	in_header_cw_d;
+	reg		[15:0]	in_header_cw;
+	wire	[2:0]	in_header_seq = in_header_cw[2:0];
 	reg		[15:0]	in_header_crc_a;
 	reg		[15:0]	in_header_crc_b;
 	reg		[15:0]	in_header_crc_c;
 	reg		[15:0]	in_header_crc_d;
-	
+	reg		[15:0]	in_header_crc;
+	reg		[1:0]	in_header_err_count;
 	
 	reg				out_header_first_since_entry;
 	
-	reg		[31:0]	in_link_control;
-	reg		[31:0]	in_link_control_1;
-	reg				in_link_control_act;
 	reg		[31:0]	in_link_command /* synthesis noprune */;
 	reg		[31:0]	in_link_command_1 /* synthesis noprune */;
 	reg				in_link_command_act /* synthesis noprune */;
@@ -162,7 +193,13 @@ parameter	[3:0]	WR_LCMD_RESET		= 'd0,
 	reg		[10:0]	tx_lcmd_latch;
 
 	reg				tx_lcmd_done  /* synthesis noprune */;
+	
+	reg				tx_queue_open;
+	reg				tx_queue_lup;
+	reg		[2:0]	tx_queue_lcred;
 		
+	reg				send_port_cfg_resp;
+	
 	reg		[9:0]	qc;		// queue counter
 	reg				queue_send_u0_adv;
 	reg				sent_u0_adv;
@@ -173,6 +210,7 @@ always @(posedge local_clk) begin
 
 	ltssm_last <= ltssm_state;
 	ltssm_changed <= 0;
+	ltssm_go_recovery_1 <= ltssm_go_recovery;
 	
 	out_skp_inhibit <= 0;
 	out_skp_defer <= 0;
@@ -198,18 +236,12 @@ always @(posedge local_clk) begin
 	if(ltssm_last != ltssm_state) begin
 		ltssm_changed <= 1;
 		ltssm_stored <= ltssm_last;
+	end	
+
+	if(ltssm_go_recovery & ~ltssm_go_recovery_1) begin
+		// rising edge, increment error count
+		link_error_count <= link_error_count + 1'b1;
 	end
-	
-	// increment U0LTimeout up to its triggering amount (10uS)
-	// shall be reset when sending any data, paused then restarted upon idle re-entry
-	if(u0l_timeout < T_U0L_TIMEOUT) 
-		u0l_timeout <= u0l_timeout + 1'b1;
-		
-	// increment U0RecoveryTimeout up to 1ms
-	// shall be reset every time link command is received
-	if(u0_recovery_timeout < T_U0_RECOVERY)
-		u0_recovery_timeout <= u0_recovery_timeout + 1'b1;
-	
 	
 	// handle LTSSM change
 	if(ltssm_changed) begin
@@ -235,6 +267,8 @@ always @(posedge local_clk) begin
 				in_header_cred_b <= 0;
 				in_header_cred_c <= 0;
 				in_header_cred_d <= 0;
+				
+				link_error_count <= 0;
 				// flush all header packet buffers
 				// TODO
 			end
@@ -256,10 +290,20 @@ always @(posedge local_clk) begin
 			u0l_timeout <= 0;
 			u0_recovery_timeout <= 0;
 			dc <= 0;
+			// reset flags
+			force_linkpm_accept <= 0;
+			tx_queue_lup <= 0;
+			tx_queue_lcred <= 0;
+			tx_queue_open <= 1;
+			send_port_cfg_resp <= 0;
 			// upon sending of first header packet, the remote rx hdr cred count
 			// should be decremented
 			out_header_first_since_entry <= 1;
-			
+			in_header_err_count <= 0;
+		end
+		LT_RECOVERY_IDLE: begin
+			// we can de-assert the recovery signal now
+			ltssm_go_recovery <= 0;
 		end
 		endcase	
 	end
@@ -269,6 +313,32 @@ always @(posedge local_clk) begin
 	LT_U0: begin
 		pending_hp_timer <= pending_hp_timer + 1'b1;
 		credit_hp_timer <= credit_hp_timer + 1'b1;
+		
+		
+		// increment U0LTimeout up to its triggering amount (10uS)
+		// shall be reset when sending any data, paused then restarted upon idle re-entry
+		if(u0l_timeout < T_U0L_TIMEOUT) 
+			u0l_timeout <= u0l_timeout + 1'b1;
+			
+		// increment U0RecoveryTimeout up to 1ms
+		// shall be reset every time link command is received
+		if(u0_recovery_timeout < T_U0_RECOVERY)
+			u0_recovery_timeout <= u0_recovery_timeout + 1'b1;
+		
+		// U0LTimeout generation (LUP/LDN) keepalive
+		//
+		if(u0l_timeout == T_U0L_TIMEOUT) begin
+			// we need to send LUP
+			tx_queue_lup <= 1;
+			u0l_timeout <= 0;
+		end
+
+		// detect absence of far-end heartbeat
+		//
+		if(u0_recovery_timeout == T_U0_RECOVERY) begin
+			// tell LTSSM to transition to Recovery
+			ltssm_go_recovery <= 1;
+		end
 	end
 	default: begin
 		sent_u0_adv <= 0;
@@ -277,9 +347,7 @@ always @(posedge local_clk) begin
 	
 	
 	
-	in_link_control_act <= 0;
 	in_link_command_act <= 0;
-	in_link_control_1 <= in_link_control;
 	in_link_command_1 <= in_link_command;
 	
 	///////////////////////////////////////
@@ -294,6 +362,7 @@ always @(posedge local_clk) begin
 	
 		if({in_data, in_datak, in_active} == {32'hFEFEFEF7, 4'b1111, 1'b1}) begin
 			// Link Command Word
+			u0_recovery_timeout <= 0;
 			recv_state <= LINK_RECV_CMDW_0;
 		end
 		
@@ -328,10 +397,58 @@ always @(posedge local_clk) begin
 		2: {in_header_crc_c, in_header_cw_c} <= in_data_swap16;
 		3: {in_header_crc_d, in_header_cw_d} <= in_data_swap16;
 		endcase
+		in_header_crc <= in_data_swap16[31:16];
+		in_header_cw <= in_data_swap16[15:0];
 		recv_state <= LINK_RECV_HP_2;
 	end
 	LINK_RECV_HP_2: begin
-		// TODO
+		// check CRC-5, CRC-16 against calculated values
+		if(crc_hp_out == in_header_crc && crc_cw3_out == in_header_cw[15:11]) begin
+			// matched
+			if(in_header_seq == rx_hdr_seq_num && local_rx_cred_count > 0) begin
+				// header seq num matches what we expect
+				recv_state <= LINK_RECV_HP_3;
+			end else begin
+				err_hp_seq <= 1;
+				recv_state <= LINK_RECV_IDLE;
+				// transition to Recovery
+				ltssm_go_recovery <= 1;
+			end
+			
+		end else begin
+			// didn't match
+			// issue LBAD and do nothing until either 
+			// 1. Recovery entered
+			// 2. LRTY received
+			tx_lcmd <= LCMD_LBAD;
+			tx_lcmd_act <= 1;
+			err_hp_crc <= 1;
+			in_header_err_count <= in_header_err_count + 1'b1;
+			recv_state <= LINK_RECV_HP_BAD;
+			
+			if(in_header_err_count == 3) begin
+				// give up, go to Recovery
+				ltssm_go_recovery <= 1;
+			end
+		end
+	end
+	LINK_RECV_HP_BAD: begin
+		// wait for LRTY, or Recovery
+		if(rx_lcmd_act && rx_lcmd == LCMD_LRTY || ltssm_state == LT_RECOVERY_IDLE) begin
+			//
+			recv_state <= LINK_RECV_IDLE;
+		end
+	end
+	LINK_RECV_HP_3: begin
+		// reset HP error count, decrement local RX cred count
+		in_header_err_count <= 0;
+		local_rx_cred_count <= local_rx_cred_count - 1'b1;
+		rx_hdr_seq_num <= rx_hdr_seq_num + 1'b1;
+		in_header_pkt_queued[3-rx_cred_idx] <= 1;
+		// send LGOOD
+		tx_lcmd <= {LCMD_LGOOD_0[10:2], rx_hdr_seq_num};
+		tx_lcmd_act <= 1;
+		// TODO delegate processing
 		recv_state <= LINK_RECV_IDLE;
 	end
 	LINK_RECV_CMDW_0: begin
@@ -399,19 +516,91 @@ always @(posedge local_clk) begin
 	end
 	endcase
 	
-	
-	//
-	// Link Control Word READ FSM
-	//
-	case(rd_lctr_state) 
-	RD_LCTR_RESET: rd_lctr_state <= RD_LCTR_IDLE;
-	RD_LCTR_IDLE: begin
-		if(in_link_control_act) begin
-			// make sure
-			
-		end
+	case(rd_hp_state)
+	RD_HP_RESET: rd_hp_state <= RD_HP_IDLE;
+	RD_HP_IDLE: begin
+		case(rx_hdr_seq_num_dec)
+		0: begin
+			if(in_header_pkt_queued[3]) in_header_pkt_pick <= 3; else
+			if(in_header_pkt_queued[2]) in_header_pkt_pick <= 2; else
+			if(in_header_pkt_queued[1]) in_header_pkt_pick <= 1; else
+			if(in_header_pkt_queued[0]) in_header_pkt_pick <= 0; end
+		1: begin
+			if(in_header_pkt_queued[2]) in_header_pkt_pick <= 2; else
+			if(in_header_pkt_queued[1]) in_header_pkt_pick <= 1; else
+			if(in_header_pkt_queued[0]) in_header_pkt_pick <= 0; else
+			if(in_header_pkt_queued[3]) in_header_pkt_pick <= 3; end
+		2: begin
+			if(in_header_pkt_queued[1]) in_header_pkt_pick <= 1; else
+			if(in_header_pkt_queued[0]) in_header_pkt_pick <= 0; else
+			if(in_header_pkt_queued[3]) in_header_pkt_pick <= 3; else
+			if(in_header_pkt_queued[2]) in_header_pkt_pick <= 2; end
+		3: begin
+			if(in_header_pkt_queued[0]) in_header_pkt_pick <= 0; else
+			if(in_header_pkt_queued[3]) in_header_pkt_pick <= 3; else
+			if(in_header_pkt_queued[2]) in_header_pkt_pick <= 2; else
+			if(in_header_pkt_queued[1]) in_header_pkt_pick <= 1; end
+		endcase
+		if(|in_header_pkt_queued) rd_hp_state <= RD_HP_0;
 	end
-	RD_LCTR_0: begin
+	RD_HP_0: begin
+		// copy packet to temp reg
+		case(in_header_pkt_pick)
+		3: in_header_pkt_work <= in_header_pkt_a;
+		2: in_header_pkt_work <= in_header_pkt_b;
+		1: in_header_pkt_work <= in_header_pkt_c;
+		0: in_header_pkt_work <= in_header_pkt_d;
+		endcase
+		rd_hp_state <= RD_HP_1;
+	end
+	RD_HP_1: begin
+		// decide what type it is
+		rd_hp_state <= RD_HP_2;
+		case(in_header_pkt_work[4:0])
+		LP_TYPE_LMP: rd_hp_state <= RD_HP_LMP_0;
+		LP_TYPE_TP: rd_hp_state <= RD_HP_TP_0;
+		LP_TYPE_DP: rd_hp_state <= RD_HP_2;
+		LP_TYPE_ITP: rd_hp_state <= RD_HP_2;
+		default: err_hp_type <= 1;
+		endcase
+	end
+	RD_HP_2: begin
+		// flush buffer and send LCRED
+		if(tx_queue_open) begin
+			in_header_pkt_queued[in_header_pkt_pick] <= 0;
+			tx_queue_lcred[2:0] <= {1'b1, rx_cred_idx};
+			local_rx_cred_count <= local_rx_cred_count + 1'b1;
+			rd_hp_state <= RD_HP_IDLE;
+		end
+	end	
+	RD_HP_LMP_0: begin
+		rd_hp_state <= RD_HP_2;
+		case(in_header_pkt_work[8:5])
+		LP_SUB_SETLINK: force_linkpm_accept <= in_header_pkt_work[10];
+		LP_SUB_U2INACT: T_PORT_U2_TIMEOUT <= in_header_pkt_work[16:9];
+		LP_SUB_VENDTEST: begin end
+		LP_SUB_PORTCAP: begin end
+		LP_SUB_PORTCFG: begin end
+		LP_SUB_PORTCFGRSP: send_port_cfg_resp <= 1;
+		endcase
+	end
+	RD_HP_LMP_1: begin	end
+	RD_HP_LMP_2: begin	end
+	RD_HP_LMP_3: begin	end
+	RD_HP_LMP_4: begin	end
+	RD_HP_TP_0: begin
+	
+	end
+	RD_HP_TP_1: begin
+	
+	end
+	RD_HP_TP_2: begin
+	
+	end
+	RD_HP_TP_3: begin
+	
+	end
+	RD_HP_TP_4: begin
 	
 	end
 	endcase
@@ -503,10 +692,26 @@ always @(posedge local_clk) begin
 		send_state <= LINK_SEND_IDLE;
 	end
 	LINK_SEND_IDLE: begin
+		// N.B. potential race condition with loading queued CMD
+		// upon exact cycle where queue was closed with another
+		tx_queue_open <= 1;
 		if(tx_lcmd_do) begin
 			tx_lcmd_queue <= 0;
+			tx_queue_open <= 0;
 			send_state <= LINK_SEND_CMDW_0;
-		end 
+		end else 
+		if(|tx_queue_lcred) begin
+			tx_queue_lcred <= 0;
+			tx_queue_open <= 0;
+			tx_lcmd <= {LCMD_LCRD[10:2], rx_cred_idx[1:0]};
+			send_state <= LINK_SEND_CMDW_0;
+		end else 
+		if(tx_queue_lup) begin
+			tx_queue_lup <= 0;
+			tx_queue_open <= 0;
+			tx_lcmd <= LCMD_LUP;
+			send_state <= LINK_SEND_CMDW_0;
+		end
 	end
 	LINK_SEND_CMDW_0: begin
 		if(wr_lcmd_state == WR_LCMD_IDLE) begin
@@ -514,6 +719,8 @@ always @(posedge local_clk) begin
 			tx_lcmd_latch <= tx_lcmd;
 			//send_state <= LINK_SEND_CMDW_0;
 			wr_lcmd_state <= WR_LCMD_0;
+			// reset U0 LUP timeout
+			u0l_timeout <= 0;
 			send_state <= LINK_SEND_IDLE;
 		end
 	end
@@ -575,22 +782,6 @@ always @(posedge local_clk) begin
 		
 	
 	
-	//
-	// U0LTimeout generation (LUP/LDN) keepalive
-	//
-	if(u0l_timeout == T_U0L_TIMEOUT) begin
-		// we need to send LUP
-		// TODO
-	end
-	
-	//
-	// detect absence of far-end heartbeat
-	//
-	if(u0_recovery_timeout == T_U0_RECOVERY) begin
-		// tell LTSSM to transition to Recovery
-		// TODO
-	end
-	
 	
 	
 	if(~reset_n) begin
@@ -598,16 +789,22 @@ always @(posedge local_clk) begin
 		recv_state <= LINK_RECV_RESET;
 		expect_state <= LINK_EXPECT_RESET;
 		queue_state <= LINK_QUEUE_RESET;
-		rd_lctr_state <= RD_LCTR_RESET;
 		rd_lcmd_state <= RD_LCMD_RESET;
 		wr_lcmd_state <= WR_LCMD_RESET;
 		
 		err_lcmd_undefined <= 0;
+		err_hp_crc <= 0;
+		err_hp_seq <= 0;
+		err_hp_type <= 0;
+		
+		link_error_count <= 0;
 		
 		in_header_cred_a <= 0;
 		in_header_cred_b <= 0;
 		in_header_cred_c <= 0;
 		in_header_cred_d <= 0;
+		
+		ltssm_go_recovery <= 0;
 		
 		queue_send_u0_adv <= 0;
 	end
@@ -635,9 +832,11 @@ usb3_crc_hp iu3chp (
 //
 // CRC-5 of Command Words
 //
+
+// RX
+//
 	wire	[10:0]	crc_cw1_in = in_link_command[26:16];
 	wire	[4:0]	crc_cw1_out;
-	
 usb3_crc_cw iu3ccw1 (
 	.data_in	( crc_cw1_in ),
 	.crc_out	( crc_cw1_out )
@@ -645,18 +844,26 @@ usb3_crc_cw iu3ccw1 (
 
 	wire	[10:0]	crc_cw2_in = in_link_command[10:0];
 	wire	[4:0]	crc_cw2_out;
-	
 usb3_crc_cw iu3ccw2 (
 	.data_in	( crc_cw2_in ),
 	.crc_out	( crc_cw2_out )
 );
 
+	wire	[10:0]	crc_cw3_in = in_header_cw[10:0];
+	wire	[4:0]	crc_cw3_out;
+usb3_crc_cw iu3ccw3 (
+	.data_in	( crc_cw3_in ),
+	.crc_out	( crc_cw3_out )
+);
+
+// TX
+//
 	reg		[10:0]	crc_lcmd_in;
 	wire	[4:0]	crc_lcmd_out;
-	
-usb3_crc_cw iu3ccw3 (
+usb3_crc_cw iu3ccw4 (
 	.data_in	( crc_lcmd_in ),
 	.crc_out	( crc_lcmd_out )
 );
 
 endmodule
+
