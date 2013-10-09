@@ -43,6 +43,7 @@ output	reg				train_config,
 output	reg				train_idle,
 input	wire			train_idle_pass,
 
+input	wire			hot_reset,
 input	wire			go_recovery,
 
 output	reg				lfps_send_ack,
@@ -97,6 +98,7 @@ output	reg				warm_reset
 	reg		[3:0]	polling_lfps_received;
 	reg		[3:0]	polling_lfps_sent_after_recv;
 	reg				has_trained;
+	reg				go_recovery_latch;
 	
 assign	ltssm_state = state;
 
@@ -136,13 +138,14 @@ always @(posedge slow_clk) begin
 	lfps_recv_u3 <= 0;
 	
 	warm_reset <= 0;
+	go_recovery_latch <= go_recovery;
 	
 	// counters
-	dc <= dc + 1'b1;
-	sc <= sc + 1'b1;
-	sic <= sic + 1'b1;
-	rc <= rc + 1'b1;
-	ric <= ric + 1'b1;
+	`INC(dc);
+	`INC(sc);
+	`INC(sic);
+	`INC(rc);
+	`INC(ric);
 	
 	
 	///////////////////////////////////////
@@ -158,6 +161,7 @@ always @(posedge slow_clk) begin
 		state <= LT_SS_INACTIVE_DETECT;
 	end
 	LT_SS_INACTIVE_DETECT: begin
+		// TODO
 	end
 	LT_SS_INACTIVE_QUIET: begin
 	end
@@ -183,7 +187,7 @@ always @(posedge slow_clk) begin
 				state <= LT_POLLING_LFPS;
 			end else begin
 				// not found
-				rx_detect_attempts <= rx_detect_attempts + 1'b1;
+				`INC(rx_detect_attempts);
 				if(rx_detect_attempts == 7) begin
 					state <= LT_SS_DISABLED;
 				end else begin
@@ -204,15 +208,15 @@ always @(posedge slow_clk) begin
 		// receiving Polling.LFPS from link partner
 		if(lfps_recv_poll_u1) begin
 			if(polling_lfps_received < 15)
-				polling_lfps_received <= polling_lfps_received + 1'b1;
+				`INC(polling_lfps_received);
 		end
 		
 		// confirmed LFPS fsm sent
 		if(lfps_send_ack) begin
 			if(polling_lfps_sent_after_recv < 15 && polling_lfps_received > 0)
-				polling_lfps_sent_after_recv <= polling_lfps_sent_after_recv + 1'b1;
+				`INC(polling_lfps_sent_after_recv);
 			if(polling_lfps_sent < 20)
-				polling_lfps_sent <= polling_lfps_sent + 1'b1;
+				`INC(polling_lfps_sent);
 		end
 		
 		// exit conditions
@@ -263,7 +267,7 @@ always @(posedge slow_clk) begin
 		training <= 1;
 		train_active <= 1;
 		
-		if(train_ts1 | train_ts2) tc <= tc + 1'b1;
+		if(train_ts1 | train_ts2) `INC(tc);
 		
 		if(tc == 8) begin
 			// received 8 consecutive(TODO?) TS1/TS2
@@ -283,10 +287,10 @@ always @(posedge slow_clk) begin
 	
 		// increment TS2 receive count up to 8
 		if(train_ts2) begin
-			if(tc < 8) tc <= tc + 1'b1;			
+			if(tc < 8) `INC(tc);			
 		end
 		// increment TS2 send count, sequence is 4 cycles long
-		if(tc > 0) if(tsc < 16*4) tsc <= tsc + 1'b1;
+		if(tc > 0) if(tsc < 16*4) `INC(tsc);
 		
 		// exit criteria
 		// received 8 and sent 16
@@ -317,19 +321,15 @@ always @(posedge slow_clk) begin
 		if(dc == T_POLLING_IDLE)  state <= LT_SS_DISABLED;
 	end
 	LT_U0: begin
-	
-		if(dc == T_U0_RECOVERY) begin
-			// 1ms passed without receiving any link command.
-			// transition to recovery state and re-train
-			state <= LT_RECOVERY;
-		end	
-		
+		// N.B. relevant LTSSM timeouts were moved to the Link Layer
+		// module since it is more practical to have them there, and not here
+
 		if(train_ts1) begin
 			// TS1 detected, go to Recovery
 			state <= LT_RECOVERY;
 		end
 		
-		if(go_recovery) begin
+		if(go_recovery_latch) begin
 			// link layer had a problem, Recovery
 			state <= LT_RECOVERY;
 		end
@@ -352,7 +352,7 @@ always @(posedge slow_clk) begin
 		training <= 1;
 		train_active <= 1;
 		
-		if(train_ts1 | train_ts2) tc <= tc + 1'b1;
+		if(train_ts1 | train_ts2) `INC(tc)1;
 		
 		if(tc == 8) begin
 			// received 8 consecutive(TODO?) TS1/TS2
@@ -371,10 +371,10 @@ always @(posedge slow_clk) begin
 	
 		// increment TS2 receive count up to 8
 		if(train_ts2) begin
-			if(tc < 8) tc <= tc + 1'b1;			
+			if(tc < 8) `INC(tc);			
 		end
 		// increment TS2 send count, sequence is 4 cycles long
-		if(tc > 0) if(tsc < 16*4) tsc <= tsc + 1'b1;
+		if(tc > 0) if(tsc < 16*4) `INC(tsc);
 		
 		// exit criteria
 		// received 8 and sent 16
@@ -403,17 +403,20 @@ always @(posedge slow_clk) begin
 		if(dc == T_RECOV_IDLE) state <= LT_SS_INACTIVE;
 	end
 	
-	
 	LT_COMPLIANCE: begin
 	end
 	LT_LOOPBACK: begin
 	end
 	LT_HOTRESET: begin
-		// reset Link Error Count here
-		// TODO
+		// reset Link Error Count is done by Link Layer
+		if(dc == 3)	state <= LT_HOTRESET_ACTIVE;
+	end
+	LT_HOTRESET_ACTIVE: begin
+		state <= LT_HOTRESET_EXIT;
+	end
+	LT_HOTRESET_EXIT: begin
 		state <= LT_U0;
 	end
-	
 	LT_RESET: begin
 		port_rx_term <= 0;
 		port_power_down <= POWERDOWN_2;
@@ -476,8 +479,8 @@ always @(posedge slow_clk) begin
 			port_tx_elecidle <= 0;
 		end
 		// decrement pulse width and repeat interval
-		sc <= sc - 1'b1;
-		sic <= sic - 1'b1;
+		`DEC(sc);
+		`DEC(sic);
 		if(sc == 0) lfps_send_state <= LFPS_SEND_2;
 		
 		if(lfps_send_reset_local) begin
@@ -492,7 +495,7 @@ always @(posedge slow_clk) begin
 	end
 	LFPS_SEND_2: begin
 		// decrement repeat interval
-		sic <= sic - 1'b1;
+		`DEC(sic);
 		if(sic == 0) begin
 			lfps_send_ack <= 1;
 			lfps_send_state <= LFPS_IDLE;
@@ -595,6 +598,16 @@ always @(posedge slow_clk) begin
 	endcase
 	
 	
+	if(hot_reset && state != LT_SS_DISABLED) begin
+		// Hot Reset (TS2 Reset bit)
+		dc <= 0;
+		state <= LT_HOTRESET;
+	end
+	
+	if(lfps_recv_reset && state != LT_SS_DISABLED) begin
+		// Warm Reset (LFPS)
+		state <= LT_RX_DETECT_RESET;
+	end
 	
 	if(~reset_n | ~vbus_present_2) begin
 		// reset

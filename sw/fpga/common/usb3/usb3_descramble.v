@@ -29,6 +29,7 @@ output	reg		[3:0]	proc_datak,
 output	reg		[31:0]	proc_data,
 output	reg				proc_active,
 
+output	wire	[31:0]	ds_out_raw,
 output	reg				err_skp_unexpected
 );
 	
@@ -37,14 +38,21 @@ output	reg				err_skp_unexpected
 // to remove everything that >PHY layer is not interested in.
 //
 // example: scrambled stream with skip padding
-// BE40A73C3C3CE62CD3E2B20702772A
+// BE40A73C3C3CE62CD3E2B20702772A (D)
+// 000000111111000000000000000000 (K)
 // >
-// 000000000000000000000000
+// 000000000000000000000000       (D)
+// 000000000000000000000000       (K)
 //
 // this would be fairly trivial if we could clock this module at 500mhz
 // and only process 1 symbol at a time. however, due to timing constraints
 // it's working at 125mhz instead, and on 4 symbols at once. this is where
 // symbol alignment gets sticky, and why there are so many cases.
+//
+// 10/08/13 - edge case discovered where SKP immediately following the end of a
+// packet on the next cycle will cause a 1 cycle deassertion of ACTIVE, and
+// push the last word of the packet onto the following cycle where ACTIVE
+// is asserted again.
 
 
 	// indicates presence of SKP at any symbol position
@@ -196,7 +204,7 @@ end
 	reg		[2:0]	scr_defer;
 	
 always @(posedge local_clk) begin
-
+	
 	if(scr_defer < 4) scr_defer <= scr_defer + 1'b1;
 	if(|comma) scr_defer <= 0;
 
@@ -236,7 +244,7 @@ always @(posedge local_clk) begin
 	proc_active <= coll_active;
 	
 	// squelch invalids
-	if(~coll_valid) begin
+	if(~coll_valid || ~coll_active) begin
 		proc_data <= 32'h0;
 		proc_datak <= 4'b0;
 		proc_active <= 0;
@@ -250,13 +258,12 @@ end
 //
 	reg		[31:0]	ds_delay;
 	reg		[31:0]	ds_last;
-	wire			ds_suppress = |comma | (scr_defer < 2);
+	wire			ds_suppress = |comma || (scr_defer < 2);
 	wire			ds_enable = enable && !ds_suppress;
+	wire	[31:0]	ds_out_swap;
 	wire	[31:0]	ds_out = ds_enable ? 
 							{ds_out_swap[7:0], ds_out_swap[15:8], ds_out_swap[23:16], ds_out_swap[31:24]} 
 							: 0;
-	wire	[31:0]	ds_out_swap;
-	
 usb3_lfsr iu3srx(
 
 	.clock		( local_clk ),
@@ -266,7 +273,7 @@ usb3_lfsr iu3srx(
 	.scram_en	( coll_active ),
 	.scram_rst	( |comma ),
 	.scram_init ( 16'h7DBD ),	// reset to FFFF + 3 cycles
-	.data_out	( ds_out_swap )
+	.data_out_reg	( ds_out_swap )
 	
 );
 

@@ -69,6 +69,7 @@ end
 
 	parameter		XTAL_DIS			= 1'b0; 	// crystal input
 	parameter [2:0]	SSC_DIS				= 2'b11;	// spread spectrum clock disable
+	parameter [2:0]	SSC_EN				= 2'b00;	// spread spectrum clock enable
 	parameter		PIPE_16BIT			= 1'b0;		// sdr 16bit pipe interface
 	// strap pins
 	assign			phy_rx_elecidle 	= reset_2 ? 1'bZ : XTAL_DIS;
@@ -139,6 +140,7 @@ usb3_pipe	iu3p (
 	.ltssm_power_down		( port_power_down ),
 	.ltssm_power_go			( port_power_go ),
 	.ltssm_power_ack		( port_power_ack ),
+	.ltssm_hot_reset		( ltssm_hot_reset ),
 	
 	.ltssm_state				( ltssm_state ),
 	.ltssm_training				( ltssm_training ),
@@ -175,6 +177,7 @@ usb3_pipe	iu3p (
 	wire			port_power_go;
 	wire			port_power_ack;
 	wire			port_power_err;
+	wire			ltssm_hot_reset;
 	
 	wire			ltssm_training;
 	wire			ltssm_train_rxeq;
@@ -221,6 +224,7 @@ usb3_ltssm	iu3lt (
 	.train_ts1				( ltssm_train_ts1 ),
 	.train_ts2				( ltssm_train_ts2 ),
 	.go_recovery			( ltssm_go_recovery ),
+	.hot_reset				( ltssm_hot_reset ),
 	
 	// outputs
 	.ltssm_state			( ltssm_state ),
@@ -271,6 +275,7 @@ usb3_link iu3l (
 	.reset_n				( reset_2 ),
 	
 	.ltssm_state			( ltssm_state ),
+	.ltssm_hot_reset		( ltssm_hot_reset ),
 	.ltssm_go_recovery		( ltssm_go_recovery ),
 	.in_data				( link_in_data ),
 	.in_datak				( link_in_datak ),
@@ -283,6 +288,17 @@ usb3_link iu3l (
 	.out_skp_defer			( link_out_skp_defer ),
 	.out_stall				( link_out_stall )
 );
+
+
+
+////////////////////////////////////////////////////////////
+//
+// USB 3.0 Protocol layer interface
+//
+////////////////////////////////////////////////////////////
+
+
+
 
 
 

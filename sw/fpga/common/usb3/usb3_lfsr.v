@@ -22,7 +22,8 @@ input 	wire	[31:0] 	data_in,
 input 	wire			scram_en,
 input 	wire			scram_rst,
 input	wire	[15:0]	scram_init,
-output	reg		[31:0]	data_out
+output	reg		[31:0]	data_out,
+output	reg		[31:0]	data_out_reg
 
 );
 
@@ -79,16 +80,19 @@ always @(*) begin
 	data_c[29] = data_in[29] ^ lfsr_q[2] ^ lfsr_q[8] ^ lfsr_q[10] ^ lfsr_q[12];
 	data_c[30] = data_in[30] ^ lfsr_q[1] ^ lfsr_q[7] ^ lfsr_q[9] ^ lfsr_q[11];
 	data_c[31] = data_in[31] ^ lfsr_q[0] ^ lfsr_q[6] ^ lfsr_q[8] ^ lfsr_q[10];
+	
+	data_out = scram_en ? data_c : data_out;
 end
 
 always @(posedge clock, negedge reset_n) begin
 	if(~reset_n) begin
 		lfsr_q <= scram_init;
-		data_out <= 32'h0;
+		data_out_reg <= 32'h0;
 	end	else begin
 		lfsr_q <= scram_rst ? scram_init : scram_en ? lfsr_c : lfsr_q;
-		data_out <= scram_en ? data_c : data_out;
+		data_out_reg <= scram_en ? data_c : data_out_reg;
 	end
 end
 
 endmodule
+

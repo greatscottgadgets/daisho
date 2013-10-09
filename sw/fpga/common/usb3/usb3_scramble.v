@@ -27,64 +27,143 @@ output	reg				raw_stall,
 output	reg		[3:0]	proc_datak,
 output	reg		[31:0]	proc_data,
 
-output	reg				err_undef
+output	reg				err_empty_accum
 );
 	
+	reg				reset_n_1;
+	reg				enable_1;
+	
 	// indicates presence of COM at last symbol position (K28.5)
-	wire			comma	= {	(raw_data[7:0] == 8'hBC) & raw_datak[0] };
-	
-// step 1.
-// apply scrambling to incoming data.
-// data is XORd with free running LFSR that is reset whenever 
-// we send out any 0xBC (COM) K-symbol.
-	
-	reg		[31:0]	sc_data;
-	reg		[3:0]	sc_datak; 
-	reg		[2:0]	sc_num; 
+	wire			comma	= {	(pl_data[7:0] == 8'hBC) & pl_datak[0] };
+	reg				comma_1;
+		
+	reg		[31:0]	pl_data;
+	reg		[3:0]	pl_datak;
+	reg				pl_active;
 
+// step 1.
+// accept incoming data, but inject SKP sets to allow remote elastic buffer
+// to catch up and compensate for spread spectrum clocking.
+
+	wire			insert_skp	=  enable && symbols_since_skp >= 80;
+	
+	reg		[15:0]	symbols_since_skp;
+	reg		[2:0]	num_queued_skp;
+	
+	reg		[31:0]	ac_data;
+	reg		[3:0]	ac_datak;
+		
 always @(posedge local_clk) begin
+		
+	pl_data <= raw_data;
+	pl_datak <= raw_datak;
+	pl_active <= raw_active;
 	
-	sc_data[31:24] <= raw_datak[3] ? raw_data[31:24] : raw_data[31:24] ^ ds_out[31:24];
-	sc_data[23:16] <= raw_datak[2] ? raw_data[23:16] : raw_data[23:16] ^ ds_out[23:16];
-	sc_data[15:8] <= raw_datak[1] ? raw_data[15:8] : raw_data[15:8] ^ ds_out[15:8];
-	sc_data[7:0] <= raw_datak[0] ? raw_data[7:0] : raw_data[7:0] ^ ds_out[7:0];
+	reset_n_1 <= reset_n;
+	comma_1 <= comma;
+	enable_1 <= enable;
 	
-	sc_datak <= raw_datak;
+	// increment symbol sent counter
+	if(enable_1) symbols_since_skp <= symbols_since_skp + 1;
+	if(insert_skp) begin
+		symbols_since_skp <= 0;
+		// increment number of queued sets up to 4
+		if(num_queued_skp < 4)
+			num_queued_skp <= num_queued_skp + 1'b1;
+	end
+
+	if(enable_1) begin
+		if(num_queued_skp == 0 || pl_active) begin
+			// don't inject SKP
+			ac_data[31:24] <= pl_datak[3] ? pl_data[31:24] : pl_data[31:24] ^ sp_pick32[31:24];
+			ac_data[24:16] <= pl_datak[2] ? pl_data[24:16] : pl_data[24:16] ^ sp_pick32[24:16];
+			ac_data[15:8 ] <= pl_datak[1] ? pl_data[15:8 ] : pl_data[15:8 ] ^ sp_pick32[15:8 ];
+			ac_data[ 7:0 ] <= pl_datak[0] ? pl_data[ 7:0 ] : pl_data[ 7:0 ] ^ sp_pick32[ 7:0 ];
+			ac_datak <= pl_datak;
+		end else if(num_queued_skp == 1) begin
+			// only 1 ordered set needed
+			ac_data <= {16'h3C3C, pl_data[15:0] ^ sp_pick16[15:0]};
+			ac_datak <= {2'b11, pl_datak[1:0]};
+			raw_stall <= 1;
+			num_queued_skp <= num_queued_skp - 1;
+		end else begin
+			// 2 or more sets needed
+			ac_data <= {32'h3C3C3C3C};
+			ac_datak <= {4'b1111};
+			raw_stall <= 1;
+			num_queued_skp <= num_queued_skp - 2;
+		end
+	end else begin
+		ac_data <= pl_data;
+		ac_datak <= pl_datak;
+	end
+
+	proc_data <= ac_data;
+	proc_datak <= ac_datak;
 	
+	err_empty_accum <= 0;
+
 	if(~reset_n) begin
-		//err_skp_unexpected <= 0;
+		symbols_since_skp <= 0;
+	end
+end
+
+always @(*) begin
+	//
+	// combinational to give us 1 cycle foresight so that
+	// the lfsr pool can have next word prepared in time
+	//
+	if(enable_1) begin
+		if(num_queued_skp == 0 || pl_active) begin
+			// don't inject SKP
+			sp_read_num = 4;
+		end else if(num_queued_skp == 1) begin
+			// only 1 ordered set needed
+			sp_read_num = 2;
+		end else begin
+			// 2 or more sets needed
+			sp_read_num = 0;
+		end
+	end else begin
+		sp_read_num = 0;
+	end
+end
+
+//
+// scrambling LFSR pool
+//
+
+	reg		[63:0]	sp_data;
+	reg		[3:0]	sp_depth;
+	reg		[3:0]	sp_read_num;
+	
+	wire			sp_dofill = ((sp_depth+8 - sp_read_num) <= 12);
+	reg				sp_dofill_1;
+	
+	wire	[15:0]	sp_pick16 = 	sp_pick32[31:16];
+	wire	[31:0]	sp_pick32 = 	(sp_depth == 4) ? sp_data[31:0] :
+									(sp_depth == 6) ? sp_data[47:16] : 
+									(sp_depth == 8) ? sp_data[63:32] : 32'hFFFFFFFF;
+	
+always @(posedge local_clk) begin
+	sp_dofill_1 <= sp_dofill;
+	
+	sp_depth <= sp_depth - sp_read_num + (sp_dofill ? 4 : 0);
+
+	if(sp_dofill) sp_data <= {sp_data[31:0], ds_out};
+
+	if(~reset_n_1 | comma_1) begin
+		sp_depth <= 0;
+		//sp_data <= 32'hEEEEEEEE;
 	end
 end
 
 
-// step 2.
-// accept incoming data, but insert SKP sets to allow remote elastic buffer
-// to catch up and compensate for spread spectrum clocking.
-
-	reg		[15:0]	symbols_since_skp;
-	
-always @(posedge local_clk) begin
-
-
-
-	proc_datak <= sc_datak;
-	proc_data  <= sc_data;
-end
-
-
-
-	reg		[2:0]	scr_defer;
-
 //
 // data scrambling for TX
 //
-	reg		[31:0]	ds_delay;
-	reg		[31:0]	ds_last;
-	//wire			ds_suppress = |comma | (scr_defer < 1);
-	wire			ds_enable = enable ;
-	wire	[31:0]	ds_out = ds_enable ? 
-							{ds_out_swap[7:0], ds_out_swap[15:8], 
-							ds_out_swap[23:16], ds_out_swap[31:24]} : 0;
+	wire	[31:0]	ds_out = {ds_out_swap[7:0], ds_out_swap[15:8], 
+							ds_out_swap[23:16], ds_out_swap[31:24]};
 	wire	[31:0]	ds_out_swap;
 	
 usb3_lfsr iu3srx(
@@ -93,9 +172,9 @@ usb3_lfsr iu3srx(
 	.reset_n	( reset_n ),
 	
 	.data_in	( 32'h0 ),
-	.scram_en	( 1 ), // TODO WHEN INPUT IS NOT ACTIVE
-	.scram_rst	( comma ),
-	.scram_init ( 16'h4DE8 ),
+	.scram_en	( comma | sp_dofill),
+	.scram_rst	( comma | ~reset_n),
+	.scram_init ( 16'h7DBD ),
 	.data_out	( ds_out_swap )
 	
 );

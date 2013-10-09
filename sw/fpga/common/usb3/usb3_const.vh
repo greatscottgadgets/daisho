@@ -33,6 +33,8 @@ parameter	[4:0]	LT_SS_DISABLED			= 'd01,
 					LT_COMPLIANCE			= 'd19,
 					LT_LOOPBACK				= 'd20,
 					LT_HOTRESET				= 'd21,
+					LT_HOTRESET_ACTIVE		= 'd26,
+					LT_HOTRESET_EXIT		= 'd27,
 					LT_RECOVERY				= 'd22,
 					LT_RECOVERY_ACTIVE		= 'd23,
 					LT_RECOVERY_CONFIG		= 'd24,
@@ -154,22 +156,80 @@ parameter	[10:0]	LCMD_LAU			= 'b01_01_000_0000,
 					LCMD_LXU			= 'b01_10_000_0000,
 					LCMD_LPMA			= 'b01_11_000_0000;
 					
-parameter	[10:0]	LCMD_LDN			= 'b10_00_000_0000,
-					LCMD_LUP			= 'b10_11_000_0000;
+parameter	[10:0]	LCMD_LDN			= 'b10_11_000_0000,
+					LCMD_LUP			= 'b10_00_000_0000;
 					
-parameter	[5:0]	LP_TYPE_LMP			= 'b00000,				
+parameter	[4:0]	LP_TYPE_LMP			= 'b00000,				
 					LP_TYPE_TP			= 'b00100,
 					LP_TYPE_DP			= 'b01000,
 					LP_TYPE_ITP			= 'b01100;
 
-parameter	[4:0]	LP_SUB_RSVD			= 'b0000,
-					LP_SUB_SETLINK		= 'b0001,
-					LP_SUB_U2INACT		= 'b0010,
-					LP_SUB_VENDTEST		= 'b0011,
-					LP_SUB_PORTCAP		= 'b0100,
-					LP_SUB_PORTCFG		= 'b0101,
-					LP_SUB_PORTCFGRSP	= 'b0110;
+parameter	[3:0]	LP_LMP_SUB_RSVD			= 'b0000,
+					LP_LMP_SUB_SETLINK		= 'b0001,
+					LP_LMP_SUB_U2INACT		= 'b0010,
+					LP_LMP_SUB_VENDTEST		= 'b0011,
+					LP_LMP_SUB_PORTCAP		= 'b0100,
+					LP_LMP_SUB_PORTCFG		= 'b0101,
+					LP_LMP_SUB_PORTCFGRSP	= 'b0110;
 					
+parameter	[6:0]	LP_LMP_SPEED_5GBPS		= 'b000000_1;
+parameter	[6:0]	LP_LMP_SPEED_DECLINE	= 'b000000_0;
+parameter	[6:0]	LP_LMP_SPEED_ACCEPT		= 'b000000_1;
+parameter	[7:0]	LP_LMP_NUM_HP_4			= 'd4;
+parameter	[1:0]	LP_LMP_DIR_DOWN			= 'b01;
+parameter	[1:0]	LP_LMP_DIR_UP			= 'b10;
+parameter	[0:0]	LP_LMP_OTG_INCAPABLE	= 'b1;
+parameter	[0:0]	LP_LMP_OTG_CAPABLE		= 'b0;
+parameter	[3:0]	LP_LMP_TIEBREAK			= 'b0000;
+
+parameter	[3:0]	LP_TP_SUB_RSVD			= 'b0000,
+					LP_TP_SUB_ACK			= 'b0001,
+					LP_TP_SUB_NRDY			= 'b0010,
+					LP_TP_SUB_ERDY			= 'b0011,
+					LP_TP_SUB_STATUS		= 'b0100,
+					LP_TP_SUB_STALL			= 'b0101,
+					LP_TP_SUB_DEVNOTIFY		= 'b0110,
+					LP_TP_SUB_PING			= 'b0111,
+					LP_TP_SUB_PINGRSP		= 'b1000;
+					
+parameter	[19:0]	LP_TP_ROUTE0			= 'b0;
+parameter	[0:0]	LP_TP_NORETRY			= 'b0,
+					LP_TP_RETRY				= 'b1;
+parameter	[0:0]	LP_TP_HOSTTODEVICE		= 'b0,
+					LP_TP_DEVICETOHOST		= 'b1;
+parameter	[15:0]	LP_TP_STREAMID			= 'b0;
+//
+// the following are for isochronous endpoints only (Table 8-12)
+//
+parameter	[0:0]	LP_TP_SSI_NO			= 'b0,	// Support Smart Isochronous
+					LP_TP_SSI_YES			= 'b1;
+parameter	[0:0]	LP_TP_WPA_NO			= 'b0,	// Will Ping Again
+					LP_TP_WPA_YES			= 'b1;
+parameter	[0:0]	LP_TP_DBI_NO			= 'b0,	// Data in Bus Interval Done
+					LP_TP_DBI_YES			= 'b1;
+//
+parameter	[0:0]	LP_TP_PPEND_NO			= 'b0,	// Packets Pending from Host
+					LP_TP_PPEND_YES			= 'b1;
+parameter	[3:0]	LP_TP_NBI_0				= 'b0;	// Number of Bus Intervals
+
+parameter	[3:0]	LP_TP_DN_FUNC_AWAKE		= 'b0001,
+					LP_TP_DN_LAT_TOL_MSG	= 'b0010,
+					LP_TP_DN_BUS_INTER_ADJ	= 'b0011,
+					LP_TP_DN_HOST_ROLE_REQ	= 'b0100;
+
+function	[15:0]	swap16;
+	input	[15:0]	i;
+	swap16 = {i[7:0], i[15:8]};
+endfunction
+
+function	[31:0]	swap32;
+	input	[31:0]	i;
+	swap32 = {i[7:0], i[15:8], i[23:16], i[31:24]};
+endfunction
+
+`define INC(x) x<=x+1'b1
+`define DEC(x) x<=x-1'b1
+
 //
 // end usb3_const.vh
 //

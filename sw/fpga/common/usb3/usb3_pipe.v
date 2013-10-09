@@ -62,6 +62,7 @@ input	wire	[1:0]	ltssm_power_down,
 input	wire			ltssm_power_go,
 output	reg				ltssm_power_ack,
 output	reg				ltssm_power_err,
+output	reg				ltssm_hot_reset,
 input	wire			ltssm_training,
 input	wire			ltssm_train_rxeq,
 output	reg				ltssm_train_rxeq_pass,
@@ -81,7 +82,9 @@ input	wire			lfps_recv_u3,
 
 input	wire			partner_detect,
 output	reg				partner_looking,
-output	reg				partner_detected
+output	reg				partner_detected,
+
+output	reg				err_elastic_underrun
 
 );
 
@@ -159,7 +162,6 @@ parameter	[5:0]	PD_RESET			= 6'd0,
 	reg		[20:0]	rxdet_timeout;
 	reg		[15:0]	train_count;
 	
-	reg		[15:0]	symbols_since_skp;
 	reg		[12:0]	train_sym_skp;
 	
 	reg		[1:0]	word_rx_align;
@@ -168,21 +170,28 @@ parameter	[5:0]	PD_RESET			= 6'd0,
 	reg				s_enable;
 	reg				ds_enable;
 	
+	reg				ts_disable_scrambling;
+	reg				ts_disable_scrambling_latch;
+	reg				ts_hot_reset_local;
+	reg				ts_hot_reset_1;
+	reg				ts_hot_reset_latch;
+	reg		[4:0]	hot_reset_count;
+	
 	reg		[3:0]	idle_symbol_send;
 	reg		[3:0]	idle_symbol_recv;
 	
 	reg				set_ts1_found, set_ts1_found_1;
 	reg				set_ts2_found, set_ts2_found_1;
 	
-	reg		[31:0]	sync_a /* synthesis noprune */;
-	reg		[3:0]	sync_ak /* synthesis noprune */;
-	reg				sync_a_active /* synthesis noprune */;
-	reg		[31:0]	sync_b /* synthesis noprune */;
-	reg		[3:0]	sync_bk /* synthesis noprune */;
-	reg				sync_b_active /* synthesis noprune */;
+	reg		[31:0]	sync_a;
+	reg		[3:0]	sync_ak;
+	reg				sync_a_active;
+	reg		[31:0]	sync_b;
+	reg		[3:0]	sync_bk;
+	reg				sync_b_active;
 	reg		[31:0]	sync_out /* synthesis noprune */;
 	reg		[3:0]	sync_outk /* synthesis noprune */;
-	reg				sync_out_active /* synthesis noprune */;
+	reg				sync_out_active;
 	
 	// combinational detection of valid packet framing
 	// k-symbols within a received word.
@@ -198,7 +207,7 @@ parameter	[5:0]	PD_RESET			= 6'd0,
 	wire			sync_byte_0 = proc_datak[0] && (	proc_data[7:0] == 8'h5C || proc_data[7:0] == 8'hBC ||
 														proc_data[7:0] == 8'hFB || proc_data[7:0] == 8'hFE ||
 														proc_data[7:0] == 8'hF7 );
-	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0} /* synthesis keep */;
+	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0};
 	
 	wire			sync_byte_3_end = proc_datak[3] && (	proc_data[31:24] == 8'h7C || proc_data[31:24] == 8'hFD );
 	wire			sync_byte_2_end = proc_datak[2] && (	proc_data[23:16] == 8'h7C || proc_data[23:16] == 8'hFD );
@@ -221,25 +230,33 @@ always @(posedge local_clk) begin
 	dc <= dc + 1'b1;
 	rdc <= rdc + 1'b1;
 	swc <= swc + 1'b1;
-	rxdet_timeout <= rxdet_timeout + 1'b1;
+	`INC(rxdet_timeout);
 	
 	phy_tx_elecidle_local <= 1'b1;
 	phy_tx_detrx_lpbk_local <= 1'b0;
 	
 	ltssm_train_rxeq_pass <= 0;
 	ltssm_train_idle_pass <= 0;
+	ltssm_hot_reset <= 0;
 	
 	local_tx_data <= 32'h0;
 	local_tx_datak <= 4'b0000;
+	local_tx_active <= 1'b0;
 	
 	set_ts1_found <= 0;
 	set_ts2_found <= 0;
+	ts_disable_scrambling <= 0;
+	ts_hot_reset_local <= 0;
+	ts_hot_reset_1 <= ts_hot_reset_local;
+	ltssm_hot_reset <= ts_hot_reset_local | ts_hot_reset_1;
 	
 	ltssm_train_ts1 <= set_ts1_found_1 | set_ts1_found;
 	ltssm_train_ts2 <= set_ts2_found_1 | set_ts2_found;
 	
 	set_ts1_found_1 <= set_ts1_found;
 	set_ts2_found_1 <= set_ts2_found;
+	
+	if(ltssm_state == LT_HOTRESET) hot_reset_count <= 16;
 	
 	///////////////////////////////////////
 	// PIPE FSM
@@ -257,13 +274,17 @@ always @(posedge local_clk) begin
 		phy_tx_margin <= 		MARGIN_A;		// normal operating margin
 		phy_tx_deemph <= 		DEEMPH_3_5_DB;	// -3.5dB
 		phy_rate <= 			1'b1;			// 5.0 Gb/s fixed
-		phy_tx_swing <= 		SWING_HALF;		// full swing
+		phy_tx_swing <= 		SWING_FULL;		// full swing
 		phy_rx_termination <= 	1'b1;			// enable rx termination
 		phy_elas_buf_mode <= 	ELASBUF_HALF;	// elastic buffer nominally half full
 				
 		ds_enable <= 0;							// disable descrambling
 		s_enable <= 0;							// disable scrambling
 		scr_mux <= 0;							// switch TX mux to local PIPE layer 
+		
+		ts_disable_scrambling_latch <= 0;
+		ts_hot_reset_latch <= 0;
+		hot_reset_count <= 0;
 		
 		state <= ST_RST_1;
 		dc <= 0;
@@ -283,12 +304,16 @@ always @(posedge local_clk) begin
 	end
 
 	ST_IDLE: begin
+		// disable scrambling
+		s_enable <= 0;	
+		// squash idle in P0
+		if(phy_power_down == POWERDOWN_0) phy_tx_elecidle_local <= 1'b0;
+		
 		// LTSSM wants to initiate link training!
 		if(ltssm_training) begin
 			// grab tx mux from link layer
 			scr_mux <= 0;
-			// disable scrambling
-			s_enable <= 0;							
+									
 			phy_tx_elecidle_local <= 1'b0;
 			
 			// Polling.RxEq
@@ -303,16 +328,17 @@ always @(posedge local_clk) begin
 				set_ts <= 0;
 				train_count <= 0;
 				// reset SKP elastic buffer compensation
-				symbols_since_skp <= 0;
 				train_sym_skp <= 0;
 				state <= ST_TRAIN_ACTIVECONFIG_0;
 			end
 			// Polling.Idle
 			if(ltssm_train_idle) begin
 				swc <= 0;
-				// enable descrambling
+				// enable de/scrambling
 				ds_enable <= 1;
 				s_enable <= 1;
+				if(ts_disable_scrambling) ds_enable <= 0;
+				if(ts_disable_scrambling) s_enable <= 0;
 				idle_symbol_send <= 0;
 				idle_symbol_recv <= 0;
 				state <= ST_TRAIN_IDLE_0;
@@ -321,11 +347,10 @@ always @(posedge local_clk) begin
 	end
 	
 	ST_TRAIN_RXEQ_0: begin
-	
 		// transmitting TSEQ
 		// N.B. this is just COM + scrambled 00.
-		// TODO remove LUT and utilize scrambler
 		phy_tx_elecidle_local <= 1'b0;
+		local_tx_active <= 1;
 		case(swc)
 		0: {local_tx_data, local_tx_datak} <= {32'hBCFF17C0, 4'b1000};
 		1: {local_tx_data, local_tx_datak} <= {32'h14B2E702, 4'b0000};
@@ -340,7 +365,7 @@ always @(posedge local_clk) begin
 		if(swc == 7) begin
 			// increment send count and repeat
 			swc <= 0;
-			train_count <= train_count + 1'b1;
+			`INC(train_count);
 			if(train_count == 65535) begin
 				// proceed
 				state <= ST_TRAIN_RXEQ_1;
@@ -363,6 +388,7 @@ always @(posedge local_clk) begin
 	ST_TRAIN_ACTIVECONFIG_0: begin
 		// transmitting TS1
 		phy_tx_elecidle_local <= 1'b0;
+		local_tx_active <= 1;
 		ds_enable <= 0;
 		
 		if(~set_ts) begin
@@ -375,7 +401,7 @@ always @(posedge local_clk) begin
 		end else begin
 			case(swc)
 			0: {local_tx_data, local_tx_datak} <= {32'hBCBCBCBC, 4'b1111};
-			1: {local_tx_data, local_tx_datak} <= {32'h00004545, 4'b0000};
+			1: {local_tx_data, local_tx_datak} <= {8'h00, {4'h0, 3'h0, hot_reset_count > 0}, 16'h4545, 4'b0000};
 			2: {local_tx_data, local_tx_datak} <= {32'h45454545, 4'b0000};
 			3: {local_tx_data, local_tx_datak} <= {32'h45454545, 4'b0000};
 			endcase
@@ -383,6 +409,7 @@ always @(posedge local_clk) begin
 
 		if(swc == 3) begin
 			swc <= 0;
+			if(hot_reset_count > 0) `DEC(hot_reset_count);
 			// increment symbols sent for SKP compensation
 			train_sym_skp <= train_sym_skp + 13'd16;
 			if(train_sym_skp >= (354-16)) begin
@@ -404,6 +431,7 @@ always @(posedge local_clk) begin
 		// this will throw off the remote elastic buffer normally but isn't a 
 		// problem during training
 		phy_tx_elecidle_local <= 1'b0;
+		local_tx_active <= 1;
 		{local_tx_data, local_tx_datak} <= {32'h3C3C3C3C, 4'b1111};
 		// decrement overflow counter
 		train_sym_skp <= train_sym_skp - 13'd354;
@@ -414,14 +442,15 @@ always @(posedge local_clk) begin
 
 	ST_TRAIN_IDLE_0: begin
 		phy_tx_elecidle_local <= 1'b0;
+		local_tx_active <= 1;
 		{local_tx_data, local_tx_datak} <= {32'h00000000, 4'b0000};
 		
-		if(idle_symbol_send < 4) idle_symbol_send <= idle_symbol_send + 1'b1;
+		if(idle_symbol_send < 4) `INC(idle_symbol_send);
 		if(sync_out != 32'h00000000) begin
 			// non-IDLE symbol received
 			idle_symbol_send <= 0;
 		end else begin
-			if(idle_symbol_recv < 2) idle_symbol_recv <= idle_symbol_recv + 1'b1;
+			if(idle_symbol_recv < 2) `INC(idle_symbol_recv);
 		end
 		if(idle_symbol_send == 4 && idle_symbol_recv == 2) begin
 			// exit conditions matching those of LTSSM
@@ -547,7 +576,7 @@ always @(posedge local_clk) begin
 	
 	sync_a_active <= proc_active;
 	sync_b_active <= sync_a_active;
-	sync_out_active <= sync_a_active;
+	sync_out_active <= sync_a_active; // yes, intentional ??!!
 	sync_out <= sync_b;
 	sync_outk <= sync_bk;
 	
@@ -562,38 +591,32 @@ always @(posedge local_clk) begin
 		tsdet_state <= TSDET_IDLE;
 	end
 	TSDET_IDLE: begin
-		case({sync_out, sync_outk})
-		{32'hBCBCBCBC, 4'b1111}: tsdet_state <= TSDET_0;	
-		default: tsdet_state <= TSDET_IDLE;
-		endcase
+		if(sync_out_active) begin
+			tsdet_state <=
+				{sync_out, sync_outk} == {32'hBCBCBCBC, 4'b1111} ? TSDET_0 : TSDET_IDLE;
+		end
+		ts_disable_scrambling <= ts_disable_scrambling_latch && set_ts2_found;
+		ts_hot_reset_local <= ts_hot_reset_latch && set_ts2_found;	
 	end
 	TSDET_0: begin
-		if(sync_out_active) begin
-			case({sync_out, sync_outk})
-			{32'h00004A4A, 4'b0000}: tsdet_state <= TSDET_1;
-			{32'h00004545, 4'b0000}: tsdet_state <= TSDET_1;	
-			default: tsdet_state <= TSDET_IDLE;
-			endcase
+		tsdet_state <= 	
+			{sync_out[31:20], 4'b0, sync_out[15:0], sync_outk} == {32'h00004A4A, 4'b0000} ? TSDET_1 :
+			{sync_out[31:20], 4'b0, sync_out[15:0], sync_outk} == {32'h00004545, 4'b0000} ? TSDET_1 : TSDET_IDLE;
+		if(ltssm_state == LT_RECOVERY_IDLE || ltssm_state == LT_POLLING_IDLE) begin
+			// only allow latching of Disable Scrambling in these two LTSSM states
+			ts_disable_scrambling_latch <= sync_out[19];
 		end
+		ts_hot_reset_latch <= sync_out[16];
 	end
 	TSDET_1: begin
-		if(sync_out_active) begin
-			case({sync_out, sync_outk})
-			{32'h4A4A4A4A, 4'b0000}: tsdet_state <= TSDET_2;
-			{32'h45454545, 4'b0000}: tsdet_state <= TSDET_2;	
-			default: tsdet_state <= TSDET_IDLE;
-			endcase
-		end
+		tsdet_state <= 	
+			{sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000} ? TSDET_2 :
+			{sync_out, sync_outk} == {32'h45454545, 4'b0000} ? TSDET_2 : TSDET_IDLE;
 	end
 	TSDET_2: begin
-		if(sync_out_active) begin
-			case({sync_out, sync_outk})
-			{32'h4A4A4A4A, 4'b0000}: set_ts1_found <= 1;	
-			{32'h45454545, 4'b0000}: set_ts2_found <= 1;
-			default: tsdet_state <= TSDET_IDLE;
-			endcase
-			tsdet_state <= TSDET_IDLE;
-		end
+		set_ts1_found <= {sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000};
+		set_ts2_found <= {sync_out, sync_outk} == {32'h45454545, 4'b0000};
+		tsdet_state <= TSDET_IDLE;
 	end
 	endcase
 	
@@ -736,6 +759,7 @@ always @(posedge local_clk) begin
 		// reset
 		state <= ST_RST_0;
 		align_state <= ALIGN_RESET;
+		tsdet_state <= TSDET_RESET;
 		rxdet_state <= RXDET_RESET;
 		pd_state <= PD_RESET;
 	end
