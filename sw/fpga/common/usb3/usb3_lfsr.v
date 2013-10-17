@@ -81,7 +81,8 @@ always @(*) begin
 	data_c[30] = data_in[30] ^ lfsr_q[1] ^ lfsr_q[7] ^ lfsr_q[9] ^ lfsr_q[11];
 	data_c[31] = data_in[31] ^ lfsr_q[0] ^ lfsr_q[6] ^ lfsr_q[8] ^ lfsr_q[10];
 	
-	data_out = scram_en ? data_c : data_out;
+	//data_out = scram_en ? data_c : data_out;
+	data_out = data_c;
 end
 
 always @(posedge clock, negedge reset_n) begin

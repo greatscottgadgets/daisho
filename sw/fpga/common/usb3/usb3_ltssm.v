@@ -352,7 +352,7 @@ always @(posedge slow_clk) begin
 		training <= 1;
 		train_active <= 1;
 		
-		if(train_ts1 | train_ts2) `INC(tc)1;
+		if(train_ts1 | train_ts2) `INC(tc);
 		
 		if(tc == 8) begin
 			// received 8 consecutive(TODO?) TS1/TS2

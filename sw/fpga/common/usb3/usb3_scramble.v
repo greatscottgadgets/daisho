@@ -29,6 +29,8 @@ output	reg		[31:0]	proc_data,
 
 output	reg				err_empty_accum
 );
+
+`include "usb3_const.vh"
 	
 	reg				reset_n_1;
 	reg				enable_1;
@@ -64,12 +66,12 @@ always @(posedge local_clk) begin
 	enable_1 <= enable;
 	
 	// increment symbol sent counter
-	if(enable_1) symbols_since_skp <= symbols_since_skp + 1;
+	if(enable_1) `INC(symbols_since_skp);
 	if(insert_skp) begin
 		symbols_since_skp <= 0;
 		// increment number of queued sets up to 4
 		if(num_queued_skp < 4)
-			num_queued_skp <= num_queued_skp + 1'b1;
+			`INC(num_queued_skp);
 	end
 
 	if(enable_1) begin
@@ -85,13 +87,13 @@ always @(posedge local_clk) begin
 			ac_data <= {16'h3C3C, pl_data[15:0] ^ sp_pick16[15:0]};
 			ac_datak <= {2'b11, pl_datak[1:0]};
 			raw_stall <= 1;
-			num_queued_skp <= num_queued_skp - 1;
+			`DEC(num_queued_skp);
 		end else begin
 			// 2 or more sets needed
 			ac_data <= {32'h3C3C3C3C};
 			ac_datak <= {4'b1111};
 			raw_stall <= 1;
-			num_queued_skp <= num_queued_skp - 2;
+			num_queued_skp <= num_queued_skp - 2'h2;
 		end
 	end else begin
 		ac_data <= pl_data;
@@ -138,7 +140,6 @@ end
 	reg		[3:0]	sp_read_num;
 	
 	wire			sp_dofill = ((sp_depth+8 - sp_read_num) <= 12);
-	reg				sp_dofill_1;
 	
 	wire	[15:0]	sp_pick16 = 	sp_pick32[31:16];
 	wire	[31:0]	sp_pick32 = 	(sp_depth == 4) ? sp_data[31:0] :
@@ -146,9 +147,8 @@ end
 									(sp_depth == 8) ? sp_data[63:32] : 32'hFFFFFFFF;
 	
 always @(posedge local_clk) begin
-	sp_dofill_1 <= sp_dofill;
 	
-	sp_depth <= sp_depth - sp_read_num + (sp_dofill ? 4 : 0);
+	sp_depth <= sp_depth - sp_read_num + (sp_dofill ? 4'h4 : 4'h0);
 
 	if(sp_dofill) sp_data <= {sp_data[31:0], ds_out};
 

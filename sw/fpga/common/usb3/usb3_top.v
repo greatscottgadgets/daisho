@@ -286,7 +286,32 @@ usb3_link iu3l (
 	.out_active				( link_out_active ),
 	.out_skp_inhibit		( link_out_skp_inhibit ),
 	.out_skp_defer			( link_out_skp_defer ),
-	.out_stall				( link_out_stall )
+	.out_stall				( link_out_stall ),
+	
+	.sel_endp				( prot_sel_endp ),
+	
+	.buf_in_addr			( prot_buf_in_addr ),
+	.buf_in_data			( prot_buf_in_data ),
+	.buf_in_wren			( prot_buf_in_wren ),
+	.buf_in_ready			( prot_buf_in_ready ),
+	.buf_in_commit			( prot_buf_in_commit ),
+	.buf_in_commit_len		( prot_buf_in_commit_len ),
+	.buf_in_commit_ack		( prot_buf_in_commit_ack ),
+		
+	.buf_out_addr			( prot_buf_out_addr ),
+	.buf_out_q				( prot_buf_out_q ),
+	.buf_out_len			( prot_buf_out_len ),
+	.buf_out_hasdata		( prot_buf_out_hasdata ),
+	.buf_out_arm			( prot_buf_out_arm ),
+	.buf_out_arm_ack		( prot_buf_out_arm_ack ),
+	
+	.endp_mode				( prot_endp_mode ),
+	
+	//.data_toggle_act		( prot_data_toggle_act ),
+	//.data_toggle			( prot_data_toggle ),
+	
+	// current device address, driven by endpoint 0
+	.dev_addr				( prot_dev_addr )
 );
 
 
@@ -297,9 +322,85 @@ usb3_link iu3l (
 //
 ////////////////////////////////////////////////////////////
 
+	//wire	[31:0]	prot_in_data;
+	//wire	[3:0]	prot_in_datak;
+	//wire			prot_in_active;
+	
+	wire	[3:0]	prot_sel_endp;
+	wire	[8:0]	prot_buf_in_addr;
+	wire	[31:0]	prot_buf_in_data;
+	wire			prot_buf_in_wren;
+	wire			prot_buf_in_ready;
+	wire			prot_buf_in_commit;
+	wire	[10:0]	prot_buf_in_commit_len;
+	wire			prot_buf_in_commit_ack;
 
+	wire	[8:0]	prot_buf_out_addr;
+	wire	[31:0]	prot_buf_out_q;
+	wire	[10:0]	prot_buf_out_len;
+	wire			prot_buf_out_hasdata;
+	wire			prot_buf_out_arm;
+	wire			prot_buf_out_arm_ack;
+	wire	[6:0]	prot_dev_addr;
+	wire			prot_configured;
+	wire	[1:0]	prot_endp_mode;
+	wire			prot_data_toggle_act;
+	wire	[1:0]	prot_data_toggle;
 
+usb3_protocol iu3r (
 
+	.local_clk				( local_pclk_half ),
+	.slow_clk				( local_pclk_quarter ),
+	.reset_n				( reset_2 ),
+	
+	// muxed endpoint signals
+	.sel_endp				( prot_sel_endp ),
+	.endp_mode				( prot_endp_mode ),
+	.buf_in_addr			( prot_buf_in_addr ),
+	.buf_in_data			( prot_buf_in_data ),
+	.buf_in_wren			( prot_buf_in_wren ),
+	.buf_in_ready			( prot_buf_in_ready ),
+	.buf_in_commit			( prot_buf_in_commit ),
+	.buf_in_commit_len		( prot_buf_in_commit_len ),
+	.buf_in_commit_ack		( prot_buf_in_commit_ack ),
+	
+	.buf_out_addr			( prot_buf_out_addr ),
+	.buf_out_q				( prot_buf_out_q ),
+	.buf_out_len			( prot_buf_out_len ),
+	.buf_out_hasdata		( prot_buf_out_hasdata ),
+	.buf_out_arm			( prot_buf_out_arm ),
+	.buf_out_arm_ack		( prot_buf_out_arm_ack ),
+	
+	// external interface
+	/*
+	.ext_buf_in_addr		( buf_in_addr ),
+	.ext_buf_in_data		( buf_in_data ),
+	.ext_buf_in_wren		( buf_in_wren ),
+	.ext_buf_in_ready		( buf_in_ready ),
+	.ext_buf_in_commit		( buf_in_commit ),
+	.ext_buf_in_commit_len	( buf_in_commit_len ),
+	.ext_buf_in_commit_ack	( buf_in_commit_ack ),
+	
+	.ext_buf_out_addr		( buf_out_addr ),
+	.ext_buf_out_q			( buf_out_q ),
+	.ext_buf_out_len		( buf_out_len ),
+	.ext_buf_out_hasdata	( buf_out_hasdata ),
+	.ext_buf_out_arm		( buf_out_arm ),
+	.ext_buf_out_arm_ack	( buf_out_arm_ack ),
+*/
+	//.vend_req_act			( vend_req_act ),
+	//.vend_req_request		( vend_req_request ),
+	//.vend_req_val			( vend_req_val ),
+	
+	//.data_toggle_act		( prot_data_toggle_act ),
+	//.data_toggle			( prot_data_toggle ),
+	
+	// tell the rest of the USB controller about what
+	// our current device address is, assigned by host
+	.dev_addr				( prot_dev_addr ),
+	.configured				( prot_configured )	
+);
+	
 
 
 ////////////////////////////////////////////////////////////

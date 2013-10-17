@@ -29,11 +29,11 @@ output	reg		[3:0]	proc_datak,
 output	reg		[31:0]	proc_data,
 output	reg				proc_active,
 
-output	wire	[31:0]	ds_out_raw,
 output	reg				err_skp_unexpected
 );
 	
-	
+`include "usb3_const.vh"
+
 // what this module does is filtering of the input symbol stream 
 // to remove everything that >PHY layer is not interested in.
 //
@@ -66,7 +66,7 @@ output	reg				err_skp_unexpected
 // collapse incoming stream to remove all SKP symbols.
 // these may be sent as 0x3C, 0x3C3C, 0x3C3C3C and so on.
 	
-	reg		[5:0]	skr_status;
+	//reg		[5:0]	skr_status;
 	reg		[31:0]	skr_data;
 	reg		[3:0]	skr_datak; 
 	reg		[2:0]	skr_num; 
@@ -109,14 +109,15 @@ always @(posedge local_clk) begin
 		skr_data 	<= 0;
 		skr_datak	<= 0; end
 	default: begin
-		{skr_status, skr_data, skr_datak} <= 0;
+		//{skr_status, skr_data, skr_datak} <= 0;
+		{skr_data, skr_datak} <= 0;
 		err_skp_unexpected <= 1;
 	end
 	endcase
 
 	// count valid symbols
-	skr_num <= 4 - (skip[3] + skip[2] + skip[1] + skip[0]);
-	skr_status <= raw_status;
+	skr_num <= 3'h4 - (skip[3] + skip[2] + skip[1] + skip[0]);
+	//skr_status <= raw_status;
 	skr_valid <= raw_valid;
 	
 	if(~reset_n) begin

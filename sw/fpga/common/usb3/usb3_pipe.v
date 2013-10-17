@@ -82,9 +82,7 @@ input	wire			lfps_recv_u3,
 
 input	wire			partner_detect,
 output	reg				partner_looking,
-output	reg				partner_detected,
-
-output	reg				err_elastic_underrun
+output	reg				partner_detected
 
 );
 
@@ -209,11 +207,11 @@ parameter	[5:0]	PD_RESET			= 6'd0,
 														proc_data[7:0] == 8'hF7 );
 	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0};
 	
-	wire			sync_byte_3_end = proc_datak[3] && (	proc_data[31:24] == 8'h7C || proc_data[31:24] == 8'hFD );
-	wire			sync_byte_2_end = proc_datak[2] && (	proc_data[23:16] == 8'h7C || proc_data[23:16] == 8'hFD );
-	wire			sync_byte_1_end = proc_datak[1] && (	proc_data[15:8] == 8'h7C || proc_data[15:8] == 8'hFD );
-	wire			sync_byte_0_end = proc_datak[0] && (	proc_data[7:0] == 8'h7C || proc_data[7:0] == 8'hFD );
-	wire	[3:0]	sync_end	= {sync_byte_3_end, sync_byte_2_end, sync_byte_1_end, sync_byte_0_end};
+	//wire			sync_byte_3_end = proc_datak[3] && (	proc_data[31:24] == 8'h7C || proc_data[31:24] == 8'hFD );
+	//wire			sync_byte_2_end = proc_datak[2] && (	proc_data[23:16] == 8'h7C || proc_data[23:16] == 8'hFD );
+	//wire			sync_byte_1_end = proc_datak[1] && (	proc_data[15:8] == 8'h7C || proc_data[15:8] == 8'hFD );
+	//wire			sync_byte_0_end = proc_datak[0] && (	proc_data[7:0] == 8'h7C || proc_data[7:0] == 8'hFD );
+	//wire	[3:0]	sync_end	= {sync_byte_3_end, sync_byte_2_end, sync_byte_1_end, sync_byte_0_end};
 							
 	assign			link_in_data	= sync_out;
 	assign			link_in_datak	= sync_outk;
@@ -242,6 +240,8 @@ always @(posedge local_clk) begin
 	local_tx_data <= 32'h0;
 	local_tx_datak <= 4'b0000;
 	local_tx_active <= 1'b0;
+	local_tx_skp_inhibit <= 0;
+	local_tx_skp_defer <= 0;
 	
 	set_ts1_found <= 0;
 	set_ts2_found <= 0;

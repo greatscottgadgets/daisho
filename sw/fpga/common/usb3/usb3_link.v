@@ -18,6 +18,7 @@ input	wire	[4:0]	ltssm_state,
 input	wire			ltssm_hot_reset,
 output	reg				ltssm_go_recovery,
 
+// pipe interface
 input	wire	[31:0]	in_data,
 input	wire	[3:0]	in_datak,
 input	wire			in_active,
@@ -29,13 +30,38 @@ output	reg				out_skp_inhibit,
 output	reg				out_skp_defer,
 input	wire			out_stall,
 
+// protocol interface
+output	reg		[3:0]	sel_endp,
+
+output	wire	[8:0]	buf_in_addr,
+output	wire	[31:0]	buf_in_data,
+output	wire			buf_in_wren,
+input	wire			buf_in_ready,
+output	reg				buf_in_commit,
+output	reg		[10:0]	buf_in_commit_len,
+input	wire			buf_in_commit_ack,
+
+output	reg		[9:0]	buf_out_addr,
+input	wire	[31:0]	buf_out_q,
+input	wire	[10:0]	buf_out_len,
+input	wire			buf_out_hasdata,
+output	reg				buf_out_arm,
+input	wire			buf_out_arm_ack,
+
+input	wire	[1:0]	endp_mode,
+
+output	reg				data_toggle_act,
+input	wire	[1:0]	data_toggle,
+
+input	wire	[6:0]	dev_addr,
+
+// error outputs
 output	reg				err_lcmd_undefined,
 output	reg				err_lcrd_mismatch,
 output	reg				err_lgood_order,
 output	reg				err_hp_crc,
 output	reg				err_hp_seq,
 output	reg				err_hp_type
-
 
 );
 
@@ -94,9 +120,6 @@ parameter	[4:0]	RD_HP_RESET			= 'd0,
 					RD_HP_IDLE			= 'd1,
 					RD_HP_LMP_0			= 'd4,
 					RD_HP_LMP_1			= 'd5,
-					RD_HP_LMP_2			= 'd6,
-					RD_HP_LMP_3			= 'd7,
-					RD_HP_LMP_4			= 'd8,
 					RD_HP_TP_0			= 'd10,
 					RD_HP_TP_1			= 'd11,
 					RD_HP_TP_2			= 'd12,
@@ -153,12 +176,11 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	reg		[2:0]	tx_hdr_seq_num /* synthesis noprune */;			// Header Sequence Number (0-7)
 	reg		[2:0]	ack_tx_hdr_seq_num /* synthesis noprune */;		// ACK Header Seq Num
 	reg		[2:0]	rx_hdr_seq_num /* synthesis noprune */;			// RX Header Seq Num
-	wire	[2:0]	rx_hdr_seq_num_dec = rx_hdr_seq_num - 1;
+	wire	[2:0]	rx_hdr_seq_num_dec = rx_hdr_seq_num - 3'h1;
 	reg		[2:0]	local_rx_cred_count /* synthesis noprune */;	// Local RX Header Credit Count (0-4)
 	reg		[2:0]	remote_rx_cred_count /* synthesis noprune */;	// Remote RX Header Credit
 	reg		[1:0]	tx_cred_idx /* synthesis noprune */;			
 	reg		[1:0]	rx_cred_idx /* synthesis preserve */;
-	wire	[1:0]	rx_cred_idx_dec = rx_cred_idx - 1;
 	
 	reg		[3:0]	in_header_pkt_queued;
 	reg		[1:0]	in_header_pkt_pick;
@@ -232,8 +254,7 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	reg				tx_queue_lup;
 	reg		[2:0]	tx_queue_lcred;
 	
-	reg				send_port_cap_resp /* synthesis noprune */;
-	reg				send_port_cfg_resp /* synthesis noprune */;
+	reg				send_port_cfg_resp;
 	
 	reg		[9:0]	qc;		// queue counter
 	reg				queue_send_u0_adv;
@@ -274,6 +295,9 @@ always @(posedge local_clk) begin
 
 	crc_hp_rst <= 0;
 	crc_hptx_rst <= 0;
+	
+	buf_in_commit <= 0;
+	buf_out_arm <= 0;
 	
 	`INC(dc);
 	`INC(rc);
@@ -349,7 +373,6 @@ always @(posedge local_clk) begin
 			tx_queue_lup <= 0;
 			tx_queue_lcred <= 0;
 			tx_queue_open <= 1;
-			send_port_cap_resp <= 0;
 			send_port_cfg_resp <= 0;
 			// upon sending of first header packet, the remote rx hdr cred count
 			// should be decremented
@@ -622,7 +645,7 @@ always @(posedge local_clk) begin
 		case(in_header_pkt_work[4:0])
 		LP_TYPE_LMP: rd_hp_state <= RD_HP_LMP_0;
 		LP_TYPE_TP: rd_hp_state <= RD_HP_TP_0;
-		LP_TYPE_DP: rd_hp_state <= RD_HP_2;
+		LP_TYPE_DP: rd_hp_state <= RD_HP_DP_0;
 		LP_TYPE_ITP: rd_hp_state <= RD_HP_2;
 		default: err_hp_type <= 1;
 		endcase
@@ -643,15 +666,18 @@ always @(posedge local_clk) begin
 		LP_LMP_SUB_SETLINK: force_linkpm_accept <= in_header_pkt_work[10];
 		LP_LMP_SUB_U2INACT: T_PORT_U2_TIMEOUT <= in_header_pkt_work[16:9];
 		LP_LMP_SUB_VENDTEST: begin end
-		LP_LMP_SUB_PORTCAP: send_port_cap_resp <= 1;
+		LP_LMP_SUB_PORTCAP: begin end
 		LP_LMP_SUB_PORTCFG: send_port_cfg_resp <= 1;
 		LP_LMP_SUB_PORTCFGRSP:  begin end
 		endcase
 	end
 	RD_HP_LMP_1: begin	end
-	RD_HP_LMP_2: begin	end
-	RD_HP_LMP_3: begin	end
-	RD_HP_LMP_4: begin	end
+	RD_HP_DP_0: begin
+		rd_hp_state <= RD_HP_2;
+		//if( 
+	end
+	RD_HP_DP_1: begin	end
+	RD_HP_DP_2: begin	end
 	RD_HP_TP_0: begin
 	
 	end
@@ -991,10 +1017,10 @@ always @(posedge local_clk) begin
 		err_hp_type <= 0;
 		
 		link_error_count <= 0;
-		
 		ltssm_go_recovery <= 0;
-		
 		queue_send_u0_adv <= 0;
+		
+		sel_endp <= 0;
 	end
 end
 
