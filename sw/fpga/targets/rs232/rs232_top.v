@@ -137,13 +137,6 @@ end
 	wire	[1:0]	dbg_linestate;
 	wire	[10:0]	dbg_frame_num;
 
-	wire	[7:0]	usb_ulpi_d_in;
-	wire	[7:0]	usb_ulpi_d_out;
-	wire			usb_ulpi_d_oe;
-	
-	assign usb_ulpi_d_in = usb_ulpi_d;
-	assign usb_ulpi_d = (usb_ulpi_d_oe ? usb_ulpi_d_out : 8'bZZZZZZZZ);
-
 usb2_top	iu2 (
 	.ext_clk					( clk_50 ),
 	.reset_n					( ~reset ),
@@ -154,9 +147,7 @@ usb2_top	iu2 (
 	.stat_configured		( usb_configured ),
 	
 	.phy_ulpi_clk			( usb_ulpi_clk ),
-	.phy_ulpi_d_in			( usb_ulpi_d_in ),
-	.phy_ulpi_d_out		( usb_ulpi_d_out ),
-	.phy_ulpi_d_oe			( usb_ulpi_d_oe ),
+	.phy_ulpi_d				( usb_ulpi_d ),
 	.phy_ulpi_dir			( usb_ulpi_dir ),
 	.phy_ulpi_stp			( usb_ulpi_stp ),
 	.phy_ulpi_nxt			( usb_ulpi_nxt ),

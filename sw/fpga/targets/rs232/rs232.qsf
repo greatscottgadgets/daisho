@@ -41,7 +41,7 @@
 # ========================
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "12.0 SP2"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:44:15  DECEMBER 28, 2012"
-set_global_assignment -name LAST_QUARTUS_VERSION "12.1 SP1"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output
 
 # Pin & Location Assignments
@@ -409,8 +409,7 @@ set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_protocol.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_packet.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ep.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_ep0.v
-set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_crc16.v
-set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_crc5.v
+set_global_assignment -name VERILOG_FILE ../../common/usb3/usb2_crc.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_ep0in.v
 set_global_assignment -name VERILOG_FILE ../../common/usb3/mf_usb2_descrip.v
