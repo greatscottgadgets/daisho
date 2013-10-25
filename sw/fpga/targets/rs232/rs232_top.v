@@ -142,7 +142,9 @@ usb2_top	iu2 (
 	.reset_n					( ~reset ),
 	.reset_n_out			( usb_reset_n ),
 	
+	.opt_disable_all			( 1'b0 ),
 	.opt_enable_hs			( 1'b1 ),
+	.opt_ignore_vbus			( 1'b0 ),
 	.stat_connected		( usb_connected ),
 	.stat_configured		( usb_configured ),
 	
