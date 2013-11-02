@@ -178,8 +178,8 @@ parameter	[6:0]	LP_LMP_SPEED_ACCEPT		= 'b000000_1;
 parameter	[7:0]	LP_LMP_NUM_HP_4			= 'd4;
 parameter	[1:0]	LP_LMP_DIR_DOWN			= 'b01;
 parameter	[1:0]	LP_LMP_DIR_UP			= 'b10;
-parameter	[0:0]	LP_LMP_OTG_INCAPABLE	= 'b1;
-parameter	[0:0]	LP_LMP_OTG_CAPABLE		= 'b0;
+parameter	[0:0]	LP_LMP_OTG_INCAPABLE	= 'b0;
+parameter	[0:0]	LP_LMP_OTG_CAPABLE		= 'b1;
 parameter	[3:0]	LP_LMP_TIEBREAK			= 'b0000;
 
 parameter	[3:0]	LP_TP_SUB_RSVD			= 'b0000,
@@ -216,6 +216,9 @@ parameter	[3:0]	LP_TP_DN_FUNC_AWAKE		= 'b0001,
 					LP_TP_DN_LAT_TOL_MSG	= 'b0010,
 					LP_TP_DN_BUS_INTER_ADJ	= 'b0011,
 					LP_TP_DN_HOST_ROLE_REQ	= 'b0100;
+					
+parameter	[0:0]	LP_DP_EOB_LPF_NO		= 1'b0,
+					LP_DP_EOB_LPF_YES		= 1'b1;
 
 function	[15:0]	swap16;
 	input	[15:0]	i;

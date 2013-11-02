@@ -259,7 +259,7 @@ end
 //
 	reg		[31:0]	ds_delay;
 	reg		[31:0]	ds_last;
-	wire			ds_suppress = |comma || (scr_defer < 2);
+	wire			ds_suppress = |comma || (scr_defer < 3);
 	wire			ds_enable = enable && !ds_suppress;
 	wire	[31:0]	ds_out_swap;
 	wire	[31:0]	ds_out = ds_enable ? 

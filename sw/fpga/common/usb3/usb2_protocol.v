@@ -82,7 +82,7 @@ output	wire			err_setup_pkt
 	wire	[9:0]	ep0_buf_out_len;
 	wire			ep0_buf_out_hasdata;
 	wire			ep0_buf_out_arm		= 	sel_endp == SEL_ENDP0 ? buf_out_arm : 1'h0;
-	wire	[1:0]	ep0_buf_out_arm_ack;
+	wire			ep0_buf_out_arm_ack;
 	
 	wire	[8:0]	ep1_buf_out_addr	= 	sel_endp == SEL_ENDP1 ? buf_out_addr : 9'h0;
 	wire	[7:0]	ep1_buf_out_q;

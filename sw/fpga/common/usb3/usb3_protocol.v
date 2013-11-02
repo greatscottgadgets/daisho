@@ -49,9 +49,6 @@ output	wire			ext_buf_out_arm_ack,
 
 output	wire	[1:0]	endp_mode,
 
-input	wire			data_toggle_act,
-output	wire	[1:0]	data_toggle,
-
 output	wire			vend_req_act,
 output	wire	[7:0]	vend_req_request,
 output	wire	[15:0]	vend_req_val,
@@ -72,9 +69,7 @@ output	reg				err_undefined
 	wire			ep0_buf_in_commit	= 	sel_endp == SEL_ENDP0 ? buf_in_commit : 'h0;
 	wire	[10:0]	ep0_buf_in_commit_len = sel_endp == SEL_ENDP0 ? buf_in_commit_len : 'h0;
 	wire			ep0_buf_in_commit_ack;
-	wire			ep0_data_toggle_act	= 	sel_endp == SEL_ENDP0 ? data_toggle_act : 'h0;
-	wire	[1:0]	ep0_data_toggle;
-	
+
 	wire	[8:0]	ep0_buf_out_addr	= 	sel_endp == SEL_ENDP0 ? buf_out_addr : 'h0;
 	wire	[31:0]	ep0_buf_out_q;
 	wire	[10:0]	ep0_buf_out_len;
@@ -88,9 +83,7 @@ output	reg				err_undefined
 	wire			ep1_buf_out_hasdata;
 	wire			ep1_buf_out_arm		= 	sel_endp == SEL_ENDP1 ? buf_out_arm : 'h0;
 	wire			ep1_buf_out_arm_ack;
-	wire			ep1_data_toggle_act	= 	sel_endp == SEL_ENDP1 ? data_toggle_act : 'h0;
-	wire	[1:0]	ep1_data_toggle;
-	
+
 	wire	[8:0]	ep2_buf_in_addr		= 	sel_endp == SEL_ENDP2 ? buf_in_addr : 'h0;
 	wire	[31:0]	ep2_buf_in_data		= 	sel_endp == SEL_ENDP2 ? buf_in_data : 'h0;
 	wire			ep2_buf_in_wren		= 	sel_endp == SEL_ENDP2 ? buf_in_wren : 'h0;
@@ -98,8 +91,6 @@ output	reg				err_undefined
 	wire			ep2_buf_in_commit 	= 	sel_endp == SEL_ENDP2 ? buf_in_commit : 'h0;
 	wire	[10:0]	ep2_buf_in_commit_len = sel_endp == SEL_ENDP2 ? buf_in_commit_len : 'h0;
 	wire			ep2_buf_in_commit_ack;
-	wire			ep2_data_toggle_act	= 	sel_endp == SEL_ENDP2 ? data_toggle_act : 'h0;
-	wire	[1:0]	ep2_data_toggle;
 
 	
 	assign			buf_in_ready		= 	sel_endp == SEL_ENDP0 ? ep0_buf_in_ready : 
@@ -123,9 +114,6 @@ output	reg				err_undefined
 	assign			endp_mode			=	sel_endp == SEL_ENDP1 ? EP1_MODE : 
 											sel_endp == SEL_ENDP2 ? EP2_MODE : EP_MODE_CONTROL;
 											
-	assign			data_toggle			= 	sel_endp == SEL_ENDP0 ? ep0_data_toggle : 
-											sel_endp == SEL_ENDP1 ? ep1_data_toggle : 
-											sel_endp == SEL_ENDP2 ? ep2_data_toggle : 'h0;
 											
 	parameter [3:0]	SEL_ENDP0 			= 4'd0,
 					SEL_ENDP1 			= 4'd1,
@@ -151,6 +139,42 @@ always @(posedge local_clk) begin
 
 
 end
+
+////////////////////////////////////////////////////////////
+//
+// ENDPOINT 0 IN/OUT
+//
+////////////////////////////////////////////////////////////
+
+usb3_ep0 iu3ep0 (
+	.slow_clk			( slow_clk ),
+	.local_clk			( local_clk ),
+	.reset_n			( reset_n ),
+
+	.buf_in_addr		( ep0_buf_in_addr ),
+	.buf_in_data		( ep0_buf_in_data ),
+	.buf_in_wren		( ep0_buf_in_wren ),
+	.buf_in_ready		( ep0_buf_in_ready ),
+	.buf_in_commit		( ep0_buf_in_commit ),
+	.buf_in_commit_len 	( ep0_buf_in_commit_len ),
+	.buf_in_commit_ack 	( ep0_buf_in_commit_ack ),
+	
+	.buf_out_addr		( ep0_buf_out_addr ),
+	.buf_out_q			( ep0_buf_out_q ),
+	.buf_out_len		( ep0_buf_out_len ),
+	.buf_out_hasdata	( ep0_buf_out_hasdata ),
+	.buf_out_arm		( ep0_buf_out_arm ),
+	.buf_out_arm_ack	( ep0_buf_out_arm_ack ),
+	
+	.vend_req_act		( vend_req_act ),
+	.vend_req_request	( vend_req_request ),
+	.vend_req_val		( vend_req_val ),
+
+	.dev_addr		( dev_addr ),
+	.configured		( configured ),
+	
+	.err_setup_pkt	( err_setup_pkt )
+);
 
 
 endmodule

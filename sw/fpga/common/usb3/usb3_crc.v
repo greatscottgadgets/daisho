@@ -3,6 +3,7 @@
 // usb 3.0 crc assortment
 //
 // Copyright (C) 2009 OutputLogic.com
+// Reformatting / adaptation by Marshall H., 2013
 // This source file may be used and distributed without restriction
 // provided that this copyright statement is not removed from the file
 // and that any derivative work contains the original copyright notice
@@ -19,15 +20,15 @@
 //
 module usb3_crc_cw(
 
-input 	wire	[10:0] 	data_in,
+input 	wire	[10:0] 	di,
 output 	wire	[4:0] 	crc_out
 
 );
 
 // reverse input
-wire	[10:0]	d = { 	data_in[0], data_in[1], data_in[2], data_in[3], data_in[4], 
-						data_in[5], data_in[6], data_in[7], data_in[8], data_in[9], 
-						data_in[10] };
+wire	[10:0]	d = { 	di[0], di[1], di[2], di[3], di[4], 
+						di[5], di[6], di[7], di[8], di[9], 
+						di[10] };
 wire	[4:0]	c = 5'h1F;						
 wire	[4:0]	q = {	^d[10:9] ^ ^d[6:5] ^ d[3] ^ d[0] ^ c[0] ^ ^c[4:3],
 						d[10] ^ ^d[7:6] ^ d[4] ^ d[1] ^ ^c[1:0] ^ c[4],
@@ -45,7 +46,7 @@ endmodule
 //
 module usb3_crc_hp(
 
-input	wire	[31:0] 	d,
+input	wire	[31:0] 	di,
 input	wire			crc_en,
 output	wire	[15:0] 	crc_out,
 input	wire			rst,
@@ -53,37 +54,38 @@ input	wire			clk
 
 );
 
-reg [15:0]	lfsr_q;
-wire [15:0]	lfsr_c;
-wire [31:0] data_in = {	d[0 ],d[1 ],d[2 ],d[3 ],d[4 ],d[5 ],d[6 ],d[7],
-						d[8 ],d[9 ],d[10],d[11],d[12],d[13],d[14],d[15],
-						d[16],d[17],d[18],d[19],d[20],d[21],d[22],d[23],
-						d[24],d[25],d[26],d[27],d[28],d[29],d[30],d[31]};
-assign crc_out = ~{	lfsr_q[0], lfsr_q[1], lfsr_q[2], lfsr_q[3], lfsr_q[4], lfsr_q[5], lfsr_q[6], lfsr_q[7], 
-					lfsr_q[8], lfsr_q[9], lfsr_q[10],lfsr_q[11],lfsr_q[12],lfsr_q[13],lfsr_q[14],lfsr_q[15]};
+reg [15:0]	q;
+wire [15:0]	c;
+wire [31:0] d = {	di[0 ],di[1 ],di[2 ],di[3 ],di[4 ],di[5 ],di[6 ],di[7],
+					di[8 ],di[9 ],di[10],di[11],di[12],di[13],di[14],di[15],
+					di[16],di[17],di[18],di[19],di[20],di[21],di[22],di[23],
+					di[24],di[25],di[26],di[27],di[28],di[29],di[30],di[31]};
+assign crc_out = ~{	q[0], q[1], q[2], q[3], q[4], q[5], q[6], q[7], 
+					q[8], q[9], q[10],q[11],q[12],q[13],q[14],q[15]};
 
-assign	lfsr_c[0] = lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[7] ^ lfsr_q[10] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[15] ^ data_in[0] ^ data_in[4] ^ data_in[8] ^ data_in[12] ^ data_in[13] ^ data_in[15] ^ data_in[20] ^ data_in[21] ^ data_in[23] ^ data_in[26] ^ data_in[28] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[1] = lfsr_q[0] ^ lfsr_q[4] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[10] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[14] ^ lfsr_q[15] ^ data_in[0] ^ data_in[1] ^ data_in[4] ^ data_in[5] ^ data_in[8] ^ data_in[9] ^ data_in[12] ^ data_in[14] ^ data_in[15] ^ data_in[16] ^ data_in[20] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[2] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[5] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[15] ^ data_in[1] ^ data_in[2] ^ data_in[5] ^ data_in[6] ^ data_in[9] ^ data_in[10] ^ data_in[13] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[21] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[27] ^ data_in[28] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[3] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[14] ^ lfsr_q[15] ^ data_in[0] ^ data_in[2] ^ data_in[3] ^ data_in[4] ^ data_in[6] ^ data_in[7] ^ data_in[8] ^ data_in[10] ^ data_in[11] ^ data_in[12] ^ data_in[13] ^ data_in[14] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[20] ^ data_in[21] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[4] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[15] ^ data_in[1] ^ data_in[3] ^ data_in[4] ^ data_in[5] ^ data_in[7] ^ data_in[8] ^ data_in[9] ^ data_in[11] ^ data_in[12] ^ data_in[13] ^ data_in[14] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[21] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[31];
-assign	lfsr_c[5] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[11] ^ data_in[2] ^ data_in[4] ^ data_in[5] ^ data_in[6] ^ data_in[8] ^ data_in[9] ^ data_in[10] ^ data_in[12] ^ data_in[13] ^ data_in[14] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[27];
-assign	lfsr_c[6] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[11] ^ lfsr_q[12] ^ data_in[3] ^ data_in[5] ^ data_in[6] ^ data_in[7] ^ data_in[9] ^ data_in[10] ^ data_in[11] ^ data_in[13] ^ data_in[14] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[21] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[27] ^ data_in[28];
-assign	lfsr_c[7] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[13] ^ data_in[4] ^ data_in[6] ^ data_in[7] ^ data_in[8] ^ data_in[10] ^ data_in[11] ^ data_in[12] ^ data_in[14] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[21] ^ data_in[22] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[29];
-assign	lfsr_c[8] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[14] ^ data_in[5] ^ data_in[7] ^ data_in[8] ^ data_in[9] ^ data_in[11] ^ data_in[12] ^ data_in[13] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[21] ^ data_in[22] ^ data_in[23] ^ data_in[25] ^ data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[29] ^ data_in[30];
-assign	lfsr_c[9] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[10] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[14] ^ lfsr_q[15] ^ data_in[6] ^ data_in[8] ^ data_in[9] ^ data_in[10] ^ data_in[12] ^ data_in[13] ^ data_in[14] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[21] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[29] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[10] = lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[14] ^ lfsr_q[15] ^ data_in[7] ^ data_in[9] ^ data_in[10] ^ data_in[11] ^ data_in[13] ^ data_in[14] ^ data_in[15] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[21] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[27] ^ data_in[28] ^ data_in[29] ^ data_in[30] ^ data_in[31]; assign   lfsr_c[11] = lfsr_q[0] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[14] ^ lfsr_q[15] ^ data_in[8] ^ data_in[10] ^ data_in[11] ^ data_in[12] ^ data_in[14] ^ data_in[15] ^ data_in[16] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[21] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[28] ^ data_in[29] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[12] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[3] ^ lfsr_q[6] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[14] ^ data_in[0] ^ data_in[4] ^ data_in[8] ^ data_in[9] ^ data_in[11] ^ data_in[16] ^ data_in[17] ^ data_in[19] ^ data_in[22] ^ data_in[24] ^ data_in[25] ^ data_in[27] ^ data_in[28] ^ data_in[30];
-assign	lfsr_c[13] = lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[4] ^ lfsr_q[7] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[15] ^ data_in[1] ^ data_in[5] ^ data_in[9] ^ data_in[10] ^ data_in[12] ^ data_in[17] ^ data_in[18] ^ data_in[20] ^ data_in[23] ^ data_in[25] ^ data_in[26] ^ data_in[28] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[14] = lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[5] ^ lfsr_q[8] ^ lfsr_q[10] ^ lfsr_q[11] ^ lfsr_q[13] ^ lfsr_q[14] ^ data_in[2] ^ data_in[6] ^ data_in[10] ^ data_in[11] ^ data_in[13] ^ data_in[18] ^ data_in[19] ^ data_in[21] ^ data_in[24] ^ data_in[26] ^ data_in[27] ^ data_in[29] ^ data_in[30];
-assign	lfsr_c[15] = lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[6] ^ lfsr_q[9] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[14] ^ lfsr_q[15] ^ data_in[3] ^ data_in[7] ^ data_in[11] ^ data_in[12] ^ data_in[14] ^ data_in[19] ^ data_in[20] ^ data_in[22] ^ data_in[25] ^ data_in[27] ^ data_in[28] ^ data_in[30] ^ data_in[31];
+assign	c[0] = q[4] ^ q[5] ^ q[7] ^ q[10] ^ q[12] ^ q[13] ^ q[15] ^ d[0] ^ d[4] ^ d[8] ^ d[12] ^ d[13] ^ d[15] ^ d[20] ^ d[21] ^ d[23] ^ d[26] ^ d[28] ^ d[29] ^ d[31];
+assign	c[1] = q[0] ^ q[4] ^ q[6] ^ q[7] ^ q[8] ^ q[10] ^ q[11] ^ q[12] ^ q[14] ^ q[15] ^ d[0] ^ d[1] ^ d[4] ^ d[5] ^ d[8] ^ d[9] ^ d[12] ^ d[14] ^ d[15] ^ d[16] ^ d[20] ^ d[22] ^ d[23] ^ d[24] ^ d[26] ^ d[27] ^ d[28] ^ d[30] ^ d[31];
+assign	c[2] = q[0] ^ q[1] ^ q[5] ^ q[7] ^ q[8] ^ q[9] ^ q[11] ^ q[12] ^ q[13] ^ q[15] ^ d[1] ^ d[2] ^ d[5] ^ d[6] ^ d[9] ^ d[10] ^ d[13] ^ d[15] ^ d[16] ^ d[17] ^ d[21] ^ d[23] ^ d[24] ^ d[25] ^ d[27] ^ d[28] ^ d[29] ^ d[31];
+assign	c[3] = q[0] ^ q[1] ^ q[2] ^ q[4] ^ q[5] ^ q[6] ^ q[7] ^ q[8] ^ q[9] ^ q[14] ^ q[15] ^ d[0] ^ d[2] ^ d[3] ^ d[4] ^ d[6] ^ d[7] ^ d[8] ^ d[10] ^ d[11] ^ d[12] ^ d[13] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[18] ^ d[20] ^ d[21] ^ d[22] ^ d[23] ^ d[24] ^ d[25] ^ d[30] ^ d[31];
+assign	c[4] = q[0] ^ q[1] ^ q[2] ^ q[3] ^ q[5] ^ q[6] ^ q[7] ^ q[8] ^ q[9] ^ q[10] ^ q[15] ^ d[1] ^ d[3] ^ d[4] ^ d[5] ^ d[7] ^ d[8] ^ d[9] ^ d[11] ^ d[12] ^ d[13] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[18] ^ d[19] ^ d[21] ^ d[22] ^ d[23] ^ d[24] ^ d[25] ^ d[26] ^ d[31];
+assign	c[5] = q[0] ^ q[1] ^ q[2] ^ q[3] ^ q[4] ^ q[6] ^ q[7] ^ q[8] ^ q[9] ^ q[10] ^ q[11] ^ d[2] ^ d[4] ^ d[5] ^ d[6] ^ d[8] ^ d[9] ^ d[10] ^ d[12] ^ d[13] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[18] ^ d[19] ^ d[20] ^ d[22] ^ d[23] ^ d[24] ^ d[25] ^ d[26] ^ d[27];
+assign	c[6] = q[0] ^ q[1] ^ q[2] ^ q[3] ^ q[4] ^ q[5] ^ q[7] ^ q[8] ^ q[9] ^ q[10] ^ q[11] ^ q[12] ^ d[3] ^ d[5] ^ d[6] ^ d[7] ^ d[9] ^ d[10] ^ d[11] ^ d[13] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[18] ^ d[19] ^ d[20] ^ d[21] ^ d[23] ^ d[24] ^ d[25] ^ d[26] ^ d[27] ^ d[28];
+assign	c[7] = q[0] ^ q[1] ^ q[2] ^ q[3] ^ q[4] ^ q[5] ^ q[6] ^ q[8] ^ q[9] ^ q[10] ^ q[11] ^ q[12] ^ q[13] ^ d[4] ^ d[6] ^ d[7] ^ d[8] ^ d[10] ^ d[11] ^ d[12] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[18] ^ d[19] ^ d[20] ^ d[21] ^ d[22] ^ d[24] ^ d[25] ^ d[26] ^ d[27] ^ d[28] ^ d[29];
+assign	c[8] = q[0] ^ q[1] ^ q[2] ^ q[3] ^ q[4] ^ q[5] ^ q[6] ^ q[7] ^ q[9] ^ q[10] ^ q[11] ^ q[12] ^ q[13] ^ q[14] ^ d[5] ^ d[7] ^ d[8] ^ d[9] ^ d[11] ^ d[12] ^ d[13] ^ d[15] ^ d[16] ^ d[17] ^ d[18] ^ d[19] ^ d[20] ^ d[21] ^ d[22] ^ d[23] ^ d[25] ^ d[26] ^ d[27] ^ d[28] ^ d[29] ^ d[30];
+assign	c[9] = q[0] ^ q[1] ^ q[2] ^ q[3] ^ q[4] ^ q[5] ^ q[6] ^ q[7] ^ q[8] ^ q[10] ^ q[11] ^ q[12] ^ q[13] ^ q[14] ^ q[15] ^ d[6] ^ d[8] ^ d[9] ^ d[10] ^ d[12] ^ d[13] ^ d[14] ^ d[16] ^ d[17] ^ d[18] ^ d[19] ^ d[20] ^ d[21] ^ d[22] ^ d[23] ^ d[24] ^ d[26] ^ d[27] ^ d[28] ^ d[29] ^ d[30] ^ d[31];
+assign	c[10] = q[1] ^ q[2] ^ q[3] ^ q[4] ^ q[5] ^ q[6] ^ q[7] ^ q[8] ^ q[9] ^ q[11] ^ q[12] ^ q[13] ^ q[14] ^ q[15] ^ d[7] ^ d[9] ^ d[10] ^ d[11] ^ d[13] ^ d[14] ^ d[15] ^ d[17] ^ d[18] ^ d[19] ^ d[20] ^ d[21] ^ d[22] ^ d[23] ^ d[24] ^ d[25] ^ d[27] ^ d[28] ^ d[29] ^ d[30] ^ d[31]; 
+assign  c[11] = q[0] ^ q[2] ^ q[3] ^ q[4] ^ q[5] ^ q[6] ^ q[7] ^ q[8] ^ q[9] ^ q[10] ^ q[12] ^ q[13] ^ q[14] ^ q[15] ^ d[8] ^ d[10] ^ d[11] ^ d[12] ^ d[14] ^ d[15] ^ d[16] ^ d[18] ^ d[19] ^ d[20] ^ d[21] ^ d[22] ^ d[23] ^ d[24] ^ d[25] ^ d[26] ^ d[28] ^ d[29] ^ d[30] ^ d[31];
+assign	c[12] = q[0] ^ q[1] ^ q[3] ^ q[6] ^ q[8] ^ q[9] ^ q[11] ^ q[12] ^ q[14] ^ d[0] ^ d[4] ^ d[8] ^ d[9] ^ d[11] ^ d[16] ^ d[17] ^ d[19] ^ d[22] ^ d[24] ^ d[25] ^ d[27] ^ d[28] ^ d[30];
+assign	c[13] = q[1] ^ q[2] ^ q[4] ^ q[7] ^ q[9] ^ q[10] ^ q[12] ^ q[13] ^ q[15] ^ d[1] ^ d[5] ^ d[9] ^ d[10] ^ d[12] ^ d[17] ^ d[18] ^ d[20] ^ d[23] ^ d[25] ^ d[26] ^ d[28] ^ d[29] ^ d[31];
+assign	c[14] = q[2] ^ q[3] ^ q[5] ^ q[8] ^ q[10] ^ q[11] ^ q[13] ^ q[14] ^ d[2] ^ d[6] ^ d[10] ^ d[11] ^ d[13] ^ d[18] ^ d[19] ^ d[21] ^ d[24] ^ d[26] ^ d[27] ^ d[29] ^ d[30];
+assign	c[15] = q[3] ^ q[4] ^ q[6] ^ q[9] ^ q[11] ^ q[12] ^ q[14] ^ q[15] ^ d[3] ^ d[7] ^ d[11] ^ d[12] ^ d[14] ^ d[19] ^ d[20] ^ d[22] ^ d[25] ^ d[27] ^ d[28] ^ d[30] ^ d[31];
 
 always @(posedge clk, posedge rst) begin
 	if(rst) begin
-		lfsr_q <= {16{1'b1}};
+		q <= {16{1'b1}};
 	end
 	else begin
-		lfsr_q <= crc_en ? lfsr_c : lfsr_q;
+		q <= crc_en ? c : q;
 	end
 end
 
@@ -94,9 +96,10 @@ endmodule
 //
 // CRC-32 for Data Packet Payloads
 //
-module usb3_crc_dpp(
+module usb3_crc_dpp32(
 
-input 	wire	[31:0]	d,
+input 	wire	[31:0]	di,
+output	wire	[31:0]	lfsr_q,
 input 	wire			crc_en,
 output	wire	[31:0]	crc_out,
 input	wire			rst,
@@ -104,59 +107,227 @@ input	wire			clk
 
 );
 
-reg [31:0]	lfsr_q;
-wire [31:0]	lfsr_c;
-wire [31:0] data_in = {	d[0 ],d[1 ],d[2 ],d[3 ],d[4 ],d[5 ],d[6 ],d[7],
-						d[8 ],d[9 ],d[10],d[11],d[12],d[13],d[14],d[15],
-						d[16],d[17],d[18],d[19],d[20],d[21],d[22],d[23],
-						d[24],d[25],d[26],d[27],d[28],d[29],d[30],d[31]};
-assign crc_out = ~{	lfsr_q[0],  lfsr_q[1],  lfsr_q[2],  lfsr_q[3],  lfsr_q[4],  lfsr_q[5],  lfsr_q[6],  lfsr_q[7], 
-					lfsr_q[8],  lfsr_q[9],  lfsr_q[10], lfsr_q[11], lfsr_q[12], lfsr_q[13], lfsr_q[14], lfsr_q[15],
-					lfsr_q[16], lfsr_q[17], lfsr_q[18], lfsr_q[19], lfsr_q[20], lfsr_q[21], lfsr_q[22], lfsr_q[23], 
-					lfsr_q[24], lfsr_q[25], lfsr_q[26], lfsr_q[27], lfsr_q[28], lfsr_q[29], lfsr_q[30], lfsr_q[31]};
+reg [31:0] q;
 
-assign	lfsr_c[0] = lfsr_q[0] ^ lfsr_q[6] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[12] ^ lfsr_q[16] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[26] ^ lfsr_q[28] ^ lfsr_q[29] ^ lfsr_q[30] ^ lfsr_q[31] ^ data_in[0] ^ data_in[6] ^ data_in[9] ^ data_in[10] ^ data_in[12] ^ data_in[16] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[28] ^ data_in[29] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[1] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[9] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[16] ^ lfsr_q[17] ^ lfsr_q[24] ^ lfsr_q[27] ^ lfsr_q[28] ^ data_in[0] ^ data_in[1] ^ data_in[6] ^ data_in[7] ^ data_in[9] ^ data_in[11] ^ data_in[12] ^ data_in[13] ^ data_in[16] ^ data_in[17] ^ data_in[24] ^ data_in[27] ^ data_in[28];
-assign	lfsr_c[2] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[13] ^ lfsr_q[14] ^ lfsr_q[16] ^ lfsr_q[17] ^ lfsr_q[18] ^ lfsr_q[24] ^ lfsr_q[26] ^ lfsr_q[30] ^ lfsr_q[31] ^ data_in[0] ^ data_in[1] ^ data_in[2] ^ data_in[6] ^ data_in[7] ^ data_in[8] ^ data_in[9] ^ data_in[13] ^ data_in[14] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[24] ^ data_in[26] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[3] = lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[14] ^ lfsr_q[15] ^ lfsr_q[17] ^ lfsr_q[18] ^ lfsr_q[19] ^ lfsr_q[25] ^ lfsr_q[27] ^ lfsr_q[31] ^ data_in[1] ^ data_in[2] ^ data_in[3] ^ data_in[7] ^ data_in[8] ^ data_in[9] ^ data_in[10] ^ data_in[14] ^ data_in[15] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[25] ^ data_in[27] ^ data_in[31];
-assign	lfsr_c[4] = lfsr_q[0] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[6] ^ lfsr_q[8] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[15] ^ lfsr_q[18] ^ lfsr_q[19] ^ lfsr_q[20] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[29] ^ lfsr_q[30] ^ lfsr_q[31] ^ data_in[0] ^ data_in[2] ^ data_in[3] ^ data_in[4] ^ data_in[6] ^ data_in[8] ^ data_in[11] ^ data_in[12] ^ data_in[15] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[24] ^ data_in[25] ^ data_in[29] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[5] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[10] ^ lfsr_q[13] ^ lfsr_q[19] ^ lfsr_q[20] ^ lfsr_q[21] ^ lfsr_q[24] ^ lfsr_q[28] ^ lfsr_q[29] ^ data_in[0] ^ data_in[1] ^ data_in[3] ^ data_in[4] ^ data_in[5] ^ data_in[6] ^ data_in[7] ^ data_in[10] ^ data_in[13] ^ data_in[19] ^ data_in[20] ^ data_in[21] ^ data_in[24] ^ data_in[28] ^ data_in[29];
-assign	lfsr_c[6] = lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[11] ^ lfsr_q[14] ^ lfsr_q[20] ^ lfsr_q[21] ^ lfsr_q[22] ^ lfsr_q[25] ^ lfsr_q[29] ^ lfsr_q[30] ^ data_in[1] ^ data_in[2] ^ data_in[4] ^ data_in[5] ^ data_in[6] ^ data_in[7] ^ data_in[8] ^ data_in[11] ^ data_in[14] ^ data_in[20] ^ data_in[21] ^ data_in[22] ^ data_in[25] ^ data_in[29] ^ data_in[30];
-assign	lfsr_c[7] = lfsr_q[0] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[5] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[10] ^ lfsr_q[15] ^ lfsr_q[16] ^ lfsr_q[21] ^ lfsr_q[22] ^ lfsr_q[23] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[28] ^ lfsr_q[29] ^ data_in[0] ^ data_in[2] ^ data_in[3] ^ data_in[5] ^ data_in[7] ^ data_in[8] ^ data_in[10] ^ data_in[15] ^ data_in[16] ^ data_in[21] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[28] ^ data_in[29];
-assign	lfsr_c[8] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[8] ^ lfsr_q[10] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[17] ^ lfsr_q[22] ^ lfsr_q[23] ^ lfsr_q[28] ^ lfsr_q[31] ^ data_in[0] ^ data_in[1] ^ data_in[3] ^ data_in[4] ^ data_in[8] ^ data_in[10] ^ data_in[11] ^ data_in[12] ^ data_in[17] ^ data_in[22] ^ data_in[23] ^ data_in[28] ^ data_in[31];
-assign	lfsr_c[9] = lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[9] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[18] ^ lfsr_q[23] ^ lfsr_q[24] ^ lfsr_q[29] ^ data_in[1] ^ data_in[2] ^ data_in[4] ^ data_in[5] ^ data_in[9] ^ data_in[11] ^ data_in[12] ^ data_in[13] ^ data_in[18] ^ data_in[23] ^ data_in[24] ^ data_in[29];
-assign	lfsr_c[10] = lfsr_q[0] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[5] ^ lfsr_q[9] ^ lfsr_q[13] ^ lfsr_q[14] ^ lfsr_q[16] ^ lfsr_q[19] ^ lfsr_q[26] ^ lfsr_q[28] ^ lfsr_q[29] ^ lfsr_q[31] ^ data_in[0] ^ data_in[2] ^ data_in[3] ^ data_in[5] ^ data_in[9] ^ data_in[13] ^ data_in[14] ^ data_in[16] ^ data_in[19] ^ data_in[26] ^ data_in[28] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[11] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[9] ^ lfsr_q[12] ^ lfsr_q[14] ^ lfsr_q[15] ^ lfsr_q[16] ^ lfsr_q[17] ^ lfsr_q[20] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[26] ^ lfsr_q[27] ^ lfsr_q[28] ^ lfsr_q[31] ^ data_in[0] ^ data_in[1] ^ data_in[3] ^ data_in[4] ^ data_in[9] ^ data_in[12] ^ data_in[14] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[20] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[31];
-assign	lfsr_c[12] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[9] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[15] ^ lfsr_q[17] ^ lfsr_q[18] ^ lfsr_q[21] ^ lfsr_q[24] ^ lfsr_q[27] ^ lfsr_q[30] ^ lfsr_q[31] ^ data_in[0] ^ data_in[1] ^ data_in[2] ^ data_in[4] ^ data_in[5] ^ data_in[6] ^ data_in[9] ^ data_in[12] ^ data_in[13] ^ data_in[15] ^ data_in[17] ^ data_in[18] ^ data_in[21] ^ data_in[24] ^ data_in[27] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[13] = lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[10] ^ lfsr_q[13] ^ lfsr_q[14] ^ lfsr_q[16] ^ lfsr_q[18] ^ lfsr_q[19] ^ lfsr_q[22] ^ lfsr_q[25] ^ lfsr_q[28] ^ lfsr_q[31] ^ data_in[1] ^ data_in[2] ^ data_in[3] ^ data_in[5] ^ data_in[6] ^ data_in[7] ^ data_in[10] ^ data_in[13] ^ data_in[14] ^ data_in[16] ^ data_in[18] ^ data_in[19] ^ data_in[22] ^ data_in[25] ^ data_in[28] ^ data_in[31];
-assign	lfsr_c[14] = lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[11] ^ lfsr_q[14] ^ lfsr_q[15] ^ lfsr_q[17] ^ lfsr_q[19] ^ lfsr_q[20] ^ lfsr_q[23] ^ lfsr_q[26] ^ lfsr_q[29] ^ data_in[2] ^ data_in[3] ^ data_in[4] ^ data_in[6] ^ data_in[7] ^ data_in[8] ^ data_in[11] ^ data_in[14] ^ data_in[15] ^ data_in[17] ^ data_in[19] ^ data_in[20] ^ data_in[23] ^ data_in[26] ^ data_in[29];
-assign	lfsr_c[15] = lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[12] ^ lfsr_q[15] ^ lfsr_q[16] ^ lfsr_q[18] ^ lfsr_q[20] ^ lfsr_q[21] ^ lfsr_q[24] ^ lfsr_q[27] ^ lfsr_q[30] ^ data_in[3] ^ data_in[4] ^ data_in[5] ^ data_in[7] ^ data_in[8] ^ data_in[9] ^ data_in[12] ^ data_in[15] ^ data_in[16] ^ data_in[18] ^ data_in[20] ^ data_in[21] ^ data_in[24] ^ data_in[27] ^ data_in[30];
-assign	lfsr_c[16] = lfsr_q[0] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[8] ^ lfsr_q[12] ^ lfsr_q[13] ^ lfsr_q[17] ^ lfsr_q[19] ^ lfsr_q[21] ^ lfsr_q[22] ^ lfsr_q[24] ^ lfsr_q[26] ^ lfsr_q[29] ^ lfsr_q[30] ^ data_in[0] ^ data_in[4] ^ data_in[5] ^ data_in[8] ^ data_in[12] ^ data_in[13] ^ data_in[17] ^ data_in[19] ^ data_in[21] ^ data_in[22] ^ data_in[24] ^ data_in[26] ^ data_in[29] ^ data_in[30];
-assign	lfsr_c[17] = lfsr_q[1] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[9] ^ lfsr_q[13] ^ lfsr_q[14] ^ lfsr_q[18] ^ lfsr_q[20] ^ lfsr_q[22] ^ lfsr_q[23] ^ lfsr_q[25] ^ lfsr_q[27] ^ lfsr_q[30] ^ lfsr_q[31] ^ data_in[1] ^ data_in[5] ^ data_in[6] ^ data_in[9] ^ data_in[13] ^ data_in[14] ^ data_in[18] ^ data_in[20] ^ data_in[22] ^ data_in[23] ^ data_in[25] ^ data_in[27] ^ data_in[30] ^ data_in[31];
-assign	lfsr_c[18] = lfsr_q[2] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[10] ^ lfsr_q[14] ^ lfsr_q[15] ^ lfsr_q[19] ^ lfsr_q[21] ^ lfsr_q[23] ^ lfsr_q[24] ^ lfsr_q[26] ^ lfsr_q[28] ^ lfsr_q[31] ^ data_in[2] ^ data_in[6] ^ data_in[7] ^ data_in[10] ^ data_in[14] ^ data_in[15] ^ data_in[19] ^ data_in[21] ^ data_in[23] ^ data_in[24] ^ data_in[26] ^ data_in[28] ^ data_in[31];
-assign	lfsr_c[19] = lfsr_q[3] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[11] ^ lfsr_q[15] ^ lfsr_q[16] ^ lfsr_q[20] ^ lfsr_q[22] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[27] ^ lfsr_q[29] ^ data_in[3] ^ data_in[7] ^ data_in[8] ^ data_in[11] ^ data_in[15] ^ data_in[16] ^ data_in[20] ^ data_in[22] ^ data_in[24] ^ data_in[25] ^ data_in[27] ^ data_in[29];
-assign	lfsr_c[20] = lfsr_q[4] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[12] ^ lfsr_q[16] ^ lfsr_q[17] ^ lfsr_q[21] ^ lfsr_q[23] ^ lfsr_q[25] ^ lfsr_q[26] ^ lfsr_q[28] ^ lfsr_q[30] ^ data_in[4] ^ data_in[8] ^ data_in[9] ^ data_in[12] ^ data_in[16] ^ data_in[17] ^ data_in[21] ^ data_in[23] ^ data_in[25] ^ data_in[26] ^ data_in[28] ^ data_in[30];
-assign	lfsr_c[21] = lfsr_q[5] ^ lfsr_q[9] ^ lfsr_q[10] ^ lfsr_q[13] ^ lfsr_q[17] ^ lfsr_q[18] ^ lfsr_q[22] ^ lfsr_q[24] ^ lfsr_q[26] ^ lfsr_q[27] ^ lfsr_q[29] ^ lfsr_q[31] ^ data_in[5] ^ data_in[9] ^ data_in[10] ^ data_in[13] ^ data_in[17] ^ data_in[18] ^ data_in[22] ^ data_in[24] ^ data_in[26] ^ data_in[27] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[22] = lfsr_q[0] ^ lfsr_q[9] ^ lfsr_q[11] ^ lfsr_q[12] ^ lfsr_q[14] ^ lfsr_q[16] ^ lfsr_q[18] ^ lfsr_q[19] ^ lfsr_q[23] ^ lfsr_q[24] ^ lfsr_q[26] ^ lfsr_q[27] ^ lfsr_q[29] ^ lfsr_q[31] ^ data_in[0] ^ data_in[9] ^ data_in[11] ^ data_in[12] ^ data_in[14] ^ data_in[16] ^ data_in[18] ^ data_in[19] ^ data_in[23] ^ data_in[24] ^ data_in[26] ^ data_in[27] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[23] = lfsr_q[0] ^ lfsr_q[1] ^ lfsr_q[6] ^ lfsr_q[9] ^ lfsr_q[13] ^ lfsr_q[15] ^ lfsr_q[16] ^ lfsr_q[17] ^ lfsr_q[19] ^ lfsr_q[20] ^ lfsr_q[26] ^ lfsr_q[27] ^ lfsr_q[29] ^ lfsr_q[31] ^ data_in[0] ^ data_in[1] ^ data_in[6] ^ data_in[9] ^ data_in[13] ^ data_in[15] ^ data_in[16] ^ data_in[17] ^ data_in[19] ^ data_in[20] ^ data_in[26] ^ data_in[27] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[24] = lfsr_q[1] ^ lfsr_q[2] ^ lfsr_q[7] ^ lfsr_q[10] ^ lfsr_q[14] ^ lfsr_q[16] ^ lfsr_q[17] ^ lfsr_q[18] ^ lfsr_q[20] ^ lfsr_q[21] ^ lfsr_q[27] ^ lfsr_q[28] ^ lfsr_q[30] ^ data_in[1] ^ data_in[2] ^ data_in[7] ^ data_in[10] ^ data_in[14] ^ data_in[16] ^ data_in[17] ^ data_in[18] ^ data_in[20] ^ data_in[21] ^ data_in[27] ^ data_in[28] ^ data_in[30];
-assign	lfsr_c[25] = lfsr_q[2] ^ lfsr_q[3] ^ lfsr_q[8] ^ lfsr_q[11] ^ lfsr_q[15] ^ lfsr_q[17] ^ lfsr_q[18] ^ lfsr_q[19] ^ lfsr_q[21] ^ lfsr_q[22] ^ lfsr_q[28] ^ lfsr_q[29] ^ lfsr_q[31] ^ data_in[2] ^ data_in[3] ^ data_in[8] ^ data_in[11] ^ data_in[15] ^ data_in[17] ^ data_in[18] ^ data_in[19] ^ data_in[21] ^ data_in[22] ^ data_in[28] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[26] = lfsr_q[0] ^ lfsr_q[3] ^ lfsr_q[4] ^ lfsr_q[6] ^ lfsr_q[10] ^ lfsr_q[18] ^ lfsr_q[19] ^ lfsr_q[20] ^ lfsr_q[22] ^ lfsr_q[23] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[26] ^ lfsr_q[28] ^ lfsr_q[31] ^ data_in[0] ^ data_in[3] ^ data_in[4] ^ data_in[6] ^ data_in[10] ^ data_in[18] ^ data_in[19] ^ data_in[20] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[28] ^ data_in[31];
-assign	lfsr_c[27] = lfsr_q[1] ^ lfsr_q[4] ^ lfsr_q[5] ^ lfsr_q[7] ^ lfsr_q[11] ^ lfsr_q[19] ^ lfsr_q[20] ^ lfsr_q[21] ^ lfsr_q[23] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[26] ^ lfsr_q[27] ^ lfsr_q[29] ^ data_in[1] ^ data_in[4] ^ data_in[5] ^ data_in[7] ^ data_in[11] ^ data_in[19] ^ data_in[20] ^ data_in[21] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[27] ^ data_in[29];
-assign	lfsr_c[28] = lfsr_q[2] ^ lfsr_q[5] ^ lfsr_q[6] ^ lfsr_q[8] ^ lfsr_q[12] ^ lfsr_q[20] ^ lfsr_q[21] ^ lfsr_q[22] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[26] ^ lfsr_q[27] ^ lfsr_q[28] ^ lfsr_q[30] ^ data_in[2] ^ data_in[5] ^ data_in[6] ^ data_in[8] ^ data_in[12] ^ data_in[20] ^ data_in[21] ^ data_in[22] ^ data_in[24] ^ data_in[25] ^ data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[30];
-assign	lfsr_c[29] = lfsr_q[3] ^ lfsr_q[6] ^ lfsr_q[7] ^ lfsr_q[9] ^ lfsr_q[13] ^ lfsr_q[21] ^ lfsr_q[22] ^ lfsr_q[23] ^ lfsr_q[25] ^ lfsr_q[26] ^ lfsr_q[27] ^ lfsr_q[28] ^ lfsr_q[29] ^ lfsr_q[31] ^ data_in[3] ^ data_in[6] ^ data_in[7] ^ data_in[9] ^ data_in[13] ^ data_in[21] ^ data_in[22] ^ data_in[23] ^ data_in[25] ^ data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[29] ^ data_in[31];
-assign	lfsr_c[30] = lfsr_q[4] ^ lfsr_q[7] ^ lfsr_q[8] ^ lfsr_q[10] ^ lfsr_q[14] ^ lfsr_q[22] ^ lfsr_q[23] ^ lfsr_q[24] ^ lfsr_q[26] ^ lfsr_q[27] ^ lfsr_q[28] ^ lfsr_q[29] ^ lfsr_q[30] ^ data_in[4] ^ data_in[7] ^ data_in[8] ^ data_in[10] ^ data_in[14] ^ data_in[22] ^ data_in[23] ^ data_in[24] ^ data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[29] ^ data_in[30];
-assign	lfsr_c[31] = lfsr_q[5] ^ lfsr_q[8] ^ lfsr_q[9] ^ lfsr_q[11] ^ lfsr_q[15] ^ lfsr_q[23] ^ lfsr_q[24] ^ lfsr_q[25] ^ lfsr_q[27] ^ lfsr_q[28] ^ lfsr_q[29] ^ lfsr_q[30] ^ lfsr_q[31] ^ data_in[5] ^ data_in[8] ^ data_in[9] ^ data_in[11] ^ data_in[15] ^ data_in[23] ^ data_in[24] ^ data_in[25] ^ data_in[27] ^ data_in[28] ^ data_in[29] ^ data_in[30] ^ data_in[31];
+wire [31:0]	c;
+wire [31:0] d = {	di[0 ],di[1 ],di[2 ],di[3 ],di[4 ],di[5 ],di[6 ],di[7],
+					di[8 ],di[9 ],di[10],di[11],di[12],di[13],di[14],di[15],
+					di[16],di[17],di[18],di[19],di[20],di[21],di[22],di[23],
+					di[24],di[25],di[26],di[27],di[28],di[29],di[30],di[31]};
+						
+assign lfsr_q = q;
+assign crc_out = ~{	q[0],  q[1],  q[2],  q[3],  q[4],  q[5],  q[6],  q[7], 
+					q[8],  q[9],  q[10], q[11], q[12], q[13], q[14], q[15],
+					q[16], q[17], q[18], q[19], q[20], q[21], q[22], q[23], 
+					q[24], q[25], q[26], q[27], q[28], q[29], q[30], q[31]};
 
+assign	c[0] = q[0] ^ q[6] ^ q[9] ^ q[10] ^ q[12] ^ q[16] ^ q[24] ^ q[25] ^ q[26] ^ q[28] ^ q[29] ^ q[30] ^ q[31] ^ d[0] ^ d[6] ^ d[9] ^ d[10] ^ d[12] ^ d[16] ^ d[24] ^ d[25] ^ d[26] ^ d[28] ^ d[29] ^ d[30] ^ d[31];
+assign	c[1] = q[0] ^ q[1] ^ q[6] ^ q[7] ^ q[9] ^ q[11] ^ q[12] ^ q[13] ^ q[16] ^ q[17] ^ q[24] ^ q[27] ^ q[28] ^ d[0] ^ d[1] ^ d[6] ^ d[7] ^ d[9] ^ d[11] ^ d[12] ^ d[13] ^ d[16] ^ d[17] ^ d[24] ^ d[27] ^ d[28];
+assign	c[2] = q[0] ^ q[1] ^ q[2] ^ q[6] ^ q[7] ^ q[8] ^ q[9] ^ q[13] ^ q[14] ^ q[16] ^ q[17] ^ q[18] ^ q[24] ^ q[26] ^ q[30] ^ q[31] ^ d[0] ^ d[1] ^ d[2] ^ d[6] ^ d[7] ^ d[8] ^ d[9] ^ d[13] ^ d[14] ^ d[16] ^ d[17] ^ d[18] ^ d[24] ^ d[26] ^ d[30] ^ d[31];
+assign	c[3] = q[1] ^ q[2] ^ q[3] ^ q[7] ^ q[8] ^ q[9] ^ q[10] ^ q[14] ^ q[15] ^ q[17] ^ q[18] ^ q[19] ^ q[25] ^ q[27] ^ q[31] ^ d[1] ^ d[2] ^ d[3] ^ d[7] ^ d[8] ^ d[9] ^ d[10] ^ d[14] ^ d[15] ^ d[17] ^ d[18] ^ d[19] ^ d[25] ^ d[27] ^ d[31];
+assign	c[4] = q[0] ^ q[2] ^ q[3] ^ q[4] ^ q[6] ^ q[8] ^ q[11] ^ q[12] ^ q[15] ^ q[18] ^ q[19] ^ q[20] ^ q[24] ^ q[25] ^ q[29] ^ q[30] ^ q[31] ^ d[0] ^ d[2] ^ d[3] ^ d[4] ^ d[6] ^ d[8] ^ d[11] ^ d[12] ^ d[15] ^ d[18] ^ d[19] ^ d[20] ^ d[24] ^ d[25] ^ d[29] ^ d[30] ^ d[31];
+assign	c[5] = q[0] ^ q[1] ^ q[3] ^ q[4] ^ q[5] ^ q[6] ^ q[7] ^ q[10] ^ q[13] ^ q[19] ^ q[20] ^ q[21] ^ q[24] ^ q[28] ^ q[29] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[5] ^ d[6] ^ d[7] ^ d[10] ^ d[13] ^ d[19] ^ d[20] ^ d[21] ^ d[24] ^ d[28] ^ d[29];
+assign	c[6] = q[1] ^ q[2] ^ q[4] ^ q[5] ^ q[6] ^ q[7] ^ q[8] ^ q[11] ^ q[14] ^ q[20] ^ q[21] ^ q[22] ^ q[25] ^ q[29] ^ q[30] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[6] ^ d[7] ^ d[8] ^ d[11] ^ d[14] ^ d[20] ^ d[21] ^ d[22] ^ d[25] ^ d[29] ^ d[30];
+assign	c[7] = q[0] ^ q[2] ^ q[3] ^ q[5] ^ q[7] ^ q[8] ^ q[10] ^ q[15] ^ q[16] ^ q[21] ^ q[22] ^ q[23] ^ q[24] ^ q[25] ^ q[28] ^ q[29] ^ d[0] ^ d[2] ^ d[3] ^ d[5] ^ d[7] ^ d[8] ^ d[10] ^ d[15] ^ d[16] ^ d[21] ^ d[22] ^ d[23] ^ d[24] ^ d[25] ^ d[28] ^ d[29];
+assign	c[8] = q[0] ^ q[1] ^ q[3] ^ q[4] ^ q[8] ^ q[10] ^ q[11] ^ q[12] ^ q[17] ^ q[22] ^ q[23] ^ q[28] ^ q[31] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[8] ^ d[10] ^ d[11] ^ d[12] ^ d[17] ^ d[22] ^ d[23] ^ d[28] ^ d[31];
+assign	c[9] = q[1] ^ q[2] ^ q[4] ^ q[5] ^ q[9] ^ q[11] ^ q[12] ^ q[13] ^ q[18] ^ q[23] ^ q[24] ^ q[29] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[9] ^ d[11] ^ d[12] ^ d[13] ^ d[18] ^ d[23] ^ d[24] ^ d[29];
+assign	c[10] = q[0] ^ q[2] ^ q[3] ^ q[5] ^ q[9] ^ q[13] ^ q[14] ^ q[16] ^ q[19] ^ q[26] ^ q[28] ^ q[29] ^ q[31] ^ d[0] ^ d[2] ^ d[3] ^ d[5] ^ d[9] ^ d[13] ^ d[14] ^ d[16] ^ d[19] ^ d[26] ^ d[28] ^ d[29] ^ d[31];
+assign	c[11] = q[0] ^ q[1] ^ q[3] ^ q[4] ^ q[9] ^ q[12] ^ q[14] ^ q[15] ^ q[16] ^ q[17] ^ q[20] ^ q[24] ^ q[25] ^ q[26] ^ q[27] ^ q[28] ^ q[31] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[9] ^ d[12] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[20] ^ d[24] ^ d[25] ^ d[26] ^ d[27] ^ d[28] ^ d[31];
+assign	c[12] = q[0] ^ q[1] ^ q[2] ^ q[4] ^ q[5] ^ q[6] ^ q[9] ^ q[12] ^ q[13] ^ q[15] ^ q[17] ^ q[18] ^ q[21] ^ q[24] ^ q[27] ^ q[30] ^ q[31] ^ d[0] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[6] ^ d[9] ^ d[12] ^ d[13] ^ d[15] ^ d[17] ^ d[18] ^ d[21] ^ d[24] ^ d[27] ^ d[30] ^ d[31];
+assign	c[13] = q[1] ^ q[2] ^ q[3] ^ q[5] ^ q[6] ^ q[7] ^ q[10] ^ q[13] ^ q[14] ^ q[16] ^ q[18] ^ q[19] ^ q[22] ^ q[25] ^ q[28] ^ q[31] ^ d[1] ^ d[2] ^ d[3] ^ d[5] ^ d[6] ^ d[7] ^ d[10] ^ d[13] ^ d[14] ^ d[16] ^ d[18] ^ d[19] ^ d[22] ^ d[25] ^ d[28] ^ d[31];
+assign	c[14] = q[2] ^ q[3] ^ q[4] ^ q[6] ^ q[7] ^ q[8] ^ q[11] ^ q[14] ^ q[15] ^ q[17] ^ q[19] ^ q[20] ^ q[23] ^ q[26] ^ q[29] ^ d[2] ^ d[3] ^ d[4] ^ d[6] ^ d[7] ^ d[8] ^ d[11] ^ d[14] ^ d[15] ^ d[17] ^ d[19] ^ d[20] ^ d[23] ^ d[26] ^ d[29];
+assign	c[15] = q[3] ^ q[4] ^ q[5] ^ q[7] ^ q[8] ^ q[9] ^ q[12] ^ q[15] ^ q[16] ^ q[18] ^ q[20] ^ q[21] ^ q[24] ^ q[27] ^ q[30] ^ d[3] ^ d[4] ^ d[5] ^ d[7] ^ d[8] ^ d[9] ^ d[12] ^ d[15] ^ d[16] ^ d[18] ^ d[20] ^ d[21] ^ d[24] ^ d[27] ^ d[30];
+assign	c[16] = q[0] ^ q[4] ^ q[5] ^ q[8] ^ q[12] ^ q[13] ^ q[17] ^ q[19] ^ q[21] ^ q[22] ^ q[24] ^ q[26] ^ q[29] ^ q[30] ^ d[0] ^ d[4] ^ d[5] ^ d[8] ^ d[12] ^ d[13] ^ d[17] ^ d[19] ^ d[21] ^ d[22] ^ d[24] ^ d[26] ^ d[29] ^ d[30];
+assign	c[17] = q[1] ^ q[5] ^ q[6] ^ q[9] ^ q[13] ^ q[14] ^ q[18] ^ q[20] ^ q[22] ^ q[23] ^ q[25] ^ q[27] ^ q[30] ^ q[31] ^ d[1] ^ d[5] ^ d[6] ^ d[9] ^ d[13] ^ d[14] ^ d[18] ^ d[20] ^ d[22] ^ d[23] ^ d[25] ^ d[27] ^ d[30] ^ d[31];
+assign	c[18] = q[2] ^ q[6] ^ q[7] ^ q[10] ^ q[14] ^ q[15] ^ q[19] ^ q[21] ^ q[23] ^ q[24] ^ q[26] ^ q[28] ^ q[31] ^ d[2] ^ d[6] ^ d[7] ^ d[10] ^ d[14] ^ d[15] ^ d[19] ^ d[21] ^ d[23] ^ d[24] ^ d[26] ^ d[28] ^ d[31];
+assign	c[19] = q[3] ^ q[7] ^ q[8] ^ q[11] ^ q[15] ^ q[16] ^ q[20] ^ q[22] ^ q[24] ^ q[25] ^ q[27] ^ q[29] ^ d[3] ^ d[7] ^ d[8] ^ d[11] ^ d[15] ^ d[16] ^ d[20] ^ d[22] ^ d[24] ^ d[25] ^ d[27] ^ d[29];
+assign	c[20] = q[4] ^ q[8] ^ q[9] ^ q[12] ^ q[16] ^ q[17] ^ q[21] ^ q[23] ^ q[25] ^ q[26] ^ q[28] ^ q[30] ^ d[4] ^ d[8] ^ d[9] ^ d[12] ^ d[16] ^ d[17] ^ d[21] ^ d[23] ^ d[25] ^ d[26] ^ d[28] ^ d[30];
+assign	c[21] = q[5] ^ q[9] ^ q[10] ^ q[13] ^ q[17] ^ q[18] ^ q[22] ^ q[24] ^ q[26] ^ q[27] ^ q[29] ^ q[31] ^ d[5] ^ d[9] ^ d[10] ^ d[13] ^ d[17] ^ d[18] ^ d[22] ^ d[24] ^ d[26] ^ d[27] ^ d[29] ^ d[31];
+assign	c[22] = q[0] ^ q[9] ^ q[11] ^ q[12] ^ q[14] ^ q[16] ^ q[18] ^ q[19] ^ q[23] ^ q[24] ^ q[26] ^ q[27] ^ q[29] ^ q[31] ^ d[0] ^ d[9] ^ d[11] ^ d[12] ^ d[14] ^ d[16] ^ d[18] ^ d[19] ^ d[23] ^ d[24] ^ d[26] ^ d[27] ^ d[29] ^ d[31];
+assign	c[23] = q[0] ^ q[1] ^ q[6] ^ q[9] ^ q[13] ^ q[15] ^ q[16] ^ q[17] ^ q[19] ^ q[20] ^ q[26] ^ q[27] ^ q[29] ^ q[31] ^ d[0] ^ d[1] ^ d[6] ^ d[9] ^ d[13] ^ d[15] ^ d[16] ^ d[17] ^ d[19] ^ d[20] ^ d[26] ^ d[27] ^ d[29] ^ d[31];
+assign	c[24] = q[1] ^ q[2] ^ q[7] ^ q[10] ^ q[14] ^ q[16] ^ q[17] ^ q[18] ^ q[20] ^ q[21] ^ q[27] ^ q[28] ^ q[30] ^ d[1] ^ d[2] ^ d[7] ^ d[10] ^ d[14] ^ d[16] ^ d[17] ^ d[18] ^ d[20] ^ d[21] ^ d[27] ^ d[28] ^ d[30];
+assign	c[25] = q[2] ^ q[3] ^ q[8] ^ q[11] ^ q[15] ^ q[17] ^ q[18] ^ q[19] ^ q[21] ^ q[22] ^ q[28] ^ q[29] ^ q[31] ^ d[2] ^ d[3] ^ d[8] ^ d[11] ^ d[15] ^ d[17] ^ d[18] ^ d[19] ^ d[21] ^ d[22] ^ d[28] ^ d[29] ^ d[31];
+assign	c[26] = q[0] ^ q[3] ^ q[4] ^ q[6] ^ q[10] ^ q[18] ^ q[19] ^ q[20] ^ q[22] ^ q[23] ^ q[24] ^ q[25] ^ q[26] ^ q[28] ^ q[31] ^ d[0] ^ d[3] ^ d[4] ^ d[6] ^ d[10] ^ d[18] ^ d[19] ^ d[20] ^ d[22] ^ d[23] ^ d[24] ^ d[25] ^ d[26] ^ d[28] ^ d[31];
+assign	c[27] = q[1] ^ q[4] ^ q[5] ^ q[7] ^ q[11] ^ q[19] ^ q[20] ^ q[21] ^ q[23] ^ q[24] ^ q[25] ^ q[26] ^ q[27] ^ q[29] ^ d[1] ^ d[4] ^ d[5] ^ d[7] ^ d[11] ^ d[19] ^ d[20] ^ d[21] ^ d[23] ^ d[24] ^ d[25] ^ d[26] ^ d[27] ^ d[29];
+assign	c[28] = q[2] ^ q[5] ^ q[6] ^ q[8] ^ q[12] ^ q[20] ^ q[21] ^ q[22] ^ q[24] ^ q[25] ^ q[26] ^ q[27] ^ q[28] ^ q[30] ^ d[2] ^ d[5] ^ d[6] ^ d[8] ^ d[12] ^ d[20] ^ d[21] ^ d[22] ^ d[24] ^ d[25] ^ d[26] ^ d[27] ^ d[28] ^ d[30];
+assign	c[29] = q[3] ^ q[6] ^ q[7] ^ q[9] ^ q[13] ^ q[21] ^ q[22] ^ q[23] ^ q[25] ^ q[26] ^ q[27] ^ q[28] ^ q[29] ^ q[31] ^ d[3] ^ d[6] ^ d[7] ^ d[9] ^ d[13] ^ d[21] ^ d[22] ^ d[23] ^ d[25] ^ d[26] ^ d[27] ^ d[28] ^ d[29] ^ d[31];
+assign	c[30] = q[4] ^ q[7] ^ q[8] ^ q[10] ^ q[14] ^ q[22] ^ q[23] ^ q[24] ^ q[26] ^ q[27] ^ q[28] ^ q[29] ^ q[30] ^ d[4] ^ d[7] ^ d[8] ^ d[10] ^ d[14] ^ d[22] ^ d[23] ^ d[24] ^ d[26] ^ d[27] ^ d[28] ^ d[29] ^ d[30];
+assign	c[31] = q[5] ^ q[8] ^ q[9] ^ q[11] ^ q[15] ^ q[23] ^ q[24] ^ q[25] ^ q[27] ^ q[28] ^ q[29] ^ q[30] ^ q[31] ^ d[5] ^ d[8] ^ d[9] ^ d[11] ^ d[15] ^ d[23] ^ d[24] ^ d[25] ^ d[27] ^ d[28] ^ d[29] ^ d[30] ^ d[31];
 
 always @(posedge clk, posedge rst) begin
 	if(rst) begin
-		lfsr_q <= {32{1'b1}};
+		q <= {32{1'b1}};
 	end
 	else begin
-		lfsr_q <= crc_en ? lfsr_c : lfsr_q;
+		q <= crc_en ? c : q;
 	end
 end
 
 endmodule
 
+
+
+module usb3_crc_dpp24 (
+
+input 	wire	[23:0]	di,
+input	wire	[31:0]	q,
+output	wire	[31:0]	crc_out,
+input	wire			rst,
+input	wire			clk
+
+);
+
+wire [31:0]	c;
+wire [23:0] d = {	di[0 ],di[1 ],di[2 ],di[3 ],di[4 ],di[5 ],di[6 ],di[7],
+					di[8 ],di[9 ],di[10],di[11],di[12],di[13],di[14],di[15],
+					di[16],di[17],di[18],di[19],di[20],di[21],di[22],di[23]};
+
+assign crc_out = ~{	c[0],  c[1],  c[2],  c[3],  c[4],  c[5],  c[6],  c[7], 
+					c[8],  c[9],  c[10], c[11], c[12], c[13], c[14], c[15],
+					c[16], c[17], c[18], c[19], c[20], c[21], c[22], c[23], 
+					c[24], c[25], c[26], c[27], c[28], c[29], c[30], c[31]};
+
+assign	c[0] = q[8] ^ q[14] ^ q[17] ^ q[18] ^ q[20] ^ q[24] ^ d[0] ^ d[6] ^ d[9] ^ d[10] ^ d[12] ^ d[16];
+assign	c[1] = q[8] ^ q[9] ^ q[14] ^ q[15] ^ q[17] ^ q[19] ^ q[20] ^ q[21] ^ q[24] ^ q[25] ^ d[0] ^ d[1] ^ d[6] ^ d[7] ^ d[9] ^ d[11] ^ d[12] ^ d[13] ^ d[16] ^ d[17];
+assign	c[2] = q[8] ^ q[9] ^ q[10] ^ q[14] ^ q[15] ^ q[16] ^ q[17] ^ q[21] ^ q[22] ^ q[24] ^ q[25] ^ q[26] ^ d[0] ^ d[1] ^ d[2] ^ d[6] ^ d[7] ^ d[8] ^ d[9] ^ d[13] ^ d[14] ^ d[16] ^ d[17] ^ d[18];
+assign	c[3] = q[9] ^ q[10] ^ q[11] ^ q[15] ^ q[16] ^ q[17] ^ q[18] ^ q[22] ^ q[23] ^ q[25] ^ q[26] ^ q[27] ^ d[1] ^ d[2] ^ d[3] ^ d[7] ^ d[8] ^ d[9] ^ d[10] ^ d[14] ^ d[15] ^ d[17] ^ d[18] ^ d[19];
+assign	c[4] = q[8] ^ q[10] ^ q[11] ^ q[12] ^ q[14] ^ q[16] ^ q[19] ^ q[20] ^ q[23] ^ q[26] ^ q[27] ^ q[28] ^ d[0] ^ d[2] ^ d[3] ^ d[4] ^ d[6] ^ d[8] ^ d[11] ^ d[12] ^ d[15] ^ d[18] ^ d[19] ^ d[20];
+assign	c[5] = q[8] ^ q[9] ^ q[11] ^ q[12] ^ q[13] ^ q[14] ^ q[15] ^ q[18] ^ q[21] ^ q[27] ^ q[28] ^ q[29] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[5] ^ d[6] ^ d[7] ^ d[10] ^ d[13] ^ d[19] ^ d[20] ^ d[21];
+assign	c[6] = q[9] ^ q[10] ^ q[12] ^ q[13] ^ q[14] ^ q[15] ^ q[16] ^ q[19] ^ q[22] ^ q[28] ^ q[29] ^ q[30] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[6] ^ d[7] ^ d[8] ^ d[11] ^ d[14] ^ d[20] ^ d[21] ^ d[22];
+assign	c[7] = q[8] ^ q[10] ^ q[11] ^ q[13] ^ q[15] ^ q[16] ^ q[18] ^ q[23] ^ q[24] ^ q[29] ^ q[30] ^ q[31] ^ d[0] ^ d[2] ^ d[3] ^ d[5] ^ d[7] ^ d[8] ^ d[10] ^ d[15] ^ d[16] ^ d[21] ^ d[22] ^ d[23];
+assign	c[8] = q[8] ^ q[9] ^ q[11] ^ q[12] ^ q[16] ^ q[18] ^ q[19] ^ q[20] ^ q[25] ^ q[30] ^ q[31] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[8] ^ d[10] ^ d[11] ^ d[12] ^ d[17] ^ d[22] ^ d[23];
+assign	c[9] = q[9] ^ q[10] ^ q[12] ^ q[13] ^ q[17] ^ q[19] ^ q[20] ^ q[21] ^ q[26] ^ q[31] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[9] ^ d[11] ^ d[12] ^ d[13] ^ d[18] ^ d[23];
+assign	c[10] = q[8] ^ q[10] ^ q[11] ^ q[13] ^ q[17] ^ q[21] ^ q[22] ^ q[24] ^ q[27] ^ d[0] ^ d[2] ^ d[3] ^ d[5] ^ d[9] ^ d[13] ^ d[14] ^ d[16] ^ d[19];
+assign	c[11] = q[8] ^ q[9] ^ q[11] ^ q[12] ^ q[17] ^ q[20] ^ q[22] ^ q[23] ^ q[24] ^ q[25] ^ q[28] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[9] ^ d[12] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[20];
+assign	c[12] = q[8] ^ q[9] ^ q[10] ^ q[12] ^ q[13] ^ q[14] ^ q[17] ^ q[20] ^ q[21] ^ q[23] ^ q[25] ^ q[26] ^ q[29] ^ d[0] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[6] ^ d[9] ^ d[12] ^ d[13] ^ d[15] ^ d[17] ^ d[18] ^ d[21];
+assign	c[13] = q[9] ^ q[10] ^ q[11] ^ q[13] ^ q[14] ^ q[15] ^ q[18] ^ q[21] ^ q[22] ^ q[24] ^ q[26] ^ q[27] ^ q[30] ^ d[1] ^ d[2] ^ d[3] ^ d[5] ^ d[6] ^ d[7] ^ d[10] ^ d[13] ^ d[14] ^ d[16] ^ d[18] ^ d[19] ^ d[22];
+assign	c[14] = q[10] ^ q[11] ^ q[12] ^ q[14] ^ q[15] ^ q[16] ^ q[19] ^ q[22] ^ q[23] ^ q[25] ^ q[27] ^ q[28] ^ q[31] ^ d[2] ^ d[3] ^ d[4] ^ d[6] ^ d[7] ^ d[8] ^ d[11] ^ d[14] ^ d[15] ^ d[17] ^ d[19] ^ d[20] ^ d[23];
+assign	c[15] = q[11] ^ q[12] ^ q[13] ^ q[15] ^ q[16] ^ q[17] ^ q[20] ^ q[23] ^ q[24] ^ q[26] ^ q[28] ^ q[29] ^ d[3] ^ d[4] ^ d[5] ^ d[7] ^ d[8] ^ d[9] ^ d[12] ^ d[15] ^ d[16] ^ d[18] ^ d[20] ^ d[21];
+assign	c[16] = q[8] ^ q[12] ^ q[13] ^ q[16] ^ q[20] ^ q[21] ^ q[25] ^ q[27] ^ q[29] ^ q[30] ^ d[0] ^ d[4] ^ d[5] ^ d[8] ^ d[12] ^ d[13] ^ d[17] ^ d[19] ^ d[21] ^ d[22];
+assign	c[17] = q[9] ^ q[13] ^ q[14] ^ q[17] ^ q[21] ^ q[22] ^ q[26] ^ q[28] ^ q[30] ^ q[31] ^ d[1] ^ d[5] ^ d[6] ^ d[9] ^ d[13] ^ d[14] ^ d[18] ^ d[20] ^ d[22] ^ d[23];
+assign	c[18] = q[10] ^ q[14] ^ q[15] ^ q[18] ^ q[22] ^ q[23] ^ q[27] ^ q[29] ^ q[31] ^ d[2] ^ d[6] ^ d[7] ^ d[10] ^ d[14] ^ d[15] ^ d[19] ^ d[21] ^ d[23];
+assign	c[19] = q[11] ^ q[15] ^ q[16] ^ q[19] ^ q[23] ^ q[24] ^ q[28] ^ q[30] ^ d[3] ^ d[7] ^ d[8] ^ d[11] ^ d[15] ^ d[16] ^ d[20] ^ d[22];
+assign	c[20] = q[12] ^ q[16] ^ q[17] ^ q[20] ^ q[24] ^ q[25] ^ q[29] ^ q[31] ^ d[4] ^ d[8] ^ d[9] ^ d[12] ^ d[16] ^ d[17] ^ d[21] ^ d[23];
+assign	c[21] = q[13] ^ q[17] ^ q[18] ^ q[21] ^ q[25] ^ q[26] ^ q[30] ^ d[5] ^ d[9] ^ d[10] ^ d[13] ^ d[17] ^ d[18] ^ d[22];
+assign	c[22] = q[8] ^ q[17] ^ q[19] ^ q[20] ^ q[22] ^ q[24] ^ q[26] ^ q[27] ^ q[31] ^ d[0] ^ d[9] ^ d[11] ^ d[12] ^ d[14] ^ d[16] ^ d[18] ^ d[19] ^ d[23];
+assign	c[23] = q[8] ^ q[9] ^ q[14] ^ q[17] ^ q[21] ^ q[23] ^ q[24] ^ q[25] ^ q[27] ^ q[28] ^ d[0] ^ d[1] ^ d[6] ^ d[9] ^ d[13] ^ d[15] ^ d[16] ^ d[17] ^ d[19] ^ d[20];
+assign	c[24] = q[0] ^ q[9] ^ q[10] ^ q[15] ^ q[18] ^ q[22] ^ q[24] ^ q[25] ^ q[26] ^ q[28] ^ q[29] ^ d[1] ^ d[2] ^ d[7] ^ d[10] ^ d[14] ^ d[16] ^ d[17] ^ d[18] ^ d[20] ^ d[21];
+assign	c[25] = q[1] ^ q[10] ^ q[11] ^ q[16] ^ q[19] ^ q[23] ^ q[25] ^ q[26] ^ q[27] ^ q[29] ^ q[30] ^ d[2] ^ d[3] ^ d[8] ^ d[11] ^ d[15] ^ d[17] ^ d[18] ^ d[19] ^ d[21] ^ d[22];
+assign	c[26] = q[2] ^ q[8] ^ q[11] ^ q[12] ^ q[14] ^ q[18] ^ q[26] ^ q[27] ^ q[28] ^ q[30] ^ q[31] ^ d[0] ^ d[3] ^ d[4] ^ d[6] ^ d[10] ^ d[18] ^ d[19] ^ d[20] ^ d[22] ^ d[23];
+assign	c[27] = q[3] ^ q[9] ^ q[12] ^ q[13] ^ q[15] ^ q[19] ^ q[27] ^ q[28] ^ q[29] ^ q[31] ^ d[1] ^ d[4] ^ d[5] ^ d[7] ^ d[11] ^ d[19] ^ d[20] ^ d[21] ^ d[23];
+assign	c[28] = q[4] ^ q[10] ^ q[13] ^ q[14] ^ q[16] ^ q[20] ^ q[28] ^ q[29] ^ q[30] ^ d[2] ^ d[5] ^ d[6] ^ d[8] ^ d[12] ^ d[20] ^ d[21] ^ d[22];
+assign	c[29] = q[5] ^ q[11] ^ q[14] ^ q[15] ^ q[17] ^ q[21] ^ q[29] ^ q[30] ^ q[31] ^ d[3] ^ d[6] ^ d[7] ^ d[9] ^ d[13] ^ d[21] ^ d[22] ^ d[23];
+assign	c[30] = q[6] ^ q[12] ^ q[15] ^ q[16] ^ q[18] ^ q[22] ^ q[30] ^ q[31] ^ d[4] ^ d[7] ^ d[8] ^ d[10] ^ d[14] ^ d[22] ^ d[23];
+assign	c[31] = q[7] ^ q[13] ^ q[16] ^ q[17] ^ q[19] ^ q[23] ^ q[31] ^ d[5] ^ d[8] ^ d[9] ^ d[11] ^ d[15] ^ d[23];
+
+endmodule
+
+
+
+module usb3_crc_dpp16 (
+
+input 	wire	[15:0]	di,
+input	wire	[31:0]	q,
+output	wire	[31:0]	crc_out,
+input	wire			rst,
+input	wire			clk
+
+);
+
+wire [31:0]	c;
+wire [15:0] d = {	di[0 ],di[1 ],di[2 ],di[3 ],di[4 ],di[5 ],di[6 ],di[7],
+					di[8 ],di[9 ],di[10],di[11],di[12],di[13],di[14],di[15]};
+						
+assign crc_out = ~{	c[0],  c[1],  c[2],  c[3],  c[4],  c[5],  c[6],  c[7], 
+					c[8],  c[9],  c[10], c[11], c[12], c[13], c[14], c[15],
+					c[16], c[17], c[18], c[19], c[20], c[21], c[22], c[23], 
+					c[24], c[25], c[26], c[27], c[28], c[29], c[30], c[31]};
+
+assign	c[0] = q[16] ^ q[22] ^ q[25] ^ q[26] ^ q[28] ^ d[0] ^ d[6] ^ d[9] ^ d[10] ^ d[12];
+assign	c[1] = q[16] ^ q[17] ^ q[22] ^ q[23] ^ q[25] ^ q[27] ^ q[28] ^ q[29] ^ d[0] ^ d[1] ^ d[6] ^ d[7] ^ d[9] ^ d[11] ^ d[12] ^ d[13];
+assign	c[2] = q[16] ^ q[17] ^ q[18] ^ q[22] ^ q[23] ^ q[24] ^ q[25] ^ q[29] ^ q[30] ^ d[0] ^ d[1] ^ d[2] ^ d[6] ^ d[7] ^ d[8] ^ d[9] ^ d[13] ^ d[14];
+assign	c[3] = q[17] ^ q[18] ^ q[19] ^ q[23] ^ q[24] ^ q[25] ^ q[26] ^ q[30] ^ q[31] ^ d[1] ^ d[2] ^ d[3] ^ d[7] ^ d[8] ^ d[9] ^ d[10] ^ d[14] ^ d[15];
+assign	c[4] = q[16] ^ q[18] ^ q[19] ^ q[20] ^ q[22] ^ q[24] ^ q[27] ^ q[28] ^ q[31] ^ d[0] ^ d[2] ^ d[3] ^ d[4] ^ d[6] ^ d[8] ^ d[11] ^ d[12] ^ d[15];
+assign	c[5] = q[16] ^ q[17] ^ q[19] ^ q[20] ^ q[21] ^ q[22] ^ q[23] ^ q[26] ^ q[29] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[5] ^ d[6] ^ d[7] ^ d[10] ^ d[13];
+assign	c[6] = q[17] ^ q[18] ^ q[20] ^ q[21] ^ q[22] ^ q[23] ^ q[24] ^ q[27] ^ q[30] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[6] ^ d[7] ^ d[8] ^ d[11] ^ d[14];
+assign	c[7] = q[16] ^ q[18] ^ q[19] ^ q[21] ^ q[23] ^ q[24] ^ q[26] ^ q[31] ^ d[0] ^ d[2] ^ d[3] ^ d[5] ^ d[7] ^ d[8] ^ d[10] ^ d[15];
+assign	c[8] = q[16] ^ q[17] ^ q[19] ^ q[20] ^ q[24] ^ q[26] ^ q[27] ^ q[28] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[8] ^ d[10] ^ d[11] ^ d[12];
+assign	c[9] = q[17] ^ q[18] ^ q[20] ^ q[21] ^ q[25] ^ q[27] ^ q[28] ^ q[29] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[9] ^ d[11] ^ d[12] ^ d[13];
+assign	c[10] = q[16] ^ q[18] ^ q[19] ^ q[21] ^ q[25] ^ q[29] ^ q[30] ^ d[0] ^ d[2] ^ d[3] ^ d[5] ^ d[9] ^ d[13] ^ d[14];
+assign	c[11] = q[16] ^ q[17] ^ q[19] ^ q[20] ^ q[25] ^ q[28] ^ q[30] ^ q[31] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[9] ^ d[12] ^ d[14] ^ d[15];
+assign	c[12] = q[16] ^ q[17] ^ q[18] ^ q[20] ^ q[21] ^ q[22] ^ q[25] ^ q[28] ^ q[29] ^ q[31] ^ d[0] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[6] ^ d[9] ^ d[12] ^ d[13] ^ d[15];
+assign	c[13] = q[17] ^ q[18] ^ q[19] ^ q[21] ^ q[22] ^ q[23] ^ q[26] ^ q[29] ^ q[30] ^ d[1] ^ d[2] ^ d[3] ^ d[5] ^ d[6] ^ d[7] ^ d[10] ^ d[13] ^ d[14];
+assign	c[14] = q[18] ^ q[19] ^ q[20] ^ q[22] ^ q[23] ^ q[24] ^ q[27] ^ q[30] ^ q[31] ^ d[2] ^ d[3] ^ d[4] ^ d[6] ^ d[7] ^ d[8] ^ d[11] ^ d[14] ^ d[15];
+assign	c[15] = q[19] ^ q[20] ^ q[21] ^ q[23] ^ q[24] ^ q[25] ^ q[28] ^ q[31] ^ d[3] ^ d[4] ^ d[5] ^ d[7] ^ d[8] ^ d[9] ^ d[12] ^ d[15];
+assign	c[16] = q[0] ^ q[16] ^ q[20] ^ q[21] ^ q[24] ^ q[28] ^ q[29] ^ d[0] ^ d[4] ^ d[5] ^ d[8] ^ d[12] ^ d[13];
+assign	c[17] = q[1] ^ q[17] ^ q[21] ^ q[22] ^ q[25] ^ q[29] ^ q[30] ^ d[1] ^ d[5] ^ d[6] ^ d[9] ^ d[13] ^ d[14];
+assign	c[18] = q[2] ^ q[18] ^ q[22] ^ q[23] ^ q[26] ^ q[30] ^ q[31] ^ d[2] ^ d[6] ^ d[7] ^ d[10] ^ d[14] ^ d[15];
+assign	c[19] = q[3] ^ q[19] ^ q[23] ^ q[24] ^ q[27] ^ q[31] ^ d[3] ^ d[7] ^ d[8] ^ d[11] ^ d[15];
+assign	c[20] = q[4] ^ q[20] ^ q[24] ^ q[25] ^ q[28] ^ d[4] ^ d[8] ^ d[9] ^ d[12];
+assign	c[21] = q[5] ^ q[21] ^ q[25] ^ q[26] ^ q[29] ^ d[5] ^ d[9] ^ d[10] ^ d[13];
+assign	c[22] = q[6] ^ q[16] ^ q[25] ^ q[27] ^ q[28] ^ q[30] ^ d[0] ^ d[9] ^ d[11] ^ d[12] ^ d[14];
+assign	c[23] = q[7] ^ q[16] ^ q[17] ^ q[22] ^ q[25] ^ q[29] ^ q[31] ^ d[0] ^ d[1] ^ d[6] ^ d[9] ^ d[13] ^ d[15];
+assign	c[24] = q[8] ^ q[17] ^ q[18] ^ q[23] ^ q[26] ^ q[30] ^ d[1] ^ d[2] ^ d[7] ^ d[10] ^ d[14];
+assign	c[25] = q[9] ^ q[18] ^ q[19] ^ q[24] ^ q[27] ^ q[31] ^ d[2] ^ d[3] ^ d[8] ^ d[11] ^ d[15];
+assign	c[26] = q[10] ^ q[16] ^ q[19] ^ q[20] ^ q[22] ^ q[26] ^ d[0] ^ d[3] ^ d[4] ^ d[6] ^ d[10];
+assign	c[27] = q[11] ^ q[17] ^ q[20] ^ q[21] ^ q[23] ^ q[27] ^ d[1] ^ d[4] ^ d[5] ^ d[7] ^ d[11];
+assign	c[28] = q[12] ^ q[18] ^ q[21] ^ q[22] ^ q[24] ^ q[28] ^ d[2] ^ d[5] ^ d[6] ^ d[8] ^ d[12];
+assign	c[29] = q[13] ^ q[19] ^ q[22] ^ q[23] ^ q[25] ^ q[29] ^ d[3] ^ d[6] ^ d[7] ^ d[9] ^ d[13];
+assign	c[30] = q[14] ^ q[20] ^ q[23] ^ q[24] ^ q[26] ^ q[30] ^ d[4] ^ d[7] ^ d[8] ^ d[10] ^ d[14];
+assign	c[31] = q[15] ^ q[21] ^ q[24] ^ q[25] ^ q[27] ^ q[31] ^ d[5] ^ d[8] ^ d[9] ^ d[11] ^ d[15];
+
+endmodule
+
+
+module usb3_crc_dpp8 (
+
+input 	wire	[7:0]	di,
+input	wire	[31:0]	q,
+output	wire	[31:0]	crc_out,
+input	wire			rst,
+input	wire			clk
+
+);
+
+wire [31:0]	c;
+wire [7:0] d = {	di[0 ],di[1 ],di[2 ],di[3 ],di[4 ],di[5 ],di[6 ],di[7]};
+						
+assign crc_out = ~{	c[0],  c[1],  c[2],  c[3],  c[4],  c[5],  c[6],  c[7], 
+					c[8],  c[9],  c[10], c[11], c[12], c[13], c[14], c[15],
+					c[16], c[17], c[18], c[19], c[20], c[21], c[22], c[23], 
+					c[24], c[25], c[26], c[27], c[28], c[29], c[30], c[31]};
+
+assign	c[0] = q[24] ^ q[30] ^ d[0] ^ d[6];
+assign	c[1] = q[24] ^ q[25] ^ q[30] ^ q[31] ^ d[0] ^ d[1] ^ d[6] ^ d[7];
+assign	c[2] = q[24] ^ q[25] ^ q[26] ^ q[30] ^ q[31] ^ d[0] ^ d[1] ^ d[2] ^ d[6] ^ d[7];
+assign	c[3] = q[25] ^ q[26] ^ q[27] ^ q[31] ^ d[1] ^ d[2] ^ d[3] ^ d[7];
+assign	c[4] = q[24] ^ q[26] ^ q[27] ^ q[28] ^ q[30] ^ d[0] ^ d[2] ^ d[3] ^ d[4] ^ d[6];
+assign	c[5] = q[24] ^ q[25] ^ q[27] ^ q[28] ^ q[29] ^ q[30] ^ q[31] ^ d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[5] ^ d[6] ^ d[7];
+assign	c[6] = q[25] ^ q[26] ^ q[28] ^ q[29] ^ q[30] ^ q[31] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[6] ^ d[7];
+assign	c[7] = q[24] ^ q[26] ^ q[27] ^ q[29] ^ q[31] ^ d[0] ^ d[2] ^ d[3] ^ d[5] ^ d[7];
+assign	c[8] = q[0] ^ q[24] ^ q[25] ^ q[27] ^ q[28] ^ d[0] ^ d[1] ^ d[3] ^ d[4];
+assign	c[9] = q[1] ^ q[25] ^ q[26] ^ q[28] ^ q[29] ^ d[1] ^ d[2] ^ d[4] ^ d[5];
+assign	c[10] = q[2] ^ q[24] ^ q[26] ^ q[27] ^ q[29] ^ d[0] ^ d[2] ^ d[3] ^ d[5];
+assign	c[11] = q[3] ^ q[24] ^ q[25] ^ q[27] ^ q[28] ^ d[0] ^ d[1] ^ d[3] ^ d[4];
+assign	c[12] = q[4] ^ q[24] ^ q[25] ^ q[26] ^ q[28] ^ q[29] ^ q[30] ^ d[0] ^ d[1] ^ d[2] ^ d[4] ^ d[5] ^ d[6];
+assign	c[13] = q[5] ^ q[25] ^ q[26] ^ q[27] ^ q[29] ^ q[30] ^ q[31] ^ d[1] ^ d[2] ^ d[3] ^ d[5] ^ d[6] ^ d[7];
+assign	c[14] = q[6] ^ q[26] ^ q[27] ^ q[28] ^ q[30] ^ q[31] ^ d[2] ^ d[3] ^ d[4] ^ d[6] ^ d[7];
+assign	c[15] = q[7] ^ q[27] ^ q[28] ^ q[29] ^ q[31] ^ d[3] ^ d[4] ^ d[5] ^ d[7];
+assign	c[16] = q[8] ^ q[24] ^ q[28] ^ q[29] ^ d[0] ^ d[4] ^ d[5];
+assign	c[17] = q[9] ^ q[25] ^ q[29] ^ q[30] ^ d[1] ^ d[5] ^ d[6];
+assign	c[18] = q[10] ^ q[26] ^ q[30] ^ q[31] ^ d[2] ^ d[6] ^ d[7];
+assign	c[19] = q[11] ^ q[27] ^ q[31] ^ d[3] ^ d[7];
+assign	c[20] = q[12] ^ q[28] ^ d[4];
+assign	c[21] = q[13] ^ q[29] ^ d[5];
+assign	c[22] = q[14] ^ q[24] ^ d[0];
+assign	c[23] = q[15] ^ q[24] ^ q[25] ^ q[30] ^ d[0] ^ d[1] ^ d[6];
+assign	c[24] = q[16] ^ q[25] ^ q[26] ^ q[31] ^ d[1] ^ d[2] ^ d[7];
+assign	c[25] = q[17] ^ q[26] ^ q[27] ^ d[2] ^ d[3];
+assign	c[26] = q[18] ^ q[24] ^ q[27] ^ q[28] ^ q[30] ^ d[0] ^ d[3] ^ d[4] ^ d[6];
+assign	c[27] = q[19] ^ q[25] ^ q[28] ^ q[29] ^ q[31] ^ d[1] ^ d[4] ^ d[5] ^ d[7];
+assign	c[28] = q[20] ^ q[26] ^ q[29] ^ q[30] ^ d[2] ^ d[5] ^ d[6];
+assign	c[29] = q[21] ^ q[27] ^ q[30] ^ q[31] ^ d[3] ^ d[6] ^ d[7];
+assign	c[30] = q[22] ^ q[28] ^ q[31] ^ d[4] ^ d[7];
+assign	c[31] = q[23] ^ q[29] ^ d[5];
+	
+endmodule

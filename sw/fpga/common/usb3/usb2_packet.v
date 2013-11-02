@@ -340,7 +340,7 @@ always @(posedge phy_clk) begin
 				end else if(pid_last == PID_TOKEN_OUT || pid_last == PID_TOKEN_SETUP) begin
 					state <= ST_DATA_CRC;
 					buf_in_commit <= 1;
-					buf_in_commit_len <= bc-2;
+					buf_in_commit_len <= bc-10'h2;
 				end
 			end
 		end
@@ -445,7 +445,7 @@ always @(posedge phy_clk) begin
 			
 		if(buf_out_hasdata) begin
 			// good to go
-			bc <= buf_out_len + 2;
+			bc <= buf_out_len + 11'h2;
 			// note: needs more work to allow
 			// multipart transfers not exactly 512 bytes
 			//bytes_tosend <= buf_out_len;

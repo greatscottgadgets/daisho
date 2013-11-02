@@ -15,7 +15,7 @@ DATA_RADIX=HEX;
 CONTENT BEGIN
 	0	   : 12;	-- Size of Descriptor (18 bytes)
 	1	   : 01;	-- Device Descriptor (0x01)
-	2	   : 00;	-- [LSB] USB Specification Number which device complies to
+	2	   : 10;	-- [LSB] USB Specification Number which device complies to
 	3	   : 02;	-- [MSB] USB Specification Number which device complies to
 	4	   : FF;	-- Class Code 
 	5	   : FF;	-- Subclass

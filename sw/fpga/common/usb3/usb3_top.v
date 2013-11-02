@@ -73,7 +73,7 @@ end
 	parameter		PIPE_16BIT			= 1'b0;		// sdr 16bit pipe interface
 	// strap pins
 	assign			phy_rx_elecidle 	= reset_2 ? 1'bZ : XTAL_DIS;
-	assign			phy_tx_margin	  	= reset_2 ? mux_tx_margin  : SSC_DIS;	
+	assign			phy_tx_margin	  	= reset_2 ? mux_tx_margin  : SSC_EN;	
 	assign			phy_phy_status 		= reset_2 ? 1'bZ : PIPE_16BIT;
 		
 	
@@ -289,6 +289,7 @@ usb3_link iu3l (
 	.out_stall				( link_out_stall ),
 	
 	.sel_endp				( prot_sel_endp ),
+	.endp_mode				( prot_endp_mode ),
 	
 	.buf_in_addr			( prot_buf_in_addr ),
 	.buf_in_data			( prot_buf_in_data ),
@@ -304,11 +305,6 @@ usb3_link iu3l (
 	.buf_out_hasdata		( prot_buf_out_hasdata ),
 	.buf_out_arm			( prot_buf_out_arm ),
 	.buf_out_arm_ack		( prot_buf_out_arm_ack ),
-	
-	.endp_mode				( prot_endp_mode ),
-	
-	//.data_toggle_act		( prot_data_toggle_act ),
-	//.data_toggle			( prot_data_toggle ),
 	
 	// current device address, driven by endpoint 0
 	.dev_addr				( prot_dev_addr )
@@ -327,6 +323,7 @@ usb3_link iu3l (
 	//wire			prot_in_active;
 	
 	wire	[3:0]	prot_sel_endp;
+	wire	[1:0]	prot_endp_mode;
 	wire	[8:0]	prot_buf_in_addr;
 	wire	[31:0]	prot_buf_in_data;
 	wire			prot_buf_in_wren;
@@ -343,9 +340,7 @@ usb3_link iu3l (
 	wire			prot_buf_out_arm_ack;
 	wire	[6:0]	prot_dev_addr;
 	wire			prot_configured;
-	wire	[1:0]	prot_endp_mode;
-	wire			prot_data_toggle_act;
-	wire	[1:0]	prot_data_toggle;
+	
 
 usb3_protocol iu3r (
 

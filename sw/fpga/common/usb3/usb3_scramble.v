@@ -65,6 +65,8 @@ always @(posedge local_clk) begin
 	comma_1 <= comma;
 	enable_1 <= enable;
 	
+	raw_stall <= 0;
+	
 	// increment symbol sent counter
 	if(enable_1) `INC(symbols_since_skp);
 	if(insert_skp) begin
@@ -78,7 +80,7 @@ always @(posedge local_clk) begin
 		if(num_queued_skp == 0 || pl_active) begin
 			// don't inject SKP
 			ac_data[31:24] <= pl_datak[3] ? pl_data[31:24] : pl_data[31:24] ^ sp_pick32[31:24];
-			ac_data[24:16] <= pl_datak[2] ? pl_data[24:16] : pl_data[24:16] ^ sp_pick32[24:16];
+			ac_data[23:16] <= pl_datak[2] ? pl_data[23:16] : pl_data[23:16] ^ sp_pick32[23:16];
 			ac_data[15:8 ] <= pl_datak[1] ? pl_data[15:8 ] : pl_data[15:8 ] ^ sp_pick32[15:8 ];
 			ac_data[ 7:0 ] <= pl_datak[0] ? pl_data[ 7:0 ] : pl_data[ 7:0 ] ^ sp_pick32[ 7:0 ];
 			ac_datak <= pl_datak;

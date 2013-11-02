@@ -195,16 +195,16 @@ parameter	[5:0]	PD_RESET			= 6'd0,
 	// k-symbols within a received word.
 	wire			sync_byte_3 = proc_datak[3] && (	proc_data[31:24] == 8'h5C || proc_data[31:24] == 8'hBC ||
 														proc_data[31:24] == 8'hFB || proc_data[31:24] == 8'hFE ||
-														proc_data[31:24] == 8'hF7 );
+														proc_data[31:24] == 8'hFD || proc_data[31:24] == 8'hF7 );
 	wire			sync_byte_2 = proc_datak[2] && (	proc_data[23:16] == 8'h5C || proc_data[23:16] == 8'hBC ||
 														proc_data[23:16] == 8'hFB || proc_data[23:16] == 8'hFE ||
-														proc_data[23:16] == 8'hF7 );
+														proc_data[23:16] == 8'hFD || proc_data[23:16] == 8'hF7 );
 	wire			sync_byte_1 = proc_datak[1] && (	proc_data[15:8] == 8'h5C || proc_data[15:8] == 8'hBC ||
 														proc_data[15:8] == 8'hFB || proc_data[15:8] == 8'hFE ||
-														proc_data[15:8] == 8'hF7 );
+														proc_data[15:8] == 8'hFD || proc_data[15:8] == 8'hF7 );
 	wire			sync_byte_0 = proc_datak[0] && (	proc_data[7:0] == 8'h5C || proc_data[7:0] == 8'hBC ||
 														proc_data[7:0] == 8'hFB || proc_data[7:0] == 8'hFE ||
-														proc_data[7:0] == 8'hF7 );
+														proc_data[7:0] == 8'hFD || proc_data[7:0] == 8'hF7 );
 	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0};
 	
 	//wire			sync_byte_3_end = proc_datak[3] && (	proc_data[31:24] == 8'h7C || proc_data[31:24] == 8'hFD );
@@ -225,9 +225,9 @@ always @(posedge local_clk) begin
 	ltssm_power_go_1 <= ltssm_power_go;
 	
 	// counters
-	dc <= dc + 1'b1;
-	rdc <= rdc + 1'b1;
-	swc <= swc + 1'b1;
+	`INC(dc);
+	`INC(rdc);
+	`INC(swc);
 	`INC(rxdet_timeout);
 	
 	phy_tx_elecidle_local <= 1'b1;
@@ -306,6 +306,7 @@ always @(posedge local_clk) begin
 	ST_IDLE: begin
 		// disable scrambling
 		s_enable <= 0;	
+		ds_enable <= 0;
 		// squash idle in P0
 		if(phy_power_down == POWERDOWN_0) phy_tx_elecidle_local <= 1'b0;
 		
@@ -371,7 +372,6 @@ always @(posedge local_clk) begin
 				state <= ST_TRAIN_RXEQ_1;
 			end
 		end
-		
 		// allow for swapped lane polarity on receiver
 		// if RX polarity was swapped, then D10.2 (0x4A) in TSEQ would appear as D21.5 (0xB5).
 		if(pipe_rx_data == 32'hB5B5B5B5) phy_rx_polarity <= 1;

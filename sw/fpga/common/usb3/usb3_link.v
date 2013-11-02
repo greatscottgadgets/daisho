@@ -32,10 +32,12 @@ input	wire			out_stall,
 
 // protocol interface
 output	reg		[3:0]	sel_endp,
+input	wire	[1:0]	endp_mode,
+input	wire	[6:0]	dev_addr,
 
-output	wire	[8:0]	buf_in_addr,
-output	wire	[31:0]	buf_in_data,
-output	wire			buf_in_wren,
+output	reg		[8:0]	buf_in_addr,
+output	reg		[31:0]	buf_in_data,
+output	reg				buf_in_wren,
 input	wire			buf_in_ready,
 output	reg				buf_in_commit,
 output	reg		[10:0]	buf_in_commit_len,
@@ -48,20 +50,14 @@ input	wire			buf_out_hasdata,
 output	reg				buf_out_arm,
 input	wire			buf_out_arm_ack,
 
-input	wire	[1:0]	endp_mode,
-
-output	reg				data_toggle_act,
-input	wire	[1:0]	data_toggle,
-
-input	wire	[6:0]	dev_addr,
-
 // error outputs
 output	reg				err_lcmd_undefined,
 output	reg				err_lcrd_mismatch,
 output	reg				err_lgood_order,
 output	reg				err_hp_crc,
 output	reg				err_hp_seq,
-output	reg				err_hp_type
+output	reg				err_hp_type,
+output	reg				err_dpp_len_mismatch
 
 );
 
@@ -85,12 +81,45 @@ parameter	[5:0]	LINK_RECV_RESET		= 'd0,
 					LINK_RECV_IDLE		= 'd2,
 					LINK_RECV_HP_0		= 'd4,
 					LINK_RECV_HP_1		= 'd5,
+					LINK_RECV_DP_0		= 'd7,
+					LINK_RECV_DP_1		= 'd8,
+					LINK_RECV_DP_2		= 'd9,
+					LINK_RECV_DP_3		= 'd10,
 					LINK_RECV_CMDW_0		= 'd15,
 					LINK_RECV_CMDW_1		= 'd16,
 					LINK_RECV_CMDW_2		= 'd17,
 					LINK_RECV_CMDW_3		= 'd18,
 					LINK_RECV_CMDW_4		= 'd19;
 
+	reg		[5:0]	read_dpp_state;
+parameter	[5:0]	READ_DPP_RESET		= 'd0,
+					READ_DPP_IDLE		= 'd1,
+					READ_DPP_0			= 'd2,
+					READ_DPP_1			= 'd3,
+					READ_DPP_2			= 'd4,
+					READ_DPP_3			= 'd5,
+					READ_DPP_4			= 'd6,
+					READ_DPP_5			= 'd7,
+					READ_DPP_6			= 'd8;
+					
+	reg		[5:0]	write_dpp_state;
+parameter	[5:0]	WRITE_DPP_RESET		= 'd0,
+					WRITE_DPP_IDLE		= 'd1,
+					WRITE_DPP_0			= 'd2,
+					WRITE_DPP_1			= 'd3,
+					WRITE_DPP_2			= 'd4,
+					WRITE_DPP_3			= 'd5,
+					WRITE_DPP_4			= 'd6,
+					WRITE_DPP_5			= 'd7,
+					WRITE_DPP_6			= 'd8,
+					WRITE_DPP_7			= 'd9,
+					WRITE_DPP_8			= 'd10,
+					WRITE_DPP_9			= 'd11,
+					WRITE_DPP_10		= 'd12,
+					WRITE_DPP_11		= 'd13,
+					WRITE_DPP_12		= 'd14,
+					WRITE_DPP_13		= 'd15;
+					
 	reg		[5:0]	check_hp_state;
 parameter	[5:0]	CHECK_HP_RESET		= 'd0,
 					CHECK_HP_IDLE		= 'd1,
@@ -113,7 +142,8 @@ parameter	[5:0]	LINK_QUEUE_RESET		= 'd0,
 					LINK_QUEUE_HDR_SEQ_AD	= 'd4,
 					LINK_QUEUE_PORTCAP		= 'd6,
 					LINK_QUEUE_PORTCFGRSP	= 'd8,
-					LINK_QUEUE_HP_3		= 'd10;
+					LINK_QUEUE_ACK			= 'd10,
+					LINK_QUEUE_DP			= 'd12;
 						
 	reg		[4:0]	rd_hp_state;
 parameter	[4:0]	RD_HP_RESET			= 'd0,
@@ -132,7 +162,9 @@ parameter	[4:0]	RD_HP_RESET			= 'd0,
 					RD_HP_0				= 'd20,
 					RD_HP_1				= 'd21,
 					RD_HP_2				= 'd22,
-					RD_HP_3				= 'd22;
+					RD_HP_3				= 'd22,
+					RD_HP_ITP_0			= 'd23,
+					RD_HP_ITP_1			= 'd24;
 					
 					
 	reg		[3:0]	rd_lcmd_state;
@@ -181,6 +213,8 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	reg		[2:0]	remote_rx_cred_count /* synthesis noprune */;	// Remote RX Header Credit
 	reg		[1:0]	tx_cred_idx /* synthesis noprune */;			
 	reg		[1:0]	rx_cred_idx /* synthesis preserve */;
+	reg		[26:0]	itp_value;
+	wire	[13:0]	bus_interval_count = itp_value[13:0];
 	
 	reg		[3:0]	in_header_pkt_queued;
 	reg		[1:0]	in_header_pkt_pick;
@@ -198,14 +232,11 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	reg		[95:0]	out_header_pkt_b;
 	reg		[95:0]	out_header_pkt_c;
 	reg		[95:0]	out_header_pkt_d;
-	reg		[31:0]	out_data_delay;
-	reg		[3:0]	out_datak_delay;
-	reg				out_active_delay;
+	
+	reg		[31:0]	out_data_1, out_data_2;
+	reg		[3:0]	out_datak_1, out_datak_2;
+	reg				out_active_1, out_active_2;
 	reg		[10:0]	out_header_cw;
-	//reg				in_header_cred_a;
-	//reg				in_header_cred_b;
-	//reg				in_header_cred_c;
-	//reg				in_header_cred_d;
 	
 	reg		[15:0]	in_header_cw_a;
 	reg		[15:0]	in_header_cw_b;
@@ -213,10 +244,6 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	reg		[15:0]	in_header_cw_d;
 	reg		[15:0]	in_header_cw;
 	wire	[2:0]	in_header_seq = in_header_cw[2:0];
-	//reg		[15:0]	in_header_crc_a;
-	//reg		[15:0]	in_header_crc_b;
-	//reg		[15:0]	in_header_crc_c;
-	//reg		[15:0]	in_header_crc_d;
 	reg		[15:0]	in_header_crc;
 	reg		[1:0]	in_header_err_count;
 	
@@ -227,7 +254,42 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	reg				in_link_command_act /* synthesis noprune */;
 
 	wire	[31:0]	in_data_swap16 = {in_data[23:16], in_data[31:24], in_data[7:0], in_data[15:8]};
-
+	wire	[31:0]	in_data_swap32 = {in_data[7:0], in_data[15:8], in_data[23:16], in_data[31:24]};
+	reg		[31:0]	in_data_1;
+	reg		[31:0]	in_data_2;
+	reg		[31:0]	in_data_3;
+	reg		[31:0]	in_data_4;
+	reg		[31:0]	in_data_5;
+	reg		[31:0]	in_data_6 /* synthesis noprune */;
+	reg		[3:0]	in_datak_1;
+	reg		[3:0]	in_datak_2;
+	reg		[3:0]	in_datak_3;
+	reg		[3:0]	in_datak_4;
+	reg		[3:0]	in_datak_5;
+	reg		[3:0]	in_datak_6 /* synthesis noprune */;
+	
+	reg		[15:0]	in_dpp_length /* synthesis noprune */;
+	reg		[15:0]	in_dpp_length_expect /* synthesis noprune */;
+	reg				in_dpp_setup /* synthesis noprune */;
+	reg		[4:0]	in_dpp_seq /* synthesis noprune */;
+	reg				in_dpp_expect /* synthesis noprune */;
+	reg				in_dpp_wasready;
+	reg		[31:0]	in_dpp_crc32 /* synthesis noprune */;
+	
+	reg		[15:0]	out_dpp_length /* synthesis noprune */;
+	reg		[15:0]	out_dpp_length_remain /* synthesis noprune */;
+	reg		[15:0]	out_dpp_length_remain_1 /* synthesis noprune */;
+	reg				out_dpp_setup /* synthesis noprune */;
+	reg		[4:0]	out_dpp_seq /* synthesis noprune */;
+	reg		[95:0]	out_dpp_end;
+	reg		[11:0]	out_dpp_endk;
+	
+	//reg				out_dpp_expect /* synthesis noprune */;
+	//reg				out_dpp_wasready;
+	//reg		[31:0]	in_dpp_crc32 /* synthesis noprune */;
+	
+	reg				buf_in_ready_1;
+	
 	reg		[10:0]	rx_lcmd  /* synthesis noprune */;
 	reg				rx_lcmd_act  /* synthesis noprune */;
 	
@@ -239,6 +301,8 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	reg		[10:0]	tx_lcmd_latch;
 	reg				tx_lcmd_done  /* synthesis noprune */;
 	
+	reg		[6:0]	local_dev_addr;
+	
 	reg		[31:0]	tx_hp_word_0;
 	reg		[31:0]	tx_hp_word_1;
 	reg		[31:0]	tx_hp_word_2;	
@@ -249,10 +313,15 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	wire			tx_hp_do = (tx_hp_act & ~tx_hp_act_1) | tx_hp_queue;
 	reg		[10:0]	tx_hp_latch;
 	reg				tx_hp_done  /* synthesis noprune */;
+	reg				tx_hp_dph;
 	
 	reg				tx_queue_open;
 	reg				tx_queue_lup;
-	reg		[2:0]	tx_queue_lcred;
+	reg		[2:0]	tx_queue_lcred;	// {strobe, CRD_A-CRD_D[1:0]
+	reg		[6:0]	tx_queue_ack;	// {err, strobe, NumP[4:0]
+	reg		[6:0]	tx_queue_erdy;	// {err, strobe, NumP[4:0]
+	reg				tx_queue_nrdy;
+	reg				tx_queue_dpp;
 	
 	reg				send_port_cfg_resp;
 	
@@ -275,11 +344,19 @@ always @(posedge local_clk) begin
 	out_skp_defer <= 0;
 	
 	out_data <= 32'h0;
+	out_data_1 <= 32'h0;
+	out_data_2 <= 32'h0;
 	out_datak <= 4'b0000;
-	out_data_delay <= 32'h0;
-	out_datak_delay <= 4'b0000;
+	out_datak_1 <= 4'b0000;
+	out_datak_2 <= 4'b0000;
 	out_active <= 1'b0;
-	out_active_delay <= 1'b0;
+	out_active_1 <= 1'b0;
+	out_active_2 <= 1'b0;
+	
+	{in_data_6, in_data_5,  in_data_4,  in_data_3,  in_data_2,  in_data_1}  <= 
+		{in_data_5, in_data_4,  in_data_3,  in_data_2,  in_data_1,  in_data};
+	{in_datak_6, in_datak_5, in_datak_4, in_datak_3, in_datak_2, in_datak_1} <= 
+		{in_datak_5, in_datak_4, in_datak_3, in_datak_2, in_datak_1, in_datak};
 	
 	tx_lcmd_act <= 0;
 	tx_lcmd_act_1 <= tx_lcmd_act;
@@ -293,11 +370,15 @@ always @(posedge local_clk) begin
 	
 	rx_lcmd_act <= 0;
 
-	crc_hp_rst <= 0;
+	crc_hprx_rst <= 0;
 	crc_hptx_rst <= 0;
+	crc_dpprx_rst <= 0;
+	crc_dpptx_rst <= 0;
 	
+	buf_in_wren <= 0;
 	buf_in_commit <= 0;
 	buf_out_arm <= 0;
+	buf_in_ready_1 <= buf_in_ready;
 	
 	`INC(dc);
 	`INC(rc);
@@ -334,11 +415,6 @@ always @(posedge local_clk) begin
 				rx_hdr_seq_num <= 0;
 				local_rx_cred_count <= 4;
 				
-				//in_header_cred_a <= 0;
-				//in_header_cred_b <= 0;
-				//in_header_cred_c <= 0;
-				//in_header_cred_d <= 0;
-				
 				// clear HP parse queue
 				in_header_pkt_queued <= 4'b0000;
 				// flush all header packet buffers
@@ -372,12 +448,16 @@ always @(posedge local_clk) begin
 			force_linkpm_accept <= 0;
 			tx_queue_lup <= 0;
 			tx_queue_lcred <= 0;
+			tx_queue_ack <= 0;
+			tx_queue_nrdy <= 0;
+			tx_queue_dpp <= 0;
 			tx_queue_open <= 1;
 			send_port_cfg_resp <= 0;
 			// upon sending of first header packet, the remote rx hdr cred count
 			// should be decremented
 			out_header_first_since_entry <= 1;
 			in_header_err_count <= 0;
+			in_dpp_expect <= 0;
 		end
 		LT_RECOVERY_IDLE: begin
 			// we can de-assert the recovery signal now
@@ -449,14 +529,15 @@ always @(posedge local_clk) begin
 		if({in_data, in_datak} == {32'hFBFBFBF7, 4'b1111}) begin
 			// HPSTART ordered set
 			rc <= 0;
-			crc_hp_rst <= 1;
+			crc_hprx_rst <= 1;
 			recv_state <= LINK_RECV_HP_0;
 		end
 		
 		if({in_data, in_datak} == {32'h5C5C5CF7, 4'b1111}) begin
 			// Data Packet
 			rc <= 0;
-			//recv_state <= LINK_RECV_HP_0;
+			crc_dpprx_rst <= 1;
+			recv_state <= LINK_RECV_DP_0;
 		end
 		end
 	end
@@ -470,7 +551,7 @@ always @(posedge local_clk) begin
 			2: in_header_pkt_c <= {swap32(in_data), in_header_pkt_c[95:32]};
 			3: in_header_pkt_d <= {swap32(in_data), in_header_pkt_d[95:32]};
 			endcase
-			crc_hp_in <= swap32(in_data);
+			crc_hprx_in <= swap32(in_data);
 			if(rc == 2) recv_state <= LINK_RECV_HP_1;
 		end else rc <= rc;
 	end
@@ -494,6 +575,15 @@ always @(posedge local_clk) begin
 			in_link_command_act <= 1;
 			recv_state <= LINK_RECV_IDLE;
 		end
+	end
+	LINK_RECV_DP_0: begin
+		if(in_active) begin
+			
+			//crc_dpp_in <= swap32(in_data);
+			//if(rc == 2) recv_state <= LINK_RECV_HP_1;
+			//if({in_data, in_datak} == {32'hFDFDFDF7, 4'b1111}) 
+			recv_state <= LINK_RECV_IDLE;
+		end else rc <= rc;
 	end
 	endcase
 	
@@ -544,6 +634,72 @@ always @(posedge local_clk) begin
 	endcase
 	
 	//
+	// Read Data Packet Payload FSM
+	//
+	case(read_dpp_state)
+	READ_DPP_RESET: read_dpp_state <= READ_DPP_IDLE;
+	READ_DPP_IDLE: begin
+		read_dpp_state <= READ_DPP_0;
+		buf_in_wren <= 0;
+	end
+	READ_DPP_0: begin
+		// next cycle, DPP will appear on pipelined in_data
+		buf_in_addr <= -1;
+		buf_in_wren <= 0;
+		in_dpp_length <= 0;
+		in_dpp_wasready <= 0;
+		buf_in_commit_len <= in_dpp_length_expect;
+		crc_dpprx_rst <= 1;
+		if({in_data_6, in_datak_6} == {32'h5C5C5CF7, 4'b1111}) begin
+			read_dpp_state <= READ_DPP_1;
+			in_dpp_wasready <= buf_in_ready;
+		end
+	end
+	READ_DPP_1: begin
+		if(in_active) begin
+			if(	{in_data_6, in_datak_6} == {32'hFDFDFDF7, 4'b1111}) begin
+				// EOP, too early
+				read_dpp_state <= READ_DPP_IDLE;
+				err_dpp_len_mismatch <= 1;
+				
+			end else begin
+				in_dpp_length <= in_dpp_length + 3'h4;
+				`INC(buf_in_addr);
+				buf_in_data <= in_data_6;
+				crc_dpprx_in <= swap32(in_data_6);
+				buf_in_wren <= in_dpp_wasready;
+				//if(in_dpp_length == in_dpp_length_expect)
+				//	err_dpp_len_mismatch <= 1;
+					
+				if((in_dpp_length + 3'h4) >= in_dpp_length_expect) begin
+					// EOP
+					read_dpp_state <= READ_DPP_2;
+				end
+			end
+		end
+	end
+	READ_DPP_2: begin
+		// latch CRC
+		in_dpp_crc32 <= swap32(in_data_6);
+		read_dpp_state <= READ_DPP_3;
+	end
+	READ_DPP_3: begin
+		// verify CRC
+		if(in_dpp_crc32 == crc_dpprx32_out) begin
+			// match
+			tx_queue_ack <= {1'b0, 1'b1, 5'h1}; // no error, strobe, NumP=0
+			`INC(in_dpp_seq);
+			buf_in_commit <= 1;
+		end else begin
+			// fail
+			tx_queue_ack <= {1'b1, 1'b1, 5'h1}; // retry, strobe, NumP=0
+		end
+		read_dpp_state <= READ_DPP_IDLE;
+	end
+	endcase
+	
+	
+	//
 	// Check Header Packet FSM
 	//
 	case(check_hp_state)
@@ -553,7 +709,7 @@ always @(posedge local_clk) begin
 	end
 	CHECK_HP_0: begin
 		// check CRC-5, CRC-16 against calculated values
-		if(crc_hp_out == in_header_crc && crc_cw3_out == in_header_cw[15:11]) begin
+		if(crc_hprx_out == in_header_crc && crc_cw3_out == in_header_cw[15:11]) begin
 			// matched
 			if(in_header_seq == rx_hdr_seq_num && local_rx_cred_count > 0) begin
 				// header seq num matches what we expect
@@ -646,7 +802,7 @@ always @(posedge local_clk) begin
 		LP_TYPE_LMP: rd_hp_state <= RD_HP_LMP_0;
 		LP_TYPE_TP: rd_hp_state <= RD_HP_TP_0;
 		LP_TYPE_DP: rd_hp_state <= RD_HP_DP_0;
-		LP_TYPE_ITP: rd_hp_state <= RD_HP_2;
+		LP_TYPE_ITP: rd_hp_state <= RD_HP_ITP_0;
 		default: err_hp_type <= 1;
 		endcase
 	end
@@ -674,12 +830,33 @@ always @(posedge local_clk) begin
 	RD_HP_LMP_1: begin	end
 	RD_HP_DP_0: begin
 		rd_hp_state <= RD_HP_2;
-		//if( 
+		// parse data packet preamble
+		sel_endp 				<= in_header_pkt_work[(11+32):(8+32)];
+		in_dpp_length_expect	<= in_header_pkt_work[(31+32):(16+32)];
+		in_dpp_setup 			<= in_header_pkt_work[(15+32)];
+		in_dpp_seq 				<= in_header_pkt_work[(4+32):(0+32)];
+		//in_dpp_expect <= 1;
+		read_dpp_state <= READ_DPP_0;
 	end
 	RD_HP_DP_1: begin	end
 	RD_HP_DP_2: begin	end
 	RD_HP_TP_0: begin
-	
+		case(in_header_pkt_work[35:32])
+		LP_TP_SUB_STATUS: begin 
+			tx_queue_ack <= {1'b0, 1'b1, 5'h0}; // no error, strobe, NumP=0
+		end
+		LP_TP_SUB_ACK: begin 
+			// decide whether was ACK to prior sent DPP,
+			// or requesting payload (IN)
+			
+			if(in_header_pkt_work[91] && in_header_pkt_work[52:48] > 0) begin
+				tx_queue_dpp <= 1;
+				out_dpp_seq <= in_header_pkt_work[57:53];
+				out_dpp_length <= buf_out_len;
+			end
+		end
+		endcase
+		rd_hp_state <= RD_HP_2;
 	end
 	RD_HP_TP_1: begin
 	
@@ -692,6 +869,11 @@ always @(posedge local_clk) begin
 	end
 	RD_HP_TP_4: begin
 	
+	end
+	RD_HP_ITP_0: begin
+		// latch ITP bus interval count [13:0] and delta [26:14]
+		itp_value <= in_header_pkt_work[31:5];
+		rd_hp_state <= RD_HP_2;
 	end
 	endcase
 	
@@ -742,6 +924,11 @@ always @(posedge local_clk) begin
 				credit_hp_timer <= 0;
 			end
 		end else
+		if(rx_lcmd[10:2] == LCMD_LGO_U1[10:2]) begin
+			// LGO_x
+			tx_lcmd <= LCMD_LXU;	// do not accept
+			tx_lcmd_act <= 1;
+		end else
 		if(rx_lcmd[10:2] == LCMD_LRTY[10:2]) begin
 			// TODO
 			// re-receive header packet
@@ -757,23 +944,31 @@ always @(posedge local_clk) begin
 	case(queue_state)
 	LINK_QUEUE_RESET: queue_state <= LINK_QUEUE_IDLE;
 	LINK_QUEUE_IDLE: begin
+		qc <= 0;
 		// check for queued advertisement from U0 entry, and wait a bit
 		if(queue_send_u0_adv && (dc == 40)) begin
 			queue_state <= LINK_QUEUE_HDR_SEQ_AD;
 			queue_send_u0_adv <= 0;
-			qc <= 0;
 		end else
-		// send Port Capability HP once advertisement is finished
-		if(queue_send_u0_portcap && sent_u0_adv && !tx_hp_do) begin
-			queue_state <= LINK_QUEUE_PORTCAP;
-			queue_send_u0_portcap <= 0;
-			qc <= 0;
-		end else
-		// send Port Configuration Response HP
-		if(send_port_cfg_resp && !tx_hp_do) begin
-			queue_state <= LINK_QUEUE_PORTCFGRSP;
-			send_port_cfg_resp <= 0;
-			qc <= 0;
+			if(!tx_hp_do) begin
+			// send Port Capability HP once advertisement is finished
+			if(queue_send_u0_portcap && sent_u0_adv) begin
+				queue_state <= LINK_QUEUE_PORTCAP;
+				queue_send_u0_portcap <= 0;
+			end else
+			// send Port Configuration Response HP
+			if(send_port_cfg_resp) begin
+				queue_state <= LINK_QUEUE_PORTCFGRSP;
+				send_port_cfg_resp <= 0;
+			end else
+			// send ACK TP
+			if(|tx_queue_ack ) begin
+				queue_state <= LINK_QUEUE_ACK;
+			end else
+			// send DPH + DPP
+			if(tx_queue_dpp) begin
+				queue_state <= LINK_QUEUE_DP;
+			end
 		end
 	end
 	LINK_QUEUE_HDR_SEQ_AD: begin
@@ -834,9 +1029,40 @@ always @(posedge local_clk) begin
 			tx_hp_act <= 1;
 			qc <= 1;
 		end
+		1: queue_state <= LINK_QUEUE_IDLE;
+		endcase
+	end
+	LINK_QUEUE_ACK: begin
+		case(qc)
+		0: begin
+			tx_hp_word_0 <= {	local_dev_addr, LP_TP_ROUTE0, LP_TYPE_TP};
+			tx_hp_word_1 <= {	6'h0, in_dpp_seq, tx_queue_ack[4:0], 
+								1'b0, 3'h0, sel_endp, in_dpp_setup ? 1'b0 : LP_TP_DEVICETOHOST, tx_queue_ack[6], 2'h0, LP_TP_SUB_ACK};
+			tx_hp_word_2 <= {	LP_TP_NBI_0, LP_TP_PPEND_NO, LP_TP_DBI_NO, LP_TP_WPA_NO, LP_TP_SSI_NO, 8'h0, 16'h0};
+			tx_hp_act <= 1;
+			local_dev_addr <= dev_addr;
+			qc <= 1;
+		end
 		1: begin
+			tx_queue_ack <= 0;
 			queue_state <= LINK_QUEUE_IDLE;
-		end		
+		end
+		endcase
+	end
+	LINK_QUEUE_DP: begin
+		case(qc)
+		0: begin
+			tx_hp_word_0 <= {	local_dev_addr, LP_TP_ROUTE0, LP_TYPE_DP};
+			tx_hp_word_1 <= {	out_dpp_length, 1'b0, 3'b0, sel_endp, 1'b0, LP_DP_EOB_LPF_NO, 1'b0, out_dpp_seq};
+			tx_hp_word_2 <= {	32'h0};
+			tx_hp_act <= 1;
+			tx_hp_dph <= 1;
+			qc <= 1;
+		end
+		1: begin
+			tx_queue_dpp <= 0;
+			queue_state <= LINK_QUEUE_IDLE;
+		end
 		endcase
 	end
 	endcase
@@ -854,6 +1080,7 @@ always @(posedge local_clk) begin
 	LINK_SEND_IDLE: begin
 		// N.B. potential race condition with loading queued CMD
 		// upon exact cycle where queue was closed with another
+		// TODO figure out if this ever happens
 		tx_queue_open <= 1;
 		if(tx_lcmd_do) begin
 			tx_lcmd_queue <= 0;
@@ -942,9 +1169,9 @@ always @(posedge local_clk) begin
 	//
 	if(wr_hp_state != WR_HP_IDLE) begin
 		// trickery to get around CRC cycle latency
-		out_data <= out_data_delay ; 
-		out_datak <= out_datak_delay ; 
-		out_active <= out_active_delay ; 
+		{out_data, out_data_1} <= {out_data_1, out_data_2} ; 
+		{out_datak, out_datak_1} <= {out_datak_1, out_datak_2} ; 
+		{out_active, out_active_1} <= {out_active_1, out_active_2} ; 
 	end	
 	case(wr_hp_state) 
 	WR_HP_RESET: wr_hp_state <= WR_HP_IDLE;
@@ -954,44 +1181,172 @@ always @(posedge local_clk) begin
 	WR_HP_0: begin
 		crc_hptx_rst <= 1;
 		`DEC(remote_rx_cred_count);
-		{out_data_delay, out_datak_delay} <= {32'hFBFBFBF7, 4'b1111};	// HPSTART ordered set
-		out_active_delay <= 1;
+		{out_data_2, out_datak_2} <= {32'hFBFBFBF7, 4'b1111};	// HPSTART ordered set
+		out_active_2 <= 1;
 		sc <= 0;
 		wr_hp_state <= WR_HP_1;
 	end
 	WR_HP_1: begin
 		case(sc)
-		0: out_data_delay <= swap32(out_header_pkt_mux[95:64]);
-		1: out_data_delay <= swap32(out_header_pkt_mux[63:32]);
-		2: out_data_delay <= swap32(out_header_pkt_mux[31:0]);
+		0: out_data_2 <= swap32(out_header_pkt_mux[95:64]);
+		1: out_data_2 <= swap32(out_header_pkt_mux[63:32]);
+		2: out_data_2 <= swap32(out_header_pkt_mux[31:0]);
 		endcase		
 		// TODO set DELAY bit if RETRY
 		out_header_cw <= {8'b0, tx_hdr_seq_num};
-		out_active_delay <= 1;
-		if(sc == 2) wr_hp_state <= WR_HP_4;
-	end
-	WR_HP_4: begin
-		wr_hp_state <= WR_HP_2;
+		out_active_2 <= 1;
+		if(sc == 2) wr_hp_state <= WR_HP_2;
 	end
 	WR_HP_2: begin
-		out_data <= swap32({crc_cw4_out, out_header_cw, crc_hptx_out});
-		out_active <= 1;
-	
 		wr_hp_state <= WR_HP_3;
+		if(tx_hp_dph) begin
+			// fire up DPP writer
+			write_dpp_state <= WRITE_DPP_0;
+		end
 	end
 	WR_HP_3: begin
+		out_data_1 <= swap32({crc_cw4_out, out_header_cw, crc_hptx_out});
+		out_active_1 <= 1;
+
+		wr_hp_state <= WR_HP_4;
+	end
+	WR_HP_4: begin
 		// TODO only increment if this wasn't a RETRY
 		`INC(tx_hdr_seq_num);
 		if(out_header_first_since_entry) begin
-			//remote_rx_cred_cred_count <= remote_rx_cred_cred_count - 1'b1;
+			//remote_rx_cred_count <= remote_rx_cred_count - 1'b1;
 			out_header_first_since_entry <= 0;
 		end
-		tx_hp_done <= 1;
-		wr_hp_state <= WR_HP_IDLE;
+		if(tx_hp_dph) begin
+			wr_hp_state <= WR_HP_5;
+		end else begin
+			tx_hp_done <= 1;
+			wr_hp_state <= WR_HP_IDLE;
+		end
+	end
+	WR_HP_5: begin
+		// wait for DPP write to complete
+		if(write_dpp_state == WRITE_DPP_IDLE) begin
+			tx_hp_done <= 1;
+			wr_hp_state <= WR_HP_IDLE;
+		end
 	end
 	endcase
 	
+	//
+	// Write Data Packet Payload FSM
+	//
+	// this is an abortion, will be dealt with at earliest opportunity
+	//
+	case(write_dpp_state)
+	WRITE_DPP_RESET: write_dpp_state <= WRITE_DPP_IDLE;
+	WRITE_DPP_IDLE: begin
+		//write_dpp_state <= WRITE_DPP_0;
+		buf_out_addr <= 0;
+	end
+	WRITE_DPP_0: begin
+		`INC(buf_out_addr);
+		
+		write_dpp_state <= WRITE_DPP_1;
+	end
+	WRITE_DPP_1: begin
+		`INC(buf_out_addr);
+		
+		{out_data_1, out_datak_1} <= {32'h5C5C5CF7, 4'b1111};	// DPP ordered set
+		out_active_1 <= 1;
+		out_dpp_length_remain <= out_dpp_length;
+		out_dpp_length_remain_1 <= out_dpp_length;
+		crc_dpptx_rst <= 1;
+		
+		write_dpp_state <= WRITE_DPP_2;
+	end
+	WRITE_DPP_2: begin
+		case(out_dpp_length_remain_1)
+		3: begin
+			{out_data, out_datak} <= {out_data_1[31:8], crc_dpptx_out[31:24], 4'b0000};
+			write_dpp_state <= WRITE_DPP_6;
+		end
+		2: begin
+			{out_data, out_datak} <= {out_data_1[31:16], crc_dpptx_out[31:16], 4'b0000};
+			write_dpp_state <= WRITE_DPP_7;
+		end
+		1: begin
+			{out_data, out_datak} <= {out_data_1[31:24], crc_dpptx_out[31:8], 4'b0000};
+			write_dpp_state <= WRITE_DPP_8;
+		end
+		0: begin
+			{out_data, out_datak} <= {out_data_1, 4'b0000};
+			write_dpp_state <= WRITE_DPP_5;
+		end
+		//4: begin
+		//	{out_data_1, out_datak_1} <= {buf_out_q, 4'b0000};
+		//	if(out_dpp_length == 4)write_dpp_state <= WRITE_DPP_4; else write_dpp_state <= WRITE_DPP_5;
+		//end
+		
+		default: begin
+			{out_data_1, out_datak_1} <= {buf_out_q, 4'b0000};
+		end
+		endcase
+		
+		if(out_dpp_length_remain_1 == 4 )
+		if(out_dpp_length == 4) write_dpp_state <= WRITE_DPP_4; else begin
+			{out_data_1, out_datak_1} <= {buf_out_q, 4'b0000};
+			write_dpp_state <= WRITE_DPP_9;
+		end
+		
+		// decrement length remaining
+		if(out_dpp_length_remain > 4)
+			out_dpp_length_remain <= out_dpp_length_remain - 16'h4;
+		else
+			out_dpp_length_remain <= 0;
+		out_dpp_length_remain_1 <= out_dpp_length_remain;
+		
+		`INC(buf_out_addr);
+		crc_dpptx_out_1 <= crc_dpptx_out;
+		
+		// feed data to CRC
+		crc_dpptx_in <= swap32(buf_out_q);
+		out_active_1 <= 1;
+	end
+	WRITE_DPP_3: begin
+		// done
+		tx_hp_dph <= 0;
+		write_dpp_state <= WRITE_DPP_IDLE;
+	end
 	
+	WRITE_DPP_4: begin
+		 write_dpp_state <= WRITE_DPP_9;
+	end
+	WRITE_DPP_5: begin
+		{out_data, out_datak, out_active} <= {crc_dpptx_out_1, 4'b0000, 1'b1}; write_dpp_state <= WRITE_DPP_10;
+	end
+	WRITE_DPP_6: begin
+		{out_data, out_datak, out_active} <= {crc_dpptx_out_1[23:0], 8'hFD, 4'b0001, 1'b1}; write_dpp_state <= WRITE_DPP_11;
+	end
+	WRITE_DPP_7: begin 
+		{out_data, out_datak, out_active} <= {crc_dpptx_out_1[15:0], 16'hFDFD, 4'b0011, 1'b1}; write_dpp_state <= WRITE_DPP_12;
+	end
+	WRITE_DPP_8: begin
+		{out_data, out_datak, out_active} <= {crc_dpptx_out_1[7:0], 24'hFDFDFD, 4'b0111, 1'b1}; write_dpp_state <= WRITE_DPP_13;
+	end
+	
+	WRITE_DPP_9: begin
+		{out_data, out_datak, out_active} <= {crc_dpptx_out, 4'b0000, 1'b1};
+		{out_data_1, out_datak_1, out_active_1} <= {32'hFDFDFDF7, 4'b1111, 1'b1}; write_dpp_state <= WRITE_DPP_3;
+	end
+	WRITE_DPP_10: begin
+		{out_data, out_datak, out_active} <= {32'hFDFDFDF7, 4'b1111, 1'b1}; write_dpp_state <= WRITE_DPP_3;
+	end
+	WRITE_DPP_11: begin
+		{out_data, out_datak, out_active} <= {32'hFDFDF700, 4'b1110, 1'b1}; write_dpp_state <= WRITE_DPP_3;
+	end
+	WRITE_DPP_12: begin 
+		{out_data, out_datak, out_active} <= {32'hFDF70000, 4'b1100, 1'b1}; write_dpp_state <= WRITE_DPP_3;
+	end
+	WRITE_DPP_13: begin
+		{out_data, out_datak, out_active} <= {32'hF7000000, 4'b1000, 1'b1}; write_dpp_state <= WRITE_DPP_3;
+	end
+	endcase
 	
 	
 	
@@ -1015,12 +1370,15 @@ always @(posedge local_clk) begin
 		err_hp_crc <= 0;
 		err_hp_seq <= 0;
 		err_hp_type <= 0;
+		err_dpp_len_mismatch <= 0;
 		
 		link_error_count <= 0;
 		ltssm_go_recovery <= 0;
 		queue_send_u0_adv <= 0;
 		
+		local_dev_addr <= 0;
 		sel_endp <= 0;
+		tx_hp_dph <= 0;
 	end
 end
 
@@ -1028,28 +1386,98 @@ end
 
 
 //
+// CRC-32 of Data Packet Payloads
+//
+	wire	[31:0]	crc_dpprx_q;
+	reg				crc_dpprx_rst;
+	reg		[31:0]	crc_dpprx_in;
+	wire	[31:0]	crc_dpprx32_out;
+	wire	[31:0]	crc_dpprx24_out;
+	wire	[31:0]	crc_dpprx16_out;
+	wire	[31:0]	crc_dpprx8_out;
+usb3_crc_dpp32 iu3cdprx32 (
+	.clk		( local_clk ),
+	.rst		( crc_dpprx_rst ),
+	.crc_en		( in_active ),
+	.di			( crc_dpprx_in ),
+	.lfsr_q		( crc_dpprx_q ),
+	.crc_out	( crc_dpprx32_out )
+);
+usb3_crc_dpp24 iu3cdprx24 (
+	.di			( crc_dpprx_in[31:8] ),
+	.q			( crc_dpprx_q ),
+	.crc_out	( crc_dpprx24_out )
+);
+usb3_crc_dpp16 iu3cdprx16 (
+	.di			( crc_dpprx_in[31:16] ),
+	.q			( crc_dpprx_q ),
+	.crc_out	( crc_dpprx16_out )
+);
+usb3_crc_dpp8 iu3cdprx8 (
+	.di			( crc_dpprx_in[31:24] ),
+	.q			( crc_dpprx_q ),
+	.crc_out	( crc_dpprx8_out )
+);
+
+	wire	[31:0]	crc_dpptx_out = (out_dpp_length_remain_1 == 4) ? (swap32(crc_dpptx32_out)) :
+									(out_dpp_length_remain_1 == 3) ? (swap32(crc_dpptx24_out)) :
+									(out_dpp_length_remain_1 == 2) ? (swap32(crc_dpptx16_out)) :
+									(out_dpp_length_remain_1 == 1) ? (swap32(crc_dpptx8_out)) : (swap32(crc_dpptx32_out));
+	reg		[31:0]	crc_dpptx_out_1;
+	wire	[31:0]	crc_dpptx_q;
+	reg				crc_dpptx_rst;
+	reg		[31:0]	crc_dpptx_in;
+	wire	[31:0]	crc_dpptx32_out;
+	wire	[31:0]	crc_dpptx24_out;
+	wire	[31:0]	crc_dpptx16_out;
+	wire	[31:0]	crc_dpptx8_out;
+usb3_crc_dpp32 iu3cdptx32 (
+	.clk		( local_clk ),
+	.rst		( crc_dpptx_rst ),
+	.crc_en		( 1'b1 ),
+	.di			( crc_dpptx_in ),
+	.lfsr_q		( crc_dpptx_q ),
+	.crc_out	( crc_dpptx32_out )
+);
+usb3_crc_dpp24 iu3cdptx24 (
+	.di			( crc_dpptx_in[23:0] ),
+	.q			( crc_dpptx_q ),
+	.crc_out	( crc_dpptx24_out )
+);
+usb3_crc_dpp16 iu3cdptx16 (
+	.di			( crc_dpptx_in[15:0] ),
+	.q			( crc_dpptx_q ),
+	.crc_out	( crc_dpptx16_out )
+);
+usb3_crc_dpp8 iu3cdptx8 (
+	.di			( crc_dpptx_in[7:0] ),
+	.q			( crc_dpptx_q ),
+	.crc_out	( crc_dpptx8_out )
+);
+
+
+//
 // CRC-16 of Header Packet Headers
 //
-	reg				crc_hp_rst;
-	reg		[31:0]	crc_hp_in;
-	wire	[15:0]	crc_hp_out;
-	
-usb3_crc_hp iu3chp (
+	reg				crc_hprx_rst;
+	reg		[31:0]	crc_hprx_in;
+	wire	[15:0]	crc_hprx_out;
+usb3_crc_hp iu3chprx (
 	.clk		( local_clk ),
-	.rst		( crc_hp_rst ),
+	.rst		( crc_hprx_rst ),
 	.crc_en		( in_active ),
-	.d			( crc_hp_in ),
-	.crc_out	( crc_hp_out )
+	.di			( crc_hprx_in ),
+	.crc_out	( crc_hprx_out )
 );
+
 	reg				crc_hptx_rst;
-	wire	[31:0]	crc_hptx_in = swap32(out_data_delay);
+	wire	[31:0]	crc_hptx_in = swap32(out_data_2);
 	wire	[15:0]	crc_hptx_out;
-	
 usb3_crc_hp iu3chptx (
 	.clk		( local_clk ),
 	.rst		( crc_hptx_rst ),
 	.crc_en		( 1'b1 ),
-	.d			( crc_hptx_in ),
+	.di			( crc_hptx_in ),
 	.crc_out	( crc_hptx_out )
 );
 
@@ -1063,28 +1491,28 @@ usb3_crc_hp iu3chptx (
 	wire	[10:0]	crc_cw1_in = in_link_command[26:16];
 	wire	[4:0]	crc_cw1_out;
 usb3_crc_cw iu3ccw1 (
-	.data_in	( crc_cw1_in ),
+	.di			( crc_cw1_in ),
 	.crc_out	( crc_cw1_out )
 );
 
 	wire	[10:0]	crc_cw2_in = in_link_command[10:0];
 	wire	[4:0]	crc_cw2_out;
 usb3_crc_cw iu3ccw2 (
-	.data_in	( crc_cw2_in ),
+	.di			( crc_cw2_in ),
 	.crc_out	( crc_cw2_out )
 );
 
 	wire	[10:0]	crc_cw3_in = in_header_cw[10:0];
 	wire	[4:0]	crc_cw3_out;
 usb3_crc_cw iu3ccw3 (
-	.data_in	( crc_cw3_in ),
+	.di			( crc_cw3_in ),
 	.crc_out	( crc_cw3_out )
 );
 
 	wire	[10:0]	crc_cw4_in = out_header_cw[10:0];
 	wire	[4:0]	crc_cw4_out;
 usb3_crc_cw iu3ccw5 (
-	.data_in	( crc_cw4_in ),
+	.di			( crc_cw4_in ),
 	.crc_out	( crc_cw4_out )
 );
 
@@ -1093,9 +1521,8 @@ usb3_crc_cw iu3ccw5 (
 	reg		[10:0]	crc_lcmd_in;
 	wire	[4:0]	crc_lcmd_out;
 usb3_crc_cw iu3ccw4 (
-	.data_in	( crc_lcmd_in ),
+	.di			( crc_lcmd_in ),
 	.crc_out	( crc_lcmd_out )
 );
 
 endmodule
-
