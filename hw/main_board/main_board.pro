@@ -1,4 +1,4 @@
-update=Fri 19 Apr 2013 03:31:50 PM PDT
+update=Wed 13 Nov 2013 11:35:53 AM PST
 version=1
 last_client=pcbnew
 [general]
@@ -122,7 +122,7 @@ LibName31=tdk_vlpP8040
 LibName32=ipc_capc3225x270n
 LibName33=ipc_capc3216x180n
 LibName34=gsg-nrg4026
-LibName35=cui_pj-102bh
+LibName35=cui_pj-102_h
 LibName36=gsg-header-1x2
 LibName37=gsg-50mil-header-2x5-th
 LibName38=gsg-hole126mil

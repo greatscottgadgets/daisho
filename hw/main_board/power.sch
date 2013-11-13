@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Tue 12 Nov 2013 08:29:59 PM PST
+EESchema Schematic File Version 2  date Wed 13 Nov 2013 11:23:16 AM PST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -611,7 +611,7 @@ P 1400 1300
 F 0 "J7" H 1400 1550 60  0000 C CNN
 F 1 "BARREL_JACK" H 1400 1100 60  0000 C CNN
 F 4 "CUI" H 1400 1300 60  0001 C CNN "Manufacturer"
-F 5 "PJ-102BH" H 1400 1300 60  0001 C CNN "Part Number"
+F 5 "PJ-102AH" H 1400 1300 60  0001 C CNN "Part Number"
 	1    1400 1300
 	1    0    0    -1  
 $EndComp

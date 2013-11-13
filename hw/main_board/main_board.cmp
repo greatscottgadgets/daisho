@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-05-21 BZR 3261)-stable date = Thu 02 May 2013 10:22:58 AM PDT
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Wed 13 Nov 2013 11:37:45 AM PST
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1831,7 +1831,7 @@ BeginCmp
 TimeStamp = /510B2194/5168EAD7;
 Reference = J7;
 ValeurCmp = BARREL_JACK;
-IdModule  = CUI_PJ-102BH;
+IdModule  = CUI_PJ-102[AB]H;
 EndCmp
 
 BeginCmp
