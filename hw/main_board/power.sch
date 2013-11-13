@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 13 Nov 2013 11:23:16 AM PST
+EESchema Schematic File Version 2  date Wed 13 Nov 2013 11:55:57 AM PST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -28,6 +28,7 @@ LIBS:74lvc2t45
 LIBS:tps62420
 LIBS:hole
 LIBS:inv1
+LIBS:barrel_jack
 LIBS:main_board-cache
 EELAYER 25  0
 EELAYER END
