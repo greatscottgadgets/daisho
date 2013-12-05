@@ -1,226 +1,317 @@
 
--- 
+--
 -- usb 2.0 descriptor BRAM init values
--- 
--- Copyright (c) 2012-2013 Marshall H.
+-- Generated with usb3_mifgen tool
+--
+-- Copyright (c) 2013 Marshall H.
 -- All rights reserved.
--- This code is released under the terms of the simplified BSD license. 
+-- This code is released under the terms of the simplified BSD license.
 -- See LICENSE.TXT for details.
--- 
+--
 
 WIDTH=8;
 DEPTH=256;
 ADDRESS_RADIX=DECIMAL;
 DATA_RADIX=HEX;
 CONTENT BEGIN
-	0	   : 12;	-- Size of Descriptor (18 bytes)
-	1	   : 01;	-- Device Descriptor (0x01)
-	2	   : 10;	-- [LSB] USB Specification Number which device complies to
-	3	   : 02;	-- [MSB] USB Specification Number which device complies to
-	4	   : FF;	-- Class Code 
-	5	   : FF;	-- Subclass
-	6	   : FF;	-- Protocol code
-	7	   : 40;	-- Max packet size for Endpoint Zero (64 bytes)
-	8	   : 50;	-- [LSB] Vendor ID
-	9	   : 1d;	-- [MSB] Vendor ID
-	10	   : 5a;	-- [LSB] Product ID
-	11	   : 60;	-- [MSB] Product ID
-	12	   : 01;	-- [LSB] Device Release Number
-	13	   : 00;	-- [MSB] Device Release Number
-	14	   : 01;	-- Index of Manufacturer String Descriptor
-	15	   : 02;	-- Index of Product String Descriptor
-	16	   : 03;	-- Index of Serial Number String Descriptor
-	17	   : 01;	-- Number of Possible Configurations
-	
-	18	   : 0A;	-- device qualifier descriptor
-	19	   : 06;
-	20	   : 00;	-- bcdUSB
-	21	   : 02;	-- bcdUSB
-	22	   : 00;	-- bDeviceClass
-	23	   : 00;	-- bDeviceSubClass	
-	24	   : 00;	-- bDeviceProtocol	
-	25	   : 40;	-- bMaxPacketSize0
-	26	   : 01;	-- bNumConfigurations
-	27	   : 00;	-- bReserved 
-	28	   : 00;
-	29	   : 00;
-	30	   : 00;
-	31	   : 00;
-	
-	32	   : 09;	-- config descriptor
-	33	   : 02; 
-	34	   : 29;	-- wTotalLength
-	35	   : 00;	-- wTotalLength
-	36	   : 01;	-- bNumInterfaces
-	37	   : 01;	-- bConfigurationValue
-	38	   : 00;	-- iConfiguration
-	39	   : 80;	-- bmAttributes: USB-powered
-	40	   : FA;	-- 
-	
-	41	   : 09;	-- interface descriptor
-	42	   : 04;
-	43	   : 00;	-- bInterfaceNumber		
-	44	   : 00;	-- bAlternateSetting
-	45	   : 02;	-- bNumEndpoints
-	46	   : FF;	-- bInterfaceClass
-	47	   : FF;	-- bInterfaceSubClass
-	48	   : FF;	-- bInterfaceProtocol
-	49	   : 02;	-- iInterface
-	
-	50	   : 07;	-- endpoint descriptor
-	51	   : 05;
-	52	   : 81;	-- endpoint #1, IN
-	53	   : 02;	-- transfer type (bmAttributes) 
-					-- 0: control
-					-- 1: isochronous
-					-- 2: bulk
-					-- 3: interrupt
-	54	   : 00;	-- [LSB] max packet size
-	55	   : 02;	-- [MSB] max packet size
-	56	   : 01;	-- bInterval (125uS units for interrupt polling).
-					-- must be 1 for isochronous, ignored for bulk/control
-					
-	57	   : 07;	-- endpoint descriptor
-	58	   : 05;
-	59	   : 02;	-- endpoint #2, OUT
-	60	   : 02;	-- transfer type (bmAttributes) 
-					-- 0: control
-					-- 1: isochronous
-					-- 2: bulk
-					-- 3: interrupt
-	61	   : 00;	-- [LSB] max packet size
-	62	   : 02;	-- [MSB] max packet size
-	63	   : 01;	-- bInterval (125uS units for interrupt polling). 
-					-- must be 1 for isochronous, ignored for bulk/control
-	
-	64	   : 09;	-- interface descriptor
-	65	   : 04;
-	66	   : 00;	-- bInterfaceNumber		
-	67	   : 01;	-- bAlternateSetting
-	68	   : 00;	-- bNumEndpoints
-	69	   : FF;	-- bInterfaceClass
-	70	   : FF;	-- bInterfaceSubClass
-	71	   : FF;	-- bInterfaceProtocol
-	72	   : 02;	-- iInterface
-	
-	
-	73	   : 20;	-- Product Name
-	74	   : 03;
-	75	   : 44;	-- D
-	76	   : 00;
-	77	   : 61;	-- a
-	78	   : 00;
-	79	   : 69;	-- i
-	80	   : 00;
-	81	   : 73;	-- s
-	82	   : 00;
-	83	   : 68;	-- h
-	84	   : 00;
-	85	   : 6F;	-- o
-	86	   : 00;
-	87	   : 20;	--	
-	88	   : 00;
-	89	   : 55;	-- U
-	90	   : 00;
-	91	   : 53;	-- S
-	92	   : 00;
-	93	   : 42;	-- B
-	94	   : 00;
-	95	   : 20;	--	
-	96	   : 00;
-	97	   : 74;	-- t
-	98	   : 00;
-	99	   : 65;	-- e
-	100	   : 00;
-	101	   : 73;	-- s
-	102	   : 00;
-	103	   : 74;	-- t
-	104	   : 00;
-	105	   : 00;	--	
-	106	   : 00;
-	107	   : 00;	--	
-	108	   : 00;
-	109	   : 00;	--	
-	110	   : 00;
-	111	   : 00;	--	
-	112	   : 00;
-	113	   : 00;
-	114	   : 00;
-	
-	115	   : 1A;	-- string descriptor (serial)
-	116	   : 03;
-	117	   : 44;	-- D
-	118	   : 00;
-	119	   : 41;	-- A
-	120	   : 00;
-	121	   : 49;	-- I
-	122	   : 00;
-	123	   : 53;	-- S
-	124	   : 00;
-	125	   : 48;	-- H
-	126	   : 00;
-	127	   : 4F;	-- O
-	128	   : 00;
-	129	   : 55;	-- U
-	130	   : 00;
-	131	   : 53;	-- S
-	132	   : 00;
-	133	   : 42;	-- B
-	134	   : 00;
-	135	   : 30;	-- 0
-	136	   : 00;
-	137	   : 30;	-- 0
-	138	   : 00;
-	139	   : 30;	-- 0
-	140	   : 00;
-	
-	196	   : 04;	-- string descriptor (supported languages)
-	197	   : 03;
-	198	   : 09;	-- 0x0409 (United States English)
-	199	   : 04;
-	
-	200	   : 28;	-- string descriptor (manufacturer)
-	201	   : 03;
-	202	   : 47;	-- G
-	203	   : 00;
-	204	   : 72;	-- r
-	205	   : 00;
-	206	   : 65;	-- e	
-	207	   : 00;
-	208	   : 61;	-- a
-	209	   : 00;
-	210	   : 74;	-- t
-	211	   : 00;
-	212	   : 20;	--	
-	213	   : 00;
-	214	   : 53;	-- S
-	215	   : 00;
-	216	   : 63;	-- c
-	217	   : 00;
-	218	   : 6F;	-- o
-	219	   : 00;
-	220	   : 74;	-- t
-	221	   : 00;
-	222	   : 74;	-- t
-	223	   : 00;
-	224	   : 20;	--	
-	225	   : 00;
-	226	   : 47;	-- G
-	227	   : 00;
-	228	   : 61;	-- a
-	229	   : 00;
-	230	   : 64;	-- d
-	231	   : 00;
-	232	   : 67;	-- g
-	233	   : 00;
-	234	   : 65;	-- e
-	235	   : 00;	
-	236	   : 74;	-- t	
-	237	   : 00;
-	238	   : 73;	-- s
-	239	   : 00;
-	
-	254	   : 00;	-- configuration unset
-	255	   : 01;	-- configuration set
-	
+
+--
+-- Descriptor: DEVICE
+-- 
+0	 : 12 ;
+1	 : 01 ;
+2	 : 10 ;
+3	 : 02 ;
+4	 : FF ;
+5	 : FF ;
+6	 : FF ;
+7	 : 40 ;
+8	 : 50 ;
+9	 : 1D ;
+10	 : 5A ;
+11	 : 60 ;
+12	 : 01 ;
+13	 : 00 ;
+14	 : 01 ;
+15	 : 02 ;
+16	 : 03 ;
+17	 : 01 ;
+
+--
+-- Descriptor: DEVICE_QUAL
+-- 
+18	 : 0A ;
+19	 : 06 ;
+20	 : 10 ;
+21	 : 02 ;
+22	 : FF ;
+23	 : FF ;
+24	 : FF ;
+25	 : 40 ;
+26	 : 01 ;
+27	 : 00 ;
+
+--
+-- Descriptor: CONFIG
+-- 
+28	 : 09 ;
+29	 : 02 ;
+30	 : 29 ;
+31	 : 00 ;
+32	 : 01 ;
+33	 : 01 ;
+34	 : 00 ;
+35	 : 80 ;
+36	 : 3E ;
+37	 : 09 ;
+38	 : 04 ;
+39	 : 00 ;
+40	 : 00 ;
+41	 : 02 ;
+42	 : FF ;
+43	 : FF ;
+44	 : FF ;
+45	 : 02 ;
+46	 : 07 ;
+47	 : 05 ;
+48	 : 81 ;
+49	 : 02 ;
+50	 : 00 ;
+51	 : 02 ;
+52	 : 01 ;
+53	 : 07 ;
+54	 : 05 ;
+55	 : 02 ;
+56	 : 02 ;
+57	 : 00 ;
+58	 : 02 ;
+59	 : 01 ;
+60	 : 09 ;
+61	 : 04 ;
+62	 : 00 ;
+63	 : 01 ;
+64	 : 00 ;
+65	 : FF ;
+66	 : FF ;
+67	 : FF ;
+68	 : 02 ;
+
+--
+-- Descriptor: CONFIG_LEN
+-- 
+
+--
+-- Descriptor: STRING0
+-- 
+69	 : 04 ;
+70	 : 03 ;
+71	 : 09 ;
+72	 : 04 ;
+
+--
+-- Descriptor: STRING1
+-- 
+73	 : 28 ;
+74	 : 03 ;
+75	 : 47 ;
+76	 : 00 ;
+77	 : 72 ;
+78	 : 00 ;
+79	 : 65 ;
+80	 : 00 ;
+81	 : 61 ;
+82	 : 00 ;
+83	 : 74 ;
+84	 : 00 ;
+85	 : 20 ;
+86	 : 00 ;
+87	 : 53 ;
+88	 : 00 ;
+89	 : 63 ;
+90	 : 00 ;
+91	 : 6F ;
+92	 : 00 ;
+93	 : 74 ;
+94	 : 00 ;
+95	 : 74 ;
+96	 : 00 ;
+97	 : 20 ;
+98	 : 00 ;
+99	 : 47 ;
+100	 : 00 ;
+101	 : 61 ;
+102	 : 00 ;
+103	 : 64 ;
+104	 : 00 ;
+105	 : 67 ;
+106	 : 00 ;
+107	 : 65 ;
+108	 : 00 ;
+109	 : 74 ;
+110	 : 00 ;
+111	 : 73 ;
+112	 : 00 ;
+
+--
+-- Descriptor: STRING2
+-- 
+113	 : 20 ;
+114	 : 03 ;
+115	 : 44 ;
+116	 : 00 ;
+117	 : 61 ;
+118	 : 00 ;
+119	 : 69 ;
+120	 : 00 ;
+121	 : 73 ;
+122	 : 00 ;
+123	 : 68 ;
+124	 : 00 ;
+125	 : 6F ;
+126	 : 00 ;
+127	 : 20 ;
+128	 : 00 ;
+129	 : 55 ;
+130	 : 00 ;
+131	 : 53 ;
+132	 : 00 ;
+133	 : 42 ;
+134	 : 00 ;
+135	 : 20 ;
+136	 : 00 ;
+137	 : 74 ;
+138	 : 00 ;
+139	 : 65 ;
+140	 : 00 ;
+141	 : 73 ;
+142	 : 00 ;
+143	 : 74 ;
+144	 : 00 ;
+
+--
+-- Descriptor: STRING3
+-- 
+145	 : 1A ;
+146	 : 03 ;
+147	 : 44 ;
+148	 : 00 ;
+149	 : 41 ;
+150	 : 00 ;
+151	 : 49 ;
+152	 : 00 ;
+153	 : 53 ;
+154	 : 00 ;
+155	 : 48 ;
+156	 : 00 ;
+157	 : 4F ;
+158	 : 00 ;
+159	 : 55 ;
+160	 : 00 ;
+161	 : 53 ;
+162	 : 00 ;
+163	 : 42 ;
+164	 : 00 ;
+165	 : 30 ;
+166	 : 00 ;
+167	 : 30 ;
+168	 : 00 ;
+169	 : 30 ;
+170	 : 00 ;
+
+--
+-- Descriptor: CONFUNSET
+-- 
+171	 : 00 ;
+
+--
+-- Descriptor: CONFSET
+-- 
+172	 : 01 ;
+
+--
+-- Descriptor: EOF     
+-- 
+173	 : 00 ;
+174	 : 00 ;
+175	 : 00 ;
+176	 : 00 ;
+177	 : 00 ;
+178	 : 00 ;
+179	 : 00 ;
+180	 : 00 ;
+181	 : 00 ;
+182	 : 00 ;
+183	 : 00 ;
+184	 : 00 ;
+185	 : 00 ;
+186	 : 00 ;
+187	 : 00 ;
+188	 : 00 ;
+189	 : 00 ;
+190	 : 00 ;
+191	 : 00 ;
+192	 : 00 ;
+193	 : 00 ;
+194	 : 00 ;
+195	 : 00 ;
+196	 : 00 ;
+197	 : 00 ;
+198	 : 00 ;
+199	 : 00 ;
+200	 : 00 ;
+201	 : 00 ;
+202	 : 00 ;
+203	 : 00 ;
+204	 : 00 ;
+205	 : 00 ;
+206	 : 00 ;
+207	 : 00 ;
+208	 : 00 ;
+209	 : 00 ;
+210	 : 00 ;
+211	 : 00 ;
+212	 : 00 ;
+213	 : 00 ;
+214	 : 00 ;
+215	 : 00 ;
+216	 : 00 ;
+217	 : 00 ;
+218	 : 00 ;
+219	 : 00 ;
+220	 : 00 ;
+221	 : 00 ;
+222	 : 00 ;
+223	 : 00 ;
+224	 : 00 ;
+225	 : 00 ;
+226	 : 00 ;
+227	 : 00 ;
+228	 : 00 ;
+229	 : 00 ;
+230	 : 00 ;
+231	 : 00 ;
+232	 : 00 ;
+233	 : 00 ;
+234	 : 00 ;
+235	 : 00 ;
+236	 : 00 ;
+237	 : 00 ;
+238	 : 00 ;
+239	 : 00 ;
+240	 : 00 ;
+241	 : 00 ;
+242	 : 00 ;
+243	 : 00 ;
+244	 : 00 ;
+245	 : 00 ;
+246	 : 00 ;
+247	 : 00 ;
+248	 : 00 ;
+249	 : 00 ;
+250	 : 00 ;
+251	 : 00 ;
+252	 : 00 ;
+253	 : 00 ;
+254	 : 00 ;
+255	 : 00 ;
 END;

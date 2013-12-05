@@ -47,7 +47,10 @@ output	reg				err_empty_accum
 // accept incoming data, but inject SKP sets to allow remote elastic buffer
 // to catch up and compensate for spread spectrum clocking.
 
-	wire			insert_skp	=  enable && symbols_since_skp >= 80;
+	wire			insert_skp	=  enable && symbols_since_skp > 80;
+	// nominal SKP insertion rate is every 354 symbols. 
+	// however due to SSC profiles varying across the industry (i.e. +/- 2500ppm vs. -5000 to 0 ppm)
+	// err on the safe side and send more SKP.
 	
 	reg		[15:0]	symbols_since_skp;
 	reg		[2:0]	num_queued_skp;

@@ -67,13 +67,14 @@ end
 	
 	wire	[1:0]	mux_tx_margin; 
 
-	parameter		XTAL_DIS			= 1'b0; 	// crystal input
+	parameter		XTAL_SEL			= 1'b0; 	// crystal input
+	parameter		OSC_SEL				= 1'b1; 	// clock input
 	parameter [2:0]	SSC_DIS				= 2'b11;	// spread spectrum clock disable
 	parameter [2:0]	SSC_EN				= 2'b00;	// spread spectrum clock enable
 	parameter		PIPE_16BIT			= 1'b0;		// sdr 16bit pipe interface
 	// strap pins
-	assign			phy_rx_elecidle 	= reset_2 ? 1'bZ : XTAL_DIS;
-	assign			phy_tx_margin	  	= reset_2 ? mux_tx_margin  : SSC_EN;	
+	assign			phy_rx_elecidle 	= reset_2 ? 1'bZ : XTAL_SEL;
+	assign			phy_tx_margin	  	= reset_2 ? mux_tx_margin  : SSC_DIS;	
 	assign			phy_phy_status 		= reset_2 ? 1'bZ : PIPE_16BIT;
 		
 	
@@ -127,8 +128,6 @@ usb3_pipe	iu3p (
 	.link_out_data			( link_out_data ),
 	.link_out_datak			( link_out_datak ),
 	.link_out_active		( link_out_active ),
-	.link_out_skp_inhibit	( link_out_skp_inhibit ),
-	.link_out_skp_defer		( link_out_skp_defer ),
 	.link_out_stall			( link_out_stall ),
 	
 	.partner_detect			( partner_detect ),
@@ -224,6 +223,7 @@ usb3_ltssm	iu3lt (
 	.train_ts1				( ltssm_train_ts1 ),
 	.train_ts2				( ltssm_train_ts2 ),
 	.go_recovery			( ltssm_go_recovery ),
+	.go_u					( ltssm_go_u ),
 	.hot_reset				( ltssm_hot_reset ),
 	
 	// outputs
@@ -264,10 +264,9 @@ usb3_ltssm	iu3lt (
 	wire		[31:0]	link_out_data;
 	wire		[3:0]	link_out_datak;
 	wire				link_out_active;
-	wire				link_out_skp_inhibit;
-	wire				link_out_skp_defer;
 	wire				link_out_stall;
 	wire				ltssm_go_recovery;
+	wire		[2:0]	ltssm_go_u;
 	
 usb3_link iu3l (
 
@@ -277,19 +276,63 @@ usb3_link iu3l (
 	.ltssm_state			( ltssm_state ),
 	.ltssm_hot_reset		( ltssm_hot_reset ),
 	.ltssm_go_recovery		( ltssm_go_recovery ),
+	.ltssm_go_u				( ltssm_go_u),
 	.in_data				( link_in_data ),
 	.in_datak				( link_in_datak ),
 	.in_active				( link_in_active ),
 
-	.out_data				( link_out_data ),
-	.out_datak				( link_out_datak ),
-	.out_active				( link_out_active ),
-	.out_skp_inhibit		( link_out_skp_inhibit ),
-	.out_skp_defer			( link_out_skp_defer ),
+	.outp_data				( link_out_data ),
+	.outp_datak				( link_out_datak ),
+	.outp_active			( link_out_active ),
 	.out_stall				( link_out_stall ),
 	
-	.sel_endp				( prot_sel_endp ),
 	.endp_mode				( prot_endp_mode ),
+	
+	.prot_rx_tp				( prot_rx_tp ),
+	.prot_rx_tp_hosterr		( prot_rx_tp_hosterr ),
+	.prot_rx_tp_retry		( prot_rx_tp_retry ),
+	.prot_rx_tp_pktpend		( prot_rx_tp_pktpend ),
+	.prot_rx_tp_subtype		( prot_rx_tp_subtype ),
+	.prot_rx_tp_endp		( prot_rx_tp_endp ),
+	.prot_rx_tp_nump		( prot_rx_tp_nump ),
+	.prot_rx_tp_seq			( prot_rx_tp_seq ),
+	.prot_rx_tp_stream		( prot_rx_tp_stream ),
+
+	.prot_rx_dph			( prot_rx_dph ),
+	.prot_rx_dph_eob		( prot_rx_dph_eob ),
+	.prot_rx_dph_setup		( prot_rx_dph_setup ),
+	.prot_rx_dph_pktpend	( prot_rx_dph_pktpend ),
+	.prot_rx_dph_endp		( prot_rx_dph_endp ),
+	.prot_rx_dph_seq		( prot_rx_dph_seq ),
+	.prot_rx_dph_len		( prot_rx_dph_len ),
+	.prot_rx_dpp_done		( prot_rx_dpp_done ),
+	.prot_rx_dpp_crcgood	( prot_rx_dpp_crcgood ),
+	
+	.prot_tx_tp_a			( prot_tx_tp_a ),
+	.prot_tx_tp_a_retry		( prot_tx_tp_a_retry ),
+	.prot_tx_tp_a_dir		( prot_tx_tp_a_dir ),
+	.prot_tx_tp_a_subtype	( prot_tx_tp_a_subtype ),
+	.prot_tx_tp_a_endp		( prot_tx_tp_a_endp ),
+	.prot_tx_tp_a_nump		( prot_tx_tp_a_nump ),
+	.prot_tx_tp_a_seq		( prot_tx_tp_a_seq ),
+	.prot_tx_tp_a_stream	( prot_tx_tp_a_stream ),
+
+	.prot_tx_tp_b			( prot_tx_tp_b ),
+	.prot_tx_tp_b_retry		( prot_tx_tp_b_retry ),
+	.prot_tx_tp_b_dir		( prot_tx_tp_b_dir ),
+	.prot_tx_tp_b_subtype	( prot_tx_tp_b_subtype ),
+	.prot_tx_tp_b_endp		( prot_tx_tp_b_endp ),
+	.prot_tx_tp_b_nump		( prot_tx_tp_b_nump ),
+	.prot_tx_tp_b_seq		( prot_tx_tp_b_seq ),
+	.prot_tx_tp_b_stream	( prot_tx_tp_b_stream ),
+	
+	.prot_tx_dph			( prot_tx_dph ),
+	.prot_tx_dph_eob		( prot_tx_dph_eob ),
+	.prot_tx_dph_dir		( prot_tx_dph_dir ),
+	.prot_tx_dph_endp		( prot_tx_dph_endp ),
+	.prot_tx_dph_seq		( prot_tx_dph_seq ),
+	.prot_tx_dph_len		( prot_tx_dph_len ),
+	.prot_tx_dpp_done		( prot_tx_dpp_done ),
 	
 	.buf_in_addr			( prot_buf_in_addr ),
 	.buf_in_data			( prot_buf_in_data ),
@@ -322,8 +365,57 @@ usb3_link iu3l (
 	//wire	[3:0]	prot_in_datak;
 	//wire			prot_in_active;
 	
-	wire	[3:0]	prot_sel_endp;
 	wire	[1:0]	prot_endp_mode;
+	wire	[6:0]	prot_dev_addr;
+	wire			prot_configured;
+	
+	wire			prot_rx_tp;
+	wire			prot_rx_tp_hosterr;
+	wire			prot_rx_tp_retry;
+	wire			prot_rx_tp_pktpend;
+	wire	[3:0]	prot_rx_tp_subtype;
+	wire	[3:0]	prot_rx_tp_endp;
+	wire	[4:0]	prot_rx_tp_nump;
+	wire	[4:0]	prot_rx_tp_seq;
+	wire	[15:0]	prot_rx_tp_stream;
+
+	wire			prot_rx_dph;
+	wire			prot_rx_dph_eob;
+	wire			prot_rx_dph_setup;
+	wire			prot_rx_dph_pktpend;
+	wire	[3:0]	prot_rx_dph_endp;
+	wire	[4:0]	prot_rx_dph_seq;
+	wire	[15:0]	prot_rx_dph_len;
+	wire			prot_rx_dpp_done;
+	wire			prot_rx_dpp_crcgood;
+	
+	wire			prot_tx_tp_a;
+	wire			prot_tx_tp_a_retry;
+	wire			prot_tx_tp_a_dir;
+	wire	[3:0]	prot_tx_tp_a_subtype;
+	wire	[3:0]	prot_tx_tp_a_endp;
+	wire	[4:0]	prot_tx_tp_a_nump;
+	wire	[4:0]	prot_tx_tp_a_seq;
+	wire	[15:0]	prot_tx_tp_a_stream;
+
+	wire			prot_tx_tp_b;
+	wire			prot_tx_tp_b_retry;
+	wire			prot_tx_tp_b_dir;
+	wire	[3:0]	prot_tx_tp_b_subtype;
+	wire	[3:0]	prot_tx_tp_b_endp;
+	wire	[4:0]	prot_tx_tp_b_nump;
+	wire	[4:0]	prot_tx_tp_b_seq;
+	wire	[15:0]	prot_tx_tp_b_stream;
+
+	wire			prot_tx_dph;
+	wire			prot_tx_dph_eob;
+	wire			prot_tx_dph_dir;
+	wire	[3:0]	prot_tx_dph_endp;
+	wire	[4:0]	prot_tx_dph_seq;
+	wire	[15:0]	prot_tx_dph_len;
+	wire			prot_tx_dpp_done;
+
+
 	wire	[8:0]	prot_buf_in_addr;
 	wire	[31:0]	prot_buf_in_data;
 	wire			prot_buf_in_wren;
@@ -338,19 +430,65 @@ usb3_link iu3l (
 	wire			prot_buf_out_hasdata;
 	wire			prot_buf_out_arm;
 	wire			prot_buf_out_arm_ack;
-	wire	[6:0]	prot_dev_addr;
-	wire			prot_configured;
+	
 	
 
 usb3_protocol iu3r (
 
 	.local_clk				( local_pclk_half ),
 	.slow_clk				( local_pclk_quarter ),
-	.reset_n				( reset_2 ),
-	
+	.reset_n				( reset_2 | ~ltssm_warm_reset),
+	.ltssm_state			( ltssm_state ),
+
 	// muxed endpoint signals
-	.sel_endp				( prot_sel_endp ),
 	.endp_mode				( prot_endp_mode ),
+	
+	.rx_tp					( prot_rx_tp ),
+	.rx_tp_hosterr			( prot_rx_tp_hosterr ),
+	.rx_tp_retry			( prot_rx_tp_retry ),
+	.rx_tp_pktpend			( prot_rx_tp_pktpend ),
+	.rx_tp_subtype			( prot_rx_tp_subtype ),
+	.rx_tp_endp				( prot_rx_tp_endp ),
+	.rx_tp_nump				( prot_rx_tp_nump ),
+	.rx_tp_seq				( prot_rx_tp_seq ),
+	.rx_tp_stream			( prot_rx_tp_stream ),
+
+	.rx_dph					( prot_rx_dph ),
+	.rx_dph_eob				( prot_rx_dph_eob ),
+	.rx_dph_setup			( prot_rx_dph_setup ),
+	.rx_dph_pktpend			( prot_rx_dph_pktpend ),
+	.rx_dph_endp			( prot_rx_dph_endp ),
+	.rx_dph_seq				( prot_rx_dph_seq ),
+	.rx_dph_len				( prot_rx_dph_len ),
+	.rx_dpp_done			( prot_rx_dpp_done ),
+	.rx_dpp_crcgood			( prot_rx_dpp_crcgood ),
+	
+	.tx_tp_a				( prot_tx_tp_a ),
+	.tx_tp_a_retry			( prot_tx_tp_a_retry ),
+	.tx_tp_a_dir			( prot_tx_tp_a_dir ),
+	.tx_tp_a_subtype		( prot_tx_tp_a_subtype ),
+	.tx_tp_a_endp			( prot_tx_tp_a_endp ),
+	.tx_tp_a_nump			( prot_tx_tp_a_nump ),
+	.tx_tp_a_seq			( prot_tx_tp_a_seq ),
+	.tx_tp_a_stream			( prot_tx_tp_a_stream ),
+
+	.tx_tp_b				( prot_tx_tp_b ),
+	.tx_tp_b_retry			( prot_tx_tp_b_retry ),
+	.tx_tp_b_dir			( prot_tx_tp_b_dir ),
+	.tx_tp_b_subtype		( prot_tx_tp_b_subtype ),
+	.tx_tp_b_endp			( prot_tx_tp_b_endp ),
+	.tx_tp_b_nump			( prot_tx_tp_b_nump ),
+	.tx_tp_b_seq			( prot_tx_tp_b_seq ),
+	.tx_tp_b_stream			( prot_tx_tp_b_stream ),
+
+	.tx_dph					( prot_tx_dph ),
+	.tx_dph_eob				( prot_tx_dph_eob ),
+	.tx_dph_dir				( prot_tx_dph_dir ),
+	.tx_dph_endp			( prot_tx_dph_endp ),
+	.tx_dph_seq				( prot_tx_dph_seq ),
+	.tx_dph_len				( prot_tx_dph_len ),
+	.tx_dpp_done			( prot_tx_dpp_done ),
+	
 	.buf_in_addr			( prot_buf_in_addr ),
 	.buf_in_data			( prot_buf_in_data ),
 	.buf_in_wren			( prot_buf_in_wren ),
@@ -418,3 +556,4 @@ mf_usb3_pll	 iu3pll (
 
 
 endmodule
+

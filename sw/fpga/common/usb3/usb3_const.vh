@@ -66,11 +66,11 @@ parameter	[23:0]	LFPS_PING_MAX		= 'd12;			// 200 ns
 parameter	[23:0]	LFPS_RESET_MIN		= 'd5000000;	// 80 ms (nom 100 ms)
 parameter	[23:0]	LFPS_RESET_DELAY	= 'd1875000;	// 30 ms
 parameter	[23:0]	LFPS_RESET_MAX		= 'd7500000;	// 120 ms
-parameter	[23:0]	LFPS_U1EXIT_MIN		= 'd37;			// 600 ns
-parameter	[23:0]	LFPS_U1EXIT_NOM		= 'd62500;		// 1 ms
-parameter	[23:0]	LFPS_U1EXIT_MAX		= 'd125000;		// 2 ms
+parameter	[23:0]	LFPS_U1EXIT_MIN		= 'd100;//'d37;			// 600 ns
+parameter	[23:0]	LFPS_U1EXIT_NOM		= 'd1600/2;		// 81 us
+parameter	[23:0]	LFPS_U1EXIT_MAX		= 'd125000;		// 2 ms (1.5, fudged)
 parameter	[23:0]	LFPS_U2LBEXIT_MIN	= 'd5000;		// 80 us
-parameter	[23:0]	LFPS_U2LBEXIT_NOM	= 'd625000;		// 1 ms
+parameter	[23:0]	LFPS_U2LBEXIT_NOM	= 'd6250;		// 100 us
 parameter	[23:0]	LFPS_U2LBEXIT_MAX	= 'd125000;		// 2 ms
 parameter	[23:0]	LFPS_U3WAKEUP_MIN	= 'd5000;		// 80 us
 parameter	[23:0]	LFPS_U3WAKEUP_NOM	= 'd62500;		// 1 ms
@@ -197,7 +197,7 @@ parameter	[0:0]	LP_TP_NORETRY			= 'b0,
 					LP_TP_RETRY				= 'b1;
 parameter	[0:0]	LP_TP_HOSTTODEVICE		= 'b0,
 					LP_TP_DEVICETOHOST		= 'b1;
-parameter	[15:0]	LP_TP_STREAMID			= 'b0;
+parameter	[15:0]	LP_TP_STREAMID			= 'h0;
 //
 // the following are for isochronous endpoints only (Table 8-12)
 //
@@ -219,7 +219,7 @@ parameter	[3:0]	LP_TP_DN_FUNC_AWAKE		= 'b0001,
 					
 parameter	[0:0]	LP_DP_EOB_LPF_NO		= 1'b0,
 					LP_DP_EOB_LPF_YES		= 1'b1;
-
+		
 function	[15:0]	swap16;
 	input	[15:0]	i;
 	swap16 = {i[7:0], i[15:8]};

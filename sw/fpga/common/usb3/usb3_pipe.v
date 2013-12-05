@@ -194,25 +194,21 @@ parameter	[5:0]	PD_RESET			= 6'd0,
 	// combinational detection of valid packet framing
 	// k-symbols within a received word.
 	wire			sync_byte_3 = proc_datak[3] && (	proc_data[31:24] == 8'h5C || proc_data[31:24] == 8'hBC ||
-														proc_data[31:24] == 8'hFB || proc_data[31:24] == 8'hFE ||
-														proc_data[31:24] == 8'hFD || proc_data[31:24] == 8'hF7 );
+														proc_data[31:24] == 8'hFB || proc_data[31:24] == 8'hFE );
 	wire			sync_byte_2 = proc_datak[2] && (	proc_data[23:16] == 8'h5C || proc_data[23:16] == 8'hBC ||
-														proc_data[23:16] == 8'hFB || proc_data[23:16] == 8'hFE ||
-														proc_data[23:16] == 8'hFD || proc_data[23:16] == 8'hF7 );
+														proc_data[23:16] == 8'hFB || proc_data[23:16] == 8'hFE );
 	wire			sync_byte_1 = proc_datak[1] && (	proc_data[15:8] == 8'h5C || proc_data[15:8] == 8'hBC ||
-														proc_data[15:8] == 8'hFB || proc_data[15:8] == 8'hFE ||
-														proc_data[15:8] == 8'hFD || proc_data[15:8] == 8'hF7 );
+														proc_data[15:8] == 8'hFB || proc_data[15:8] == 8'hFE );
 	wire			sync_byte_0 = proc_datak[0] && (	proc_data[7:0] == 8'h5C || proc_data[7:0] == 8'hBC ||
-														proc_data[7:0] == 8'hFB || proc_data[7:0] == 8'hFE ||
-														proc_data[7:0] == 8'hFD || proc_data[7:0] == 8'hF7 );
+														proc_data[7:0] == 8'hFB || proc_data[7:0] == 8'hFE );
 	wire	[3:0]	sync_start 	= {sync_byte_3, sync_byte_2, sync_byte_1, sync_byte_0};
 	
-	//wire			sync_byte_3_end = proc_datak[3] && (	proc_data[31:24] == 8'h7C || proc_data[31:24] == 8'hFD );
-	//wire			sync_byte_2_end = proc_datak[2] && (	proc_data[23:16] == 8'h7C || proc_data[23:16] == 8'hFD );
-	//wire			sync_byte_1_end = proc_datak[1] && (	proc_data[15:8] == 8'h7C || proc_data[15:8] == 8'hFD );
-	//wire			sync_byte_0_end = proc_datak[0] && (	proc_data[7:0] == 8'h7C || proc_data[7:0] == 8'hFD );
-	//wire	[3:0]	sync_end	= {sync_byte_3_end, sync_byte_2_end, sync_byte_1_end, sync_byte_0_end};
-							
+	wire			sync_end_3 = proc_datak[3] && (		proc_data[31:24] == 8'hF7 || proc_data[31:24] == 8'hBC );
+	wire			sync_end_2 = proc_datak[2] && (		proc_data[23:16] == 8'hF7 || proc_data[23:16] == 8'hBC );
+	wire			sync_end_1 = proc_datak[1] && (		proc_data[15:8] == 8'hF7 || proc_data[15:8] == 8'hBC );
+	wire			sync_end_0 = proc_datak[0] && (		proc_data[7:0] == 8'hF7 || proc_data[7:0] == 8'hBC );
+	wire	[3:0]	sync_end 	= {sync_end_3, sync_end_2, sync_end_1, sync_end_0};
+				
 	assign			link_in_data	= sync_out;
 	assign			link_in_datak	= sync_outk;
 	assign			link_in_active	= sync_out_active;
@@ -310,7 +306,7 @@ always @(posedge local_clk) begin
 		// squash idle in P0
 		if(phy_power_down == POWERDOWN_0) phy_tx_elecidle_local <= 1'b0;
 		
-		// LTSSM wants to initiate link training!
+		// LTSSM wants to initiate link training! 
 		if(ltssm_training) begin
 			// grab tx mux from link layer
 			scr_mux <= 0;
@@ -342,6 +338,10 @@ always @(posedge local_clk) begin
 				if(ts_disable_scrambling) s_enable <= 0;
 				idle_symbol_send <= 0;
 				idle_symbol_recv <= 0;
+				
+				local_tx_active <= 1;
+				local_tx_data <= 32'h0;
+				local_tx_datak <= 4'b0;
 				state <= ST_TRAIN_IDLE_0;
 			end
 		end
@@ -412,7 +412,7 @@ always @(posedge local_clk) begin
 			if(hot_reset_count > 0) `DEC(hot_reset_count);
 			// increment symbols sent for SKP compensation
 			train_sym_skp <= train_sym_skp + 13'd16;
-			if(train_sym_skp >= (354-16)) begin
+			if(train_sym_skp >= (354-32)) begin
 				// time to insert SKP ordered set
 				state <= ST_TRAIN_ACTIVECONFIG_1;
 			end 
@@ -429,7 +429,7 @@ always @(posedge local_clk) begin
 		// transmitting SKP ordered set
 		// transmit two ordered sets so that we stay 32bit aligned.
 		// this will throw off the remote elastic buffer normally but isn't a 
-		// problem during training
+		// problem during training TODO merge with scrambler
 		phy_tx_elecidle_local <= 1'b0;
 		local_tx_active <= 1;
 		{local_tx_data, local_tx_datak} <= {32'h3C3C3C3C, 4'b1111};
@@ -446,6 +446,11 @@ always @(posedge local_clk) begin
 		{local_tx_data, local_tx_datak} <= {32'h00000000, 4'b0000};
 		
 		if(idle_symbol_send < 4) `INC(idle_symbol_send);
+		// our descrambler takes a cycle or two to switch on. 
+		// some host controllers send link commands immediately after the last TS2 symbol
+		// and the requisite 8 idle symbols. 
+		// solution is just to enter U0 immediately and put the smarts into the link layer
+		/*
 		if(sync_out != 32'h00000000) begin
 			// non-IDLE symbol received
 			idle_symbol_send <= 0;
@@ -456,7 +461,10 @@ always @(posedge local_clk) begin
 			// exit conditions matching those of LTSSM
 			state <= ST_TRAIN_IDLE_1;
 		end
-			
+		*/
+		if(idle_symbol_send == 4) begin
+			state <= ST_TRAIN_IDLE_1;
+		end
 		if(!ltssm_training) begin
 			// LTSSM has aborted or timed out
 			state <= ST_IDLE;
@@ -498,7 +506,6 @@ always @(posedge local_clk) begin
 		endcase
 	end
 		
-	
 	default: state <= ST_RST_0;
 	endcase
 	
@@ -545,31 +552,32 @@ always @(posedge local_clk) begin
 
 		// packet framing detected
 		// determine bit alignment
-		if( sync_start[0] ) begin
-			if( &sync_start[3:1] ) begin
-				word_rx_align <= 0; 
-				sync_a <= proc_data;
-				sync_ak <= proc_datak;
-			end else if( &sync_start[2:1] ) begin
+		if( sync_start[0]) begin
+			//if( &sync_start[3:1] ) begin				// 1111
+			//	word_rx_align <= 0; 
+			//	sync_a <= proc_data;
+			//	sync_ak <= proc_datak;
+			//end else 
+			if( &sync_start[2:1] ) begin				 // 0111
 				word_rx_align <= 1; 
 				sync_a <= {proc_data[23:0], 8'h0};
 				sync_ak <= {proc_datak[2:0], 1'h0};
-			end else if( &sync_start[1] ) begin
+			end else if( &sync_start[1] ) begin			// 0011
 				word_rx_align <= 2; 
 				sync_a <= {proc_data[15:0], 16'h0};
 				sync_ak <= {proc_datak[1:0], 2'h0};
-			end else begin
+			end else begin								// 0001
 				word_rx_align <= 3;
 				sync_a <= {proc_data[7:0], 24'h0};
 				sync_ak <= {proc_datak[0], 3'h0};
 			end
 		end
-	end
-	ALIGN_0: begin
-
-	end
-	ALIGN_1: begin
 		
+		if( &sync_start[3:1] & sync_end[0]) begin		// 1111
+			word_rx_align <= 0;  
+			sync_a <= proc_data; 
+			sync_ak <= proc_datak;
+		end 
 	end
 	default: align_state <= ALIGN_RESET;
 	endcase
@@ -599,27 +607,34 @@ always @(posedge local_clk) begin
 		ts_hot_reset_local <= ts_hot_reset_latch && set_ts2_found;	
 	end
 	TSDET_0: begin
-		tsdet_state <= 	
-			{sync_out[31:20], 4'b0, sync_out[15:0], sync_outk} == {32'h00004A4A, 4'b0000} ? TSDET_1 :
-			{sync_out[31:20], 4'b0, sync_out[15:0], sync_outk} == {32'h00004545, 4'b0000} ? TSDET_1 : TSDET_IDLE;
-		if(ltssm_state == LT_RECOVERY_IDLE || ltssm_state == LT_POLLING_IDLE) begin
-			// only allow latching of Disable Scrambling in these two LTSSM states
-			ts_disable_scrambling_latch <= sync_out[19];
+		if(sync_out_active) begin
+			tsdet_state <= 	
+				{sync_out[31:20], 4'b0, sync_out[15:0], sync_outk} == {32'h00004A4A, 4'b0000} ? TSDET_1 :
+				{sync_out[31:20], 4'b0, sync_out[15:0], sync_outk} == {32'h00004545, 4'b0000} ? TSDET_1 : TSDET_IDLE;
+			if(ltssm_state == LT_RECOVERY_IDLE || ltssm_state == LT_POLLING_IDLE) begin
+				// only allow latching of Disable Scrambling in these two LTSSM states
+				ts_disable_scrambling_latch <= sync_out[19];
+			end
+			ts_hot_reset_latch <= sync_out[16];
 		end
-		ts_hot_reset_latch <= sync_out[16];
 	end
 	TSDET_1: begin
-		tsdet_state <= 	
-			{sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000} ? TSDET_2 :
-			{sync_out, sync_outk} == {32'h45454545, 4'b0000} ? TSDET_2 : TSDET_IDLE;
+		if(sync_out_active) begin
+			tsdet_state <= 	
+				{sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000} ? TSDET_2 :
+				{sync_out, sync_outk} == {32'h45454545, 4'b0000} ? TSDET_2 : TSDET_IDLE;
+		end
 	end
 	TSDET_2: begin
-		set_ts1_found <= {sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000};
-		set_ts2_found <= {sync_out, sync_outk} == {32'h45454545, 4'b0000};
-		tsdet_state <= TSDET_IDLE;
+		if(sync_out_active) begin
+			set_ts1_found <= {sync_out, sync_outk} == {32'h4A4A4A4A, 4'b0000};
+			set_ts2_found <= {sync_out, sync_outk} == {32'h45454545, 4'b0000};
+			tsdet_state <= TSDET_IDLE;
+		end
 	end
 	endcase
-	
+	// if PHY is not in P0 then reset TSDET FSM
+	if(phy_power_down != POWERDOWN_0) tsdet_state <= TSDET_RESET;
 	
 	
 	///////////////////////////////////////

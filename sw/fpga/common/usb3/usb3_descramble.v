@@ -206,7 +206,7 @@ end
 	
 always @(posedge local_clk) begin
 	
-	if(scr_defer < 4) scr_defer <= scr_defer + 1'b1;
+	if(scr_defer < 3) scr_defer <= scr_defer + 1'b1;
 	if(|comma) scr_defer <= 0;
 
 	case(comma)
@@ -226,11 +226,11 @@ always @(posedge local_clk) begin
 	
 	if(coll_active) begin
 		// only apply descrambling to data, not K-symbols
-		proc_data[31:24] <= coll_data[31:24] ^ (coll_datak[3] ? 8'h0 : ds_delay[31:24]);
-		proc_data[23:16] <= coll_data[23:16] ^ (coll_datak[2] ? 8'h0 : ds_delay[23:16]);
-		proc_data[15:8] <= coll_data[15:8] ^ (coll_datak[1] ? 8'h0 : ds_delay[15:8]);
-		proc_data[7:0] <= coll_data[7:0] ^ (coll_datak[0] ? 8'h0 : ds_delay[7:0]);
-		proc_datak <= coll_datak;
+		next_data[31:24] <= coll_data[31:24] ^ (coll_datak[3] ? 8'h0 : ds_delay[31:24]);
+		next_data[23:16] <= coll_data[23:16] ^ (coll_datak[2] ? 8'h0 : ds_delay[23:16]);
+		next_data[15:8] <= coll_data[15:8] ^ (coll_datak[1] ? 8'h0 : ds_delay[15:8]);
+		next_data[7:0] <= coll_data[7:0] ^ (coll_datak[0] ? 8'h0 : ds_delay[7:0]);
+		next_datak <= coll_datak;
 		
 		// match incoming alignment
 		case(ds_align)
@@ -242,17 +242,29 @@ always @(posedge local_clk) begin
 		ds_last <= ds_out;
 	end
 	
-	proc_active <= coll_active;
+	next_active <= coll_active;
 	
 	// squelch invalids
 	if(~coll_valid || ~coll_active) begin
-		proc_data <= 32'h0;
-		proc_datak <= 4'b0;
-		proc_active <= 0;
+		next_data <= 32'h0;
+		next_datak <= 4'b0;
+		next_active <= 0;
 	end
 	
 end
 
+// step 4.
+// pipeline data to relax timing
+
+	reg		[31:0]	next_data;
+	reg		[3:0]	next_datak;
+	reg				next_active;
+
+always @(posedge local_clk) begin
+	proc_data <= next_data;
+	proc_datak <= next_datak;
+	proc_active <= next_active;
+end
 
 //
 // data de-scrambling for RX

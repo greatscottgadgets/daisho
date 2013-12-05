@@ -32,22 +32,24 @@ output	wire			buf_out_arm_ack,
 output	reg				vend_req_act,
 output	reg		[7:0]	vend_req_request,
 output	reg		[15:0]	vend_req_val,
-//output	reg		[15:0]	vend_req_index,
+output	reg		[15:0]	vend_req_index,
 //output	reg		[15:0]	vend_req_len,
 
 output	reg		[6:0]	dev_addr,
 output	reg				configured,
+output	reg				reset_dp_seq,
 
 output	reg				err_setup_pkt
 
 );
 
 `include "usb3_const.vh"
+`include "usb_descrip.vh"
 
 	reg				buf_in_commit_1, buf_in_commit_2;
 	reg				buf_out_arm_1, buf_out_arm_2;
 
-	reg		[63:0]	packet_setup /* synthesis noprune */;
+	reg		[63:0]	packet_setup;
 	wire	[7:0]	packet_setup_reqtype = packet_setup[63:56];	
 	wire			packet_setup_dir	= packet_setup_reqtype[7];
 	parameter		SETUP_DIR_HOSTTODEV	= 1'b0,
@@ -72,13 +74,14 @@ output	reg				err_setup_pkt
 					REQ_GET_CONFIG		= 8'h8,
 					REQ_SET_CONFIG		= 8'h9,
 					REQ_SET_INTERFACE	= 8'hB,
-					REQ_SYNCH_FRAME		= 8'h12;
+					REQ_SYNCH_FRAME		= 8'h12,
+					REQ_SET_SEL			= 8'h30;
 	wire	[15:0]	packet_setup_wval	= {packet_setup[39:32], packet_setup[47:40]};
 	wire	[15:0]	packet_setup_widx	= {packet_setup[23:16], packet_setup[31:24]};
 	wire	[15:0]	packet_setup_wlen	= {packet_setup[7:0], packet_setup[15:8]};
 	
-	reg		[7:0]	desired_out_len;
-	reg		[15:0]	packet_out_len;
+	reg		[10:0]	desired_out_len;
+	reg		[10:0]	packet_out_len;
 	reg		[3:0]	dev_config;
 	
 	reg				ptr_in;
@@ -114,7 +117,10 @@ output	reg				err_setup_pkt
 					ST_REQ_SETCONFIG	= 6'd36,
 					ST_REQ_SETINTERFACE	= 6'd37,
 					ST_REQ_SETADDR		= 6'd38,
-					ST_REQ_VENDOR		= 6'd39;
+					ST_REQ_VENDOR		= 6'd39,
+					ST_REQ_SETSEL		= 6'd40,
+					ST_REQ_SETFEAT		= 6'd41,
+					ST_REQ_CLRFEAT		= 6'd42;
 					
 	reg		[5:0]	state_out;
 	parameter [5:0]	ST_OUT_ARM			= 6'd11,
@@ -125,8 +131,10 @@ always @(posedge local_clk) begin
 	{buf_in_commit_2, buf_in_commit_1} <= {buf_in_commit_1, buf_in_commit};
 	{buf_out_arm_2, buf_out_arm_1} <= {buf_out_arm_1, buf_out_arm};
 
-configured <= dev_config ? 1 : 0;
+	configured <= dev_config ? 1'b1 : 1'b0;
 		
+	reset_dp_seq <= 0;
+	
 	`INC(dc);
 	
 	// clear act strobe after 4 cycles
@@ -152,15 +160,13 @@ configured <= dev_config ? 1 : 0;
 	ST_IDLE: begin
 		// idle state
 		if(buf_in_commit_1 & ~buf_in_commit_2) begin
-			// external device has written to this endpoint
+			// link/protocol layer has written to this endpoint
 			len_in <= buf_in_commit_len;
 
 			ready_in <= 0;
-			//if(buf_in_pid == PID_TOKEN_SETUP) begin
-				// wait for data latch
-				dc <= 0;
-				state_in <= ST_IN_COMMIT;
-			//end
+
+			dc <= 0;
+			state_in <= ST_IN_COMMIT;
 		end
 	end
 	ST_IN_COMMIT: begin
@@ -211,6 +217,15 @@ configured <= dev_config ? 1 : 0;
 			REQ_SET_ADDR: begin
 				state_in <= ST_REQ_SETADDR;
 			end
+			REQ_SET_FEAT: begin
+				state_in <= ST_REQ_SETFEAT;
+			end
+			REQ_CLEAR_FEAT: begin
+				state_in <= ST_REQ_CLRFEAT;
+			end
+			REQ_SET_SEL: begin
+				state_in <= ST_REQ_SETSEL;
+			end
 			default: begin
 				ready_in <= 1;
 				state_in <= ST_IDLE;
@@ -220,44 +235,45 @@ configured <= dev_config ? 1 : 0;
 	end
 	
 	ST_REQ_DESCR: begin
-		
 		state_in <= ST_RDLEN_0;
 		
 		// GET_DESCRIPTOR
 		case(packet_setup_wval)
 		16'h0100: begin
 			// device descriptor
-			descrip_addr_offset <= DESCR_OFF_DEVICE;
+			descrip_addr_offset <= DESCR_USB3_DEVICE;
 		end
 		16'h0200: begin
 			// config descriptor
-			descrip_addr_offset <= DESCR_OFF_CONFIG;
-			desired_out_len <= 41;
+			descrip_addr_offset <= DESCR_USB3_CONFIG;
+			desired_out_len <= DESCR_USB3_CONFIG_LEN;
 			state_in <= ST_RDLEN_3;
 		end
 		16'h0300: begin
 			// string: languages
-			descrip_addr_offset <= DESCR_OFF_STRING0;
+			descrip_addr_offset <= DESCR_USB3_STRING0;
 		end
 		16'h0301: begin
 			// string: manufacturer
-			descrip_addr_offset <= DESCR_OFF_MFGNAME;
+			descrip_addr_offset <= DESCR_USB3_STRING1;
 		end
 		16'h0302: begin
 			// string: product name
-			descrip_addr_offset <= DESCR_OFF_PRODNAME;
+			descrip_addr_offset <= DESCR_USB3_STRING2;
 		end
 		16'h0303: begin
 			// string: serial number
-			descrip_addr_offset <= DESCR_OFF_SERIAL;
+			descrip_addr_offset <= DESCR_USB3_STRING3;
 		end
-		16'h0600: begin
+		//16'h0600: begin
 			// device qualifier descriptor
-			descrip_addr_offset <= DESCR_OFF_DEVQUAL;
-		end
+			//descrip_addr_offset <= DESCR_OFF_DEVQUAL;
+		//end
 		16'h0f00: begin
 			// BOS #0
-			descrip_addr_offset <= DESCR_OFF_BOS0;
+			descrip_addr_offset <= DESCR_USB3_BOS;
+			desired_out_len <= DESCR_USB3_BOS_LEN;
+			state_in <= ST_RDLEN_3;
 		end
 		default: begin
 			packet_out_len <= 0;
@@ -279,13 +295,11 @@ configured <= dev_config ? 1 : 0;
 	end
 	ST_RDLEN_3: begin
 		// pick smaller of the setup packet's wanted length and the stored length
-		len_out <= packet_out_len < desired_out_len ? packet_out_len : desired_out_len; 
-		// BOS descriptors for compatibility report overall length in byte 3
-		if(descrip_addr_offset == DESCR_OFF_BOS0) len_out <= packet_out_len;
+		len_out <= packet_out_len < desired_out_len ? packet_out_len : desired_out_len;
 		// send response 
 		ready_in <= 1;
 		hasdata_out <= 1;
-		state_in <= ST_IDLE;
+		state_in <= ST_IDLE; 
 	end
 	ST_REQ_GETCONFIG: begin
 		// GET DEVICE CONFIGURATION
@@ -294,13 +308,14 @@ configured <= dev_config ? 1 : 0;
 		len_out <= 1;
 		ready_in <= 1;
 		hasdata_out <= 1;
-		descrip_addr_offset <= dev_config ? RESP_OFF_CONFIGY : RESP_OFF_CONFIGN;
+		descrip_addr_offset <= dev_config ? DESCR_USB3_CONFSET : DESCR_USB3_CONFUNSET;
 		state_in <= ST_IDLE;
 	end
 	ST_REQ_SETCONFIG: begin
 		// SET DEVICE CONFIGURATION
 		dev_config <= packet_setup_wval[6:0];
-	
+		reset_dp_seq <= 1;
+		
 		// send 0byte response 
 		len_out <= 0;
 		ready_in <= 1;
@@ -310,6 +325,7 @@ configured <= dev_config ? 1 : 0;
 	ST_REQ_SETINTERFACE: begin
 		// SET INTERFACE
 		//dev_config <= packet_setup_wval[6:0];
+		reset_dp_seq <= 1;
 	
 		// send 0byte response
 		len_out <= 0;
@@ -327,24 +343,49 @@ configured <= dev_config ? 1 : 0;
 		hasdata_out <= 1;
 		state_in <= ST_IDLE;
 	end
-	
 	ST_REQ_VENDOR: begin
 		// VENDOR REQUEST
 		vend_req_request <= packet_setup_req;
 		vend_req_val <= packet_setup_wval;
-		//vend_req_index <= packet_setup_widx;
+		vend_req_index <= packet_setup_widx;
 		// optional data stage for bidir control transfers
 		// would require additional unsupported code in this endpoint
 		//vend_req_len <= packet_setup_wlen;
 		// signal to external interface there was a vend_req
 		vend_req_act <= 1'b1;
 		dc <= 0;
-		// send 0byte response (DATA1)
+		// send 0byte response
 		len_out <= 0;
 		ready_in <= 1;
 		hasdata_out <= 1;
 		state_in <= ST_IDLE;
 	end
+	ST_REQ_SETSEL: begin
+		// send 0byte response
+		len_out <= 0;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
+	end
+	ST_REQ_SETFEAT: begin
+		// U1/U2 Enable; parse wValue TODO
+		len_out <= 0;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
+	end
+	ST_REQ_CLRFEAT: begin
+		reset_dp_seq <= 1;
+		
+		len_out <= 0;
+		ready_in <= 1;
+		hasdata_out <= 1;
+		state_in <= ST_IDLE;
+	end
+	
+	
+	
+	
 	default: state_in <= ST_RST_0;
 	endcase
 	
@@ -392,17 +433,11 @@ configured <= dev_config ? 1 : 0;
 		// reset
 		state_in <= ST_RST_0;
 		state_out <= ST_RST_0;
+		
 	end
 	
 end
 
-
-// endpoint OUT buffer
-// 64 bytes
-// terminology here: USB specs defines IN as device reads going into the PC,
-// and OUT transfers as device writes from the PC. from a device standpoint
-// this may seem backwards but it's just for consistency, which is not entirely
-// reflected in these conventions locally
 
 	reg		[3:0]	buf_in_rdaddr;
 	wire	[31:0]	buf_in_q;
@@ -416,22 +451,6 @@ mf_usb3_ep0in	iu3ep0i (
 	.q 			( buf_in_q )
 );
 
-
-// endpoint IN buffer
-// segmented
-// relevant descriptors (device, interface, endpoint etc)
-
-	parameter [7:0] DESCR_OFF_DEVICE	= 8'd0;
-	parameter [7:0] DESCR_OFF_DEVQUAL	= 8'd5;
-	parameter [7:0] DESCR_OFF_CONFIG	= 8'd8;
-	parameter [7:0] DESCR_OFF_BOS0		= 8'd40;
-	parameter [7:0] DESCR_OFF_SERIAL	= 8'd80;
-	parameter [7:0] DESCR_OFF_PRODNAME	= 8'd100;
-	parameter [7:0] DESCR_OFF_MFGNAME	= 8'd111;
-	parameter [7:0] DESCR_OFF_STRING0	= 8'd125;
-	parameter [7:0] RESP_OFF_CONFIGN	= 8'd126;
-	parameter [7:0] RESP_OFF_CONFIGY	= 8'd127;
-	
 	reg		[7:0]	descrip_addr_offset;
 	
 mf_usb3_descrip	iu3d (
@@ -441,5 +460,4 @@ mf_usb3_descrip	iu3d (
 );
 
 
-	
 endmodule

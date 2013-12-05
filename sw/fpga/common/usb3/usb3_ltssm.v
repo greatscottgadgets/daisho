@@ -45,6 +45,7 @@ input	wire			train_idle_pass,
 
 input	wire			hot_reset,
 input	wire			go_recovery,
+input	wire	[2:0]	go_u,
 
 output	reg				lfps_send_ack,
 input	wire			lfps_send_poll,
@@ -263,7 +264,6 @@ always @(posedge slow_clk) begin
 	end
 	LT_POLLING_ACTIVE: begin
 		// send TS1 until 8 consecutive TS are received
-		// N.B. my test root hub only sends 6
 		training <= 1;
 		train_active <= 1;
 		
@@ -289,12 +289,12 @@ always @(posedge slow_clk) begin
 		if(train_ts2) begin
 			if(tc < 8) `INC(tc);			
 		end
-		// increment TS2 send count, sequence is 4 cycles long
-		if(tc > 0) if(tsc < 16*4) `INC(tsc);
+		// increment TS2 send count, sequence is 2 cycles long
+		if(tc > 0) if(tsc < 16*2) `INC(tsc);
 		
 		// exit criteria
 		// received 8 and sent 16
-		if(tc == 8 && tsc == 16*4) begin
+		if(tc == 8 && tsc == 16*2) begin
 			// reset timeout count and proceed
 			dc <= 0;
 			tc <= 0;
@@ -327,25 +327,70 @@ always @(posedge slow_clk) begin
 		if(train_ts1) begin
 			// TS1 detected, go to Recovery
 			state <= LT_RECOVERY;
-		end
-		
+		end else
 		if(go_recovery_latch) begin
 			// link layer had a problem, Recovery
 			state <= LT_RECOVERY;
+		end else
+		if(go_u == 3'b101) begin
+			// link layer requests U1 
+			port_power_down <= POWERDOWN_1;
+			port_power_go <= 1;
+			if(port_power_ack) state <= LT_U1;
+		end else
+		if(go_u == 3'b110) begin
+			// link layer requests U2 
+			port_power_down <= POWERDOWN_2;
+			port_power_go <= 1;
+			if(port_power_ack) state <= LT_U2;
 		end
 	end
 	LT_U1: begin
+		// U1 power saving state
+		// PIPE module should turn off its bus and only use LFPS to resume
+		
+		if(lfps_recv_poll_u1) begin
+			lfps_send_u1_local <= 1;
+		end else
+		//if(lfps_recv_u2lb ) begin
+		//	lfps_send_u2lb_local <= 1;
+		//end else
+		if(lfps_send_ack) begin
+			state <= LT_RECOVERY;
+		end else
+		if(go_u == 3'b110) begin
+			// link layer requests U2 
+			port_power_down <= POWERDOWN_2;
+			port_power_go <= 1;
+			if(port_power_ack) state <= LT_U2;
+		end
 	end
 	LT_U2: begin
+		// U2 power saving state
+		
+		//if(lfps_recv_poll_u1) begin 
+		//	lfps_send_u1_local <= 1;
+		//end else
+		if(lfps_recv_u2lb ) begin
+			lfps_send_u2lb_local <= 1;
+		end 
+		if(lfps_send_ack) begin
+			state <= LT_RECOVERY;
+		end
 	end
 	LT_U3: begin
+		
 	end
 	
 	LT_RECOVERY: begin
 		dc <= 0;
 		tc <= 0;
 		tsc <= 0;
-		state <= LT_RECOVERY_ACTIVE;
+		
+		port_power_down <= POWERDOWN_0;
+		port_power_go <= 1;
+		
+		if(port_power_ack) state <= LT_RECOVERY_ACTIVE;
 	end
 	LT_RECOVERY_ACTIVE: begin
 		// send TS1 until 8 consecutive TS are received
@@ -354,7 +399,7 @@ always @(posedge slow_clk) begin
 		
 		if(train_ts1 | train_ts2) `INC(tc);
 		
-		if(tc == 8) begin
+		if(tc == 10) begin
 			// received 8 consecutive(TODO?) TS1/TS2
 			// reset timeout count and proceed
 			dc <= 0;
@@ -373,12 +418,13 @@ always @(posedge slow_clk) begin
 		if(train_ts2) begin
 			if(tc < 8) `INC(tc);			
 		end
-		// increment TS2 send count, sequence is 4 cycles long
-		if(tc > 0) if(tsc < 16*4) `INC(tsc);
+		// increment TS2 send count, sequence is 2 cycles long 
+		// (remember we are in 62.5mhz domain, not 125mhz link)
+		if(tc > 0) if(tsc < 15*2) `INC(tsc);
 		
 		// exit criteria
 		// received 8 and sent 16
-		if(tc == 8 && tsc == 16*4) begin
+		if(tc == 8 && tsc == 15*2) begin
 			// reset timeout count and proceed
 			dc <= 0;
 			tc <= 0;
@@ -436,7 +482,7 @@ always @(posedge slow_clk) begin
 		lfps_send_state <= LFPS_IDLE;
 	end
 	LFPS_IDLE: begin
-		if(port_rx_elecidle_2 && !training) begin
+		if(!training) begin // port_rx_elecidle_2 && 
 			// clear to go
 			if(lfps_send_poll | lfps_send_poll_local) begin
 				// Polling.LFPS
@@ -481,7 +527,7 @@ always @(posedge slow_clk) begin
 		// decrement pulse width and repeat interval
 		`DEC(sc);
 		`DEC(sic);
-		if(sc == 0) lfps_send_state <= LFPS_SEND_2;
+		if(sc == 1) lfps_send_state <= LFPS_SEND_2;
 		
 		if(lfps_send_reset_local) begin
 			// special case here -- WarmReset must be ack'd 
@@ -536,6 +582,21 @@ always @(posedge slow_clk) begin
 			// N.B. per spec this is not acceptable during SS.Disabled
 			if(~port_rx_elecidle_2) lfps_send_reset_local <= 1;
 		end
+		
+		if(rc == LFPS_U1EXIT_MIN) begin
+			// link partner is sending U1Exit handshake, reciprocate
+			//lfps_recv_state <= LFPS_RECV_2;
+			lfps_recv_active <= 1;
+			lfps_recv_poll_u1 <= 1;
+		end
+		 
+		if(rc == LFPS_U2LBEXIT_MIN) begin
+			// link partner is sending U2/LBExit handshake, reciprocate
+			lfps_recv_state <= LFPS_RECV_2;
+			lfps_recv_active <= 1;
+			lfps_recv_u2lb <= 1;
+		end
+		
 		// wait for rising edge
 		if(port_rx_elecidle_2) begin
 			lfps_recv_state <= LFPS_IDLE;
@@ -568,18 +629,18 @@ always @(posedge slow_clk) begin
 						lfps_recv_ping <= 1;
 				end else
 					lfps_recv_active <= 0;
-					
+				
 				lfps_recv_ping_prev <= 1;
 				ric <= 0;
 			end else if(rc >= LFPS_RESET_MIN && rc < LFPS_RESET_MAX) begin
 				// WarmReset
 				lfps_recv_reset <= 1;
-			end else if(rc >= LFPS_U1EXIT_MIN && rc < LFPS_U1EXIT_MAX) begin
+			//end else if(rc >= LFPS_U1EXIT_MIN && rc < LFPS_U1EXIT_MAX) begin
 				// U1.Exit
-				lfps_recv_poll_u1 <= 1;
-			end else if(rc >= LFPS_U2LBEXIT_MIN && rc < LFPS_U2LBEXIT_MAX) begin
+			//	lfps_recv_poll_u1 <= 1;
+			//end else if(rc >= LFPS_U2LBEXIT_MIN && rc < LFPS_U2LBEXIT_MAX) begin
 				// U2/Loopback.Exit
-				lfps_recv_u2lb <= 1;
+			//	lfps_recv_u2lb <= 1;
 			end else if(rc >= LFPS_U3WAKEUP_MIN && rc < LFPS_U3WAKEUP_MAX) begin
 				// U3.Wakeup
 				lfps_recv_u3 <= 1;
@@ -591,6 +652,11 @@ always @(posedge slow_clk) begin
 		end
 	end
 	LFPS_RECV_2: begin
+		// just wait for end of host LFPS to squelch generation of erroneous transfers
+		if(port_rx_elecidle_2) begin
+			ric <= 0;
+			lfps_recv_state <= LFPS_IDLE;
+		end
 	end
 	LFPS_RECV_3: begin
 	end
@@ -606,6 +672,7 @@ always @(posedge slow_clk) begin
 	
 	if(lfps_recv_reset && state != LT_SS_DISABLED) begin
 		// Warm Reset (LFPS)
+		warm_reset <= 1;
 		state <= LT_RX_DETECT_RESET;
 	end
 	
