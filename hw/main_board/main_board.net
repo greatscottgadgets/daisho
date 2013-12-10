@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Thu 02 May 2013 10:22:58 AM PDT
+# EESchema Netlist Version 1.1 created  Wed 13 Nov 2013 11:55:53 AM PST
 (
  ( /5109F714/5136A7E6 IPC_CAPC1005X55N C1 1U
   ( 1 /usb0_power/A1P1 )
@@ -665,7 +665,7 @@
   ( 2 GND )
  )
  ( /510B2194/516727CB IPC_CAPC1005X55N C230 100N
-  ( 1 N-000172 )
+  ( 1 /power/VALT )
   ( 2 GND )
  )
  ( /510B2194/51672169 IPC_CAPC1005X55N C231 100N
@@ -673,7 +673,7 @@
   ( 2 GND )
  )
  ( /510B2194/5167216E IPC_CAPC1005X55N C232 100N
-  ( 1 N-000172 )
+  ( 1 /power/VALT )
   ( 2 GND )
  )
  ( /510B2194/51673713 IPC_CAPC3225X270N C240 22U
@@ -689,7 +689,7 @@
   ( 2 GND )
  )
  ( /510B2194/51673717 IPC_CAPC1005X55N C243 2N2
-  ( 1 N-000182 )
+  ( 1 N-000181 )
   ( 2 N-000177 )
  )
  ( /510B2194/5167371E IPC_CAPC3216X180N C245 22U
@@ -946,11 +946,11 @@
  )
  ( /510B2194/51672425 IPC_DIOM5226X203N D1 DIODESCH
   ( 1 VALT_MB )
-  ( 2 N-000172 )
+  ( 2 /power/VALT )
  )
  ( /510B2194/5167242A IPC_DIOM5226X203N D2 DIODESCH
   ( 1 VALT_FE )
-  ( 2 N-000172 )
+  ( 2 /power/VALT )
  )
  ( /5148D8EF/5170B2EE IPC_LEDC1608X60N D3 LED
   ( 1 V3P3D )
@@ -961,7 +961,7 @@
   ( 2 N-000316 )
  )
  ( /5109FB2D/51687BFC IPC_INDC2012X130N FB1 FILTER
-  ( 1 N-000143 )
+  ( 1 /usb0_interfaces/VUSB_RAW )
   ( 2 VUSB )
  )
  ( /5109FB2D/516B027A IPC_INDC2012X130N FB2 FILTER
@@ -1422,16 +1422,16 @@
   ( 10 /microcontroller/RESET# )
  )
  ( /5109FB2D/51533B85 USB3_MICRO_AB J5 USB3_MICRO_AB
-  ( 1 N-000143 )
+  ( 1 /usb0_interfaces/VUSB_RAW )
   ( 2 /usb0_interfaces/DM )
   ( 3 /usb0_interfaces/DP )
   ( 4 /fpga_usb0/USB3_ID )
   ( 5 GND )
-  ( 6 /usb0_interfaces/SSRXP )
-  ( 7 /usb0_interfaces/SSRXM )
+  ( 6 /usb0_interfaces/SSTXM_C )
+  ( 7 /usb0_interfaces/SSTXP_C )
   ( 8 GND )
-  ( 9 /usb0_interfaces/SSTXP_C )
-  ( 10 /usb0_interfaces/SSTXM_C )
+  ( 9 /usb0_interfaces/SSRXM )
+  ( 10 /usb0_interfaces/SSRXP )
   ( 11 /usb0_interfaces/USB3_SHIELD )
  )
  ( /5148D8EF/51684B06 HIROSE_DM3D J6 HIROSE_DM3D
@@ -1447,7 +1447,7 @@
   ( A /microcontroller/SD_DET )
   ( B GND )
  )
- ( /510B2194/5168EAD7 CUI_PJ-102BH J7 BARREL_JACK
+ ( /510B2194/5168EAD7 CUI_PJ-102[AB]H J7 BARREL_JACK
   ( 1 VALT_MB )
   ( 2 GND )
   ( 3 ? )
@@ -1548,8 +1548,8 @@
   ( 2 /usb0_interfaces/OUT_ENABLE )
  )
  ( /5109FB2D/5159AA94 IPC_RESC1005X40N R18 10K
-  ( 1 N-000160 )
-  ( 2 N-000161 )
+  ( 1 N-000143 )
+  ( 2 N-000142 )
  )
  ( /510B2194/5168AA04 IPC_RESC1005X40N R19 174K
   ( 1 N-000188 )
@@ -1632,12 +1632,12 @@
   ( 2 GND )
  )
  ( /5129BCC5/51743912 IPC_RESC1005X40N R39 1K00
-  ( 1 N-000200 )
+  ( 1 N-000202 )
   ( 2 /fpga_usb0/USB3_ID )
  )
  ( /5129BCC5/51743969 IPC_RESC1005X40N R40 10K
   ( 1 V1P8 )
-  ( 2 N-000200 )
+  ( 2 N-000202 )
  )
  ( /5138E12B/514BAB23 IPC_RESC1005X40N R41 1K00
   ( 1 /front_end/FE_VCCIO_C )
@@ -1769,14 +1769,14 @@
  )
  ( /510B2194/516721B8 IPC_RESC1005X40N R79 47K0
   ( 1 N-000189 )
-  ( 2 N-000172 )
+  ( 2 /power/VALT )
  )
  ( /510B2194/516721C6 IPC_RESC1005X40N R80 10K0
   ( 1 N-000189 )
   ( 2 GND )
  )
  ( /510B2194/51672154 IPC_RESC1005X40N R81 249R
-  ( 1 N-000173 )
+  ( 1 N-000174 )
   ( 2 GND )
  )
  ( /510B2194/516726BA IPC_RESC1005X40N R82 10K
@@ -1804,7 +1804,7 @@
   ( 2 GND )
  )
  ( /510B2194/51673714 IPC_RESC1005X40N R95 158K
-  ( 1 N-000181 )
+  ( 1 N-000183 )
   ( 2 GND )
  )
  ( /510B2194/51677D88 IPC_RESC1005X40N R96 10K
@@ -1968,7 +1968,7 @@
   ( AC4 /fpga_usb0/PIPE_RX_DATA10 )
   ( AC5 /fpga_usb0/PIPE_RX_POLARITY )
   ( AC6 GND )
-  ( AC7 N-000200 )
+  ( AC7 N-000202 )
   ( AC8 /ddr2/DQ54 )
   ( AC9 GND )
   ( AC10 /ddr2/S#1 )
@@ -2793,8 +2793,8 @@
   ( L10 /usb0_interfaces/OUT_ENABLE )
   ( L11 /fpga_usb0/PIPE_TX_DEEMPH0 )
   ( L12 GND )
-  ( L13 N-000160 )
-  ( L14 N-000161 )
+  ( L13 N-000143 )
+  ( L14 N-000142 )
   ( M1 /fpga_usb0/PIPE_TX_DATA8 )
   ( M2 /fpga_usb0/PIPE_TX_DATA9 )
   ( M3 V1P8 )
@@ -2912,11 +2912,11 @@
   ( 21 GND )
  )
  ( /5109FB2D/516876EA GSG-SOT457 U5 GSG-IP4220CZ6
-  ( 1 /usb0_interfaces/DM )
+  ( 1 /fpga_usb0/USB3_ID )
   ( 2 GND )
   ( 3 /usb0_interfaces/DP )
-  ( 4 /fpga_usb0/USB3_ID )
-  ( 5 N-000143 )
+  ( 4 /usb0_interfaces/DM )
+  ( 5 /usb0_interfaces/VUSB_RAW )
   ( 6 ? )
  )
  ( /510B2194/5151F4ED IPC_SOT95P280X110-5N U6 MIC5207YM5
@@ -2927,27 +2927,27 @@
   ( 5 V2P5 )
  )
  ( /5109FB2D/5153B8D1 USB3_ESD_SON50-10 U7 USB3_ESD_SON50-10
-  ( 1 /usb0_interfaces/SSRXP )
-  ( 2 /usb0_interfaces/SSRXM )
+  ( 1 /usb0_interfaces/SSTXM_C )
+  ( 2 /usb0_interfaces/SSTXP_C )
   ( 3 GND )
-  ( 4 /usb0_interfaces/SSTXP_C )
-  ( 5 /usb0_interfaces/SSTXM_C )
+  ( 4 /usb0_interfaces/SSRXM )
+  ( 5 /usb0_interfaces/SSRXP )
  )
  ( /510B2194/51671FDF TI_DRB_S-PVSON-N8 U8 TPS2113A
   ( 1 /microcontroller/ALT_SW_STAT )
   ( 2 GND )
   ( 3 N-000189 )
-  ( 4 N-000173 )
+  ( 4 N-000174 )
   ( 5 GND )
   ( 6 VUSB )
   ( 7 VRAW )
-  ( 8 N-000172 )
+  ( 8 /power/VALT )
   ( 9 GND )
  )
  ( /510B2194/51671FF3 TI_DGN_S-PDSO-G8 U9 TPS2065C-2
   ( 1 GND )
-  ( 2 N-000172 )
-  ( 3 N-000172 )
+  ( 2 /power/VALT )
+  ( 3 /power/VALT )
   ( 4 /microcontroller/USB_POWER_EN )
   ( 5 /microcontroller/USB_POWER_FLT# )
   ( 6 VUSB )
@@ -2969,8 +2969,8 @@
   ( 4 GND )
   ( 5 GND )
   ( 6 N-000179 )
-  ( 7 N-000182 )
-  ( 8 N-000181 )
+  ( 7 N-000181 )
+  ( 8 N-000183 )
   ( 9 N-000180 )
   ( 10 /power/V1P8_PH )
   ( 11 /power/V1P8_PH )
