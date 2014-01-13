@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Wed 13 Nov 2013 11:55:53 AM PST
+Cmp-Mod V01 Created by CvPcb (2012-apr-16-27)-stable date = Sun 12 Jan 2014 10:46:51 PM PST
 
 BeginCmp
 TimeStamp = /5109F714/5136A7E6;
@@ -1856,10 +1856,24 @@ IdModule  = GSG-NRG4026;
 EndCmp
 
 BeginCmp
-TimeStamp = /5148D8EF/5171C18B;
+TimeStamp = /5148D8EF/52D38B64;
 Reference = P1;
-ValeurCmp = CONN_4X2;
-IdModule  = SULLINS_GRPB042VWQS;
+ValeurCmp = CONN_1;
+IdModule  = GSG-TESTPOINT-50MIL;
+EndCmp
+
+BeginCmp
+TimeStamp = /5148D8EF/52A7602A;
+Reference = P2;
+ValeurCmp = CONN_5X2;
+IdModule  = GSG-HEADER-2x5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5148D8EF/52D38B70;
+Reference = P3;
+ValeurCmp = CONN_1;
+IdModule  = GSG-TESTPOINT-50MIL;
 EndCmp
 
 BeginCmp

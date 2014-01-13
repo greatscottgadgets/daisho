@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wed 13 Nov 2013 11:55:57 AM PST
+EESchema Schematic File Version 2  date Sun 12 Jan 2014 10:52:37 PM PST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +36,7 @@ $Descr A3 16535 11700
 encoding utf-8
 Sheet 3 15
 Title "Daisho Project Main Board"
-Date "13 nov 2013"
+Date "13 jan 2014"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -44,8 +44,16 @@ Comment2 "License: GNU General Public License, version 2"
 Comment3 ""
 Comment4 ""
 $EndDescr
+Connection ~ 6100 5200
 Wire Wire Line
-	8900 8700 9500 8700
+	6100 6600 6100 5200
+Connection ~ 9000 9700
+Wire Wire Line
+	8900 9700 9000 9700
+Wire Wire Line
+	6900 9700 8100 9700
+Wire Wire Line
+	6900 9400 8100 9400
 Connection ~ 14000 2400
 Wire Wire Line
 	14000 1800 14000 2400
@@ -63,9 +71,7 @@ Connection ~ 5400 5000
 Wire Wire Line
 	5400 5000 5400 2300
 Wire Wire Line
-	8900 8600 9500 8600
-Wire Wire Line
-	5300 5300 6200 5300
+	5100 5300 6200 5300
 Wire Wire Line
 	5400 2300 5900 2300
 Wire Wire Line
@@ -104,10 +110,6 @@ Wire Wire Line
 Wire Wire Line
 	2800 7400 2600 7400
 Wire Wire Line
-	6900 8700 8100 8700
-Wire Wire Line
-	6900 8500 8100 8500
-Wire Wire Line
 	5600 5900 6200 5900
 Wire Wire Line
 	6200 5400 5600 5400
@@ -138,7 +140,7 @@ Wire Wire Line
 	12700 9000 12700 8300
 Connection ~ 13600 8200
 Wire Wire Line
-	13600 7200 13600 9000
+	13600 9000 13600 7200
 Wire Wire Line
 	13600 9400 13600 9600
 Wire Wire Line
@@ -339,7 +341,7 @@ Wire Wire Line
 Wire Wire Line
 	2600 4900 2600 5000
 Wire Wire Line
-	2400 7350 2400 6500
+	2400 6500 2400 7350
 Connection ~ 2400 6500
 Wire Wire Line
 	6200 6300 3300 6300
@@ -384,10 +386,6 @@ Wire Wire Line
 	5600 5800 6200 5800
 Wire Wire Line
 	10800 6400 11900 6400
-Wire Wire Line
-	6900 8600 8100 8600
-Wire Wire Line
-	6900 8800 8100 8800
 Wire Wire Line
 	3900 7300 4000 7300
 Wire Wire Line
@@ -458,9 +456,7 @@ Wire Wire Line
 	11700 5600 10800 5600
 Connection ~ 5700 2300
 Wire Wire Line
-	5300 5200 6200 5200
-Wire Wire Line
-	8900 8500 9500 8500
+	5100 5200 6200 5200
 Wire Wire Line
 	6200 5000 5300 5000
 Wire Wire Line
@@ -472,21 +468,64 @@ Wire Wire Line
 Wire Wire Line
 	9800 3500 9800 3400
 Wire Wire Line
-	6100 6400 6100 6600
-Connection ~ 6100 6400
-Wire Wire Line
 	6100 7800 6100 7900
 Wire Wire Line
-	8900 8800 9000 8800
+	6900 9300 8100 9300
+Wire Wire Line
+	6900 9500 8100 9500
+Wire Wire Line
+	8900 9300 9000 9300
+Wire Wire Line
+	9000 9300 9000 9800
+Wire Wire Line
+	9500 9400 8900 9400
 $Comp
-L CONN_4X2 P1
-U 1 1 5171C18B
-P 8500 8650
-F 0 "P1" H 8500 8900 50  0000 C CNN
-F 1 "CONN_4X2" V 8500 8650 40  0000 C CNN
-F 4 "Sullins" H 8500 8650 60  0001 C CNN "Manufacturer"
-F 5 "GRPB042VWQS" H 8500 8650 60  0001 C CNN "Part Number"
-	1    8500 8650
+L CONN_1 P3
+U 1 1 52D38B70
+P 4950 5300
+F 0 "P3" H 5030 5300 40  0000 L CNN
+F 1 "CONN_1" H 4950 5355 30  0001 C CNN
+	1    4950 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_1 P1
+U 1 1 52D38B64
+P 4950 5200
+F 0 "P1" H 5030 5200 40  0000 L CNN
+F 1 "CONN_1" H 4950 5255 30  0001 C CNN
+	1    4950 5200
+	-1   0    0    1   
+$EndComp
+NoConn ~ 8900 9600
+NoConn ~ 8900 9500
+NoConn ~ 8100 9600
+Text Label 7100 9700 0    60   ~ 0
+FPGA_TDI
+Text Label 7100 9500 0    60   ~ 0
+FPGA_TMS
+Text Label 7100 9400 0    60   ~ 0
+FPGA_TDO_V3P3
+Text Label 7100 9300 0    60   ~ 0
+FPGA_TCK
+$Comp
+L GND #PWR03
+U 1 1 52A76090
+P 9000 9800
+F 0 "#PWR03" H 9000 9800 30  0001 C CNN
+F 1 "GND" H 9000 9730 30  0001 C CNN
+	1    9000 9800
+	1    0    0    -1  
+$EndComp
+Text GLabel 9500 9400 2    60   Input ~ 0
+V3P3D
+$Comp
+L CONN_5X2 P2
+U 1 1 52A7602A
+P 8500 9500
+F 0 "P2" H 8500 9800 60  0000 C CNN
+F 1 "CONN_5X2" V 8500 9500 50  0000 C CNN
+	1    8500 9500
 	1    0    0    -1  
 $EndComp
 Text Notes 10550 2650 0    60   ~ 0
@@ -501,9 +540,7 @@ Text Notes 13950 7550 0    60   ~ 0
 MicroSD card socket
 Text Notes 3900 10300 0    60   ~ 0
 Voltage shifter for 1.8V signals\nfrom FPGA to microcontroller
-Text Notes 8800 8200 0    60   ~ 0
-Microcontroller serial port
-Text Notes 7000 8200 0    60   ~ 0
+Text Notes 7000 9100 0    60   ~ 0
 Direct access to FPGA JTAG
 Text Notes 12400 1600 0    60   ~ 0
 Serial Wire Debug
@@ -521,10 +558,10 @@ F 5 "EVQ-P7A01K" H 6100 7500 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR03
+L GND #PWR04
 U 1 1 5170CDD9
 P 6100 7900
-F 0 "#PWR03" H 6100 7900 30  0001 C CNN
+F 0 "#PWR04" H 6100 7900 30  0001 C CNN
 F 1 "GND" H 6100 7830 30  0001 C CNN
 	1    6100 7900
 	1    0    0    -1  
@@ -541,10 +578,10 @@ F 5 "RMCF0402JT1K00" V 6100 6850 60  0001 C CNN "Part Number"
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR04
+L GND #PWR05
 U 1 1 5170B37E
 P 9800 3500
-F 0 "#PWR04" H 9800 3500 30  0001 C CNN
+F 0 "#PWR05" H 9800 3500 30  0001 C CNN
 F 1 "GND" H 9800 3430 30  0001 C CNN
 	1    9800 3500
 	1    0    0    -1  
@@ -578,10 +615,10 @@ LED_STATUS
 Text Label 10400 2300 0    60   ~ 0
 LED_STATUS
 $Comp
-L GND #PWR05
+L GND #PWR06
 U 1 1 5170B270
 P 10300 3500
-F 0 "#PWR05" H 10300 3500 30  0001 C CNN
+F 0 "#PWR06" H 10300 3500 30  0001 C CNN
 F 1 "GND" H 10300 3430 30  0001 C CNN
 	1    10300 3500
 	1    0    0    -1  
@@ -608,23 +645,10 @@ F 5 "QTLP600CYTR" H 10300 2600 60  0001 C CNN "Part Number"
 	1    10300 2600
 	0    1    1    0   
 $EndComp
-Text Label 9100 8600 0    60   ~ 0
-TXD
-Text Label 9100 8500 0    60   ~ 0
-RXD
 Text Label 5500 5300 0    60   ~ 0
 TXD
 Text Label 5500 5200 0    60   ~ 0
 RXD
-$Comp
-L GND #PWR06
-U 1 1 5170A8E4
-P 9000 8800
-F 0 "#PWR06" H 9000 8800 30  0001 C CNN
-F 1 "GND" H 9000 8730 30  0001 C CNN
-	1    9000 8800
-	0    -1   -1   0   
-$EndComp
 Text GLabel 6600 1900 2    60   Input ~ 0
 V3P3D
 $Comp
@@ -820,16 +844,6 @@ F 6 "FERRITE CHIP 220 OHM 2000MA 0805" H 1550 7700 60  0001 C CNN "Description"
 	1    1550 7700
 	0    -1   -1   0   
 $EndComp
-Text Label 7100 8800 0    60   ~ 0
-FPGA_TCK
-Text Label 7100 8700 0    60   ~ 0
-FPGA_TDO_V3P3
-Text Label 7100 8600 0    60   ~ 0
-FPGA_TDI
-Text Label 7100 8500 0    60   ~ 0
-FPGA_TMS
-Text GLabel 9500 8700 2    60   Input ~ 0
-V3P3D
 Text HLabel 2800 3100 0    60   Output ~ 0
 DDR2_SA[1..0]
 Text Label 11000 6400 0    60   ~ 0
