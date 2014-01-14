@@ -336,7 +336,10 @@ always @(posedge slow_clk) begin
 			// link layer requests U1 
 			port_power_down <= POWERDOWN_1;
 			port_power_go <= 1;
-			if(port_power_ack) state <= LT_U1;
+			if(port_power_ack) begin
+				dc <= 0;
+				state <= LT_U1;
+			end
 		end else
 		if(go_u == 3'b110) begin
 			// link layer requests U2 
@@ -354,7 +357,7 @@ always @(posedge slow_clk) begin
 		end else
 		//if(lfps_recv_u2lb ) begin
 		//	lfps_send_u2lb_local <= 1;
-		//end else
+		//end else 
 		if(lfps_send_ack) begin
 			state <= LT_RECOVERY;
 		end else
@@ -363,15 +366,17 @@ always @(posedge slow_clk) begin
 			port_power_down <= POWERDOWN_2;
 			port_power_go <= 1;
 			if(port_power_ack) state <= LT_U2;
+		end else
+		if(dc == LFPS_BURST_PING_NOM) begin
+			// send Ping.LFPS every 200ms
+			dc <= 0;
+			lfps_send_ping_local <= 1;
 		end
 	end
 	LT_U2: begin
 		// U2 power saving state
 		
-		//if(lfps_recv_poll_u1) begin 
-		//	lfps_send_u1_local <= 1;
-		//end else
-		if(lfps_recv_u2lb ) begin
+		if(lfps_recv_u2lb) begin
 			lfps_send_u2lb_local <= 1;
 		end 
 		if(lfps_send_ack) begin
@@ -383,14 +388,20 @@ always @(posedge slow_clk) begin
 	end
 	
 	LT_RECOVERY: begin
-		dc <= 0;
-		tc <= 0;
-		tsc <= 0;
-		
-		port_power_down <= POWERDOWN_0;
-		port_power_go <= 1;
-		
-		if(port_power_ack) state <= LT_RECOVERY_ACTIVE;
+		dc <= -10;
+		state <= LT_RECOVERY_WAIT;
+	end
+	LT_RECOVERY_WAIT: begin
+		if(dc == 0) begin
+			dc <= 0;
+			tc <= 0;
+			tsc <= 0;
+			
+			port_power_down <= POWERDOWN_0;
+			port_power_go <= 1;
+			
+			if(port_power_ack) state <= LT_RECOVERY_ACTIVE;
+		end
 	end
 	LT_RECOVERY_ACTIVE: begin
 		// send TS1 until 8 consecutive TS are received
@@ -399,7 +410,7 @@ always @(posedge slow_clk) begin
 		
 		if(train_ts1 | train_ts2) `INC(tc);
 		
-		if(tc == 10) begin
+		if(tc == 8) begin
 			// received 8 consecutive(TODO?) TS1/TS2
 			// reset timeout count and proceed
 			dc <= 0;
@@ -420,11 +431,11 @@ always @(posedge slow_clk) begin
 		end
 		// increment TS2 send count, sequence is 2 cycles long 
 		// (remember we are in 62.5mhz domain, not 125mhz link)
-		if(tc > 0) if(tsc < 15*2) `INC(tsc);
+		if(tc > 0) if(tsc < 16*2) `INC(tsc);
 		
 		// exit criteria
 		// received 8 and sent 16
-		if(tc == 8 && tsc == 15*2) begin
+		if(tc == 8 && tsc == 16*2) begin
 			// reset timeout count and proceed
 			dc <= 0;
 			tc <= 0;
@@ -471,7 +482,7 @@ always @(posedge slow_clk) begin
 	end
 	default: state <= LT_RESET;
 	endcase
-	
+
 	
 	
 	///////////////////////////////////////

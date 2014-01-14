@@ -88,7 +88,7 @@ output	reg				partner_detected
 
 `include "usb3_const.vh"
 
-	assign phy_pipe_tx_clk = local_tx_clk;
+	assign phy_pipe_tx_clk = local_tx_clk_phase;
 	
 	// mux these phy signals with both local PIPE and external LTSSM control
 	//
@@ -273,7 +273,7 @@ always @(posedge local_clk) begin
 		phy_tx_swing <= 		SWING_FULL;		// full swing
 		phy_rx_termination <= 	1'b1;			// enable rx termination
 		phy_elas_buf_mode <= 	ELASBUF_HALF;	// elastic buffer nominally half full
-				
+		
 		ds_enable <= 0;							// disable descrambling
 		s_enable <= 0;							// disable scrambling
 		scr_mux <= 0;							// switch TX mux to local PIPE layer 
@@ -412,7 +412,7 @@ always @(posedge local_clk) begin
 			if(hot_reset_count > 0) `DEC(hot_reset_count);
 			// increment symbols sent for SKP compensation
 			train_sym_skp <= train_sym_skp + 13'd16;
-			if(train_sym_skp >= (354-32)) begin
+			if(train_sym_skp >= (354*2-16)) begin
 				// time to insert SKP ordered set
 				state <= ST_TRAIN_ACTIVECONFIG_1;
 			end 
@@ -429,12 +429,12 @@ always @(posedge local_clk) begin
 		// transmitting SKP ordered set
 		// transmit two ordered sets so that we stay 32bit aligned.
 		// this will throw off the remote elastic buffer normally but isn't a 
-		// problem during training TODO merge with scrambler
+		// problem during training 
 		phy_tx_elecidle_local <= 1'b0;
 		local_tx_active <= 1;
 		{local_tx_data, local_tx_datak} <= {32'h3C3C3C3C, 4'b1111};
 		// decrement overflow counter
-		train_sym_skp <= train_sym_skp - 13'd354;
+		train_sym_skp <= train_sym_skp - 13'd354*2+32;
 		// reset sequence index
 		swc <= 0;
 		state <= ST_TRAIN_ACTIVECONFIG_0;

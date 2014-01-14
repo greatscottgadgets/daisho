@@ -62,7 +62,10 @@ always @(posedge local_pclk_half ) begin
 end
 
 	assign			phy_reset_n = reset_n;			// TUSB1310A has minimum 1uS pulse width for RESET
-	assign			phy_phy_reset_n = reset_n;		// responsibility of the toplevel module to supply this reset
+													// responsibility of the toplevel module to supply this reset
+													// NOTE: reset entire phy will cause loss of PLL lock
+	assign			phy_phy_reset_n = reset_n & phy_pwrpresent;		
+													// reset the PHY along with all our core code if cable unplugged
 	assign			phy_out_enable = 1'b1;
 	
 	wire	[1:0]	mux_tx_margin; 
@@ -305,6 +308,7 @@ usb3_link iu3l (
 	.prot_rx_dph_endp		( prot_rx_dph_endp ),
 	.prot_rx_dph_seq		( prot_rx_dph_seq ),
 	.prot_rx_dph_len		( prot_rx_dph_len ),
+	.prot_rx_dpp_start		( prot_rx_dpp_start ),
 	.prot_rx_dpp_done		( prot_rx_dpp_done ),
 	.prot_rx_dpp_crcgood	( prot_rx_dpp_crcgood ),
 	
@@ -386,6 +390,7 @@ usb3_link iu3l (
 	wire	[3:0]	prot_rx_dph_endp;
 	wire	[4:0]	prot_rx_dph_seq;
 	wire	[15:0]	prot_rx_dph_len;
+	wire			prot_rx_dpp_start;
 	wire			prot_rx_dpp_done;
 	wire			prot_rx_dpp_crcgood;
 	
@@ -460,6 +465,7 @@ usb3_protocol iu3r (
 	.rx_dph_endp			( prot_rx_dph_endp ),
 	.rx_dph_seq				( prot_rx_dph_seq ),
 	.rx_dph_len				( prot_rx_dph_len ),
+	.rx_dpp_start			( prot_rx_dpp_start ),
 	.rx_dpp_done			( prot_rx_dpp_done ),
 	.rx_dpp_crcgood			( prot_rx_dpp_crcgood ),
 	

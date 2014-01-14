@@ -33,6 +33,7 @@ input	wire			rx_dph_pktpend,
 input	wire	[3:0]	rx_dph_endp,
 input	wire	[4:0]	rx_dph_seq,
 input	wire	[15:0]	rx_dph_len,
+input	wire			rx_dpp_start,
 input	wire			rx_dpp_done,
 input	wire			rx_dpp_crcgood,
 
@@ -61,7 +62,6 @@ output	reg		[3:0]	tx_dph_endp,
 output	reg		[4:0]	tx_dph_seq,
 output	reg		[15:0]	tx_dph_len,
 input	wire			tx_dpp_done,
-
 
 
 input	wire	[8:0]	buf_in_addr,
@@ -106,7 +106,9 @@ output	wire			configured,
 
 output	reg				err_miss_rx,
 output	reg				err_miss_tx,
-output	reg				err_tp_subtype
+output	reg				err_tp_subtype,
+output	reg				err_missed_dpp_start,
+output	reg				err_missed_dpp_done
 
 );
 
@@ -215,6 +217,7 @@ parameter	[4:0]	TX_RESET		= 'd0,
 	
 	reg				do_send_dpp;
 	
+	reg		[10:0]	recv_count;
 	reg		[10:0]	dc;
 	
 	reg		[3:0]	sel_endp;
@@ -228,6 +231,7 @@ always @(posedge local_clk) begin
 	do_send_dpp <= 0;
 	
 	`INC(dc);
+	`INC(recv_count);
 	
 	case(rx_state)
 	RX_RESET: rx_state <= RX_IDLE;
@@ -235,10 +239,10 @@ always @(posedge local_clk) begin
 		if(rx_dph) begin
 			// receiving data packet header, link layer is stuffing payload
 			// into the endpoint buffer
-			//if(rx_dph_endp == 0) 
 			in_dpp_seq <= rx_dph_seq;
 			sel_endp <= rx_dph_endp;
 			rx_state <= RX_DPH_0;
+			recv_count <= 0;
 		end else 
 		if(rx_tp) begin
 			// receving transaction packet, could be ACK or something else
@@ -247,15 +251,33 @@ always @(posedge local_clk) begin
 	
 	end
 	RX_DPH_0: begin
-		if(rx_dpp_done) begin
-			if(rx_dpp_crcgood) `INC(in_dpp_seq);
+		if(rx_dpp_start) begin
 			rx_state <= RX_DPH_1;
+		end
+		if(ltssm_state != LT_U0 || recv_count == 20) begin
+			err_missed_dpp_start <= 1;
+			rx_state <= RX_DPH_2;
 		end
 	end
 	RX_DPH_1: begin
+		if(rx_dpp_done) begin
+			if(rx_dpp_crcgood) `INC(in_dpp_seq);
+			err_missed_dpp_start <= 0;
+			err_missed_dpp_done <= 0;
+			rx_state <= RX_DPH_2;
+		end
+		if(ltssm_state != LT_U0 || recv_count == 270) begin
+			err_missed_dpp_done <= 1;
+			rx_state <= RX_DPH_2;
+		end
+	end
+	RX_DPH_2: begin
 		// send ACK
 		tx_tp_a			<= 1'b1;
-		tx_tp_a_retry	<= rx_dpp_crcgood ? LP_TP_NORETRY : LP_TP_RETRY;
+		tx_tp_a_retry	<= (	rx_dpp_crcgood && 
+								!err_missed_dpp_start && 
+								!err_missed_dpp_done
+							) ? LP_TP_NORETRY : LP_TP_RETRY;
 		tx_tp_a_dir		<= LP_TP_HOSTTODEVICE;
 		tx_tp_a_subtype <= LP_TP_SUB_ACK;
 		tx_tp_a_endp	<= rx_dph_endp;
@@ -298,7 +320,6 @@ always @(posedge local_clk) begin
 			tx_tp_b_nump	<= 5'h0;
 			tx_tp_b_seq		<= in_dpp_seq;
 			tx_tp_b_stream	<= 16'h0;
-			
 		end
 		LP_TP_SUB_PING: begin
 		
@@ -324,6 +345,7 @@ always @(posedge local_clk) begin
 		if(do_send_dpp) begin
 			// note: overall transfer length
 			out_length <= buf_out_len;
+
 			tx_state <= TX_DP_0;
 		end
 	end
@@ -359,7 +381,7 @@ always @(posedge local_clk) begin
 	end
 	
 	
-	if(~reset_n || ltssm_state != LT_U0) begin
+	if(~reset_n) begin
 		rx_state <= RX_RESET;
 		tx_state <= TX_RESET;
 	end
@@ -368,6 +390,8 @@ always @(posedge local_clk) begin
 		err_miss_rx <= 0;
 		err_miss_tx <= 0;
 		err_tp_subtype <= 0;
+		err_missed_dpp_start <= 0;
+		err_missed_dpp_done <= 0;
 	end
 end
 

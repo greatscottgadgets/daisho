@@ -400,7 +400,7 @@ int main(int argc, char *argv[])
 	add_endpoint(		1,			// EP1
 						1,			// IN
 						2,			// BULK
-						512,		// Max packet size
+						512,		// Max packet size (autofixed to 1024 for USB3)
 						0x1,		// Interval for isoch. endpoints
 						16,			// Max burst packets for usb 3.0
 						0x00,		// No stream support 
@@ -410,7 +410,7 @@ int main(int argc, char *argv[])
 	add_endpoint(		2,			// EP2
 						0,			// OUT
 						2,			// BULK
-						512,		// Max packet size
+						512,		// Max packet size (autofixed to 1024 for USB3)
 						0x1,		// Interval for isoch. endpoints
 						16,			// Max burst packets for usb 3.0
 						0x00,		// No stream support 
