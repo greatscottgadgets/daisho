@@ -231,8 +231,7 @@ always @(posedge local_clk) begin
 	
 	ltssm_train_rxeq_pass <= 0;
 	ltssm_train_idle_pass <= 0;
-	ltssm_hot_reset <= 0;
-	
+
 	local_tx_data <= 32'h0;
 	local_tx_datak <= 4'b0000;
 	local_tx_active <= 1'b0;
@@ -242,9 +241,8 @@ always @(posedge local_clk) begin
 	set_ts1_found <= 0;
 	set_ts2_found <= 0;
 	ts_disable_scrambling <= 0;
-	ts_hot_reset_local <= 0;
 	ts_hot_reset_1 <= ts_hot_reset_local;
-	ltssm_hot_reset <= ts_hot_reset_local | ts_hot_reset_1;
+	//ltssm_hot_reset <= ts_hot_reset_local | ts_hot_reset_1;
 	
 	ltssm_train_ts1 <= set_ts1_found_1 | set_ts1_found;
 	ltssm_train_ts2 <= set_ts2_found_1 | set_ts2_found;
@@ -252,7 +250,8 @@ always @(posedge local_clk) begin
 	set_ts1_found_1 <= set_ts1_found;
 	set_ts2_found_1 <= set_ts2_found;
 	
-	if(ltssm_state == LT_HOTRESET) hot_reset_count <= 16;
+	// on first detection of TS2 Reset, send at least 16 TS2 with Reset
+	if(ts_hot_reset_local & ~ts_hot_reset_1) hot_reset_count <= 16;
 	
 	///////////////////////////////////////
 	// PIPE FSM
@@ -268,7 +267,7 @@ always @(posedge local_clk) begin
 		phy_rx_polarity <= 		1'b0;			// no lane polarity inversion
 		phy_power_down <= 		POWERDOWN_2;	// P2 state
 		phy_tx_margin <= 		MARGIN_A;		// normal operating margin
-		phy_tx_deemph <= 		DEEMPH_3_5_DB;	// -3.5dB
+		phy_tx_deemph <= 		DEEMPH_3_5_DB;	// -3.5dB 
 		phy_rate <= 			1'b1;			// 5.0 Gb/s fixed
 		phy_tx_swing <= 		SWING_FULL;		// full swing
 		phy_rx_termination <= 	1'b1;			// enable rx termination
@@ -279,8 +278,8 @@ always @(posedge local_clk) begin
 		scr_mux <= 0;							// switch TX mux to local PIPE layer 
 		
 		ts_disable_scrambling_latch <= 0;
-		ts_hot_reset_latch <= 0;
 		hot_reset_count <= 0;
+		ltssm_hot_reset <= 0;
 		
 		state <= ST_RST_1;
 		dc <= 0;
@@ -408,6 +407,7 @@ always @(posedge local_clk) begin
 		end
 
 		if(swc == 3) begin
+			// end of ordered set, repeat
 			swc <= 0;
 			if(hot_reset_count > 0) `DEC(hot_reset_count);
 			// increment symbols sent for SKP compensation
@@ -462,7 +462,11 @@ always @(posedge local_clk) begin
 			state <= ST_TRAIN_IDLE_1;
 		end
 		*/
-		if(idle_symbol_send == 4) begin
+		// Once other port sends Idle then it has exit training. Wait for this or we'll just go
+		// right back into Recovery
+		// N.B. this requires a few cycles and may cause the miss of the first Link Command
+		// on some very fast links. More testing is needed TODO
+		if(idle_symbol_send == 4 && {sync_out, sync_outk} == {32'h00000000, 4'b0000}) begin
 			state <= ST_TRAIN_IDLE_1;
 		end
 		if(!ltssm_training) begin
@@ -481,6 +485,8 @@ always @(posedge local_clk) begin
 		
 		// pass tx mux to link layer
 		scr_mux <= 1;
+		
+		ltssm_hot_reset <= 0;
 		
 		case(ltssm_state) 
 		LT_U0: state <= ST_U0;
@@ -596,6 +602,8 @@ always @(posedge local_clk) begin
 	
 	case(tsdet_state)
 	TSDET_RESET: begin
+		ts_hot_reset_latch <= 0;
+		ts_hot_reset_local <= 0;
 		tsdet_state <= TSDET_IDLE;
 	end
 	TSDET_IDLE: begin
@@ -604,7 +612,14 @@ always @(posedge local_clk) begin
 				{sync_out, sync_outk} == {32'hBCBCBCBC, 4'b1111} ? TSDET_0 : TSDET_IDLE;
 		end
 		ts_disable_scrambling <= ts_disable_scrambling_latch && set_ts2_found;
-		ts_hot_reset_local <= ts_hot_reset_latch && set_ts2_found;	
+		//ts_hot_reset_local <= ts_hot_reset_latch && set_ts2_found;	
+		if(set_ts2_found) begin
+			// update whether or not the Reset bit was set
+			// this is used by the LTSSM to decide whether to proceed to U0 or HotReset
+			ts_hot_reset_local <= ts_hot_reset_latch;	
+			
+			if(ts_hot_reset_latch) ltssm_hot_reset <= 1;
+		end
 	end
 	TSDET_0: begin
 		if(sync_out_active) begin

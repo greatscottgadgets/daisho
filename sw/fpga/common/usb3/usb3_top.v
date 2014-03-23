@@ -67,7 +67,7 @@ end
 	assign			phy_phy_reset_n = reset_n & phy_pwrpresent;		
 													// reset the PHY along with all our core code if cable unplugged
 	assign			phy_out_enable = 1'b1;
-	
+		
 	wire	[1:0]	mux_tx_margin; 
 
 	parameter		XTAL_SEL			= 1'b0; 	// crystal input
@@ -225,6 +225,7 @@ usb3_ltssm	iu3lt (
 	.train_idle_pass		( ltssm_train_idle_pass ),
 	.train_ts1				( ltssm_train_ts1 ),
 	.train_ts2				( ltssm_train_ts2 ),
+	.go_disabled			( ltssm_go_disabled ),
 	.go_recovery			( ltssm_go_recovery ),
 	.go_u					( ltssm_go_u ),
 	.hot_reset				( ltssm_hot_reset ),
@@ -268,6 +269,7 @@ usb3_ltssm	iu3lt (
 	wire		[3:0]	link_out_datak;
 	wire				link_out_active;
 	wire				link_out_stall;
+	wire				ltssm_go_disabled;
 	wire				ltssm_go_recovery;
 	wire		[2:0]	ltssm_go_u;
 	
@@ -278,6 +280,7 @@ usb3_link iu3l (
 	
 	.ltssm_state			( ltssm_state ),
 	.ltssm_hot_reset		( ltssm_hot_reset ),
+	.ltssm_go_disabled		( ltssm_go_disabled ),
 	.ltssm_go_recovery		( ltssm_go_recovery ),
 	.ltssm_go_u				( ltssm_go_u),
 	.in_data				( link_in_data ),

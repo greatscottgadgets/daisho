@@ -252,9 +252,11 @@ always @(posedge local_clk) begin
 	end
 	RX_DPH_0: begin
 		if(rx_dpp_start) begin
+			// received DPP start ordered set
 			rx_state <= RX_DPH_1;
 		end
 		if(ltssm_state != LT_U0 || recv_count == 20) begin
+			// we waited too long for DPP start and it hasn't come yet
 			err_missed_dpp_start <= 1;
 			rx_state <= RX_DPH_2;
 		end

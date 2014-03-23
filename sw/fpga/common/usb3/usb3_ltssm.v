@@ -44,6 +44,7 @@ output	reg				train_idle,
 input	wire			train_idle_pass,
 
 input	wire			hot_reset,
+input	wire			go_disabled,
 input	wire			go_recovery,
 input	wire	[2:0]	go_u,
 
@@ -154,18 +155,41 @@ always @(posedge slow_clk) begin
 	///////////////////////////////////////
 	case(state)
 	LT_SS_DISABLED: begin
+		port_power_down <= POWERDOWN_2;
+		port_power_go <= 1;
 		//port_rx_term <= 0;
 		
 		//if(lfps_recv_reset) state <= LT_RX_DETECT_RESET;
 	end
 	LT_SS_INACTIVE: begin
-		state <= LT_SS_INACTIVE_DETECT;
-	end
-	LT_SS_INACTIVE_DETECT: begin
-		// TODO
+		// reset timeout counter and drop to P2 if not already
+		dc <= 0;
+		port_power_down <= POWERDOWN_2;
+		port_power_go <= 1;
+		if(port_power_ack) state <= LT_SS_INACTIVE_QUIET;
 	end
 	LT_SS_INACTIVE_QUIET: begin
+		if(dc == T_SS_INACTIVE_QUIET) begin
+			state <= LT_SS_INACTIVE_DETECT_0;
+		end
 	end
+	LT_SS_INACTIVE_DETECT_0: begin
+		partner_detect <= 1;
+		if(partner_looking) state <= LT_SS_INACTIVE_DETECT_1;
+	end
+	LT_SS_INACTIVE_DETECT_1: begin	
+		dc <= 0;
+		if(~partner_looking) begin
+			if(partner_detected) begin
+				// we're still connected to the host, continue waiting for unplug
+				state <= LT_SS_INACTIVE_QUIET;
+			end else begin
+				// disconnect, start looking for new host
+				state <= LT_RX_DETECT_RESET;
+			end
+		end
+	end
+		
 	LT_RX_DETECT_RESET: begin
 		// IF WARM RESET:
 		// finish transmitting LFPS.Reset until the duration
@@ -314,7 +338,10 @@ always @(posedge slow_clk) begin
 			// 16 IDLE symbol sent after receiving
 			// first of at least 8 symbols.
 			dc <= 0;
-			state <= LT_U0;
+			if(hot_reset) 
+				state <= LT_HOTRESET; 
+			else
+				state <= LT_U0;
 		end
 		
 		// timeout
@@ -346,6 +373,12 @@ always @(posedge slow_clk) begin
 			port_power_down <= POWERDOWN_2;
 			port_power_go <= 1;
 			if(port_power_ack) state <= LT_U2;
+		end
+		if(go_u == 3'b111) begin
+			// link layer requests U3 
+			port_power_down <= POWERDOWN_2; // our clock depends on PHY so don't suicide
+			port_power_go <= 1;
+			if(port_power_ack) state <= LT_U3;
 		end
 	end
 	LT_U1: begin
@@ -384,7 +417,14 @@ always @(posedge slow_clk) begin
 		end
 	end
 	LT_U3: begin
+		// U3 power saving state
 		
+		if(lfps_recv_u3) begin
+			lfps_send_u3_local <= 1;
+		end
+		if(lfps_send_ack) begin
+			state <= LT_RECOVERY;
+		end
 	end
 	
 	LT_RECOVERY: begin
@@ -454,7 +494,10 @@ always @(posedge slow_clk) begin
 			// 16 IDLE symbol sent after receiving
 			// first of at least 8 symbols.
 			dc <= 0;
-			state <= LT_U0;
+			if(hot_reset) 
+				state <= LT_HOTRESET; 
+			else
+				state <= LT_U0;
 		end
 		
 		if(dc == T_RECOV_IDLE) state <= LT_SS_INACTIVE;
@@ -584,8 +627,6 @@ always @(posedge slow_clk) begin
 	end
 	LFPS_RECV_1: begin
 		// lfps burst end
-		// ASSUMPTION: PIPE BUS WILL NOT START A TRANSFER
-		// RIGHT AFTER LFPS? (TODO)
 		
 		// detect WarmReset by seeing if LFPS continues past tResetDelay
 		if(rc > LFPS_RESET_DELAY) begin
@@ -596,16 +637,20 @@ always @(posedge slow_clk) begin
 		
 		if(rc == LFPS_U1EXIT_MIN) begin
 			// link partner is sending U1Exit handshake, reciprocate
-			//lfps_recv_state <= LFPS_RECV_2;
 			lfps_recv_active <= 1;
 			lfps_recv_poll_u1 <= 1;
 		end
 		 
 		if(rc == LFPS_U2LBEXIT_MIN) begin
 			// link partner is sending U2/LBExit handshake, reciprocate
-			lfps_recv_state <= LFPS_RECV_2;
 			lfps_recv_active <= 1;
 			lfps_recv_u2lb <= 1;
+		end
+		
+		if(rc == LFPS_U3WAKEUP_MIN) begin
+			// link partner is sending U3 wakeup, reciprocate 
+			lfps_recv_active <= 1;
+			lfps_recv_u3 <= 1;
 		end
 		
 		// wait for rising edge
@@ -652,9 +697,9 @@ always @(posedge slow_clk) begin
 			//end else if(rc >= LFPS_U2LBEXIT_MIN && rc < LFPS_U2LBEXIT_MAX) begin
 				// U2/Loopback.Exit
 			//	lfps_recv_u2lb <= 1;
-			end else if(rc >= LFPS_U3WAKEUP_MIN && rc < LFPS_U3WAKEUP_MAX) begin
+			//end else if(rc >= LFPS_U3WAKEUP_MIN && rc < LFPS_U3WAKEUP_MAX) begin
 				// U3.Wakeup
-				lfps_recv_u3 <= 1;
+			//	lfps_recv_u3 <= 1;
 			end else begin
 				// invalid burst
 				//lfps_recv_state <= LFPS_IDLE;
@@ -674,12 +719,16 @@ always @(posedge slow_clk) begin
 	default: lfps_recv_state <= LFPS_RESET;
 	endcase
 	
-	
-	if(hot_reset && state != LT_SS_DISABLED) begin
-		// Hot Reset (TS2 Reset bit)
-		dc <= 0;
-		state <= LT_HOTRESET;
+	if(go_disabled) begin
+		// SS.Disabled
+		state <= LT_SS_DISABLED;
 	end
+	
+	//if(hot_reset && state != LT_SS_DISABLED) begin
+		// Hot Reset (TS2 Reset bit)
+	//	dc <= 0;
+	//	state <= LT_HOTRESET;
+	//end
 	
 	if(lfps_recv_reset && state != LT_SS_DISABLED) begin
 		// Warm Reset (LFPS)
