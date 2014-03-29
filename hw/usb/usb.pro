@@ -1,4 +1,4 @@
-update=Tuesday, March 25, 2014 'PMt' 10:33:50 PM
+update=Friday, March 28, 2014 'AMt' 11:54:46 AM
 last_client=eeschema
 [general]
 version=1
@@ -53,3 +53,4 @@ LibName14=on_cat24c256
 LibName15=conn
 LibName16=tps54821
 LibName17=hole
+LibName18=tca6416a

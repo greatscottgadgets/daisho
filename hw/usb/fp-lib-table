@@ -11,4 +11,5 @@
   (lib (name ipc_capc1005x55n)(type Legacy)(uri ${KIPRJMOD}/../lib/ipc_capc1005x55n.mod)(options "")(descr ""))
   (lib (name ipc_resc1005x40n)(type Legacy)(uri ${KIPRJMOD}/../lib/ipc_resc1005x40n.mod)(options "")(descr ""))
   (lib (name ipc_soic)(type Legacy)(uri ${KIPRJMOD}/../lib/ipc_soic.mod)(options "")(descr ""))
+  (lib (name ipc_sop65p640x120-24n)(type Legacy)(uri ${KIPRJMOD}/../lib/ipc_sop65p640x120-24n.mod)(options "")(descr ""))
 )
