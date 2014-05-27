@@ -91,10 +91,10 @@ parameter	[24:0]	T_POLLING_LFPS		= 'd22500000;	// 360 ms
 parameter	[24:0]	T_POLLING_ACTIVE	= 'd750000;		// 12 ms
 parameter	[24:0]	T_POLLING_CONFIG	= 'd750000;		// 12 ms
 parameter	[24:0]	T_POLLING_IDLE		= 'd125000;		// 2 ms
-parameter	[24:0]	T_U0_RECOVERY		= 'd62500*2;	// 1 ms
-parameter	[24:0]	T_U0L_TIMEOUT		= 'd625*2;		// 10 us
-parameter	[24:0]	T_PENDING_HP		= 'd188*2;		// 3 us
-parameter	[24:0]	T_CREDIT_HP			= 'd312500*2;	// 5000 us
+parameter	[24:0]	T_U0_RECOVERY		= 'd125000;		// 1 ms			used in Link Layer, double cycles
+parameter	[24:0]	T_U0L_TIMEOUT		= 'd1250;		// 10 us		used in Link Layer, double cycles
+parameter	[24:0]	T_PENDING_HP		= 'd376;		// 3 us			used in Link Layer, double cycles
+parameter	[24:0]	T_CREDIT_HP			= 'd625000;		// 5000 us		used in Link Layer, double cycles
 parameter	[24:0]	T_NOLFPS_U1			= 'd125000;		// 2 ms
 parameter	[24:0]	T_U1_PING			= 'd18750000;	// 300 ms
 parameter	[24:0]	T_NOLFPS_U2			= 'd125000;		// 2 ms
@@ -104,11 +104,11 @@ parameter	[24:0]	T_RECOV_CONFIG		= 'd375000;		// 6 ms
 parameter	[24:0]	T_RECOV_IDLE		= 'd125000;		// 2 ms
 parameter	[24:0]	T_LOOPBACK_EXIT		= 'd125000;		// 2 ms
 
-parameter	[24:0]	T_PM_LC				= 'd188*2;		// 3 us
-parameter	[24:0]	T_PM_ENTRY			= 'd376*2;		// 6 us
-parameter	[24:0]	T_UX_EXIT			= 'd375000*2;	// 6 ms
+parameter	[24:0]	T_PM_LC				= 'd376;		// 3 us			used in Link Layer, double cycles
+parameter	[24:0]	T_PM_ENTRY			= 'd752;		// 6 us			used in Link Layer, double cycles
+parameter	[24:0]	T_UX_EXIT			= 'd750000;		// 6 ms			used in Link Layer, double cycles
 
-parameter	[24:0]	T_PORT_CONFIG		= 'd1275*2;		// 20 us
+parameter	[24:0]	T_PORT_CONFIG		= 'd2550;		// 20 us		used in Link Layer, double cycles
 
 parameter	[1:0]	POWERDOWN_0			= 2'd0,		// active transmitting
 					POWERDOWN_1			= 2'd1,		// slight powerdown	

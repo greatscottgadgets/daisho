@@ -48,6 +48,8 @@ output	reg				err_setup_pkt
 
 );
 
+`include "usb_descrip.vh"
+
 	reg 			reset_1, reset_2;
 	reg				buf_in_commit_1, buf_in_commit_2;
 	reg				buf_out_arm_1, buf_out_arm_2;
@@ -255,33 +257,33 @@ always @(posedge phy_clk) begin
 		case(packet_setup_wval)
 		16'h0100: begin
 			// device descriptor
-			descrip_addr_offset <= DESCR_OFF_DEVICE;
+			descrip_addr_offset <= DESCR_USB2_DEVICE;
 		end
 		16'h0200: begin
 			// config descriptor
-			descrip_addr_offset <= DESCR_OFF_CONFIG;
-			desired_out_len <= 41;
+			descrip_addr_offset <= DESCR_USB2_CONFIG;
+			desired_out_len <= DESCR_USB2_CONFIG_LEN;
 			state_in <= ST_RDLEN_2;
 		end
 		16'h0300: begin
 			// string: languages
-			descrip_addr_offset <= DESCR_OFF_STRING0;
+			descrip_addr_offset <= DESCR_USB2_STRING0;
 		end
 		16'h0301: begin
 			// string: manufacturer
-			descrip_addr_offset <= DESCR_OFF_MFGNAME;
+			descrip_addr_offset <= DESCR_USB2_STRING1;
 		end
 		16'h0302: begin
 			// string: product name
-			descrip_addr_offset <= DESCR_OFF_PRODNAME;
+			descrip_addr_offset <= DESCR_USB2_STRING2;
 		end
 		16'h0303: begin
 			// string: serial number
-			descrip_addr_offset <= DESCR_OFF_SERIAL;
+			descrip_addr_offset <= DESCR_USB2_STRING3;
 		end
 		16'h0600: begin
 			// device qualifier descriptor
-			descrip_addr_offset <= DESCR_OFF_DEVQUAL;
+			descrip_addr_offset <= DESCR_USB2_DEVICE_QUAL;
 		end
 		default: begin
 			packet_out_len <= 0;
@@ -313,7 +315,7 @@ always @(posedge phy_clk) begin
 		len_out <= 1;
 		ready_in <= 1;
 		hasdata_out <= 1;
-		descrip_addr_offset <= dev_config ? RESP_OFF_CONFIGY : RESP_OFF_CONFIGN;
+		descrip_addr_offset <= dev_config ? DESCR_USB2_CONFSET : DESCR_USB2_CONFUNSET;
 		state_in <= ST_IDLE;
 	end
 	ST_REQ_SETCONFIG: begin
@@ -440,17 +442,6 @@ mf_usb2_ep0in	iu2ep0i (
 // segmented
 // relevant descriptors (device, interface, endpoint etc)
 
-	parameter [7:0] DESCR_OFF_DEVICE	= 8'd0;
-	parameter [7:0] DESCR_OFF_DEVQUAL	= 8'd18;
-	parameter [7:0] DESCR_OFF_CONFIG	= 8'd32;
-	parameter [7:0] DESCR_OFF_PRODNAME	= 8'd73;
-	parameter [7:0] DESCR_OFF_SERIAL	= 8'd115;
-	parameter [7:0] DESCR_OFF_STRING0	= 8'd196;
-	parameter [7:0] DESCR_OFF_MFGNAME	= 8'd200;
-	
-	parameter [7:0] RESP_OFF_CONFIGN	= 8'd254;
-	parameter [7:0] RESP_OFF_CONFIGY	= 8'd255;
-	
 	reg		[7:0]	descrip_addr_offset;
 	
 mf_usb2_descrip	iu2d (

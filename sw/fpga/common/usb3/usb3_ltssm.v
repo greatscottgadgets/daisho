@@ -10,7 +10,6 @@
 
 module usb3_ltssm (
 
-input	wire			ext_clk,
 input	wire			slow_clk,
 input	wire			local_clk,
 input	wire			reset_n,

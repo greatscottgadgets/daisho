@@ -10,7 +10,6 @@
 
 module usb3_pipe (
 
-input	wire			ext_clk,
 input	wire			slow_clk,
 input	wire			local_clk,
 input	wire			local_clk_capture,
@@ -926,7 +925,7 @@ mf_usb3_rx	iu3prx (
 mf_usb3_tx	iu3ptx (
 	.datain_h	( pipe_tx_h ),
 	.datain_l	( pipe_tx_l ),
-	.outclock	( local_clk ),
+	.outclock	( local_clk_capture ),
 	.dataout	( pipe_tx_phy )
 );
 

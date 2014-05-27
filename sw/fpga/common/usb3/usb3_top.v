@@ -11,6 +11,7 @@
 module usb3_top (
 
 input	wire			ext_clk,
+output	wire			clk_125_out,
 input	wire			reset_n,
 output	wire			reset_n_out,
 
@@ -40,7 +41,27 @@ output	wire			phy_tx_swing,
 output	wire			phy_rx_polarity,
 output	wire			phy_rx_termination,
 output	wire			phy_rate,
-output	wire			phy_elas_buf_mode
+output	wire			phy_elas_buf_mode,
+
+input	wire	[8:0]	buf_in_addr,
+input	wire	[31:0]	buf_in_data,
+input	wire			buf_in_wren,
+output	wire			buf_in_request,
+output	wire			buf_in_ready,
+input	wire			buf_in_commit,
+input	wire	[10:0]	buf_in_commit_len,
+output	wire			buf_in_commit_ack,
+
+input	wire	[8:0]	buf_out_addr,
+output	wire	[31:0]	buf_out_q,
+output	wire	[10:0]	buf_out_len,
+output	wire			buf_out_hasdata,
+input	wire			buf_out_arm,
+output	wire			buf_out_arm_ack,
+
+output	wire			vend_req_act,
+output	wire	[7:0]	vend_req_request,
+output	wire	[15:0]	vend_req_val
 
 );
 	
@@ -79,6 +100,8 @@ end
 	assign			phy_rx_elecidle 	= reset_2 ? 1'bZ : XTAL_SEL;
 	assign			phy_tx_margin	  	= reset_2 ? mux_tx_margin  : SSC_DIS;	
 	assign			phy_phy_status 		= reset_2 ? 1'bZ : PIPE_16BIT;
+	
+	assign			clk_125_out			= local_pclk_half;
 		
 	
 ////////////////////////////////////////////////////////////
@@ -91,7 +114,6 @@ end
 	
 usb3_pipe	iu3p (
 
-	.ext_clk				( ext_clk ),
 	.slow_clk				( local_pclk_quarter ),
 	.local_clk				( local_pclk_half ),
 	.local_clk_capture		( local_pclk_half_phase ),
@@ -206,7 +228,6 @@ usb3_pipe	iu3p (
 
 usb3_ltssm	iu3lt (
 
-	.ext_clk				( ext_clk ),
 	.slow_clk				( local_pclk_quarter ),
 	.local_clk				( local_pclk_half ),
 	.reset_n				( ltssm_reset_n ),
@@ -292,7 +313,8 @@ usb3_link iu3l (
 	.outp_active			( link_out_active ),
 	.out_stall				( link_out_stall ),
 	
-	.endp_mode				( prot_endp_mode ),
+	.endp_mode_rx			( prot_endp_mode_rx ),
+	.endp_mode_tx			( prot_endp_mode_tx ),
 	
 	.prot_rx_tp				( prot_rx_tp ),
 	.prot_rx_tp_hosterr		( prot_rx_tp_hosterr ),
@@ -323,6 +345,7 @@ usb3_link iu3l (
 	.prot_tx_tp_a_nump		( prot_tx_tp_a_nump ),
 	.prot_tx_tp_a_seq		( prot_tx_tp_a_seq ),
 	.prot_tx_tp_a_stream	( prot_tx_tp_a_stream ),
+	.prot_tx_tp_a_ack		( prot_tx_tp_a_ack ),
 
 	.prot_tx_tp_b			( prot_tx_tp_b ),
 	.prot_tx_tp_b_retry		( prot_tx_tp_b_retry ),
@@ -332,6 +355,17 @@ usb3_link iu3l (
 	.prot_tx_tp_b_nump		( prot_tx_tp_b_nump ),
 	.prot_tx_tp_b_seq		( prot_tx_tp_b_seq ),
 	.prot_tx_tp_b_stream	( prot_tx_tp_b_stream ),
+	.prot_tx_tp_b_ack		( prot_tx_tp_b_ack ),
+	
+	.prot_tx_tp_c			( prot_tx_tp_c ),
+	.prot_tx_tp_c_retry		( prot_tx_tp_c_retry ),
+	.prot_tx_tp_c_dir		( prot_tx_tp_c_dir ),
+	.prot_tx_tp_c_subtype	( prot_tx_tp_c_subtype ),
+	.prot_tx_tp_c_endp		( prot_tx_tp_c_endp ),
+	.prot_tx_tp_c_nump		( prot_tx_tp_c_nump ),
+	.prot_tx_tp_c_seq		( prot_tx_tp_c_seq ),
+	.prot_tx_tp_c_stream	( prot_tx_tp_c_stream ),
+	.prot_tx_tp_c_ack		( prot_tx_tp_c_ack ),
 	
 	.prot_tx_dph			( prot_tx_dph ),
 	.prot_tx_dph_eob		( prot_tx_dph_eob ),
@@ -339,6 +373,7 @@ usb3_link iu3l (
 	.prot_tx_dph_endp		( prot_tx_dph_endp ),
 	.prot_tx_dph_seq		( prot_tx_dph_seq ),
 	.prot_tx_dph_len		( prot_tx_dph_len ),
+	.prot_tx_dpp_ack		( prot_tx_dpp_ack ),
 	.prot_tx_dpp_done		( prot_tx_dpp_done ),
 	
 	.buf_in_addr			( prot_buf_in_addr ),
@@ -372,7 +407,8 @@ usb3_link iu3l (
 	//wire	[3:0]	prot_in_datak;
 	//wire			prot_in_active;
 	
-	wire	[1:0]	prot_endp_mode;
+	wire	[1:0]	prot_endp_mode_rx;
+	wire	[1:0]	prot_endp_mode_tx;
 	wire	[6:0]	prot_dev_addr;
 	wire			prot_configured;
 	
@@ -405,6 +441,7 @@ usb3_link iu3l (
 	wire	[4:0]	prot_tx_tp_a_nump;
 	wire	[4:0]	prot_tx_tp_a_seq;
 	wire	[15:0]	prot_tx_tp_a_stream;
+	wire			prot_tx_tp_a_ack;
 
 	wire			prot_tx_tp_b;
 	wire			prot_tx_tp_b_retry;
@@ -414,13 +451,25 @@ usb3_link iu3l (
 	wire	[4:0]	prot_tx_tp_b_nump;
 	wire	[4:0]	prot_tx_tp_b_seq;
 	wire	[15:0]	prot_tx_tp_b_stream;
-
+	wire			prot_tx_tp_b_ack;
+	
+	wire			prot_tx_tp_c;
+	wire			prot_tx_tp_c_retry;
+	wire			prot_tx_tp_c_dir;
+	wire	[3:0]	prot_tx_tp_c_subtype;
+	wire	[3:0]	prot_tx_tp_c_endp;
+	wire	[4:0]	prot_tx_tp_c_nump;
+	wire	[4:0]	prot_tx_tp_c_seq;
+	wire	[15:0]	prot_tx_tp_c_stream;
+	wire			prot_tx_tp_c_ack;
+	
 	wire			prot_tx_dph;
 	wire			prot_tx_dph_eob;
 	wire			prot_tx_dph_dir;
 	wire	[3:0]	prot_tx_dph_endp;
 	wire	[4:0]	prot_tx_dph_seq;
 	wire	[15:0]	prot_tx_dph_len;
+	wire			prot_tx_dpp_ack;
 	wire			prot_tx_dpp_done;
 
 
@@ -445,11 +494,14 @@ usb3_protocol iu3r (
 
 	.local_clk				( local_pclk_half ),
 	.slow_clk				( local_pclk_quarter ),
+	.ext_clk				( ext_clk ),
+	
 	.reset_n				( reset_2 | ~ltssm_warm_reset),
 	.ltssm_state			( ltssm_state ),
 
 	// muxed endpoint signals
-	.endp_mode				( prot_endp_mode ),
+	.endp_mode_rx				( prot_endp_mode_rx ),
+	.endp_mode_tx				( prot_endp_mode_tx ),
 	
 	.rx_tp					( prot_rx_tp ),
 	.rx_tp_hosterr			( prot_rx_tp_hosterr ),
@@ -480,6 +532,7 @@ usb3_protocol iu3r (
 	.tx_tp_a_nump			( prot_tx_tp_a_nump ),
 	.tx_tp_a_seq			( prot_tx_tp_a_seq ),
 	.tx_tp_a_stream			( prot_tx_tp_a_stream ),
+	.tx_tp_a_ack			( prot_tx_tp_a_ack ),
 
 	.tx_tp_b				( prot_tx_tp_b ),
 	.tx_tp_b_retry			( prot_tx_tp_b_retry ),
@@ -489,13 +542,25 @@ usb3_protocol iu3r (
 	.tx_tp_b_nump			( prot_tx_tp_b_nump ),
 	.tx_tp_b_seq			( prot_tx_tp_b_seq ),
 	.tx_tp_b_stream			( prot_tx_tp_b_stream ),
-
+	.tx_tp_b_ack			( prot_tx_tp_b_ack ),
+	
+	.tx_tp_c				( prot_tx_tp_c ),
+	.tx_tp_c_retry			( prot_tx_tp_c_retry ),
+	.tx_tp_c_dir			( prot_tx_tp_c_dir ),
+	.tx_tp_c_subtype		( prot_tx_tp_c_subtype ),
+	.tx_tp_c_endp			( prot_tx_tp_c_endp ),
+	.tx_tp_c_nump			( prot_tx_tp_c_nump ),
+	.tx_tp_c_seq			( prot_tx_tp_c_seq ),
+	.tx_tp_c_stream			( prot_tx_tp_c_stream ),
+	.tx_tp_c_ack			( prot_tx_tp_c_ack ),
+	
 	.tx_dph					( prot_tx_dph ),
 	.tx_dph_eob				( prot_tx_dph_eob ),
 	.tx_dph_dir				( prot_tx_dph_dir ),
 	.tx_dph_endp			( prot_tx_dph_endp ),
 	.tx_dph_seq				( prot_tx_dph_seq ),
 	.tx_dph_len				( prot_tx_dph_len ),
+	.tx_dpp_ack				( prot_tx_dpp_ack ),
 	.tx_dpp_done			( prot_tx_dpp_done ),
 	
 	.buf_in_addr			( prot_buf_in_addr ),
@@ -514,10 +579,11 @@ usb3_protocol iu3r (
 	.buf_out_arm_ack		( prot_buf_out_arm_ack ),
 	
 	// external interface
-	/*
+	
 	.ext_buf_in_addr		( buf_in_addr ),
 	.ext_buf_in_data		( buf_in_data ),
 	.ext_buf_in_wren		( buf_in_wren ),
+	.ext_buf_in_request		( buf_in_request ),
 	.ext_buf_in_ready		( buf_in_ready ),
 	.ext_buf_in_commit		( buf_in_commit ),
 	.ext_buf_in_commit_len	( buf_in_commit_len ),
@@ -529,13 +595,10 @@ usb3_protocol iu3r (
 	.ext_buf_out_hasdata	( buf_out_hasdata ),
 	.ext_buf_out_arm		( buf_out_arm ),
 	.ext_buf_out_arm_ack	( buf_out_arm_ack ),
-*/
-	//.vend_req_act			( vend_req_act ),
-	//.vend_req_request		( vend_req_request ),
-	//.vend_req_val			( vend_req_val ),
-	
-	//.data_toggle_act		( prot_data_toggle_act ),
-	//.data_toggle			( prot_data_toggle ),
+
+	.vend_req_act			( vend_req_act ),
+	.vend_req_request		( vend_req_request ),
+	.vend_req_val			( vend_req_val ),
 	
 	// tell the rest of the USB controller about what
 	// our current device address is, assigned by host

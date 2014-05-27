@@ -31,7 +31,8 @@ output	reg				outp_active,
 input	wire			out_stall,
 
 // protocol interface
-input	wire	[1:0]	endp_mode,
+input	wire	[1:0]	endp_mode_rx,
+input	wire	[1:0]	endp_mode_tx,
 input	wire	[6:0]	dev_addr,
 
 output	reg				prot_rx_tp,
@@ -63,6 +64,7 @@ input	wire	[3:0]	prot_tx_tp_a_endp,
 input	wire	[4:0]	prot_tx_tp_a_nump,
 input	wire	[4:0]	prot_tx_tp_a_seq,
 input	wire	[15:0]	prot_tx_tp_a_stream,
+output	reg				prot_tx_tp_a_ack,
 
 input	wire			prot_tx_tp_b,
 input	wire			prot_tx_tp_b_retry,
@@ -72,6 +74,17 @@ input	wire	[3:0]	prot_tx_tp_b_endp,
 input	wire	[4:0]	prot_tx_tp_b_nump,
 input	wire	[4:0]	prot_tx_tp_b_seq,
 input	wire	[15:0]	prot_tx_tp_b_stream,
+output	reg				prot_tx_tp_b_ack,
+
+input	wire			prot_tx_tp_c,
+input	wire			prot_tx_tp_c_retry,
+input	wire			prot_tx_tp_c_dir,
+input	wire	[3:0]	prot_tx_tp_c_subtype,
+input	wire	[3:0]	prot_tx_tp_c_endp,
+input	wire	[4:0]	prot_tx_tp_c_nump,
+input	wire	[4:0]	prot_tx_tp_c_seq,
+input	wire	[15:0]	prot_tx_tp_c_stream,
+output	reg				prot_tx_tp_c_ack,
 
 input	wire			prot_tx_dph,
 input	wire			prot_tx_dph_eob,
@@ -79,6 +92,7 @@ input	wire			prot_tx_dph_dir,
 input	wire	[3:0]	prot_tx_dph_endp,
 input	wire	[4:0]	prot_tx_dph_seq,
 input	wire	[15:0]	prot_tx_dph_len,
+output	reg				prot_tx_dpp_ack,
 output	reg				prot_tx_dpp_done,
 
 
@@ -202,6 +216,7 @@ parameter	[5:0]	LINK_QUEUE_RESET		= 'd0,
 					LINK_QUEUE_RTY_HP		= 'd9,
 					LINK_QUEUE_TP_A			= 'd10,
 					LINK_QUEUE_TP_B			= 'd11,
+					LINK_QUEUE_TP_C			= 'd13,
 					LINK_QUEUE_DP			= 'd12;
 						
 	reg		[4:0]	rd_hp_state;
@@ -387,8 +402,8 @@ parameter	[3:0]	WR_HP_RESET		= 'd0,
 	
 	reg				tx_queue_open;
 	reg				tx_queue_lup;
-	reg		[2:0]	tx_queue_lcred;	// {strobe, CRD_A-CRD_D[1:0]
-	reg		[3:0]	tx_queue_lgood;	// {strobe, GOOD_0-GOOD_3[2:0]
+	reg		[2:0]	tx_queue_lcred;	// {strobe, CRD_A-CRD_D[1:0]}
+	reg		[3:0]	tx_queue_lgood;	// {strobe, GOOD_0-GOOD_3[2:0]}
 	
 	reg				send_port_cfg_resp;
 	reg		[1:0]	recv_port_cmdcfg;
@@ -456,6 +471,10 @@ always @(posedge local_clk) begin
 	
 	prot_rx_tp <= 0;
 	prot_rx_dph <= 0;
+	prot_tx_tp_a_ack <= 0;
+	prot_tx_tp_b_ack <= 0;
+	prot_tx_tp_c_ack <= 0;
+	prot_tx_dpp_ack <= 0;
 	
 	if(in_data == 32'h0) `INC(dc);
 	`INC(rc);
@@ -1076,7 +1095,7 @@ always @(posedge local_clk) begin
 				ltssm_go_recovery <= 1;
 			end else begin
 				`INC(ack_tx_hdr_seq_num);
-				`INC(tx_hdr_seq_num);
+				//`INC(tx_hdr_seq_num);
 				pending_hp_timer <= 0;
 			end
 			
@@ -1145,7 +1164,7 @@ always @(posedge local_clk) begin
 		if(queue_send_u0_adv && (recv_u0_adv||1) && dc > 1) begin
 			queue_state <= LINK_QUEUE_HDR_SEQ_AD;
 			queue_send_u0_adv <= 0;
-		end else if(!tx_hp_do) begin
+		end else if( send_state == LINK_SEND_IDLE && !tx_hp_do) begin // 
 			// send Port Capability HP once advertisement is finished
 			if(queue_send_u0_portcap && sent_u0_adv) begin
 				queue_state <= LINK_QUEUE_PORTCAP;
@@ -1162,6 +1181,10 @@ always @(posedge local_clk) begin
 			// retry HP send
 			if(queue_hp_retry) begin
 				queue_state <= LINK_QUEUE_RTY_HP;
+			end else
+			// send TP from Protocol Layer C
+			if(prot_tx_tp_c) begin
+				queue_state <= LINK_QUEUE_TP_C;
 			end else
 			// send TP from Protocol Layer B
 			if(prot_tx_tp_b) begin
@@ -1258,6 +1281,7 @@ always @(posedge local_clk) begin
 							1'b0, 3'h0, prot_tx_tp_a_endp, prot_tx_tp_a_dir, prot_tx_tp_a_retry, 2'h0, prot_tx_tp_a_subtype};
 		tx_hp_word_2 <= {	LP_TP_NBI_0, LP_TP_PPEND_NO, LP_TP_DBI_NO, LP_TP_WPA_NO, LP_TP_SSI_NO, 8'h0, prot_tx_tp_a_stream};
 		tx_hp_act <= 1;
+		prot_tx_tp_a_ack <= 1;
 		queue_state <= LINK_QUEUE_IDLE;
 	end
 	LINK_QUEUE_TP_B: begin
@@ -1267,19 +1291,33 @@ always @(posedge local_clk) begin
 		tx_hp_word_2 <= {	LP_TP_NBI_0, LP_TP_PPEND_NO, LP_TP_DBI_NO, LP_TP_WPA_NO, LP_TP_SSI_NO, 8'h0, prot_tx_tp_b_stream};
 		tx_hp_act <= 1;
 		local_dev_addr <= dev_addr;
+		prot_tx_tp_b_ack <= 1;
+		queue_state <= LINK_QUEUE_IDLE;
+	end
+	LINK_QUEUE_TP_C: begin
+		tx_hp_word_0 <= {	local_dev_addr, LP_TP_ROUTE0, LP_TYPE_TP};
+		tx_hp_word_1 <= {	6'h0, prot_tx_tp_c_seq, prot_tx_tp_c_nump, 
+							1'b0, 3'h0, prot_tx_tp_c_endp, prot_tx_tp_c_dir, prot_tx_tp_c_retry, 2'h0, prot_tx_tp_c_subtype};
+		tx_hp_word_2 <= {	LP_TP_NBI_0, LP_TP_PPEND_NO, LP_TP_DBI_NO, LP_TP_WPA_NO, LP_TP_SSI_NO, 8'h0, prot_tx_tp_c_stream};
+		tx_hp_act <= 1;
+		local_dev_addr <= dev_addr;
+		prot_tx_tp_c_ack <= 1;
 		queue_state <= LINK_QUEUE_IDLE;
 	end
 	LINK_QUEUE_DP: begin
 		case(qc)
 		0: begin
+			if(send_state == LINK_SEND_IDLE) begin
 			tx_hp_word_0 <= {	local_dev_addr, LP_TP_ROUTE0, LP_TYPE_DP};
 			tx_hp_word_1 <= {	prot_tx_dph_len, 1'b0, 3'b0, prot_tx_dph_endp, prot_tx_dph_dir, prot_tx_dph_eob, 1'b0, prot_tx_dph_seq};
 			tx_hp_word_2 <= {	32'h0};
 			tx_hp_act <= 1;
 			tx_hp_dph <= 1;
 			out_dpp_length <= prot_tx_dph_len;
+			prot_tx_dpp_ack <= 1;
 			prot_tx_dpp_done <= 0;
 			qc <= 1;
+			end
 		end
 		1: begin
 			queue_state <= LINK_QUEUE_IDLE;
@@ -1475,7 +1513,7 @@ always @(posedge local_clk) begin
 	end
 	WR_HP_4: begin
 		// TODO only increment if this wasn't a RETRY
-		//if(!tx_hp_retry) `INC(tx_hdr_seq_num);
+		if(!tx_hp_retry) `INC(tx_hdr_seq_num);
 		if(out_header_first_since_entry) begin
 			//remote_rx_cred_count_dec <= 1;
 			out_header_first_since_entry <= 0;
@@ -1490,6 +1528,7 @@ always @(posedge local_clk) begin
 	WR_HP_5: begin
 		// wait for DPP write to complete
 		if(write_dpp_state == WRITE_DPP_IDLE) begin
+			buf_out_arm <= 1;
 			tx_hp_done <= 1;
 			prot_tx_dpp_done <= 1;
 			wr_hp_state <= WR_HP_IDLE;
@@ -1500,7 +1539,7 @@ always @(posedge local_clk) begin
 	//
 	// Write Data Packet Payload FSM
 	//
-	// this is an abortion, will be dealt with at earliest opportunity
+	// TODO refactor into fewer states
 	//
 	case(write_dpp_state)
 	WRITE_DPP_RESET: write_dpp_state <= WRITE_DPP_IDLE;
@@ -1611,8 +1650,9 @@ always @(posedge local_clk) begin
 		{out_data, out_datak, out_active} <= {32'hF7000000, 4'b1000, 1'b1}; write_dpp_state <= WRITE_DPP_3;
 	end
 	endcase
+
 	
- 
+	
 	if(~reset_n) begin
 		send_state <= LINK_SEND_RESET;
 		recv_state <= LINK_RECV_RESET;
@@ -1659,6 +1699,11 @@ end
 //
 // CRC-32 of Data Packet Payloads
 //
+	//wire	[31:0]	crc_dpprx_out = (in_dpp_length_remain_1 == 4) ? (swap32(crc_dpprx32_out)) :
+	//								(in_dpp_length_remain_1 == 3) ? (swap32(crc_dpprx24_out)) :
+	//								(in_dpp_length_remain_1 == 2) ? (swap32(crc_dpprx16_out)) :
+	//								(in_dpp_length_remain_1 == 1) ? (swap32(crc_dpprx8_out)) : (swap32(crc_dpprx32_out));
+									// TODO FIXUP FOR RX
 	wire	[31:0]	crc_dpprx_q;
 	reg				crc_dpprx_rst;
 	reg		[31:0]	crc_dpprx_in;
