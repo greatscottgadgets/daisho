@@ -24,7 +24,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 3 7
 Title "Daisho Project USB Front-End"
-Date "4 apr 2014"
+Date "25 Sep 2014"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2014 Jared Boone"
@@ -1326,6 +1326,8 @@ F 0 "U5" H 10400 2450 60  0000 C CNN
 F 1 "TUSB1310A" H 11250 2450 60  0000 C CNN
 F 2 "" H 10900 2500 60  0001 C CNN
 F 3 "" H 10900 2500 60  0001 C CNN
+F 4 "TI" H 10900 2500 60  0001 C CNN "Manufacturer"
+F 5 "TUSB1310AZAY" H 10900 2500 60  0001 C CNN "Part Number"
 	8    10900 2500
 	1    0    0    -1  
 $EndComp
@@ -1337,6 +1339,8 @@ F 0 "U5" H 5400 2450 60  0000 C CNN
 F 1 "TUSB1310A" H 6250 2450 60  0000 C CNN
 F 2 "" H 5900 2500 60  0001 C CNN
 F 3 "" H 5900 2500 60  0001 C CNN
+F 4 "TI" H 5900 2500 60  0001 C CNN "Manufacturer"
+F 5 "TUSB1310AZAY" H 5900 2500 60  0001 C CNN "Part Number"
 	7    5900 2500
 	1    0    0    -1  
 $EndComp

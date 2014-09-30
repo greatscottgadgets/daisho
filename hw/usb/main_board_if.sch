@@ -24,7 +24,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 6 7
 Title "Daisho Project USB Front-End"
-Date "4 apr 2014"
+Date "25 Sep 2014"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2014 Jared Boone"
@@ -192,16 +192,10 @@ Text Label 4100 6000 0    60   ~ 0
 VRAW_SW
 Text Label 2000 5700 0    60   ~ 0
 FE_I2C_VCC
-Text Label 4100 5900 0    60   ~ 0
-FE_CLK_N1
 Text Label 4100 5800 0    60   ~ 0
 USB1_XI
-Text Label 2000 5900 0    60   ~ 0
-FE_CLK_N0
 Text Label 2000 5800 0    60   ~ 0
 USB0_XI
-Text HLabel 4800 5700 2    60   Input ~ 0
-FE_CLKSRC
 $Comp
 L GND #PWR068
 U 1 1 51392416
@@ -1381,8 +1375,6 @@ Wire Wire Line
 Wire Wire Line
 	5200 8200 3900 8200
 Wire Wire Line
-	1400 8300 2700 8300
-Wire Wire Line
 	1900 5500 2700 5500
 Wire Wire Line
 	13900 6000 15100 6000
@@ -1417,8 +1409,6 @@ Wire Wire Line
 	5200 6400 3900 6400
 Wire Wire Line
 	5200 6200 3900 6200
-Wire Wire Line
-	4700 5900 3900 5900
 Wire Wire Line
 	2700 5800 1900 5800
 Wire Wire Line
@@ -1478,8 +1468,6 @@ Wire Wire Line
 	13900 7300 15000 7300
 Wire Wire Line
 	13900 7000 15000 7000
-Wire Wire Line
-	13900 6700 15000 6700
 Wire Wire Line
 	13900 6400 15000 6400
 Wire Wire Line
@@ -1699,8 +1687,6 @@ Wire Wire Line
 Wire Wire Line
 	2700 6200 1400 6200
 Wire Wire Line
-	2700 5900 1900 5900
-Wire Wire Line
 	4700 5800 3900 5800
 Wire Wire Line
 	5200 6300 3900 6300
@@ -1756,8 +1742,6 @@ Wire Wire Line
 Connection ~ 14000 7200
 Wire Wire Line
 	2700 5700 1900 5700
-Wire Wire Line
-	4800 5700 3900 5700
 Wire Wire Line
 	2700 7200 2600 7200
 Connection ~ 2600 6600
@@ -2092,4 +2076,9 @@ NoConn ~ 7400 3500
 NoConn ~ 7400 3600
 Text GLabel 4800 5500 2    60   Input ~ 0
 VBUS_REG
+NoConn ~ 13900 6700
+NoConn ~ 2700 8300
+NoConn ~ 2700 5900
+NoConn ~ 3900 5900
+NoConn ~ 3900 5700
 $EndSCHEMATC

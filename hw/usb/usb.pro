@@ -1,4 +1,4 @@
-update=Wednesday, September 24, 2014 'PMt' 06:01:40 PM
+update=Saturday, September 27, 2014 'AMt' 11:17:06 AM
 last_client=pcbnew
 [general]
 version=1
@@ -51,7 +51,7 @@ ModuleTextSizeV=0.762
 ModuleTextSizeH=0.762
 ModuleTextSizeThickness=0.1524
 SolderMaskClearance=0.07619999999999999
-SolderMaskMinWidth=0.1016
+SolderMaskMinWidth=0.07619999999999999
 DrawSegmentWidth=0.381
 BoardOutlineThickness=0.381
 ModuleOutlineThickness=0.1524
