@@ -24,7 +24,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 6 7
 Title "Daisho Project USB Front-End"
-Date "25 Sep 2014"
+Date "07 Oct 2014"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2014 Jared Boone"
