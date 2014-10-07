@@ -32,7 +32,7 @@ Order and type of copper layers:
     3: signal
     4: signal
     5: ground plane
-    6_bot: signal, back
+    6_bot: signal, back (a few components mounted, mostly small passives)
 
 PCB description:
 
@@ -46,8 +46,8 @@ PCB description:
     Dielectric  2-3   6.0 mil   core, FR4 370
     Copper      3     1.2 mil   1.0 oz
     Dielectric  3-4   8.1 mil   prepreg, 3 x 1080-FR4 370
-                ...  14.5 mil   core, FR4 370
-                ...   8.1 mil   prepreg, 3 x 1080-FR4 370
+                3-4  14.5 mil   core, FR4 370
+                3-4   8.1 mil   prepreg, 3 x 1080-FR4 370
     Copper      4     1.2 mil   1.0 oz
     Dielectric  4-5   6.0 mil   core, FR4 370
     Copper      5     1.2 mil   1.0 oz
@@ -67,22 +67,26 @@ Impedance Goals
 
 Soldermask
 ==========
+
 Double side solder mask green
     +/- 5 mil solder mask registration
 
 Silkscreen
 ==========
+
 Double side silkscreen white
     6 mil silkscreen minimum width
     Silkscreen must be clipped by soldermask
 
 Traces
 ======
+
 5 mil (0.127 mm) min trace width
 5 mil (0.127 mm) min trace isolation
 
 Vias
 ====
+
 8 mil (0.2032 mm) min via drill
 17.7 mil (0.45 mm) min via pad
     4.85 mil min annular ring
@@ -90,10 +94,11 @@ Vias
 Via-in-pad used in many places
 
 Vias in pads need to be filled for assembly
-    Most (all?) vias in pads are in capacitor footprints near the 175-BGAs
+    Most (all?) vias in pads are in capacitor footprints near the two 175-BGAs
 
 Drills
 ======
+
 Drills are specified in two files:
     usb_drill.xln contains plated drills.
     usb_drill_npth.xln contains non-plated drills.
