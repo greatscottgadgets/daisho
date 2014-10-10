@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 12 Jan 2014 10:52:37 PM PST
+EESchema Schematic File Version 2
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,13 +30,13 @@ LIBS:hole
 LIBS:inv1
 LIBS:barrel_jack
 LIBS:main_board-cache
-EELAYER 25  0
+EELAYER 24 0
 EELAYER END
-$Descr A3 16535 11700
+$Descr A3 16535 11693
 encoding utf-8
 Sheet 1 15
 Title "Daisho Project Main Board"
-Date "13 jan 2014"
+Date "10 Oct 2014"
 Rev "0"
 Comp "ShareBrained Technology, Inc."
 Comment1 "Copyright © 2013 Jared Boone"
@@ -330,6 +330,8 @@ U 1 1 516AFA7B
 P 2000 9500
 F 0 "H8" H 2000 9650 60  0000 C CNN
 F 1 "HOLE" H 2000 9350 60  0000 C CNN
+F 2 "" H 2000 9500 60  0001 C CNN
+F 3 "" H 2000 9500 60  0001 C CNN
 	1    2000 9500
 	1    0    0    -1  
 $EndComp
@@ -339,6 +341,8 @@ U 1 1 516AFA79
 P 1700 9500
 F 0 "H6" H 1700 9650 60  0000 C CNN
 F 1 "HOLE" H 1700 9350 60  0000 C CNN
+F 2 "" H 1700 9500 60  0001 C CNN
+F 3 "" H 1700 9500 60  0001 C CNN
 	1    1700 9500
 	1    0    0    -1  
 $EndComp
@@ -348,6 +352,8 @@ U 1 1 516AFA77
 P 1400 9500
 F 0 "H4" H 1400 9650 60  0000 C CNN
 F 1 "HOLE" H 1400 9350 60  0000 C CNN
+F 2 "" H 1400 9500 60  0001 C CNN
+F 3 "" H 1400 9500 60  0001 C CNN
 	1    1400 9500
 	1    0    0    -1  
 $EndComp
@@ -357,6 +363,8 @@ U 1 1 516AFA74
 P 1100 9500
 F 0 "H2" H 1100 9650 60  0000 C CNN
 F 1 "HOLE" H 1100 9350 60  0000 C CNN
+F 2 "" H 1100 9500 60  0001 C CNN
+F 3 "" H 1100 9500 60  0001 C CNN
 	1    1100 9500
 	1    0    0    -1  
 $EndComp
@@ -366,6 +374,8 @@ U 1 1 516AFA60
 P 2000 9000
 F 0 "H7" H 2000 9150 60  0000 C CNN
 F 1 "HOLE" H 2000 8850 60  0000 C CNN
+F 2 "" H 2000 9000 60  0001 C CNN
+F 3 "" H 2000 9000 60  0001 C CNN
 	1    2000 9000
 	1    0    0    -1  
 $EndComp
@@ -375,6 +385,8 @@ U 1 1 516AFA57
 P 1700 9000
 F 0 "H5" H 1700 9150 60  0000 C CNN
 F 1 "HOLE" H 1700 8850 60  0000 C CNN
+F 2 "" H 1700 9000 60  0001 C CNN
+F 3 "" H 1700 9000 60  0001 C CNN
 	1    1700 9000
 	1    0    0    -1  
 $EndComp
@@ -384,6 +396,8 @@ U 1 1 516AFA50
 P 1100 9000
 F 0 "H1" H 1100 9150 60  0000 C CNN
 F 1 "HOLE" H 1100 8850 60  0000 C CNN
+F 2 "" H 1100 9000 60  0001 C CNN
+F 3 "" H 1100 9000 60  0001 C CNN
 	1    1100 9000
 	1    0    0    -1  
 $EndComp
