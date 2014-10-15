@@ -192,10 +192,10 @@ always @(posedge phy_clk) begin
 		pkt_in_latch_defer <= 0;
 		
 		// stay stuck in reset, if disable is specified
-		//if(opt_disable_all) 
+		if(opt_disable_all) 
 			state <= ST_RST_0;
-		//else
-		//	state <= ST_RST_1;
+		else
+			state <= ST_RST_1;
 	end
 	ST_RST_1: begin
 		// take other modules out of reset, whether initial or caused by 
