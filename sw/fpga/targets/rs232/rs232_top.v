@@ -34,91 +34,122 @@ input	wire			usb_ulpi_dir,
 output	wire			usb_ulpi_stp,
 input	wire			usb_ulpi_nxt,
 
-// Hex LEDs
-output	wire	[6:0]	HEX0,
-output	wire	[6:0]	HEX1,
-output	wire	[6:0]	HEX2,
-output	wire	[6:0]	HEX3,
-output	wire	[6:0]	HEX4,
-output	wire	[6:0]	HEX5,
-output	wire	[6:0]	HEX6,
-output	wire	[6:0]	HEX7,
+input	wire			usb_pipe_pclk,
+input	wire	[15:0]	usb_pipe_rx_data,
+input	wire	[1:0]	usb_pipe_rx_datak,
+input	wire			usb_pipe_rx_valid,
+output	wire			usb_pipe_tx_clk,
+output	wire	[15:0]	usb_pipe_tx_data,
+output	wire	[1:0]	usb_pipe_tx_datak,
 
-input		wire	[3:0]	KEY,
-input		wire 	[17:0] SW,
-output	wire	[17:0] LEDR,
-output   wire	[8:0] LEDG,
+output	wire			usb_reset_n,
+output	wire			usb_out_enable,
+output	wire			usb_phy_reset_n,
+output	wire			usb_tx_detrx_lpbk,
+output	wire			usb_tx_elecidle,
+inout	wire			usb_rx_elecidle,
+input	wire	[2:0]	usb_rx_status,
+output	wire	[1:0]	usb_power_down,
+inout	wire			usb_phy_status,
+input	wire			usb_pwrpresent,
 
-	// DCE
-	output	wire	DAISHO_RS232_A_RTS,
-	output	wire	DAISHO_RS232_A_TXD,
-	output	wire	DAISHO_RS232_A_DTR,
-	input	wire	DAISHO_RS232_A_RXD,
-	input	wire	DAISHO_RS232_A_CTS,
-	input	wire	DAISHO_RS232_A_CD,
-	input	wire	DAISHO_RS232_A_RI,
-	input	wire	DAISHO_RS232_A_DSR,
-	
-	// DTE
-	output	wire	DAISHO_RS232_B_RXD,
-	output	wire	DAISHO_RS232_B_CTS,
-	output	wire	DAISHO_RS232_B_CD,
-	output	wire	DAISHO_RS232_B_RI,
-	output	wire	DAISHO_RS232_B_DSR,
-	input	wire	DAISHO_RS232_B_RTS,
-	input	wire	DAISHO_RS232_B_TXD,
-	input	wire	DAISHO_RS232_B_DTR,
-	
-	// DCE
-	output	wire	DAISHO_RS232_C_RTS,
-	output	wire	DAISHO_RS232_C_TXD,
-	output	wire	DAISHO_RS232_C_DTR,
-	input	wire	DAISHO_RS232_C_RXD,
-	input	wire	DAISHO_RS232_C_CTS,
-	input	wire	DAISHO_RS232_C_CD,
-	input	wire	DAISHO_RS232_C_RI,
-	input	wire	DAISHO_RS232_C_DSR,
-	
-	// DTE
-	output	wire	DAISHO_RS232_D_RXD,
-	output	wire	DAISHO_RS232_D_CTS,
-	output	wire	DAISHO_RS232_D_CD,
-	output	wire	DAISHO_RS232_D_RI,
-	output	wire	DAISHO_RS232_D_DSR,
-	input	wire	DAISHO_RS232_D_RTS,
-	input	wire	DAISHO_RS232_D_TXD,
-	input	wire	DAISHO_RS232_D_DTR,
+output	wire			usb_tx_oneszeros,
+output	wire	[1:0]	usb_tx_deemph,
+output	wire	[2:0]	usb_tx_margin,
+output	wire			usb_tx_swing,
+output	wire			usb_rx_polarity,
+output	wire			usb_rx_termination,
+output	wire			usb_rate,
+output	wire			usb_elas_buf_mode,
 
-	output	wire	DAISHO_RS232_SD_ALL
+	// DTE: TRSF3243
+	input wire A_INVALID_N,
+	output wire A_FORCEOFF_N,
+	output wire A_FORCEON,
+	input	wire	A_CD,
+	input	wire	A_DSR,
+	input	wire	A_RXD,
+	input	wire	A_CTS,
+	input	wire	A_RI,
+	output	wire	A_RTS,
+	output	wire	A_TXD,
+	output	wire	A_DTR,
+	
+	// DCE: TRS3237E
+	output wire B_SHDN_N,
+	output wire B_EN_N,
+	output wire B_MBAUD,
+	input	wire	B_RTS,
+	input	wire	B_TXD,
+	input	wire	B_DTR,
+	output	wire	B_CD,
+	output	wire	B_DSR,
+	output	wire	B_RXD,
+	output	wire	B_CTS,
+	output	wire	B_RI,
+	
+	// DTE: TRSF3243
+	input wire C_INVALID_N,
+	output wire C_FORCEOFF_N,
+	output wire C_FORCEON,
+	input	wire	C_CD,
+	input	wire	C_DSR,
+	input	wire	C_RXD,
+	input	wire	C_CTS,
+	input	wire	C_RI,
+	output	wire	C_RTS,
+	output	wire	C_TXD,
+	output	wire	C_DTR,
+	
+	// DCE: TRS3237E
+	output wire D_SHDN_N,
+	output wire D_EN_N,
+	output wire D_MBAUD,
+	input	wire	D_RTS,
+	input	wire	D_TXD,
+	input	wire	D_DTR,
+	output	wire	D_CD,
+	output	wire	D_DSR,
+	output	wire	D_RXD,
+	output	wire	D_CTS,
+	output	wire	D_RI,
+	
+	output wire LEDS_PWR
 );
 
-	wire	[17:0]	led_r;
-	assign LEDR = led_r;
+	assign A_FORCEOFF_N = 1;
+	assign A_FORCEON = 1;
+	assign B_SHDN_N = 1;
+	assign B_EN_N = 0;
+	assign B_MBAUD = 0;
+	assign C_FORCEOFF_N = 1;
+	assign C_FORCEON = 1;
+	assign D_SHDN_N = 1;
+	assign D_EN_N = 0;
+	assign D_MBAUD = 0;
+	assign LEDS_PWR = 1;
 	
-	assign led_r[17:16] = dbg_linestate;
-	assign led_r[15] = usb_connected;
-	assign led_r[14] = usb_configured;
-	assign led_r[12] = rs232_status_full;
-	assign led_r[11] = rs232_status_empty;
-	assign led_r[10:0] = dbg_frame_num;
-	
-	wire 	[8:0]		led_g;
-	assign LEDG = led_g;
-	
-	assign led_g[0] = vend_req_act;
-	
-	wire	[17:0]	sw = SW;
-	wire 	[3:0]		key = ~KEY;
-	
-	reg			reset;
-
-always @(posedge clk_50) begin
-	reset <= key[0];
-	count_1 <= count_1 + 1'b1;
-end
-
 	reg	[26:0]	count_1;
 	reg	[26:0]	count_2;
+
+	reg			reset = 1;
+	wire			reset_n;
+
+	assign reset_n = ~reset;
+	
+initial begin
+	reset <= 1;
+	count_1 <= 0;
+	count_2 <= 0;
+end
+
+always @(posedge clk_50) begin
+	count_1 <= count_1 + 1'b1;
+	
+	if( count_1 >= 4096 ) begin
+		reset <= 0;
+	end
+end
 		
 always @(posedge usb_ulpi_clk) begin
 	count_2 <= count_2 + 1'b1;
@@ -131,7 +162,6 @@ end
 //
 ////////////////////////////////////////////////////////////
 
-	wire			usb_reset_n;
 	wire			usb_connected;
 	wire			usb_configured;
 	wire	[1:0]	dbg_linestate;
@@ -139,12 +169,11 @@ end
 
 usb2_top	iu2 (
 	.ext_clk					( clk_50 ),
-	.reset_n					( ~reset ),
-	.reset_n_out			( usb_reset_n ),
+	.reset_n					( reset_n ),
 	
-	.opt_disable_all			( 1'b0 ),
+	.opt_disable_all		( 1'b0 ),
 	.opt_enable_hs			( 1'b1 ),
-	.opt_ignore_vbus			( 1'b0 ),
+	.opt_ignore_vbus		( 1'b1 ),
 	.stat_connected		( usb_connected ),
 	.stat_configured		( usb_configured ),
 	
@@ -177,6 +206,69 @@ usb2_top	iu2 (
 	.dbg_frame_num			( dbg_frame_num )
 );
 
+////////////////////////////////////////////////////////////
+//
+// USB 3.0 controller
+//
+////////////////////////////////////////////////////////////
+
+	wire			usb_clk_125;
+	
+usb3_top	iu3t (
+
+	.ext_clk				( usb_clk_125 ),
+	.clk_125_out			( usb_clk_125 ),
+	.reset_n				( reset_n ),
+
+	.phy_pipe_pclk			( usb_pipe_pclk ),
+	.phy_pipe_rx_data		( usb_pipe_rx_data ),
+	.phy_pipe_rx_datak		( usb_pipe_rx_datak	 ),
+	.phy_pipe_rx_valid		( usb_pipe_rx_valid ),
+	.phy_pipe_tx_clk		( usb_pipe_tx_clk ),
+	.phy_pipe_tx_data		( usb_pipe_tx_data ),
+	.phy_pipe_tx_datak		( usb_pipe_tx_datak ),
+
+	.phy_reset_n			( usb_reset_n ),
+	.phy_out_enable			( usb_out_enable ),
+	.phy_phy_reset_n		( usb_phy_reset_n ),
+	.phy_tx_detrx_lpbk		( usb_tx_detrx_lpbk ),
+	.phy_tx_elecidle		( usb_tx_elecidle ),
+	.phy_rx_elecidle		( usb_rx_elecidle ),
+	.phy_rx_status			( usb_rx_status ),
+	.phy_power_down			( usb_power_down ),
+	.phy_phy_status			( usb_phy_status ),
+	.phy_pwrpresent			( usb_pwrpresent ),
+
+	.phy_tx_oneszeros		( usb_tx_oneszeros ),
+	.phy_tx_deemph			( usb_tx_deemph ),
+	.phy_tx_margin			( usb_tx_margin ),
+	.phy_tx_swing			( usb_tx_swing ),
+	.phy_rx_polarity		( usb_rx_polarity ),
+	.phy_rx_termination		( usb_rx_termination ),
+	.phy_rate				( usb_rate ),
+	.phy_elas_buf_mode		( usb_elas_buf_mode )
+/*	
+	.buf_in_addr			( lfsr_buf_in_addr ),
+	.buf_in_data			( lfsr_buf_in_data ),
+	.buf_in_wren			( lfsr_buf_in_wren ),
+	.buf_in_request			( lfsr_buf_in_request ),
+	.buf_in_ready			( lfsr_buf_in_ready ),
+	.buf_in_commit			( lfsr_buf_in_commit ),
+	.buf_in_commit_len		( lfsr_buf_in_commit_len ),
+	.buf_in_commit_ack		( lfsr_buf_in_commit_ack ),
+	
+	.buf_out_addr			( lfsr_buf_out_addr ),
+	.buf_out_q				( lfsr_buf_out_q ),
+	.buf_out_len			( lfsr_buf_out_len ),
+	.buf_out_hasdata		( lfsr_buf_out_hasdata ),
+	.buf_out_arm			( lfsr_buf_out_arm ),
+	.buf_out_arm_ack		( lfsr_buf_out_arm_ack ),
+	
+	.vend_req_act			(  ),
+	.vend_req_request		(  ),
+	.vend_req_val			(  )
+*/
+);
 
 /////////////////////////////////////////////
 //
@@ -202,46 +294,6 @@ usb2_top	iu2 (
 	wire				vend_req_act;
 	wire	[7:0]		vend_req_request;
 	wire	[15:0]	vend_req_val;
-
-io_seg7 is7 (
-	.disp_in	( rs232_status_used[7:4] ),
-	.disp_out	( HEX7 )
-);
-
-io_seg7 is6 (
-	.disp_in	( rs232_status_used[3:0] ),
-	.disp_out	( HEX6 )
-);
-
-io_seg7 is5 (
-	.disp_in	( vend_req_request[7:4] ),
-	.disp_out	( HEX5 )
-);
-
-io_seg7 is4 (
-	.disp_in	( vend_req_request[3:0] ),
-	.disp_out	( HEX4 )
-);
-
-io_seg7 is3 (
-	.disp_in	( vend_req_val[15:12] ),
-	.disp_out	( HEX3 )
-);
-
-io_seg7 is2 (
-	.disp_in	( vend_req_val[11:8] ),
-	.disp_out	( HEX2 )
-);
-
-io_seg7 is1 (
-	.disp_in	( vend_req_val[7:4] ),
-	.disp_out	( HEX1 )
-);
-
-io_seg7 is0 (
-	.disp_in	( vend_req_val[3:0] ),
-	.disp_out	( HEX0 )
-);
 
 reg [31:0] rs232_timestamp;
 
@@ -274,25 +326,25 @@ mf_rs232_status rs232_status (
 
 wire	[31:0]	rs232_status_raw = {
 	3'b000,
-	DAISHO_RS232_A_RXD,
-	DAISHO_RS232_A_CTS,
-	DAISHO_RS232_A_CD,
-	DAISHO_RS232_A_RI,
-	DAISHO_RS232_A_DSR,
+	A_RXD,
+	A_CTS,
+	A_CD,
+	A_RI,
+	A_DSR,
 	5'b00000,
-	DAISHO_RS232_B_RTS,
-	DAISHO_RS232_B_TXD,
-	DAISHO_RS232_B_DTR,
+	B_RTS,
+	B_TXD,
+	B_DTR,
 	3'b000,
-	DAISHO_RS232_C_RXD,
-	DAISHO_RS232_C_CTS,
-	DAISHO_RS232_C_CD,
-	DAISHO_RS232_C_RI,
-	DAISHO_RS232_C_DSR,
+	C_RXD,
+	C_CTS,
+	C_CD,
+	C_RI,
+	C_DSR,
 	5'b00000,
-	DAISHO_RS232_D_RTS,
-	DAISHO_RS232_D_TXD,
-	DAISHO_RS232_D_DTR
+	D_RTS,
+	D_TXD,
+	D_DTR
 };
 
 reg		[31:0]	rs232_status_q0;
@@ -414,24 +466,22 @@ always @(posedge rs232_status_clk) begin
 	endcase
 end
 
-assign DAISHO_RS232_SD_ALL = 0;
+assign A_RTS = B_RTS;
+assign A_TXD = B_TXD;
+assign A_DTR = B_DTR;
+assign B_RXD = A_RXD;
+assign B_CTS = A_CTS;
+assign B_CD = A_CD;
+assign B_RI = A_RI;
+assign B_DSR = A_DSR;
 
-assign DAISHO_RS232_A_RTS = DAISHO_RS232_B_RTS;
-assign DAISHO_RS232_A_TXD = DAISHO_RS232_B_TXD;
-assign DAISHO_RS232_A_DTR = DAISHO_RS232_B_DTR;
-assign DAISHO_RS232_B_RXD = DAISHO_RS232_A_RXD;
-assign DAISHO_RS232_B_CTS = DAISHO_RS232_A_CTS;
-assign DAISHO_RS232_B_CD = DAISHO_RS232_A_CD;
-assign DAISHO_RS232_B_RI = DAISHO_RS232_A_RI;
-assign DAISHO_RS232_B_DSR = DAISHO_RS232_A_DSR;
-
-assign DAISHO_RS232_C_RTS = DAISHO_RS232_D_RTS;
-assign DAISHO_RS232_C_TXD = DAISHO_RS232_D_TXD;
-assign DAISHO_RS232_C_DTR = DAISHO_RS232_D_DTR;
-assign DAISHO_RS232_D_RXD = DAISHO_RS232_C_RXD;
-assign DAISHO_RS232_D_CTS = DAISHO_RS232_C_CTS;
-assign DAISHO_RS232_D_CD = DAISHO_RS232_C_CD;
-assign DAISHO_RS232_D_RI = DAISHO_RS232_C_RI;
-assign DAISHO_RS232_D_DSR = DAISHO_RS232_C_DSR;
+assign C_RTS = D_RTS;
+assign C_TXD = D_TXD;
+assign C_DTR = D_DTR;
+assign D_RXD = C_RXD;
+assign D_CTS = C_CTS;
+assign D_CD = C_CD;
+assign D_RI = C_RI;
+assign D_DSR = C_DSR;
 
 endmodule

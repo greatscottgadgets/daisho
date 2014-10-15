@@ -337,7 +337,9 @@ extern "C" int main() {
 	si5351c_configure_clock_control();
 	si5351c_enable_clock_outputs();
 	clockgen_output_enable();
-	
+
+	fe_enable();
+
 	while(true) {
 		//write_led_status(read_fpga_conf_done());
 		write_led_status(1);

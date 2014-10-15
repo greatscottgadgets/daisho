@@ -127,6 +127,9 @@ void si5351c_configure_pll_sources_for_xtal()
 /* MultiSynth NA (PLL1) */
 void si5351c_configure_pll1_multisynth()
 {
+	/* Multiply clock source by 32 */
+	/* a = 32, b = 0, c = 1 */
+	/* p1 = 0xe00, p2 = 0, p3 = 1 */
 	uint8_t data[] = { 26, 0x00, 0x01, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x00 };
 	si5351c_write(data, sizeof(data));
 }
@@ -162,6 +165,7 @@ void si5351c_configure_multisynth(const uint_fast8_t ms_number,
 }
 
 void si5351c_configure_multisynths_6_and_7() {
+	/* ms6_p1 = 6, ms7_pi1 = 6, r6_div = /1, r7_div = /1 */
 	uint8_t ms6_7_data[] = { 90,
 		0b00000110, 0b00000110,
 		0b00000000
@@ -194,21 +198,21 @@ void si5351c_configure_multisynths_6_and_7() {
  *   MS5_INT=1 (integer mode)
  *   MS5_SRC=0 (PLLA as source for MultiSynth 5)
  *   CLK5_INV=0 (not inverted)
- *   CLK5_SRC=11 (MS5 as input source)
+ *   CLK5_SRC=10 (MS4 as input source)
  *   CLK5_IDRV=11 (8mA)
  * CLK6: (not connected)
  *   CLK6_PDN=0 (powered up)
  *   FBA_INT=1 (FBA MultiSynth integer mode)
  *   MS6_SRC=0 (PLLA as source for MultiSynth 6)
  *   CLK6_INV=1 (inverted)
- *   CLK6_SRC=00 (XTAL as input source)
+ *   CLK6_SRC=10 (MS4 as input source)
  *   CLK6_IDRV=11 (8mA)
  * CLK7: (not connected)
  *   CLK7_PDN=0 (powered up)
  *   FBB_INT=1 (FBB MultiSynth integer mode)
  *   MS7_SRC=0 (PLLA as source for MultiSynth 7)
  *   CLK7_INV=0 (not inverted)
- *   CLK7_SRC=00 (XTAL as input source)
+ *   CLK7_SRC=10 (MS4 as input source)
  *   CLK7_IDRV=11 (8mA)
  */
 void si5351c_configure_clock_control()
@@ -219,9 +223,9 @@ void si5351c_configure_clock_control()
 		0x80,
 		0x80,
 		0x5f,
-		0x4f,
-		0x53,
-		0x43
+		0x4b,
+		0x5b,
+		0x4b
 	};
 	si5351c_write(data, sizeof(data));
 }

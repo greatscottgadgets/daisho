@@ -1,13 +1,8 @@
-update=Fri 19 Apr 2013 03:31:50 PM PDT
+update=Sun 12 Jan 2014 10:46:38 PM PST
 version=1
-last_client=pcbnew
+last_client=cvpcb
 [general]
 version=1
-[cvpcb]
-version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [eeschema]
 version=1
 LibDir=../lib
@@ -69,6 +64,7 @@ LibName26=74lvc2t45
 LibName27=tps62420
 LibName28=hole
 LibName29=inv1
+LibName30=barrel_jack
 [pcbnew]
 version=1
 PadDrlX=0
@@ -80,14 +76,13 @@ TxtPcbH=600
 TxtModV=600
 TxtModH=600
 TxtModW=120
-VEgarde=60
+VEgarde=30
 DrawLar=150
 EdgeLar=150
 TxtLar=120
 MSegLar=80
 LastNetListRead=main_board.net
 [pcbnew/libraries]
-LibDir=../lib
 LibName1=connect
 LibName2=discret
 LibName3=pin_array
@@ -122,7 +117,7 @@ LibName31=tdk_vlpP8040
 LibName32=ipc_capc3225x270n
 LibName33=ipc_capc3216x180n
 LibName34=gsg-nrg4026
-LibName35=cui_pj-102bh
+LibName35=cui_pj-102_h
 LibName36=gsg-header-1x2
 LibName37=gsg-50mil-header-2x5-th
 LibName38=gsg-hole126mil
@@ -137,3 +132,11 @@ LibName46=sullins_grpb052vwqs
 LibName47=panasonic_evqp7_a_c_j_l
 LibName48=sullins_grpb041vwtc
 LibName49=sullins_grpb042vwqs
+LibName50=gsg-header-2x5
+LibName51=gsg-testpoint-50mil
+LibDir=../lib
+[cvpcb]
+version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
