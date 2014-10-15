@@ -1,0 +1,290 @@
+PCBNEW-LibModule-V1  Thu 11 Apr 2013 12:36:45 PM EDT
+# encoding utf-8
+Units mm
+$INDEX
+GSG-TSSOP38
+$EndINDEX
+$MODULE GSG-TSSOP38
+Po 0 0 0 15 5166E69C 00000000 ~~
+Li GSG-TSSOP38
+Sc 0
+AR 
+Op 0 0 0
+T0 -1.55 -0.1 0.7 0.7 900 0.15 N V 21 N "GSG-TSSOP38"
+T1 2 -0.1 0.7 0.7 900 0.15 N V 21 N "VAL**"
+DS -3 4.75 -3 5.5 0.15 21
+DS -3 5.5 3 5.5 0.15 21
+DS 3 5.5 3 4.75 0.15 21
+DS -3 -5.25 -3 -5.75 0.15 21
+DS -3 -5.75 3 -5.75 0.15 21
+DS 3 -5.75 3 -4.75 0.15 21
+DS -3 -4.75 -3 -5.25 0.15 21
+DC -2.25 -4.75 -2.25 -4.5 0.15 21
+$PAD
+Sh "1" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 -4.5
+$EndPAD
+$PAD
+Sh "2" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 -4
+$EndPAD
+$PAD
+Sh "3" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 -3.5
+$EndPAD
+$PAD
+Sh "4" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 -3
+$EndPAD
+$PAD
+Sh "5" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 -2.5
+$EndPAD
+$PAD
+Sh "6" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 -2
+$EndPAD
+$PAD
+Sh "7" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 -1.5
+$EndPAD
+$PAD
+Sh "8" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 -1
+$EndPAD
+$PAD
+Sh "9" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.65 -0.5
+$EndPAD
+$PAD
+Sh "10" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 0
+$EndPAD
+$PAD
+Sh "11" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 0.5
+$EndPAD
+$PAD
+Sh "12" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 1
+$EndPAD
+$PAD
+Sh "13" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 1.5
+$EndPAD
+$PAD
+Sh "14" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 2
+$EndPAD
+$PAD
+Sh "15" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 2.5
+$EndPAD
+$PAD
+Sh "16" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 3
+$EndPAD
+$PAD
+Sh "17" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 3.5
+$EndPAD
+$PAD
+Sh "18" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 4
+$EndPAD
+$PAD
+Sh "19" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.625 4.5
+$EndPAD
+$PAD
+Sh "38" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -4.5
+$EndPAD
+$PAD
+Sh "37" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -4
+$EndPAD
+$PAD
+Sh "36" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -3.5
+$EndPAD
+$PAD
+Sh "35" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -3
+$EndPAD
+$PAD
+Sh "34" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -2.5
+$EndPAD
+$PAD
+Sh "33" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -2
+$EndPAD
+$PAD
+Sh "32" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -1.5
+$EndPAD
+$PAD
+Sh "31" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -1
+$EndPAD
+$PAD
+Sh "30" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 -0.5
+$EndPAD
+$PAD
+Sh "29" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 0
+$EndPAD
+$PAD
+Sh "28" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 0.5
+$EndPAD
+$PAD
+Sh "27" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 1
+$EndPAD
+$PAD
+Sh "26" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 1.5
+$EndPAD
+$PAD
+Sh "25" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 2
+$EndPAD
+$PAD
+Sh "24" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 2.5
+$EndPAD
+$PAD
+Sh "23" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 3
+$EndPAD
+$PAD
+Sh "22" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 3.5
+$EndPAD
+$PAD
+Sh "21" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 4
+$EndPAD
+$PAD
+Sh "20" R 1.43 0.28 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.625 4.5
+$EndPAD
+$EndMODULE GSG-TSSOP38
+$EndLIBRARY

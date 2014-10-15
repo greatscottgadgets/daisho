@@ -1,0 +1,41 @@
+PCBNEW-LibModule-V1  Thu 17 Oct 2013 12:37:27 PM EDT
+# encoding utf-8
+Units mm
+$INDEX
+GSG-0805
+$EndINDEX
+$MODULE GSG-0805
+Po 0 0 0 15 5260123F 00000000 ~~
+Li GSG-0805
+Sc 0
+AR 0805
+Op 0 0 0
+.SolderMask 0.1016
+T0 0 0 0.6096 0.6096 900 0.1524 N V 21 N "0805"
+T1 0.2 0.2 0.6096 0.6096 0 0.1524 N I 21 N "VAL**"
+DS -1.8 -1 1.8 -1 0.15 21
+DS 1.8 -1 1.8 1 0.15 21
+DS 1.8 1 -1.8 1 0.15 21
+DS -1.8 1 -1.8 -1 0.15 21
+$PAD
+Sh "2" R 1.143 1.524 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.016 0
+Le 0.57404
+.SolderMask 0.1016
+.LocalClearance 0.1778
+$EndPAD
+$PAD
+Sh "1" R 1.143 1.524 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.016 0
+Le -2147.483648
+.SolderMask 0.1016
+.LocalClearance 0.1778
+$EndPAD
+$EndMODULE GSG-0805
+$EndLIBRARY

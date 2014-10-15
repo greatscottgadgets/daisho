@@ -1,0 +1,921 @@
+PCBNEW-LibModule-V1  Fri 01 Feb 2013 07:16:47 PM EST
+# encoding utf-8
+Units mm
+$INDEX
+GSG-PQFP128v2
+$EndINDEX
+$MODULE GSG-PQFP128v2
+Po 0 0 0 15 510C5A73 00000000 ~~
+Li GSG-PQFP128v2
+Sc 0
+AR /50F2029A/50F20BDE
+Op 0 0 0
+T0 0.2 -3 1 1 0 0.15 N V 21 N "U302"
+T1.6 0.2.3 1 1 0 0.15 N V 21 N "KSZ9021GQ"
+DC -8.7 5.6 -9.1 6.1 0.15 21
+DS -9.7 8 -11 8 0.15 21
+DS -11 8 -11 6.7 0.15 21
+DS 11 6.7 11 8 0.15 21
+DS 11 8 9.6 8 0.15 21
+DS 9.6 -8 11 -8 0.15 21
+DS 11 -8 11 -6.6 0.15 21
+DS -9.7 -8 -11 -8 0.15 21
+DS -11 -8 -11 -6.6 0.15 21
+$PAD
+Sh "10" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -4.75 8
+$EndPAD
+$PAD
+Sh "9" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/GigE Phy1/AVDDH"
+Po -5.25 8
+$EndPAD
+$PAD
+Sh "8" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 44 "PHY1_TXRXM_A"
+Po -5.75 8
+$EndPAD
+$PAD
+Sh "7" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 48 "PHY1_TXRXP_A"
+Po -6.25 8
+$EndPAD
+$PAD
+Sh "6" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -6.75 8
+$EndPAD
+$PAD
+Sh "5" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -7.25 8
+$EndPAD
+$PAD
+Sh "4" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -7.75 8
+$EndPAD
+$PAD
+Sh "3" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -8.25 8
+$EndPAD
+$PAD
+Sh "2" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -8.75 8
+$EndPAD
+$PAD
+Sh "1" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -9.25 8
+$EndPAD
+$PAD
+Sh "11" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -4.25 8
+$EndPAD
+$PAD
+Sh "12" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/GigE Phy1/AVDDL"
+Po -3.75 8
+$EndPAD
+$PAD
+Sh "13" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/GigE Phy1/AVDDL"
+Po -3.25 8
+$EndPAD
+$PAD
+Sh "14" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -2.75 8
+$EndPAD
+$PAD
+Sh "15" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -2.25 8
+$EndPAD
+$PAD
+Sh "16" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/GigE Phy1/AVDDH"
+Po -1.75 8
+$EndPAD
+$PAD
+Sh "17" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 49 "PHY1_TXRXP_B"
+Po -1.25 8
+$EndPAD
+$PAD
+Sh "18" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 45 "PHY1_TXRXM_B"
+Po -0.75 8
+$EndPAD
+$PAD
+Sh "19" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -0.25 8
+$EndPAD
+$PAD
+Sh "20" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 50 "PHY1_TXRXP_C"
+Po 0.25 8
+$EndPAD
+$PAD
+Sh "21" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 46 "PHY1_TXRXM_C"
+Po 0.75 8
+$EndPAD
+$PAD
+Sh "22" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/GigE Phy1/AVDDH"
+Po 1.25 8
+$EndPAD
+$PAD
+Sh "23" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 1.75 8
+$EndPAD
+$PAD
+Sh "24" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 2.25 8
+$EndPAD
+$PAD
+Sh "25" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/GigE Phy1/AVDDL"
+Po 2.75 8
+$EndPAD
+$PAD
+Sh "26" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "/GigE Phy1/AVDDL"
+Po 3.25 8
+$EndPAD
+$PAD
+Sh "27" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 3.75 8
+$EndPAD
+$PAD
+Sh "28" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 4.25 8
+$EndPAD
+$PAD
+Sh "29" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/GigE Phy1/AVDDH"
+Po 4.75 8
+$EndPAD
+$PAD
+Sh "30" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 51 "PHY1_TXRXP_D"
+Po 5.25 8
+$EndPAD
+$PAD
+Sh "31" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 47 "PHY1_TXRXM_D"
+Po 5.75 8
+$EndPAD
+$PAD
+Sh "32" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/GigE Phy1/AVDDH"
+Po 6.25 8
+$EndPAD
+$PAD
+Sh "33" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 6.75 8
+$EndPAD
+$PAD
+Sh "34" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 7.25 8
+$EndPAD
+$PAD
+Sh "35" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 7.75 8
+$EndPAD
+$PAD
+Sh "36" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 8.25 8
+$EndPAD
+$PAD
+Sh "37" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 8.75 8
+$EndPAD
+$PAD
+Sh "38" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 8 "/GigE Phy1/LED6"
+Po 9.25 8
+$EndPAD
+$PAD
+Sh "39" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po 11 6.25
+$EndPAD
+$PAD
+Sh "40" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 11 5.75
+$EndPAD
+$PAD
+Sh "41" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 11 5.25
+$EndPAD
+$PAD
+Sh "42" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 40 "PHY1_PHYADDR4"
+Po 11 4.75
+$EndPAD
+$PAD
+Sh "43" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 39 "PHY1_PHYADDR3"
+Po 11 4.25
+$EndPAD
+$PAD
+Sh "44" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 38 "PHY1_PHYADDR2"
+Po 11 3.75
+$EndPAD
+$PAD
+Sh "45" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 37 "PHY1_PHYADDR1"
+Po 11 3.25
+$EndPAD
+$PAD
+Sh "46" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po 11 2.75
+$EndPAD
+$PAD
+Sh "47" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 11 2.25
+$EndPAD
+$PAD
+Sh "48" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 36 "PHY1_PHYADDR0"
+Po 11 1.75
+$EndPAD
+$PAD
+Sh "49" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po 11 1.25
+$EndPAD
+$PAD
+Sh "50" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 11 0.75
+$EndPAD
+$PAD
+Sh "51" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 17 "/GigE Phy1/TXD0"
+Po 11 0.25
+$EndPAD
+$PAD
+Sh "52" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 18 "/GigE Phy1/TXD1"
+Po 11 -0.25
+$EndPAD
+$PAD
+Sh "53" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 19 "/GigE Phy1/TXD2"
+Po 11 -0.75
+$EndPAD
+$PAD
+Sh "54" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 20 "/GigE Phy1/TXD3"
+Po 11 -1.25
+$EndPAD
+$PAD
+Sh "55" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 11 -1.75
+$EndPAD
+$PAD
+Sh "56" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po 11 -2.25
+$EndPAD
+$PAD
+Sh "57" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po 11 -2.75
+$EndPAD
+$PAD
+Sh "58" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 21 "/GigE Phy1/TXD4"
+Po 11 -3.25
+$EndPAD
+$PAD
+Sh "59" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 22 "/GigE Phy1/TXD5"
+Po 11 -3.75
+$EndPAD
+$PAD
+Sh "60" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 23 "/GigE Phy1/TXD6"
+Po 11 -4.25
+$EndPAD
+$PAD
+Sh "61" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 24 "/GigE Phy1/TXD7"
+Po 11 -4.75
+$EndPAD
+$PAD
+Sh "62" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 11 -5.25
+$EndPAD
+$PAD
+Sh "63" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po 11 -5.75
+$EndPAD
+$PAD
+Sh "64" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 54 "PHY1_TX_ER"
+Po 11 -6.25
+$EndPAD
+$PAD
+Sh "65" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 6 "/GigE Phy1/GTX_CLK"
+Po 9.25 -8
+$EndPAD
+$PAD
+Sh "66" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 8.75 -8
+$EndPAD
+$PAD
+Sh "67" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 53 "PHY1_TX_EN"
+Po 8.25 -8
+$EndPAD
+$PAD
+Sh "68" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po 7.75 -8
+$EndPAD
+$PAD
+Sh "69" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po 7.25 -8
+$EndPAD
+$PAD
+Sh "70" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 16 "/GigE Phy1/RXD7"
+Po 6.75 -8
+$EndPAD
+$PAD
+Sh "71" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 6.25 -8
+$EndPAD
+$PAD
+Sh "72" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 5.75 -8
+$EndPAD
+$PAD
+Sh "73" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 15 "/GigE Phy1/RXD6"
+Po 5.25 -8
+$EndPAD
+$PAD
+Sh "74" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po 4.75 -8
+$EndPAD
+$PAD
+Sh "75" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po 4.25 -8
+$EndPAD
+$PAD
+Sh "76" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 14 "/GigE Phy1/RXD5"
+Po 3.75 -8
+$EndPAD
+$PAD
+Sh "77" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 13 "/GigE Phy1/RXD4"
+Po 3.25 -8
+$EndPAD
+$PAD
+Sh "78" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 12 "/GigE Phy1/RXD3"
+Po 2.75 -8
+$EndPAD
+$PAD
+Sh "79" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 2.25 -8
+$EndPAD
+$PAD
+Sh "80" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po 1.75 -8
+$EndPAD
+$PAD
+Sh "81" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po 1.25 -8
+$EndPAD
+$PAD
+Sh "82" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po 0.75 -8
+$EndPAD
+$PAD
+Sh "83" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 11 "/GigE Phy1/RXD2"
+Po 0.25 -8
+$EndPAD
+$PAD
+Sh "84" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -0.25 -8
+$EndPAD
+$PAD
+Sh "85" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -0.75 -8
+$EndPAD
+$PAD
+Sh "86" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po -1.25 -8
+$EndPAD
+$PAD
+Sh "87" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po -1.75 -8
+$EndPAD
+$PAD
+Sh "88" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 10 "/GigE Phy1/RXD1"
+Po -2.25 -8
+$EndPAD
+$PAD
+Sh "89" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 9 "/GigE Phy1/RXD0"
+Po -2.75 -8
+$EndPAD
+$PAD
+Sh "90" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 41 "PHY1_RXDV"
+Po -3.25 -8
+$EndPAD
+$PAD
+Sh "91" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -3.75 -8
+$EndPAD
+$PAD
+Sh "92" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po -4.25 -8
+$EndPAD
+$PAD
+Sh "93" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 43 "PHY1_RX_ERR"
+Po -4.75 -8
+$EndPAD
+$PAD
+Sh "94" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 42 "PHY1_RX_CLK"
+Po -5.25 -8
+$EndPAD
+$PAD
+Sh "95" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -5.75 -8
+$EndPAD
+$PAD
+Sh "96" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 31 "PHY1_CRS"
+Po -6.25 -8
+$EndPAD
+$PAD
+Sh "97" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 34 "PHY1_MDC"
+Po -6.75 -8
+$EndPAD
+$PAD
+Sh "98" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 35 "PHY1_MDIO"
+Po -7.25 -8
+$EndPAD
+$PAD
+Sh "99" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 30 "PHY1_COL"
+Po -7.75 -8
+$EndPAD
+$PAD
+Sh "100" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po -8.25 -8
+$EndPAD
+$PAD
+Sh "101" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 33 "PHY1_INT_N"
+Po -8.75 -8
+$EndPAD
+$PAD
+Sh "102" R 0.2 1.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -9.25 -8
+$EndPAD
+$PAD
+Sh "103" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po -11 -6.25
+$EndPAD
+$PAD
+Sh "104" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -11 -5.75
+$EndPAD
+$PAD
+Sh "105" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po -11 -5.25
+$EndPAD
+$PAD
+Sh "106" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 4 "/GigE Phy1/DVDDH"
+Po -11 -4.75
+$EndPAD
+$PAD
+Sh "107" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 29 "PHY1_CLK125_NDO"
+Po -11 -4.25
+$EndPAD
+$PAD
+Sh "108" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -11 -3.75
+$EndPAD
+$PAD
+Sh "109" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -11 -3.25
+$EndPAD
+$PAD
+Sh "110" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 32 "PHY1_HW_RST"
+Po -11 -2.75
+$EndPAD
+$PAD
+Sh "111" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -11 -2.25
+$EndPAD
+$PAD
+Sh "112" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -11 -1.75
+$EndPAD
+$PAD
+Sh "113" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -11 -1.25
+$EndPAD
+$PAD
+Sh "114" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 5 "/GigE Phy1/DVDDL"
+Po -11 -0.75
+$EndPAD
+$PAD
+Sh "115" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 52 "PHY1_TX_CLK"
+Po -11 -0.25
+$EndPAD
+$PAD
+Sh "116" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -11 0.25
+$EndPAD
+$PAD
+Sh "117" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -11 0.75
+$EndPAD
+$PAD
+Sh "118" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 7 "/GigE Phy1/LDO_O"
+Po -11 1.25
+$EndPAD
+$PAD
+Sh "119" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -11 1.75
+$EndPAD
+$PAD
+Sh "120" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 3 "/GigE Phy1/AVDD_PLL"
+Po -11 2.25
+$EndPAD
+$PAD
+Sh "121" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 3 "/GigE Phy1/AVDD_PLL"
+Po -11 2.75
+$EndPAD
+$PAD
+Sh "122" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/GigE Phy1/AVDDH"
+Po -11 3.25
+$EndPAD
+$PAD
+Sh "123" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 27 "N-00000282"
+Po -11 3.75
+$EndPAD
+$PAD
+Sh "124" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 28 "N-00000283"
+Po -11 4.25
+$EndPAD
+$PAD
+Sh "125" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/GigE Phy1/AVDDH"
+Po -11 4.75
+$EndPAD
+$PAD
+Sh "126" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 26 "N-00000220"
+Po -11 5.25
+$EndPAD
+$PAD
+Sh "127" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 25 "GND"
+Po -11 5.75
+$EndPAD
+$PAD
+Sh "128" R 1.6 0.2 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "/GigE Phy1/AVDDH"
+Po -11 6.25
+$EndPAD
+$EndMODULE GSG-PQFP128
+$EndLIBRARY

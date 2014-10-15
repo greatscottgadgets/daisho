@@ -1,0 +1,185 @@
+PCBNEW-LibModule-V1  Tue 23 Apr 2013 12:31:44 PM EDT
+# encoding utf-8
+Units mm
+$INDEX
+GSG-MOLEX-HDMI
+$EndINDEX
+$MODULE GSG-MOLEX-HDMI
+Po 0 0 0 15 5176B76D 00000000 ~~
+Li GSG-MOLEX-HDMI
+Sc 0
+AR 
+Op 0 0 0
+T0 0.3 -1.5 0.7 0.7 0 0.15 N V 21 N "GSG-MOLEX-HDMI"
+T1 0.5 4.9 1 1 0 0.15 N V 21 N "VAL**"
+DS -7.3 -1.2 -7.3 -1.8 0.15 21
+DS -7.3 -1.8 7.2 -1.8 0.15 21
+DS 7.2 -1.8 7.2 -1.2 0.15 21
+DS 7.2 5 7.2 2.7 0.15 21
+DS -7.3 4.9 -7.3 2.8 0.15 21
+DS -7.2 10.3 -7.2 8.6 0.15 21
+DS -7.2 10.3 7.3 10.3 0.15 21
+DS 7.3 10.3 7.3 8.6 0.15 21
+$PAD
+Sh "19" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4.5 0
+$EndPAD
+$PAD
+Sh "18" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -4 0
+$EndPAD
+$PAD
+Sh "17" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3.5 0
+$EndPAD
+$PAD
+Sh "16" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -3 0
+$EndPAD
+$PAD
+Sh "15" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2.5 0
+$EndPAD
+$PAD
+Sh "14" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -2 0
+$EndPAD
+$PAD
+Sh "13" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1.5 0
+$EndPAD
+$PAD
+Sh "12" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -1 0
+$EndPAD
+$PAD
+Sh "11" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -0.5 0
+$EndPAD
+$PAD
+Sh "10" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "9" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0.5 0
+$EndPAD
+$PAD
+Sh "8" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1 0
+$EndPAD
+$PAD
+Sh "7" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 1.5 0
+$EndPAD
+$PAD
+Sh "6" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2 0
+$EndPAD
+$PAD
+Sh "5" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 2.5 0
+$EndPAD
+$PAD
+Sh "4" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3 0
+$EndPAD
+$PAD
+Sh "3" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 3.5 0
+$EndPAD
+$PAD
+Sh "2" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4 0
+$EndPAD
+$PAD
+Sh "1" R 0.28 2.6 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 4.5 0
+$EndPAD
+$PAD
+Sh "20" O 1.5 3.3 0 0 0
+Dr 0.9 0 0 O 0.9 2.7
+At STD N 00E0FFFF
+Ne 0 ""
+Po -7.25 0.76
+$EndPAD
+$PAD
+Sh "20" O 1.5 3.3 0 0 0
+Dr 0.9 0 0 O 0.9 2.7
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7.26 0.76
+$EndPAD
+$PAD
+Sh "20" O 1.5 2.7 0 0 0
+Dr 0.9 0 0 O 0.9 2.1
+At STD N 00E0FFFF
+Ne 0 ""
+Po -7.25 6.72
+$EndPAD
+$PAD
+Sh "20" O 1.5 2.7 0 0 0
+Dr 0.9 0 0 O 0.9 2.1
+At STD N 00E0FFFF
+Ne 0 ""
+Po 7.25 6.72
+$EndPAD
+$EndMODULE GSG-MOLEX-HDMI
+$EndLIBRARY

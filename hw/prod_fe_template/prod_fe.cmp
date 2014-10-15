@@ -1,0 +1,43 @@
+
+BeginCmp
+TimeStamp = /51D64179/51D6425B;
+Reference = J9991;
+ValeurCmp = SAMTEC_QSH-090-D;
+IdModule  = SAMTEC_QSH-090-01-F-D-A;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D64179/51E2E274;
+Reference = P9991;
+ValeurCmp = CONN_2;
+IdModule  = GSG-HEADER-1x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D64179/51E459D6;
+Reference = P9992;
+ValeurCmp = CONN_2;
+IdModule  = GSG-HEADER-1x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D64179/51DDE1CA;
+Reference = R9991;
+ValeurCmp = 10k;
+IdModule  = GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D64179/51E2ED78;
+Reference = R9992;
+ValeurCmp = 10k;
+IdModule  = GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /51D64179/51DE64DC;
+Reference = U9991;
+ValeurCmp = 24C08;
+IdModule  = SO8E;
+EndCmp
+

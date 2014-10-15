@@ -1,0 +1,1055 @@
+EESchema Schematic File Version 2  date Sat 27 Sep 2014 12:30:57 PM MDT
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:samtec_qsh_090-d
+LIBS:hole
+LIBS:TRS3237E
+LIBS:TRSF3243
+LIBS:MUN5212DW1
+LIBS:MIC5318
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 6
+Title "Daisho Project RS232 Front-End Board"
+Date "27 sep 2014"
+Rev "1.0 Rev1"
+Comp ""
+Comment1 "Copyright © 2013/2014 Benjamin Vernoux"
+Comment2 "License: GNU General Public License, version 2"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MUN5212DW1 Q9
+U 1 1 51E3FEFD
+P 2300 2650
+F 0 "Q9" H 1900 2950 50  0000 L BNN
+F 1 "MUN5212DW1" H 1900 2850 50  0000 L BNN
+F 2 "transistor-npn" H 2300 2800 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/DTC124ED-D.PDF" H 2300 2650 60  0001 C CNN
+F 4 "OnSemi" H 2300 2650 60  0001 C CNN "Manufacturer"
+F 5 "MUN5212DW1T1G" H 2300 2650 60  0001 C CNN "Part#"
+F 6 "Dual NPN Bipolar Digital Transistor (BRT)" H 2300 2650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MUN5212DW1T1G/MUN5212DW1T1GOSCT-ND/3462375" H 2300 2650 60  0001 C CNN "DigiKey"
+	1    2300 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R45
+U 1 1 51E3FF03
+P 1850 2300
+F 0 "R45" V 1930 2300 50  0000 C CNN
+F 1 "470" V 1850 2300 50  0000 C CNN
+	1    1850 2300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2100 3000 1850 3000
+Wire Wire Line
+	1850 2600 1850 2550
+$Comp
+L GND #PWR058
+U 1 1 51E3FF0B
+P 2650 3100
+F 0 "#PWR058" H 2650 3100 30  0001 C CNN
+F 1 "GND" H 2650 3030 30  0001 C CNN
+	1    2650 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 3000 2650 3000
+Wire Wire Line
+	2650 3000 2650 3100
+Text GLabel 1800 2000 0    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	1800 2000 1850 2000
+Wire Wire Line
+	1850 2000 1850 2050
+$Comp
+L R R47
+U 1 1 51E3FF16
+P 2850 2950
+F 0 "R47" V 2930 2950 50  0000 C CNN
+F 1 "470" V 2850 2950 50  0000 C CNN
+	1    2850 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 2250 2850 2250
+Wire Wire Line
+	2850 2650 2850 2700
+Text GLabel 2900 3250 2    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	2900 3250 2850 3250
+Wire Wire Line
+	2850 3250 2850 3200
+$Comp
+L GND #PWR059
+U 1 1 51E3FF21
+P 2050 2150
+F 0 "#PWR059" H 2050 2150 30  0001 C CNN
+F 1 "GND" H 2050 2080 30  0001 C CNN
+	1    2050 2150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2100 2250 2050 2250
+Wire Wire Line
+	2050 2250 2050 2150
+Wire Wire Line
+	2100 2600 1950 2600
+Wire Wire Line
+	1950 2600 1950 1850
+Wire Wire Line
+	1950 1850 2350 1850
+Wire Wire Line
+	2600 2650 2750 2650
+Wire Wire Line
+	2750 2650 2750 3250
+Wire Wire Line
+	2750 3250 2350 3250
+Text GLabel 2350 1850 2    39   Input ~ 0
+DTR-C-TTL
+$Comp
+L MUN5212DW1 Q11
+U 1 1 51E3FF34
+P 4600 2600
+F 0 "Q11" H 4200 2900 50  0000 L BNN
+F 1 "MUN5212DW1" H 4200 2800 50  0000 L BNN
+F 2 "transistor-npn" H 4600 2750 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/DTC124ED-D.PDF" H 4600 2600 60  0001 C CNN
+F 4 "OnSemi" H 4600 2600 60  0001 C CNN "Manufacturer"
+F 5 "MUN5212DW1T1G" H 4600 2600 60  0001 C CNN "Part#"
+F 6 "Dual NPN Bipolar Digital Transistor (BRT)" H 4600 2600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MUN5212DW1T1G/MUN5212DW1T1GOSCT-ND/3462375" H 4600 2600 60  0001 C CNN "DigiKey"
+	1    4600 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R49
+U 1 1 51E3FF3A
+P 4150 2250
+F 0 "R49" V 4230 2250 50  0000 C CNN
+F 1 "470" V 4150 2250 50  0000 C CNN
+	1    4150 2250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4400 2950 4150 2950
+Wire Wire Line
+	4150 2550 4150 2500
+$Comp
+L GND #PWR060
+U 1 1 51E3FF42
+P 4950 3050
+F 0 "#PWR060" H 4950 3050 30  0001 C CNN
+F 1 "GND" H 4950 2980 30  0001 C CNN
+	1    4950 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2950 4950 2950
+Wire Wire Line
+	4950 2950 4950 3050
+Text GLabel 4100 1950 0    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	4100 1950 4150 1950
+Wire Wire Line
+	4150 1950 4150 2000
+$Comp
+L R R51
+U 1 1 51E3FF4D
+P 5150 2900
+F 0 "R51" V 5230 2900 50  0000 C CNN
+F 1 "470" V 5150 2900 50  0000 C CNN
+	1    5150 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2200 5150 2200
+Wire Wire Line
+	5150 2600 5150 2650
+Text GLabel 5200 3200 2    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	5200 3200 5150 3200
+Wire Wire Line
+	5150 3200 5150 3150
+$Comp
+L GND #PWR061
+U 1 1 51E405F8
+P 4350 2100
+F 0 "#PWR061" H 4350 2100 30  0001 C CNN
+F 1 "GND" H 4350 2030 30  0001 C CNN
+	1    4350 2100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4400 2200 4350 2200
+Wire Wire Line
+	4350 2200 4350 2100
+Wire Wire Line
+	4400 2550 4250 2550
+Wire Wire Line
+	4250 2550 4250 1800
+Wire Wire Line
+	4250 1800 4650 1800
+Wire Wire Line
+	4900 2600 5050 2600
+Wire Wire Line
+	5050 2600 5050 3200
+Wire Wire Line
+	5050 3200 4650 3200
+Text GLabel 4650 3200 0    39   Input ~ 0
+RTS-C-TTL
+$Comp
+L MUN5212DW1 Q10
+U 1 1 51E3FF6B
+P 2300 4550
+F 0 "Q10" H 1900 4850 50  0000 L BNN
+F 1 "MUN5212DW1" H 1900 4750 50  0000 L BNN
+F 2 "transistor-npn" H 2300 4700 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/DTC124ED-D.PDF" H 2300 4550 60  0001 C CNN
+F 4 "OnSemi" H 2300 4550 60  0001 C CNN "Manufacturer"
+F 5 "MUN5212DW1T1G" H 2300 4550 60  0001 C CNN "Part#"
+F 6 "Dual NPN Bipolar Digital Transistor (BRT)" H 2300 4550 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MUN5212DW1T1G/MUN5212DW1T1GOSCT-ND/3462375" H 2300 4550 60  0001 C CNN "DigiKey"
+	1    2300 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R46
+U 1 1 51E3FF71
+P 1850 4200
+F 0 "R46" V 1930 4200 50  0000 C CNN
+F 1 "470" V 1850 4200 50  0000 C CNN
+	1    1850 4200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2100 4900 1850 4900
+Wire Wire Line
+	1850 4500 1850 4450
+$Comp
+L GND #PWR062
+U 1 1 51E3FF79
+P 2650 5000
+F 0 "#PWR062" H 2650 5000 30  0001 C CNN
+F 1 "GND" H 2650 4930 30  0001 C CNN
+	1    2650 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 4900 2650 4900
+Wire Wire Line
+	2650 4900 2650 5000
+Text GLabel 1800 3900 0    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	1800 3900 1850 3900
+Wire Wire Line
+	1850 3900 1850 3950
+$Comp
+L R R48
+U 1 1 51E3FF84
+P 2850 4850
+F 0 "R48" V 2930 4850 50  0000 C CNN
+F 1 "470" V 2850 4850 50  0000 C CNN
+	1    2850 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 4150 2850 4150
+Wire Wire Line
+	2850 4550 2850 4600
+Text GLabel 2900 5150 2    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	2900 5150 2850 5150
+Wire Wire Line
+	2850 5150 2850 5100
+$Comp
+L GND #PWR063
+U 1 1 51E3FF8F
+P 2050 4050
+F 0 "#PWR063" H 2050 4050 30  0001 C CNN
+F 1 "GND" H 2050 3980 30  0001 C CNN
+	1    2050 4050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2100 4150 2050 4150
+Wire Wire Line
+	2050 4150 2050 4050
+Wire Wire Line
+	2100 4500 1950 4500
+Wire Wire Line
+	1950 4500 1950 3750
+Wire Wire Line
+	1950 3750 2350 3750
+Wire Wire Line
+	2600 4550 2750 4550
+Wire Wire Line
+	2750 4550 2750 5150
+Wire Wire Line
+	2750 5150 2350 5150
+$Comp
+L MUN5212DW1 Q12
+U 1 1 51E3FFA1
+P 4650 4500
+F 0 "Q12" H 4250 4800 50  0000 L BNN
+F 1 "MUN5212DW1" H 4250 4700 50  0000 L BNN
+F 2 "transistor-npn" H 4650 4650 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/DTC124ED-D.PDF" H 4650 4500 60  0001 C CNN
+F 4 "OnSemi" H 4650 4500 60  0001 C CNN "Manufacturer"
+F 5 "MUN5212DW1T1G" H 4650 4500 60  0001 C CNN "Part#"
+F 6 "Dual NPN Bipolar Digital Transistor (BRT)" H 4650 4500 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MUN5212DW1T1G/MUN5212DW1T1GOSCT-ND/3462375" H 4650 4500 60  0001 C CNN "DigiKey"
+	1    4650 4500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R50
+U 1 1 51E3FFA7
+P 4200 4150
+F 0 "R50" V 4280 4150 50  0000 C CNN
+F 1 "470" V 4200 4150 50  0000 C CNN
+	1    4200 4150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4450 4850 4200 4850
+Wire Wire Line
+	4200 4450 4200 4400
+$Comp
+L GND #PWR064
+U 1 1 51E3FFAF
+P 5000 4950
+F 0 "#PWR064" H 5000 4950 30  0001 C CNN
+F 1 "GND" H 5000 4880 30  0001 C CNN
+	1    5000 4950
+	1    0    0    -1  
+$EndComp
+Text GLabel 4150 3850 0    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	4150 3850 4200 3850
+Wire Wire Line
+	4200 3850 4200 3900
+$Comp
+L R R52
+U 1 1 51E3FFBA
+P 5200 4800
+F 0 "R52" V 5280 4800 50  0000 C CNN
+F 1 "470" V 5200 4800 50  0000 C CNN
+	1    5200 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 4100 5200 4100
+Wire Wire Line
+	5200 4500 5200 4550
+Text GLabel 5250 5100 2    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	5250 5100 5200 5100
+Wire Wire Line
+	5200 5100 5200 5050
+$Comp
+L GND #PWR065
+U 1 1 51E3FFC5
+P 4400 4000
+F 0 "#PWR065" H 4400 4000 30  0001 C CNN
+F 1 "GND" H 4400 3930 30  0001 C CNN
+	1    4400 4000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4450 4100 4400 4100
+Wire Wire Line
+	4400 4100 4400 4000
+Wire Wire Line
+	4450 4450 4300 4450
+Wire Wire Line
+	4300 4450 4300 3700
+Wire Wire Line
+	4300 3700 4700 3700
+Wire Wire Line
+	4950 4500 5100 4500
+Wire Wire Line
+	5100 4500 5100 5100
+Wire Wire Line
+	5100 5100 4700 5100
+Text GLabel 2350 3250 0    39   Input ~ 0
+TXD-C-TTL
+$Comp
+L CONN_8X2 P13
+U 1 1 51E3FFD8
+P 5200 6350
+F 0 "P13" H 5200 6800 60  0000 C CNN
+F 1 "CONN_8X2" V 5200 6350 50  0000 C CNN
+F 4 "FCI" H 5200 6350 60  0001 C CNN "Manufacturer"
+F 5 "67996-416HLF" H 5200 6350 60  0001 C CNN "Part#"
+F 6 "CONN HEADER 16POS .100 STR TIN" H 5200 6350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/67996-416HLF/609-3220-ND/1878538" H 5200 6350 60  0001 C CNN "Field7"
+	1    5200 6350
+	-1   0    0    -1  
+$EndComp
+Text GLabel 4750 6000 0    39   Input ~ 0
+CD-C-TTL
+Text GLabel 4750 6100 0    39   Input ~ 0
+DTR-C-TTL
+Text GLabel 4750 6200 0    39   Input ~ 0
+TXD-C-TTL
+Text GLabel 4750 6300 0    39   Input ~ 0
+RTS-C-TTL
+Text GLabel 4750 6400 0    39   Input ~ 0
+RI-C-TTL
+Text GLabel 4750 6500 0    39   Input ~ 0
+CTS-C-TTL
+Text GLabel 4750 6600 0    39   Input ~ 0
+RXD-C-TTL
+Text GLabel 4750 6700 0    39   Input ~ 0
+DSR-C-TTL
+Text GLabel 5650 6000 2    39   Input ~ 0
+CD-D-TTL
+Text GLabel 5650 6100 2    39   Input ~ 0
+DTR-D-TTL
+Text GLabel 5650 6200 2    39   Input ~ 0
+TXD-D-TTL
+Text GLabel 5650 6300 2    39   Input ~ 0
+RTS-D-TTL
+Text GLabel 5650 6400 2    39   Input ~ 0
+RI-D-TTL
+Text GLabel 5650 6500 2    39   Input ~ 0
+CTS-D-TTL
+Text GLabel 5650 6600 2    39   Input ~ 0
+RXD-D-TTL
+Text GLabel 5650 6700 2    39   Input ~ 0
+DSR-D-TTL
+Wire Wire Line
+	4750 6000 4800 6000
+Wire Wire Line
+	4800 6100 4750 6100
+Wire Wire Line
+	4750 6200 4800 6200
+Wire Wire Line
+	4800 6300 4750 6300
+Wire Wire Line
+	4750 6400 4800 6400
+Wire Wire Line
+	4800 6500 4750 6500
+Wire Wire Line
+	4750 6600 4800 6600
+Wire Wire Line
+	4800 6700 4750 6700
+Wire Wire Line
+	5600 6000 5650 6000
+Wire Wire Line
+	5650 6100 5600 6100
+Wire Wire Line
+	5600 6200 5650 6200
+Wire Wire Line
+	5650 6300 5600 6300
+Wire Wire Line
+	5600 6400 5650 6400
+Wire Wire Line
+	5650 6500 5600 6500
+Wire Wire Line
+	5600 6600 5650 6600
+Wire Wire Line
+	5650 6700 5600 6700
+$Comp
+L LED D23
+U 1 1 51E3FFFF
+P 5150 2400
+F 0 "D23" H 5150 2500 50  0000 C CNN
+F 1 "LED" H 5150 2300 50  0000 C CNN
+F 4 "RED_LED_OUT" H 5150 2200 60  0000 C CNN "Note"
+	1    5150 2400
+	0    -1   -1   0   
+$EndComp
+Text GLabel 4650 1800 2    39   Input ~ 0
+CD-C-TTL
+Text GLabel 2350 3750 2    39   Input ~ 0
+RI-C-TTL
+Text GLabel 2350 5150 0    39   Input ~ 0
+CTS-C-TTL
+Text GLabel 4700 5100 0    39   Input ~ 0
+DSR-C-TTL
+Text GLabel 4700 3700 2    39   Input ~ 0
+RXD-C-TTL
+$Comp
+L MUN5212DW1 Q13
+U 1 1 51E4000E
+P 7200 2650
+F 0 "Q13" H 6800 2950 50  0000 L BNN
+F 1 "MUN5212DW1" H 6800 2850 50  0000 L BNN
+F 2 "transistor-npn" H 7200 2800 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/DTC124ED-D.PDF" H 7200 2650 60  0001 C CNN
+F 4 "OnSemi" H 7200 2650 60  0001 C CNN "Manufacturer"
+F 5 "MUN5212DW1T1G" H 7200 2650 60  0001 C CNN "Part#"
+F 6 "Dual NPN Bipolar Digital Transistor (BRT)" H 7200 2650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MUN5212DW1T1G/MUN5212DW1T1GOSCT-ND/3462375" H 7200 2650 60  0001 C CNN "DigiKey"
+	1    7200 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R53
+U 1 1 51E40014
+P 6750 2300
+F 0 "R53" V 6830 2300 50  0000 C CNN
+F 1 "470" V 6750 2300 50  0000 C CNN
+	1    6750 2300
+	-1   0    0    1   
+$EndComp
+$Comp
+L LED D25
+U 1 1 51E4001B
+P 6750 2800
+F 0 "D25" H 6750 2900 50  0000 C CNN
+F 1 "LED" H 6750 2700 50  0000 C CNN
+F 4 "RED_LED_OUT" H 6750 2600 60  0000 C CNN "Note"
+	1    6750 2800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7000 3000 6750 3000
+Wire Wire Line
+	6750 2600 6750 2550
+$Comp
+L GND #PWR066
+U 1 1 51E40023
+P 7550 3100
+F 0 "#PWR066" H 7550 3100 30  0001 C CNN
+F 1 "GND" H 7550 3030 30  0001 C CNN
+	1    7550 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 3000 7550 3000
+Wire Wire Line
+	7550 3000 7550 3100
+Text GLabel 6700 2000 0    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	6700 2000 6750 2000
+Wire Wire Line
+	6750 2000 6750 2050
+$Comp
+L R R55
+U 1 1 51E4002E
+P 7750 2950
+F 0 "R55" V 7830 2950 50  0000 C CNN
+F 1 "470" V 7750 2950 50  0000 C CNN
+	1    7750 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D27
+U 1 1 51E40035
+P 7750 2450
+F 0 "D27" H 7750 2550 50  0000 C CNN
+F 1 "LED" H 7750 2350 50  0000 C CNN
+F 4 "RED_LED_OUT" H 7750 2250 60  0000 C CNN "note"
+	1    7750 2450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7500 2250 7750 2250
+Wire Wire Line
+	7750 2650 7750 2700
+Text GLabel 7800 3250 2    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	7800 3250 7750 3250
+Wire Wire Line
+	7750 3250 7750 3200
+$Comp
+L GND #PWR067
+U 1 1 51E40040
+P 6950 2150
+F 0 "#PWR067" H 6950 2150 30  0001 C CNN
+F 1 "GND" H 6950 2080 30  0001 C CNN
+	1    6950 2150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7000 2250 6950 2250
+Wire Wire Line
+	6950 2250 6950 2150
+Wire Wire Line
+	7000 2600 6850 2600
+Wire Wire Line
+	6850 2600 6850 1850
+Wire Wire Line
+	6850 1850 7250 1850
+Wire Wire Line
+	7500 2650 7650 2650
+Wire Wire Line
+	7650 2650 7650 3250
+Wire Wire Line
+	7650 3250 7250 3250
+Text GLabel 7250 3250 0    39   Input ~ 0
+DTR-D-TTL
+$Comp
+L MUN5212DW1 Q15
+U 1 1 51E40053
+P 9500 2600
+F 0 "Q15" H 9100 2900 50  0000 L BNN
+F 1 "MUN5212DW1" H 9100 2800 50  0000 L BNN
+F 2 "transistor-npn" H 9500 2750 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/DTC124ED-D.PDF" H 9500 2600 60  0001 C CNN
+F 4 "OnSemi" H 9500 2600 60  0001 C CNN "Manufacturer"
+F 5 "MUN5212DW1T1G" H 9500 2600 60  0001 C CNN "Part#"
+F 6 "Dual NPN Bipolar Digital Transistor (BRT)" H 9500 2600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MUN5212DW1T1G/MUN5212DW1T1GOSCT-ND/3462375" H 9500 2600 60  0001 C CNN "DigiKey"
+	1    9500 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R57
+U 1 1 51E40059
+P 9050 2250
+F 0 "R57" V 9130 2250 50  0000 C CNN
+F 1 "470" V 9050 2250 50  0000 C CNN
+	1    9050 2250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9300 2950 9050 2950
+Wire Wire Line
+	9050 2550 9050 2500
+$Comp
+L GND #PWR068
+U 1 1 51E40061
+P 9850 3050
+F 0 "#PWR068" H 9850 3050 30  0001 C CNN
+F 1 "GND" H 9850 2980 30  0001 C CNN
+	1    9850 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 2950 9850 2950
+Wire Wire Line
+	9850 2950 9850 3050
+Text GLabel 9000 1950 0    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	9000 1950 9050 1950
+Wire Wire Line
+	9050 1950 9050 2000
+$Comp
+L R R59
+U 1 1 51E4006C
+P 10050 2900
+F 0 "R59" V 10130 2900 50  0000 C CNN
+F 1 "470" V 10050 2900 50  0000 C CNN
+	1    10050 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED D31
+U 1 1 51E40073
+P 10050 2400
+F 0 "D31" H 10050 2500 50  0000 C CNN
+F 1 "LED" H 10050 2300 50  0000 C CNN
+F 4 "GREEN_LED_IN" H 10000 2200 60  0000 C CNN "Note"
+	1    10050 2400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9800 2200 10050 2200
+Wire Wire Line
+	10050 2600 10050 2650
+Text GLabel 10100 3200 2    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	10100 3200 10050 3200
+Wire Wire Line
+	10050 3200 10050 3150
+$Comp
+L GND #PWR069
+U 1 1 51E4007E
+P 9250 2100
+F 0 "#PWR069" H 9250 2100 30  0001 C CNN
+F 1 "GND" H 9250 2030 30  0001 C CNN
+	1    9250 2100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9300 2200 9250 2200
+Wire Wire Line
+	9250 2200 9250 2100
+Wire Wire Line
+	9300 2550 9150 2550
+Wire Wire Line
+	9150 2550 9150 1800
+Wire Wire Line
+	9150 1800 9550 1800
+Wire Wire Line
+	9800 2600 9950 2600
+Wire Wire Line
+	9950 2600 9950 3200
+Wire Wire Line
+	9950 3200 9550 3200
+Text GLabel 9550 3200 0    39   Input ~ 0
+RTS-D-TTL
+$Comp
+L MUN5212DW1 Q14
+U 1 1 51E40091
+P 7200 4550
+F 0 "Q14" H 6800 4850 50  0000 L BNN
+F 1 "MUN5212DW1" H 6800 4750 50  0000 L BNN
+F 2 "transistor-npn" H 7200 4700 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/DTC124ED-D.PDF" H 7200 4550 60  0001 C CNN
+F 4 "OnSemi" H 7200 4550 60  0001 C CNN "Manufacturer"
+F 5 "MUN5212DW1T1G" H 7200 4550 60  0001 C CNN "Part#"
+F 6 "Dual NPN Bipolar Digital Transistor (BRT)" H 7200 4550 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MUN5212DW1T1G/MUN5212DW1T1GOSCT-ND/3462375" H 7200 4550 60  0001 C CNN "DigiKey"
+	1    7200 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R54
+U 1 1 51E40097
+P 6750 4200
+F 0 "R54" V 6830 4200 50  0000 C CNN
+F 1 "470" V 6750 4200 50  0000 C CNN
+	1    6750 4200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7000 4900 6750 4900
+Wire Wire Line
+	6750 4500 6750 4450
+$Comp
+L GND #PWR070
+U 1 1 51E4009F
+P 7550 5000
+F 0 "#PWR070" H 7550 5000 30  0001 C CNN
+F 1 "GND" H 7550 4930 30  0001 C CNN
+	1    7550 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 4900 7550 4900
+Wire Wire Line
+	7550 4900 7550 5000
+Text GLabel 6700 3900 0    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	6700 3900 6750 3900
+Wire Wire Line
+	6750 3900 6750 3950
+$Comp
+L R R56
+U 1 1 51E400AA
+P 7750 4850
+F 0 "R56" V 7830 4850 50  0000 C CNN
+F 1 "470" V 7750 4850 50  0000 C CNN
+	1    7750 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 4150 7750 4150
+Wire Wire Line
+	7750 4550 7750 4600
+Text GLabel 7800 5150 2    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	7800 5150 7750 5150
+Wire Wire Line
+	7750 5150 7750 5100
+$Comp
+L GND #PWR071
+U 1 1 51E400B5
+P 6950 4050
+F 0 "#PWR071" H 6950 4050 30  0001 C CNN
+F 1 "GND" H 6950 3980 30  0001 C CNN
+	1    6950 4050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7000 4150 6950 4150
+Wire Wire Line
+	6950 4150 6950 4050
+Wire Wire Line
+	7000 4500 6850 4500
+Wire Wire Line
+	6850 4500 6850 3750
+Wire Wire Line
+	6850 3750 7250 3750
+Wire Wire Line
+	7500 4550 7650 4550
+Wire Wire Line
+	7650 4550 7650 5150
+Wire Wire Line
+	7650 5150 7250 5150
+$Comp
+L MUN5212DW1 Q16
+U 1 1 51E400C7
+P 9550 4500
+F 0 "Q16" H 9150 4800 50  0000 L BNN
+F 1 "MUN5212DW1" H 9150 4700 50  0000 L BNN
+F 2 "transistor-npn" H 9550 4650 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/DTC124ED-D.PDF" H 9550 4500 60  0001 C CNN
+F 4 "OnSemi" H 9550 4500 60  0001 C CNN "Manufacturer"
+F 5 "MUN5212DW1T1G" H 9550 4500 60  0001 C CNN "Part#"
+F 6 "Dual NPN Bipolar Digital Transistor (BRT)" H 9550 4500 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/MUN5212DW1T1G/MUN5212DW1T1GOSCT-ND/3462375" H 9550 4500 60  0001 C CNN "DigiKey"
+	1    9550 4500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R58
+U 1 1 51E400CD
+P 9100 4150
+F 0 "R58" V 9180 4150 50  0000 C CNN
+F 1 "470" V 9100 4150 50  0000 C CNN
+	1    9100 4150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9350 4850 9100 4850
+Wire Wire Line
+	9100 4450 9100 4400
+$Comp
+L GND #PWR072
+U 1 1 51E400D5
+P 9900 4950
+F 0 "#PWR072" H 9900 4950 30  0001 C CNN
+F 1 "GND" H 9900 4880 30  0001 C CNN
+	1    9900 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9850 4850 9900 4850
+Wire Wire Line
+	9900 4850 9900 4950
+Text GLabel 9050 3850 0    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	9050 3850 9100 3850
+Wire Wire Line
+	9100 3850 9100 3900
+$Comp
+L R R60
+U 1 1 51E400E0
+P 10100 4800
+F 0 "R60" V 10180 4800 50  0000 C CNN
+F 1 "470" V 10100 4800 50  0000 C CNN
+	1    10100 4800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9850 4100 10100 4100
+Wire Wire Line
+	10100 4500 10100 4550
+Text GLabel 10150 5100 2    60   Input ~ 0
+REG_3V3_LED
+Wire Wire Line
+	10150 5100 10100 5100
+Wire Wire Line
+	10100 5100 10100 5050
+$Comp
+L GND #PWR073
+U 1 1 51E400EB
+P 9300 4000
+F 0 "#PWR073" H 9300 4000 30  0001 C CNN
+F 1 "GND" H 9300 3930 30  0001 C CNN
+	1    9300 4000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9350 4100 9300 4100
+Wire Wire Line
+	9300 4100 9300 4000
+Wire Wire Line
+	9350 4450 9200 4450
+Wire Wire Line
+	9200 4450 9200 3700
+Wire Wire Line
+	9200 3700 9600 3700
+Wire Wire Line
+	9850 4500 10000 4500
+Wire Wire Line
+	10000 4500 10000 5100
+Wire Wire Line
+	10000 5100 9600 5100
+Text GLabel 7250 1850 2    39   Input ~ 0
+TXD-D-TTL
+$Comp
+L LED D29
+U 1 1 51E400FB
+P 9050 2750
+F 0 "D29" H 9050 2850 50  0000 C CNN
+F 1 "LED" H 9050 2650 50  0000 C CNN
+F 4 "RED_LED_OUT" H 9050 2550 60  0000 C CNN "Note"
+	1    9050 2750
+	0    1    1    0   
+$EndComp
+Text GLabel 9550 1800 2    39   Input ~ 0
+CD-D-TTL
+Text GLabel 7250 3750 2    39   Input ~ 0
+RI-D-TTL
+Text GLabel 7250 5150 0    39   Input ~ 0
+CTS-D-TTL
+Text GLabel 9600 5100 0    39   Input ~ 0
+DSR-D-TTL
+Text GLabel 9600 3700 2    39   Input ~ 0
+RXD-D-TTL
+$Comp
+L LED D32
+U 1 1 51E40107
+P 10100 4300
+F 0 "D32" H 10100 4400 50  0000 C CNN
+F 1 "LED" H 10100 4200 50  0000 C CNN
+F 4 "GREEN_LED_IN" H 10050 4100 60  0000 C CNN "Note"
+	1    10100 4300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D30
+U 1 1 51E4010E
+P 9100 4650
+F 0 "D30" H 9100 4750 50  0000 C CNN
+F 1 "LED" H 9100 4550 50  0000 C CNN
+F 4 "GREEN_LED_IN" H 9050 4450 60  0000 C CNN "Note"
+	1    9100 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D26
+U 1 1 51E40115
+P 6750 4700
+F 0 "D26" H 6750 4800 50  0000 C CNN
+F 1 "LED" H 6750 4600 50  0000 C CNN
+F 4 "GREEN_LED_IN" H 6700 4500 60  0000 C CNN "Note"
+	1    6750 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D28
+U 1 1 51E4011C
+P 7750 4350
+F 0 "D28" H 7750 4450 50  0000 C CNN
+F 1 "LED" H 7750 4250 50  0000 C CNN
+F 4 "GREEN_LED_IN" H 7700 4150 60  0000 C CNN "Note"
+	1    7750 4350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D17
+U 1 1 51E40123
+P 1850 2800
+F 0 "D17" H 1850 2900 50  0000 C CNN
+F 1 "LED" H 1850 2700 50  0000 C CNN
+F 4 "GREEN_LED_IN" H 1800 2600 60  0000 C CNN "Note"
+	1    1850 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D19
+U 1 1 51E4012A
+P 2850 2450
+F 0 "D19" H 2850 2550 50  0000 C CNN
+F 1 "LED" H 2850 2350 50  0000 C CNN
+F 4 "GREEN_LED_IN" H 2800 2250 60  0000 C CNN "Note"
+	1    2850 2450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D20
+U 1 1 51E40131
+P 2850 4350
+F 0 "D20" H 2850 4450 50  0000 C CNN
+F 1 "LED" H 2850 4250 50  0000 C CNN
+F 4 "RED_LED_OUT" H 2850 4150 60  0000 C CNN "note"
+	1    2850 4350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L LED D18
+U 1 1 51E40138
+P 1850 4700
+F 0 "D18" H 1850 4800 50  0000 C CNN
+F 1 "LED" H 1850 4600 50  0000 C CNN
+F 4 "RED_LED_OUT" H 1850 4500 60  0000 C CNN "Note"
+	1    1850 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D21
+U 1 1 51E4013F
+P 4150 2750
+F 0 "D21" H 4150 2850 50  0000 C CNN
+F 1 "LED" H 4150 2650 50  0000 C CNN
+F 4 "GREEN_LED_IN" H 4100 2550 60  0000 C CNN "Note"
+	1    4150 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D22
+U 1 1 51E40146
+P 4200 4650
+F 0 "D22" H 4200 4750 50  0000 C CNN
+F 1 "LED" H 4200 4550 50  0000 C CNN
+F 4 "RED_LED_OUT" H 4200 4450 60  0000 C CNN "Note"
+	1    4200 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D24
+U 1 1 51E4014D
+P 5200 4300
+F 0 "D24" H 5200 4400 50  0000 C CNN
+F 1 "LED" H 5200 4200 50  0000 C CNN
+F 4 "RED_LED_OUT" H 5200 4100 60  0000 C CNN "note"
+	1    5200 4300
+	0    -1   -1   0   
+$EndComp
+Text Notes 3150 1400 0    60   ~ 0
+RS-232 Transceiver\nData Terminal Equipment\n(DTE) (TRSF3243)
+Text Notes 7900 1400 0    60   ~ 0
+RS-232 Transceiver\nData Communications Equipment\n(DCE) (TRS3237E)
+Text Notes 600  700  0    60   ~ 0
+Note: All LEDs are managed by REG_3V3_LED
+Wire Wire Line
+	4950 4850 5000 4850
+Wire Wire Line
+	5000 4850 5000 4950
+$EndSCHEMATC

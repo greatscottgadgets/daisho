@@ -1,0 +1,1032 @@
+EESchema Schematic File Version 2  date Sat 27 Sep 2014 12:30:57 PM MDT
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:samtec_qsh_090-d
+LIBS:hole
+LIBS:TRS3237E
+LIBS:TRSF3243
+LIBS:MUN5212DW1
+LIBS:MIC5318
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 6
+Title "Daisho Project RS232 Front-End Board"
+Date "27 sep 2014"
+Rev "1.0 Rev1"
+Comp ""
+Comment1 "Copyright © 2013/2014 Benjamin Vernoux"
+Comment2 "License: GNU General Public License, version 2"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L DB9 J4
+U 1 1 51E3FDC1
+P 3050 5850
+F 0 "J4" H 3050 6400 70  0000 C CNN
+F 1 "DB9" H 3050 5300 70  0000 C CNN
+F 4 "Sullins" H 3050 5850 60  0001 C CNN "Manufacturer"
+F 5 "SDS107-PRW1-M09-SN63-11" H 3050 5850 60  0001 C CNN "Part#"
+F 6 "CONN D-SUB PLUG 9POS RA GOLD" H 3050 5850 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/SDS107-PRW1-M09-SN63-11/S9575-ND/3593571" H 3050 5850 60  0001 C CNN "Field7"
+	1    3050 5850
+	1    0    0    -1  
+$EndComp
+Text Label 2500 6250 2    60   ~ 0
+CD-C-232
+Text Label 2500 6150 2    60   ~ 0
+DSR-C-232
+Text Label 2500 6050 2    60   ~ 0
+RXD-C-232
+Text Label 2500 5950 2    60   ~ 0
+RTS-C-232
+Text Label 2500 5850 2    60   ~ 0
+TXD-C-232
+Text Label 2500 5750 2    60   ~ 0
+CTS-C-232
+Text Label 2500 5650 2    60   ~ 0
+DTR-C-232
+Text Label 2500 5550 2    60   ~ 0
+RI-C-232
+$Comp
+L DB9 J5
+U 1 1 51E3FDD3
+P 9000 5950
+F 0 "J5" H 9000 6500 70  0000 C CNN
+F 1 "DB9" H 9000 5400 70  0000 C CNN
+F 4 "Sullins" H 9000 5950 60  0001 C CNN "Manufacturer"
+F 5 "SDS107-PRP2-F09-SN13-11" H 9000 5950 60  0001 C CNN "Part#"
+F 6 "CONN D-SUB RCPT 9POS RA GOLD" H 9000 5950 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/SDS107-PRP2-F09-SN13-11/S9620-ND" H 9000 5950 60  0001 C CNN "Field7"
+	1    9000 5950
+	1    0    0    -1  
+$EndComp
+Text Label 8450 6350 2    60   ~ 0
+CD-D-232
+Text Label 8450 6250 2    60   ~ 0
+DSR-D-232
+Text Label 8450 6150 2    60   ~ 0
+RXD-D-232
+Text Label 8450 6050 2    60   ~ 0
+RTS-D-232
+Text Label 8450 5950 2    60   ~ 0
+TXD-D-232
+Text Label 8450 5850 2    60   ~ 0
+CTS-D-232
+Text Label 8450 5750 2    60   ~ 0
+DTR-D-232
+Text Label 8450 5650 2    60   ~ 0
+RI-D-232
+$Comp
+L GND #PWR030
+U 1 1 51E3FDE1
+P 2400 5400
+F 0 "#PWR030" H 2400 5400 30  0001 C CNN
+F 1 "GND" H 2400 5330 30  0001 C CNN
+	1    2400 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR031
+U 1 1 51E3FDE7
+P 8350 5500
+F 0 "#PWR031" H 8350 5500 30  0001 C CNN
+F 1 "GND" H 8350 5430 30  0001 C CNN
+	1    8350 5500
+	0    1    1    0   
+$EndComp
+$Comp
+L TRSF3243 U4
+U 1 1 51E3FDEE
+P 2300 3450
+F 0 "U4" H 2200 4100 60  0000 C CNN
+F 1 "TRSF3243" H 2350 3800 60  0000 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/trsf3243.pdf" H 2300 3450 60  0001 C CNN
+F 4 "http://www.digikey.com/product-detail/en/TRSF3243CPWR/296-25102-1-ND/2136639" H 2300 3450 60  0001 C CNN "Field7"
+	1    2300 3450
+	1    0    0    -1  
+$EndComp
+Text Label 1500 3050 2    60   ~ 0
+CD-C-232
+Text Label 1500 3150 2    60   ~ 0
+DSR-C-232
+Text Label 1500 3250 2    60   ~ 0
+RXD-C-232
+Text Label 1500 3350 2    60   ~ 0
+CTS-C-232
+Text Label 1500 3450 2    60   ~ 0
+RI-C-232
+Text Label 8050 3250 2    60   ~ 0
+RI-D-232
+Text Label 8050 3050 2    60   ~ 0
+CTS-D-232
+Text Label 8050 2750 2    60   ~ 0
+RXD-D-232
+Text Label 8050 2650 2    60   ~ 0
+DSR-D-232
+Text Label 8050 2550 2    60   ~ 0
+CD-D-232
+Text Label 8050 2850 2    60   ~ 0
+RTS-D-232
+Text Label 8050 2950 2    60   ~ 0
+TXD-D-232
+Text Label 8050 3150 2    60   ~ 0
+DTR-D-232
+Text Label 1500 3750 2    60   ~ 0
+DTR-C-232
+Text Label 1500 3650 2    60   ~ 0
+TXD-C-232
+Text Label 1500 3550 2    60   ~ 0
+RTS-C-232
+Text GLabel 1600 4050 0    39   Input ~ 0
+RTS-C-TTL
+Text GLabel 1600 3950 0    39   Input ~ 0
+TXD-C-TTL
+Text GLabel 1600 3850 0    39   Input ~ 0
+DTR-C-TTL
+Text GLabel 3050 3650 2    39   Input ~ 0
+CD-C-TTL
+Text GLabel 3050 3750 2    39   Input ~ 0
+DSR-C-TTL
+Text GLabel 3050 3850 2    39   Input ~ 0
+RXD-C-TTL
+Text GLabel 3050 3950 2    39   Input ~ 0
+CTS-C-TTL
+Text GLabel 3050 4050 2    39   Input ~ 0
+RI-C-TTL
+Text GLabel 9700 2550 2    39   Input ~ 0
+CD-D-TTL
+Text GLabel 9700 2650 2    39   Input ~ 0
+DSR-D-TTL
+Text GLabel 9700 2750 2    39   Input ~ 0
+RXD-D-TTL
+Text GLabel 9700 3050 2    39   Input ~ 0
+CTS-D-TTL
+Text GLabel 9700 3250 2    39   Input ~ 0
+RI-D-TTL
+$Comp
+L C C15
+U 1 1 51E3FE15
+P 4050 2750
+F 0 "C15" H 4100 2850 50  0000 L CNN
+F 1 "0.1uF" H 4100 2650 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 2500 3150 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 2500 3150 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 2500 3150 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 2500 3150 60  0001 C CNN "Field7"
+	1    4050 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C14
+U 1 1 51E3FE1F
+P 3650 2650
+F 0 "C14" H 3700 2750 50  0000 L CNN
+F 1 "0.1uF" H 3700 2550 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 3650 2650 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 3650 2650 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 3650 2650 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 3650 2650 60  0001 C CNN "Field7"
+	1    3650 2650
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C11
+U 1 1 51E3FE29
+P 650 3200
+F 0 "C11" H 700 3300 50  0000 L CNN
+F 1 "0.1uF" H 700 3100 50  0000 L CNN
+F 4 "Johanson Dialectrics" H -50 3450 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H -50 3450 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H -50 3450 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H -50 3450 60  0001 C CNN "Field7"
+	1    650  3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C12
+U 1 1 51E3FE33
+P 1300 2500
+F 0 "C12" H 1350 2600 50  0000 L CNN
+F 1 "0.1uF" H 1350 2400 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 750 2350 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 750 2350 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 750 2350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 750 2350 60  0001 C CNN "Field7"
+	1    1300 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L C C13
+U 1 1 51E3FE3D
+P 3300 2550
+F 0 "C13" H 3350 2650 50  0000 L CNN
+F 1 "0.1uF" H 3350 2450 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 150 2350 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 150 2350 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 150 2350 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 150 2350 60  0001 C CNN "Field7"
+	1    3300 2550
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR032
+U 1 1 51E3FE43
+P 3800 2400
+F 0 "#PWR032" H 3800 2400 30  0001 C CNN
+F 1 "GND" H 3800 2330 30  0001 C CNN
+	1    3800 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C20
+U 1 1 51E3FE4D
+P 10750 2050
+F 0 "C20" H 10800 2150 50  0000 L CNN
+F 1 "0.1uF" H 10800 1950 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 3350 1850 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 3350 1850 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 3350 1850 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 3350 1850 60  0001 C CNN "Field7"
+	1    10750 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C17
+U 1 1 51E3FE57
+P 7750 2150
+F 0 "C17" H 7800 2250 50  0000 L CNN
+F 1 "0.1uF" H 7800 2050 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 1650 2450 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 1650 2450 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 1650 2450 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 1650 2450 60  0001 C CNN "Field7"
+	1    7750 2150
+	0    1    1    0   
+$EndComp
+$Comp
+L C C16
+U 1 1 51E3FE61
+P 7150 2700
+F 0 "C16" H 7200 2800 50  0000 L CNN
+F 1 "0.1uF" H 7200 2600 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 600 3300 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 600 3300 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 600 3300 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 600 3300 60  0001 C CNN "Field7"
+	1    7150 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C19
+U 1 1 51E3FE6B
+P 10250 2000
+F 0 "C19" H 10300 2100 50  0000 L CNN
+F 1 "0.1uF" H 10400 1800 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 6050 1150 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 6050 1150 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 6050 1150 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 6050 1150 60  0001 C CNN "Field7"
+	1    10250 2000
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR033
+U 1 1 51E3FE71
+P 10400 1700
+F 0 "#PWR033" H 10400 1700 30  0001 C CNN
+F 1 "GND" H 10400 1630 30  0001 C CNN
+	1    10400 1700
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3000 3550
+$Comp
+L GND #PWR034
+U 1 1 51E3FE78
+P 3250 3100
+F 0 "#PWR034" H 3250 3100 30  0001 C CNN
+F 1 "GND" H 3250 3030 30  0001 C CNN
+	1    3250 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR035
+U 1 1 51E3FE7E
+P 650 3500
+F 0 "#PWR035" H 650 3500 30  0001 C CNN
+F 1 "GND" H 650 3430 30  0001 C CNN
+	1    650  3500
+	1    0    0    -1  
+$EndComp
+Text Notes 4700 1000 2    60   ~ 0
+FORCEON: Auto-powerdown\nDisabled by default\n(To be enabled by FPGA)
+Text Notes 8050 4650 0    60   ~ 0
+!SHDN: Outputs (DOUT/ROUT)\nhigh-impedance by default\n(To be enabled by FPGA)
+Text Notes 9900 3800 0    60   ~ 0
+1Mbit/s mode\nEnabled  (by default)
+NoConn ~ 9550 3350
+Text GLabel 3200 3450 2    39   Input ~ 0
+!INVALID-C-TTL
+$Comp
+L R R43
+U 1 1 51E3FE89
+P 7950 3800
+F 0 "R43" V 8030 3800 50  0000 C CNN
+F 1 "10K" V 7950 3800 50  0000 C CNN
+	1    7950 3800
+	1    0    0    -1  
+$EndComp
+Text GLabel 7000 3350 0    39   Input ~ 0
+!EN-D-TTL
+Text GLabel 7800 3450 0    39   Input ~ 0
+!SHDN-D-TTL
+Text GLabel 4250 2000 0    39   Input ~ 0
+FORCEON-C-TTL
+Text GLabel 4600 3000 2    39   Input ~ 0
+!FORCEOFF-C-TTL
+Text GLabel 9850 3450 2    39   Input ~ 0
+MBAUD-D-TTL
+$Comp
+L R R44
+U 1 1 51E3FE94
+P 9700 3800
+F 0 "R44" V 9780 3800 50  0000 C CNN
+F 1 "10K" V 9700 3800 50  0000 C CNN
+	1    9700 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR036
+U 1 1 51E3FE9A
+P 7150 3100
+F 0 "#PWR036" H 7150 3100 30  0001 C CNN
+F 1 "GND" H 7150 3030 30  0001 C CNN
+	1    7150 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C18
+U 1 1 51E3FEA4
+P 9850 2000
+F 0 "C18" H 9900 2100 50  0000 L CNN
+F 1 "0.1uF" H 10050 1800 50  0000 L CNN
+F 4 "Johanson Dialectrics" H 2050 1700 60  0001 C CNN "Manufacturer"
+F 5 "160R14W104KV4T" H 2050 1700 60  0001 C CNN "Part#"
+F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H 2050 1700 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H 2050 1700 60  0001 C CNN "Field7"
+	1    9850 2000
+	1    0    0    -1  
+$EndComp
+Text GLabel 3550 3100 2    60   Input ~ 0
+REG_3V3
+Text GLabel 9900 1650 2    60   Input ~ 0
+REG_3V3
+Text GLabel 10300 2350 2    60   Input ~ 0
+REG_3V3
+Text GLabel 3350 2250 2    60   Input ~ 0
+REG_3V3
+Text GLabel 9800 4150 2    60   Input ~ 0
+REG_3V3
+Text Notes 5800 2650 2    60   ~ 0
+FORCEOFF: Powered OFF\nby default\n(To be enabled by FPGA)
+$Comp
+L R R34
+U 1 1 51E3FEB3
+P 4900 1300
+F 0 "R34" V 4800 1300 50  0000 C CNN
+F 1 "10k" V 4900 1300 50  0000 C CNN
+F 4 "Stackpole" H 4900 1300 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 4900 1300 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 4900 1300 60  0001 C CNN "Description"
+	1    4900 1300
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR037
+U 1 1 51E3FEB9
+P 5250 1600
+F 0 "#PWR037" H 5250 1600 30  0001 C CNN
+F 1 "GND" H 5250 1530 30  0001 C CNN
+	1    5250 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_3 P10
+U 1 1 51E3FEBF
+P 5700 1400
+F 0 "P10" V 5650 1400 50  0000 C CNN
+F 1 "CONN_3" V 5750 1400 40  0000 C CNN
+	1    5700 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R35
+U 1 1 51E3FEC9
+P 4900 1500
+F 0 "R35" V 4980 1500 50  0000 C CNN
+F 1 "10k" V 4900 1500 50  0000 C CNN
+F 4 "Stackpole" H 4900 1500 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 4900 1500 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 4900 1500 60  0001 C CNN "Description"
+F 7 "DNP" V 5050 1500 60  0000 C CNN "Note"
+	1    4900 1500
+	0    -1   1    0   
+$EndComp
+Text GLabel 5300 1050 2    60   Input ~ 0
+REG_3V3
+Wire Wire Line
+	2500 5550 2600 5550
+Wire Wire Line
+	2500 5650 2600 5650
+Wire Wire Line
+	2500 5750 2600 5750
+Wire Wire Line
+	2500 5850 2600 5850
+Wire Wire Line
+	2500 5950 2600 5950
+Wire Wire Line
+	2500 6050 2600 6050
+Wire Wire Line
+	2500 6150 2600 6150
+Wire Wire Line
+	2500 6250 2600 6250
+Wire Wire Line
+	8450 5650 8550 5650
+Wire Wire Line
+	8450 5750 8550 5750
+Wire Wire Line
+	8450 5850 8550 5850
+Wire Wire Line
+	8450 5950 8550 5950
+Wire Wire Line
+	8450 6050 8550 6050
+Wire Wire Line
+	8450 6150 8550 6150
+Wire Wire Line
+	8450 6250 8550 6250
+Wire Wire Line
+	8450 6350 8550 6350
+Wire Wire Line
+	8350 5500 8450 5500
+Wire Wire Line
+	8450 5500 8450 5550
+Wire Wire Line
+	8450 5550 8550 5550
+Wire Wire Line
+	2400 5400 2500 5400
+Wire Wire Line
+	2500 5400 2500 5450
+Wire Wire Line
+	2500 5450 2600 5450
+Wire Wire Line
+	1650 3550 1500 3550
+Wire Wire Line
+	1650 3650 1500 3650
+Wire Wire Line
+	1650 3750 1500 3750
+Wire Wire Line
+	1650 3050 1500 3050
+Wire Wire Line
+	1650 3150 1500 3150
+Wire Wire Line
+	1650 3250 1500 3250
+Wire Wire Line
+	1650 3350 1500 3350
+Wire Wire Line
+	1650 3450 1500 3450
+Wire Wire Line
+	8200 2550 8050 2550
+Wire Wire Line
+	8200 2650 8050 2650
+Wire Wire Line
+	8200 2750 8050 2750
+Wire Wire Line
+	8200 3050 8050 3050
+Wire Wire Line
+	8200 3250 8050 3250
+Wire Wire Line
+	8200 2850 8050 2850
+Wire Wire Line
+	8200 2950 8050 2950
+Wire Wire Line
+	8200 3150 8050 3150
+Wire Wire Line
+	3000 4050 3050 4050
+Wire Wire Line
+	3050 3950 3000 3950
+Wire Wire Line
+	3000 3850 3050 3850
+Wire Wire Line
+	3050 3750 3000 3750
+Wire Wire Line
+	3050 3650 3000 3650
+Wire Wire Line
+	1650 3850 1600 3850
+Wire Wire Line
+	1600 3950 1650 3950
+Wire Wire Line
+	1650 4050 1600 4050
+Wire Wire Line
+	9550 3250 9700 3250
+Wire Wire Line
+	9700 3050 9550 3050
+Wire Wire Line
+	9550 2750 9700 2750
+Wire Wire Line
+	9700 2650 9550 2650
+Wire Wire Line
+	9550 2550 9700 2550
+Wire Wire Line
+	3000 3050 3250 3050
+Wire Wire Line
+	3250 3050 3250 3100
+Wire Wire Line
+	3000 3150 3150 3150
+Wire Wire Line
+	3150 3150 3150 3200
+Wire Wire Line
+	3150 3200 4050 3200
+Wire Wire Line
+	4050 3200 4050 2950
+Wire Wire Line
+	4050 2550 4050 2150
+Wire Wire Line
+	4050 2150 3050 2150
+Wire Wire Line
+	3050 2150 3050 2750
+Wire Wire Line
+	3050 2750 3000 2750
+Wire Wire Line
+	650  3400 650  3500
+Wire Wire Line
+	1500 2500 1600 2500
+Wire Wire Line
+	1600 2500 1600 2750
+Wire Wire Line
+	1600 2750 1650 2750
+Wire Wire Line
+	1650 2850 1050 2850
+Wire Wire Line
+	1050 2850 1050 2500
+Wire Wire Line
+	1050 2500 1100 2500
+Wire Wire Line
+	3000 3450 3200 3450
+Wire Wire Line
+	7950 3450 7950 3550
+Connection ~ 7950 3450
+Wire Wire Line
+	7000 3350 8200 3350
+Wire Wire Line
+	7800 3450 8200 3450
+Wire Wire Line
+	9550 3450 9850 3450
+Wire Wire Line
+	9700 3450 9700 3550
+Connection ~ 9700 3450
+Wire Wire Line
+	3000 2850 3300 2850
+Wire Wire Line
+	3300 2850 3300 2750
+Wire Wire Line
+	3000 2950 3650 2950
+Connection ~ 3450 2950
+Wire Wire Line
+	8200 2250 8000 2250
+Wire Wire Line
+	8000 2250 8000 2300
+Wire Wire Line
+	8200 2150 7950 2150
+Wire Wire Line
+	8200 2350 8100 2350
+Wire Wire Line
+	8100 2350 8100 2400
+Wire Wire Line
+	8100 2400 7450 2400
+Wire Wire Line
+	7450 2400 7450 2150
+Wire Wire Line
+	7450 2150 7550 2150
+Wire Wire Line
+	1650 2950 650  2950
+Wire Wire Line
+	650  2950 650  3000
+Wire Wire Line
+	8200 2450 7150 2450
+Wire Wire Line
+	7150 2450 7150 2500
+Wire Wire Line
+	9550 2350 10050 2350
+Wire Wire Line
+	10050 2350 10050 2250
+Wire Wire Line
+	10050 2250 10250 2250
+Connection ~ 10250 2250
+Wire Wire Line
+	9550 2250 9850 2250
+Wire Wire Line
+	9850 2250 9850 2200
+Wire Wire Line
+	9850 1800 9850 1650
+Wire Wire Line
+	9850 1650 9900 1650
+Wire Wire Line
+	9550 2450 10750 2450
+Wire Wire Line
+	10750 2450 10750 2250
+Wire Wire Line
+	9550 2150 9650 2150
+Wire Wire Line
+	9650 2150 9650 1450
+Wire Wire Line
+	9650 1450 10750 1450
+Wire Wire Line
+	10750 1450 10750 1850
+Wire Wire Line
+	10250 2200 10250 2350
+Wire Wire Line
+	10250 2350 10300 2350
+Wire Wire Line
+	10250 1800 10250 1600
+Wire Wire Line
+	10250 1600 10400 1600
+Wire Wire Line
+	10400 1600 10400 1700
+Wire Wire Line
+	3300 2350 3300 2250
+Wire Wire Line
+	3300 2250 3350 2250
+Wire Wire Line
+	3650 2450 3650 2300
+Wire Wire Line
+	3650 2300 3800 2300
+Wire Wire Line
+	3800 2300 3800 2400
+Wire Wire Line
+	7150 2900 7150 3100
+Wire Wire Line
+	9700 4050 9700 4150
+Wire Wire Line
+	9700 4150 9800 4150
+Connection ~ 5250 1300
+Wire Wire Line
+	5150 1300 5350 1300
+Connection ~ 4550 1400
+Wire Wire Line
+	4600 1400 4600 1500
+Wire Wire Line
+	4600 1500 4650 1500
+Wire Wire Line
+	5250 1600 5250 1500
+Connection ~ 5250 1500
+Wire Wire Line
+	5150 1500 5350 1500
+Wire Wire Line
+	4550 1400 4550 1300
+Wire Wire Line
+	4550 1300 4650 1300
+Connection ~ 4600 1400
+Wire Wire Line
+	4350 3250 3000 3250
+$Comp
+L R R37
+U 1 1 51E3FF58
+P 4950 2350
+F 0 "R37" V 4850 2350 50  0000 C CNN
+F 1 "10k" V 4950 2350 50  0000 C CNN
+F 4 "Stackpole" H 4950 2350 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 4950 2350 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 4950 2350 60  0001 C CNN "Description"
+	1    4950 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR038
+U 1 1 51E3FF5E
+P 5300 2450
+F 0 "#PWR038" H 5300 2450 30  0001 C CNN
+F 1 "GND" H 5300 2380 30  0001 C CNN
+	1    5300 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_3 P11
+U 1 1 51E3FF64
+P 5750 2250
+F 0 "P11" V 5700 2250 50  0000 C CNN
+F 1 "CONN_3" V 5800 2250 40  0000 C CNN
+	1    5750 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R36
+U 1 1 51E3FF6E
+P 4950 2150
+F 0 "R36" V 5030 2150 50  0000 C CNN
+F 1 "10k" V 4950 2150 50  0000 C CNN
+F 4 "Stackpole" H 4950 2150 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 4950 2150 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 4950 2150 60  0001 C CNN "Description"
+F 7 "DNP" V 5100 2150 60  0000 C CNN "Note"
+	1    4950 2150
+	0    1    -1   0   
+$EndComp
+Text GLabel 5400 1900 2    60   Input ~ 0
+REG_3V3
+Connection ~ 5300 2150
+Wire Wire Line
+	5200 2150 5400 2150
+Connection ~ 4600 2250
+Wire Wire Line
+	4650 2250 4650 2350
+Wire Wire Line
+	4650 2350 4700 2350
+Wire Wire Line
+	5300 2450 5300 2350
+Connection ~ 5300 2350
+Wire Wire Line
+	5200 2350 5400 2350
+Wire Wire Line
+	4600 2250 4600 2150
+Wire Wire Line
+	4600 2150 4700 2150
+Connection ~ 4650 2250
+$Comp
+L R R32
+U 1 1 51E3FF83
+P 4350 1700
+F 0 "R32" V 4250 1700 50  0000 C CNN
+F 1 "10k" V 4350 1700 50  0000 C CNN
+F 4 "Stackpole" H 4350 1700 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 4350 1700 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 4350 1700 60  0001 C CNN "Description"
+	1    4350 1700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4350 1950 4350 3250
+Wire Wire Line
+	4250 2000 4350 2000
+Connection ~ 4350 2000
+Wire Wire Line
+	4350 1400 5350 1400
+Wire Wire Line
+	4350 1400 4350 1450
+$Comp
+L R R33
+U 1 1 51E3FF91
+P 4500 2650
+F 0 "R33" V 4400 2650 50  0000 C CNN
+F 1 "10k" V 4500 2650 50  0000 C CNN
+F 4 "Stackpole" H 4500 2650 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 4500 2650 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 4500 2650 60  0001 C CNN "Description"
+	1    4500 2650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4500 2250 5400 2250
+Wire Wire Line
+	4500 2400 4500 2250
+Wire Wire Line
+	4500 3350 3000 3350
+Wire Wire Line
+	4500 2900 4500 3350
+Wire Wire Line
+	4500 3000 4600 3000
+Connection ~ 4500 3000
+Wire Wire Line
+	5250 1300 5250 1050
+Wire Wire Line
+	5250 1050 5300 1050
+Wire Wire Line
+	5300 2150 5300 1900
+Wire Wire Line
+	5300 1900 5400 1900
+Text Notes 5250 3400 0    60   ~ 0
+!EN: Receiver outputs (ROUT)\nhigh-impedance by default\n(To be enabled by FPGA)
+$Comp
+L R R38
+U 1 1 51E3FFA5
+P 6450 3900
+F 0 "R38" V 6350 3900 50  0000 C CNN
+F 1 "10k" V 6450 3900 50  0000 C CNN
+F 4 "Stackpole" H 6450 3900 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 6450 3900 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 6450 3900 60  0001 C CNN "Description"
+	1    6450 3900
+	0    -1   1    0   
+$EndComp
+$Comp
+L GND #PWR039
+U 1 1 51E3FFAB
+P 6100 4200
+F 0 "#PWR039" H 6100 4200 30  0001 C CNN
+F 1 "GND" H 6100 4130 30  0001 C CNN
+	1    6100 4200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_3 P9
+U 1 1 51E3FFB1
+P 5650 4000
+F 0 "P9" V 5600 4000 50  0000 C CNN
+F 1 "CONN_3" V 5700 4000 40  0000 C CNN
+	1    5650 4000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R R39
+U 1 1 51E3FFBB
+P 6450 4100
+F 0 "R39" V 6530 4100 50  0000 C CNN
+F 1 "10k" V 6450 4100 50  0000 C CNN
+F 4 "Stackpole" H 6450 4100 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 6450 4100 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 6450 4100 60  0001 C CNN "Description"
+F 7 "DNP" V 6600 4100 60  0000 C CNN "Note"
+	1    6450 4100
+	0    1    1    0   
+$EndComp
+Text GLabel 6050 3650 0    60   Input ~ 0
+REG_3V3
+Connection ~ 6100 3900
+Wire Wire Line
+	6000 3900 6200 3900
+Connection ~ 6800 4000
+Wire Wire Line
+	6750 4000 6750 4100
+Wire Wire Line
+	6750 4100 6700 4100
+Wire Wire Line
+	6100 4200 6100 4100
+Connection ~ 6100 4100
+Wire Wire Line
+	6000 4100 6200 4100
+Wire Wire Line
+	6800 4000 6800 3900
+Wire Wire Line
+	6800 3900 6700 3900
+Connection ~ 6750 4000
+Wire Wire Line
+	6000 4000 7100 4000
+Wire Wire Line
+	6100 3900 6100 3650
+Wire Wire Line
+	6100 3650 6050 3650
+$Comp
+L R R40
+U 1 1 51E3FFD0
+P 7100 3700
+F 0 "R40" V 7180 3700 50  0000 C CNN
+F 1 "10K" V 7100 3700 50  0000 C CNN
+	1    7100 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 3450 7100 3350
+Connection ~ 7100 3350
+Wire Wire Line
+	7100 4000 7100 3950
+$Comp
+L R R42
+U 1 1 51E3FFDC
+P 7500 4850
+F 0 "R42" V 7400 4850 50  0000 C CNN
+F 1 "10k" V 7500 4850 50  0000 C CNN
+F 4 "Stackpole" H 7500 4850 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 7500 4850 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 7500 4850 60  0001 C CNN "Description"
+	1    7500 4850
+	0    1    -1   0   
+$EndComp
+$Comp
+L GND #PWR040
+U 1 1 51E3FFE2
+P 7150 4950
+F 0 "#PWR040" H 7150 4950 30  0001 C CNN
+F 1 "GND" H 7150 4880 30  0001 C CNN
+	1    7150 4950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L CONN_3 P12
+U 1 1 51E3FFE8
+P 6700 4750
+F 0 "P12" V 6650 4750 50  0000 C CNN
+F 1 "CONN_3" V 6750 4750 40  0000 C CNN
+	1    6700 4750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R R41
+U 1 1 51E3FFF2
+P 7500 4650
+F 0 "R41" V 7580 4650 50  0000 C CNN
+F 1 "10k" V 7500 4650 50  0000 C CNN
+F 4 "Stackpole" H 7500 4650 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0603JT10K0" H 7500 4650 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 7500 4650 60  0001 C CNN "Description"
+F 7 "DNP" V 7650 4650 60  0000 C CNN "Note"
+	1    7500 4650
+	0    -1   -1   0   
+$EndComp
+Text GLabel 7100 4400 0    60   Input ~ 0
+REG_3V3
+Connection ~ 7150 4650
+Wire Wire Line
+	7050 4650 7250 4650
+Connection ~ 7850 4750
+Wire Wire Line
+	7800 4750 7800 4850
+Wire Wire Line
+	7800 4850 7750 4850
+Wire Wire Line
+	7150 4950 7150 4850
+Connection ~ 7150 4850
+Wire Wire Line
+	7050 4850 7250 4850
+Wire Wire Line
+	7850 4750 7850 4650
+Wire Wire Line
+	7850 4650 7750 4650
+Connection ~ 7800 4750
+Wire Wire Line
+	7150 4650 7150 4400
+Wire Wire Line
+	7150 4400 7100 4400
+Wire Wire Line
+	7950 4750 7950 4050
+Text Notes 8050 1750 0    60   ~ 0
+RS-232 Transceiver\nData Communications Equipment\n(DCE)
+Text Notes 1750 2250 0    60   ~ 0
+RS-232 Transceiver\nData Terminal Equipment\n(DTE)
+Wire Wire Line
+	7050 4750 7950 4750
+$Comp
+L TRS3237E U5
+U 1 1 51E4001C
+P 8850 2850
+F 0 "U5" H 8750 3500 60  0000 C CNN
+F 1 "TRS3237E" H 8900 3200 60  0000 C CNN
+	1    8850 2850
+	1    0    0    -1  
+$EndComp
+Text GLabel 9700 3150 2    39   Input ~ 0
+DTR-D-TTL
+Wire Wire Line
+	9700 3150 9550 3150
+$Comp
+L GND #PWR041
+U 1 1 51E40024
+P 8000 2300
+F 0 "#PWR041" H 8000 2300 30  0001 C CNN
+F 1 "GND" H 8000 2230 30  0001 C CNN
+	1    8000 2300
+	1    0    0    -1  
+$EndComp
+Text GLabel 9700 2850 2    39   Input ~ 0
+RTS-D-TTL
+Text GLabel 9700 2950 2    39   Input ~ 0
+TXD-D-TTL
+Wire Wire Line
+	9550 2850 9700 2850
+Wire Wire Line
+	9700 2950 9550 2950
+Wire Wire Line
+	3650 2950 3650 2850
+Wire Wire Line
+	3450 2950 3450 3100
+Wire Wire Line
+	3450 3100 3550 3100
+$EndSCHEMATC
