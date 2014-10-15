@@ -12,3 +12,4 @@
 *.map
 *.srec
 .gdbinit
+_autosave*
