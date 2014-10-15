@@ -10,7 +10,7 @@ NetIExt=net
 EquName1=devcms
 [eeschema]
 version=1
-LibDir=../lib
+LibDir=../../lib
 NetFmtName=
 RptD_X=0
 RptD_Y=100
@@ -79,7 +79,7 @@ DrawSegmentWidth=0.2
 BoardOutlineThickness=0.15
 ModuleOutlineThickness=0.15
 [pcbnew/libraries]
-LibDir=../lib/
+LibDir=../../lib/
 LibName1=sockets
 LibName2=connect
 LibName3=discret

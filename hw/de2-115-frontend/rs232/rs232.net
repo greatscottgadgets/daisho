@@ -405,9 +405,9 @@
     (library (logical conn)
       (uri /usr/share/kicad/library/conn.lib))
     (library (logical adm3310e)
-      (uri ../lib/adm3310e.lib))
+      (uri ../../lib/adm3310e.lib))
     (library (logical adm3307e)
-      (uri ../lib/adm3307e.lib)))
+      (uri ../../lib/adm3307e.lib)))
   (nets
     (net (code 1) (name RI-A-TTL)
       (node (ref P6) (pin 9))

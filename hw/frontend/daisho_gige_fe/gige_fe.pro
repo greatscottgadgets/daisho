@@ -25,7 +25,7 @@ DrawSegmentWidth=0.2
 BoardOutlineThickness=0.381
 ModuleOutlineThickness=0.15
 [pcbnew/libraries]
-LibDir=../lib
+LibDir=../../lib
 LibName1=sockets
 LibName2=connect
 LibName3=discret
@@ -96,7 +96,7 @@ LibName67=ti_rte_s-pwqfn-n16
 LibName68=daisho
 [eeschema]
 version=1
-LibDir=../lib
+LibDir=../../lib
 NetFmtName=PcbnewAdvanced
 RptD_X=0
 RptD_Y=100
