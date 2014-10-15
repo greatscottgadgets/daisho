@@ -43,7 +43,7 @@ LIBS:stdve001aqtr
 LIBS:tlk3134-multi
 LIBS:si5338
 LIBS:tps54218
-LIBS:hdmi-cache
+LIBS:samtec_qsh-090-d
 EELAYER 24 0
 EELAYER END
 $Descr A2 23386 16535
@@ -80,19 +80,6 @@ F 3 "" H 5150 2000 60  0001 C CNN
 	1    5150 2000
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5600 2000 5600 2150
-Wire Wire Line
-	5150 2000 5600 2000
-Wire Wire Line
-	5500 2150 5500 2000
-Connection ~ 5500 2000
-Wire Wire Line
-	5400 2150 5400 2000
-Connection ~ 5400 2000
-Wire Wire Line
-	5300 2000 5300 2150
-Connection ~ 5300 2000
 $Comp
 L GND #PWR086
 U 1 1 51475F48
@@ -104,19 +91,6 @@ F 3 "" H 9000 2050 60  0001 C CNN
 	1    9000 2050
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	9000 2050 9400 2050
-Wire Wire Line
-	9400 2050 9400 2150
-Wire Wire Line
-	9300 2050 9300 2150
-Connection ~ 9300 2050
-Wire Wire Line
-	9200 2050 9200 2150
-Connection ~ 9200 2050
-Wire Wire Line
-	9100 2050 9100 2150
-Connection ~ 9100 2050
 $Comp
 L GND #PWR087
 U 1 1 51475F7E
@@ -128,19 +102,6 @@ F 3 "" H 9000 4050 60  0001 C CNN
 	1    9000 4050
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	9000 4050 9400 4050
-Wire Wire Line
-	9400 4050 9400 3950
-Wire Wire Line
-	9300 3950 9300 4050
-Connection ~ 9300 4050
-Wire Wire Line
-	9200 3950 9200 4050
-Connection ~ 9200 4050
-Wire Wire Line
-	9100 3950 9100 4050
-Connection ~ 9100 4050
 $Comp
 L +3.3V #PWR088
 U 1 1 51476332
@@ -152,37 +113,6 @@ F 3 "" H 5750 4050 60  0001 C CNN
 	1    5750 4050
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	5750 4050 8800 4050
-Wire Wire Line
-	8800 4050 8800 3950
-Wire Wire Line
-	8500 3950 8500 4050
-Connection ~ 8500 4050
-Wire Wire Line
-	8200 3950 8200 4050
-Connection ~ 8200 4050
-Wire Wire Line
-	7900 3950 7900 4050
-Connection ~ 7900 4050
-Wire Wire Line
-	7600 3950 7600 4050
-Connection ~ 7600 4050
-Wire Wire Line
-	7300 3950 7300 4050
-Connection ~ 7300 4050
-Wire Wire Line
-	7000 3950 7000 4050
-Connection ~ 7000 4050
-Wire Wire Line
-	6700 3950 6700 4050
-Connection ~ 6700 4050
-Wire Wire Line
-	6400 3950 6400 4050
-Connection ~ 6400 4050
-Wire Wire Line
-	6100 3950 6100 4050
-Connection ~ 6100 4050
 $Comp
 L +3.3V #PWR089
 U 1 1 514767E9
@@ -194,37 +124,6 @@ F 3 "" H 9600 4050 60  0001 C CNN
 	1    9600 4050
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	9600 4050 12600 4050
-Wire Wire Line
-	9900 4050 9900 3950
-Wire Wire Line
-	10200 4050 10200 3950
-Connection ~ 9900 4050
-Wire Wire Line
-	10500 4050 10500 3950
-Connection ~ 10200 4050
-Wire Wire Line
-	10800 4050 10800 3950
-Connection ~ 10500 4050
-Wire Wire Line
-	11100 4050 11100 3950
-Connection ~ 10800 4050
-Wire Wire Line
-	11400 4050 11400 3950
-Connection ~ 11100 4050
-Wire Wire Line
-	11700 4050 11700 3950
-Connection ~ 11400 4050
-Wire Wire Line
-	12000 4050 12000 3950
-Connection ~ 11700 4050
-Wire Wire Line
-	12300 4050 12300 3950
-Connection ~ 12000 4050
-Wire Wire Line
-	12600 4050 12600 3950
-Connection ~ 12300 4050
 Text GLabel 10600 4200 3    39   Input ~ 0
 SD_CH0_RX0
 Text GLabel 10100 1850 1    39   Input ~ 0
@@ -426,10 +325,6 @@ F 3 "" H 1600 6100 60  0001 C CNN
 	1    1600 6100
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	1950 6100 1600 6100
-Wire Wire Line
-	1950 5200 1600 5200
 $Comp
 L +5V #PWR092
 U 1 1 5147935F
@@ -473,88 +368,12 @@ NoConn ~ 7000 2150
 NoConn ~ 6700 2150
 NoConn ~ 6400 2150
 NoConn ~ 8800 2150
-Wire Wire Line
-	6800 2150 6800 1850
-Wire Wire Line
-	6900 2150 6900 1850
-Wire Wire Line
-	6200 1850 6200 2150
-Wire Wire Line
-	6300 2150 6300 1850
-Wire Wire Line
-	6500 1850 6500 2150
-Wire Wire Line
-	6600 2150 6600 1850
-Wire Wire Line
-	6200 4250 6200 3950
-Wire Wire Line
-	6300 3950 6300 4250
-Wire Wire Line
-	6500 4250 6500 3950
-Wire Wire Line
-	6600 3950 6600 4250
-Wire Wire Line
-	6800 4250 6800 3950
-Wire Wire Line
-	6900 3950 6900 4250
-Wire Wire Line
-	7100 4250 7100 3950
-Wire Wire Line
-	7200 3950 7200 4250
 Text GLabel 12500 4250 3    39   Input ~ 0
 CLK_FPGA_IN_M
-Wire Wire Line
-	12400 4250 12400 3950
-Wire Wire Line
-	12500 3950 12500 4250
 Text GLabel 12400 1900 1    39   Input ~ 0
 CLK_FPGA_OUT_P
 Text GLabel 12500 1900 1    39   Input ~ 0
 CLK_FPGA_OUT_M
-Wire Wire Line
-	12500 1900 12500 2150
-Wire Wire Line
-	12400 1900 12400 2150
-Wire Wire Line
-	2750 4700 3050 4700
-Wire Wire Line
-	2750 4800 3050 4800
-Wire Wire Line
-	2750 4900 3050 4900
-Wire Wire Line
-	2750 5000 3050 5000
-Wire Wire Line
-	2750 5100 3050 5100
-Wire Wire Line
-	2750 5200 2900 5200
-Wire Wire Line
-	2750 5300 3050 5300
-Wire Wire Line
-	2750 5400 3050 5400
-Wire Wire Line
-	2750 5500 3050 5500
-Wire Wire Line
-	2750 5600 3050 5600
-Wire Wire Line
-	2750 5700 3050 5700
-Wire Wire Line
-	2750 5800 3050 5800
-Wire Wire Line
-	2750 5900 3050 5900
-Wire Wire Line
-	2750 6000 3050 6000
-Wire Wire Line
-	2750 6100 2900 6100
-Wire Wire Line
-	2750 6200 3050 6200
-Wire Wire Line
-	2750 6300 3050 6300
-Wire Wire Line
-	2750 6400 3050 6400
-Wire Wire Line
-	2750 6500 3050 6500
-Wire Wire Line
-	2750 6600 3050 6600
 NoConn ~ 2150 3950
 NoConn ~ 2250 3950
 NoConn ~ 2450 3950
@@ -599,6 +418,285 @@ Text GLabel 3050 5400 2    39   Input ~ 0
 SERDES_PRTAD0
 Text GLabel 1600 4900 0    39   Input ~ 0
 SERDES_MDIO_ST
+Text GLabel 1600 6300 0    39   Input ~ 0
+EQ_BOOST1
+Text GLabel 3050 6300 2    39   Input ~ 0
+EQ_BOOST2
+Text GLabel 3050 5800 2    39   Input ~ 0
+EQ_OE
+Text GLabel 1600 5900 0    39   Input ~ 0
+EQ_DDC_EN
+Text GLabel 3050 5700 2    39   Input ~ 0
+EQ_PRE_INT
+Text GLabel 5900 1850 1    39   Input ~ 0
+EQ_SCL_INT
+Text GLabel 5900 4250 3    39   Input ~ 0
+EQ_SDA_INT
+Text GLabel 1600 5700 0    39   Input ~ 0
+EQ_CEC_INT
+Text GLabel 1600 5800 0    39   Input ~ 0
+EQ_HPD_INT
+NoConn ~ 6100 2150
+NoConn ~ 4550 2150
+NoConn ~ 4650 2150
+NoConn ~ 4850 2150
+NoConn ~ 4950 2150
+NoConn ~ 4950 3950
+NoConn ~ 4850 3950
+NoConn ~ 4650 3950
+NoConn ~ 4550 3950
+Text GLabel 1600 6000 0    39   Input ~ 0
+HDMI_SCL_OUT
+Text GLabel 1600 6200 0    39   Input ~ 0
+HDMI_SDA_OUT
+Text GLabel 3050 5900 2    39   Input ~ 0
+HDMI_CEC_OUT
+Text GLabel 3050 6000 2    39   Input ~ 0
+HDMI_HPD_OUT
+Text GLabel 3050 6200 2    39   Input ~ 0
+HDMI_OUT_EN
+$Comp
+L CONN_5X2 P802
+U 1 1 5176C3AE
+P 6250 6600
+F 0 "P802" H 6250 6900 60  0000 C CNN
+F 1 "CONN_5X2" V 6250 6600 50  0000 C CNN
+F 2 "" H 6250 6600 60  0001 C CNN
+F 3 "" H 6250 6600 60  0001 C CNN
+	1    6250 6600
+	1    0    0    -1  
+$EndComp
+Text GLabel 12100 4200 3    39   Input ~ 0
+V2P5_EN
+Text GLabel 12200 1850 1    39   Input ~ 0
+V1P2_EN
+Text GLabel 12200 4200 3    39   Input ~ 0
+V1P5_EN
+$Comp
+L SAMTEC_QSH-090-D J?
+U 1 1 543F6FB2
+P 6100 7300
+F 0 "J?" H 6100 7350 60  0000 C CNN
+F 1 "SAMTEC_QSH-090-D" H 6150 7250 60  0000 C CNN
+F 2 "" H 6100 7300 60  0000 C CNN
+F 3 "" H 6100 7300 60  0000 C CNN
+	1    6100 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L SAMTEC_QSH-090-D J?
+U 2 1 543F7069
+P 8600 7300
+F 0 "J?" H 8600 7350 60  0000 C CNN
+F 1 "SAMTEC_QSH-090-D" H 8650 7250 60  0000 C CNN
+F 2 "" H 8600 7300 60  0000 C CNN
+F 3 "" H 8600 7300 60  0000 C CNN
+	2    8600 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L SAMTEC_QSH-090-D J?
+U 3 1 543F70B8
+P 11100 7300
+F 0 "J?" H 11100 7350 60  0000 C CNN
+F 1 "SAMTEC_QSH-090-D" H 11150 7250 60  0000 C CNN
+F 2 "" H 11100 7300 60  0000 C CNN
+F 3 "" H 11100 7300 60  0000 C CNN
+	3    11100 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 543F81D2
+P 5950 11100
+F 0 "#PWR?" H 5950 11100 30  0001 C CNN
+F 1 "GND" H 5950 11030 30  0001 C CNN
+F 2 "" H 5950 11100 60  0000 C CNN
+F 3 "" H 5950 11100 60  0000 C CNN
+	1    5950 11100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 2000 5600 2150
+Wire Wire Line
+	5150 2000 5600 2000
+Wire Wire Line
+	5500 2150 5500 2000
+Connection ~ 5500 2000
+Wire Wire Line
+	5400 2150 5400 2000
+Connection ~ 5400 2000
+Wire Wire Line
+	5300 2000 5300 2150
+Connection ~ 5300 2000
+Wire Wire Line
+	9000 2050 9400 2050
+Wire Wire Line
+	9400 2050 9400 2150
+Wire Wire Line
+	9300 2050 9300 2150
+Connection ~ 9300 2050
+Wire Wire Line
+	9200 2050 9200 2150
+Connection ~ 9200 2050
+Wire Wire Line
+	9100 2050 9100 2150
+Connection ~ 9100 2050
+Wire Wire Line
+	9000 4050 9400 4050
+Wire Wire Line
+	9400 4050 9400 3950
+Wire Wire Line
+	9300 3950 9300 4050
+Connection ~ 9300 4050
+Wire Wire Line
+	9200 3950 9200 4050
+Connection ~ 9200 4050
+Wire Wire Line
+	9100 3950 9100 4050
+Connection ~ 9100 4050
+Wire Wire Line
+	5750 4050 8800 4050
+Wire Wire Line
+	8800 4050 8800 3950
+Wire Wire Line
+	8500 3950 8500 4050
+Connection ~ 8500 4050
+Wire Wire Line
+	8200 3950 8200 4050
+Connection ~ 8200 4050
+Wire Wire Line
+	7900 3950 7900 4050
+Connection ~ 7900 4050
+Wire Wire Line
+	7600 3950 7600 4050
+Connection ~ 7600 4050
+Wire Wire Line
+	7300 3950 7300 4050
+Connection ~ 7300 4050
+Wire Wire Line
+	7000 3950 7000 4050
+Connection ~ 7000 4050
+Wire Wire Line
+	6700 3950 6700 4050
+Connection ~ 6700 4050
+Wire Wire Line
+	6400 3950 6400 4050
+Connection ~ 6400 4050
+Wire Wire Line
+	6100 3950 6100 4050
+Connection ~ 6100 4050
+Wire Wire Line
+	9600 4050 12600 4050
+Wire Wire Line
+	9900 4050 9900 3950
+Wire Wire Line
+	10200 4050 10200 3950
+Connection ~ 9900 4050
+Wire Wire Line
+	10500 4050 10500 3950
+Connection ~ 10200 4050
+Wire Wire Line
+	10800 4050 10800 3950
+Connection ~ 10500 4050
+Wire Wire Line
+	11100 4050 11100 3950
+Connection ~ 10800 4050
+Wire Wire Line
+	11400 4050 11400 3950
+Connection ~ 11100 4050
+Wire Wire Line
+	11700 4050 11700 3950
+Connection ~ 11400 4050
+Wire Wire Line
+	12000 4050 12000 3950
+Connection ~ 11700 4050
+Wire Wire Line
+	12300 4050 12300 3950
+Connection ~ 12000 4050
+Wire Wire Line
+	12600 4050 12600 3950
+Connection ~ 12300 4050
+Wire Wire Line
+	1950 6100 1600 6100
+Wire Wire Line
+	1950 5200 1600 5200
+Wire Wire Line
+	6800 2150 6800 1850
+Wire Wire Line
+	6900 2150 6900 1850
+Wire Wire Line
+	6200 1850 6200 2150
+Wire Wire Line
+	6300 2150 6300 1850
+Wire Wire Line
+	6500 1850 6500 2150
+Wire Wire Line
+	6600 2150 6600 1850
+Wire Wire Line
+	6200 4250 6200 3950
+Wire Wire Line
+	6300 3950 6300 4250
+Wire Wire Line
+	6500 4250 6500 3950
+Wire Wire Line
+	6600 3950 6600 4250
+Wire Wire Line
+	6800 4250 6800 3950
+Wire Wire Line
+	6900 3950 6900 4250
+Wire Wire Line
+	7100 4250 7100 3950
+Wire Wire Line
+	7200 3950 7200 4250
+Wire Wire Line
+	12400 4250 12400 3950
+Wire Wire Line
+	12500 3950 12500 4250
+Wire Wire Line
+	12500 1900 12500 2150
+Wire Wire Line
+	12400 1900 12400 2150
+Wire Wire Line
+	2750 4700 3050 4700
+Wire Wire Line
+	2750 4800 3050 4800
+Wire Wire Line
+	2750 4900 3050 4900
+Wire Wire Line
+	2750 5000 3050 5000
+Wire Wire Line
+	2750 5100 3050 5100
+Wire Wire Line
+	2750 5200 2900 5200
+Wire Wire Line
+	2750 5300 3050 5300
+Wire Wire Line
+	2750 5400 3050 5400
+Wire Wire Line
+	2750 5500 3050 5500
+Wire Wire Line
+	2750 5600 3050 5600
+Wire Wire Line
+	2750 5700 3050 5700
+Wire Wire Line
+	2750 5800 3050 5800
+Wire Wire Line
+	2750 5900 3050 5900
+Wire Wire Line
+	2750 6000 3050 6000
+Wire Wire Line
+	2750 6100 2900 6100
+Wire Wire Line
+	2750 6200 3050 6200
+Wire Wire Line
+	2750 6300 3050 6300
+Wire Wire Line
+	2750 6400 3050 6400
+Wire Wire Line
+	2750 6500 3050 6500
+Wire Wire Line
+	2750 6600 3050 6600
 Wire Wire Line
 	1600 4700 1950 4700
 Wire Wire Line
@@ -679,16 +777,6 @@ Wire Wire Line
 	11900 1850 11900 2150
 Wire Wire Line
 	12100 1850 12100 2150
-Text GLabel 1600 6300 0    39   Input ~ 0
-EQ_BOOST1
-Text GLabel 3050 6300 2    39   Input ~ 0
-EQ_BOOST2
-Text GLabel 3050 5800 2    39   Input ~ 0
-EQ_OE
-Text GLabel 1600 5900 0    39   Input ~ 0
-EQ_DDC_EN
-Text GLabel 3050 5700 2    39   Input ~ 0
-EQ_PRE_INT
 Wire Wire Line
 	1950 5400 1600 5400
 Wire Wire Line
@@ -699,14 +787,6 @@ Wire Wire Line
 	1600 5700 1950 5700
 Wire Wire Line
 	1950 5800 1600 5800
-Text GLabel 5900 1850 1    39   Input ~ 0
-EQ_SCL_INT
-Text GLabel 5900 4250 3    39   Input ~ 0
-EQ_SDA_INT
-Text GLabel 1600 5700 0    39   Input ~ 0
-EQ_CEC_INT
-Text GLabel 1600 5800 0    39   Input ~ 0
-EQ_HPD_INT
 Wire Wire Line
 	1600 5900 1950 5900
 Wire Wire Line
@@ -715,23 +795,6 @@ Wire Wire Line
 	5900 1850 5900 2150
 Wire Wire Line
 	6000 1850 6000 2150
-NoConn ~ 6100 2150
-NoConn ~ 4550 2150
-NoConn ~ 4650 2150
-NoConn ~ 4850 2150
-NoConn ~ 4950 2150
-NoConn ~ 4950 3950
-NoConn ~ 4850 3950
-NoConn ~ 4650 3950
-NoConn ~ 4550 3950
-Text GLabel 1600 6000 0    39   Input ~ 0
-HDMI_SCL_OUT
-Text GLabel 1600 6200 0    39   Input ~ 0
-HDMI_SDA_OUT
-Text GLabel 3050 5900 2    39   Input ~ 0
-HDMI_CEC_OUT
-Text GLabel 3050 6000 2    39   Input ~ 0
-HDMI_HPD_OUT
 Wire Wire Line
 	1600 6200 1950 6200
 Wire Wire Line
@@ -740,19 +803,6 @@ Wire Wire Line
 	1600 6400 1950 6400
 Wire Wire Line
 	1950 6500 1600 6500
-Text GLabel 3050 6200 2    39   Input ~ 0
-HDMI_OUT_EN
-$Comp
-L CONN_5X2 P802
-U 1 1 5176C3AE
-P 6250 6600
-F 0 "P802" H 6250 6900 60  0000 C CNN
-F 1 "CONN_5X2" V 6250 6600 50  0000 C CNN
-F 2 "" H 6250 6600 60  0001 C CNN
-F 3 "" H 6250 6600 60  0001 C CNN
-	1    6250 6600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5750 6400 5850 6400
 Wire Wire Line
@@ -805,14 +855,144 @@ Wire Wire Line
 	7100 1850 7100 2150
 Wire Wire Line
 	5850 6600 5750 6600
-Text GLabel 12100 4200 3    39   Input ~ 0
-V2P5_EN
-Text GLabel 12200 1850 1    39   Input ~ 0
-V1P2_EN
-Text GLabel 12200 4200 3    39   Input ~ 0
-V1P5_EN
 Wire Wire Line
 	12200 2150 12200 1850
 Wire Wire Line
 	12100 4200 12100 3950
+Wire Wire Line
+	5950 10900 5950 11100
+Wire Wire Line
+	5950 11000 6250 11000
+Wire Wire Line
+	6250 11000 6250 10900
+Connection ~ 5950 11000
+Wire Wire Line
+	6150 10900 6150 11000
+Connection ~ 6150 11000
+Wire Wire Line
+	6050 10900 6050 11000
+Connection ~ 6050 11000
+$Comp
+L GND #PWR?
+U 1 1 543F86E1
+P 8450 11100
+F 0 "#PWR?" H 8450 11100 30  0001 C CNN
+F 1 "GND" H 8450 11030 30  0001 C CNN
+F 2 "" H 8450 11100 60  0000 C CNN
+F 3 "" H 8450 11100 60  0000 C CNN
+	1    8450 11100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 10900 8450 11100
+Wire Wire Line
+	8450 11000 8750 11000
+Wire Wire Line
+	8750 11000 8750 10900
+Connection ~ 8450 11000
+Wire Wire Line
+	8650 10900 8650 11000
+Connection ~ 8650 11000
+Wire Wire Line
+	8550 10900 8550 11000
+Connection ~ 8550 11000
+$Comp
+L GND #PWR?
+U 1 1 543F8701
+P 10950 11100
+F 0 "#PWR?" H 10950 11100 30  0001 C CNN
+F 1 "GND" H 10950 11030 30  0001 C CNN
+F 2 "" H 10950 11100 60  0000 C CNN
+F 3 "" H 10950 11100 60  0000 C CNN
+	1    10950 11100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10950 10900 10950 11100
+Wire Wire Line
+	10950 11000 11250 11000
+Wire Wire Line
+	11250 11000 11250 10900
+Connection ~ 10950 11000
+Wire Wire Line
+	11150 10900 11150 11000
+Connection ~ 11150 11000
+Wire Wire Line
+	11050 10900 11050 11000
+Connection ~ 11050 11000
+Wire Wire Line
+	5500 8100 5400 8100
+Wire Wire Line
+	5400 8100 5400 9900
+Wire Wire Line
+	5400 8700 5500 8700
+Wire Wire Line
+	5400 9300 5500 9300
+Connection ~ 5400 8700
+Wire Wire Line
+	5400 9900 5500 9900
+Connection ~ 5400 9300
+Wire Wire Line
+	6700 8100 7000 8100
+Wire Wire Line
+	6800 8100 6800 9900
+Wire Wire Line
+	6800 8700 6700 8700
+Wire Wire Line
+	6800 9300 6700 9300
+Connection ~ 6800 8700
+Wire Wire Line
+	6800 9900 6700 9900
+Connection ~ 6800 9300
+Wire Wire Line
+	8000 8100 7900 8100
+Wire Wire Line
+	7900 8100 7900 9900
+Wire Wire Line
+	7900 8700 8000 8700
+Wire Wire Line
+	7900 9300 8000 9300
+Connection ~ 7900 8700
+Wire Wire Line
+	7900 9900 8000 9900
+Connection ~ 7900 9300
+Wire Wire Line
+	9200 8100 9300 8100
+Wire Wire Line
+	9300 8100 9300 9900
+Wire Wire Line
+	9300 8700 9200 8700
+Wire Wire Line
+	9300 9300 9200 9300
+Connection ~ 9300 8700
+Wire Wire Line
+	9300 9900 9200 9900
+Connection ~ 9300 9300
+Wire Wire Line
+	10500 8100 10400 8100
+Wire Wire Line
+	10400 8100 10400 9900
+Wire Wire Line
+	10400 8700 10500 8700
+Wire Wire Line
+	10400 9300 10500 9300
+Connection ~ 10400 8700
+Wire Wire Line
+	10400 9900 10500 9900
+Connection ~ 10400 9300
+Wire Wire Line
+	11700 8100 11800 8100
+Wire Wire Line
+	11800 8100 11800 9900
+Wire Wire Line
+	11800 8700 11700 8700
+Wire Wire Line
+	11800 9300 11700 9300
+Connection ~ 11800 8700
+Wire Wire Line
+	11800 9900 11700 9900
+Connection ~ 11800 9300
+Text GLabel 7000 8100 2    40   Input ~ 0
+VRAW_SW
+Connection ~ 6800 8100
 $EndSCHEMATC
