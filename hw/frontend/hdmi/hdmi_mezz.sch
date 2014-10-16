@@ -44,6 +44,7 @@ LIBS:tlk3134-multi
 LIBS:si5338
 LIBS:tps54218
 LIBS:samtec_qsh-090-d
+LIBS:hdmi-cache
 EELAYER 24 0
 EELAYER END
 $Descr A2 23386 16535
@@ -101,28 +102,6 @@ F 2 "" H 9000 4050 60  0001 C CNN
 F 3 "" H 9000 4050 60  0001 C CNN
 	1    9000 4050
 	0    1    1    0   
-$EndComp
-$Comp
-L +3.3V #PWR088
-U 1 1 51476332
-P 5750 4050
-F 0 "#PWR088" H 5750 4010 30  0001 C CNN
-F 1 "+3.3V" H 5750 4160 30  0000 C CNN
-F 2 "" H 5750 4050 60  0001 C CNN
-F 3 "" H 5750 4050 60  0001 C CNN
-	1    5750 4050
-	0    -1   -1   0   
-$EndComp
-$Comp
-L +3.3V #PWR089
-U 1 1 514767E9
-P 9600 4050
-F 0 "#PWR089" H 9600 4010 30  0001 C CNN
-F 1 "+3.3V" H 9600 4160 30  0000 C CNN
-F 2 "" H 9600 4050 60  0001 C CNN
-F 3 "" H 9600 4050 60  0001 C CNN
-	1    9600 4050
-	0    -1   -1   0   
 $EndComp
 Text GLabel 10600 4200 3    39   Input ~ 0
 SD_CH0_RX0
@@ -334,17 +313,6 @@ F 1 "+5V" H 2900 6190 30  0000 C CNN
 F 2 "" H 2900 6100 60  0001 C CNN
 F 3 "" H 2900 6100 60  0001 C CNN
 	1    2900 6100
-	0    1    1    0   
-$EndComp
-$Comp
-L +3.3V #PWR093
-U 1 1 5147936E
-P 2900 5200
-F 0 "#PWR093" H 2900 5160 30  0001 C CNN
-F 1 "+3.3V" H 2900 5310 30  0000 C CNN
-F 2 "" H 2900 5200 60  0001 C CNN
-F 3 "" H 2900 5200 60  0001 C CNN
-	1    2900 5200
 	0    1    1    0   
 $EndComp
 Text GLabel 12400 4250 3    39   Input ~ 0
@@ -586,8 +554,6 @@ Connection ~ 6400 4050
 Wire Wire Line
 	6100 3950 6100 4050
 Connection ~ 6100 4050
-Wire Wire Line
-	9600 4050 12600 4050
 Wire Wire Line
 	9900 4050 9900 3950
 Wire Wire Line
@@ -995,4 +961,16 @@ Connection ~ 11800 9300
 Text GLabel 7000 8100 2    40   Input ~ 0
 VRAW_SW
 Connection ~ 6800 8100
+Text GLabel 7100 8600 2    40   Input ~ 0
+VRAW_SW
+Text GLabel 2900 5200 2    39   Input ~ 0
+V3P3_REGULATED
+Text GLabel 5750 4050 0    39   Input ~ 0
+V3P3_REGULATED
+Text GLabel 9550 4200 3    39   Input ~ 0
+V3P3_REGULATED
+Wire Wire Line
+	9550 4050 12600 4050
+Wire Wire Line
+	9550 4050 9550 4200
 $EndSCHEMATC

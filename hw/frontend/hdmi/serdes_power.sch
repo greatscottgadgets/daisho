@@ -44,6 +44,7 @@ LIBS:tlk3134-multi
 LIBS:si5338
 LIBS:tps54218
 LIBS:samtec_qsh-090-d
+LIBS:hdmi-cache
 EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
