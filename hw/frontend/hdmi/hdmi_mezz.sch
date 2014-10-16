@@ -44,6 +44,7 @@ LIBS:tlk3134-multi
 LIBS:si5338
 LIBS:tps54218
 LIBS:samtec_qsh-090-d
+LIBS:fan4860
 LIBS:hdmi-cache
 EELAYER 24 0
 EELAYER END
@@ -302,17 +303,6 @@ F 1 "GND" H 1600 6030 30  0001 C CNN
 F 2 "" H 1600 6100 60  0001 C CNN
 F 3 "" H 1600 6100 60  0001 C CNN
 	1    1600 6100
-	0    1    1    0   
-$EndComp
-$Comp
-L +5V #PWR092
-U 1 1 5147935F
-P 2900 6100
-F 0 "#PWR092" H 2900 6190 20  0001 C CNN
-F 1 "+5V" H 2900 6190 30  0000 C CNN
-F 2 "" H 2900 6100 60  0001 C CNN
-F 3 "" H 2900 6100 60  0001 C CNN
-	1    2900 6100
 	0    1    1    0   
 $EndComp
 Text GLabel 12400 4250 3    39   Input ~ 0
@@ -652,8 +642,6 @@ Wire Wire Line
 Wire Wire Line
 	2750 6000 3050 6000
 Wire Wire Line
-	2750 6100 2900 6100
-Wire Wire Line
 	2750 6200 3050 6200
 Wire Wire Line
 	2750 6300 3050 6300
@@ -961,8 +949,6 @@ Connection ~ 11800 9300
 Text GLabel 7000 8100 2    40   Input ~ 0
 VRAW_SW
 Connection ~ 6800 8100
-Text GLabel 7100 8600 2    40   Input ~ 0
-VRAW_SW
 Text GLabel 2900 5200 2    39   Input ~ 0
 V3P3_REGULATED
 Text GLabel 5750 4050 0    39   Input ~ 0

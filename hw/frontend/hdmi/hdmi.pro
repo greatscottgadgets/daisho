@@ -1,4 +1,4 @@
-update=Wed 15 Oct 2014 04:34:25 PM MDT
+update=Thu 16 Oct 2014 11:46:55 AM MDT
 version=1
 last_client=kicad
 [general]
@@ -128,3 +128,4 @@ LibName42=tlk3134-multi
 LibName43=si5338
 LibName44=tps54218
 LibName45=samtec_qsh-090-d
+LibName46=fan4860
