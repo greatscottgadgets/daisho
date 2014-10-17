@@ -382,18 +382,8 @@ Text GLabel 3050 6300 2    39   Input ~ 0
 EQ_BOOST2
 Text GLabel 3050 5800 2    39   Input ~ 0
 EQ_OE
-Text GLabel 1600 5900 0    39   Input ~ 0
-EQ_DDC_EN
 Text GLabel 3050 5700 2    39   Input ~ 0
 EQ_PRE_INT
-Text GLabel 5900 1850 1    39   Input ~ 0
-EQ_SCL_INT
-Text GLabel 5900 4250 3    39   Input ~ 0
-EQ_SDA_INT
-Text GLabel 1600 5700 0    39   Input ~ 0
-EQ_CEC_INT
-Text GLabel 1600 5800 0    39   Input ~ 0
-EQ_HPD_INT
 NoConn ~ 6100 2150
 NoConn ~ 4550 2150
 NoConn ~ 4650 2150
@@ -963,4 +953,12 @@ Text GLabel 3600 8700 0    39   Input ~ 0
 V3P3_EN
 Text GLabel 3400 8500 2    39   Input ~ 0
 V5P0_EN
+Text GLabel 2450 7650 0    39   Input ~ 0
+CEC_IN_SUPP
+Text GLabel 2450 7850 0    39   Input ~ 0
+SDA_IN_SUPP
+Text GLabel 2450 7950 0    39   Input ~ 0
+SCL_IN_SUPP
+Text GLabel 2450 7750 0    39   Input ~ 0
+HPD_IN_SUPP
 $EndSCHEMATC
