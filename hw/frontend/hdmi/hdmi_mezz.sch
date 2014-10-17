@@ -959,4 +959,8 @@ Wire Wire Line
 	9550 4050 12600 4050
 Wire Wire Line
 	9550 4050 9550 4200
+Text GLabel 3600 8700 0    39   Input ~ 0
+V3P3_EN
+Text GLabel 3400 8500 2    39   Input ~ 0
+V5P0_EN
 $EndSCHEMATC

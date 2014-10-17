@@ -1261,7 +1261,7 @@ $EndComp
 Wire Wire Line
 	2800 6000 2800 5850
 Text GLabel 1900 6500 0    39   Input ~ 0
-V1P2_EN
+V3P3_EN
 Connection ~ 2800 6500
 $Comp
 L C C?
