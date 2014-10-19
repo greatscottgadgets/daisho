@@ -232,27 +232,27 @@ Text GLabel 5750 6500 0    39   Input ~ 0
 SERDES_TMS
 Text GLabel 6750 6500 2    39   Input ~ 0
 SERDES_TCK
-Text GLabel 3050 5300 2    39   Input ~ 0
+Text GLabel 1650 9450 2    39   Input ~ 0
 SERDES_MDC
-Text GLabel 1600 5600 0    39   Input ~ 0
+Text GLabel 1850 9600 0    39   Input ~ 0
 SERDES_MDO
-Text GLabel 1600 5300 0    39   Input ~ 0
+Text GLabel 1850 8850 0    39   Input ~ 0
 SERDES_RST_N
-Text GLabel 3050 5600 2    39   Input ~ 0
+Text GLabel 1550 9000 2    39   Input ~ 0
 SERDES_ENABLE
-Text GLabel 5750 6600 0    39   Input ~ 0
+Text GLabel 1900 9150 0    39   Input ~ 0
 SERDES_PLOOP
-Text GLabel 6750 6400 2    39   Input ~ 0
+Text GLabel 1500 9300 2    39   Input ~ 0
 SERDES_SLOOP
-Text GLabel 3050 4700 2    39   Input ~ 0
+Text GLabel 1450 11250 2    39   Input ~ 0
 SERDES_GPO4
-Text GLabel 1600 4700 0    39   Input ~ 0
+Text GLabel 1800 11150 0    39   Input ~ 0
 SERDES_GPO3
-Text GLabel 1600 4800 0    39   Input ~ 0
+Text GLabel 1800 11050 0    39   Input ~ 0
 SERDES_GPO2
-Text GLabel 3050 4800 2    39   Input ~ 0
+Text GLabel 1450 10950 2    39   Input ~ 0
 SERDES_GPO1
-Text GLabel 1600 5100 0    39   Input ~ 0
+Text GLabel 1800 10850 0    39   Input ~ 0
 SERDES_GPO0
 Text GLabel 6000 1850 1    39   Input ~ 0
 SD_CH0_TXCLK
@@ -356,17 +356,17 @@ NoConn ~ 3950 2150
 NoConn ~ 4050 2150
 NoConn ~ 4250 2150
 NoConn ~ 4350 2150
-Text GLabel 3050 5100 2    39   Input ~ 0
+Text GLabel 1550 9950 2    39   Input ~ 0
 SERDES_PRTAD4
-Text GLabel 1600 5000 0    39   Input ~ 0
+Text GLabel 2000 10150 0    39   Input ~ 0
 SERDES_PRTAD3
-Text GLabel 3050 4900 2    39   Input ~ 0
+Text GLabel 1550 9750 2    39   Input ~ 0
 SERDES_PRTAD2
-Text GLabel 3050 5000 2    39   Input ~ 0
+Text GLabel 1550 9850 2    39   Input ~ 0
 SERDES_PRTAD1
-Text GLabel 3050 5400 2    39   Input ~ 0
+Text GLabel 1550 10050 2    39   Input ~ 0
 SERDES_PRTAD0
-Text GLabel 1600 4900 0    39   Input ~ 0
+Text GLabel 1900 10250 0    39   Input ~ 0
 SERDES_MDIO_ST
 Text GLabel 1600 6300 0    39   Input ~ 0
 EQ_BOOST1
@@ -406,11 +406,11 @@ F 3 "" H 6250 6600 60  0001 C CNN
 	1    6250 6600
 	1    0    0    -1  
 $EndComp
-Text GLabel 12100 4200 3    39   Input ~ 0
+Text GLabel 3500 8850 3    39   Input ~ 0
 V2P5_EN
-Text GLabel 12200 1850 1    39   Input ~ 0
+Text GLabel 3450 8350 2    39   Input ~ 0
 V1P2_EN
-Text GLabel 12200 4200 3    39   Input ~ 0
+Text GLabel 3750 8750 3    39   Input ~ 0
 V1P5_EN
 $Comp
 L SAMTEC_QSH-090-D J?
@@ -931,12 +931,6 @@ Connection ~ 11800 9300
 Text GLabel 7000 8100 2    40   Input ~ 0
 VRAW_SW
 Connection ~ 6800 8100
-Text GLabel 2900 5200 2    39   Input ~ 0
-V3P3_REGULATED
-Text GLabel 5750 4050 0    39   Input ~ 0
-V3P3_REGULATED
-Text GLabel 9550 4200 3    39   Input ~ 0
-V3P3_REGULATED
 Wire Wire Line
 	9550 4050 12600 4050
 Wire Wire Line
@@ -961,4 +955,10 @@ Wire Wire Line
 	5300 7900 5500 7900
 Wire Wire Line
 	5300 8000 5500 8000
+Text GLabel 6750 6250 2    39   Input ~ 0
+SERDES_TRST_N
+Text Notes 1350 8700 0    40   ~ 0
+2.5 V LVCMOS
+Text Notes 1250 10750 0    40   ~ 0
+separate header or test points
 $EndSCHEMATC

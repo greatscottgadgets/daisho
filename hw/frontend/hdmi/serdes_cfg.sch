@@ -418,4 +418,10 @@ Text GLabel 4100 6600 2    39   Input ~ 0
 V2P5_REGULATED
 Wire Wire Line
 	4100 6600 4000 6600
+Text Notes 1200 6800 0    40   ~ 0
+2.5 V LVCMOS inputs
+Text GLabel 2950 5150 3    39   Input ~ 0
+SERDES_TRST_N
+Wire Wire Line
+	2950 5150 2950 4900
 $EndSCHEMATC

@@ -892,4 +892,6 @@ Wire Wire Line
 	6950 4300 6950 4950
 Wire Wire Line
 	6850 4800 6850 5650
+Text Notes 3400 900  0    40   ~ 0
+Pins are assigned for use in TBID Mode (Ten Bit Interface DDR).\nPins are configured for 1.5 V HSTL.
 $EndSCHEMATC
