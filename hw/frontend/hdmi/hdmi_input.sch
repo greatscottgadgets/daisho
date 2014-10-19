@@ -335,10 +335,6 @@ F 3 "" H 7500 5400 60  0001 C CNN
 	1    7500 5400
 	1    0    0    -1  
 $EndComp
-Text GLabel 7150 7950 1    39   Input ~ 0
-CLK_IN_M_EQ
-Text GLabel 6850 7950 1    39   Input ~ 0
-CLK_IN_P_EQ
 Text GLabel 6550 7950 1    39   Input ~ 0
 DATA0_IN_M_EQ
 Text GLabel 6250 7950 1    39   Input ~ 0
@@ -417,28 +413,6 @@ F 3 "" H 6550 8150 60  0001 C CNN
 	1    6550 8150
 	1    0    0    -1  
 $EndComp
-$Comp
-L C C213
-U 1 1 51350108
-P 6850 8150
-F 0 "C213" H 6900 8250 50  0000 L CNN
-F 1 "0.1uF" V 6800 7850 50  0000 L CNN
-F 2 "" H 6850 8150 60  0001 C CNN
-F 3 "" H 6850 8150 60  0001 C CNN
-	1    6850 8150
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C215
-U 1 1 5135010E
-P 7150 8150
-F 0 "C215" H 7200 8250 50  0000 L CNN
-F 1 "0.1uF" V 7100 7850 50  0000 L CNN
-F 2 "" H 7150 8150 60  0001 C CNN
-F 3 "" H 7150 8150 60  0001 C CNN
-	1    7150 8150
-	1    0    0    -1  
-$EndComp
 Text GLabel 5050 8550 3    39   Input ~ 0
 DATA2_IN_P_CLEAN
 Text GLabel 5350 8550 3    39   Input ~ 0
@@ -451,10 +425,6 @@ Text GLabel 6250 8550 3    39   Input ~ 0
 DATA0_IN_P_CLEAN
 Text GLabel 6550 8550 3    39   Input ~ 0
 DATA0_IN_M_CLEAN
-Text GLabel 6850 8550 3    39   Input ~ 0
-CLK_IN_P_CLEAN
-Text GLabel 7150 8550 3    39   Input ~ 0
-CLK_IN_M_CLEAN
 Text GLabel 12950 4150 0    39   Input ~ 0
 DATA2_IN_P_CLEAN
 Text GLabel 12950 4250 0    39   Input ~ 0
@@ -1157,10 +1127,6 @@ Wire Wire Line
 	6250 8350 6250 8550
 Wire Wire Line
 	6550 8350 6550 8550
-Wire Wire Line
-	6850 8350 6850 8550
-Wire Wire Line
-	7150 8350 7150 8550
 Wire Wire Line
 	12200 1650 12500 1650
 Wire Wire Line

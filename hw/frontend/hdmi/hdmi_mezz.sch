@@ -305,8 +305,6 @@ F 3 "" H 1600 6100 60  0001 C CNN
 	1    1600 6100
 	0    1    1    0   
 $EndComp
-Text GLabel 12400 4250 3    39   Input ~ 0
-CLK_FPGA_IN_P
 NoConn ~ 9900 2150
 NoConn ~ 10200 2150
 NoConn ~ 10500 2150
@@ -326,12 +324,6 @@ NoConn ~ 7000 2150
 NoConn ~ 6700 2150
 NoConn ~ 6400 2150
 NoConn ~ 8800 2150
-Text GLabel 12500 4250 3    39   Input ~ 0
-CLK_FPGA_IN_M
-Text GLabel 12400 1900 1    39   Input ~ 0
-CLK_FPGA_OUT_P
-Text GLabel 12500 1900 1    39   Input ~ 0
-CLK_FPGA_OUT_M
 NoConn ~ 2150 3950
 NoConn ~ 2250 3950
 NoConn ~ 2450 3950
@@ -961,4 +953,12 @@ Text GLabel 2450 7950 0    39   Input ~ 0
 SCL_IN_SUPP
 Text GLabel 2450 7750 0    39   Input ~ 0
 HPD_IN_SUPP
+Text GLabel 5300 7900 0    39   Input ~ 0
+FE_CLK_P0
+Text GLabel 5300 8000 0    39   Input ~ 0
+FE_CLK_N0
+Wire Wire Line
+	5300 7900 5500 7900
+Wire Wire Line
+	5300 8000 5500 8000
 $EndSCHEMATC
