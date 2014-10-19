@@ -1418,13 +1418,6 @@ Wire Wire Line
 	8750 6750 8750 6650
 Connection ~ 8650 6750
 Wire Wire Line
-	8950 6650 8950 6850
-Wire Wire Line
-	8950 6750 9050 6750
-Wire Wire Line
-	9050 6750 9050 6650
-Connection ~ 8950 6750
-Wire Wire Line
 	9250 6650 9250 6850
 Wire Wire Line
 	9150 4400 9150 4650
@@ -1754,4 +1747,19 @@ F 3 "" H 1700 1650 60  0001 C CNN
 	1    1700 1650
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	8950 6850 8950 6650
+$Comp
+L GND #PWR?
+U 1 1 5446B441
+P 9050 6850
+F 0 "#PWR?" H 9050 6850 30  0001 C CNN
+F 1 "GND" H 9050 6780 30  0001 C CNN
+F 2 "" H 9050 6850 60  0001 C CNN
+F 3 "" H 9050 6850 60  0001 C CNN
+	1    9050 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 6650 9050 6850
 $EndSCHEMATC
