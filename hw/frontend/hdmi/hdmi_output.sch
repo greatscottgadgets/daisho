@@ -131,45 +131,45 @@ $EndComp
 $Comp
 L R R311
 U 1 1 5175DA43
-P 7600 3400
-F 0 "R311" V 7680 3400 40  0000 C CNN
-F 1 "100k" V 7607 3401 40  0000 C CNN
-F 2 "~" V 7530 3400 30  0000 C CNN
-F 3 "~" H 7600 3400 30  0000 C CNN
-	1    7600 3400
+P 7600 3500
+F 0 "R311" V 7680 3500 40  0000 C CNN
+F 1 "100k" V 7607 3501 40  0000 C CNN
+F 2 "~" V 7530 3500 30  0000 C CNN
+F 3 "~" H 7600 3500 30  0000 C CNN
+	1    7600 3500
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R312
 U 1 1 5175DA52
-P 7900 3400
-F 0 "R312" V 7980 3400 40  0000 C CNN
-F 1 "47k" V 7907 3401 40  0000 C CNN
-F 2 "~" V 7830 3400 30  0000 C CNN
-F 3 "~" H 7900 3400 30  0000 C CNN
-	1    7900 3400
+P 7850 3500
+F 0 "R312" V 7930 3500 40  0000 C CNN
+F 1 "47k" V 7857 3501 40  0000 C CNN
+F 2 "~" V 7780 3500 30  0000 C CNN
+F 3 "~" H 7850 3500 30  0000 C CNN
+	1    7850 3500
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R313
 U 1 1 5175DA69
-P 8200 3400
-F 0 "R313" V 8280 3400 40  0000 C CNN
-F 1 "47k" V 8207 3401 40  0000 C CNN
-F 2 "~" V 8130 3400 30  0000 C CNN
-F 3 "~" H 8200 3400 30  0000 C CNN
-	1    8200 3400
+P 8100 3500
+F 0 "R313" V 8180 3500 40  0000 C CNN
+F 1 "47k" V 8107 3501 40  0000 C CNN
+F 2 "~" V 8030 3500 30  0000 C CNN
+F 3 "~" H 8100 3500 30  0000 C CNN
+	1    8100 3500
 	1    0    0    -1  
 $EndComp
 $Comp
 L R R314
 U 1 1 5175DA6F
-P 8500 3400
-F 0 "R314" V 8580 3400 40  0000 C CNN
-F 1 "47k" V 8507 3401 40  0000 C CNN
-F 2 "~" V 8430 3400 30  0000 C CNN
-F 3 "~" H 8500 3400 30  0000 C CNN
-	1    8500 3400
+P 8300 3500
+F 0 "R314" V 8380 3500 40  0000 C CNN
+F 1 "47k" V 8307 3501 40  0000 C CNN
+F 2 "~" V 8230 3500 30  0000 C CNN
+F 3 "~" H 8300 3500 30  0000 C CNN
+	1    8300 3500
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -455,40 +455,6 @@ Connection ~ 7600 1850
 Wire Wire Line
 	8100 1850 8200 1850
 Wire Wire Line
-	7100 3150 7750 3150
-Wire Wire Line
-	7600 3650 7600 3800
-Wire Wire Line
-	7750 3150 7750 4150
-Connection ~ 7600 3150
-Wire Wire Line
-	7100 3050 8050 3050
-Wire Wire Line
-	7900 3050 7900 3150
-Wire Wire Line
-	7900 3650 7900 3800
-Wire Wire Line
-	8050 3050 8050 4150
-Connection ~ 7900 3050
-Wire Wire Line
-	7100 2950 8350 2950
-Wire Wire Line
-	8200 2950 8200 3150
-Wire Wire Line
-	8200 3650 8200 3800
-Wire Wire Line
-	8350 2950 8350 4150
-Connection ~ 8200 2950
-Wire Wire Line
-	7100 2850 8700 2850
-Wire Wire Line
-	8500 2850 8500 3150
-Wire Wire Line
-	8500 3650 8500 3800
-Wire Wire Line
-	8700 2850 8700 4150
-Connection ~ 8500 2850
-Wire Wire Line
 	3150 3100 3350 3100
 Wire Wire Line
 	3350 3700 3350 3800
@@ -514,9 +480,7 @@ Wire Wire Line
 	4300 3050 4300 3300
 Connection ~ 4300 3050
 Wire Wire Line
-	4300 3800 4300 3900
-Wire Wire Line
-	4100 3800 4100 3900
+	4300 3800 4300 4000
 Wire Wire Line
 	4100 2900 4100 3300
 Connection ~ 4100 2900
@@ -530,7 +494,7 @@ Wire Wire Line
 	3900 3300 3900 2800
 Connection ~ 3900 2800
 Wire Wire Line
-	3900 3800 3900 3900
+	3900 3800 3900 4000
 Wire Wire Line
 	3150 2700 7200 2700
 Wire Wire Line
@@ -736,13 +700,13 @@ Wire Wire Line
 	6850 5600 7050 5600
 Text Notes 4250 5050 3    39   ~ 0
 PTN3360 not used for DDC level shifting
-Text GLabel 8350 4150 3    39   Input ~ 0
+Text GLabel 8500 2950 2    39   Input ~ 0
 HDMI_SCL_OUT
-Text GLabel 8050 4150 3    39   Input ~ 0
+Text GLabel 8500 3050 2    39   Input ~ 0
 HDMI_SDA_OUT
-Text GLabel 8700 4150 3    39   Input ~ 0
+Text GLabel 8500 2850 2    39   Input ~ 0
 HDMI_CEC_OUT
-Text GLabel 7750 4150 3    39   Input ~ 0
+Text GLabel 8500 3150 2    39   Input ~ 0
 HDMI_HPD_OUT
 $Comp
 L R R308
@@ -928,20 +892,14 @@ Wire Wire Line
 	4150 1250 4150 1150
 Wire Wire Line
 	2950 6950 3050 6950
-Text GLabel 3900 3900 3    39   Input ~ 0
+Text GLabel 3900 4000 3    39   Input ~ 0
 V3P3_REGULATED
 Text GLabel 5350 7250 3    39   Input ~ 0
 V3P3_REGULATED
-Text GLabel 7600 3800 3    39   Input ~ 0
-V3P3_REGULATED
-Text GLabel 7900 3800 3    39   Input ~ 0
-V3P3_REGULATED
-Text GLabel 8200 3800 3    39   Input ~ 0
-V3P3_REGULATED
-Text GLabel 8500 3800 3    39   Input ~ 0
-V3P3_REGULATED
+Text GLabel 8500 3850 2    39   Input ~ 0
+V2P5_REGULATED
 Text GLabel 7600 1050 1    39   Input ~ 0
-V3P3_REGULATED
+V2P5_REGULATED
 Text GLabel 850  4950 1    39   Input ~ 0
 V3P3_REGULATED
 Text GLabel 2300 7050 3    39   Input ~ 0
@@ -975,9 +933,7 @@ F 3 "" H 3650 3900 60  0001 C CNN
 $EndComp
 Wire Wire Line
 	3650 3800 3650 3900
-Text GLabel 4100 3900 3    39   Input ~ 0
-V5P0_REGULATED
-Text GLabel 4300 3900 3    39   Input ~ 0
+Text GLabel 4300 4000 3    39   Input ~ 0
 V5P0_REGULATED
 $Comp
 L CONN_02X05 P302
@@ -996,4 +952,42 @@ Wire Wire Line
 	4500 7300 4500 7400
 Wire Wire Line
 	4500 7400 4400 7400
+Wire Wire Line
+	7600 3750 7600 3850
+Wire Wire Line
+	7600 3850 8500 3850
+Wire Wire Line
+	7850 3750 7850 3850
+Connection ~ 7850 3850
+Wire Wire Line
+	8100 3750 8100 3850
+Connection ~ 8100 3850
+Wire Wire Line
+	8300 3750 8300 3850
+Connection ~ 8300 3850
+Wire Wire Line
+	4100 3800 4100 3900
+Wire Wire Line
+	4100 3900 4300 3900
+Connection ~ 4300 3900
+Wire Wire Line
+	7100 3150 8500 3150
+Wire Wire Line
+	7600 3150 7600 3250
+Wire Wire Line
+	7100 3050 8500 3050
+Wire Wire Line
+	7850 3050 7850 3250
+Wire Wire Line
+	7100 2950 8500 2950
+Wire Wire Line
+	8100 2950 8100 3250
+Wire Wire Line
+	7100 2850 8500 2850
+Wire Wire Line
+	8300 2850 8300 3250
+Connection ~ 8300 2850
+Connection ~ 8100 2950
+Connection ~ 7850 3050
+Connection ~ 7600 3150
 $EndSCHEMATC
