@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name daisho)(type Legacy)(uri ${KIPRJMOD}/../../lib/daisho.mod)(options "")(descr ""))
+)
