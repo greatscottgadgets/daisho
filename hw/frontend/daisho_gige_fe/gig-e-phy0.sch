@@ -71,7 +71,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 1050 3700 2    60   ~ 0
+Text Label 1050 3700 2    40   ~ 0
 RESET_N
 $Comp
 L GND #PWR01
@@ -101,43 +101,43 @@ F 7 "http://www.digikey.com/product-detail/en/EXB-2HVR000V/Y1000CT-ND/285418" H 
 	1    18650 4650
 	1    0    0    -1  
 $EndComp
-Text Label 18350 5000 2    60   ~ 0
+Text Label 18350 5000 2    40   ~ 0
 TXD0
-Text Label 18350 4900 2    60   ~ 0
+Text Label 18350 4900 2    40   ~ 0
 TXD1
-Text Label 18350 4800 2    60   ~ 0
+Text Label 18350 4800 2    40   ~ 0
 TXD2
-Text Label 18350 4700 2    60   ~ 0
+Text Label 18350 4700 2    40   ~ 0
 TXD3
-Text Label 18350 4600 2    60   ~ 0
+Text Label 18350 4600 2    40   ~ 0
 TXD4
-Text Label 18350 4500 2    60   ~ 0
+Text Label 18350 4500 2    40   ~ 0
 TXD5
-Text Label 18350 4400 2    60   ~ 0
+Text Label 18350 4400 2    40   ~ 0
 TXD6
-Text Label 18350 4300 2    60   ~ 0
+Text Label 18350 4300 2    40   ~ 0
 TXD7
-Text Label 18350 2650 2    60   ~ 0
+Text Label 18350 2650 2    40   ~ 0
 RXD0
-Text Label 18350 2750 2    60   ~ 0
+Text Label 18350 2750 2    40   ~ 0
 RXD1
-Text Label 18350 2850 2    60   ~ 0
+Text Label 18350 2850 2    40   ~ 0
 RXD2
-Text Label 18350 2950 2    60   ~ 0
+Text Label 18350 2950 2    40   ~ 0
 RXD3
-Text Label 18350 3050 2    60   ~ 0
+Text Label 18350 3050 2    40   ~ 0
 RXD4
-Text Label 18350 3150 2    60   ~ 0
+Text Label 18350 3150 2    40   ~ 0
 RXD5
-Text Label 18350 3250 2    60   ~ 0
+Text Label 18350 3250 2    40   ~ 0
 RXD6
-Text Label 18350 3350 2    60   ~ 0
+Text Label 18350 3350 2    40   ~ 0
 RXD7
 Text GLabel 18350 3650 0    39   Input ~ 0
 PHY0_TX_EN
 Text GLabel 18950 3650 2    39   Input ~ 0
 PHY0_GM_TX_EN
-Text Label 18350 3850 2    60   ~ 0
+Text Label 18350 3850 2    40   ~ 0
 GTX_CLK
 Text GLabel 18350 4050 0    39   Input ~ 0
 PHY0_TX_ER
@@ -221,7 +221,7 @@ F 3 "" H 900 7800 60  0001 C CNN
 	1    900  7800
 	-1   0    0    1   
 $EndComp
-Text Label 900  8450 3    60   ~ 0
+Text Label 900  8450 3    40   ~ 0
 LED1
 Text GLabel 1000 8450 3    39   Input ~ 0
 PHY0_PHYADDR0
@@ -236,7 +236,7 @@ F 3 "" H 1250 7800 60  0001 C CNN
 	1    1250 7800
 	-1   0    0    1   
 $EndComp
-Text Label 1250 8450 3    60   ~ 0
+Text Label 1250 8450 3    40   ~ 0
 LED2
 Text GLabel 1350 8450 3    39   Input ~ 0
 PHY0_PHYADDR1
@@ -253,15 +253,15 @@ F 3 "" H 1600 7800 60  0001 C CNN
 $EndComp
 Text GLabel 1700 8450 3    39   Input ~ 0
 PHY0_RX_CLK
-Text Label 950  9950 2    60   ~ 0
+Text Label 950  9950 2    40   ~ 0
 LED1
-Text Label 950  9750 2    60   ~ 0
+Text Label 950  9750 2    40   ~ 0
 LED2
-Text Label 1450 9750 0    60   ~ 0
+Text Label 1450 9750 0    40   ~ 0
 LED2_D
-Text Label 1450 9950 0    60   ~ 0
+Text Label 1450 9950 0    40   ~ 0
 LED1_D
-Text Label 2100 9500 0    60   ~ 0
+Text Label 2100 9500 0    40   ~ 0
 DVDDH
 $Comp
 L LED D201
@@ -291,9 +291,9 @@ F 6 "LED GREEN CLEAR THIN 0603 SMD" H 2300 10000 60  0001 C CNN "Description"
 	1    2300 10000
 	1    0    0    -1  
 $EndComp
-Text Label 2550 10000 0    60   ~ 0
+Text Label 2550 10000 0    40   ~ 0
 LED1_D
-Text Label 2550 9700 0    60   ~ 0
+Text Label 2550 9700 0    40   ~ 0
 LED2_D
 Text GLabel 2750 8450 3    39   Input ~ 0
 PHY0_RXDV
@@ -885,43 +885,43 @@ F 3 "" H 6950 1300 60  0001 C CNN
 $EndComp
 Text GLabel 7450 2400 1    39   Input ~ 0
 PHY0_INT_N
-Text Label 5400 3550 2    60   ~ 0
+Text Label 5400 3550 2    40   ~ 0
 AVDDH
-Text Label 5400 3950 2    60   ~ 0
+Text Label 5400 3950 2    40   ~ 0
 AVDDL
-Text Label 5400 4650 2    60   ~ 0
+Text Label 5400 4650 2    40   ~ 0
 AVDDL
-Text Label 5400 4750 2    60   ~ 0
+Text Label 5400 4750 2    40   ~ 0
 AVDDL
-Text Label 5400 5050 2    60   ~ 0
+Text Label 5400 5050 2    40   ~ 0
 AVDDH
-Text Label 6450 5700 3    60   ~ 0
+Text Label 6450 5700 3    40   ~ 0
 DVDDH
-Text Label 6650 5700 3    60   ~ 0
+Text Label 6650 5700 3    40   ~ 0
 DVDDL
-Text Label 7350 2950 1    60   ~ 0
+Text Label 7350 2950 1    40   ~ 0
 DVDDL
-Text Label 7650 5700 3    60   ~ 0
+Text Label 7650 5700 3    40   ~ 0
 DVDDH
-Text Label 8650 3750 0    60   ~ 0
+Text Label 8650 3750 0    40   ~ 0
 DVDDH
-Text Label 8650 4150 0    60   ~ 0
+Text Label 8650 4150 0    40   ~ 0
 DVDDL
-Text Label 8650 4750 0    60   ~ 0
+Text Label 8650 4750 0    40   ~ 0
 DVDDL
-Text Label 7150 5700 3    60   ~ 0
+Text Label 7150 5700 3    40   ~ 0
 DVDDL
-Text Label 6850 2950 1    60   ~ 0
+Text Label 6850 2950 1    40   ~ 0
 AVDD_PLL
 Text GLabel 7050 2950 1    39   Input ~ 0
 PHY0_TX_CLK
-Text Label 7150 2950 1    60   ~ 0
+Text Label 7150 2950 1    40   ~ 0
 RESET_N
 Text GLabel 7250 2950 1    39   Input ~ 0
 PHY0_CLK125_NDO
-Text Label 6350 5700 3    60   ~ 0
+Text Label 6350 5700 3    40   ~ 0
 LED2
-Text Label 6550 5700 3    60   ~ 0
+Text Label 6550 5700 3    40   ~ 0
 LED1
 Text GLabel 7750 5700 3    39   Input ~ 0
 PHY0_TX_ER
@@ -944,7 +944,7 @@ F 7 "http://www.digikey.com/product-detail/en/ERJ-2GEJ472X/P4.7KJCT-ND/147025" V
 	1    7900 2150
 	1    0    0    -1  
 $EndComp
-Text Label 7900 1900 1    60   ~ 0
+Text Label 7900 1900 1    40   ~ 0
 DVDDH
 Text GLabel 7750 2950 1    39   Input ~ 0
 PHY0_MDC
@@ -969,47 +969,47 @@ F 7 "http://www.digikey.com/product-detail/en/ERJ-2GEJ472X/P4.7KJCT-ND/147025" V
 	1    7600 2200
 	-1   0    0    1   
 $EndComp
-Text Label 7600 1950 1    60   ~ 0
+Text Label 7600 1950 1    40   ~ 0
 DVDDH
 Text GLabel 8650 3850 2    39   Input ~ 0
 PHY0_RXDV
-Text Label 8650 3950 0    60   ~ 0
+Text Label 8650 3950 0    40   ~ 0
 RXD0
-Text Label 8650 4050 0    60   ~ 0
+Text Label 8650 4050 0    40   ~ 0
 RXD1
-Text Label 8650 4250 0    60   ~ 0
+Text Label 8650 4250 0    40   ~ 0
 RXD2
-Text Label 8650 4450 0    60   ~ 0
+Text Label 8650 4450 0    40   ~ 0
 RXD3
-Text Label 8650 4550 0    60   ~ 0
+Text Label 8650 4550 0    40   ~ 0
 RXD4
-Text Label 8650 4650 0    60   ~ 0
+Text Label 8650 4650 0    40   ~ 0
 RXD5
-Text Label 8650 4850 0    60   ~ 0
+Text Label 8650 4850 0    40   ~ 0
 RXD6
-Text Label 8650 4950 0    60   ~ 0
+Text Label 8650 4950 0    40   ~ 0
 RXD7
-Text Label 8650 4350 0    60   ~ 0
+Text Label 8650 4350 0    40   ~ 0
 DVDDH
 Text GLabel 8650 5050 2    39   Input ~ 0
 PHY0_TX_EN
-Text Label 7850 5700 3    60   ~ 0
+Text Label 7850 5700 3    40   ~ 0
 GTX_CLK
-Text Label 7550 5700 3    60   ~ 0
+Text Label 7550 5700 3    40   ~ 0
 TXD7
-Text Label 7450 5700 3    60   ~ 0
+Text Label 7450 5700 3    40   ~ 0
 TXD6
-Text Label 7350 5700 3    60   ~ 0
+Text Label 7350 5700 3    40   ~ 0
 TXD5
-Text Label 7250 5700 3    60   ~ 0
+Text Label 7250 5700 3    40   ~ 0
 TXD4
-Text Label 7050 5700 3    60   ~ 0
+Text Label 7050 5700 3    40   ~ 0
 TXD3
-Text Label 6950 5700 3    60   ~ 0
+Text Label 6950 5700 3    40   ~ 0
 TXD2
-Text Label 6850 5700 3    60   ~ 0
+Text Label 6850 5700 3    40   ~ 0
 TXD1
-Text Label 6750 5700 3    60   ~ 0
+Text Label 6750 5700 3    40   ~ 0
 TXD0
 Text GLabel 5400 3650 0    39   Input ~ 0
 PHY0_TXRXP_A
@@ -1027,7 +1027,7 @@ Text GLabel 5400 4850 0    39   Input ~ 0
 PHY0_TXRXP_D
 Text GLabel 5400 4950 0    39   Input ~ 0
 PHY0_TXRXM_D
-Text Label 5400 3850 2    60   ~ 0
+Text Label 5400 3850 2    40   ~ 0
 AVDDL
 NoConn ~ 5550 4050
 $Comp
@@ -1243,7 +1243,7 @@ F 6 "CAP TANT 10UF 16V 10% 1206" H 1150 8250 60  0001 C CNN "Description"
 	1    4050 8800
 	1    0    0    -1  
 $EndComp
-Text Label 4050 8150 1    60   ~ 0
+Text Label 4050 8150 1    40   ~ 0
 AVDD_PLL
 $Comp
 L C C202
@@ -1302,7 +1302,7 @@ F 6 "CAP TANT 47UF 16V 10% 2312" H -3450 2100 60  0001 C CNN "Description"
 	1    5300 8800
 	1    0    0    -1  
 $EndComp
-Text Label 5300 8150 1    60   ~ 0
+Text Label 5300 8150 1    40   ~ 0
 DVDDL
 $Comp
 L C C204
@@ -1461,7 +1461,7 @@ F 6 "CAP TANT 47UF 16V 10% 2312" H 2350 1400 60  0001 C CNN "Description"
 	1    6950 10500
 	1    0    0    -1  
 $EndComp
-Text Label 6950 9850 1    60   ~ 0
+Text Label 6950 9850 1    40   ~ 0
 DVDDH
 $Comp
 L C C212
@@ -1535,7 +1535,7 @@ F 6 "CAP TANT 47UF 16V 10% 2312" H 2000 1550 60  0001 C CNN "Description"
 	1    10450 10550
 	1    0    0    -1  
 $EndComp
-Text Label 10450 9900 1    60   ~ 0
+Text Label 10450 9900 1    40   ~ 0
 AVDDH
 $Comp
 L C C218
@@ -1600,7 +1600,7 @@ Wire Wire Line
 	6950 10300 9000 10300
 Wire Wire Line
 	6950 10700 9000 10700
-Text Label 12250 9950 1    60   ~ 0
+Text Label 12250 9950 1    40   ~ 0
 AVDDL
 Wire Wire Line
 	12250 9950 12250 10350
@@ -1728,17 +1728,17 @@ F 7 "http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729
 $EndComp
 Text GLabel 8450 7900 0    39   Input ~ 0
 GIGE_AVDD_PLL
-Text Label 8600 7900 0    60   ~ 0
+Text Label 8600 7900 0    40   ~ 0
 AVDD_PLL
-Text Label 8600 8100 0    60   ~ 0
+Text Label 8600 8100 0    40   ~ 0
 DVDDL
 Text GLabel 8450 8100 0    39   Input ~ 0
 GIGE_DVDDL
-Text Label 8600 8250 0    60   ~ 0
+Text Label 8600 8250 0    40   ~ 0
 DVDDH
-Text Label 8600 8400 0    60   ~ 0
+Text Label 8600 8400 0    40   ~ 0
 AVDDH
-Text Label 8600 8550 0    60   ~ 0
+Text Label 8600 8550 0    40   ~ 0
 AVDDL
 Text GLabel 8450 8250 0    39   Input ~ 0
 GIGE_DVDDH

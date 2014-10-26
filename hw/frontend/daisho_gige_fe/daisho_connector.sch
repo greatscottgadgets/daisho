@@ -172,13 +172,13 @@ F 3 "" H 9200 6450 60  0001 C CNN
 	1    9200 6450
 	1    0    0    -1  
 $EndComp
-Text Label 3450 1650 0    60   ~ 0
+Text Label 3450 1650 0    40   ~ 0
 FE_I2C_SCL
-Text Label 3450 1750 0    60   ~ 0
+Text Label 3450 1750 0    40   ~ 0
 FE_I2C_SDA
-Text Label 2250 2900 2    60   ~ 0
+Text Label 2250 2900 2    40   ~ 0
 FE_I2C_SDA
-Text Label 2250 3000 2    60   ~ 0
+Text Label 2250 3000 2    40   ~ 0
 FE_I2C_SCL
 $Comp
 L GND #PWR050
@@ -191,7 +191,7 @@ F 3 "" H 2600 2150 60  0001 C CNN
 	1    2600 2150
 	1    0    0    -1  
 $EndComp
-Text Label 3850 2900 0    60   ~ 0
+Text Label 3850 2900 0    40   ~ 0
 VALT_FE
 Text Notes 1950 700  0    60   ~ 0
 Identification EEPROM:\nRead by main board MCU, \nto identify type of Front End ...
@@ -206,7 +206,7 @@ Text GLabel 1550 2950 0    60   Input ~ 0
 FE_I2C_VCC
 Text GLabel 2550 1000 0    60   Input ~ 0
 FE_I2C_VCC
-Text Label 1550 3100 2    60   ~ 0
+Text Label 1550 3100 2    40   ~ 0
 V3P3D
 Text Notes 4950 800  0    60   ~ 0
 I2C EEPROM Write Protect\nEnabled by default
