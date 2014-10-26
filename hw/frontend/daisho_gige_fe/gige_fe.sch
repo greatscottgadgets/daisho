@@ -61,7 +61,7 @@ EELAYER 24 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 6
+Sheet 1 5
 Title ""
 Date "6 oct 2014"
 Rev ""
@@ -88,12 +88,6 @@ S 6650 800  2400 1600
 U 525DBE7D
 F0 "daisho connector" 50
 F1 "daisho_connector.sch" 50
-$EndSheet
-$Sheet
-S 850  3200 2150 1250
-U 5261B825
-F0 "RS232" 50
-F1 "rs232.sch" 50
 $EndSheet
 $Sheet
 S 3500 3200 2450 1250

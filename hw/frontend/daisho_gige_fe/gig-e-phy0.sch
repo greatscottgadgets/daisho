@@ -61,7 +61,7 @@ EELAYER 24 0
 EELAYER END
 $Descr A2 23386 16535
 encoding utf-8
-Sheet 2 6
+Sheet 2 5
 Title "Daisho Prototype Gig-E Frontend"
 Date "6 oct 2014"
 Rev ""

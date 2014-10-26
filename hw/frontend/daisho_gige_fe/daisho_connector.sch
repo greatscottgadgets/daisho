@@ -61,7 +61,7 @@ EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 6
+Sheet 4 5
 Title "Daisho Project Gigabit Ethernet Front-End Board"
 Date "6 oct 2014"
 Rev "1.0"
