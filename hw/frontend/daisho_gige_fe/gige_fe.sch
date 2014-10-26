@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 06 Oct 2014 01:21:17 PM MDT
+EESchema Schematic File Version 2
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -57,7 +57,7 @@ LIBS:ksz9031mnx
 LIBS:lm3671
 LIBS:xc923x
 LIBS:gige_fe-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
