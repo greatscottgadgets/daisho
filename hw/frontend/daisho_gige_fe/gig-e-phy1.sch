@@ -216,7 +216,7 @@ Text GLabel 6650 3100 1    39   Input ~ 0
 PHY1_MDC
 Text GLabel 6750 3100 1    39   Input ~ 0
 PHY1_CRS
-Text GLabel 8200 3700 2    39   Input ~ 0
+Text GLabel 7550 3700 2    39   Input ~ 0
 PHY1_RX_CLK
 Text GLabel 7550 3800 2    39   Input ~ 0
 PHY1_RX_ERR
@@ -1688,8 +1688,6 @@ Wire Wire Line
 Wire Wire Line
 	7550 3800 7400 3800
 Wire Wire Line
-	7400 3700 8200 3700
-Wire Wire Line
 	6750 3100 6750 3200
 Wire Wire Line
 	6650 3100 6650 3200
@@ -2178,28 +2176,6 @@ Connection ~ 9250 11100
 Wire Wire Line
 	9700 11000 9700 11100
 Connection ~ 9700 11100
-$Comp
-L R R313
-U 1 1 544D8642
-P 7850 3500
-F 0 "R313" V 7930 3500 50  0000 C CNN
-F 1 "10k" V 7850 3500 50  0000 C CNN
-F 2 "daisho:GSG-0603" H 7850 3500 60  0001 C CNN
-F 3 "" H 7850 3500 60  0001 C CNN
-F 4 "Stackpole" H 7850 3500 60  0001 C CNN "Manufacturer"
-F 5 "RMCF0603JT10K0" H 7850 3500 60  0001 C CNN "Part Number"
-F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 7850 3500 60  0001 C CNN "Description"
-F 7 "~" V 7950 3300 60  0000 C CNN "Note"
-	1    7850 3500
-	0    -1   1    0   
-$EndComp
-Text GLabel 8200 3500 2    39   Input ~ 0
-PHY1_PHYAD2
 Wire Wire Line
-	8200 3500 8100 3500
-Wire Wire Line
-	7600 3500 7500 3500
-Wire Wire Line
-	7500 3500 7500 3700
-Connection ~ 7500 3700
+	7550 3700 7400 3700
 $EndSCHEMATC

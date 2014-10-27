@@ -77,7 +77,7 @@ U 1 1 51D6425B
 P 3050 2600
 F 0 "J9991" H 3050 2650 60  0000 C CNN
 F 1 "SAMTEC_QSH-090-D" H 3100 2550 60  0000 C CNN
-F 2 "daisho:SAMTEC_QSH-090-01-F-D-A" H 3050 2600 60  0001 C CNN
+F 2 "samtec_qsh-090-01-f-d-a:SAMTEC_QSH-090-01-F-D-A" H 3050 2600 60  0001 C CNN
 F 3 "https://www.samtec.com/technical-specifications/Default.aspx?SeriesMaster=QSH" H 3050 2600 60  0001 C CNN
 F 4 "Samtec" H 3050 2600 60  0001 C CNN "Manufacturer"
 F 5 "QSH-090-01-F-D-A" H 3050 2600 60  0001 C CNN "Part Number"
@@ -93,7 +93,7 @@ U 3 1 51D64267
 P 9350 2600
 F 0 "J9991" H 9350 2650 60  0000 C CNN
 F 1 "SAMTEC_QSH-090-D" H 9400 2550 60  0000 C CNN
-F 2 "daisho:SAMTEC_QSH-090-01-F-D-A" H 9350 2600 60  0001 C CNN
+F 2 "samtec_qsh-090-01-f-d-a:SAMTEC_QSH-090-01-F-D-A" H 9350 2600 60  0001 C CNN
 F 3 "" H 9350 2600 60  0001 C CNN
 	3    9350 2600
 	1    0    0    -1  
@@ -191,8 +191,6 @@ F 3 "" H 2600 2150 60  0001 C CNN
 	1    2600 2150
 	1    0    0    -1  
 $EndComp
-Text Label 3850 2900 0    40   ~ 0
-VALT_FE
 Text Notes 1950 700  0    60   ~ 0
 Identification EEPROM:\nRead by main board MCU, \nto identify type of Front End ...
 Text GLabel 5550 950  0    60   Input ~ 0
@@ -419,7 +417,7 @@ U 2 1 51D64261
 P 6250 2600
 F 0 "J9991" H 6250 2650 60  0000 C CNN
 F 1 "SAMTEC_QSH-090-D" H 6300 2550 60  0000 C CNN
-F 2 "daisho:SAMTEC_QSH-090-01-F-D-A" H 6250 2600 60  0001 C CNN
+F 2 "samtec_qsh-090-01-f-d-a:SAMTEC_QSH-090-01-F-D-A" H 6250 2600 60  0001 C CNN
 F 3 "" H 6250 2600 60  0001 C CNN
 	2    6250 2600
 	1    0    0    -1  
@@ -539,8 +537,6 @@ Wire Wire Line
 Wire Wire Line
 	1550 3100 2450 3100
 Wire Wire Line
-	3650 2900 3850 2900
-Wire Wire Line
 	3650 3400 3850 3400
 Wire Wire Line
 	2250 4200 2450 4200
@@ -554,11 +550,6 @@ Wire Wire Line
 	2250 4700 2450 4700
 Wire Wire Line
 	2250 4900 2450 4900
-Wire Wire Line
-	3650 3000 3750 3000
-Wire Wire Line
-	3750 3000 3750 2900
-Connection ~ 3750 2900
 Wire Wire Line
 	3750 3400 3750 5200
 Connection ~ 3750 4000
@@ -801,13 +792,9 @@ NoConn ~ 9950 3300
 NoConn ~ 6850 5000
 NoConn ~ 6850 5100
 Wire Wire Line
-	2250 5800 2450 5800
-Wire Wire Line
-	8750 3700 8550 3700
-Text GLabel 8550 3700 0    39   Input ~ 0
-PHY1_PHYAD2
-Text GLabel 2250 5800 0    39   Input ~ 0
-PHY0_PHYAD2
-Wire Wire Line
 	2250 5700 2450 5700
+NoConn ~ 3650 2900
+NoConn ~ 3650 3000
+NoConn ~ 2450 5800
+NoConn ~ 8750 3700
 $EndSCHEMATC

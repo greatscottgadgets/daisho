@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Sun 26 Oct 2014 07:55:18 PM MDT
+Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Sun 26 Oct 2014 08:26:26 PM MDT
 
 BeginCmp
 TimeStamp = /50EDF97F/52BDDF8E;
@@ -606,7 +606,7 @@ BeginCmp
 TimeStamp = /525DBE7D/51D6425B;
 Reference = J9991;
 ValeurCmp = SAMTEC_QSH-090-D;
-IdModule  = daisho:SAMTEC_QSH-090-01-F-D-A;
+IdModule  = samtec_qsh-090-01-f-d-a:SAMTEC_QSH-090-01-F-D-A;
 EndCmp
 
 BeginCmp
