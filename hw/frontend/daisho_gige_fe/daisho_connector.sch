@@ -405,8 +405,6 @@ Text GLabel 8550 2900 0    39   Input ~ 0
 PHY1_INT_N
 Text GLabel 3850 3400 2    35   Input ~ 0
 VRAW_SW_5V
-Text GLabel 10150 5600 2    39   Input ~ 0
-V2P5_EN
 Text GLabel 10150 5800 2    39   Input ~ 0
 V1P2_EN
 Text GLabel 10150 5700 2    39   Input ~ 0
@@ -620,8 +618,6 @@ Wire Wire Line
 Wire Wire Line
 	9950 5700 10150 5700
 Wire Wire Line
-	10150 5600 9950 5600
-Wire Wire Line
 	9950 5500 10150 5500
 Wire Wire Line
 	10150 5400 9950 5400
@@ -797,4 +793,5 @@ NoConn ~ 3650 2900
 NoConn ~ 3650 3000
 NoConn ~ 2450 5800
 NoConn ~ 8750 3700
+NoConn ~ 9950 5600
 $EndSCHEMATC
