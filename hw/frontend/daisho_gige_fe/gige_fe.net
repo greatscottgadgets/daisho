@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/mossmann/src/daisho/hw/frontend/daisho_gige_fe/gige_fe.sch)
-    (date "Mon 27 Oct 2014 12:55:12 AM MDT")
+    (date "Mon 27 Oct 2014 12:59:11 AM MDT")
     (tool "Eeschema (2014-10-14 BZR 5188)-product"))
   (components
     (comp (ref RP203)
@@ -156,13 +156,8 @@
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 50F20C25))
     (comp (ref R208)
-      (value "4.99K 1%")
+      (value "12.1k 1%")
       (footprint Daisho:GSG-0402)
-      (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-2RKF4991X)
-        (field (name Description) "RES 4.99K OHM 1/10W 1% 0402 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-2RKF4991X/P4.99KLCT-ND/194389))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 52BDDE27))
@@ -1084,13 +1079,8 @@
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 52BBA1F7))
     (comp (ref R308)
-      (value "4.99K 1%")
+      (value "12.1k 1%")
       (footprint Daisho:GSG-0402)
-      (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-2RKF4991X)
-        (field (name Description) "RES 4.99K OHM 1/10W 1% 0402 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-2RKF4991X/P4.99KLCT-ND/194389))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 52BE5D67))
