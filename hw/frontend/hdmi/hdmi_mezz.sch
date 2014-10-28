@@ -241,8 +241,6 @@ Text GLabel 6900 9500 2    39   Input ~ 0
 HDMI_HPD_OUT
 Text GLabel 6900 8800 2    39   Input ~ 0
 HDMI_OUT_EN
-Text GLabel 6900 8200 2    39   Input ~ 0
-V2P5_EN
 Text GLabel 5300 8300 0    39   Input ~ 0
 V1P2_EN
 Text GLabel 5300 8400 0    39   Input ~ 0
@@ -304,8 +302,6 @@ F 3 "" H 11550 11100 60  0000 C CNN
 $EndComp
 Text GLabel 6900 8100 2    40   Input ~ 0
 VRAW_SW
-Text GLabel 5300 8500 0    39   Input ~ 0
-V3P3_EN
 Text GLabel 5300 8200 0    39   Input ~ 0
 V5P0_EN
 Text GLabel 5300 9200 0    39   Input ~ 0
@@ -838,15 +834,11 @@ Wire Wire Line
 Wire Wire Line
 	5300 8400 5500 8400
 Wire Wire Line
-	5300 8500 5500 8500
-Wire Wire Line
 	5500 8800 5300 8800
 Wire Wire Line
 	5300 8900 5500 8900
 Wire Wire Line
 	5500 9000 5300 9000
-Wire Wire Line
-	6700 8200 6900 8200
 Wire Wire Line
 	6900 8300 6700 8300
 Wire Wire Line
@@ -911,4 +903,6 @@ F 3 "" H 6100 7300 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	5300 9400 5500 9400
+NoConn ~ 6700 8200
+NoConn ~ 5500 8500
 $EndSCHEMATC

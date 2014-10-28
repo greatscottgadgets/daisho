@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Mon 27 Oct 2014 08:12:41 PM MDT
+Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Mon 27 Oct 2014 08:34:37 PM MDT
 
 BeginCmp
 TimeStamp = /5112FB69/51350092;
@@ -809,7 +809,7 @@ BeginCmp
 TimeStamp = /519A2E90/543F8BD4;
 Reference = C917;
 ValeurCmp = 22uF;
-IdModule  = daisho:IPC_CAPC3216X180N;
+IdModule  = daisho:gsg-sm1206p;
 EndCmp
 
 BeginCmp
