@@ -244,8 +244,6 @@ Text GLabel 6900 8800 2    39   Input ~ 0
 HDMI_OUT_EN
 Text GLabel 5300 8300 0    39   Input ~ 0
 V1P2_EN
-Text GLabel 5300 8400 0    39   Input ~ 0
-V1P5_EN
 $Comp
 L SAMTEC_QSH-090-D J801
 U 2 1 543F7069
@@ -833,8 +831,6 @@ Wire Wire Line
 Wire Wire Line
 	5500 8300 5300 8300
 Wire Wire Line
-	5300 8400 5500 8400
-Wire Wire Line
 	5500 8800 5300 8800
 Wire Wire Line
 	5300 8900 5500 8900
@@ -906,4 +902,5 @@ Wire Wire Line
 	5300 9400 5500 9400
 NoConn ~ 6700 8200
 NoConn ~ 5500 8500
+NoConn ~ 5500 8400
 $EndSCHEMATC
