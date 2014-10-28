@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name daisho)(type KiCad)(uri ${KIPRJMOD}/../../lib/daisho.pretty)(options "")(descr ""))
+  (lib (name samtec_qsh-090-01-f-d-a)(type Legacy)(uri ${KIPRJMOD}/../../lib/samtec_qsh-090-01-f-d-a.mod)(options "")(descr ""))
+)

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 06 Oct 2014 01:21:17 PM MDT
+EESchema Schematic File Version 2
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -57,11 +57,11 @@ LIBS:ksz9031mnx
 LIBS:lm3671
 LIBS:xc923x
 LIBS:gige_fe-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 6
+Sheet 4 5
 Title "Daisho Project Gigabit Ethernet Front-End Board"
 Date "6 oct 2014"
 Rev "1.0"
@@ -77,6 +77,7 @@ U 1 1 51D6425B
 P 3050 2600
 F 0 "J9991" H 3050 2650 60  0000 C CNN
 F 1 "SAMTEC_QSH-090-D" H 3100 2550 60  0000 C CNN
+F 2 "samtec_qsh-090-01-f-d-a:SAMTEC_QSH-090-01-F-D-A" H 3050 2600 60  0001 C CNN
 F 3 "https://www.samtec.com/technical-specifications/Default.aspx?SeriesMaster=QSH" H 3050 2600 60  0001 C CNN
 F 4 "Samtec" H 3050 2600 60  0001 C CNN "Manufacturer"
 F 5 "QSH-090-01-F-D-A" H 3050 2600 60  0001 C CNN "Part Number"
@@ -92,6 +93,8 @@ U 3 1 51D64267
 P 9350 2600
 F 0 "J9991" H 9350 2650 60  0000 C CNN
 F 1 "SAMTEC_QSH-090-D" H 9400 2550 60  0000 C CNN
+F 2 "samtec_qsh-090-01-f-d-a:SAMTEC_QSH-090-01-F-D-A" H 9350 2600 60  0001 C CNN
+F 3 "" H 9350 2600 60  0001 C CNN
 	3    9350 2600
 	1    0    0    -1  
 $EndComp
@@ -101,7 +104,7 @@ U 1 1 51DE64DC
 P 2600 1550
 F 0 "U9991" H 2750 1900 60  0000 C CNN
 F 1 "24C08" H 2800 1200 60  0000 C CNN
-F 2 "SO8" H 2600 1550 60  0000 C CNN
+F 2 "SO8E" H 2600 1550 60  0000 C CNN
 F 3 "http://www.onsemi.com/pub_link/Collateral/CAT24C08-D.PDF" H 2600 1550 60  0001 C CNN
 F 4 "ON Semiconductor" H 2600 1550 60  0001 C CNN "Manufacturer"
 F 5 "CAT24C08WI-GT3" H 2600 1550 60  0001 C CNN "Part Number"
@@ -116,6 +119,8 @@ U 1 1 51DE6697
 P 2900 6450
 F 0 "#PWR046" H 2900 6450 30  0001 C CNN
 F 1 "GND" H 2900 6380 30  0001 C CNN
+F 2 "" H 2900 6450 60  0001 C CNN
+F 3 "" H 2900 6450 60  0001 C CNN
 	1    2900 6450
 	1    0    0    -1  
 $EndComp
@@ -125,6 +130,8 @@ U 1 1 51DE6A1A
 P 1800 1700
 F 0 "#PWR047" H 1800 1700 30  0001 C CNN
 F 1 "GND" H 1800 1630 30  0001 C CNN
+F 2 "" H 1800 1700 60  0001 C CNN
+F 3 "" H 1800 1700 60  0001 C CNN
 	1    1800 1700
 	1    0    0    -1  
 $EndComp
@@ -134,6 +141,8 @@ U 1 1 51DDE1CA
 P 5100 1250
 F 0 "R9991" V 5180 1250 50  0000 C CNN
 F 1 "10k" V 5100 1250 50  0000 C CNN
+F 2 "daisho:GSG-0603" H 5100 1250 60  0001 C CNN
+F 3 "" H 5100 1250 60  0001 C CNN
 F 4 "Stackpole" H 5100 1250 60  0001 C CNN "Manufacturer"
 F 5 "RMCF0603JT10K0" H 5100 1250 60  0001 C CNN "Part Number"
 F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 5100 1250 60  0001 C CNN "Description"
@@ -147,6 +156,8 @@ U 1 1 51DDE55A
 P 6100 6450
 F 0 "#PWR048" H 6100 6450 30  0001 C CNN
 F 1 "GND" H 6100 6380 30  0001 C CNN
+F 2 "" H 6100 6450 60  0001 C CNN
+F 3 "" H 6100 6450 60  0001 C CNN
 	1    6100 6450
 	1    0    0    -1  
 $EndComp
@@ -156,16 +167,18 @@ U 1 1 51DDE568
 P 9200 6450
 F 0 "#PWR049" H 9200 6450 30  0001 C CNN
 F 1 "GND" H 9200 6380 30  0001 C CNN
+F 2 "" H 9200 6450 60  0001 C CNN
+F 3 "" H 9200 6450 60  0001 C CNN
 	1    9200 6450
 	1    0    0    -1  
 $EndComp
-Text Label 3450 1650 0    60   ~ 0
+Text Label 3450 1650 0    40   ~ 0
 FE_I2C_SCL
-Text Label 3450 1750 0    60   ~ 0
+Text Label 3450 1750 0    40   ~ 0
 FE_I2C_SDA
-Text Label 2250 2900 2    60   ~ 0
+Text Label 2250 2900 2    40   ~ 0
 FE_I2C_SDA
-Text Label 2250 3000 2    60   ~ 0
+Text Label 2250 3000 2    40   ~ 0
 FE_I2C_SCL
 $Comp
 L GND #PWR050
@@ -173,11 +186,11 @@ U 1 1 51DDF418
 P 2600 2150
 F 0 "#PWR050" H 2600 2150 30  0001 C CNN
 F 1 "GND" H 2600 2080 30  0001 C CNN
+F 2 "" H 2600 2150 60  0001 C CNN
+F 3 "" H 2600 2150 60  0001 C CNN
 	1    2600 2150
 	1    0    0    -1  
 $EndComp
-Text Label 3850 2900 0    60   ~ 0
-VALT_FE
 Text Notes 1950 700  0    60   ~ 0
 Identification EEPROM:\nRead by main board MCU, \nto identify type of Front End ...
 Text GLabel 5550 950  0    60   Input ~ 0
@@ -191,7 +204,7 @@ Text GLabel 1550 2950 0    60   Input ~ 0
 FE_I2C_VCC
 Text GLabel 2550 1000 0    60   Input ~ 0
 FE_I2C_VCC
-Text Label 1550 3100 2    60   ~ 0
+Text Label 1550 3100 2    40   ~ 0
 V3P3D
 Text Notes 4950 800  0    60   ~ 0
 I2C EEPROM Write Protect\nEnabled by default
@@ -201,6 +214,8 @@ U 1 1 51E2E274
 P 5450 1550
 F 0 "P9991" V 5400 1550 40  0000 C CNN
 F 1 "CONN_2" V 5500 1550 40  0000 C CNN
+F 2 "GSG-HEADER-1x2" H 5450 1550 60  0001 C CNN
+F 3 "" H 5450 1550 60  0001 C CNN
 F 4 "DNP" H 5450 1300 60  0000 C CNN "Note"
 	1    5450 1550
 	1    0    0    -1  
@@ -211,6 +226,8 @@ U 1 1 51E2ED78
 P 4450 1450
 F 0 "R9992" V 4530 1450 50  0000 C CNN
 F 1 "10k" V 4450 1450 50  0000 C CNN
+F 2 "daisho:GSG-0603" H 4450 1450 60  0001 C CNN
+F 3 "" H 4450 1450 60  0001 C CNN
 F 4 "Stackpole" H 4450 1450 60  0001 C CNN "Manufacturer"
 F 5 "RMCF0603JT10K0" H 4450 1450 60  0001 C CNN "Part Number"
 F 6 "RES 10K OHM 1/10W 5% 0603 SMD" H 4450 1450 60  0001 C CNN "Description"
@@ -226,6 +243,8 @@ U 1 1 51E2F31D
 P 5050 1850
 F 0 "#PWR051" H 5050 1850 30  0001 C CNN
 F 1 "GND" H 5050 1780 30  0001 C CNN
+F 2 "" H 5050 1850 60  0001 C CNN
+F 3 "" H 5050 1850 60  0001 C CNN
 	1    5050 1850
 	1    0    0    -1  
 $EndComp
@@ -386,8 +405,6 @@ Text GLabel 8550 2900 0    39   Input ~ 0
 PHY1_INT_N
 Text GLabel 3850 3400 2    35   Input ~ 0
 VRAW_SW_5V
-Text GLabel 10150 5600 2    39   Input ~ 0
-V2P5_EN
 Text GLabel 10150 5800 2    39   Input ~ 0
 V1P2_EN
 Text GLabel 10150 5700 2    39   Input ~ 0
@@ -398,6 +415,8 @@ U 2 1 51D64261
 P 6250 2600
 F 0 "J9991" H 6250 2650 60  0000 C CNN
 F 1 "SAMTEC_QSH-090-D" H 6300 2550 60  0000 C CNN
+F 2 "samtec_qsh-090-01-f-d-a:SAMTEC_QSH-090-01-F-D-A" H 6250 2600 60  0001 C CNN
+F 3 "" H 6250 2600 60  0001 C CNN
 	2    6250 2600
 	1    0    0    -1  
 $EndComp
@@ -416,7 +435,6 @@ NoConn ~ 2450 5100
 NoConn ~ 2450 5300
 NoConn ~ 2450 5400
 NoConn ~ 2450 5500
-NoConn ~ 2450 5800
 NoConn ~ 2450 3600
 NoConn ~ 2450 3700
 NoConn ~ 2450 3800
@@ -442,7 +460,6 @@ NoConn ~ 5650 3900
 NoConn ~ 5650 5300
 NoConn ~ 5650 5400
 NoConn ~ 8750 3600
-NoConn ~ 8750 3700
 NoConn ~ 8750 3800
 NoConn ~ 8750 4100
 NoConn ~ 8750 4400
@@ -518,8 +535,6 @@ Wire Wire Line
 Wire Wire Line
 	1550 3100 2450 3100
 Wire Wire Line
-	3650 2900 3850 2900
-Wire Wire Line
 	3650 3400 3850 3400
 Wire Wire Line
 	2250 4200 2450 4200
@@ -533,11 +548,6 @@ Wire Wire Line
 	2250 4700 2450 4700
 Wire Wire Line
 	2250 4900 2450 4900
-Wire Wire Line
-	3650 3000 3750 3000
-Wire Wire Line
-	3750 3000 3750 2900
-Connection ~ 3750 2900
 Wire Wire Line
 	3750 3400 3750 5200
 Connection ~ 3750 4000
@@ -607,8 +617,6 @@ Wire Wire Line
 	10150 5800 9950 5800
 Wire Wire Line
 	9950 5700 10150 5700
-Wire Wire Line
-	10150 5600 9950 5600
 Wire Wire Line
 	9950 5500 10150 5500
 Wire Wire Line
@@ -756,8 +764,6 @@ Wire Wire Line
 Wire Wire Line
 	10150 4500 9950 4500
 Wire Wire Line
-	2450 5700 2250 5700
-Wire Wire Line
 	2450 5600 2250 5600
 NoConn ~ 2450 4100
 NoConn ~ 3650 5600
@@ -781,4 +787,11 @@ NoConn ~ 9950 2900
 NoConn ~ 9950 3300
 NoConn ~ 6850 5000
 NoConn ~ 6850 5100
+Wire Wire Line
+	2250 5700 2450 5700
+NoConn ~ 3650 2900
+NoConn ~ 3650 3000
+NoConn ~ 2450 5800
+NoConn ~ 8750 3700
+NoConn ~ 9950 5600
 $EndSCHEMATC

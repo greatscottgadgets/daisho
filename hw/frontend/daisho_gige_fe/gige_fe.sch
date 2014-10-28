@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 06 Oct 2014 01:21:17 PM MDT
+EESchema Schematic File Version 2
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -57,11 +57,11 @@ LIBS:ksz9031mnx
 LIBS:lm3671
 LIBS:xc923x
 LIBS:gige_fe-cache
-EELAYER 27 0
+EELAYER 24 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 6
+Sheet 1 5
 Title ""
 Date "6 oct 2014"
 Rev ""
@@ -88,12 +88,6 @@ S 6650 800  2400 1600
 U 525DBE7D
 F0 "daisho connector" 50
 F1 "daisho_connector.sch" 50
-$EndSheet
-$Sheet
-S 850  3200 2150 1250
-U 5261B825
-F0 "RS232" 50
-F1 "rs232.sch" 50
 $EndSheet
 $Sheet
 S 3500 3200 2450 1250
