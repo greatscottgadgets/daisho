@@ -13,3 +13,4 @@
 *.srec
 .gdbinit
 _autosave*
+*.kicad_pcb-bak
