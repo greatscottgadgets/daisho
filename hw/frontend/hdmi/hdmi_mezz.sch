@@ -64,7 +64,7 @@ Comment4 ""
 $EndDescr
 Text GLabel 8100 10400 0    39   Input ~ 0
 SD_CH0_RX0
-Text GLabel 9700 10200 2    39   Input ~ 0
+Text GLabel 10900 8300 0    39   Input ~ 0
 SD_CH0_RX1
 Text GLabel 8100 10200 0    39   Input ~ 0
 SD_CH0_RX2
@@ -74,55 +74,55 @@ Text GLabel 8100 10300 0    39   Input ~ 0
 SD_CH0_RX4
 Text GLabel 8100 9800 0    39   Input ~ 0
 SD_CH0_RX5
-Text GLabel 9700 10100 2    39   Input ~ 0
+Text GLabel 10900 8400 0    39   Input ~ 0
 SD_CH0_RX6
-Text GLabel 9700 10000 2    39   Input ~ 0
+Text GLabel 10900 8500 0    39   Input ~ 0
 SD_CH0_RX7
 Text GLabel 8100 10000 0    39   Input ~ 0
 SD_CH0_RX8
-Text GLabel 9700 10300 2    39   Input ~ 0
-SD_CH0_RX9
-Text GLabel 10900 8600 0    39   Input ~ 0
-SD_CH1_RX0
-Text GLabel 12500 8600 2    39   Input ~ 0
-SD_CH1_RX1
-Text GLabel 12500 8500 2    39   Input ~ 0
-SD_CH1_RX9
-Text GLabel 12500 8400 2    39   Input ~ 0
-SD_CH1_RX8
-Text GLabel 12500 8200 2    39   Input ~ 0
-SD_CH1_RX7
-Text GLabel 12500 8300 2    39   Input ~ 0
-SD_CH1_RX6
 Text GLabel 10900 8200 0    39   Input ~ 0
+SD_CH0_RX9
+Text GLabel 10800 12250 0    39   Input ~ 0
+SD_CH1_RX0
+Text GLabel 12300 12300 2    39   Input ~ 0
+SD_CH1_RX1
+Text GLabel 12300 12200 2    39   Input ~ 0
+SD_CH1_RX9
+Text GLabel 12300 12100 2    39   Input ~ 0
+SD_CH1_RX8
+Text GLabel 12300 11900 2    39   Input ~ 0
+SD_CH1_RX7
+Text GLabel 12300 12000 2    39   Input ~ 0
+SD_CH1_RX6
+Text GLabel 10800 11850 0    39   Input ~ 0
 SD_CH1_RX5
-Text GLabel 10900 8400 0    39   Input ~ 0
+Text GLabel 10800 12050 0    39   Input ~ 0
 SD_CH1_RX4
-Text GLabel 10900 8500 0    39   Input ~ 0
+Text GLabel 10800 12150 0    39   Input ~ 0
 SD_CH1_RX3
-Text GLabel 10900 8300 0    39   Input ~ 0
+Text GLabel 10800 11950 0    39   Input ~ 0
 SD_CH1_RX2
-Text GLabel 12500 9500 2    39   Input ~ 0
+Text GLabel 12300 13200 2    39   Input ~ 0
 SD_CH2_RX2
-Text GLabel 12500 9100 2    39   Input ~ 0
+Text GLabel 12300 12800 2    39   Input ~ 0
 SD_CH2_RX3
-Text GLabel 10900 9100 0    39   Input ~ 0
+Text GLabel 10800 12750 0    39   Input ~ 0
 SD_CH2_RX4
-Text GLabel 12500 9200 2    39   Input ~ 0
+Text GLabel 12300 12900 2    39   Input ~ 0
 SD_CH2_RX5
-Text GLabel 10900 9200 0    39   Input ~ 0
+Text GLabel 10800 12850 0    39   Input ~ 0
 SD_CH2_RX6
-Text GLabel 10900 9000 0    39   Input ~ 0
+Text GLabel 10800 12650 0    39   Input ~ 0
 SD_CH2_RX7
-Text GLabel 12500 9000 2    39   Input ~ 0
+Text GLabel 12300 12700 2    39   Input ~ 0
 SD_CH2_RX8
-Text GLabel 10900 9500 0    39   Input ~ 0
+Text GLabel 10800 13150 0    39   Input ~ 0
 SD_CH2_RX9
-Text GLabel 12500 9400 2    39   Input ~ 0
+Text GLabel 12300 13100 2    39   Input ~ 0
 SD_CH2_RX1
-Text GLabel 10900 9400 0    39   Input ~ 0
+Text GLabel 10800 13050 0    39   Input ~ 0
 SD_CH2_RX0
-Text GLabel 9700 8000 2    39   Input ~ 0
+Text GLabel 10900 10100 0    39   Input ~ 0
 SD_CH0_TX0
 Text GLabel 8100 8200 0    39   Input ~ 0
 SD_CH0_TX1
@@ -132,13 +132,13 @@ Text GLabel 8100 7700 0    39   Input ~ 0
 SD_CH0_TX3
 Text GLabel 8100 7800 0    39   Input ~ 0
 SD_CH0_TX4
-Text GLabel 9700 7900 2    39   Input ~ 0
+Text GLabel 10900 10200 0    39   Input ~ 0
 SD_CH0_TX5
-Text GLabel 9700 7700 2    39   Input ~ 0
+Text GLabel 10900 10400 0    39   Input ~ 0
 SD_CH0_TX6
 Text GLabel 8100 7600 0    39   Input ~ 0
 SD_CH0_TX7
-Text GLabel 9700 7800 2    39   Input ~ 0
+Text GLabel 10900 10300 0    39   Input ~ 0
 SD_CH0_TX8
 Text GLabel 8100 9000 0    39   Input ~ 0
 SD_CH0_TX9
@@ -150,37 +150,37 @@ Text GLabel 8100 9200 0    39   Input ~ 0
 SD_CH1_TX9
 Text GLabel 8100 8000 0    39   Input ~ 0
 SD_CH1_TX8
-Text GLabel 9700 8300 2    39   Input ~ 0
+Text GLabel 10900 9800 0    39   Input ~ 0
 SD_CH1_TX7
-Text GLabel 9700 8400 2    39   Input ~ 0
+Text GLabel 10900 9700 0    39   Input ~ 0
 SD_CH1_TX6
 Text GLabel 8100 8400 0    39   Input ~ 0
 SD_CH1_TX5
-Text GLabel 9700 9100 2    39   Input ~ 0
+Text GLabel 10900 9000 0    39   Input ~ 0
 SD_CH1_TX4
 Text GLabel 8100 8500 0    39   Input ~ 0
 SD_CH1_TX3
-Text GLabel 9700 8600 2    39   Input ~ 0
+Text GLabel 10900 9500 0    39   Input ~ 0
 SD_CH1_TX2
 Text GLabel 8100 9100 0    39   Input ~ 0
 SD_CH2_TX2
-Text GLabel 9700 8900 2    39   Input ~ 0
+Text GLabel 10900 9200 0    39   Input ~ 0
 SD_CH2_TX3
-Text GLabel 9700 9500 2    39   Input ~ 0
+Text GLabel 10900 8600 0    39   Input ~ 0
 SD_CH2_TX4
-Text GLabel 9700 9000 2    39   Input ~ 0
+Text GLabel 10900 9100 0    39   Input ~ 0
 SD_CH2_TX5
 Text GLabel 8100 8900 0    39   Input ~ 0
 SD_CH2_TX6
-Text GLabel 9700 8800 2    39   Input ~ 0
+Text GLabel 10900 9400 0    39   Input ~ 0
 SD_CH2_TX7
 Text GLabel 8100 8300 0    39   Input ~ 0
 SD_CH2_TX8
 Text GLabel 8100 9400 0    39   Input ~ 0
 SD_CH2_TX9
-Text GLabel 9700 9400 2    39   Input ~ 0
+Text GLabel 10900 8800 0    39   Input ~ 0
 SD_CH2_TX1
-Text GLabel 9700 9200 2    39   Input ~ 0
+Text GLabel 10900 8900 0    39   Input ~ 0
 SD_CH2_TX0
 Text GLabel 5300 10000 0    39   Input ~ 0
 SERDES_MDC
@@ -194,17 +194,17 @@ Text GLabel 6900 10000 2    39   Input ~ 0
 SERDES_PLOOP
 Text GLabel 6900 10100 2    39   Input ~ 0
 SERDES_SLOOP
-Text GLabel 9700 7600 2    39   Input ~ 0
+Text GLabel 10900 10500 0    39   Input ~ 0
 SD_CH0_TXCLK
-Text GLabel 9700 8200 2    39   Input ~ 0
+Text GLabel 10900 10000 0    39   Input ~ 0
 SD_CH1_TXCLK
-Text GLabel 9700 8500 2    39   Input ~ 0
+Text GLabel 10900 9600 0    39   Input ~ 0
 SD_CH3_TXCLK
-Text GLabel 9700 9800 2    39   Input ~ 0
-SD_CH0_RXCLK
 Text GLabel 12500 8800 2    39   Input ~ 0
+SD_CH0_RXCLK
+Text GLabel 12300 12500 2    39   Input ~ 0
 SD_CH1_RXCLK
-Text GLabel 12500 8900 2    39   Input ~ 0
+Text GLabel 12300 12600 2    39   Input ~ 0
 SD_CH2_RXCLK
 Text GLabel 5300 9000 0    39   Input ~ 0
 SI5338_SDA
@@ -663,8 +663,6 @@ NoConn ~ 8300 10500
 NoConn ~ 9500 10500
 NoConn ~ 9500 10400
 NoConn ~ 9500 9600
-NoConn ~ 11100 8800
-NoConn ~ 11100 8900
 NoConn ~ 8300 9700
 NoConn ~ 11100 7600
 NoConn ~ 11100 7700
@@ -685,15 +683,6 @@ NoConn ~ 12300 10200
 NoConn ~ 12300 10300
 NoConn ~ 12300 10400
 NoConn ~ 12300 10500
-NoConn ~ 11100 10500
-NoConn ~ 11100 10400
-NoConn ~ 11100 10300
-NoConn ~ 11100 10200
-NoConn ~ 11100 10100
-NoConn ~ 11100 10000
-NoConn ~ 11100 9800
-NoConn ~ 11100 9700
-NoConn ~ 11100 9600
 Wire Wire Line
 	10900 9500 11100 9500
 Wire Wire Line
@@ -903,4 +892,30 @@ Wire Wire Line
 NoConn ~ 6700 8200
 NoConn ~ 5500 8500
 NoConn ~ 5500 8400
+Wire Wire Line
+	10900 10000 11100 10000
+Wire Wire Line
+	11100 10100 10900 10100
+Wire Wire Line
+	10900 10200 11100 10200
+Wire Wire Line
+	11100 10300 10900 10300
+Wire Wire Line
+	10900 10400 11100 10400
+Wire Wire Line
+	10900 10500 11100 10500
+Wire Wire Line
+	10900 9800 11100 9800
+Wire Wire Line
+	10900 9700 11100 9700
+Wire Wire Line
+	10900 9600 11100 9600
+NoConn ~ 11900 8800
+NoConn ~ 11900 8900
+NoConn ~ 9100 9800
+NoConn ~ 9100 9700
+Wire Wire Line
+	11100 8800 10900 8800
+Wire Wire Line
+	10900 8900 11100 8900
 $EndSCHEMATC
