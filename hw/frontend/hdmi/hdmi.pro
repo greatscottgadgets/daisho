@@ -1,4 +1,4 @@
-update=Tue 21 Oct 2014 12:40:47 PM MDT
+update=Mon 27 Oct 2014 09:07:46 PM MDT
 version=1
 last_client=kicad
 [general]
@@ -130,3 +130,4 @@ LibName44=tps54218
 LibName45=samtec_qsh-090-d
 LibName46=fan4860
 LibName47=on_cat24c256
+LibName48=hole

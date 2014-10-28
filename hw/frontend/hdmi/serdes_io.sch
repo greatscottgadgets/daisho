@@ -46,6 +46,7 @@ LIBS:tps54218
 LIBS:samtec_qsh-090-d
 LIBS:fan4860
 LIBS:on_cat24c256
+LIBS:hole
 LIBS:hdmi-cache
 EELAYER 24 0
 EELAYER END

@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Mon 27 Oct 2014 08:34:37 PM MDT
+Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Mon 27 Oct 2014 09:11:12 PM MDT
 
 BeginCmp
 TimeStamp = /5112FB69/51350092;
@@ -873,6 +873,34 @@ TimeStamp = /519A2E90/54425BB5;
 Reference = C926;
 ValeurCmp = 10uF;
 IdModule  = daisho:GSG-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /544F97AA;
+Reference = H1;
+ValeurCmp = HOLE;
+IdModule  = gsg-hole126mil:GSG-HOLE126MIL;
+EndCmp
+
+BeginCmp
+TimeStamp = /544F97F9;
+Reference = H2;
+ValeurCmp = HOLE;
+IdModule  = gsg-hole126mil:GSG-HOLE126MIL;
+EndCmp
+
+BeginCmp
+TimeStamp = /544F981F;
+Reference = H3;
+ValeurCmp = HOLE;
+IdModule  = gsg-hole126mil:GSG-HOLE126MIL;
+EndCmp
+
+BeginCmp
+TimeStamp = /544F9857;
+Reference = H4;
+ValeurCmp = HOLE;
+IdModule  = gsg-hole126mil:GSG-HOLE126MIL;
 EndCmp
 
 BeginCmp
