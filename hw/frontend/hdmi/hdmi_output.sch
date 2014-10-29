@@ -991,4 +991,6 @@ Connection ~ 8300 2850
 Connection ~ 8100 2950
 Connection ~ 7850 3050
 Connection ~ 7600 3150
+Text Notes 6050 4600 0    40   ~ 0
+FIXME: U302 differential outputs have reversed polarity. It will\nprobably work like this anyway. If so, correct the schematic to\nexplicitly cross these pairs instead of looking like an error
 $EndSCHEMATC
