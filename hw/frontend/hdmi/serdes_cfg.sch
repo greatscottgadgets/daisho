@@ -134,17 +134,6 @@ F 3 "" H 1600 6500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +2.5V #PWR050
-U 1 1 5143D409
-P 1850 5100
-F 0 "#PWR050" H 1850 5050 20  0001 C CNN
-F 1 "+2.5V" H 1850 5200 30  0000 C CNN
-F 2 "" H 1850 5100 60  0001 C CNN
-F 3 "" H 1850 5100 60  0001 C CNN
-	1    1850 5100
-	-1   0    0    1   
-$EndComp
-$Comp
 L R R603
 U 1 1 5143D6AB
 P 2000 5500
@@ -226,17 +215,6 @@ F 3 "" H 3000 6000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +2.5V #PWR055
-U 1 1 5143E400
-P 3000 6300
-F 0 "#PWR055" H 3000 6250 20  0001 C CNN
-F 1 "+2.5V" H 3000 6400 30  0000 C CNN
-F 2 "" H 3000 6300 60  0001 C CNN
-F 3 "" H 3000 6300 60  0001 C CNN
-	1    3000 6300
-	-1   0    0    1   
-$EndComp
-$Comp
 L GND #PWR056
 U 1 1 5143E6FB
 P 4800 5000
@@ -303,36 +281,16 @@ F 3 "" H 4050 5350 60  0001 C CNN
 	1    4050 5350
 	1    0    0    -1  
 $EndComp
-$Comp
-L +2.5V #PWR059
-U 1 1 514CA11A
-P 4050 5650
-F 0 "#PWR059" H 4050 5600 20  0001 C CNN
-F 1 "+2.5V" H 4050 5750 30  0000 C CNN
-F 2 "" H 4050 5650 60  0001 C CNN
-F 3 "" H 4050 5650 60  0001 C CNN
-	1    4050 5650
-	-1   0    0    1   
-$EndComp
-$Comp
-L +2.5V #PWR060
-U 1 1 528984D8
-P 4000 6600
-F 0 "#PWR060" H 4000 6550 20  0001 C CNN
-F 1 "+2.5V" H 4000 6700 30  0000 C CNN
-F 2 "" H 4000 6600 60  0001 C CNN
-F 3 "" H 4000 6600 60  0001 C CNN
-	1    4000 6600
-	0    -1   -1   0   
-$EndComp
-Text GLabel 4100 6600 2    39   Input ~ 0
+Text GLabel 3000 6350 3    39   Input ~ 0
 V2P5_REGULATED
 Text Notes 1200 6800 0    40   ~ 0
 2.5 V LVCMOS inputs
 Text GLabel 2950 5150 3    39   Input ~ 0
 SERDES_TRST_N
 Wire Wire Line
-	3200 4900 3200 5750
+	3200 4900 3200 5650
+Wire Wire Line
+	3200 5650 3200 5750
 Wire Wire Line
 	3100 4900 3100 5150
 Wire Wire Line
@@ -358,10 +316,7 @@ Wire Wire Line
 Wire Wire Line
 	1750 4900 1750 5000
 Wire Wire Line
-	1750 5000 1850 5000
-Wire Wire Line
-	1850 4900 1850 5100
-Connection ~ 1850 5000
+	1750 5000 1750 5150
 Wire Wire Line
 	2000 4900 2000 5250
 Wire Wire Line
@@ -386,7 +341,7 @@ Wire Wire Line
 	3000 5650 3200 5650
 Connection ~ 3200 5650
 Wire Wire Line
-	3000 6250 3000 6300
+	3000 6250 3000 6350
 Wire Wire Line
 	3000 5750 3000 5650
 Wire Wire Line
@@ -416,14 +371,14 @@ Wire Wire Line
 Wire Wire Line
 	3750 5150 3750 4900
 Wire Wire Line
-	3950 4900 3950 5150
+	3950 4900 3950 5100
+Wire Wire Line
+	3950 5100 3950 5150
 Wire Wire Line
 	4050 5100 3950 5100
 Connection ~ 3950 5100
 Wire Wire Line
-	4050 5600 4050 5650
-Wire Wire Line
-	4100 6600 4000 6600
+	4050 5600 4050 5700
 Wire Wire Line
 	2950 5150 2950 4900
 Text GLabel 4450 2500 2    39   Input ~ 0
@@ -473,7 +428,11 @@ $EndComp
 Wire Wire Line
 	3850 2300 3750 2300
 Wire Wire Line
-	3750 2300 3750 2700
+	3750 2300 3750 2400
+Wire Wire Line
+	3750 2400 3750 2600
+Wire Wire Line
+	3750 2600 3750 2700
 Wire Wire Line
 	3850 2400 3750 2400
 Connection ~ 3750 2400
@@ -531,4 +490,13 @@ Wire Wire Line
 	1650 2400 1750 2400
 Wire Wire Line
 	1750 2500 1650 2500
+Text GLabel 4050 5700 3    39   Input ~ 0
+V2P5_REGULATED
+Text GLabel 1750 5100 3    39   Input ~ 0
+V2P5_REGULATED
+Wire Wire Line
+	1750 5000 1850 5000
+Wire Wire Line
+	1850 5000 1850 4900
+Connection ~ 1750 5000
 $EndSCHEMATC
