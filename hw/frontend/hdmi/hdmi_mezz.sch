@@ -62,7 +62,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 12500 7800 2    39   Input ~ 0
+Text GLabel 8100 10400 0    39   Input ~ 0
 SD_CH0_RX0
 Text GLabel 10900 8300 0    39   Input ~ 0
 SD_CH0_RX1
@@ -80,47 +80,47 @@ Text GLabel 10900 8500 0    39   Input ~ 0
 SD_CH0_RX7
 Text GLabel 12500 8300 2    39   Input ~ 0
 SD_CH0_RX8
-Text GLabel 10900 8200 0    39   Input ~ 0
+Text GLabel 8100 10000 0    39   Input ~ 0
 SD_CH0_RX9
-Text GLabel 8100 11450 0    39   Input ~ 0
+Text GLabel 8100 9600 0    39   Input ~ 0
 SD_CH1_RX0
-Text GLabel 9600 11500 2    39   Input ~ 0
+Text GLabel 8100 9500 0    39   Input ~ 0
 SD_CH1_RX1
-Text GLabel 9600 11400 2    39   Input ~ 0
+Text GLabel 8100 8800 0    39   Input ~ 0
 SD_CH1_RX9
-Text GLabel 9600 11300 2    39   Input ~ 0
+Text GLabel 9700 9600 2    39   Input ~ 0
 SD_CH1_RX8
-Text GLabel 9600 11100 2    39   Input ~ 0
+Text GLabel 8100 10500 0    39   Input ~ 0
 SD_CH1_RX7
-Text GLabel 9600 11200 2    39   Input ~ 0
+Text GLabel 8100 10200 0    39   Input ~ 0
 SD_CH1_RX6
-Text GLabel 8100 11050 0    39   Input ~ 0
+Text GLabel 8100 10100 0    39   Input ~ 0
 SD_CH1_RX5
-Text GLabel 8100 11250 0    39   Input ~ 0
+Text GLabel 8100 9800 0    39   Input ~ 0
 SD_CH1_RX4
-Text GLabel 8100 11350 0    39   Input ~ 0
+Text GLabel 8100 9700 0    39   Input ~ 0
 SD_CH1_RX3
-Text GLabel 8100 11150 0    39   Input ~ 0
+Text GLabel 8100 9100 0    39   Input ~ 0
 SD_CH1_RX2
-Text GLabel 9600 12400 2    39   Input ~ 0
+Text GLabel 8100 8400 0    39   Input ~ 0
 SD_CH2_RX2
-Text GLabel 9600 12000 2    39   Input ~ 0
+Text GLabel 8100 9000 0    39   Input ~ 0
 SD_CH2_RX3
-Text GLabel 8100 11950 0    39   Input ~ 0
+Text GLabel 8100 8500 0    39   Input ~ 0
 SD_CH2_RX4
-Text GLabel 9600 12100 2    39   Input ~ 0
+Text GLabel 8100 8900 0    39   Input ~ 0
 SD_CH2_RX5
-Text GLabel 8100 12050 0    39   Input ~ 0
+Text GLabel 8100 9400 0    39   Input ~ 0
 SD_CH2_RX6
-Text GLabel 8100 11850 0    39   Input ~ 0
+Text GLabel 9700 10300 2    39   Input ~ 0
 SD_CH2_RX7
-Text GLabel 9600 11900 2    39   Input ~ 0
+Text GLabel 8100 10300 0    39   Input ~ 0
 SD_CH2_RX8
-Text GLabel 8100 12350 0    39   Input ~ 0
+Text GLabel 8100 8300 0    39   Input ~ 0
 SD_CH2_RX9
-Text GLabel 9600 12300 2    39   Input ~ 0
+Text GLabel 8100 8600 0    39   Input ~ 0
 SD_CH2_RX1
-Text GLabel 8100 12250 0    39   Input ~ 0
+Text GLabel 8100 8200 0    39   Input ~ 0
 SD_CH2_RX0
 Text GLabel 10900 10100 0    39   Input ~ 0
 SD_CH0_TX0
@@ -202,9 +202,9 @@ Text GLabel 10900 9600 0    39   Input ~ 0
 SD_CH3_TXCLK
 Text GLabel 12500 8800 2    39   Input ~ 0
 SD_CH0_RXCLK
-Text GLabel 9700 9700 2    39   Input ~ 0
-SD_CH1_RXCLK
 Text GLabel 9700 9800 2    39   Input ~ 0
+SD_CH1_RXCLK
+Text GLabel 9700 9700 2    39   Input ~ 0
 SD_CH2_RXCLK
 Text GLabel 5300 9000 0    39   Input ~ 0
 SI5338_SDA
@@ -643,13 +643,7 @@ Wire Wire Line
 	12300 8800 12500 8800
 Text Notes 11500 7100 0    40   ~ 0
 1.5 V HSTL
-NoConn ~ 8300 9500
-NoConn ~ 8300 9600
-NoConn ~ 8300 10500
-NoConn ~ 9500 10500
-NoConn ~ 9500 10400
-NoConn ~ 9500 9600
-NoConn ~ 8300 9700
+NoConn ~ 8300 9200
 NoConn ~ 11100 7600
 NoConn ~ 11100 7700
 NoConn ~ 11100 7800
@@ -685,8 +679,6 @@ Wire Wire Line
 Wire Wire Line
 	11100 8300 10900 8300
 Wire Wire Line
-	10900 8200 11100 8200
-Wire Wire Line
 	12300 8200 12500 8200
 Wire Wire Line
 	12500 8300 12300 8300
@@ -713,18 +705,6 @@ Wire Wire Line
 Wire Wire Line
 	9700 10300 9500 10300
 Wire Wire Line
-	9500 10200 9700 10200
-Wire Wire Line
-	9700 10100 9500 10100
-Wire Wire Line
-	9500 10000 9700 10000
-Wire Wire Line
-	9700 9500 9500 9500
-Wire Wire Line
-	9500 9400 9700 9400
-Wire Wire Line
-	8100 9200 8300 9200
-Wire Wire Line
 	8300 9100 8100 9100
 Wire Wire Line
 	8100 9000 8300 9000
@@ -742,46 +722,6 @@ Wire Wire Line
 	8100 8300 8300 8300
 Wire Wire Line
 	8300 8200 8100 8200
-Wire Wire Line
-	9500 9200 9700 9200
-Wire Wire Line
-	9700 9100 9500 9100
-Wire Wire Line
-	9500 9000 9700 9000
-Wire Wire Line
-	9700 8900 9500 8900
-Wire Wire Line
-	9500 8800 9700 8800
-Wire Wire Line
-	9700 8600 9500 8600
-Wire Wire Line
-	9500 8500 9700 8500
-Wire Wire Line
-	9700 8400 9500 8400
-Wire Wire Line
-	9500 8300 9700 8300
-Wire Wire Line
-	9700 8200 9500 8200
-Wire Wire Line
-	8300 8000 8100 8000
-Wire Wire Line
-	8100 7900 8300 7900
-Wire Wire Line
-	8300 7800 8100 7800
-Wire Wire Line
-	8100 7700 8300 7700
-Wire Wire Line
-	8300 7600 8100 7600
-Wire Wire Line
-	9500 7600 9700 7600
-Wire Wire Line
-	9700 7700 9500 7700
-Wire Wire Line
-	9500 7800 9700 7800
-Wire Wire Line
-	9700 7900 9500 7900
-Wire Wire Line
-	9500 8000 9700 8000
 NoConn ~ 5500 9700
 NoConn ~ 6700 9700
 NoConn ~ 5500 8600
@@ -894,8 +834,6 @@ Wire Wire Line
 Wire Wire Line
 	9500 9700 9700 9700
 Wire Wire Line
-	10900 8000 11100 8000
-Wire Wire Line
 	12300 7900 12500 7900
 Wire Wire Line
 	12500 8000 12300 8000
@@ -930,5 +868,43 @@ Wire Wire Line
 Wire Wire Line
 	12300 10500 12500 10500
 Wire Wire Line
-	12300 7800 12500 7800
+	9700 9600 9500 9600
+Wire Wire Line
+	8300 10500 8100 10500
+Wire Wire Line
+	8300 9500 8100 9500
+Wire Wire Line
+	8100 9600 8300 9600
+Wire Wire Line
+	8300 9700 8100 9700
+NoConn ~ 8300 7600
+NoConn ~ 8300 7700
+NoConn ~ 8300 7800
+NoConn ~ 8300 7900
+NoConn ~ 8300 8000
+NoConn ~ 9500 7600
+NoConn ~ 9500 7700
+NoConn ~ 9500 7800
+NoConn ~ 9500 7900
+NoConn ~ 9500 8000
+NoConn ~ 9500 8200
+NoConn ~ 9500 8300
+NoConn ~ 9500 8400
+NoConn ~ 9500 8500
+NoConn ~ 9500 8600
+NoConn ~ 9500 8800
+NoConn ~ 9500 8900
+NoConn ~ 9500 9000
+NoConn ~ 9500 9100
+NoConn ~ 9500 9200
+NoConn ~ 9500 9400
+NoConn ~ 9500 9500
+NoConn ~ 9500 10000
+NoConn ~ 9500 10100
+NoConn ~ 9500 10200
+NoConn ~ 9500 10400
+NoConn ~ 9500 10500
+NoConn ~ 11100 8000
+NoConn ~ 11100 8200
+NoConn ~ 12300 7800
 $EndSCHEMATC
