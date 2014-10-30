@@ -17,7 +17,6 @@ LIBS:conn
 LIBS:tps54821
 LIBS:hole
 LIBS:tca6416a
-LIBS:usb-cache
 EELAYER 24 0
 EELAYER END
 $Descr A3 16535 11693
@@ -952,8 +951,6 @@ F 3 "" H 12000 1500 60  0001 C CNN
 	1    12000 1500
 	1    0    0    -1  
 $EndComp
-Text GLabel 10500 3000 0    60   Input ~ 0
-V1P8
 $Comp
 L R R52
 U 1 1 533BF49A
@@ -2175,4 +2172,6 @@ NoConn ~ 2700 8300
 NoConn ~ 2700 5900
 NoConn ~ 3900 5900
 NoConn ~ 3900 5700
+Text GLabel 10500 3000 0    60   Input ~ 0
+VRAW_SW
 $EndSCHEMATC
