@@ -17,7 +17,7 @@
   (lib (name ipc_ledc1608x60n)(type Legacy)(uri ${KIPRJMOD}/../../lib/ipc_ledc1608x60n.mod)(options "")(descr ""))
   (lib (name ipc_capc2012x140n)(type Legacy)(uri ${KIPRJMOD}/../../lib/ipc_capc2012x140n.mod)(options "")(descr ""))
   (lib (name ipc_indc2012x130n)(type Legacy)(uri ${KIPRJMOD}/../../lib/ipc_indc2012x130n.mod)(options "")(descr ""))
-  (lib (name cui_pj-102_h)(type Legacy)(uri ${KIPRJMOD}/../../lib/cui_pj-102_h.mod)(options "")(descr ""))
+  (lib (name cui_pj-102_h)(type KiCad)(uri ${KIPRJMOD}/../../lib/cui_pj-102_h.pretty)(options "")(descr ""))
   (lib (name ipc_sot)(type KiCad)(uri ${KIPRJMOD}/../../lib/ipc_sot.pretty)(options "")(descr ""))
   (lib (name ipc_resc)(type KiCad)(uri ${KIPRJMOD}/../../lib/ipc_resc.pretty)(options "")(descr ""))
   (lib (name bourns)(type Legacy)(uri ${KIPRJMOD}/../../lib/bourns.mod)(options "")(descr ""))
