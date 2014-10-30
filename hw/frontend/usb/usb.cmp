@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2014-03-01 BZR 4730)-product date = Wednesday, September 24, 2014 'AMt' 08:42:59 AM
+Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Thu 30 Oct 2014 12:10:51 PM MDT
 
 BeginCmp
 TimeStamp = /52EAE8AF/52F99238;
@@ -752,7 +752,7 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/52F57D59;
 Reference = C108;
-ValeurCmp = 10U;
+ValeurCmp = DNI;
 IdModule  = ipc_capc3216x180n:IPC_CAPC3216X180N;
 EndCmp
 
@@ -801,7 +801,7 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/52F578EE;
 Reference = C115;
-ValeurCmp = 27N;
+ValeurCmp = 82N;
 IdModule  = ipc_capc1005x55n:IPC_CAPC1005X55N;
 EndCmp
 
@@ -815,14 +815,14 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/52F578E8;
 Reference = C117;
-ValeurCmp = 330P;
+ValeurCmp = 1N5;
 IdModule  = ipc_capc1005x55n:IPC_CAPC1005X55N;
 EndCmp
 
 BeginCmp
 TimeStamp = /52EB14E8/52F57849;
 Reference = C118;
-ValeurCmp = 470P;
+ValeurCmp = 220P;
 IdModule  = ipc_capc1005x55n:IPC_CAPC1005X55N;
 EndCmp
 
@@ -913,7 +913,7 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/541E65EA;
 Reference = C131;
-ValeurCmp = 22U;
+ValeurCmp = DNI;
 IdModule  = ipc_capc3216x180n:IPC_CAPC3216X180N;
 EndCmp
 
@@ -1219,41 +1219,6 @@ IdModule  = bourns:BOURNS_SRR1260;
 EndCmp
 
 BeginCmp
-TimeStamp = /52EB2498/52EBF700;
-Reference = P4;
-ValeurCmp = CONN_1;
-IdModule  = gsg-testpoint-50mil:GSG-TESTPOINT-50MIL;
-EndCmp
-
-BeginCmp
-TimeStamp = /52EB2498/52EBF704;
-Reference = P5;
-ValeurCmp = CONN_1;
-IdModule  = gsg-testpoint-50mil:GSG-TESTPOINT-50MIL;
-EndCmp
-
-BeginCmp
-TimeStamp = /52EB2498/52EBF709;
-Reference = P6;
-ValeurCmp = CONN_1;
-IdModule  = gsg-testpoint-50mil:GSG-TESTPOINT-50MIL;
-EndCmp
-
-BeginCmp
-TimeStamp = /52EB2498/52EBF75D;
-Reference = P7;
-ValeurCmp = CONN_1;
-IdModule  = gsg-testpoint-50mil:GSG-TESTPOINT-50MIL;
-EndCmp
-
-BeginCmp
-TimeStamp = /52EB2498/541773A0;
-Reference = P8;
-ValeurCmp = CONN_1;
-IdModule  = gsg-testpoint-50mil:GSG-TESTPOINT-50MIL;
-EndCmp
-
-BeginCmp
 TimeStamp = /52EB14E8/52F6C269;
 Reference = Q1;
 ValeurCmp = MOSFET_P;
@@ -1375,7 +1340,7 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/52F5BF6D;
 Reference = R18;
-ValeurCmp = ?;
+ValeurCmp = 30K;
 IdModule  = ipc_resc1005x40n:IPC_RESC1005X40N;
 EndCmp
 
@@ -1396,14 +1361,14 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/51677646;
 Reference = R21;
-ValeurCmp = ?;
+ValeurCmp = 180K;
 IdModule  = ipc_resc1005x40n:IPC_RESC1005X40N;
 EndCmp
 
 BeginCmp
 TimeStamp = /52EB14E8/52F5BF45;
 Reference = R22;
-ValeurCmp = ?;
+ValeurCmp = 30K;
 IdModule  = ipc_resc1005x40n:IPC_RESC1005X40N;
 EndCmp
 
@@ -1417,7 +1382,7 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/5167755B;
 Reference = R24;
-ValeurCmp = ?;
+ValeurCmp = 360K;
 IdModule  = ipc_resc1005x40n:IPC_RESC1005X40N;
 EndCmp
 
@@ -1480,7 +1445,7 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/52F57AE2;
 Reference = R33;
-ValeurCmp = 86K6;
+ValeurCmp = 52K3;
 IdModule  = ipc_resc1005x40n:IPC_RESC1005X40N;
 EndCmp
 
@@ -1494,7 +1459,7 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/52F578DE;
 Reference = R35;
-ValeurCmp = 715R;
+ValeurCmp = 1K58;
 IdModule  = ipc_resc1005x40n:IPC_RESC1005X40N;
 EndCmp
 
@@ -1508,7 +1473,7 @@ EndCmp
 BeginCmp
 TimeStamp = /52EB14E8/52F57850;
 Reference = R37;
-ValeurCmp = 16K5;
+ValeurCmp = 16K2;
 IdModule  = ipc_resc1005x40n:IPC_RESC1005X40N;
 EndCmp
 
@@ -1789,7 +1754,7 @@ BeginCmp
 TimeStamp = /52EB2498/52EBF40D;
 Reference = U12;
 ValeurCmp = ON_CAT24C256;
-IdModule  = ipc_soic:IPC_SOIC127P780X205-8N;
+IdModule  = ipc_soic:IPC_SOIC127P600X175-8N;
 EndCmp
 
 BeginCmp
