@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Thu 30 Oct 2014 12:10:51 PM MDT
+Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Thu 30 Oct 2014 12:24:14 PM MDT
 
 BeginCmp
 TimeStamp = /52EAE8AF/52F99238;
@@ -809,7 +809,7 @@ BeginCmp
 TimeStamp = /52EB14E8/52F5783F;
 Reference = C116;
 ValeurCmp = 100N;
-IdModule  = ipc_capc1005x55n:IPC_CAPC1005X55N;
+IdModule  = ipc_capc1608x90n:IPC_CAPC1608X90N;
 EndCmp
 
 BeginCmp

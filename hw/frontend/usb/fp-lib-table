@@ -24,4 +24,5 @@
   (lib (name ipc_capc3216x180n)(type Legacy)(uri ${KIPRJMOD}/../../lib/ipc_capc3216x180n.mod)(options "")(descr ""))
   (lib (name gsg-testpoint-50mil)(type Legacy)(uri ${KIPRJMOD}/../../lib/gsg-testpoint-50mil.mod)(options "")(descr ""))
   (lib (name gsg-nrg4026)(type Legacy)(uri ${KIPRJMOD}/../../lib/gsg-nrg4026.mod)(options "")(descr ""))
+  (lib (name ipc_capc1608x90n)(type Legacy)(uri ${KIPRJMOD}/../../lib/ipc_capc1608x90n.mod)(options "")(descr ""))
 )
