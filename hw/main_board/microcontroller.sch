@@ -67,9 +67,6 @@ Wire Wire Line
 	9800 2300 9500 2300
 Wire Wire Line
 	10300 2900 10300 2800
-Connection ~ 5400 5000
-Wire Wire Line
-	5400 5000 5400 2300
 Wire Wire Line
 	5100 5300 6200 5300
 Wire Wire Line
@@ -82,7 +79,7 @@ Wire Wire Line
 	6300 2600 6300 2700
 Connection ~ 6900 2300
 Wire Wire Line
-	7200 2300 6700 2300
+	6700 2300 7200 2300
 Wire Wire Line
 	11700 5700 10800 5700
 Wire Wire Line
@@ -97,7 +94,7 @@ Wire Wire Line
 	11700 5000 10800 5000
 Connection ~ 11800 8800
 Wire Wire Line
-	14000 8800 10900 8800
+	10900 8800 14000 8800
 Wire Wire Line
 	5700 2900 5700 3000
 Wire Wire Line
@@ -140,13 +137,13 @@ Wire Wire Line
 	12700 9000 12700 8300
 Connection ~ 13600 8200
 Wire Wire Line
-	13600 9000 13600 7200
+	13600 7200 13600 9000
 Wire Wire Line
 	13600 9400 13600 9600
 Wire Wire Line
 	10900 8000 14000 8000
 Wire Wire Line
-	14000 8300 10900 8300
+	10900 8300 14000 8300
 Wire Wire Line
 	12700 7200 12700 7300
 Wire Wire Line
@@ -176,13 +173,13 @@ Wire Wire Line
 Wire Wire Line
 	4900 6700 4600 6700
 Wire Wire Line
-	4100 6700 2300 6700
+	2300 6700 4100 6700
 Wire Wire Line
 	2300 6700 2300 6600
 Wire Wire Line
 	2300 6600 1900 6600
 Wire Wire Line
-	4100 6500 1900 6500
+	1900 6500 4100 6500
 Connection ~ 3700 4200
 Wire Wire Line
 	3600 4200 3800 4200
@@ -200,15 +197,15 @@ Wire Wire Line
 	2000 6900 1900 6900
 Connection ~ 13700 1200
 Wire Wire Line
-	14000 1300 14000 1200
+	14000 1200 14000 1300
 Wire Wire Line
-	14000 1200 13500 1200
+	13500 1200 14000 1200
 Wire Wire Line
 	13700 3100 13700 3200
 Wire Wire Line
 	13700 1300 13700 1200
 Wire Wire Line
-	14700 2400 13600 2400
+	13600 2400 14700 2400
 Wire Wire Line
 	13600 2000 14700 2000
 Connection ~ 12700 2200
@@ -235,7 +232,7 @@ Connection ~ 4200 5600
 Wire Wire Line
 	4200 5500 4200 5600
 Wire Wire Line
-	6200 5700 4000 5700
+	4000 5700 6200 5700
 Wire Wire Line
 	10800 5100 11700 5100
 Wire Wire Line
@@ -249,7 +246,7 @@ Wire Wire Line
 Wire Wire Line
 	6200 4600 6100 4600
 Wire Wire Line
-	3250 4650 3250 4450
+	3250 4450 3250 4650
 Wire Wire Line
 	2900 4200 2900 4800
 Wire Wire Line
@@ -270,7 +267,7 @@ Connection ~ 10800 10700
 Wire Wire Line
 	10800 6100 11900 6100
 Wire Wire Line
-	6200 5600 4000 5600
+	4000 5600 6200 5600
 Wire Wire Line
 	4500 5500 4500 5700
 Connection ~ 4500 5700
@@ -308,7 +305,7 @@ Connection ~ 13700 2100
 Wire Wire Line
 	2900 4800 6200 4800
 Wire Wire Line
-	3000 4200 2800 4200
+	2800 4200 3000 4200
 Connection ~ 2900 4200
 Wire Wire Line
 	4200 4200 4300 4200
@@ -331,7 +328,7 @@ Wire Wire Line
 Wire Wire Line
 	5000 6100 6200 6100
 Wire Wire Line
-	1550 7350 1550 7150
+	1550 7150 1550 7350
 Wire Wire Line
 	1550 8050 1550 8150
 Wire Wire Line
@@ -380,7 +377,7 @@ Wire Wire Line
 Connection ~ 13000 7200
 Connection ~ 4500 4900
 Wire Wire Line
-	6200 4900 1900 4900
+	1900 4900 6200 4900
 Connection ~ 2200 4900
 Wire Wire Line
 	5600 5800 6200 5800
@@ -413,7 +410,7 @@ Wire Wire Line
 Wire Wire Line
 	5800 9500 5100 9500
 Wire Wire Line
-	4100 9400 3800 9400
+	3800 9400 4100 9400
 Wire Wire Line
 	5800 9600 5100 9600
 Wire Wire Line
@@ -458,7 +455,7 @@ Connection ~ 5700 2300
 Wire Wire Line
 	5100 5200 6200 5200
 Wire Wire Line
-	6200 5000 5300 5000
+	6200 5000 5500 5000
 Wire Wire Line
 	10300 3500 10300 3400
 Wire Wire Line
@@ -553,7 +550,7 @@ Direct access to FPGA JTAG
 Text Notes 12400 1600 0    60   ~ 0
 Serial Wire Debug
 Text Notes 5800 1600 0    60   ~ 0
-Enforce VCCIO default voltage supply\nand front end power are exclusive.
+Enforce VCCIO default voltage supply\nturns off when front-end module is connected.\nFront-end modules must include a 10k pull-up\nfrom VALT_FE to VRAW_SW.
 $Comp
 L SW_PUSH SW1
 U 1 1 5170CDEE
@@ -814,19 +811,6 @@ F 3 "" H 5700 3000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R28
-U 1 1 516C4F73
-P 5700 2650
-F 0 "R28" V 5780 2650 50  0000 C CNN
-F 1 "10K" V 5700 2650 50  0000 C CNN
-F 2 "" H 5700 2650 60  0001 C CNN
-F 3 "" H 5700 2650 60  0001 C CNN
-F 4 "Stackpole" V 5700 2650 60  0001 C CNN "Manufacturer"
-F 5 "RMCF0402JT10K0" V 5700 2650 60  0001 C CNN "Part Number"
-	1    5700 2650
-	-1   0    0    -1  
-$EndComp
-$Comp
 L GND #PWR013
 U 1 1 516C4F27
 P 6900 3000
@@ -914,7 +898,7 @@ NoConn ~ 13600 2300
 NoConn ~ 13600 2200
 Text HLabel 11700 5500 2    60   Output ~ 0
 V3P3A_ENABLE
-Text HLabel 5300 5000 0    60   Output ~ 0
+Text HLabel 5500 5000 0    60   Output ~ 0
 FE_EN
 Text HLabel 7200 2300 2    60   Output ~ 0
 VCCIO_DEFAULT_EN
@@ -1587,4 +1571,19 @@ Text HLabel 11700 4200 2    60   Input ~ 0
 FPGA_NSTATUS
 Text HLabel 11700 4300 2    60   Input ~ 0
 FPGA_CONF_DONE
+$Comp
+L R R28
+U 1 1 54565C2C
+P 5700 2650
+F 0 "R28" V 5780 2650 50  0000 C CNN
+F 1 "24K" V 5700 2650 50  0000 C CNN
+F 2 "" H 5700 2650 60  0001 C CNN
+F 3 "" H 5700 2650 60  0001 C CNN
+F 4 "Stackpole" V 5700 2650 60  0001 C CNN "Manufacturer"
+F 5 "RMCF0402JT24K0" V 5700 2650 60  0001 C CNN "Part Number"
+	1    5700 2650
+	-1   0    0    -1  
+$EndComp
+Text GLabel 5400 2300 0    60   Input ~ 0
+VALT_FE
 $EndSCHEMATC
