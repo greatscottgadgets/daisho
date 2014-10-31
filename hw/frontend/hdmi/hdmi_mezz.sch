@@ -224,15 +224,15 @@ Text GLabel 5300 9500 0    39   Input ~ 0
 SERDES_PRTAD0
 Text GLabel 5300 10500 0    39   Input ~ 0
 SERDES_MDIO_ST
-Text GLabel 6900 9100 2    39   Input ~ 0
+Text GLabel 5300 8500 0    39   Input ~ 0
 HDMI_SCL_OUT
-Text GLabel 6900 9200 2    39   Input ~ 0
+Text GLabel 5300 8300 0    39   Input ~ 0
 HDMI_SDA_OUT
-Text GLabel 6900 9400 2    39   Input ~ 0
+Text GLabel 5300 8600 0    39   Input ~ 0
 HDMI_CEC_OUT
-Text GLabel 6900 9500 2    39   Input ~ 0
+Text GLabel 5300 8400 0    39   Input ~ 0
 HDMI_HPD_OUT
-Text GLabel 6900 8800 2    39   Input ~ 0
+Text GLabel 5300 8200 0    39   Input ~ 0
 HDMI_OUT_EN
 Text GLabel 6900 10500 2    39   Input ~ 0
 V1P2_EN
@@ -287,13 +287,13 @@ Text GLabel 6900 8100 2    40   Input ~ 0
 VRAW_SW
 Text GLabel 6900 10400 2    39   Input ~ 0
 V5P0_EN
-Text GLabel 5300 8500 0    39   Input ~ 0
+Text GLabel 6900 8500 2    39   Input ~ 0
 CEC_IN_SUPP
-Text GLabel 5300 8200 0    39   Input ~ 0
+Text GLabel 6900 8200 2    39   Input ~ 0
 SDA_IN_SUPP
-Text GLabel 5300 8400 0    39   Input ~ 0
+Text GLabel 6900 8400 2    39   Input ~ 0
 SCL_IN_SUPP
-Text GLabel 5300 8300 0    39   Input ~ 0
+Text GLabel 6900 8300 2    39   Input ~ 0
 HPD_IN_SUPP
 Text GLabel 5300 7900 0    39   Input ~ 0
 FE_CLK_P0
@@ -723,7 +723,6 @@ Wire Wire Line
 	8300 8200 8100 8200
 NoConn ~ 5500 9700
 NoConn ~ 6700 9700
-NoConn ~ 5500 8600
 NoConn ~ 5500 9100
 NoConn ~ 6700 8900
 NoConn ~ 6700 9000
@@ -739,8 +738,6 @@ Wire Wire Line
 	5500 9000 5300 9000
 Wire Wire Line
 	6900 8800 6700 8800
-Wire Wire Line
-	5500 9200 5300 9200
 Wire Wire Line
 	5500 9500 5300 9500
 Wire Wire Line
@@ -758,14 +755,6 @@ Wire Wire Line
 Wire Wire Line
 	6700 9800 6900 9800
 NoConn ~ 6700 9600
-Wire Wire Line
-	6700 9500 6900 9500
-Wire Wire Line
-	6900 9400 6700 9400
-Wire Wire Line
-	6700 9200 6900 9200
-Wire Wire Line
-	6900 9100 6700 9100
 Wire Wire Line
 	6700 10000 6900 10000
 Wire Wire Line
@@ -794,9 +783,6 @@ F 6 "CONN RECPT 180POS 0.5MM SMT" H 6100 7300 60  0001 C CNN "Description"
 	1    6100 7300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5300 9400 5500 9400
-NoConn ~ 6700 8200
 Wire Wire Line
 	10900 10000 11100 10000
 Wire Wire Line
@@ -899,9 +885,7 @@ NoConn ~ 11100 8000
 NoConn ~ 11100 8200
 NoConn ~ 12300 7800
 NoConn ~ 6700 8600
-NoConn ~ 6700 8500
-NoConn ~ 6700 8400
-Text GLabel 6900 8300 2    39   Input ~ 0
+Text GLabel 6900 8800 2    39   Input ~ 0
 FE_CLK_AUX
 Wire Wire Line
 	6900 8300 6700 8300
@@ -940,4 +924,18 @@ Wire Wire Line
 	7100 7000 7100 6900
 Wire Wire Line
 	7100 6900 7200 6900
+Wire Wire Line
+	6700 8200 6900 8200
+Wire Wire Line
+	6900 8400 6700 8400
+Wire Wire Line
+	6700 8500 6900 8500
+Wire Wire Line
+	5300 8600 5500 8600
+NoConn ~ 5500 9200
+NoConn ~ 5500 9400
+NoConn ~ 6700 9500
+NoConn ~ 6700 9400
+NoConn ~ 6700 9200
+NoConn ~ 6700 9100
 $EndSCHEMATC
