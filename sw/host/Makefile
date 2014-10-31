@@ -22,12 +22,13 @@ AR      ?= ar
 INSTALL ?= /usr/bin/install
 LDCONFIG ?= /sbin/ldconfig
 
-OPTFLAGS   = -O3 -Wall
-CFLAGS    += $(OPTFLAGS)
-
 LIB_DIR ?= /usr/local/lib
 INCLUDE_DIR ?= /usr/local/include
 INSTALL_DIR ?= /usr/local/bin
+
+OPTFLAGS   = -O3 -Wall
+CFLAGS    += $(OPTFLAGS)
+CFLAGS    += -I$(INCLUDE_DIR)
 
 OS = $(shell uname)
 ifeq ($(OS), FreeBSD)
@@ -37,16 +38,21 @@ else
 	LIBUSB = usb-1.0
 endif
 
+LDFLAGS += -L$(LIB_DIR)
 LDFLAGS += -l$(LIBUSB)
 
-TOOLS = daisho-rs232
+TOOLS = daisho-rs232 daisho-eth
 
 
 LIB_NAME   = libdaisho.so
 SONAME     = $(LIB_NAME).0
 LIB_FILE   = $(SONAME).1
 
-LIB_CFLAGS = $(CFLAGS) -shared -Wl,-soname,$(SONAME)
+LIB_CFLAGS = $(CFLAGS) -shared
+ifeq ($(OS), Darwin)
+else
+	LIB_CFLAGS += -Wl,-soname,$(SONAME)
+endif
 
 LIB_SOURCE_FILES = daisho.c
 LIB_OBJECT_FILES = $(LIB_SOURCE_FILES:%.c=%.o)
@@ -68,7 +74,7 @@ daisho_extcap: daisho_extcap.c
 	$(CC) $(CFLAGS) -o $@ $@.c
 
 $(TOOLS): $(LIB_FILE) $(TOOLS_SOURCE)
-		$(CC) $(CFLAGS) -o $@ $@.c $(LIB_FILE) $(LDFLAGS)
+	$(CC) $(CFLAGS) -o $@ $@.c $(LIB_FILE) $(LDFLAGS)
 
 $(STATIC_LIB_FILE): $(LIB_FILE)
 	$(AR) rcs $(STATIC_LIB_FILE) $(LIB_OBJECT_FILES)
