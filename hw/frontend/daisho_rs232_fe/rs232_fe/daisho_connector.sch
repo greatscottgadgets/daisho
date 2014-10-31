@@ -580,10 +580,6 @@ Text Label 10200 3700 0    60   ~ 0
 FE_C15
 Text Label 10200 3800 0    60   ~ 0
 FE_C17
-Text Label 10200 4100 0    60   ~ 0
-FE_C21
-Text Label 10200 4200 0    60   ~ 0
-FE_C23
 Text Label 10200 4300 0    60   ~ 0
 FE_C25
 Text Label 10200 4400 0    60   ~ 0
@@ -602,10 +598,6 @@ Wire Wire Line
 	9950 3700 10550 3700
 Wire Wire Line
 	9950 3800 10550 3800
-Wire Wire Line
-	9950 4100 10600 4100
-Wire Wire Line
-	9950 4200 10600 4200
 Wire Wire Line
 	9950 4300 10600 4300
 Wire Wire Line
@@ -653,7 +645,6 @@ NoConn ~ 9950 3000
 NoConn ~ 9950 3100
 NoConn ~ 9950 3200
 NoConn ~ 9950 3300
-NoConn ~ 8750 2900
 NoConn ~ 8750 3000
 NoConn ~ 8750 3100
 NoConn ~ 8750 3200
@@ -691,7 +682,6 @@ NoConn ~ 3650 5600
 NoConn ~ 3650 5700
 NoConn ~ 3650 5800
 NoConn ~ 9950 5100
-NoConn ~ 9950 3900
 NoConn ~ 8750 3900
 Wire Wire Line
 	8150 3800 8750 3800
@@ -715,7 +705,7 @@ Wire Wire Line
 Connection ~ 8650 4600
 Connection ~ 8650 3400
 Connection ~ 8650 4000
-Text GLabel 10600 4100 2    39   Input ~ 0
+Text GLabel 10550 3900 2    39   Input ~ 0
 CD-D-TTL
 Text GLabel 10600 4500 2    39   Input ~ 0
 RI-D-TTL
@@ -723,7 +713,7 @@ Text GLabel 10600 4400 2    39   Input ~ 0
 RTS-D-TTL
 Text GLabel 10600 4300 2    39   Input ~ 0
 TXD-D-TTL
-Text GLabel 10600 4200 2    39   Input ~ 0
+Text GLabel 8550 2900 0    39   Input ~ 0
 DTR-D-TTL
 Text GLabel 10600 4900 2    39   Input ~ 0
 DSR-D-TTL
@@ -1333,4 +1323,10 @@ Wire Wire Line
 Wire Wire Line
 	1750 950  1750 1050
 Connection ~ 1750 950 
+Wire Wire Line
+	8750 2900 8550 2900
+Wire Wire Line
+	10550 3900 9950 3900
+NoConn ~ 9950 4100
+NoConn ~ 9950 4200
 $EndSCHEMATC
