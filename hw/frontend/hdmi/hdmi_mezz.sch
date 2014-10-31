@@ -439,8 +439,6 @@ F 3 "" H 17500 6850 60  0000 C CNN
 	1    17500 6850
 	1    0    0    -1  
 $EndComp
-NoConn ~ 6700 7600
-NoConn ~ 6700 7700
 NoConn ~ 6700 7900
 NoConn ~ 6700 8000
 Wire Wire Line
@@ -911,4 +909,35 @@ Wire Wire Line
 	5300 8400 5500 8400
 Wire Wire Line
 	5500 8500 5300 8500
+$Comp
+L R R805
+U 1 1 5457B082
+P 7100 7250
+F 0 "R805" V 7180 7250 50  0000 C CNN
+F 1 "10k" V 7100 7250 50  0000 C CNN
+F 2 "daisho:GSG-0402" H 7100 7250 60  0001 C CNN
+F 3 "" H 7100 7250 60  0001 C CNN
+F 4 "Yageo" H 7100 7250 60  0001 C CNN "Manufacturer"
+F 5 "RC0402JR-0710KL" H 7100 7250 60  0001 C CNN "Part Number"
+F 6 "RES 10K OHM 1/16W 5% 0402 SMD" H 7100 7250 60  0001 C CNN "Description"
+	1    7100 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 7600 7100 7600
+Wire Wire Line
+	7100 7600 7100 7500
+Wire Wire Line
+	6700 7700 6800 7700
+Wire Wire Line
+	6800 7700 6800 7600
+Connection ~ 6800 7600
+Text Label 6850 7600 0    40   ~ 0
+VALT_FE
+Text GLabel 7200 6900 2    40   Input ~ 0
+VRAW_SW
+Wire Wire Line
+	7100 7000 7100 6900
+Wire Wire Line
+	7100 6900 7200 6900
 $EndSCHEMATC
