@@ -14,4 +14,5 @@
   (lib (name gsg-sot457)(type Legacy)(uri ${KIPRJMOD}/../lib/gsg-sot457.mod)(options "")(descr ""))
   (lib (name gsg-tssop28)(type Legacy)(uri ${KIPRJMOD}/../lib/gsg-tssop28.mod)(options "")(descr ""))
   (lib (name samtec_qsh-090-01-f-d-a)(type Legacy)(uri ${KIPRJMOD}/../../../lib/samtec_qsh-090-01-f-d-a.mod)(options "")(descr ""))
+  (lib (name sds107)(type KiCad)(uri ${KIPRJMOD}/../../../lib/sds107.pretty)(options "")(descr ""))
 )

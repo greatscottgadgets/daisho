@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Fri 31 Oct 2014 02:26:15 AM MDT
+Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Fri 31 Oct 2014 08:49:26 PM MDT
 
 BeginCmp
 TimeStamp = /51D6FD50/51DDB0F5;
@@ -452,28 +452,28 @@ BeginCmp
 TimeStamp = /51D6FD50/51DDA9B7;
 Reference = J2;
 ValeurCmp = DB9;
-IdModule  = DB9MC;
+IdModule  = sds107:SDS107-PRW1-M09-SN63-11;
 EndCmp
 
 BeginCmp
 TimeStamp = /51D6FD50/51DDA9C9;
 Reference = J3;
 ValeurCmp = DB9;
-IdModule  = DB9FC;
+IdModule  = sds107:SDS107-PRP2-F09-SN13-11;
 EndCmp
 
 BeginCmp
 TimeStamp = /51D6FF00/51E3FDC1;
 Reference = J4;
 ValeurCmp = DB9;
-IdModule  = DB9MC;
+IdModule  = sds107:SDS107-PRW1-M09-SN63-11;
 EndCmp
 
 BeginCmp
 TimeStamp = /51D6FF00/51E3FDD3;
 Reference = J5;
 ValeurCmp = DB9;
-IdModule  = DB9FC;
+IdModule  = sds107:SDS107-PRP2-F09-SN13-11;
 EndCmp
 
 BeginCmp
