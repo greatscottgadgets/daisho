@@ -1,0 +1,10 @@
+set_global_assignment -name IP_TOOL_NAME "ALTDDIO_OUT"
+set_global_assignment -name IP_TOOL_VERSION "14.0"
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "{Cyclone IV E}"
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) "usb3_tx_clk_ddio.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "usb3_tx_clk_ddio.bsf"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "usb3_tx_clk_ddio_inst.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "usb3_tx_clk_ddio_bb.v"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "usb3_tx_clk_ddio.inc"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "usb3_tx_clk_ddio.cmp"]
+set_global_assignment -name MISC_FILE [file join $::quartus(qip_path) "usb3_tx_clk_ddio.ppf"]
