@@ -1,6 +1,5 @@
 //
-// Ethernet passthrough,
-// for DE2-115 board and GigE front-end
+// 100baseTX Ethernet passthrough
 //
 // Passes data from a source MII to a target MII.
 //

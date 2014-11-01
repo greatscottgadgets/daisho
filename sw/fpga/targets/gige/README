@@ -1,5 +1,1 @@
 This is the 1000BASE-T tapping module for the Daisho development board.
-
-This does not use the USB core to send data to the host as both frontend
-modules require the same HSMC on the Terasic DE2-115 board.
-
