@@ -1,0 +1,6 @@
+(fp_lib_table
+  (lib (name daisho)(type KiCad)(uri ${KIPRJMOD}/../../lib/daisho.pretty)(options "")(descr ""))
+  (lib (name samtec_qsh-090-01-f-d-a)(type Legacy)(uri ${KIPRJMOD}/../../lib/samtec_qsh-090-01-f-d-a.mod)(options "")(descr ""))
+  (lib (name ipc_soic)(type KiCad)(uri ${KIPRJMOD}/../../lib/ipc_soic.pretty)(options "")(descr ""))
+  (lib (name gsg-hole126mil)(type Legacy)(uri ${KIPRJMOD}/../../lib/gsg-hole126mil.mod)(options "")(descr ""))
+)

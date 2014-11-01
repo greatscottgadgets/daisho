@@ -982,4 +982,6 @@ F 5 "QTH-090-01-L-D-A" H 3300 4400 60  0001 C CNN "Part Number"
 	1    3300 4400
 	1    0    0    -1  
 $EndComp
+Entry Wire Line
+	2850 6150 2950 6250
 $EndSCHEMATC
