@@ -62,125 +62,125 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 8100 10400 0    39   Input ~ 0
-SD_CH0_RX0
-Text GLabel 10900 8300 0    39   Input ~ 0
-SD_CH0_RX1
-Text GLabel 12500 8000 2    39   Input ~ 0
-SD_CH0_RX2
-Text GLabel 12500 8200 2    39   Input ~ 0
-SD_CH0_RX3
-Text GLabel 12500 7900 2    39   Input ~ 0
-SD_CH0_RX4
-Text GLabel 12500 8400 2    39   Input ~ 0
-SD_CH0_RX5
-Text GLabel 10900 8400 0    39   Input ~ 0
-SD_CH0_RX6
 Text GLabel 10900 8500 0    39   Input ~ 0
+SD_CH0_RX0
+Text GLabel 10900 8400 0    39   Input ~ 0
+SD_CH0_RX1
+Text GLabel 12500 8400 2    39   Input ~ 0
+SD_CH0_RX2
+Text GLabel 12500 7900 2    39   Input ~ 0
+SD_CH0_RX3
+Text GLabel 12500 8200 2    39   Input ~ 0
+SD_CH0_RX4
+Text GLabel 12500 8000 2    39   Input ~ 0
+SD_CH0_RX5
+Text GLabel 10900 8300 0    39   Input ~ 0
+SD_CH0_RX6
+Text GLabel 8100 10400 0    39   Input ~ 0
 SD_CH0_RX7
 Text GLabel 12500 8300 2    39   Input ~ 0
 SD_CH0_RX8
 Text GLabel 8100 10000 0    39   Input ~ 0
 SD_CH0_RX9
-Text GLabel 8100 9600 0    39   Input ~ 0
+Text GLabel 8100 10500 0    39   Input ~ 0
 SD_CH1_RX0
-Text GLabel 8100 9500 0    39   Input ~ 0
+Text GLabel 8100 10200 0    39   Input ~ 0
 SD_CH1_RX1
 Text GLabel 8100 8800 0    39   Input ~ 0
 SD_CH1_RX9
 Text GLabel 9700 9600 2    39   Input ~ 0
 SD_CH1_RX8
-Text GLabel 8100 10500 0    39   Input ~ 0
+Text GLabel 8100 9600 0    39   Input ~ 0
 SD_CH1_RX7
-Text GLabel 8100 10200 0    39   Input ~ 0
+Text GLabel 8100 9500 0    39   Input ~ 0
 SD_CH1_RX6
-Text GLabel 8100 10100 0    39   Input ~ 0
-SD_CH1_RX5
-Text GLabel 8100 9800 0    39   Input ~ 0
-SD_CH1_RX4
-Text GLabel 8100 9700 0    39   Input ~ 0
-SD_CH1_RX3
 Text GLabel 8100 9100 0    39   Input ~ 0
+SD_CH1_RX5
+Text GLabel 8100 9700 0    39   Input ~ 0
+SD_CH1_RX4
+Text GLabel 8100 9800 0    39   Input ~ 0
+SD_CH1_RX3
+Text GLabel 8100 10100 0    39   Input ~ 0
 SD_CH1_RX2
-Text GLabel 8100 8400 0    39   Input ~ 0
-SD_CH2_RX2
-Text GLabel 8100 9000 0    39   Input ~ 0
-SD_CH2_RX3
-Text GLabel 8100 8500 0    39   Input ~ 0
-SD_CH2_RX4
 Text GLabel 8100 8900 0    39   Input ~ 0
+SD_CH2_RX2
+Text GLabel 8100 8500 0    39   Input ~ 0
+SD_CH2_RX3
+Text GLabel 8100 9000 0    39   Input ~ 0
+SD_CH2_RX4
+Text GLabel 8100 8400 0    39   Input ~ 0
 SD_CH2_RX5
-Text GLabel 8100 9400 0    39   Input ~ 0
+Text GLabel 8100 8600 0    39   Input ~ 0
 SD_CH2_RX6
-Text GLabel 9700 10300 2    39   Input ~ 0
+Text GLabel 8100 8200 0    39   Input ~ 0
 SD_CH2_RX7
 Text GLabel 8100 10300 0    39   Input ~ 0
 SD_CH2_RX8
 Text GLabel 8100 8300 0    39   Input ~ 0
 SD_CH2_RX9
-Text GLabel 8100 8600 0    39   Input ~ 0
+Text GLabel 8100 9400 0    39   Input ~ 0
 SD_CH2_RX1
-Text GLabel 8100 8200 0    39   Input ~ 0
+Text GLabel 9700 10300 2    39   Input ~ 0
 SD_CH2_RX0
-Text GLabel 10900 10100 0    39   Input ~ 0
-SD_CH0_TX0
-Text GLabel 12500 10000 2    39   Input ~ 0
-SD_CH0_TX1
-Text GLabel 12500 10200 2    39   Input ~ 0
-SD_CH0_TX2
-Text GLabel 12500 10400 2    39   Input ~ 0
-SD_CH0_TX3
-Text GLabel 12500 10300 2    39   Input ~ 0
-SD_CH0_TX4
-Text GLabel 10900 10200 0    39   Input ~ 0
-SD_CH0_TX5
-Text GLabel 10900 10400 0    39   Input ~ 0
-SD_CH0_TX6
 Text GLabel 12500 10500 2    39   Input ~ 0
+SD_CH0_TX0
+Text GLabel 10900 10400 0    39   Input ~ 0
+SD_CH0_TX1
+Text GLabel 10900 10200 0    39   Input ~ 0
+SD_CH0_TX2
+Text GLabel 12500 10300 2    39   Input ~ 0
+SD_CH0_TX3
+Text GLabel 12500 10400 2    39   Input ~ 0
+SD_CH0_TX4
+Text GLabel 12500 10200 2    39   Input ~ 0
+SD_CH0_TX5
+Text GLabel 12500 10000 2    39   Input ~ 0
+SD_CH0_TX6
+Text GLabel 10900 10100 0    39   Input ~ 0
 SD_CH0_TX7
 Text GLabel 10900 10300 0    39   Input ~ 0
 SD_CH0_TX8
 Text GLabel 12500 9100 2    39   Input ~ 0
 SD_CH0_TX9
-Text GLabel 12500 9400 2    39   Input ~ 0
+Text GLabel 10900 9800 0    39   Input ~ 0
 SD_CH1_TX0
-Text GLabel 12500 9500 2    39   Input ~ 0
+Text GLabel 10900 9700 0    39   Input ~ 0
 SD_CH1_TX1
 Text GLabel 12500 8600 2    39   Input ~ 0
 SD_CH1_TX9
 Text GLabel 12500 10100 2    39   Input ~ 0
 SD_CH1_TX8
-Text GLabel 10900 9800 0    39   Input ~ 0
+Text GLabel 12500 9400 2    39   Input ~ 0
 SD_CH1_TX7
-Text GLabel 10900 9700 0    39   Input ~ 0
+Text GLabel 12500 9500 2    39   Input ~ 0
 SD_CH1_TX6
-Text GLabel 12500 9700 2    39   Input ~ 0
-SD_CH1_TX5
-Text GLabel 10900 9000 0    39   Input ~ 0
-SD_CH1_TX4
-Text GLabel 12500 9600 2    39   Input ~ 0
-SD_CH1_TX3
 Text GLabel 10900 9500 0    39   Input ~ 0
+SD_CH1_TX5
+Text GLabel 12500 9600 2    39   Input ~ 0
+SD_CH1_TX4
+Text GLabel 10900 9000 0    39   Input ~ 0
+SD_CH1_TX3
+Text GLabel 12500 9700 2    39   Input ~ 0
 SD_CH1_TX2
-Text GLabel 12500 9000 2    39   Input ~ 0
-SD_CH2_TX2
-Text GLabel 10900 9200 0    39   Input ~ 0
-SD_CH2_TX3
-Text GLabel 10900 8600 0    39   Input ~ 0
-SD_CH2_TX4
 Text GLabel 10900 9100 0    39   Input ~ 0
+SD_CH2_TX2
+Text GLabel 10900 8600 0    39   Input ~ 0
+SD_CH2_TX3
+Text GLabel 10900 9200 0    39   Input ~ 0
+SD_CH2_TX4
+Text GLabel 12500 9000 2    39   Input ~ 0
 SD_CH2_TX5
-Text GLabel 12500 9200 2    39   Input ~ 0
+Text GLabel 10900 8800 0    39   Input ~ 0
 SD_CH2_TX6
-Text GLabel 10900 9400 0    39   Input ~ 0
+Text GLabel 10900 8900 0    39   Input ~ 0
 SD_CH2_TX7
 Text GLabel 12500 9800 2    39   Input ~ 0
 SD_CH2_TX8
 Text GLabel 12500 8500 2    39   Input ~ 0
 SD_CH2_TX9
-Text GLabel 10900 8800 0    39   Input ~ 0
+Text GLabel 12500 9200 2    39   Input ~ 0
 SD_CH2_TX1
-Text GLabel 10900 8900 0    39   Input ~ 0
+Text GLabel 10900 9400 0    39   Input ~ 0
 SD_CH2_TX0
 Text GLabel 5300 10000 0    39   Input ~ 0
 SERDES_MDC

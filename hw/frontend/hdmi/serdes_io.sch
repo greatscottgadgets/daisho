@@ -193,65 +193,65 @@ NoConn ~ 2800 2300
 NoConn ~ 2700 2300
 NoConn ~ 2600 2300
 NoConn ~ 2500 2300
-Text GLabel 4900 2200 1    39   Input ~ 0
-SD_CH0_RX0
-Text GLabel 5000 2200 1    39   Input ~ 0
-SD_CH0_RX1
-Text GLabel 5100 2200 1    39   Input ~ 0
-SD_CH0_RX2
-Text GLabel 5200 2200 1    39   Input ~ 0
-SD_CH0_RX3
-Text GLabel 5300 2200 1    39   Input ~ 0
-SD_CH0_RX4
-Text GLabel 5400 2200 1    39   Input ~ 0
-SD_CH0_RX5
-Text GLabel 5500 2200 1    39   Input ~ 0
-SD_CH0_RX6
 Text GLabel 5600 2200 1    39   Input ~ 0
+SD_CH0_RX0
+Text GLabel 5500 2200 1    39   Input ~ 0
+SD_CH0_RX1
+Text GLabel 5400 2200 1    39   Input ~ 0
+SD_CH0_RX2
+Text GLabel 5300 2200 1    39   Input ~ 0
+SD_CH0_RX3
+Text GLabel 5200 2200 1    39   Input ~ 0
+SD_CH0_RX4
+Text GLabel 5100 2200 1    39   Input ~ 0
+SD_CH0_RX5
+Text GLabel 5000 2200 1    39   Input ~ 0
+SD_CH0_RX6
+Text GLabel 4900 2200 1    39   Input ~ 0
 SD_CH0_RX7
 Text GLabel 6500 2200 1    39   Input ~ 0
 SD_CH0_RX8
 Text GLabel 6100 2200 1    39   Input ~ 0
 SD_CH0_RX9
-Text GLabel 4100 2200 1    39   Input ~ 0
+Text GLabel 4800 2200 1    39   Input ~ 0
 SD_CH1_RX0
-Text GLabel 4200 2200 1    39   Input ~ 0
+Text GLabel 4700 2200 1    39   Input ~ 0
 SD_CH1_RX1
 Text GLabel 6000 2200 1    39   Input ~ 0
 SD_CH1_RX9
 Text GLabel 6400 2200 1    39   Input ~ 0
 SD_CH1_RX8
-Text GLabel 4800 2200 1    39   Input ~ 0
+Text GLabel 4100 2200 1    39   Input ~ 0
 SD_CH1_RX7
-Text GLabel 4700 2200 1    39   Input ~ 0
+Text GLabel 4200 2200 1    39   Input ~ 0
 SD_CH1_RX6
-Text GLabel 4600 2200 1    39   Input ~ 0
-SD_CH1_RX5
-Text GLabel 4500 2200 1    39   Input ~ 0
-SD_CH1_RX4
-Text GLabel 4400 2200 1    39   Input ~ 0
-SD_CH1_RX3
 Text GLabel 4300 2200 1    39   Input ~ 0
+SD_CH1_RX5
+Text GLabel 4400 2200 1    39   Input ~ 0
+SD_CH1_RX4
+Text GLabel 4500 2200 1    39   Input ~ 0
+SD_CH1_RX3
+Text GLabel 4600 2200 1    39   Input ~ 0
 SD_CH1_RX2
-Text GLabel 3500 2200 1    39   Input ~ 0
-SD_CH2_RX2
-Text GLabel 3600 2200 1    39   Input ~ 0
-SD_CH2_RX3
-Text GLabel 3700 2200 1    39   Input ~ 0
-SD_CH2_RX4
 Text GLabel 3800 2200 1    39   Input ~ 0
+SD_CH2_RX2
+Text GLabel 3700 2200 1    39   Input ~ 0
+SD_CH2_RX3
+Text GLabel 3600 2200 1    39   Input ~ 0
+SD_CH2_RX4
+Text GLabel 3500 2200 1    39   Input ~ 0
 SD_CH2_RX5
-Text GLabel 3900 2200 1    39   Input ~ 0
+Text GLabel 3400 2200 1    39   Input ~ 0
 SD_CH2_RX6
-Text GLabel 4000 2200 1    39   Input ~ 0
+Text GLabel 3300 2200 1    39   Input ~ 0
 SD_CH2_RX7
 Text GLabel 6300 2200 1    39   Input ~ 0
 SD_CH2_RX8
 Text GLabel 5900 2200 1    39   Input ~ 0
 SD_CH2_RX9
-Text GLabel 3400 2200 1    39   Input ~ 0
+Text GLabel 3900 2200 1    39   Input ~ 0
 SD_CH2_RX1
-Text GLabel 3300 2200 1    39   Input ~ 0
+Text GLabel 4000 2200 1    39   Input ~ 0
 SD_CH2_RX0
 Wire Wire Line
 	6500 2200 6500 2300
@@ -265,65 +265,65 @@ Wire Wire Line
 	6000 2200 6000 2300
 Wire Wire Line
 	5900 2200 5900 2300
-Text GLabel 4900 4300 3    39   Input ~ 0
+Text GLabel 5600 4400 3    39   Input ~ 0
 SD_CH0_TX0
-Text GLabel 5000 4300 3    39   Input ~ 0
+Text GLabel 5500 4400 3    39   Input ~ 0
 SD_CH0_TX1
-Text GLabel 5100 4300 3    39   Input ~ 0
+Text GLabel 5400 4400 3    39   Input ~ 0
 SD_CH0_TX2
-Text GLabel 5200 4300 3    39   Input ~ 0
+Text GLabel 5300 4400 3    39   Input ~ 0
 SD_CH0_TX3
-Text GLabel 5300 4300 3    39   Input ~ 0
+Text GLabel 5200 4400 3    39   Input ~ 0
 SD_CH0_TX4
-Text GLabel 5400 4300 3    39   Input ~ 0
+Text GLabel 5100 4400 3    39   Input ~ 0
 SD_CH0_TX5
-Text GLabel 5500 4300 3    39   Input ~ 0
+Text GLabel 5000 4400 3    39   Input ~ 0
 SD_CH0_TX6
-Text GLabel 5600 4300 3    39   Input ~ 0
+Text GLabel 4900 4400 3    39   Input ~ 0
 SD_CH0_TX7
-Text GLabel 6500 4300 3    39   Input ~ 0
+Text GLabel 6500 4400 3    39   Input ~ 0
 SD_CH0_TX8
-Text GLabel 6100 4300 3    39   Input ~ 0
+Text GLabel 6100 4400 3    39   Input ~ 0
 SD_CH0_TX9
-Text GLabel 4100 4300 3    39   Input ~ 0
+Text GLabel 4800 4400 3    39   Input ~ 0
 SD_CH1_TX0
-Text GLabel 4200 4300 3    39   Input ~ 0
+Text GLabel 4700 4400 3    39   Input ~ 0
 SD_CH1_TX1
-Text GLabel 6000 4300 3    39   Input ~ 0
+Text GLabel 6000 4400 3    39   Input ~ 0
 SD_CH1_TX9
-Text GLabel 6400 4300 3    39   Input ~ 0
+Text GLabel 6400 4400 3    39   Input ~ 0
 SD_CH1_TX8
-Text GLabel 4800 4300 3    39   Input ~ 0
+Text GLabel 4100 4400 3    39   Input ~ 0
 SD_CH1_TX7
-Text GLabel 4700 4300 3    39   Input ~ 0
+Text GLabel 4200 4400 3    39   Input ~ 0
 SD_CH1_TX6
-Text GLabel 4600 4300 3    39   Input ~ 0
+Text GLabel 4300 4400 3    39   Input ~ 0
 SD_CH1_TX5
-Text GLabel 4500 4300 3    39   Input ~ 0
+Text GLabel 4400 4400 3    39   Input ~ 0
 SD_CH1_TX4
-Text GLabel 4400 4300 3    39   Input ~ 0
+Text GLabel 4500 4400 3    39   Input ~ 0
 SD_CH1_TX3
-Text GLabel 4300 4300 3    39   Input ~ 0
+Text GLabel 4600 4400 3    39   Input ~ 0
 SD_CH1_TX2
-Text GLabel 3500 4300 3    39   Input ~ 0
+Text GLabel 3800 4400 3    39   Input ~ 0
 SD_CH2_TX2
-Text GLabel 3600 4300 3    39   Input ~ 0
+Text GLabel 3700 4400 3    39   Input ~ 0
 SD_CH2_TX3
-Text GLabel 3700 4300 3    39   Input ~ 0
+Text GLabel 3600 4400 3    39   Input ~ 0
 SD_CH2_TX4
-Text GLabel 3800 4300 3    39   Input ~ 0
+Text GLabel 3500 4400 3    39   Input ~ 0
 SD_CH2_TX5
-Text GLabel 3900 4300 3    39   Input ~ 0
+Text GLabel 3400 4400 3    39   Input ~ 0
 SD_CH2_TX6
-Text GLabel 4000 4300 3    39   Input ~ 0
+Text GLabel 3300 4400 3    39   Input ~ 0
 SD_CH2_TX7
-Text GLabel 6300 4300 3    39   Input ~ 0
+Text GLabel 6300 4400 3    39   Input ~ 0
 SD_CH2_TX8
-Text GLabel 5900 4300 3    39   Input ~ 0
+Text GLabel 5900 4400 3    39   Input ~ 0
 SD_CH2_TX9
-Text GLabel 3400 4300 3    39   Input ~ 0
+Text GLabel 3900 4400 3    39   Input ~ 0
 SD_CH2_TX1
-Text GLabel 3300 4300 3    39   Input ~ 0
+Text GLabel 4000 4400 3    39   Input ~ 0
 SD_CH2_TX0
 NoConn ~ 2050 2300
 NoConn ~ 2050 4300
@@ -339,11 +339,11 @@ Wire Wire Line
 	2250 2200 2250 2300
 Wire Wire Line
 	2150 2200 2150 2300
-Text GLabel 2350 4300 3    39   Input ~ 0
+Text GLabel 2350 4400 3    39   Input ~ 0
 SD_CH0_TXCLK
-Text GLabel 2250 4300 3    39   Input ~ 0
+Text GLabel 2250 4400 3    39   Input ~ 0
 SD_CH1_TXCLK
-Text GLabel 2150 4300 3    39   Input ~ 0
+Text GLabel 2150 4400 3    39   Input ~ 0
 SD_CH2_TXCLK
 NoConn ~ 6650 4300
 NoConn ~ 6750 4300
@@ -452,4 +452,70 @@ Wire Wire Line
 	6850 4800 6850 5650
 Text Notes 3400 900  0    40   ~ 0
 Pins are assigned for use in TBID Mode (Ten Bit Interface DDR).\nPins are configured for 1.5 V HSTL.
+Wire Wire Line
+	5900 4300 5900 4400
+Wire Wire Line
+	6000 4400 6000 4300
+Wire Wire Line
+	6100 4300 6100 4400
+Wire Wire Line
+	6300 4400 6300 4300
+Wire Wire Line
+	6400 4300 6400 4400
+Wire Wire Line
+	6500 4400 6500 4300
+Wire Wire Line
+	2150 4300 2150 4400
+Wire Wire Line
+	2250 4400 2250 4300
+Wire Wire Line
+	2350 4300 2350 4400
+Wire Wire Line
+	5600 4300 5600 4400
+Wire Wire Line
+	5500 4400 5500 4300
+Wire Wire Line
+	5400 4300 5400 4400
+Wire Wire Line
+	5300 4400 5300 4300
+Wire Wire Line
+	5200 4300 5200 4400
+Wire Wire Line
+	5100 4400 5100 4300
+Wire Wire Line
+	5000 4300 5000 4400
+Wire Wire Line
+	4900 4400 4900 4300
+Wire Wire Line
+	4800 4300 4800 4400
+Wire Wire Line
+	4700 4400 4700 4300
+Wire Wire Line
+	4600 4300 4600 4400
+Wire Wire Line
+	4500 4400 4500 4300
+Wire Wire Line
+	4400 4300 4400 4400
+Wire Wire Line
+	4300 4400 4300 4300
+Wire Wire Line
+	4200 4300 4200 4400
+Wire Wire Line
+	4100 4400 4100 4300
+Wire Wire Line
+	4000 4300 4000 4400
+Wire Wire Line
+	3900 4400 3900 4300
+Wire Wire Line
+	3800 4300 3800 4400
+Wire Wire Line
+	3700 4400 3700 4300
+Wire Wire Line
+	3600 4300 3600 4400
+Wire Wire Line
+	3500 4400 3500 4300
+Wire Wire Line
+	3400 4300 3400 4400
+Wire Wire Line
+	3300 4400 3300 4300
 $EndSCHEMATC
