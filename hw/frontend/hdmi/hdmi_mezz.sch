@@ -199,7 +199,7 @@ SD_CH0_TXCLK
 Text GLabel 10900 10000 0    39   Input ~ 0
 SD_CH1_TXCLK
 Text GLabel 10900 9600 0    39   Input ~ 0
-SD_CH3_TXCLK
+SD_CH2_TXCLK
 Text GLabel 12500 8800 2    39   Input ~ 0
 SD_CH0_RXCLK
 Text GLabel 9700 9800 2    39   Input ~ 0

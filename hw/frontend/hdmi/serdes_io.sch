@@ -344,7 +344,7 @@ SD_CH0_TXCLK
 Text GLabel 2250 4300 3    39   Input ~ 0
 SD_CH1_TXCLK
 Text GLabel 2150 4300 3    39   Input ~ 0
-SD_CH3_TXCLK
+SD_CH2_TXCLK
 NoConn ~ 6650 4300
 NoConn ~ 6750 4300
 NoConn ~ 6650 2300
