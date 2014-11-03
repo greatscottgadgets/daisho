@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Mon 03 Nov 2014 12:12:51 AM MST
+Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Mon 03 Nov 2014 12:05:52 PM MST
+
+BeginCmp
+TimeStamp = /5112FB69/54583AE1;
+Reference = C201;
+ValeurCmp = DNP;
+IdModule  = daisho:GSG-0805;
+EndCmp
 
 BeginCmp
 TimeStamp = /5112FB69/51350092;
@@ -145,6 +152,13 @@ TimeStamp = /5112FB6B/517732D6;
 Reference = C311;
 ValeurCmp = 0.1uF 10V;
 IdModule  = daisho:GSG-0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5112FB6B/545846D0;
+Reference = C312;
+ValeurCmp = DNP;
+IdModule  = daisho:GSG-0805;
 EndCmp
 
 BeginCmp
@@ -823,6 +837,20 @@ BeginCmp
 TimeStamp = /519A2E90/54425BB5;
 Reference = C926;
 ValeurCmp = 10uF;
+IdModule  = daisho:GSG-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5112FB69/5458399B;
+Reference = FB201;
+ValeurCmp = FILTER;
+IdModule  = daisho:GSG-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5112FB6B/545846C9;
+Reference = FB301;
+ValeurCmp = FILTER;
 IdModule  = daisho:GSG-0805;
 EndCmp
 
