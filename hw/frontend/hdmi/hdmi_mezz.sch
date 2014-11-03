@@ -182,17 +182,17 @@ Text GLabel 12500 9200 2    39   Input ~ 0
 SD_CH2_TX1
 Text GLabel 10900 9400 0    39   Input ~ 0
 SD_CH2_TX0
-Text GLabel 5300 10000 0    39   Input ~ 0
+Text GLabel 5300 9100 0    39   Input ~ 0
 SERDES_MDC
-Text GLabel 5300 10100 0    39   Input ~ 0
+Text GLabel 5300 9200 0    39   Input ~ 0
 SERDES_MDO
 Text GLabel 5300 9800 0    39   Input ~ 0
 SERDES_RST_N
-Text GLabel 6900 9800 2    39   Input ~ 0
+Text GLabel 5300 9500 0    39   Input ~ 0
 SERDES_ENABLE
-Text GLabel 6900 10000 2    39   Input ~ 0
+Text GLabel 6900 10500 2    39   Input ~ 0
 SERDES_PLOOP
-Text GLabel 6900 10100 2    39   Input ~ 0
+Text GLabel 6900 10400 2    39   Input ~ 0
 SERDES_SLOOP
 Text GLabel 10900 10500 0    39   Input ~ 0
 SD_CH0_TXCLK
@@ -212,17 +212,17 @@ Text GLabel 5300 8900 0    39   Input ~ 0
 SI5338_SCL
 Text GLabel 5300 8800 0    39   Input ~ 0
 SI5338_INTR
-Text GLabel 5300 9600 0    39   Input ~ 0
+Text GLabel 5300 9400 0    39   Input ~ 0
 SERDES_PRTAD4
-Text GLabel 5300 10200 0    39   Input ~ 0
+Text GLabel 5300 10000 0    39   Input ~ 0
 SERDES_PRTAD3
-Text GLabel 6900 10200 2    39   Input ~ 0
+Text GLabel 5300 10100 0    39   Input ~ 0
 SERDES_PRTAD2
-Text GLabel 6900 10300 2    39   Input ~ 0
+Text GLabel 5300 9700 0    39   Input ~ 0
 SERDES_PRTAD1
-Text GLabel 5300 9500 0    39   Input ~ 0
+Text GLabel 5300 9600 0    39   Input ~ 0
 SERDES_PRTAD0
-Text GLabel 5300 10500 0    39   Input ~ 0
+Text GLabel 5300 10200 0    39   Input ~ 0
 SERDES_MDIO_ST
 Text GLabel 5300 8500 0    39   Input ~ 0
 HDMI_SCL_OUT
@@ -234,7 +234,7 @@ Text GLabel 5300 8400 0    39   Input ~ 0
 HDMI_HPD_OUT
 Text GLabel 5300 8200 0    39   Input ~ 0
 HDMI_OUT_EN
-Text GLabel 6900 10500 2    39   Input ~ 0
+Text GLabel 6900 10200 2    39   Input ~ 0
 V1P2_EN
 $Comp
 L SAMTEC_QSH-090-D J801
@@ -285,7 +285,7 @@ F 3 "" H 11550 11100 60  0000 C CNN
 $EndComp
 Text GLabel 6900 8100 2    40   Input ~ 0
 VRAW_SW
-Text GLabel 6900 10400 2    39   Input ~ 0
+Text GLabel 6900 10100 2    39   Input ~ 0
 V5P0_EN
 Text GLabel 6900 8500 2    39   Input ~ 0
 CEC_IN_SUPP
@@ -721,9 +721,7 @@ Wire Wire Line
 	8100 8300 8300 8300
 Wire Wire Line
 	8300 8200 8100 8200
-NoConn ~ 5500 9700
 NoConn ~ 6700 9700
-NoConn ~ 5500 9100
 NoConn ~ 6700 8900
 NoConn ~ 6700 9000
 Wire Wire Line
@@ -750,19 +748,9 @@ Wire Wire Line
 	5300 10100 5500 10100
 Wire Wire Line
 	5500 10200 5300 10200
-Wire Wire Line
-	5300 10500 5500 10500
-Wire Wire Line
-	6700 9800 6900 9800
 NoConn ~ 6700 9600
 Wire Wire Line
-	6700 10000 6900 10000
-Wire Wire Line
-	6900 10100 6700 10100
-Wire Wire Line
 	6700 10200 6900 10200
-Wire Wire Line
-	6900 10300 6700 10300
 Wire Wire Line
 	6700 10400 6900 10400
 Wire Wire Line
@@ -932,10 +920,22 @@ Wire Wire Line
 	6700 8500 6900 8500
 Wire Wire Line
 	5300 8600 5500 8600
-NoConn ~ 5500 9200
-NoConn ~ 5500 9400
 NoConn ~ 6700 9500
 NoConn ~ 6700 9400
 NoConn ~ 6700 9200
 NoConn ~ 6700 9100
+Wire Wire Line
+	5500 9100 5300 9100
+Wire Wire Line
+	5300 9200 5500 9200
+Wire Wire Line
+	5500 9400 5300 9400
+Wire Wire Line
+	5500 9700 5300 9700
+NoConn ~ 6700 9800
+NoConn ~ 6700 10000
+NoConn ~ 5500 10500
+Wire Wire Line
+	6700 10100 6900 10100
+NoConn ~ 6700 10300
 $EndSCHEMATC
