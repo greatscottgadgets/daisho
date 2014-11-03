@@ -16,3 +16,4 @@ _autosave*
 *.kicad_pcb-bak
 *.xml
 *gerber*
+*.brd-bak
