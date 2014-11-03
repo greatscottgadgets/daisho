@@ -92,11 +92,11 @@ Vias
 Via-in-pad used in many places
 
 Vias in pads need to be filled for assembly
-    Most (all?) vias in pads are in capacitor footprints near the BGA
+    All vias in pads are in capacitor footprints near the BGA
 
 Drills
 ======
 
 Drills are specified in two files:
-    *_drill.xln contains plated drills.
-    *_drill_npth.xln contains non-plated drills.
+    hdmi.drl contains plated drills.
+    hdmi-NPTH.drl contains non-plated drills.
