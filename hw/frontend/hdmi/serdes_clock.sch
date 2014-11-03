@@ -612,4 +612,8 @@ Text GLabel 1200 3000 0    39   Input ~ 0
 FE_CLK_AUX
 Wire Wire Line
 	1200 3000 2200 3000
+Text Notes 600  1800 0    40   ~ 0
+CLK_IN_x_SUPP is the clock reference\nfrom the HDMI input.  This is the reference\nthat should be used for in-line operation.\nOptionally (especially if doing something\nother than in-line operation), you can use\nFE_CLK_x0.  A third option is FE_CLK_AUX.
+Text Notes 750  4700 0    40   ~ 0
+Single-ended input FE_CLK_AUX\nshould use source termination.\nIt is internally AC coupled.\nYou probably want to use FE_CLK_x0\ninstead, though.
 $EndSCHEMATC
