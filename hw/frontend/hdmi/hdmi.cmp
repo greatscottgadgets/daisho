@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Thu 30 Oct 2014 08:17:50 AM MDT
+Cmp-Mod V01 Created by Cvpcb (2014-10-14 BZR 5188)-product   date = Wed 05 Nov 2014 10:56:10 PM MST
+
+BeginCmp
+TimeStamp = /5112FB69/54583AE1;
+Reference = C201;
+ValeurCmp = DNP;
+IdModule  = daisho:GSG-0805;
+EndCmp
 
 BeginCmp
 TimeStamp = /5112FB69/51350092;
@@ -15,23 +22,9 @@ IdModule  = daisho:GSG-0402;
 EndCmp
 
 BeginCmp
-TimeStamp = /5112FB69/5134E73A;
-Reference = C204;
-ValeurCmp = 0.01uF;
-IdModule  = daisho:GSG-0402;
-EndCmp
-
-BeginCmp
 TimeStamp = /5112FB69/513500DE;
 Reference = C205;
 ValeurCmp = 0.1uF;
-IdModule  = daisho:GSG-0402;
-EndCmp
-
-BeginCmp
-TimeStamp = /5112FB69/5134E740;
-Reference = C206;
-ValeurCmp = 0.01uF;
 IdModule  = daisho:GSG-0402;
 EndCmp
 
@@ -43,13 +36,6 @@ IdModule  = daisho:GSG-0402;
 EndCmp
 
 BeginCmp
-TimeStamp = /5112FB69/5134E746;
-Reference = C208;
-ValeurCmp = 0.01uF;
-IdModule  = daisho:GSG-0402;
-EndCmp
-
-BeginCmp
 TimeStamp = /5112FB69/513500EA;
 Reference = C209;
 ValeurCmp = 0.1uF;
@@ -57,37 +43,9 @@ IdModule  = daisho:GSG-0402;
 EndCmp
 
 BeginCmp
-TimeStamp = /5112FB69/5134E74C;
-Reference = C210;
-ValeurCmp = 0.01uF;
-IdModule  = daisho:GSG-0402;
-EndCmp
-
-BeginCmp
 TimeStamp = /5112FB69/513500F0;
 Reference = C211;
 ValeurCmp = 0.1uF;
-IdModule  = daisho:GSG-0402;
-EndCmp
-
-BeginCmp
-TimeStamp = /5112FB69/5134E752;
-Reference = C212;
-ValeurCmp = 0.01uF;
-IdModule  = daisho:GSG-0402;
-EndCmp
-
-BeginCmp
-TimeStamp = /5112FB69/5134E758;
-Reference = C214;
-ValeurCmp = 0.01uF;
-IdModule  = daisho:GSG-0402;
-EndCmp
-
-BeginCmp
-TimeStamp = /5112FB69/5134E75E;
-Reference = C216;
-ValeurCmp = 0.01uF;
 IdModule  = daisho:GSG-0402;
 EndCmp
 
@@ -194,6 +152,13 @@ TimeStamp = /5112FB6B/517732D6;
 Reference = C311;
 ValeurCmp = 0.1uF 10V;
 IdModule  = daisho:GSG-0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /5112FB6B/545846D0;
+Reference = C312;
+ValeurCmp = DNP;
+IdModule  = daisho:GSG-0805;
 EndCmp
 
 BeginCmp
@@ -876,6 +841,76 @@ IdModule  = daisho:GSG-0805;
 EndCmp
 
 BeginCmp
+TimeStamp = /514755BB/545B2A1F;
+Reference = D801;
+ValeurCmp = LED;
+IdModule  = daisho:GSG-0603D;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B18E9;
+Reference = D802;
+ValeurCmp = LED;
+IdModule  = daisho:GSG-0603D;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B2E13;
+Reference = D803;
+ValeurCmp = LED;
+IdModule  = daisho:GSG-0603D;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B2DF7;
+Reference = D804;
+ValeurCmp = LED;
+IdModule  = daisho:GSG-0603D;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B3253;
+Reference = D805;
+ValeurCmp = LED;
+IdModule  = daisho:GSG-0603D;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B3237;
+Reference = D806;
+ValeurCmp = LED;
+IdModule  = daisho:GSG-0603D;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B328B;
+Reference = D807;
+ValeurCmp = LED;
+IdModule  = daisho:GSG-0603D;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B326F;
+Reference = D808;
+ValeurCmp = LED;
+IdModule  = daisho:GSG-0603D;
+EndCmp
+
+BeginCmp
+TimeStamp = /5112FB69/5458399B;
+Reference = FB201;
+ValeurCmp = FILTER;
+IdModule  = daisho:GSG-0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /5112FB6B/545846C9;
+Reference = FB301;
+ValeurCmp = FILTER;
+IdModule  = daisho:GSG-0805;
+EndCmp
+
+BeginCmp
 TimeStamp = /544F97AA;
 Reference = H1;
 ValeurCmp = HOLE;
@@ -942,14 +977,14 @@ BeginCmp
 TimeStamp = /5112FB69/5130F7EA;
 Reference = P201;
 ValeurCmp = HDMI;
-IdModule  = daisho:GSG-MOLEX-HDMI;
+IdModule  = daisho:10029449-111RLF;
 EndCmp
 
 BeginCmp
 TimeStamp = /5112FB6B/5131983F;
 Reference = P301;
 ValeurCmp = HDMI;
-IdModule  = daisho:GSG-MOLEX-HDMI;
+IdModule  = daisho:10029449-111RLF;
 EndCmp
 
 BeginCmp
@@ -978,13 +1013,6 @@ TimeStamp = /514755BB/5446E021;
 Reference = P801;
 ValeurCmp = CONN_01X02;
 IdModule  = daisho:GSG-HEADER-1x2;
-EndCmp
-
-BeginCmp
-TimeStamp = /5112FB69/5134E2AC;
-Reference = R201;
-ValeurCmp = 4k7 1%;
-IdModule  = daisho:GSG-0402;
 EndCmp
 
 BeginCmp
@@ -1026,13 +1054,6 @@ BeginCmp
 TimeStamp = /5112FB69/51771E3B;
 Reference = R207;
 ValeurCmp = 47k;
-IdModule  = daisho:GSG-0402;
-EndCmp
-
-BeginCmp
-TimeStamp = /5112FB69/5447367C;
-Reference = R208;
-ValeurCmp = 10k;
 IdModule  = daisho:GSG-0402;
 EndCmp
 
@@ -1296,6 +1317,69 @@ IdModule  = daisho:GSG-0402;
 EndCmp
 
 BeginCmp
+TimeStamp = /514755BB/5457B082;
+Reference = R805;
+ValeurCmp = 10k;
+IdModule  = daisho:GSG-0402;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B2A2E;
+Reference = R806;
+ValeurCmp = 180;
+IdModule  = daisho:GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B1A80;
+Reference = R807;
+ValeurCmp = 180;
+IdModule  = daisho:GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B2E22;
+Reference = R808;
+ValeurCmp = 180;
+IdModule  = daisho:GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B2E06;
+Reference = R809;
+ValeurCmp = 180;
+IdModule  = daisho:GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B3262;
+Reference = R810;
+ValeurCmp = 180;
+IdModule  = daisho:GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B3246;
+Reference = R811;
+ValeurCmp = 180;
+IdModule  = daisho:GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B329A;
+Reference = R812;
+ValeurCmp = 180;
+IdModule  = daisho:GSG-0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /514755BB/545B327E;
+Reference = R813;
+ValeurCmp = 180;
+IdModule  = daisho:GSG-0603;
+EndCmp
+
+BeginCmp
 TimeStamp = /519A2E90/544039CB;
 Reference = R901;
 ValeurCmp = 10k;
@@ -1436,13 +1520,6 @@ IdModule  = daisho:GSG-0402;
 EndCmp
 
 BeginCmp
-TimeStamp = /5112FB69/5133BDA5;
-Reference = U201;
-ValeurCmp = STDVE001AQTR;
-IdModule  = daisho:GSG-QFN48-6;
-EndCmp
-
-BeginCmp
 TimeStamp = /5112FB69/5176E860;
 Reference = U202;
 ValeurCmp = TPD12S520;
@@ -1460,7 +1537,7 @@ BeginCmp
 TimeStamp = /5112FB6B/51745672;
 Reference = U302;
 ValeurCmp = PTN3360DBS;
-IdModule  = daisho:GSG-QFN48-6;
+IdModule  = daisho:QFN48-7;
 EndCmp
 
 BeginCmp

@@ -1,0 +1,102 @@
+Copyright (c) 2014 Michael Ossmann, Mike Kershaw, Jared Boone
+
+These files are part of Daisho.
+
+License
+=======
+
+This is a free hardware design; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+This design is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this design; see the file COPYING.  If not, write to
+the Free Software Foundation, Inc., 51 Franklin Street,
+Boston, MA 02110-1301, USA.
+
+Hardware Notes
+==============
+
+Schematic and layout files were designed in KiCad (release 2014-10-14
+bzr 5188 -product), an open source electronic design automation package.
+
+Order and type of copper layers:
+    C1F: signal, front ("component" side, where most components are mounted)
+    C2: ground plane
+    C3: signal
+    C4: signal
+    C5: ground plane
+    C6B: signal, back (a few components mounted, mostly small passives)
+
+PCB description:
+
+    6 layer PCB, 62 mil +/- 5% thickness, using 8 layer construction
+
+    LPI mask          0.4 mil
+    Plating           1.2 mil   1.0 oz
+    Copper      1     0.7 mil   0.5 oz
+    Dielectric  1-2   4.4 mil   prepreg, 2 x 106-FR4 370
+    Copper      2     1.2 mil   1.0 oz
+    Dielectric  2-3   6.0 mil   core, FR4 370
+    Copper      3     1.2 mil   1.0 oz
+    Dielectric  3-4   8.1 mil   prepreg, 3 x 1080-FR4 370
+                3-4  14.5 mil   core, FR4 370
+                3-4   8.1 mil   prepreg, 3 x 1080-FR4 370
+    Copper      4     1.2 mil   1.0 oz
+    Dielectric  4-5   6.0 mil   core, FR4 370
+    Copper      5     1.2 mil   1.0 oz
+    Dielectric  5-6   4.4 mil   prepreg, 2 x 106-FR4 370
+    Copper      6     0.7 mil   0.5 oz
+    Plating           1.2 mil   1.0 oz
+    LPI mask          0.4 mil
+
+Impedance Goals
+===============
+
+50 Ohm +/- 10% microstrip, layers 1:2 and 6:5 at 0.178 mm (7.0 mil) width
+
+100 Ohm +/- 10% differential microstrip, layers 1:2 and 6:5 at 0.127 mm (5.0 mil) width, 0.127 mm (8.0 mil) separation
+
+Soldermask
+==========
+
+Double side solder mask green
+    +/- 5 mil solder mask registration
+
+Silkscreen
+==========
+
+Double side silkscreen white
+    6 mil silkscreen minimum width
+    Silkscreen must be clipped by soldermask
+
+Traces
+======
+
+5 mil (0.127 mm) min trace width
+5 mil (0.127 mm) min trace isolation
+
+Vias
+====
+
+8 mil (0.2032 mm) min via drill
+17.7 mil (0.45 mm) min via pad
+    4.85 mil min annular ring
+
+Via-in-pad used in many places
+
+Vias in pads need to be filled for assembly
+    All vias in pads are in capacitor footprints near the BGA
+
+Drills
+======
+
+Drills are specified in two files:
+    hdmi.drl contains plated drills.
+    hdmi-NPTH.drl contains non-plated drills.

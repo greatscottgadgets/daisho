@@ -365,9 +365,9 @@ F 6 "RES 100 OHM 1/16W 5% 0402 SMD" H 1300 2450 60  0001 C CNN "Description"
 	1    1300 2450
 	1    0    0    -1  
 $EndComp
-Text GLabel 1200 2100 0    39   Input ~ 0
-FE_CLK_P0
 Text GLabel 1200 2800 0    39   Input ~ 0
+FE_CLK_P0
+Text GLabel 1200 2100 0    39   Input ~ 0
 FE_CLK_N0
 Text GLabel 2900 1750 1    39   Input ~ 0
 FE_CLKSRC
@@ -604,12 +604,16 @@ Wire Wire Line
 Wire Wire Line
 	3100 1500 3200 1500
 Connection ~ 3100 1500
-Text GLabel 1200 3900 0    39   Input ~ 0
-CLK_IN_M_SUPP
 Text GLabel 1200 3200 0    39   Input ~ 0
+CLK_IN_M_SUPP
+Text GLabel 1200 3900 0    39   Input ~ 0
 CLK_IN_P_SUPP
 Text GLabel 1200 3000 0    39   Input ~ 0
 FE_CLK_AUX
 Wire Wire Line
 	1200 3000 2200 3000
+Text Notes 600  1800 0    40   ~ 0
+CLK_IN_x_SUPP is the clock reference\nfrom the HDMI input.  This is the reference\nthat should be used for in-line operation.\nOptionally (especially if doing something\nother than in-line operation), you can use\nFE_CLK_x0.  A third option is FE_CLK_AUX.
+Text Notes 750  4700 0    40   ~ 0
+Single-ended input FE_CLK_AUX\nshould use source termination.\nIt is internally AC coupled.\nYou probably want to use FE_CLK_x0\ninstead, though.
 $EndSCHEMATC
