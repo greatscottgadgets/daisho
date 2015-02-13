@@ -142,7 +142,10 @@ F 0 "U2" H 2250 3800 60  0000 C CNN
 F 1 "TRSF3243" H 2400 3500 60  0000 C CNN
 F 2 "tssop-28" H 2350 3150 60  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/trsf3243.pdf" H 2350 3150 60  0001 C CNN
-F 4 "http://www.digikey.com/product-detail/en/TRSF3243CPWR/296-25102-1-ND/2136639" H 2350 3150 60  0001 C CNN "Field7"
+F 4 "Texas Instruments" H 2350 3150 60  0001 C CNN "Manufacturer"
+F 5 "TRSF3243IPWR" H 2350 3150 60  0001 C CNN "Part Number"
+F 6 "IC DVR/RCVR RS232 ESD 28TSSOP" H 2350 3150 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/TRSF3243CPWR/296-25102-1-ND/2136639" H 2350 3150 60  0001 C CNN "Field7"
 	1    2350 3150
 	1    0    0    -1  
 $EndComp
