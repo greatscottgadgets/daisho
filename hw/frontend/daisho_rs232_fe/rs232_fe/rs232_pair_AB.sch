@@ -387,9 +387,9 @@ F 3 "" H 700 3200 60  0001 C CNN
 	1    700  3200
 	1    0    0    -1  
 $EndComp
-Text Notes 4750 700  2    60   ~ 0
+Text Notes 7200 950  2    60   ~ 0
 FORCEON: Auto-powerdown\nDisabled by default\n(To be enabled by FPGA)
-Text Notes 8100 4350 0    60   ~ 0
+Text Notes 5650 5000 0    60   ~ 0
 !SHDN: Outputs (DOUT/ROUT)\nhigh-impedance by default\n(To be enabled by FPGA)
 Text Notes 9950 3500 0    60   ~ 0
 1Mbit/s mode\nEnabled  (by default)

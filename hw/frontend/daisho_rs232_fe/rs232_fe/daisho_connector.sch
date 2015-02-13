@@ -1363,5 +1363,4 @@ Wire Wire Line
 	10550 3900 9950 3900
 NoConn ~ 9950 4100
 NoConn ~ 9950 4200
-Connection ~ 7200 2900
 $EndSCHEMATC
