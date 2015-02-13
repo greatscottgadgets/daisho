@@ -470,7 +470,7 @@ Text GLabel 3350 2250 2    60   Input ~ 0
 REG_3V3
 Text GLabel 9800 4150 2    60   Input ~ 0
 REG_3V3
-Text Notes 5800 2650 2    60   ~ 0
+Text Notes 5850 2800 2    60   ~ 0
 FORCEOFF: Powered OFF\nby default\n(To be enabled by FPGA)
 $Comp
 L R R34
@@ -505,6 +505,7 @@ F 0 "P10" V 5650 1400 50  0000 C CNN
 F 1 "CONN_3" V 5750 1400 40  0000 C CNN
 F 2 "gsg-header-1x3:GSG-HEADER-1x3" H 5700 1400 60  0001 C CNN
 F 3 "" H 5700 1400 60  0001 C CNN
+F 4 "DNP" V 5900 1400 60  0000 C CNN "Note"
 	1    5700 1400
 	1    0    0    -1  
 $EndComp
@@ -812,6 +813,7 @@ F 0 "P11" V 5700 2250 50  0000 C CNN
 F 1 "CONN_3" V 5800 2250 40  0000 C CNN
 F 2 "gsg-header-1x3:GSG-HEADER-1x3" H 5750 2250 60  0001 C CNN
 F 3 "" H 5750 2250 60  0001 C CNN
+F 4 "DNP" V 5950 2250 60  0000 C CNN "Note"
 	1    5750 2250
 	1    0    0    -1  
 $EndComp
@@ -941,6 +943,7 @@ F 0 "P9" V 5600 4000 50  0000 C CNN
 F 1 "CONN_3" V 5700 4000 40  0000 C CNN
 F 2 "gsg-header-1x3:GSG-HEADER-1x3" H 5650 4000 60  0001 C CNN
 F 3 "" H 5650 4000 60  0001 C CNN
+F 4 "DNP" V 5850 4000 60  0000 C CNN "Note"
 	1    5650 4000
 	-1   0    0    -1  
 $EndComp
@@ -1037,6 +1040,7 @@ F 0 "P12" V 6650 4750 50  0000 C CNN
 F 1 "CONN_3" V 6750 4750 40  0000 C CNN
 F 2 "gsg-header-1x3:GSG-HEADER-1x3" H 6700 4750 60  0001 C CNN
 F 3 "" H 6700 4750 60  0001 C CNN
+F 4 "DNP" V 6900 4750 60  0000 C CNN "Note"
 	1    6700 4750
 	-1   0    0    -1  
 $EndComp

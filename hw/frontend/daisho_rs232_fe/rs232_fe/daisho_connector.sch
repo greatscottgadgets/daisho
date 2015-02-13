@@ -58,9 +58,11 @@ F 0 "J1" H 3050 2650 60  0000 C CNN
 F 1 "SAMTEC_QSH-090-D" H 3100 2550 60  0000 C CNN
 F 2 "samtec_qsh-090-01-f-d-a:SAMTEC_QSH-090-01-F-D-A" H 3050 2600 60  0001 C CNN
 F 3 "https://www.samtec.com/technical-specifications/Default.aspx?SeriesMaster=QSH" H 3050 2600 60  0001 C CNN
-F 4 "QSH-090-01-F-D-A" H 3050 2600 60  0001 C CNN "ManufacturerPartNumber"
-F 5 "http://www.digikey.com/product-detail/en/QSH-090-01-F-D-A/QSH-090-01-F-D-A-ND/2664439" H 3050 2600 60  0001 C CNN "DigiKey"
-F 6 "http://components.arrow.com/part/detail/29558048S6264918N1004" H 3050 2600 60  0001 C CNN "Arrow"
+F 4 "Samtec" H 3050 2600 60  0001 C CNN "Manufacturer"
+F 5 "QSH-090-01-F-D-A" H 3050 2600 60  0001 C CNN "Part Number"
+F 6 "CONN RECPT 180POS 0.5MM SMT" H 3050 2600 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/QSH-090-01-F-D-A/QSH-090-01-F-D-A-ND/2664439" H 3050 2600 60  0001 C CNN "DigiKey"
+F 8 "http://components.arrow.com/part/detail/29558048S6264918N1004" H 3050 2600 60  0001 C CNN "Arrow"
 	1    3050 2600
 	1    0    0    -1  
 $EndComp
@@ -312,6 +314,7 @@ F 0 "P1" V 4550 1550 40  0000 C CNN
 F 1 "CONN_2" V 4650 1550 40  0000 C CNN
 F 2 "gsg-header-1x2:GSG-HEADER-1x2" H 4600 1550 60  0001 C CNN
 F 3 "" H 4600 1550 60  0001 C CNN
+F 4 "DNP" H 4600 1300 60  0000 C CNN "Note"
 	1    4600 1550
 	1    0    0    -1  
 $EndComp
@@ -837,6 +840,7 @@ F 0 "P8" V 4550 7350 40  0000 C CNN
 F 1 "CONN_2" V 4650 7350 40  0000 C CNN
 F 2 "gsg-header-1x2:GSG-HEADER-1x2" H 4600 7350 60  0001 C CNN
 F 3 "" H 4600 7350 60  0001 C CNN
+F 4 "DNP" V 4800 7350 60  0000 C CNN "Note"
 	1    4600 7350
 	0    1    1    0   
 $EndComp
@@ -919,6 +923,7 @@ F 0 "P7" V 2950 7350 40  0000 C CNN
 F 1 "CONN_2" V 3050 7350 40  0000 C CNN
 F 2 "gsg-header-1x2:GSG-HEADER-1x2" H 3000 7350 60  0001 C CNN
 F 3 "" H 3000 7350 60  0001 C CNN
+F 4 "DNP" V 3200 7350 60  0000 C CNN "Note"
 	1    3000 7350
 	0    1    1    0   
 $EndComp
@@ -1223,6 +1228,7 @@ F 0 "P14" V 9350 2250 50  0000 C CNN
 F 1 "CONN_3" V 9450 2250 40  0000 C CNN
 F 2 "gsg-header-1x3:GSG-HEADER-1x3" H 9400 2250 60  0001 C CNN
 F 3 "" H 9400 2250 60  0001 C CNN
+F 4 "DNP" V 9600 2250 60  0000 C CNN "Note"
 	1    9400 2250
 	1    0    0    -1  
 $EndComp
@@ -1357,4 +1363,5 @@ Wire Wire Line
 	10550 3900 9950 3900
 NoConn ~ 9950 4100
 NoConn ~ 9950 4200
+Connection ~ 7200 2900
 $EndSCHEMATC
