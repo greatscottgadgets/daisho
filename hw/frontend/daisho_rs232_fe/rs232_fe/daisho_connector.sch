@@ -94,7 +94,10 @@ F 0 "U1" H 1900 1900 60  0000 C CNN
 F 1 "24C08" H 1950 1200 60  0000 C CNN
 F 2 "SO8E" H 1750 1550 60  0000 C CNN
 F 3 "http://www.onsemi.com/pub_link/Collateral/CAT24C08-D.PDF" H 1750 1550 60  0001 C CNN
-F 4 "http://www.digikey.com/product-detail/en/CAT24C08WI-GT3/CAT24C08WI-GT3CT-ND" H 1750 1550 60  0001 C CNN "Field7"
+F 4 "On Semiconductor" H 1750 1550 60  0001 C CNN "Manufacturer"
+F 5 "CAT24C08WI-GT3" H 1750 1550 60  0001 C CNN "Part Number"
+F 6 "IC EEPROM 8KBIT 400KHZ 8SOIC" H 1750 1550 60  0001 C CNN "Description"
+F 7 "http://www.digikey.com/product-detail/en/CAT24C08WI-GT3/CAT24C08WI-GT3CT-ND" H 1750 1550 60  0001 C CNN "Field7"
 	1    1750 1550
 	1    0    0    -1  
 $EndComp
@@ -1308,7 +1311,7 @@ F 1 "0.1uF" H 700 1150 50  0000 L CNN
 F 2 "gsg-sm0603:GSG-0603" H 650 1250 60  0001 C CNN
 F 3 "" H 650 1250 60  0001 C CNN
 F 4 "Johanson Dialectrics" H -6750 1050 60  0001 C CNN "Manufacturer"
-F 5 "160R14W104KV4T" H -6750 1050 60  0001 C CNN "Part#"
+F 5 "160R14W104KV4T" H -6750 1050 60  0001 C CNN "Part Number"
 F 6 "CAP CER 0.1UF 16V 10% X7R 0603" H -6750 1050 60  0001 C CNN "Description"
 F 7 "http://www.digikey.com/product-detail/en/160R14W104KV4T/709-1153-1-ND/1859485" H -6750 1050 60  0001 C CNN "Field7"
 	1    650  1250
