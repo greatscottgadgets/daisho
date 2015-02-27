@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/mossmann/src/daisho/hw/frontend/daisho_gige_fe/gige_fe.sch)
-    (date "Fri 31 Oct 2014 01:40:48 AM MDT")
+    (date "Thu 26 Feb 2015 05:00:22 PM MST")
     (tool "Eeschema (2014-10-14 BZR 5188)-product"))
   (components
     (comp (ref RP203)
@@ -9,7 +9,7 @@
       (footprint daisho:1506-RPACK)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name Part#) EXB-2HVR000V)
+        (field (name "Part Number") EXB-2HVR000V)
         (field (name Description) "RES ARRAY 0.0 OHM 8 RES 1506")
         (field (name Field7) http://www.digikey.com/product-detail/en/EXB-2HVR000V/Y1000CT-ND/285418))
       (libsource (lib device) (part R_PACK8))
@@ -19,10 +19,9 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 50EF09BE))
@@ -30,10 +29,9 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 50EF09C4))
@@ -42,7 +40,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -53,7 +51,7 @@
       (footprint daisho:GSG-0603D)
       (fields
         (field (name Manufacturer) Lite-On)
-        (field (name Part#) LTST-C193KSKT-5A)
+        (field (name "Part Number") LTST-C193KSKT-5A)
         (field (name Description) "LED YELLOW RECT CLEAR 0603"))
       (libsource (lib device) (part LED))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -63,7 +61,7 @@
       (footprint daisho:GSG-0603D)
       (fields
         (field (name Manufacturer) Lite-On)
-        (field (name Part#) LTST-C191KGKT)
+        (field (name "Part Number") LTST-C191KGKT)
         (field (name Description) "LED GREEN CLEAR THIN 0603 SMD"))
       (libsource (lib device) (part LED))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -73,7 +71,7 @@
       (footprint Daisho:BELFUSE-MAG)
       (fields
         (field (name Manufacturer) "Bel Fuse Inc")
-        (field (name Part#) 0826-1X1T-M1-F)
+        (field (name "Part Number") 0826-1X1T-M1-F)
         (field (name Description) "MAGJACK 1PORT GO/Y LEDS 1GBT POE"))
       (libsource (lib belfuse-0826-1x1t-m1-f) (part BELFUSE-0826-1X1T-M1-F))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -83,7 +81,7 @@
       (footprint SM0805)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C2012X7R1H104K085AA)
+        (field (name "Part Number") C2012X7R1H104K085AA)
         (field (name Description) "CAP CER 0.1UF 50V 10% X7R 0805")
         (field (name Field7) http://www.digikey.com/product-detail/en/C2012X7R1H104K085AA/445-7534-1-ND/2733606))
       (libsource (lib device) (part C))
@@ -94,7 +92,7 @@
       (footprint SM0805)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C2012X7R1H104K085AA)
+        (field (name "Part Number") C2012X7R1H104K085AA)
         (field (name Description) "CAP CER 0.1UF 50V 10% X7R 0805")
         (field (name Field7) http://www.digikey.com/product-detail/en/C2012X7R1H104K085AA/445-7534-1-ND/2733606))
       (libsource (lib device) (part C))
@@ -105,7 +103,7 @@
       (footprint SM0805)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C2012X7R1H104K085AA)
+        (field (name "Part Number") C2012X7R1H104K085AA)
         (field (name Description) "CAP CER 0.1UF 50V 10% X7R 0805")
         (field (name Field7) http://www.digikey.com/product-detail/en/C2012X7R1H104K085AA/445-7534-1-ND/2733606))
       (libsource (lib device) (part C))
@@ -116,7 +114,7 @@
       (footprint SM0805)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C2012X7R1H104K085AA)
+        (field (name "Part Number") C2012X7R1H104K085AA)
         (field (name Description) "CAP CER 0.1UF 50V 10% X7R 0805")
         (field (name Field7) http://www.digikey.com/product-detail/en/C2012X7R1H104K085AA/445-7534-1-ND/2733606))
       (libsource (lib device) (part C))
@@ -126,10 +124,9 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 50EF2219))
@@ -137,10 +134,9 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 50EF2213))
@@ -148,16 +144,19 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 50F20C25))
     (comp (ref R208)
       (value "12.1k 1%")
       (footprint Daisho:GSG-0402)
+      (fields
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402FR-0712K1L)
+        (field (name Description) "RES SMD 12.1K OHM 1% 1/16W 0402"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 52BDDE27))
@@ -166,9 +165,8 @@
       (footprint daisho:ABMM2)
       (fields
         (field (name Manufacturer) Abacron)
-        (field (name Part#) ABMM2-25.000MHZ-E2-T)
-        (field (name Description) "CRYSTAL 25.000 MHZ 18PF SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ABMM2-25.000MHZ-E2-T/535-9640-1-ND/1237107))
+        (field (name "Part Number") ABMM2-25.000MHZ-E2-T)
+        (field (name Description) "CRYSTAL 25.000 MHZ 18PF SMD"))
       (libsource (lib device) (part CRYSTAL))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 52BDDE31))
@@ -176,9 +174,9 @@
       (value 22pF)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) TDK)
-        (field (name Part#) C1608C0G1H220J080AA)
-        (field (name Description) "CAP CER 22PF 50V 5% NP0 0603")
+        (field (name Manufacturer) Murata)
+        (field (name "Part Number") GRM1555C1H220JA01D)
+        (field (name Description) "CAP CER 22PF 50V 5% NP0 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1608C0G1H220J080AA/445-1273-1-ND/567670))
       (libsource (lib device) (part C))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -187,9 +185,9 @@
       (value 22pF)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) TDK)
-        (field (name Part#) C1608C0G1H220J080AA)
-        (field (name Description) "CAP CER 22PF 50V 5% NP0 0603")
+        (field (name Manufacturer) Murata)
+        (field (name "Part Number") GRM1555C1H220JA01D)
+        (field (name Description) "CAP CER 22PF 50V 5% NP0 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1608C0G1H220J080AA/445-1273-1-ND/567670))
       (libsource (lib device) (part C))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -199,7 +197,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-2GEJ472X)
+        (field (name "Part Number") ERJ-2GEJ472X)
         (field (name Description) "RES 4.7K OHM 1/10W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-2GEJ472X/P4.7KJCT-ND/147025))
       (libsource (lib device) (part R))
@@ -210,7 +208,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-2GEJ472X)
+        (field (name "Part Number") ERJ-2GEJ472X)
         (field (name Description) "RES 4.7K OHM 1/10W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-2GEJ472X/P4.7KJCT-ND/147025))
       (libsource (lib device) (part R))
@@ -231,7 +229,7 @@
       (footprint Daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -241,7 +239,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -252,7 +250,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -263,7 +261,7 @@
       (footprint Daisho:GSG-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -273,7 +271,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -284,7 +282,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -295,7 +293,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -306,7 +304,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -317,7 +315,7 @@
       (footprint Daisho:GSG-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -327,7 +325,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -338,7 +336,7 @@
       (footprint Daisho:GSG-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -348,7 +346,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -359,7 +357,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -370,7 +368,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -381,7 +379,7 @@
       (footprint Daisho:GSG-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
@@ -391,7 +389,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -402,7 +400,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -413,7 +411,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -424,7 +422,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -435,7 +433,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -446,7 +444,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -457,7 +455,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-2GEJ472X)
+        (field (name "Part Number") ERJ-2GEJ472X)
         (field (name Description) "RES 4.7K OHM 1/10W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-2GEJ472X/P4.7KJCT-ND/147025))
       (libsource (lib device) (part R))
@@ -468,7 +466,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -479,7 +477,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -490,29 +488,29 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 52BE5C8E))
     (comp (ref R205)
-      (value 220)
+      (value 1k)
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy0/") (tstamps /50EDF97F/))
       (tstamp 52D0363D))
     (comp (ref R206)
-      (value 220)
+      (value 1k)
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -523,7 +521,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -534,7 +532,7 @@
       (footprint daisho:ABMM2)
       (fields
         (field (name Manufacturer) Abacron)
-        (field (name Part#) ABMM2-25.000MHZ-E2-T)
+        (field (name "Part Number") ABMM2-25.000MHZ-E2-T)
         (field (name Description) "CRYSTAL 25.000 MHZ 18PF SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/ABMM2-25.000MHZ-E2-T/535-9640-1-ND/1237107))
       (libsource (lib device) (part CRYSTAL))
@@ -544,9 +542,9 @@
       (value 22pF)
       (footprint daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) TDK)
-        (field (name Part#) C1608C0G1H220J080AA)
-        (field (name Description) "CAP CER 22PF 50V 5% NP0 0603")
+        (field (name Manufacturer) Murata)
+        (field (name "Part Number") GRM1555C1H220JA01D)
+        (field (name Description) "CAP CER 22PF 50V 5% NP0 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1608C0G1H220J080AA/445-1273-1-ND/567670))
       (libsource (lib device) (part C))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -555,9 +553,9 @@
       (value 22pF)
       (footprint daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) TDK)
-        (field (name Part#) C1608C0G1H220J080AA)
-        (field (name Description) "CAP CER 22PF 50V 5% NP0 0603")
+        (field (name Manufacturer) Murata)
+        (field (name "Part Number") GRM1555C1H220JA01D)
+        (field (name Description) "CAP CER 22PF 50V 5% NP0 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1608C0G1H220J080AA/445-1273-1-ND/567670))
       (libsource (lib device) (part C))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -567,7 +565,7 @@
       (footprint gsg-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -577,7 +575,7 @@
       (footprint daisho:GSG-0603)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) MPZ1608S101A)
+        (field (name "Part Number") MPZ1608S101A)
         (field (name Description) "FERRITE CHIP 100 OHM 3A 0603")
         (field (name Field7) http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894))
       (libsource (lib fbead) (part FBEAD))
@@ -588,7 +586,7 @@
       (footprint daisho:GSG-0603)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) MPZ1608S101A)
+        (field (name "Part Number") MPZ1608S101A)
         (field (name Description) "FERRITE CHIP 100 OHM 3A 0603")
         (field (name Field7) http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894))
       (libsource (lib fbead) (part FBEAD))
@@ -599,7 +597,7 @@
       (footprint daisho:GSG-0603)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) MPZ1608S101A)
+        (field (name "Part Number") MPZ1608S101A)
         (field (name Description) "FERRITE CHIP 100 OHM 3A 0603")
         (field (name Field7) http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894))
       (libsource (lib fbead) (part FBEAD))
@@ -610,7 +608,7 @@
       (footprint daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -620,7 +618,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -631,7 +629,7 @@
       (footprint daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -641,7 +639,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -652,7 +650,7 @@
       (footprint gsg-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -662,7 +660,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -673,7 +671,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -684,7 +682,7 @@
       (footprint daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -694,7 +692,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -705,7 +703,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -716,7 +714,7 @@
       (footprint gsg-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -726,7 +724,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -737,7 +735,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -748,7 +746,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -759,7 +757,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -770,7 +768,7 @@
       (footprint daisho:GSG-0603)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) MPZ1608S101A)
+        (field (name "Part Number") MPZ1608S101A)
         (field (name Description) "FERRITE CHIP 100 OHM 3A 0603")
         (field (name Field7) http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894))
       (libsource (lib fbead) (part FBEAD))
@@ -781,7 +779,7 @@
       (footprint daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -791,7 +789,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -802,7 +800,7 @@
       (footprint daisho:GSG-0603)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) MPZ1608S101A)
+        (field (name "Part Number") MPZ1608S101A)
         (field (name Description) "FERRITE CHIP 100 OHM 3A 0603")
         (field (name Field7) http://www.digikey.com/product-detail/en/MPZ1608S101A/445-1564-1-ND/571894))
       (libsource (lib fbead) (part FBEAD))
@@ -813,7 +811,7 @@
       (footprint daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -823,7 +821,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -834,7 +832,7 @@
       (footprint gsg-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -844,7 +842,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -855,7 +853,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -866,7 +864,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -877,7 +875,7 @@
       (footprint gsg-2312)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491C476K016AT)
+        (field (name "Part Number") T491C476K016AT)
         (field (name Description) "CAP TANT 47UF 16V 10% 2312"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -887,7 +885,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -898,7 +896,7 @@
       (footprint daisho:BELFUSE-MAG)
       (fields
         (field (name Manufacturer) "Bel Fuse Inc")
-        (field (name Part#) 0826-1X1T-M1-F)
+        (field (name "Part Number") 0826-1X1T-M1-F)
         (field (name Description) "MAGJACK 1PORT GO/Y LEDS 1GBT POE"))
       (libsource (lib belfuse-0826-1x1t-m1-f) (part BELFUSE-0826-1X1T-M1-F))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -908,7 +906,7 @@
       (footprint SM0805)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C2012X7R1H104K085AA)
+        (field (name "Part Number") C2012X7R1H104K085AA)
         (field (name Description) "CAP CER 0.1UF 50V 10% X7R 0805")
         (field (name Field7) http://www.digikey.com/product-detail/en/C2012X7R1H104K085AA/445-7534-1-ND/2733606))
       (libsource (lib device) (part C))
@@ -919,7 +917,7 @@
       (footprint SM0805)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C2012X7R1H104K085AA)
+        (field (name "Part Number") C2012X7R1H104K085AA)
         (field (name Description) "CAP CER 0.1UF 50V 10% X7R 0805")
         (field (name Field7) http://www.digikey.com/product-detail/en/C2012X7R1H104K085AA/445-7534-1-ND/2733606))
       (libsource (lib device) (part C))
@@ -930,7 +928,7 @@
       (footprint SM0805)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C2012X7R1H104K085AA)
+        (field (name "Part Number") C2012X7R1H104K085AA)
         (field (name Description) "CAP CER 0.1UF 50V 10% X7R 0805")
         (field (name Field7) http://www.digikey.com/product-detail/en/C2012X7R1H104K085AA/445-7534-1-ND/2733606))
       (libsource (lib device) (part C))
@@ -941,7 +939,7 @@
       (footprint SM0805)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C2012X7R1H104K085AA)
+        (field (name "Part Number") C2012X7R1H104K085AA)
         (field (name Description) "CAP CER 0.1UF 50V 10% X7R 0805")
         (field (name Field7) http://www.digikey.com/product-detail/en/C2012X7R1H104K085AA/445-7534-1-ND/2733606))
       (libsource (lib device) (part C))
@@ -951,10 +949,9 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 50F20C14))
@@ -962,10 +959,9 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 50F20C13))
@@ -984,7 +980,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -995,7 +991,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -1006,7 +1002,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -1017,7 +1013,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -1028,7 +1024,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X7R1C103K050BA)
+        (field (name "Part Number") C1005X7R1C103K050BA)
         (field (name Description) "CAP CER 10000PF 16V 10% X7R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X7R1C103K050BA/445-1262-1-ND/567728))
       (libsource (lib device) (part C))
@@ -1039,7 +1035,7 @@
       (footprint Daisho:1506-RPACK)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name Part#) EXB-2HVR000V)
+        (field (name "Part Number") EXB-2HVR000V)
         (field (name Description) "RES ARRAY 0.0 OHM 8 RES 1506")
         (field (name Field7) http://www.digikey.com/product-detail/en/EXB-2HVR000V/Y1000CT-ND/285418))
       (libsource (lib device) (part R_PACK8))
@@ -1049,10 +1045,9 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 52BBA1D1))
@@ -1060,10 +1055,9 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 52BBA1E4))
@@ -1071,16 +1065,19 @@
       (value 0)
       (footprint Daisho:GSG-0402)
       (fields
-        (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-3GEY0R00V)
-        (field (name Description) "RES 0.0 OHM 1/10W 0603 SMD")
-        (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-3GEY0R00V/P0.0GCT-ND/134711))
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402JR-070RL)
+        (field (name Description) "RES SMD 0.0 OHM JUMPER 1/16W"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 52BBA1F7))
     (comp (ref R308)
       (value "12.1k 1%")
       (footprint Daisho:GSG-0402)
+      (fields
+        (field (name Manufacturer) Yageo)
+        (field (name "Part Number") RC0402FR-0712K1L)
+        (field (name Description) "RES SMD 12.1K OHM 1% 1/16W 0402"))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 52BE5D67))
@@ -1089,7 +1086,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-2GEJ472X)
+        (field (name "Part Number") ERJ-2GEJ472X)
         (field (name Description) "RES 4.7K OHM 1/10W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-2GEJ472X/P4.7KJCT-ND/147025))
       (libsource (lib device) (part R))
@@ -1100,7 +1097,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-2GEJ472X)
+        (field (name "Part Number") ERJ-2GEJ472X)
         (field (name Description) "RES 4.7K OHM 1/10W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-2GEJ472X/P4.7KJCT-ND/147025))
       (libsource (lib device) (part R))
@@ -1111,7 +1108,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Panasonic)
-        (field (name Part#) ERJ-2GEJ472X)
+        (field (name "Part Number") ERJ-2GEJ472X)
         (field (name Description) "RES 4.7K OHM 1/10W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/ERJ-2GEJ472X/P4.7KJCT-ND/147025))
       (libsource (lib device) (part R))
@@ -1122,7 +1119,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -1133,7 +1130,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -1144,7 +1141,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -1155,7 +1152,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -1166,7 +1163,7 @@
       (footprint daisho:GSG-0603D)
       (fields
         (field (name Manufacturer) Lite-On)
-        (field (name Part#) LTST-C193KSKT-5A)
+        (field (name "Part Number") LTST-C193KSKT-5A)
         (field (name Description) "LED YELLOW RECT CLEAR 0603"))
       (libsource (lib device) (part LED))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
@@ -1176,28 +1173,28 @@
       (footprint daisho:GSG-0603D)
       (fields
         (field (name Manufacturer) Lite-On)
-        (field (name Part#) LTST-C191KGKT)
+        (field (name "Part Number") LTST-C191KGKT)
         (field (name Description) "LED GREEN CLEAR THIN 0603 SMD"))
       (libsource (lib device) (part LED))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 52D036D8))
     (comp (ref R305)
-      (value 220)
+      (value 1k)
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
       (sheetpath (names "/GigE Phy1/") (tstamps /50F2029A/))
       (tstamp 52D036EA))
     (comp (ref R306)
-      (value 220)
+      (value 1k)
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) Yageo)
-        (field (name Part#) RC0402JR-071KL)
+        (field (name "Part Number") RC0402JR-071KL)
         (field (name Description) "RES 1.0K OHM 1/16W 5% 0402 SMD")
         (field (name Field7) http://www.digikey.com/product-detail/en/RC0402JR-071KL/311-1.0KJRCT-ND/729355))
       (libsource (lib device) (part R))
@@ -1259,7 +1256,7 @@
       (footprint daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -1282,7 +1279,7 @@
       (footprint SOT23-5)
       (fields
         (field (name Manufacturer) Micrel)
-        (field (name Part#) "MIC5207-2.5YM5 TR")
+        (field (name "Part Number") "MIC5207-2.5YM5 TR")
         (field (name Description) "IC REG LDO 2.5V .18A SOT23-5")
         (field (name Field7) http://www.digikey.com/product-detail/en/MIC5207-2.5YM5%20TR/576-1266-1-ND/771893))
       (libsource (lib mic5207-25YM5) (part MIC5207-2.5YM5))
@@ -1293,7 +1290,7 @@
       (footprint Daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/Board Power/") (tstamps /52B9BE0C/))
@@ -1303,7 +1300,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -1314,7 +1311,7 @@
       (footprint Daisho:GSG-0603)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1608C0G2A471J080AA)
+        (field (name "Part Number") C1608C0G2A471J080AA)
         (field (name Description) "CAP CER 470PF 100V 5% NP0 0603")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1608C0G2A471J080AA/445-2310-1-ND/789819))
       (libsource (lib device) (part C))
@@ -1325,7 +1322,7 @@
       (footprint Daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/Board Power/") (tstamps /52B9BE0C/))
@@ -1335,7 +1332,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -1346,7 +1343,7 @@
       (footprint SOT23-5)
       (fields
         (field (name Manufacturer) Micrel)
-        (field (name Part#) "MIC5207-3.3YM5 TR")
+        (field (name "Part Number") "MIC5207-3.3YM5 TR")
         (field (name Description) "IC REG LDO 3.3V .18A SOT23-5")
         (field (name Field7) http://www.digikey.com/product-detail/en/MIC5207-3.3YM5%20TR/576-1267-1-ND/771894))
       (libsource (lib mic5207-25YM5) (part MIC5207-2.5YM5))
@@ -1357,7 +1354,7 @@
       (footprint Daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/Board Power/") (tstamps /52B9BE0C/))
@@ -1367,7 +1364,7 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
@@ -1378,7 +1375,7 @@
       (footprint Daisho:GSG-0603)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1608C0G2A471J080AA)
+        (field (name "Part Number") C1608C0G2A471J080AA)
         (field (name Description) "CAP CER 470PF 100V 5% NP0 0603")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1608C0G2A471J080AA/445-2310-1-ND/789819))
       (libsource (lib device) (part C))
@@ -1389,7 +1386,7 @@
       (footprint Daisho:gsg-sm1206p)
       (fields
         (field (name Manufacturer) Kemet)
-        (field (name Part#) T491A106K016AT)
+        (field (name "Part Number") T491A106K016AT)
         (field (name Description) "CAP TANT 10UF 16V 10% 1206"))
       (libsource (lib device) (part CP1))
       (sheetpath (names "/Board Power/") (tstamps /52B9BE0C/))
@@ -1399,21 +1396,29 @@
       (footprint Daisho:GSG-0402)
       (fields
         (field (name Manufacturer) TDK)
-        (field (name Part#) C1005X5R1A104K050BA)
+        (field (name "Part Number") C1005X5R1A104K050BA)
         (field (name Description) "CAP CER 0.1UF 10V 10% X5R 0402")
         (field (name Field7) http://www.digikey.com/product-detail/en/C1005X5R1A104K050BA/445-1265-1-ND/567732))
       (libsource (lib device) (part C))
       (sheetpath (names "/Board Power/") (tstamps /52B9BE0C/))
       (tstamp 52B9C05B))
     (comp (ref C611)
-      (value 4.7uF)
+      (value 10uF)
       (footprint daisho:GSG-0805)
+      (fields
+        (field (name Manufacturer) Murata)
+        (field (name "Part Number") GRM21BR61A106KE19L)
+        (field (name Description) "CAP CER 10UF 10V 10% X5R 0805"))
       (libsource (lib device) (part C))
       (sheetpath (names "/Board Power/") (tstamps /52B9BE0C/))
       (tstamp 52BF7203))
     (comp (ref C612)
       (value 10uF)
       (footprint daisho:GSG-0805)
+      (fields
+        (field (name Manufacturer) Murata)
+        (field (name "Part Number") GRM21BR61A106KE19L)
+        (field (name Description) "CAP CER 10UF 10V 10% X5R 0805"))
       (libsource (lib device) (part C))
       (sheetpath (names "/Board Power/") (tstamps /52B9BE0C/))
       (tstamp 52BF722A))
@@ -1468,24 +1473,6 @@
       (sheetpath (names "/Board Power/") (tstamps /52B9BE0C/))
       (tstamp 542ABD86)))
   (libparts
-    (libpart (lib device) (part CP1)
-      (description "Condensateur polarise")
-      (footprints
-        (fp CP*)
-        (fp SM*))
-      (fields
-        (field (name Reference) C)
-        (field (name Value) CP1))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part INDUCTOR_SMALL)
-      (fields
-        (field (name Reference) L)
-        (field (name Value) INDUCTOR_SMALL))
-      (pins
-        (pin (num 1) (name 1) (type input))
-        (pin (num 2) (name 2) (type input))))
     (libpart (lib device) (part C)
       (description "Condensateur non polarise")
       (footprints
@@ -1498,20 +1485,31 @@
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part R)
-      (description Resistance)
+    (libpart (lib device) (part CP1)
+      (description "Condensateur polarise")
       (footprints
-        (fp R?)
-        (fp SM0603)
-        (fp SM0805)
-        (fp R?-*)
-        (fp SM1206))
+        (fp CP*)
+        (fp SM*))
       (fields
-        (field (name Reference) R)
-        (field (name Value) R))
+        (field (name Reference) C)
+        (field (name Value) CP1))
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part CRYSTAL)
+      (fields
+        (field (name Reference) X)
+        (field (name Value) CRYSTAL))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))))
+    (libpart (lib device) (part INDUCTOR_SMALL)
+      (fields
+        (field (name Reference) L)
+        (field (name Value) INDUCTOR_SMALL))
+      (pins
+        (pin (num 1) (name 1) (type input))
+        (pin (num 2) (name 2) (type input))))
     (libpart (lib device) (part LED)
       (footprints
         (fp LED-3MM)
@@ -1527,13 +1525,20 @@
       (pins
         (pin (num 1) (name A) (type passive))
         (pin (num 2) (name K) (type passive))))
-    (libpart (lib device) (part CRYSTAL)
+    (libpart (lib device) (part R)
+      (description Resistance)
+      (footprints
+        (fp R?)
+        (fp SM0603)
+        (fp SM0805)
+        (fp R?-*)
+        (fp SM1206))
       (fields
-        (field (name Reference) X)
-        (field (name Value) CRYSTAL))
+        (field (name Reference) R)
+        (field (name Value) R))
       (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))))
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
     (libpart (lib device) (part R_PACK8)
       (description "8 resistors Pack")
       (fields
@@ -1910,10 +1915,10 @@
       (uri /home/mossmann/src/daisho/hw/lib/fbead.lib))
     (library (logical mic5207-25YM5)
       (uri /home/mossmann/src/daisho/hw/lib/mic5207-25YM5.lib))
-    (library (logical gige_fe-cache)
-      (uri /home/mossmann/src/daisho/hw/frontend/daisho_gige_fe/gige_fe-cache.lib))
     (library (logical ksz9031mnx)
       (uri /home/mossmann/src/daisho/hw/lib/ksz9031mnx.lib))
+    (library (logical gige_fe-cache)
+      (uri /home/mossmann/src/daisho/hw/frontend/daisho_gige_fe/gige_fe-cache.lib))
     (library (logical xc923x)
       (uri /home/mossmann/src/daisho/hw/lib/xc923x.lib)))
   (nets

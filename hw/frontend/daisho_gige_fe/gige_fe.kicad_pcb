@@ -3,7 +3,7 @@
   (general
     (links 523)
     (no_connects 0)
-    (area 74.642438 43.809919 184.957562 144.190721)
+    (area 79.809339 43.809919 180.190141 144.190721)
     (thickness 1.6)
     (drawings 20)
     (tracks 1950)
@@ -73,7 +73,7 @@
     (pad_drill 0)
     (pad_to_mask_clearance 0.0762)
     (aux_axis_origin 0 0)
-    (visible_elements 7FFEFFFF)
+    (visible_elements 7FFFFF7F)
     (pcbplotparams
       (layerselection 0x010fc_80000007)
       (usegerberextensions true)
@@ -673,12 +673,12 @@
       (die_length -2147.483648))
   )
 
-  (module GSG-0603 placed (layer C1F) (tedit 525DB7B8) (tstamp 51E40CA7)
+  (module GSG-0603 placed (layer C1F) (tedit 54DE8825) (tstamp 51E40CA7)
     (at 85.6234 64.1604)
     (path /525DBE7D/51DDE1CA)
     (solder_mask_margin 0.1016)
     (fp_text reference R9991 (at 0 0) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
+      (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10k (at 0 0) (layer F.SilkS) hide
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
@@ -698,12 +698,12 @@
     )
   )
 
-  (module GSG-0603 locked placed (layer C1F) (tedit 525DB7A9) (tstamp 51E40CB2)
+  (module GSG-0603 locked placed (layer C1F) (tedit 54DE8847) (tstamp 51E40CB2)
     (at 90.06 58.56 270)
     (path /525DBE7D/51E2ED78)
     (solder_mask_margin 0.1016)
     (fp_text reference R9992 (at 0 0 270) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
+      (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10k (at 0 0 270) (layer F.SilkS) hide
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
@@ -723,16 +723,16 @@
     )
   )
 
-  (module SO8E locked placed (layer C1F) (tedit 525DB780) (tstamp 51E48940)
+  (module SO8E locked placed (layer C1F) (tedit 54DE885A) (tstamp 51E48940)
     (at 84.25 56 270)
     (descr "module CMS SOJ 8 pins etroit")
     (tags "CMS SOJ")
     (path /525DBE7D/51DE64DC)
     (attr smd)
-    (fp_text reference U9991 (at 0 -0.889 270) (layer F.SilkS)
-      (effects (font (size 1.143 1.143) (thickness 0.1524)))
+    (fp_text reference U9991 (at 0.13 -0.89 270) (layer F.SilkS)
+      (effects (font (size 1 1) (thickness 0.1524)))
     )
-    (fp_text value 24C08 (at 0 1.016 270) (layer F.SilkS)
+    (fp_text value 24C08 (at 0 1.016 270) (layer F.SilkS) hide
       (effects (font (size 0.889 0.889) (thickness 0.1524)))
     )
     (fp_line (start -2.667 1.778) (end -2.667 1.905) (layer F.SilkS) (width 0.127))
@@ -795,14 +795,14 @@
     )
   )
 
-  (module SM0805 (layer C1F) (tedit 5091495C) (tstamp 5261B327)
+  (module SM0805 (layer C1F) (tedit 54DE88B5) (tstamp 5261B327)
     (at 101.175 108)
     (path /50EDF97F/50F20C70)
     (attr smd)
     (fp_text reference C252 (at 0 -0.3175) (layer F.SilkS)
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
-    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS)
+    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS) hide
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
     (fp_circle (center -1.651 0.762) (end -1.651 0.635) (layer F.SilkS) (width 0.09906))
@@ -823,14 +823,14 @@
     )
   )
 
-  (module SM0805 (layer C1F) (tedit 5091495C) (tstamp 5261B334)
+  (module SM0805 (layer C1F) (tedit 54DE880A) (tstamp 5261B334)
     (at 98.6 84.3)
     (path /50EDF97F/50EFDDCB)
     (attr smd)
     (fp_text reference C251 (at 0 -0.3175) (layer F.SilkS)
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
-    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS)
+    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS) hide
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
     (fp_circle (center -1.651 0.762) (end -1.651 0.635) (layer F.SilkS) (width 0.09906))
@@ -851,14 +851,14 @@
     )
   )
 
-  (module SM0805 (layer C1F) (tedit 5091495C) (tstamp 5261B341)
+  (module SM0805 (layer C1F) (tedit 54DE880C) (tstamp 5261B341)
     (at 102.85 84.35)
     (path /50EDF97F/50EFDDA0)
     (attr smd)
     (fp_text reference C250 (at 0 -0.3175) (layer F.SilkS)
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
-    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS)
+    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS) hide
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
     (fp_circle (center -1.651 0.762) (end -1.651 0.635) (layer F.SilkS) (width 0.09906))
@@ -879,14 +879,14 @@
     )
   )
 
-  (module SM0805 (layer C1F) (tedit 5091495C) (tstamp 5261B34E)
+  (module SM0805 (layer C1F) (tedit 54DE88B8) (tstamp 5261B34E)
     (at 105.9 107.95)
     (path /50EDF97F/50F20C71)
     (attr smd)
     (fp_text reference C253 (at 0 -0.3175) (layer F.SilkS)
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
-    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS)
+    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS) hide
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
     (fp_circle (center -1.651 0.762) (end -1.651 0.635) (layer F.SilkS) (width 0.09906))
@@ -907,14 +907,14 @@
     )
   )
 
-  (module SM0805 (layer C1F) (tedit 5091495C) (tstamp 5261B35B)
+  (module SM0805 (layer C1F) (tedit 54DE88BE) (tstamp 5261B35B)
     (at 155.3 107.8)
     (path /50F2029A/50F20C6E)
     (attr smd)
     (fp_text reference C350 (at 0 -0.3175) (layer F.SilkS)
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
-    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS)
+    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS) hide
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
     (fp_circle (center -1.651 0.762) (end -1.651 0.635) (layer F.SilkS) (width 0.09906))
@@ -935,14 +935,14 @@
     )
   )
 
-  (module SM0805 (layer C1F) (tedit 5091495C) (tstamp 5261B368)
+  (module SM0805 (layer C1F) (tedit 54DE88C1) (tstamp 5261B368)
     (at 159.7 107.8 180)
     (path /50F2029A/50F20C6F)
     (attr smd)
     (fp_text reference C351 (at 0 -0.3175 180) (layer F.SilkS)
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
-    (fp_text value 0.1uF (at 0 0.381 180) (layer F.SilkS)
+    (fp_text value 0.1uF (at 0 0.381 180) (layer F.SilkS) hide
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
     (fp_circle (center -1.651 0.762) (end -1.651 0.635) (layer F.SilkS) (width 0.09906))
@@ -963,14 +963,14 @@
     )
   )
 
-  (module SM0805 (layer C1F) (tedit 5091495C) (tstamp 5261B375)
+  (module SM0805 (layer C1F) (tedit 54DE8547) (tstamp 5261B375)
     (at 159.7 85.15 180)
     (path /50F2029A/50EFDDD2)
     (attr smd)
     (fp_text reference C352 (at 0 -0.3175 180) (layer F.SilkS)
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
-    (fp_text value 0.1uF (at 0 0.381 180) (layer F.SilkS)
+    (fp_text value 0.1uF (at 0 0.381 180) (layer F.SilkS) hide
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
     (fp_circle (center -1.651 0.762) (end -1.651 0.635) (layer F.SilkS) (width 0.09906))
@@ -991,14 +991,14 @@
     )
   )
 
-  (module SM0805 (layer C1F) (tedit 5091495C) (tstamp 5261B382)
+  (module SM0805 (layer C1F) (tedit 54DE8543) (tstamp 5261B382)
     (at 155.35 85.15)
     (path /50F2029A/50EFDDD9)
     (attr smd)
     (fp_text reference C353 (at 0 -0.3175) (layer F.SilkS)
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
-    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS)
+    (fp_text value 0.1uF (at 0 0.381) (layer F.SilkS) hide
       (effects (font (size 0.50038 0.50038) (thickness 0.10922)))
     )
     (fp_circle (center -1.651 0.762) (end -1.651 0.635) (layer F.SilkS) (width 0.09906))
@@ -1019,11 +1019,11 @@
     )
   )
 
-  (module GSG-0603D (layer C1F) (tedit 4CFF3010) (tstamp 5261B3BA)
+  (module GSG-0603D (layer C1F) (tedit 54DE84CD) (tstamp 5261B3BA)
     (at 177.2 82.25 180)
     (path /50F2029A/52D036CE)
     (solder_mask_margin 0.1016)
-    (fp_text reference D301 (at 0 0 180) (layer F.SilkS)
+    (fp_text reference D301 (at 0.03 1.14 180) (layer F.SilkS)
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
     )
     (fp_text value PHY1_ACT_YEL (at 0 0 180) (layer F.SilkS) hide
@@ -1043,11 +1043,11 @@
       (net 30 GIGE_DVDDH) (die_length 0.08382) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module GSG-0603D (layer C1F) (tedit 4CFF3010) (tstamp 5261B3C8)
+  (module GSG-0603D (layer C1F) (tedit 54DE84C7) (tstamp 5261B3C8)
     (at 177.2 84.2 180)
     (path /50F2029A/52D036D8)
     (solder_mask_margin 0.1016)
-    (fp_text reference D302 (at 0 0 180) (layer F.SilkS)
+    (fp_text reference D302 (at 0.01 -1.2 180) (layer F.SilkS)
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
     )
     (fp_text value PHY1_LNK_GREEN (at 0 0 180) (layer F.SilkS) hide
@@ -1067,11 +1067,11 @@
       (net 30 GIGE_DVDDH) (die_length 0.08382) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module GSG-0603D (layer C1F) (tedit 4CFF3010) (tstamp 5261B3E4)
+  (module GSG-0603D (layer C1F) (tedit 54DE88D5) (tstamp 5261B3E4)
     (at 82.4 82.35)
     (path /50EDF97F/50EF1FCB)
     (solder_mask_margin 0.1016)
-    (fp_text reference D201 (at 0 0) (layer F.SilkS)
+    (fp_text reference D201 (at 0 -1.16) (layer F.SilkS)
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
     )
     (fp_text value PHY0_ACT (at 0 0) (layer F.SilkS) hide
@@ -1091,11 +1091,11 @@
       (net 30 GIGE_DVDDH) (die_length 0.08382) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module GSG-0603D (layer C1F) (tedit 4CFF3010) (tstamp 5261B3F2)
+  (module GSG-0603D (layer C1F) (tedit 54DE88DA) (tstamp 5261B3F2)
     (at 82.4 84.1)
     (path /50EDF97F/50F20C23)
     (solder_mask_margin 0.1016)
-    (fp_text reference D202 (at 0 0) (layer F.SilkS)
+    (fp_text reference D202 (at -0.02 1.24) (layer F.SilkS)
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
     )
     (fp_text value PHY0_LNK (at 0 0) (layer F.SilkS) hide
@@ -1115,12 +1115,12 @@
       (net 30 GIGE_DVDDH) (die_length 0.08382) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module GSG-0603 (layer C1F) (tedit 4CFF2E39) (tstamp 5261B48E)
+  (module GSG-0603 (layer C1F) (tedit 54DE85F9) (tstamp 5261B48E)
     (at 156.8 57.8 270)
     (path /50F2029A/50EF7318)
     (solder_mask_margin 0.1016)
     (fp_text reference FB301 (at 0 0 270) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
+      (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value FBEAD (at 0 0 270) (layer F.SilkS) hide
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
@@ -1135,12 +1135,12 @@
       (net 121 V2P5_REG) (die_length -2147.483648) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module GSG-0603 (layer C1F) (tedit 4CFF2E39) (tstamp 5261B498)
+  (module GSG-0603 (layer C1F) (tedit 54DE85B3) (tstamp 5261B498)
     (at 164.35 59.1 270)
     (path /50F2029A/50EF7D3F)
     (solder_mask_margin 0.1016)
     (fp_text reference FB302 (at 0 0 270) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
+      (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value FBEAD (at 0 0 270) (layer F.SilkS) hide
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
@@ -1155,12 +1155,12 @@
       (net 123 V3P3_REG) (die_length -2147.483648) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module GSG-0603 (layer C1F) (tedit 4CFF2E39) (tstamp 5261B4D4)
+  (module GSG-0603 (layer C1F) (tedit 54DE85CB) (tstamp 5261B4D4)
     (at 165.85 72.35 90)
     (path /50F2029A/50F20C2C)
     (solder_mask_margin 0.1016)
     (fp_text reference FB305 (at 0 0 90) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
+      (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value FBEAD (at 0 0 90) (layer F.SilkS) hide
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
@@ -1175,12 +1175,12 @@
       (net 120 V1P2_REG) (die_length -2147.483648) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module GSG-0603 (layer C1F) (tedit 4CFF2E39) (tstamp 5261B4DE)
+  (module GSG-0603 (layer C1F) (tedit 54DE85D3) (tstamp 5261B4DE)
     (at 169.9 75.75 180)
     (path /50F2029A/50F20C2D)
     (solder_mask_margin 0.1016)
     (fp_text reference FB303 (at 0 0 180) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
+      (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value FBEAD (at 0 0 180) (layer F.SilkS) hide
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
@@ -1195,12 +1195,12 @@
       (net 120 V1P2_REG) (die_length -2147.483648) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module GSG-0603 (layer C1F) (tedit 4CFF2E39) (tstamp 5261B524)
+  (module GSG-0603 (layer C1F) (tedit 54DE85C2) (tstamp 5261B524)
     (at 163.1 73.85 180)
     (path /50F2029A/50F20C2B)
     (solder_mask_margin 0.1016)
     (fp_text reference FB304 (at 0 0 180) (layer F.SilkS)
-      (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
+      (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value FBEAD (at 0 0 180) (layer F.SilkS) hide
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
@@ -1215,10 +1215,10 @@
       (net 120 V1P2_REG) (die_length -2147.483648) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 5261B6C5)
+  (module gsg-sm1206p (layer C1F) (tedit 54DE85A4) (tstamp 5261B6C5)
     (at 167.8 59.5)
     (path /50F2029A/50F20C4D)
-    (fp_text reference C306 (at 0 0 90) (layer F.SilkS)
+    (fp_text reference C306 (at 0.01 -0.01 180) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4) (layer F.SilkS) hide
@@ -1235,10 +1235,10 @@
       (net 32 GND))
   )
 
-  (module gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 5261B6D0)
+  (module gsg-sm1206p (layer C1F) (tedit 54DE877C) (tstamp 5261B6D0)
     (at 126.4 64.1 90)
     (path /50F2029A/50EF734B)
-    (fp_text reference C305 (at 0 0 180) (layer F.SilkS)
+    (fp_text reference C305 (at 0 0 270) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4 90) (layer F.SilkS) hide
@@ -1255,10 +1255,10 @@
       (net 32 GND))
   )
 
-  (module gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 5261B6DB)
+  (module gsg-sm1206p (layer C1F) (tedit 54DE84E9) (tstamp 5261B6DB)
     (at 164.45 75.8)
     (path /50F2029A/50F20C39)
-    (fp_text reference C326 (at 0 0 90) (layer F.SilkS)
+    (fp_text reference C326 (at -0.01 0.03 180) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4) (layer F.SilkS) hide
@@ -1275,10 +1275,10 @@
       (net 32 GND))
   )
 
-  (module gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 5261B6E6)
+  (module gsg-sm1206p (layer C1F) (tedit 54DE8897) (tstamp 5261B6E6)
     (at 117.15 80 270)
     (path /50F2029A/50F20C31)
-    (fp_text reference C311 (at 0 0 360) (layer F.SilkS)
+    (fp_text reference C311 (at -0.01 0 450) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4 270) (layer F.SilkS) hide
@@ -1295,10 +1295,10 @@
       (net 32 GND))
   )
 
-  (module gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 5261B6F1)
+  (module gsg-sm1206p (layer C1F) (tedit 54DE8508) (tstamp 5261B6F1)
     (at 165.65 67.4 90)
     (path /50F2029A/50EF469D)
-    (fp_text reference C312 (at 0 0 180) (layer F.SilkS)
+    (fp_text reference C312 (at 0 0 270) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4 90) (layer F.SilkS) hide
@@ -1315,13 +1315,13 @@
       (net 32 GND))
   )
 
-  (module gsg-2312 (layer C1F) (tedit 50FD7A35) (tstamp 5261B86E)
+  (module gsg-2312 (layer C1F) (tedit 54DE856D) (tstamp 5261B86E)
     (at 163.15 62.55)
     (path /50F2029A/50F20C5A)
-    (fp_text reference C330 (at 1 0 90) (layer F.SilkS)
+    (fp_text reference C330 (at -0.21 -0.02 90) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 90) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 90) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -1335,13 +1335,13 @@
       (net 32 GND))
   )
 
-  (module gsg-2312 (layer C1F) (tedit 50FD7A35) (tstamp 5261B879)
+  (module gsg-2312 (layer C1F) (tedit 54DE8780) (tstamp 5261B879)
     (at 123.6 68.2 270)
     (path /50F2029A/50F20C50)
     (fp_text reference C313 (at 1 0 360) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -1355,13 +1355,13 @@
       (net 32 GND))
   )
 
-  (module gsg-2312 (layer C1F) (tedit 50FD7A35) (tstamp 5261B88F)
+  (module gsg-2312 (layer C1F) (tedit 54DE8563) (tstamp 5261B88F)
     (at 161.25 67.9 90)
     (path /50F2029A/50F20C3D)
-    (fp_text reference C331 (at 1 0 180) (layer F.SilkS)
+    (fp_text reference C331 (at 0.02 0.01 180) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 180) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 180) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -1375,13 +1375,13 @@
       (net 32 GND))
   )
 
-  (module gsg-2312 (layer C1F) (tedit 50FD7A35) (tstamp 5261B89A)
+  (module gsg-2312 (layer C1F) (tedit 54DE889A) (tstamp 5261B89A)
     (at 120.25 81 270)
     (path /50F2029A/50F20C35)
     (fp_text reference C319 (at 1 0 360) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -1395,13 +1395,13 @@
       (net 32 GND))
   )
 
-  (module gsg-2312 (layer C1F) (tedit 50FD7A35) (tstamp 5261B8A5)
+  (module gsg-2312 (layer C1F) (tedit 54DE8551) (tstamp 5261B8A5)
     (at 171.5 73.1)
     (path /50F2029A/50F20C2A)
     (fp_text reference C304 (at 1 0 90) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 90) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 90) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -1415,11 +1415,11 @@
       (net 32 GND))
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B8E6)
+  (module GSG-0402 (layer C1F) (tedit 54DE8681) (tstamp 5261B8E6)
     (at 140.5636 63.1444 90)
     (path /50F2029A/50F20C3F)
     (solder_mask_margin 0.1016)
-    (fp_text reference C335 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C335 (at -0.0056 0.0164 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -1440,11 +1440,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B8FA)
+  (module GSG-0402 (layer C1F) (tedit 54DE85EC) (tstamp 5261B8FA)
     (at 162.45 59.9 180)
     (path /50F2029A/50F20C4E)
     (solder_mask_margin 0.1016)
-    (fp_text reference C308 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference C308 (at 0.01 -0.02 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508 180) (layer F.SilkS) hide
@@ -1465,11 +1465,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B90E)
+  (module GSG-0402 (layer C1F) (tedit 54DE85F2) (tstamp 5261B90E)
     (at 158.95 58.9)
     (path /50F2029A/50F20C49)
     (solder_mask_margin 0.1016)
-    (fp_text reference C307 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C307 (at 0 0.03) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508) (layer F.SilkS) hide
@@ -1490,11 +1490,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B940)
+  (module GSG-0402 (layer C1F) (tedit 54DE875D) (tstamp 5261B940)
     (at 145.388 69.8)
     (path /50F2029A/50F20C42)
     (solder_mask_margin 0.1016)
-    (fp_text reference C339 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C339 (at 0.002 0.01) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508) (layer F.SilkS) hide
@@ -1515,11 +1515,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B94A)
+  (module GSG-0402 (layer C1F) (tedit 54DE875A) (tstamp 5261B94A)
     (at 145.713 72.2)
     (path /50F2029A/50F20C41)
     (solder_mask_margin 0.1016)
-    (fp_text reference C337 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C337 (at -0.023 0.03) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508) (layer F.SilkS) hide
@@ -1540,11 +1540,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B954)
+  (module GSG-0402 (layer C1F) (tedit 54DE8761) (tstamp 5261B954)
     (at 144.238 66.25 90)
     (path /50F2029A/50F20C51)
     (solder_mask_margin 0.1016)
-    (fp_text reference C316 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C316 (at 0 0.032 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -1565,11 +1565,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B95E)
+  (module GSG-0402 (layer C1F) (tedit 54DE86FF) (tstamp 5261B95E)
     (at 137.1854 62.611 90)
     (path /50F2029A/50F20C3E)
     (solder_mask_margin 0.1016)
-    (fp_text reference C333 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C333 (at -0.009 0.0246 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -1590,11 +1590,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B972)
+  (module GSG-0402 (layer C1F) (tedit 54DE8720) (tstamp 5261B972)
     (at 131.0386 68.834 180)
     (path /50F2029A/50F20C3B)
     (solder_mask_margin 0.1016)
-    (fp_text reference C329 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference C329 (at -0.0014 -0.016 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 180) (layer F.SilkS) hide
@@ -1615,11 +1615,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B97C)
+  (module GSG-0402 (layer C1F) (tedit 54DE872A) (tstamp 5261B97C)
     (at 131.6482 70.993 180)
     (path /50F2029A/50EF63C0)
     (solder_mask_margin 0.1016)
-    (fp_text reference C328 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference C328 (at 0.0082 -0.007 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508 180) (layer F.SilkS) hide
@@ -1640,11 +1640,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B986)
+  (module GSG-0402 (layer C1F) (tedit 54DE8751) (tstamp 5261B986)
     (at 140.6652 77.5716 270)
     (path /50F2029A/50F20C37)
     (solder_mask_margin 0.1016)
-    (fp_text reference C324 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C324 (at 0.0084 -0.0348 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -1665,11 +1665,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B990)
+  (module GSG-0402 (layer C1F) (tedit 54DE874E) (tstamp 5261B990)
     (at 139.9032 77.5716 270)
     (path /50F2029A/50F20C36)
     (solder_mask_margin 0.1016)
-    (fp_text reference C322 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C322 (at 0.0084 -0.0168 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -1690,11 +1690,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261B99A)
+  (module GSG-0402 (layer C1F) (tedit 54DE8891) (tstamp 5261B99A)
     (at 120.75 76.2)
     (path /50F2029A/50F20C32)
     (solder_mask_margin 0.1016)
-    (fp_text reference C314 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C314 (at -0.02 0.03) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508) (layer F.SilkS) hide
@@ -1715,11 +1715,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261BA1C)
+  (module GSG-0402 (layer C1F) (tedit 54DE8744) (tstamp 5261BA1C)
     (at 134.3406 76.5556 270)
     (path /50F2029A/50F20C5B)
     (solder_mask_margin 0.1016)
-    (fp_text reference C332 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C332 (at 0.0144 -0.0194 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -1740,11 +1740,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261BA62)
+  (module GSG-0402 (layer C1F) (tedit 54DE86FC) (tstamp 5261BA62)
     (at 138.6332 62.1538 90)
     (path /50F2029A/50EF878A)
     (solder_mask_margin 0.1016)
-    (fp_text reference C318 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C318 (at -0.0062 0.0168 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -1765,11 +1765,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261BA6C)
+  (module GSG-0402 (layer C1F) (tedit 54DE8788) (tstamp 5261BA6C)
     (at 124.3 62.7 90)
     (path /50F2029A/50EF8777)
     (solder_mask_margin 0.1016)
-    (fp_text reference C317 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C317 (at 0 0.04 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -1790,11 +1790,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261BA80)
+  (module GSG-0402 (layer C1F) (tedit 54DE84FF) (tstamp 5261BA80)
     (at 163.8 69 90)
     (path /50F2029A/50EF46BF)
     (solder_mask_margin 0.1016)
-    (fp_text reference C315 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C315 (at 0 0.02 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -1815,11 +1815,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261BB84)
+  (module GSG-0402 (layer C1F) (tedit 54DE873E) (tstamp 5261BB84)
     (at 132.461 77.597 90)
     (path /50F2029A/50F20C03)
     (solder_mask_margin 0.1016)
-    (fp_text reference C310 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C310 (at -0.003 0.009 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 22pF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -1840,11 +1840,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5261BB8E)
+  (module GSG-0402 (layer C1F) (tedit 54DE8727) (tstamp 5261BB8E)
     (at 128.778 71.374)
     (path /50F2029A/50F20C02)
     (solder_mask_margin 0.1016)
-    (fp_text reference C309 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C309 (at 0.002 0.026) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 22pF (at 0 0.0508) (layer F.SilkS) hide
@@ -1865,13 +1865,13 @@
     )
   )
 
-  (module BELFUSE-MAG (layer C1F) (tedit 510C6155) (tstamp 52BC4D39)
+  (module BELFUSE-MAG (layer C1F) (tedit 54DE88EB) (tstamp 52BC4D39)
     (at 174 96.15 270)
     (path /50F2029A/50EFC9BB)
     (fp_text reference MAG301 (at 0 12 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value BELFUSE-0826-1X1T-M1-F (at 0 0.2 270) (layer F.SilkS)
+    (fp_text value BELFUSE-0826-1X1T-M1-F (at 0 0.2 270) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -1.4 -5.4) (end -1.4 -6.2) (layer F.SilkS) (width 0.15))
@@ -1930,14 +1930,14 @@
     (pad 17 thru_hole circle (at -6.1 20.32 270) (size 1.46 1.46) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
   )
 
-  (module ABMM2 (layer C1F) (tedit 4D39F65E) (tstamp 5261BC38)
+  (module ABMM2 (layer C1F) (tedit 54DE8731) (tstamp 5261BC38)
     (at 129.794 75.692 90)
     (path /50F2029A/50F20C01)
     (attr smd)
     (fp_text reference X301 (at 0.0254 0 90) (layer F.SilkS)
       (effects (font (size 1.00076 1.00076) (thickness 0.2032)))
     )
-    (fp_text value 25MHz (at 0 -2.90068 90) (layer F.SilkS)
+    (fp_text value 25MHz (at 0 -2.90068 90) (layer F.SilkS) hide
       (effects (font (size 1.00076 1.00076) (thickness 0.2032)))
     )
     (fp_line (start -2.99974 -0.20066) (end -2.99974 0.20066) (layer F.SilkS) (width 0.2032))
@@ -1952,14 +1952,14 @@
     (pad "" smd rect (at -2.46126 -1.24968 90) (size 2.07518 1.6002) (layers C1F F.Paste F.Mask))
   )
 
-  (module ABMM2 (layer C1F) (tedit 4D39F65E) (tstamp 5261BC44)
+  (module ABMM2 (layer C1F) (tedit 54DE8735) (tstamp 5261BC44)
     (at 99.262 76.35 90)
     (path /50EDF97F/52BDDE31)
     (attr smd)
     (fp_text reference X201 (at 0.0254 0 90) (layer F.SilkS)
       (effects (font (size 1.00076 1.00076) (thickness 0.2032)))
     )
-    (fp_text value 25MHz (at 0 -2.90068 90) (layer F.SilkS)
+    (fp_text value 25MHz (at 0 -2.90068 90) (layer F.SilkS) hide
       (effects (font (size 1.00076 1.00076) (thickness 0.2032)))
     )
     (fp_line (start -2.99974 -0.20066) (end -2.99974 0.20066) (layer F.SilkS) (width 0.2032))
@@ -1974,13 +1974,13 @@
     (pad "" smd rect (at -2.46126 -1.24968 90) (size 2.07518 1.6002) (layers C1F F.Paste F.Mask))
   )
 
-  (module 1506-RPACK (layer C1F) (tedit 510D88BE) (tstamp 527484F4)
+  (module 1506-RPACK (layer C1F) (tedit 54DE866D) (tstamp 527484F4)
     (at 116.738 66.85)
     (path /50EDF97F/50EF1508)
-    (fp_text reference RP203 (at 2.6 0 90) (layer F.SilkS)
-      (effects (font (size 0.25 0.25) (thickness 0.0625)))
+    (fp_text reference RP203 (at 0 0) (layer F.SilkS)
+      (effects (font (size 0.8 0.8) (thickness 0.2)))
     )
-    (fp_text value 0 (at -2.8 0 90) (layer F.SilkS)
+    (fp_text value 0 (at 0 0 90) (layer F.SilkS) hide
       (effects (font (size 0.8 0.8) (thickness 0.15)))
     )
     (fp_line (start -2.25 -1.25) (end -2.25 1.25) (layer F.SilkS) (width 0.15))
@@ -2021,14 +2021,14 @@
       (net 4 "/GigE Phy0/TXD0"))
   )
 
-  (module SOT23-5 (layer C1F) (tedit 4ECF78EF) (tstamp 52B9C9CF)
+  (module SOT23-5 (layer C1F) (tedit 54DE8611) (tstamp 52B9C9CF)
     (at 156.9 53.6 180)
     (path /52B9BE0C/52B9BE2B)
     (attr smd)
-    (fp_text reference U601 (at 2.19964 -0.29972 270) (layer F.SilkS)
+    (fp_text reference U601 (at -0.05 -0.1 360) (layer F.SilkS)
       (effects (font (size 0.635 0.635) (thickness 0.127)))
     )
-    (fp_text value MIC5207-2.5YM5 (at 0 0 180) (layer F.SilkS)
+    (fp_text value MIC5207-2.5YM5 (at 0 0 180) (layer F.SilkS) hide
       (effects (font (size 0.635 0.635) (thickness 0.127)))
     )
     (fp_line (start 1.524 -0.889) (end 1.524 0.889) (layer F.SilkS) (width 0.127))
@@ -2052,14 +2052,14 @@
     )
   )
 
-  (module SOT23-5 (layer C1F) (tedit 4ECF78EF) (tstamp 52B9C9DC)
+  (module SOT23-5 (layer C1F) (tedit 54DE8609) (tstamp 52B9C9DC)
     (at 164.1 53.7 180)
     (path /52B9BE0C/52B9C023)
     (attr smd)
-    (fp_text reference U602 (at 2.19964 -0.29972 270) (layer F.SilkS)
+    (fp_text reference U602 (at 0.02 -0.07 360) (layer F.SilkS)
       (effects (font (size 0.635 0.635) (thickness 0.127)))
     )
-    (fp_text value MIC5207-3.3YM5 (at 0 0 180) (layer F.SilkS)
+    (fp_text value MIC5207-3.3YM5 (at 0 0 180) (layer F.SilkS) hide
       (effects (font (size 0.635 0.635) (thickness 0.127)))
     )
     (fp_line (start 1.524 -0.889) (end 1.524 0.889) (layer F.SilkS) (width 0.127))
@@ -2083,10 +2083,10 @@
     )
   )
 
-  (module Daisho:gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 52BC2A91)
+  (module Daisho:gsg-sm1206p (layer C1F) (tedit 54DE862A) (tstamp 52BC2A91)
     (at 156.2 48.25 180)
     (path /52B9BE0C/52B9BE3B)
-    (fp_text reference C601 (at 0 0 270) (layer F.SilkS)
+    (fp_text reference C601 (at 0 0 360) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4 180) (layer F.SilkS) hide
@@ -2103,10 +2103,10 @@
       (net 32 GND))
   )
 
-  (module Daisho:gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 52BC2A9C)
+  (module Daisho:gsg-sm1206p (layer C1F) (tedit 54DE8627) (tstamp 52BC2A9C)
     (at 162.85 48.25 180)
     (path /52B9BE0C/52B9C02D)
-    (fp_text reference C602 (at 0 0 270) (layer F.SilkS)
+    (fp_text reference C602 (at 0 0 360) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4 180) (layer F.SilkS) hide
@@ -2123,11 +2123,11 @@
       (net 32 GND))
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC2AA6)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8624) (tstamp 52BC2AA6)
     (at 165.5826 51.1556)
     (path /52B9BE0C/52B9BE45)
     (solder_mask_margin 0.1016)
-    (fp_text reference C603 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C603 (at -0.0126 0.0244) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508) (layer F.SilkS) hide
@@ -2148,11 +2148,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC2AB0)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8620) (tstamp 52BC2AB0)
     (at 158.369 51.1556)
     (path /52B9BE0C/52B9C037)
     (solder_mask_margin 0.1016)
-    (fp_text reference C604 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C604 (at 0.001 0.0244) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508) (layer F.SilkS) hide
@@ -2213,10 +2213,10 @@
       (net 138 "Net-(C606-Pad1)") (die_length -2147.483648) (solder_mask_margin 0.1016) (clearance 0.1778))
   )
 
-  (module Daisho:gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 52BC2ACF)
+  (module Daisho:gsg-sm1206p (layer C1F) (tedit 54DE85FC) (tstamp 52BC2ACF)
     (at 160.5 57.1)
     (path /52B9BE0C/52B9BE5F)
-    (fp_text reference C607 (at 0 0 90) (layer F.SilkS)
+    (fp_text reference C607 (at 0 0 180) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4) (layer F.SilkS) hide
@@ -2233,10 +2233,10 @@
       (net 32 GND))
   )
 
-  (module Daisho:gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 52BC2ADA)
+  (module Daisho:gsg-sm1206p (layer C1F) (tedit 54DE85A2) (tstamp 52BC2ADA)
     (at 167.8 57.1)
     (path /52B9BE0C/52B9C051)
-    (fp_text reference C608 (at 0 0 90) (layer F.SilkS)
+    (fp_text reference C608 (at 0.01 -0.01 180) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4) (layer F.SilkS) hide
@@ -2253,11 +2253,11 @@
       (net 32 GND))
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC2AE4)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8615) (tstamp 52BC2AE4)
     (at 159.4 54.6 90)
     (path /52B9BE0C/52B9BE69)
     (solder_mask_margin 0.1016)
-    (fp_text reference C609 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C609 (at 0 0.03 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2278,11 +2278,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC2AEE)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE861A) (tstamp 52BC2AEE)
     (at 166.6 54.6 90)
     (path /52B9BE0C/52B9C05B)
     (solder_mask_margin 0.1016)
-    (fp_text reference C610 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C610 (at 0 0.02 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2303,11 +2303,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC50FA)
+  (module GSG-0402 (layer C1F) (tedit 54DE874B) (tstamp 52BC50FA)
     (at 137.0076 77.1652 270)
     (path /50F2029A/50F20C43)
     (solder_mask_margin 0.1016)
-    (fp_text reference C342 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C342 (at 0.0048 -0.0324 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -2328,11 +2328,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC5104)
+  (module GSG-0402 (layer C1F) (tedit 54DE8747) (tstamp 52BC5104)
     (at 136.2456 77.1652 270)
     (path /50F2029A/50F20C44)
     (solder_mask_margin 0.1016)
-    (fp_text reference C345 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C345 (at 0.0048 -0.0344 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -2353,11 +2353,11 @@
     )
   )
 
-  (module GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC510E)
+  (module GSG-0402 (layer C1F) (tedit 54DE8755) (tstamp 52BC510E)
     (at 143.129 75.1586)
     (path /50F2029A/50F20C45)
     (solder_mask_margin 0.1016)
-    (fp_text reference C346 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C346 (at 0.001 0.0314) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508) (layer F.SilkS) hide
@@ -2378,11 +2378,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC5354)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8702) (tstamp 52BC5354)
     (at 135.128 63.8048 90)
     (path /50F2029A/52BB6579)
     (solder_mask_margin 0.1016)
-    (fp_text reference C302 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C302 (at 0.0048 0.032 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2403,11 +2403,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC5F85)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8758) (tstamp 52BC5F85)
     (at 145.388 73.4)
     (path /50F2029A/52BA6CE0)
     (solder_mask_margin 0.1016)
-    (fp_text reference C301 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C301 (at 0.002 0.03) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508) (layer F.SilkS) hide
@@ -2428,11 +2428,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC6EA2)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87B2) (tstamp 52BC6EA2)
     (at 102.2096 66.2178 90)
     (path /50EDF97F/50EF09C4)
     (solder_mask_margin 0.1016)
-    (fp_text reference R211 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R211 (at -0.0022 0.0104 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2453,11 +2453,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC6EAB)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87BC) (tstamp 52BC6EAB)
     (at 100.55 62.3 90)
     (path /50EDF97F/50EF09BE)
     (solder_mask_margin 0.1016)
-    (fp_text reference R212 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R212 (at 0 0.02 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2478,11 +2478,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC6ECF)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8798) (tstamp 52BC6ECF)
     (at 112.05 64.462 90)
     (path /50EDF97F/50F20C25)
     (solder_mask_margin 0.1016)
-    (fp_text reference R216 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R216 (at 0.002 0.02 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2503,11 +2503,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC6ED8)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8794) (tstamp 52BC6ED8)
     (at 114.4 61.8 45)
     (path /50EDF97F/50EF2213)
     (solder_mask_margin 0.1016)
-    (fp_text reference R217 (at 0 0.0508 45) (layer F.SilkS)
+    (fp_text reference R217 (at 0 0.028284 45) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 45) (layer F.SilkS) hide
@@ -2528,11 +2528,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC6EE1)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8790) (tstamp 52BC6EE1)
     (at 115.15 62.55 45)
     (path /50EDF97F/50EF2219)
     (solder_mask_margin 0.1016)
-    (fp_text reference R218 (at 0 0.0508 45) (layer F.SilkS)
+    (fp_text reference R218 (at -0.007071 0.021213 45) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 45) (layer F.SilkS) hide
@@ -2553,11 +2553,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC6EEA)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE871C) (tstamp 52BC6EEA)
     (at 132.6388 65.4558 90)
     (path /50F2029A/50F20C14)
     (solder_mask_margin 0.1016)
-    (fp_text reference R311 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R311 (at -0.0042 0.0212 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2578,11 +2578,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BC6EF3)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8712) (tstamp 52BC6EF3)
     (at 131.075 61.825 90)
     (path /50F2029A/50F20C13)
     (solder_mask_margin 0.1016)
-    (fp_text reference R312 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R312 (at -0.005 0.025 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2603,10 +2603,10 @@
     )
   )
 
-  (module Daisho:gsg-sm1206p (layer C1F) (tedit 50FD7A75) (tstamp 52BE20FF)
+  (module Daisho:gsg-sm1206p (layer C1F) (tedit 54DE888B) (tstamp 52BE20FF)
     (at 121.92 74.041)
     (path /50EDF97F/52BDDF8E)
-    (fp_text reference C201 (at 0 0 90) (layer F.SilkS)
+    (fp_text reference C201 (at 0 -0.001 180) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_text value 10uF (at -1.4 -1.4) (layer F.SilkS) hide
@@ -2623,11 +2623,11 @@
       (net 32 GND))
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2109)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87D3) (tstamp 52BE2109)
     (at 101.0412 71.60768 180)
     (path /50EDF97F/52BDDF99)
     (solder_mask_margin 0.1016)
-    (fp_text reference C202 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference C202 (at 0.0012 -0.01232 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508 180) (layer F.SilkS) hide
@@ -2648,13 +2648,13 @@
     )
   )
 
-  (module Daisho:GSG-2312 (layer C1F) (tedit 50FD7A35) (tstamp 52BE2114)
+  (module Daisho:GSG-2312 (layer C1F) (tedit 54DE8816) (tstamp 52BE2114)
     (at 88.45 71.65 270)
     (path /50EDF97F/52BDDFB4)
     (fp_text reference C203 (at 1 0 360) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -2668,10 +2668,10 @@
       (net 32 GND))
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5428F665)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87A4) (tstamp 5428F665)
     (at 110.2868 64.0588 90)
     (path /50EDF97F/52BDDFBF)
-    (fp_text reference C204 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C204 (at -0.0112 0.0332 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2692,10 +2692,10 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE211E)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87AB) (tstamp 52BE211E)
     (at 106.5784 63.5254 90)
     (path /50EDF97F/52BDDFC9)
-    (fp_text reference C205 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C205 (at -0.0146 0.0216 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2716,10 +2716,10 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2127)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87DE) (tstamp 52BE2127)
     (at 102.0318 78.1558 90)
     (path /50EDF97F/52BDDE45)
-    (fp_text reference C206 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C206 (at -0.0042 0.0182 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 22pF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2740,11 +2740,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2130)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87CE) (tstamp 52BE2130)
     (at 100.97262 69.70014 180)
     (path /50EDF97F/52BDDFDA)
     (solder_mask_margin 0.1016)
-    (fp_text reference C207 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference C207 (at 0.01262 -0.01986 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 180) (layer F.SilkS) hide
@@ -2765,11 +2765,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2139)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87D6) (tstamp 52BE2139)
     (at 98.0948 72.0344)
     (path /50EDF97F/52BDDE3B)
     (solder_mask_margin 0.1016)
-    (fp_text reference C208 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C208 (at -0.0048 0.0356) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 22pF (at 0 0.0508) (layer F.SilkS) hide
@@ -2790,11 +2790,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2142)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87FB) (tstamp 52BE2142)
     (at 115.388 72.7)
     (path /50EDF97F/52BDDFE4)
     (solder_mask_margin 0.1016)
-    (fp_text reference C209 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C209 (at -0.008 0.02) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508) (layer F.SilkS) hide
@@ -2815,14 +2815,14 @@
     )
   )
 
-  (module Daisho:GSG-2312 (layer C1F) (tedit 50FD7A35) (tstamp 52BE214B)
+  (module Daisho:GSG-2312 (layer C1F) (tedit 54DE8813) (tstamp 52BE214B)
     (at 92 71.7 270)
     (path /50EDF97F/52BDE0DA)
     (solder_mask_margin 0.1016)
     (fp_text reference C210 (at 1 0 360) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -2836,10 +2836,10 @@
       (net 32 GND) (solder_mask_margin 0.1016))
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2155)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87FE) (tstamp 52BE2155)
     (at 115.238 70.2)
     (path /50EDF97F/52BDDFA3)
-    (fp_text reference C211 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C211 (at 0.002 0.02) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508) (layer F.SilkS) hide
@@ -2860,10 +2860,10 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE215E)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8819) (tstamp 52BE215E)
     (at 94.35 69.1 270)
     (path /50EDF97F/52BDE0E5)
-    (fp_text reference C212 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C212 (at 0.02 -0.02 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -2884,10 +2884,10 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2167)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE879B) (tstamp 52BE2167)
     (at 113.665 66.421 90)
     (path /50EDF97F/52BDE0EF)
-    (fp_text reference C213 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C213 (at 0.001 0.025 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2908,11 +2908,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2170)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87A8) (tstamp 52BE2170)
     (at 107.96778 63.01486 90)
     (path /50EDF97F/52BDE100)
     (solder_mask_margin 0.1016)
-    (fp_text reference C214 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C214 (at -0.01514 0.02222 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2933,11 +2933,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2179)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87AF) (tstamp 52BE2179)
     (at 104.6226 64.262 90)
     (path /50EDF97F/52BDE136)
     (solder_mask_margin 0.1016)
-    (fp_text reference C215 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference C215 (at 0.002 0.0274 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 90) (layer F.SilkS) hide
@@ -2958,11 +2958,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE2182)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87F8) (tstamp 52BE2182)
     (at 114.888 73.9)
     (path /50EDF97F/52BDE16D)
     (solder_mask_margin 0.1016)
-    (fp_text reference C216 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C216 (at 0.002 0.02) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508) (layer F.SilkS) hide
@@ -2983,14 +2983,14 @@
     )
   )
 
-  (module Daisho:GSG-2312 (layer C1F) (tedit 50FD7A35) (tstamp 52BE218B)
+  (module Daisho:GSG-2312 (layer C1F) (tedit 54DE889D) (tstamp 52BE218B)
     (at 123.7 81 270)
     (path /50EDF97F/52BDE10A)
     (solder_mask_margin 0.1016)
     (fp_text reference C217 (at 1 0 360) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 360) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -3004,11 +3004,11 @@
       (net 32 GND) (solder_mask_margin 0.1016))
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 54279A79)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87E1) (tstamp 54279A79)
     (at 103.8098 77.1002 270)
     (path /50EDF97F/52BDE115)
     (solder_mask_margin 0.1016)
-    (fp_text reference C218 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C218 (at -0.0002 -0.0102 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3029,13 +3029,13 @@
     )
   )
 
-  (module Daisho:GSG-2312 (layer C1F) (tedit 50FD7A35) (tstamp 52BE219E)
+  (module Daisho:GSG-2312 (layer C1F) (tedit 54DE854C) (tstamp 52BE219E)
     (at 152.781 78.613)
     (path /50EDF97F/52BDE0B4)
     (fp_text reference C219 (at 1 0 90) (layer F.SilkS)
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
-    (fp_text value 47uF (at -0.6 -0.2 90) (layer F.SilkS)
+    (fp_text value 47uF (at -0.6 -0.2 90) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.125)))
     )
     (fp_line (start -4 -1.5) (end -4 1.5) (layer F.SilkS) (width 0.15))
@@ -3049,11 +3049,11 @@
       (net 32 GND))
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE21A8)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87F0) (tstamp 52BE21A8)
     (at 110.0582 77.7606 270)
     (path /50EDF97F/52BDE0BE)
     (solder_mask_margin 0.1016)
-    (fp_text reference C220 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C220 (at -0.0106 -0.0118 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3074,11 +3074,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE21B1)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87EE) (tstamp 52BE21B1)
     (at 109.2962 77.7606 270)
     (path /50EDF97F/52BDE0C8)
     (solder_mask_margin 0.1016)
-    (fp_text reference C221 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C221 (at -0.0106 -0.0238 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3099,11 +3099,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE21BA)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87E5) (tstamp 52BE21BA)
     (at 105.6386 77.7606 270)
     (path /50EDF97F/52BDE163)
     (solder_mask_margin 0.1016)
-    (fp_text reference C222 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C222 (at 0.0394 -0.0314 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3124,11 +3124,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE21C3)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87E8) (tstamp 52BE21C3)
     (at 106.4006 77.7606 270)
     (path /50EDF97F/52BDE159)
     (solder_mask_margin 0.1016)
-    (fp_text reference C223 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference C223 (at -0.0006 -0.0194 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3149,11 +3149,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE21CC)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87F4) (tstamp 52BE21CC)
     (at 112.4204 76.516 315)
     (path /50EDF97F/52BDE14F)
     (solder_mask_margin 0.1016)
-    (fp_text reference C224 (at 0 0.0508 315) (layer F.SilkS)
+    (fp_text reference C224 (at -0.025739 0.031396 315) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 10nF (at 0 0.0508 315) (layer F.SilkS) hide
@@ -3174,11 +3174,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE21DE)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE867D) (tstamp 52BE21DE)
     (at 142.075 60.05 90)
     (path /50F2029A/52BBA1D1)
     (solder_mask_margin 0.1016)
-    (fp_text reference R316 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R316 (at 0 0.025 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 90) (layer F.SilkS) hide
@@ -3199,11 +3199,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE21E8)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE867B) (tstamp 52BE21E8)
     (at 142.85 62.15 90)
     (path /50F2029A/52BBA1E4)
     (solder_mask_margin 0.1016)
-    (fp_text reference R317 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R317 (at 0.01 0.03 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 90) (layer F.SilkS) hide
@@ -3224,11 +3224,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE21F2)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8678) (tstamp 52BE21F2)
     (at 143.9 62.2 90)
     (path /50F2029A/52BBA1F7)
     (solder_mask_margin 0.1016)
-    (fp_text reference R318 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R318 (at 0 0.02 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0 (at 0 0.0508 90) (layer F.SilkS) hide
@@ -3249,11 +3249,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE62A6)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE88CA) (tstamp 52BE62A6)
     (at 89.0905 84.1248)
     (path /50EDF97F/50EF0E9E)
     (solder_mask_margin 0.1016)
-    (fp_text reference R201 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference R201 (at -0.0005 0.0252) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 1k (at 0 0.0508) (layer F.SilkS) hide
@@ -3274,11 +3274,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE62AF)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE88C8) (tstamp 52BE62AF)
     (at 89.0524 82.3468)
     (path /50EDF97F/52BE5C42)
     (solder_mask_margin 0.1016)
-    (fp_text reference R202 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference R202 (at -0.0124 0.0132) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 1k (at 0 0.0508) (layer F.SilkS) hide
@@ -3299,11 +3299,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE62B8)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87BF) (tstamp 52BE62B8)
     (at 102.4382 59.69 90)
     (path /50EDF97F/52BE5C55)
     (solder_mask_margin 0.1016)
-    (fp_text reference R203 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R203 (at 0 0.0218 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 1k (at 0 0.0508 90) (layer F.SilkS) hide
@@ -3324,11 +3324,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE62C1)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87C9) (tstamp 52BE62C1)
     (at 97.4 66.4 270)
     (path /50EDF97F/52BE5BBD)
     (solder_mask_margin 0.1016)
-    (fp_text reference R204 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference R204 (at 0.01 -0.03 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 4.7K (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3349,11 +3349,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE62DC)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87C2) (tstamp 52BE62DC)
     (at 105.9942 58.8264)
     (path /50EDF97F/52BE5C8E)
     (solder_mask_margin 0.1016)
-    (fp_text reference R207 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference R207 (at -0.0042 0.0336) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 1k (at 0 0.0508) (layer F.SilkS) hide
@@ -3374,11 +3374,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE62E5)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87DB) (tstamp 52BE62E5)
     (at 102.8 76.1 90)
     (path /50EDF97F/52BDDE27)
     (solder_mask_margin 0.1016)
-    (fp_text reference R208 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R208 (at 0 0.02 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value "12.1k 1%" (at 0 0.0508 90) (layer F.SilkS) hide
@@ -3399,11 +3399,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE62EE)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87CC) (tstamp 52BE62EE)
     (at 100.965 68.707 180)
     (path /50EDF97F/52BDDE81)
     (solder_mask_margin 0.1016)
-    (fp_text reference R209 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference R209 (at -0.015 -0.033 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 4.7K (at 0 0.0508 180) (layer F.SilkS) hide
@@ -3424,11 +3424,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE62F7)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE87B6) (tstamp 52BE62F7)
     (at 101.219 66.3448 270)
     (path /50EDF97F/52BDDE72)
     (solder_mask_margin 0.1016)
-    (fp_text reference R210 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference R210 (at 0.0052 -0.021 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 4.7K (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3449,11 +3449,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE6300)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE84B6) (tstamp 52BE6300)
     (at 169.799 84.201 180)
     (path /50F2029A/52BE5E4C)
     (solder_mask_margin 0.1016)
-    (fp_text reference R301 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference R301 (at -0.001 -0.009 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 1k (at 0 0.0508 180) (layer F.SilkS) hide
@@ -3474,11 +3474,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE6309)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE84BE) (tstamp 52BE6309)
     (at 169.799 83.1977 180)
     (path /50F2029A/52BE5E56)
     (solder_mask_margin 0.1016)
-    (fp_text reference R302 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference R302 (at -0.001 -0.0323 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 1k (at 0 0.0508 180) (layer F.SilkS) hide
@@ -3499,11 +3499,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE6312)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE870F) (tstamp 52BE6312)
     (at 132.207 56.134 180)
     (path /50F2029A/52BE5E60)
     (solder_mask_margin 0.1016)
-    (fp_text reference R303 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference R303 (at 0.007 -0.016 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 1k (at 0 0.0508 180) (layer F.SilkS) hide
@@ -3524,11 +3524,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE631B)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8722) (tstamp 52BE631B)
     (at 128.27 69.0626 90)
     (path /50F2029A/52BE5DE8)
     (solder_mask_margin 0.1016)
-    (fp_text reference R304 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R304 (at 0.0026 0.02 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 4.7K (at 0 0.0508 90) (layer F.SilkS) hide
@@ -3549,11 +3549,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE6336)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8709) (tstamp 52BE6336)
     (at 135.001 57.912 180)
     (path /50F2029A/52BE5E7E)
     (solder_mask_margin 0.1016)
-    (fp_text reference R307 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference R307 (at 0.001 -0.028 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 1k (at 0 0.0508 180) (layer F.SilkS) hide
@@ -3574,11 +3574,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 54289533)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8741) (tstamp 54289533)
     (at 133.35 75.5396 90)
     (path /50F2029A/52BE5D67)
     (solder_mask_margin 0.1016)
-    (fp_text reference R308 (at 0 0.0508 90) (layer F.SilkS)
+    (fp_text reference R308 (at -0.0004 0.02 90) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value "12.1k 1%" (at 0 0.0508 90) (layer F.SilkS) hide
@@ -3599,11 +3599,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE6348)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8715) (tstamp 52BE6348)
     (at 130.1496 64.8208 270)
     (path /50F2029A/52BE5D95)
     (solder_mask_margin 0.1016)
-    (fp_text reference R309 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference R309 (at 0.0292 -0.0204 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 4.7K (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3624,11 +3624,11 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52BE6351)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8719) (tstamp 52BE6351)
     (at 131.6482 65.6844 270)
     (path /50F2029A/52BE5DBA)
     (solder_mask_margin 0.1016)
-    (fp_text reference R310 (at 0 0.0508 270) (layer F.SilkS)
+    (fp_text reference R310 (at -0.0044 -0.0318 270) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 4.7K (at 0 0.0508 270) (layer F.SilkS) hide
@@ -3649,14 +3649,14 @@
     )
   )
 
-  (module Daisho:IPC_SOT95P280X110-5N (layer C1F) (tedit 52BF7681) (tstamp 542AC99C)
+  (module Daisho:IPC_SOT95P280X110-5N (layer C1F) (tedit 54DE858F) (tstamp 542AC99C)
     (at 171.45 63.5 270)
     (path /52B9BE0C/542ABD86)
-    (fp_text reference U603 (at 0.4 3.6 270) (layer F.SilkS) hide
-      (effects (font (size 0.0004 0.0004) (thickness 0.3048)))
+    (fp_text reference U603 (at 0.03 -3.22 270) (layer F.SilkS)
+      (effects (font (size 1 1) (thickness 0.25)))
     )
-    (fp_text value XC9236-MR (at 0.2 -2.8 270) (layer F.SilkS)
-      (effects (font (size 0.0004 0.0004) (thickness 0.3048)))
+    (fp_text value XC9236-MR (at 0.2 -2.8 270) (layer F.SilkS) hide
+      (effects (font (size 0.127 0.127) (thickness 0.03175)))
     )
     (fp_line (start -0.47498 -1.45034) (end 0.47498 -1.45034) (layer F.SilkS) (width 0.2032))
     (fp_line (start 0.47498 -1.45034) (end 0.47498 1.45034) (layer F.SilkS) (width 0.2032))
@@ -3679,13 +3679,13 @@
       (net 220 "Net-(L601-Pad1)"))
   )
 
-  (module Daisho:BELFUSE-MAG (layer C1F) (tedit 510C6155) (tstamp 52D01B8B)
+  (module Daisho:BELFUSE-MAG (layer C1F) (tedit 54DE88E7) (tstamp 52D01B8B)
     (at 85.6 96 90)
     (path /50EDF97F/50F20C6D)
     (fp_text reference MAG201 (at 0 12 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value BELFUSE-0826-1X1T-M1-F (at 0 0.2 90) (layer F.SilkS)
+    (fp_text value BELFUSE-0826-1X1T-M1-F (at 0 0.2 90) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -1.4 -5.4) (end -1.4 -6.2) (layer F.SilkS) (width 0.15))
@@ -3744,14 +3744,14 @@
     (pad 17 thru_hole circle (at -6.1 20.32 90) (size 1.46 1.46) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52D039C2)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE88D0) (tstamp 52D039C2)
     (at 85.8 82.35)
     (path /50EDF97F/52D0363D)
     (solder_mask_margin 0.1016)
-    (fp_text reference R205 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference R205 (at 0 0.02) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
-    (fp_text value 220 (at 0 0.0508) (layer F.SilkS) hide
+    (fp_text value 1k (at 0 0.0508) (layer F.SilkS) hide
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_line (start 0.889 -0.381) (end 0.889 0.381) (layer F.SilkS) (width 0.2032))
@@ -3769,14 +3769,14 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52D039CC)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE88CD) (tstamp 52D039CC)
     (at 85.8 84.1)
     (path /50EDF97F/52D0366F)
     (solder_mask_margin 0.1016)
-    (fp_text reference R206 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference R206 (at 0 0.02) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
-    (fp_text value 220 (at 0 0.0508) (layer F.SilkS) hide
+    (fp_text value 1k (at 0 0.0508) (layer F.SilkS) hide
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_line (start 0.889 -0.381) (end 0.889 0.381) (layer F.SilkS) (width 0.2032))
@@ -3794,14 +3794,14 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52D039D6)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE8559) (tstamp 52D039D6)
     (at 173.1 82.25 180)
     (path /50F2029A/52D036EA)
     (solder_mask_margin 0.1016)
-    (fp_text reference R305 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference R305 (at 0 -0.02 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
-    (fp_text value 220 (at 0 0.0508 180) (layer F.SilkS) hide
+    (fp_text value 1k (at 0 0.0508 180) (layer F.SilkS) hide
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_line (start 0.889 -0.381) (end 0.889 0.381) (layer F.SilkS) (width 0.2032))
@@ -3819,14 +3819,14 @@
     )
   )
 
-  (module Daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 52D039E0)
+  (module Daisho:GSG-0402 (layer C1F) (tedit 54DE84C2) (tstamp 52D039E0)
     (at 173.1 84.2 180)
     (path /50F2029A/52D036F4)
     (solder_mask_margin 0.1016)
-    (fp_text reference R306 (at 0 0.0508 180) (layer F.SilkS)
+    (fp_text reference R306 (at 0.01 -0.03 180) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
-    (fp_text value 220 (at 0 0.0508 180) (layer F.SilkS) hide
+    (fp_text value 1k (at 0 0.0508 180) (layer F.SilkS) hide
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_line (start 0.889 -0.381) (end 0.889 0.381) (layer F.SilkS) (width 0.2032))
@@ -3844,13 +3844,13 @@
     )
   )
 
-  (module Daisho:1506-RPACK (layer C1F) (tedit 510D88BE) (tstamp 52BC6F2E)
+  (module Daisho:1506-RPACK (layer C1F) (tedit 54DE8774) (tstamp 52BC6F2E)
     (at 147.213 66.375)
     (path /50F2029A/52BB8FA4)
-    (fp_text reference RP302 (at 2.6 0 90) (layer F.SilkS)
-      (effects (font (size 0.25 0.25) (thickness 0.0625)))
+    (fp_text reference RP302 (at 0.007 -0.005) (layer F.SilkS)
+      (effects (font (size 0.8 0.8) (thickness 0.2)))
     )
-    (fp_text value 0 (at -2.8 0 90) (layer F.SilkS)
+    (fp_text value 0 (at 0 0 90) (layer F.SilkS) hide
       (effects (font (size 0.8 0.8) (thickness 0.15)))
     )
     (fp_line (start -2.25 -1.25) (end -2.25 1.25) (layer F.SilkS) (width 0.15))
@@ -3891,11 +3891,11 @@
       (net 15 "/GigE Phy1/TXD0"))
   )
 
-  (module GSG-NRG4026 (layer C1F) (tedit 542ABADF) (tstamp 52BF939F)
+  (module GSG-NRG4026 (layer C1F) (tedit 54DE85DC) (tstamp 52BF939F)
     (at 171.45 68.58 180)
     (path /52B9BE0C/52BF740C)
-    (fp_text reference L601 (at 0 0 180) (layer F.SilkS)
-      (effects (font (thickness 0.3048)))
+    (fp_text reference L601 (at 0 0 270) (layer F.SilkS)
+      (effects (font (size 1 1) (thickness 0.25)))
     )
     (fp_text value 4u7 (at 0 0 180) (layer F.SilkS) hide
       (effects (font (thickness 0.3048)))
@@ -3977,7 +3977,7 @@
     (fp_text reference C611 (at 0 0 270) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1905)))
     )
-    (fp_text value 4.7uF (at 0 0 270) (layer F.SilkS) hide
+    (fp_text value 10uF (at 0 0 270) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1905)))
     )
     (fp_line (start -1.778 -0.9144) (end 1.778 -0.9144) (layer F.SilkS) (width 0.2032))
@@ -4413,11 +4413,11 @@
     (pad "" thru_hole circle (at 32.17926 -0.51054) (size 2.53746 2.53746) (drill 2.02946) (layers *.Cu *.Mask B.SilkS))
   )
 
-  (module daisho:GSG-0402 (layer C1F) (tedit 4FB6CFE4) (tstamp 5453403A)
+  (module daisho:GSG-0402 (layer C1F) (tedit 54DE8861) (tstamp 5453403A)
     (at 89.8 53.4)
     (path /525DBE7D/545791E4)
     (solder_mask_margin 0.1016)
-    (fp_text reference C401 (at 0 0.0508) (layer F.SilkS)
+    (fp_text reference C401 (at 0.01 0.03) (layer F.SilkS)
       (effects (font (size 0.4064 0.4064) (thickness 0.1016)))
     )
     (fp_text value 0.1uF (at 0 0.0508) (layer F.SilkS) hide
@@ -4438,11 +4438,11 @@
     )
   )
 
-  (module daisho:GSG-0603 (layer C1F) (tedit 4CFF2E39) (tstamp 54534040)
+  (module daisho:GSG-0603 (layer C1F) (tedit 54DE8869) (tstamp 54534040)
     (at 94.1 48.7)
     (path /525DBE7D/545782F5)
     (solder_mask_margin 0.1016)
-    (fp_text reference R401 (at 0 0) (layer F.SilkS)
+    (fp_text reference R401 (at 0 0.03) (layer F.SilkS)
       (effects (font (size 0.6096 0.6096) (thickness 0.1524)))
     )
     (fp_text value 10k (at 0 0) (layer F.SilkS) hide
