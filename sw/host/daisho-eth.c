@@ -34,7 +34,7 @@ int main(void)
 	ret = libusb_init(NULL);
 	if (ret < 0) {
 		fprintf(stderr, "libusb_init failed (got 1.0?)\n");
-		return 1;
+		return -1;
 	}
 	libusb_set_debug(NULL, 3);
 
