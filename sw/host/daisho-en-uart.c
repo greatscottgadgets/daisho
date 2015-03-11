@@ -15,7 +15,7 @@ static pcap_dumper_t *dumper;
 /* default snap length (maximum bytes per packet to capture) */
 #define SNAP_LEN 1518
 
-void dump_packet(u_char *pkt_data, int packet_length) {
+static void dump_packet(u_char *pkt_data, int packet_length) {
 
 	struct pcap_pkthdr ph;
 	struct timeval ts;
@@ -23,17 +23,17 @@ void dump_packet(u_char *pkt_data, int packet_length) {
 	gettimeofday(&ts, NULL);
 
 	/* Find start of frame delimiter */
-	for(start=pkt_data; *start!=0xd5 && start-pkt_data < packet_length; ++start);
+	for (start = pkt_data; *start != 0xd5 && start - pkt_data < packet_length; ++start);
 	++start;
 
-	if((start-pkt_data) >= packet_length) {
+	if ((start - pkt_data) >= packet_length) {
 		fprintf(stderr, "Unable to find start of frame delimiter\n");
 		return;
 	}
 
 	ph.ts = ts;
 	ph.caplen = ph.len = packet_length - (start - pkt_data);
-	
+
 	pcap_dump((unsigned char *)dumper, &ph, start);
 	/* FIXME: don't force a flush
 	 * Instead, write a signal handler to flush and close
@@ -41,31 +41,32 @@ void dump_packet(u_char *pkt_data, int packet_length) {
 	pcap_dump_flush(dumper);
 }
 
-u_char char_to_nibble(int byte) {
-	if((byte >= 48) && (byte <= 57))
+static u_char char_to_nibble(int byte)
+{
+	if ((byte >= 48) && (byte <= 57))
 		return byte - 48;
-	if((byte >= 97) && (byte <= 102))
+	if ((byte >= 97) && (byte <= 102))
 		return byte - 87;
 	return 0xff;
 }
 
-int sniff_packets(FILE *input) {
+int sniff_packets(FILE *input)
+{
 	u_char buf[SNAP_LEN], byte, corrected, *bp = &buf[0];
 	int in, first_half = 1;
 
-	while((in=fgetc(input)) != EOF) {
+	while((in = fgetc(input)) != EOF) {
 		/* A newline means the end of a packet */
-		if(in == 0x0a) {
+		if (in == 0x0a) {
 			dump_packet(buf, bp - &buf[0]);
 			bp = &buf[0];
 		} else {
 			corrected = char_to_nibble(in);
-			if(corrected == 0xff) {
+			if (corrected == 0xff) {
 				fprintf(stderr, "Dropping unknown nibble: 0x%x\n", in);
 				first_half = 1;
 				//return 0;
-			}
-			else if(first_half) {
+			} else if (first_half) {
 				byte = corrected;
 				first_half = 0;
 			} else {
@@ -76,19 +77,23 @@ int sniff_packets(FILE *input) {
 			}
 		}
 	}
+
 	return 0;
 }
 
-FILE *setup_serial(char *path) {
+static FILE *setup_serial(char *path)
+{
 	// Reset the device options
 	struct termios options;
+	FILE *input;
+	int fd;
 
-	FILE *input = fopen(path, "r");
-	if(input==NULL) {
+	input = fopen(path, "r");
+	if(input == NULL)
 		fprintf(stderr, "Cannot open serial device\n");
-	}
-	int fd = fileno(input);
-	
+
+	fd = fileno(input);
+
 	tcgetattr(fd, &options);
 
 	options.c_oflag = 0;
@@ -104,10 +109,11 @@ FILE *setup_serial(char *path) {
 		fprintf(stderr, "SerialClient::SetOptions() failed to set serial device attributes");
 		return NULL;
 	}
+
 	return input;
 }
 
-void usage() {
+static void usage(void) {
 	fprintf(stderr, "daisho-en-uart - Daisho ethernet tap over serial\n");
 	fprintf(stderr, "Usage:\n");
 	fprintf(stderr, "\t-h this help\n");
@@ -120,14 +126,14 @@ int main(int argc, char **argv) {
 	struct stat buf;
 	FILE *input = NULL, *output = NULL;
 
-	while ((opt=getopt(argc,argv,"p:hs:")) != EOF) {
+	while ((opt = getopt(argc,argv,"p:hs:")) != EOF) {
 		switch(opt) {
 		case 'p':
 			output = fopen(optarg, "w");
 			break;
 		case 's':
 			stat(optarg, &buf);
-			if(S_ISCHR(buf.st_mode)) {
+			if (S_ISCHR(buf.st_mode)) {
 				input = setup_serial(optarg);
 			} else {
 				input = fopen(optarg, "r");
@@ -140,12 +146,12 @@ int main(int argc, char **argv) {
 		}
 	}
 
-	if(input==NULL) {
+	if (input == NULL) {
 		fprintf(stderr, "No input file given, using stdin\n");
 		input = stdin;
 	}
 
-	if(output==NULL) {
+	if (output == NULL) {
 		fprintf(stderr, "No output file given, using stdout\n");
 		output = stdout;
 	}
