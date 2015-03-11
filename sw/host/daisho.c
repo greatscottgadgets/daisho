@@ -32,7 +32,7 @@ libusb_device_handle *open_daisho_device()
 	int usb_devs, i, r;
 
 	usb_devs = libusb_get_device_list(ctx, &usb_list);
-	for (i = 0; i < usb_devs; ++i) {
+	for (i = 0; i < usb_devs; i++) {
 		r = libusb_get_device_descriptor(usb_list[i], &desc);
 		if (r < 0)
 			fprintf(stderr, "couldn't get usb descriptor for dev #%d!\n", i);
