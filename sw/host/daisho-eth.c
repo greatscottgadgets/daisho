@@ -38,7 +38,7 @@ int main(void)
 	}
 	libusb_set_debug(NULL, 3);
 
-	printf("Daisho USB controller verification\n\n");
+	printf("Daisho USB controller verification\n");
 
 	dev = open_daisho_device();
 	if (dev == NULL) {
