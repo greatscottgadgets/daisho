@@ -52,18 +52,18 @@ int main(void)
 		printf("* Can't set config: %s\n", libusb_error_name(ret));
 		libusb_close(dev);
 		return -1;
-	} else {
-		printf("* Set configuration \n");
 	}
+
+	printf("* Set configuration \n");
 
 	ret = libusb_claim_interface(dev, 0);
 	if (ret < 0) {
 		printf("* Can't claim interface: %s\n", libusb_error_name(ret));
 		libusb_close(dev);
 		return -1;
-	} else {
-		printf("* Claimed interface\n");
 	}
+
+	printf("* Claimed interface\n");
 
 	while(1) {
 		ret = libusb_bulk_transfer(dev, 0x81, readback, BUF_LEN,
@@ -72,7 +72,9 @@ int main(void)
 			printf("* Couldn't read: %s\n", libusb_error_name(ret));
 			break;
 			/* Ignore case where we have an incomplete state */
-		} else if (transferred == 8) {
+		}
+
+		if (transferred == 8) {
 			for (i = 0; i < transferred; i++)
 				printf("%02x ", readback[i]);
 			printf("\n");
