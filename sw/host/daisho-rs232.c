@@ -83,8 +83,7 @@ int main(void)
 	}
 
 	libusb_release_interface(dev, 0);
-	if(dev)
-		libusb_close(dev);
+	libusb_close(dev);
 
 	printf("\n* Finished\n");
 
