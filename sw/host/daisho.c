@@ -32,12 +32,12 @@ libusb_device_handle *open_daisho_device()
 	int usb_devs, i, r;
 
 	usb_devs = libusb_get_device_list(ctx, &usb_list);
-	for(i = 0 ; i < usb_devs ; ++i) {
+	for (i = 0; i < usb_devs; ++i) {
 		r = libusb_get_device_descriptor(usb_list[i], &desc);
-		if(r < 0)
+		if (r < 0)
 			fprintf(stderr, "couldn't get usb descriptor for dev #%d!\n", i);
-		if (desc.idVendor == DAISHO_VID && desc.idProduct == DAISHO_PID)
-		{
+
+		if (desc.idVendor == DAISHO_VID && desc.idProduct == DAISHO_PID) {
 			r = libusb_open(usb_list[i], &devh);
 			if (r)
 				libusb_error_name(r);
@@ -45,16 +45,17 @@ libusb_device_handle *open_daisho_device()
 				return devh;
 		}
 	}
-    return NULL;
+
+	return NULL;
 }
 
 void vend_req(libusb_device_handle *devh, int request, int value)
 {
 	int ret;
 	ret = libusb_control_transfer(devh,
-		LIBUSB_ENDPOINT_OUT | LIBUSB_REQUEST_TYPE_VENDOR | LIBUSB_RECIPIENT_DEVICE,
-		request, value, 0, NULL, 0, 2000);
-	if(ret < 0)
+			LIBUSB_ENDPOINT_OUT | LIBUSB_REQUEST_TYPE_VENDOR | LIBUSB_RECIPIENT_DEVICE,
+			request, value, 0, NULL, 0, 2000);
+	if (ret < 0)
 		printf("* Error sending vendor request\n");
-	
+
 }
