@@ -530,6 +530,8 @@ F 0 "P2" H 8500 9800 60  0000 C CNN
 F 1 "CONN_5X2" V 8500 9500 50  0000 C CNN
 F 2 "" H 8500 9500 60  0001 C CNN
 F 3 "" H 8500 9500 60  0001 C CNN
+F 4 "any" H 8500 9500 60  0001 C CNN "Manufacturer"
+F 5 "5x2 100 mil male pin header" H 8500 9500 60  0001 C CNN "Part Number"
 	1    8500 9500
 	1    0    0    -1  
 $EndComp
