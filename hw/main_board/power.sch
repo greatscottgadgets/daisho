@@ -756,6 +756,7 @@ F 2 "" H 12600 5300 60  0001 C CNN
 F 3 "" H 12600 5300 60  0001 C CNN
 F 4 "DNI" H 12600 5300 60  0001 C CNN "Manufacturer"
 F 5 "DNI" H 12600 5300 60  0001 C CNN "Part Number"
+F 6 "DNP" V 12450 5300 60  0000 C CNN "Note"
 	1    12600 5300
 	-1   0    0    -1  
 $EndComp
@@ -903,6 +904,7 @@ F 2 "" H 12600 3600 60  0001 C CNN
 F 3 "" H 12600 3600 60  0001 C CNN
 F 4 "DNI" H 12600 3600 60  0001 C CNN "Manufacturer"
 F 5 "DNI" H 12600 3600 60  0001 C CNN "Part Number"
+F 6 "DNP" V 12450 3600 60  0000 C CNN "Note"
 	1    12600 3600
 	-1   0    0    -1  
 $EndComp
